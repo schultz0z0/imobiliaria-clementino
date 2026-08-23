@@ -1,19 +1,19 @@
 # 🏢 Acervo Completo de Imóveis (Scraping Imovelweb)
 
-Este repositório contém a extração e curadoria completa de **49 imóveis** do portal **Imovelweb**. Todos os imóveis foram baixados individualmente em sua própria subpasta com todas as fotos originais em alta resolução, memorial descritivo, tabela de valores, endereço completo, coordenadas de geolocalização e especificações estruturadas.
+Este repositório contém a extração e curadoria completa de **53 imóveis** do portal **Imovelweb**. Todos os imóveis foram baixados individualmente em sua própria subpasta com todas as fotos originais em alta resolução, memorial descritivo, tabela de valores, endereço completo, coordenadas de geolocalização e especificações estruturadas.
 
 ---
 
 ## 📊 Resumo Executivo do Acervo
 
-- **Total de Imóveis Extraídos:** `49`
-- **Total de Fotos Baixadas:** `1416` fotos
+- **Total de Imóveis Extraídos:** `53`
+- **Total de Fotos Baixadas:** `1543` fotos
 - **Verificação de Duplicidade:** `0 imóveis duplicados` (100% únicos)
 - **Status de Integridade:** `100% dos imóveis com fotos, descrição, endereço, metadados e arquivos .md e .json`
 
 ---
 
-## 📋 Tabela Geral de Imóveis (49 Propriedades)
+## 📋 Tabela Geral de Imóveis (53 Propriedades)
 
 | # | ID | Imóvel / Título | Endereço / Bairro | Valor | Fotos | Pasta & Detalhes |
 | :---: | :---: | :--- | :--- | :---: | :---: | :--- |
@@ -66,6 +66,10 @@ Este repositório contém a extração e curadoria completa de **49 imóveis** d
 | **47** | `3032201782` | [Venda Jardim América - Apto 3 Qtos, Área 78m ², Junto Praça ...](https://www.imovelweb.com.br/propriedades/venda-jardim-america-apto-3-qtos-area-78m-junto-3032201782.html) | rua robert schumann, 531, Jardim América, Rio de Janeiro, RJ | **R$ 450.000** | `32 fotos` | [📂 Ver Imóvel](./venda-jardim-america-apto-3-qtos-area-78m-junto-3032201782/imovel.md) |
 | **48** | `3017305793` | [Vigário Geral, Condomínio Padre Anchieta - Apto 1 Qto, Sala,...](https://www.imovelweb.com.br/propriedades/vigario-geral-condominio-padre-anchieta-apto-1-qto-3017305793.html) | Rua Estrada do Vigário Geral, 525, Vigário Geral, Rio de Janeiro, RJ | **R$ 75.000** | `23 fotos` | [📂 Ver Imóvel](./vigario-geral-condominio-padre-anchieta-apto-1-qto-3017305793/imovel.md) |
 | **49** | `3017305799` | [Vigário Geral - Rua Otranto com Rua Mabá, Quitinetes, Tipo S...](https://www.imovelweb.com.br/propriedades/vigario-geral-rua-otranto-com-rua-maba-quitinetes-3017305799.html) | Rua Otranto, 1393, Vigário Geral, Rio de Janeiro, RJ | **R$ 600** | `12 fotos` | [📂 Ver Imóvel](./vigario-geral-rua-otranto-com-rua-maba-quitinetes-3017305799/imovel.md) |
+| **50** | `3043565436` | [Jardim América - V. Esperança, casa com quintal e terraço](https://www.imovelweb.com.br/propriedades/jardim-america-v.esperanca-melhor-rua-casa-3043565436.html) | Travessa Antônio Lopes, 142, Jardim América, Rio de Janeiro, RJ | **R$ 190.000** | `35 fotos` | [📂 Ver Imóvel](./jardim-america-v.esperanca-melhor-rua-casa-3043565436/imovel.md) |
+| **51** | `3043564937` | [Parque Columbia - apartamento térreo, 3 quartos e suíte](https://www.imovelweb.com.br/propriedades/parque-columbia-rua-ruanda-prox.-da-crajubar-apto-3043564937.html) | Rua Ruanda, 154, Pavuna, Rio de Janeiro, RJ | **R$ 310.000** | `34 fotos` | [📂 Ver Imóvel](./parque-columbia-rua-ruanda-prox.-da-crajubar-apto-3043564937/imovel.md) |
+| **52** | `3021262193` | [Jardim América - Condomínio América Life, 3 quartos](https://www.imovelweb.com.br/propriedades/jardim-america-cond.-america-life-apto-3-qtos-1-3021262193.html) | Rua Georges Bizer, 413, Jardim América, Rio de Janeiro, RJ | **R$ 158.000** | `18 fotos` | [📂 Ver Imóvel](./jardim-america-cond.-america-life-apto-3-qtos-1-3021262193/imovel.md) |
+| **53** | `3041818174` | [Jardim América - casa térrea, 3 quartos e quintal](https://www.imovelweb.com.br/propriedades/jardim-america-apto-tipo-casa-terreo-3qtos-quintal-3041818174.html) | Rua Marechal José Pessoa, Jardim América, Rio de Janeiro, RJ | **R$ 1.500/mês** | `40 fotos` | [📂 Ver Imóvel](./jardim-america-apto-tipo-casa-terreo-3qtos-quintal-3041818174/imovel.md) |
 
 ---
 
@@ -323,4 +327,4 @@ Imoveis/
 │   └── fotos/                  # Subpasta com 12 fotos em alta resolução
 ```
 ---
-*Acervo gerado e auditado automaticamente com 49 imóveis únicos em 19/08/2026.*
+*Acervo validado novamente com 53 imóveis únicos e 1.543 fotos em 23/08/2026.*

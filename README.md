@@ -51,7 +51,7 @@ npm run build
 
 ## Catálogo de imóveis
 
-- `content/imoveis/`: fonte estática dos 49 imóveis.
+- `content/imoveis/`: fonte estática dos 53 imóveis.
 - `content/catalog-overrides.json`: ajustes editoriais do catálogo.
 - `src/data/properties.generated.json`: catálogo gerado consumido pelo React.
 - `public/imoveis/`: imagens otimizadas usadas pelo website.

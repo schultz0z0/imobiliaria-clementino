@@ -51,11 +51,20 @@ test('reports duplicate ids, missing photos and suspicious prices together', () 
   const result = validateCatalog([
     makeSourceEntry(fixtureRoot, { id: 'REF-1', photoPath: 'fotos/foto_01.jpg', price: 'R$ 10' }),
     makeSourceEntry(fixtureRoot, { id: 'REF-1', photoPath: 'fotos/ausente.jpg', price: 'R$ 900' }),
-  ], { purposeById: { 'REF-1': 'Aluguel' } }, 2);
+  ], { purposeById: { 'REF-1': 'Venda' } }, 2);
 
   assert.ok(result.errors.some((issue) => issue.code === 'duplicate-id'));
   assert.ok(result.errors.some((issue) => issue.code === 'missing-photo'));
   assert.ok(result.warnings.some((issue) => issue.code === 'suspicious-price'));
+});
+
+test('does not treat a legitimate monthly rent as a suspicious sale price', () => {
+  const fixtureRoot = makeRoot();
+  const result = validateCatalog([
+    makeSourceEntry(fixtureRoot, { id: 'REF-RENT', photoPath: 'fotos/foto_01.jpg', price: 'R$ 1.500' }),
+  ], { purposeById: { 'REF-RENT': 'Aluguel' } }, 1);
+
+  assert.equal(result.warnings.some((issue) => issue.code === 'suspicious-price'), false);
 });
 
 test('loads invalid JSON as a reportable source error', () => {

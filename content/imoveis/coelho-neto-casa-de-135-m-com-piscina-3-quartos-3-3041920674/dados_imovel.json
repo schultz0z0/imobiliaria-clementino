@@ -515,5 +515,69 @@
       "size_kb": 112.1435546875,
       "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986020.jpg"
     }
-  ]
+  ],
+  "caracteristicas_extras": {
+    "Ambientes": {
+      "20228": {
+        "featureId": "20228",
+        "label": "Entrada independiente",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    },
+    "Áreas comuns": {
+      "10140": {
+        "featureId": "10140",
+        "label": "Piscina",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    },
+    "Áreas privativas": {
+      "20017": {
+        "featureId": "20017",
+        "label": "Área de serviço",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20058": {
+        "featureId": "20058",
+        "label": "Cozinha independente",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20065": {
+        "featureId": "20065",
+        "label": "Despensa",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20140": {
+        "featureId": "20140",
+        "label": "Piscina",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20166": {
+        "featureId": "20166",
+        "label": "Quintal",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20199": {
+        "featureId": "20199",
+        "label": "Varanda",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    }
+  }
 }

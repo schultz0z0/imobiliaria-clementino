@@ -1,0 +1,374 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/parque-columbia-rua-ruanda-prox.-da-crajubar-apto-3043564937.html",
+  "dados_gerais": {
+    "titulo": "Parque Columbia - Rua Ruanda, Próx. da Crajubar, Apto Térreo, Living, Jantar, 3 Qtos, Suíte, 1 Vga.",
+    "subtitulo": "Apartamento · 96m² · 3 quartos · 1 vaga",
+    "codigo_imovel": "0022",
+    "id_imovelweb": "3043564937",
+    "preco": "R$ 310.000",
+    "condominio": "R$ 10",
+    "iptu": "R$ 10",
+    "endereco_completo": "Rua Ruanda, 154, Pavuna, Rio de Janeiro, RJ",
+    "logradouro": "Rua Ruanda, 154",
+    "bairro": "Pavuna",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.812409200000000",
+      "longitude": "-43.340929100000000",
+      "google_maps_url": "https://www.google.com/maps?q=-22.812409200000000,-43.340929100000000"
+    },
+    "data_publicacao": "Não informada",
+    "antiguidade": "Não informada"
+  },
+  "operacoes": [
+    {
+      "finalidade": "Venda",
+      "preco": "R$ 310.000"
+    }
+  ],
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "98",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "96",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiros",
+      "measure": null,
+      "value": "2",
+      "icon": "bano"
+    },
+    "CFT7": {
+      "featureId": "CFT7",
+      "label": "vaga",
+      "measure": null,
+      "value": "1",
+      "icon": "cochera"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "3",
+      "icon": "dormitorio"
+    },
+    "CFT4": {
+      "featureId": "CFT4",
+      "label": "suíte",
+      "measure": null,
+      "value": "1",
+      "icon": "toilete"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "38",
+      "icon": "antiguedad"
+    }
+  },
+  "caracteristicas_extras": {
+    "Áreas privativas": {
+      "20012": {
+        "featureId": "20012",
+        "label": "Ar condicionado",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20017": {
+        "featureId": "20017",
+        "label": "Área de serviço",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    },
+    "Outros": {
+      "30001": {
+        "featureId": "30001",
+        "label": "Andares",
+        "measure": null,
+        "value": "1",
+        "icon": null
+      },
+      "30002": {
+        "featureId": "30002",
+        "label": "Aceita FGTS",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "30004": {
+        "featureId": "30004",
+        "label": "Posição do Apto",
+        "measure": null,
+        "value": "Frente",
+        "icon": null
+      }
+    }
+  },
+  "descricao": "Apartamento de frente à venda na Pavuna, com 96 m² de área construída e 98 m² de área total. O imóvel possui uma planta prática de 1 andar que dispõe de sala ampla, 3 quartos, sendo 1 suíte, e 2 banheiros sociais. A unidade conta ainda com cozinha integrada à área de serviço e ar condicionado instalado. Há 1 vaga de garagem disponível. Com 38 anos de construção, o imóvel aceita FGTS.\nA região de Pavuna tem excelente conectividade, com fácil acesso ao metrô e transporte público. A área é residencial e comercial, com escolas, supermercados, farmácias, padarias e diversos serviços essenciais a poucos minutos, garantindo praticidade aos moradores.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "observacoes_validacao": [
+    "Condomínio e IPTU aparecem como R$ 10 no anúncio oficial e foram preservados como publicados, embora pareçam valores provisórios."
+  ],
+  "total_fotos": 34,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Apartamento en venda de 3 quartos Pavuna",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119200673.jpg?isFirstImage=true"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Apartamento en venda de 3 quartos Pavuna",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119200684.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Apartamento de frente à venda na Pavuna, com 96 m² de área construída e 98 m² de",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119200676.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Apartamento venda 98m² de 3 quartos",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119200678.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Apartamento 98m² venda Pavuna",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119200680.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Apartamento 98m² venda Pavuna",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119200667.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Apartamento de 3 quartos venda R$ 310.000",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119200668.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Apartamento · 96m² · 3 quartos · 1 vaga - Imobiliária Clementino",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119200672.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Apartamento venda de 3 quartos",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119200674.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Apartamento · 96m² · 3 quartos · 1 vaga",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119200665.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Apartamento de 3 quartos, Rio de Janeiro",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119200681.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Apartamento en venda de 3 quartos Pavuna",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119200666.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Apartamento de frente à venda na Pavuna, com 96 m² de área construída e 98 m² de",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119200679.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Apartamento venda 98m² de 3 quartos",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119200683.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Apartamento 98m² venda Pavuna",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119200663.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Apartamento 98m² venda Pavuna",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119200677.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Apartamento de 3 quartos venda R$ 310.000",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119200669.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Apartamento · 96m² · 3 quartos · 1 vaga - Imobiliária Clementino",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119200670.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Apartamento venda de 3 quartos",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119200671.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Apartamento · 96m² · 3 quartos · 1 vaga",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119200675.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Apartamento de 3 quartos, Rio de Janeiro",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119200682.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Apartamento en venda de 3 quartos Pavuna",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119200664.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Apartamento de frente à venda na Pavuna, com 96 m² de área construída e 98 m² de",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119227632.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Apartamento venda 98m² de 3 quartos",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119227635.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Apartamento 98m² venda Pavuna",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119227627.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Apartamento 98m² venda Pavuna",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119227634.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Apartamento de 3 quartos venda R$ 310.000",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119227633.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Apartamento · 96m² · 3 quartos · 1 vaga - Imobiliária Clementino",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119227623.jpg"
+    },
+    {
+      "index": 29,
+      "filename": "foto_29.jpg",
+      "relative_path": "fotos/foto_29.jpg",
+      "title": "Apartamento venda de 3 quartos",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119227624.jpg"
+    },
+    {
+      "index": 30,
+      "filename": "foto_30.jpg",
+      "relative_path": "fotos/foto_30.jpg",
+      "title": "Apartamento · 96m² · 3 quartos · 1 vaga",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119227625.jpg"
+    },
+    {
+      "index": 31,
+      "filename": "foto_31.jpg",
+      "relative_path": "fotos/foto_31.jpg",
+      "title": "Apartamento de 3 quartos, Rio de Janeiro",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119227631.jpg"
+    },
+    {
+      "index": 32,
+      "filename": "foto_32.jpg",
+      "relative_path": "fotos/foto_32.jpg",
+      "title": "Apartamento en venda de 3 quartos Pavuna",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119227630.jpg"
+    },
+    {
+      "index": 33,
+      "filename": "foto_33.jpg",
+      "relative_path": "fotos/foto_33.jpg",
+      "title": "Apartamento de frente à venda na Pavuna, com 96 m² de área construída e 98 m² de",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119227629.jpg"
+    },
+    {
+      "index": 34,
+      "filename": "foto_34.jpg",
+      "relative_path": "fotos/foto_34.jpg",
+      "title": "Apartamento venda 98m² de 3 quartos",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/49/37/1200x1200/7119227626.jpg"
+    }
+  ]
+}

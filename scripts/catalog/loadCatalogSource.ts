@@ -62,6 +62,12 @@ export const canonicalizeSourceRecord = (input: unknown): RawPropertyRecord => {
   return {
     dados_gerais: raw.dados_gerais as RawPropertyRecord['dados_gerais'],
     caracteristicas_principais: canonicalizeFeatures(raw.caracteristicas_principais),
+    caracteristicas_extras: raw.caracteristicas_extras && typeof raw.caracteristicas_extras === 'object'
+      ? raw.caracteristicas_extras as RawPropertyRecord['caracteristicas_extras']
+      : undefined,
+    operacoes: Array.isArray(raw.operacoes)
+      ? raw.operacoes as RawPropertyRecord['operacoes']
+      : undefined,
     descricao: String(raw.descricao ?? ''),
     total_fotos: Number(raw.total_fotos ?? photos.length),
     fotos: photos.map(canonicalizePhoto),

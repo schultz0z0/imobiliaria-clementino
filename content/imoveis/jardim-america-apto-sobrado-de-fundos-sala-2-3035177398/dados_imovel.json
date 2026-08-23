@@ -436,5 +436,32 @@
       "size_kb": 117.830078125,
       "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196176.jpg"
     }
-  ]
+  ],
+  "caracteristicas_extras": {
+    "Áreas privativas": {
+      "20017": {
+        "featureId": "20017",
+        "label": "Área de serviço",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    },
+    "Outros": {
+      "30001": {
+        "featureId": "30001",
+        "label": "Andares",
+        "measure": null,
+        "value": "2",
+        "icon": null
+      },
+      "30004": {
+        "featureId": "30004",
+        "label": "Posição do Apto",
+        "measure": null,
+        "value": "Fundos",
+        "icon": null
+      }
+    }
+  }
 }

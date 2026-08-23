@@ -7,6 +7,7 @@
     "id_imovelweb": "3028206195",
     "preco": "R$ 335.000",
     "condominio": "R$ 475",
+    "iptu": "R$ 10",
     "endereco_completo": "Rua Padre Manoel Rodrigues, 00, Vila da Penha, Rio de Janeiro, RJ",
     "logradouro": "Rua Padre Manoel Rodrigues, 00",
     "bairro": "Vila da Penha",
@@ -189,5 +190,76 @@
       "size_kb": 54.890625,
       "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/28/20/61/95/6103340405.jpg"
     }
-  ]
+  ],
+  "caracteristicas_extras": {
+    "Áreas comuns": {
+      "10030": {
+        "featureId": "10030",
+        "label": "Câmeras de segurança",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "10071": {
+        "featureId": "10071",
+        "label": "Elevador",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "10152": {
+        "featureId": "10152",
+        "label": "Playground",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "10181": {
+        "featureId": "10181",
+        "label": "Salão de festas",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "10208": {
+        "featureId": "10208",
+        "label": "Vigilância 24h",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    },
+    "Áreas privativas": {
+      "20017": {
+        "featureId": "20017",
+        "label": "Área de serviço",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    },
+    "Outros": {
+      "30001": {
+        "featureId": "30001",
+        "label": "Andares",
+        "measure": null,
+        "value": "4",
+        "icon": null
+      },
+      "30002": {
+        "featureId": "30002",
+        "label": "Aceita FGTS",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "30004": {
+        "featureId": "30004",
+        "label": "Posição do Apto",
+        "measure": null,
+        "value": "Frente",
+        "icon": null
+      }
+    }
+  }
 }

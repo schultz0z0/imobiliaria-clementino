@@ -7,6 +7,7 @@
     "id_imovelweb": "3037729115",
     "preco": "R$ 650.000",
     "condominio": "Não informado / Isento",
+    "iptu": "R$ 930",
     "endereco_completo": "Rua Mozart, 711, Jardim América, Rio de Janeiro, RJ",
     "logradouro": "Rua Mozart, 711",
     "bairro": "Jardim América",
@@ -504,5 +505,64 @@
       "size_kb": 168.0927734375,
       "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/91/15/6817360437.jpg"
     }
-  ]
+  ],
+  "caracteristicas_extras": {
+    "Ambientes": {
+      "20228": {
+        "featureId": "20228",
+        "label": "Entrada independiente",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    },
+    "Áreas comuns": {
+      "10016": {
+        "featureId": "10016",
+        "label": "Área de lazer",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "10140": {
+        "featureId": "10140",
+        "label": "Piscina",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    },
+    "Áreas privativas": {
+      "20017": {
+        "featureId": "20017",
+        "label": "Área de serviço",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20065": {
+        "featureId": "20065",
+        "label": "Despensa",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    },
+    "Outros": {
+      "30001": {
+        "featureId": "30001",
+        "label": "Andares",
+        "measure": null,
+        "value": "1",
+        "icon": null
+      },
+      "30002": {
+        "featureId": "30002",
+        "label": "Aceita FGTS",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    }
+  }
 }

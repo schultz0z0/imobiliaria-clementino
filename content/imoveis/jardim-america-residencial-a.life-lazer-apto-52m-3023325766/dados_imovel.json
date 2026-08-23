@@ -290,5 +290,88 @@
       "size_kb": 275.9951171875,
       "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/23/32/57/66/5818939078.jpg"
     }
-  ]
+  ],
+  "caracteristicas_extras": {
+    "Áreas comuns": {
+      "10016": {
+        "featureId": "10016",
+        "label": "Área de lazer",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "10048": {
+        "featureId": "10048",
+        "label": "Churrasqueira (parrilla)",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "10140": {
+        "featureId": "10140",
+        "label": "Piscina",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "10152": {
+        "featureId": "10152",
+        "label": "Playground",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "10165": {
+        "featureId": "10165",
+        "label": "Quadra poliesportiva",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "10181": {
+        "featureId": "10181",
+        "label": "Salão de festas",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "10187": {
+        "featureId": "10187",
+        "label": "Solarium",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "10208": {
+        "featureId": "10208",
+        "label": "Vigilância 24h",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    },
+    "Outros": {
+      "30001": {
+        "featureId": "30001",
+        "label": "Andares",
+        "measure": null,
+        "value": "2",
+        "icon": null
+      },
+      "30002": {
+        "featureId": "30002",
+        "label": "Aceita FGTS",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "30004": {
+        "featureId": "30004",
+        "label": "Posição do Apto",
+        "measure": null,
+        "value": "Frente",
+        "icon": null
+      }
+    }
+  }
 }

@@ -12,13 +12,23 @@ export interface WebsiteProperty {
   state: string;
   price: string;
   priceValue: number;
+  prices: Array<{
+    type: 'Venda' | 'Aluguel';
+    price: string;
+    priceValue: number;
+  }>;
   condoPrice: number;
+  iptuPrice: number;
   beds: number;
   suites: number;
   baths: number;
   parkingSpaces: number;
   area: string;
   areaValue: number;
+  totalArea: string;
+  totalAreaValue: number;
+  latitude?: number;
+  longitude?: number;
   propertyType: string;
   type: 'Venda' | 'Aluguel' | 'Ambos';
   desc: string;

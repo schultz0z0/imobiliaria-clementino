@@ -47,7 +47,7 @@ const isInside = (parent: string, candidate: string): boolean => {
 export const validateCatalog = (
   entries: SourceProperty[],
   overrides: CatalogOverrides,
-  expectedCount = 49,
+  expectedCount = 53,
 ): CatalogValidation => {
   const errors: CatalogIssue[] = [];
   const warnings: CatalogIssue[] = [];
@@ -127,13 +127,12 @@ export const validateCatalog = (
       }
     }
 
-    const price = parseBrl(general?.preco ?? '');
-    if (price !== null && price > 0 && price < 50_000) {
-      warnings.push(issue('warning', 'suspicious-price', `Preço requer revisão: ${general.preco}.`, id));
-    }
-
     try {
       const property = normalizeProperty(record, entry.folderName, overrides);
+      const price = parseBrl(general?.preco ?? '');
+      if (property.type === 'Venda' && price !== null && price > 0 && price < 50_000) {
+        warnings.push(issue('warning', 'suspicious-price', `Preço de venda requer revisão: ${general.preco}.`, id));
+      }
       if (seenSlugs.has(property.slug ?? '')) {
         errors.push(issue('error', 'duplicate-slug', `Slug duplicado: ${property.slug}.`, id));
         entryHasBlockingError = true;
@@ -156,7 +155,7 @@ const run = (): void => {
   const overrides = JSON.parse(
     readFileSync(join(siteRoot, 'content', 'catalog-overrides.json'), 'utf8'),
   ) as CatalogOverrides;
-  const result = validateCatalog(loadCatalogSource(contentRoot), overrides, 49);
+  const result = validateCatalog(loadCatalogSource(contentRoot), overrides, 53);
 
   for (const current of [...result.errors, ...result.warnings]) {
     const prefix = current.severity === 'error' ? 'ERRO' : 'AVISO';

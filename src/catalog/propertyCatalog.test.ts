@@ -10,12 +10,12 @@ import {
   getRelatedProperties,
 } from './propertyCatalog';
 
-test('exposes exactly 49 properties with unique ids and slugs', () => {
+test('exposes exactly 53 properties with unique ids and slugs', () => {
   const properties = getAllProperties();
 
-  assert.equal(properties.length, 49);
-  assert.equal(new Set(properties.map(({ id }) => id)).size, 49);
-  assert.equal(new Set(properties.map(({ slug }) => slug)).size, 49);
+  assert.equal(properties.length, 53);
+  assert.equal(new Set(properties.map(({ id }) => id)).size, 53);
+  assert.equal(new Set(properties.map(({ slug }) => slug)).size, 53);
 });
 
 test('finds a property by its stable slug', () => {

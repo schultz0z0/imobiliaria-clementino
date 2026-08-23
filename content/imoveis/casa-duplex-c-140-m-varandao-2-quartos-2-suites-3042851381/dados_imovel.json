@@ -342,5 +342,48 @@
       "size_kb": 150.607421875,
       "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774806.jpg"
     }
-  ]
+  ],
+  "caracteristicas_extras": {
+    "Ambientes": {
+      "20228": {
+        "featureId": "20228",
+        "label": "Entrada independiente",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    },
+    "Áreas privativas": {
+      "20017": {
+        "featureId": "20017",
+        "label": "Área de serviço",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20166": {
+        "featureId": "20166",
+        "label": "Quintal",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20199": {
+        "featureId": "20199",
+        "label": "Varanda",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    },
+    "Outros": {
+      "30001": {
+        "featureId": "30001",
+        "label": "Andares",
+        "measure": null,
+        "value": "2",
+        "icon": null
+      }
+    }
+  }
 }

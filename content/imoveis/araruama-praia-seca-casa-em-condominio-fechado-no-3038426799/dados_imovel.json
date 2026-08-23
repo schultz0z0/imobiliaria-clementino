@@ -7,11 +7,11 @@
     "id_imovelweb": "3038426799",
     "preco": "R$ 480.000",
     "condominio": "Não informado / Isento",
-    "endereco_completo": "Rua dos Lírios, Araruama, Rio De Janeiro",
+    "endereco_completo": "Rua dos Lírios, Praia Seca, Araruama, RJ",
     "logradouro": "Rua dos Lírios",
-    "bairro": "Araruama",
-    "cidade": "Rio De Janeiro",
-    "estado": null,
+    "bairro": "Praia Seca",
+    "cidade": "Araruama",
+    "estado": "RJ",
     "coordenadas": {
       "latitude": "-22.9191843",
       "longitude": "-42.3151200",
@@ -414,5 +414,113 @@
       "size_kb": 136.857421875,
       "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6858205286.jpg"
     }
-  ]
+  ],
+  "caracteristicas_extras": {
+    "Ambientes": {
+      "20228": {
+        "featureId": "20228",
+        "label": "Entrada independiente",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    },
+    "Áreas comuns": {
+      "10016": {
+        "featureId": "10016",
+        "label": "Área de lazer",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "10140": {
+        "featureId": "10140",
+        "label": "Piscina",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    },
+    "Áreas privativas": {
+      "20012": {
+        "featureId": "20012",
+        "label": "Ar condicionado",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20017": {
+        "featureId": "20017",
+        "label": "Área de serviço",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20048": {
+        "featureId": "20048",
+        "label": "Churrasqueira (parrilla)",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20056": {
+        "featureId": "20056",
+        "label": "Cozinha americana",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20065": {
+        "featureId": "20065",
+        "label": "Despensa",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20080": {
+        "featureId": "20080",
+        "label": "Espaço gourmet",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20110": {
+        "featureId": "20110",
+        "label": "Jardim",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20199": {
+        "featureId": "20199",
+        "label": "Varanda",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20230": {
+        "featureId": "20230",
+        "label": "Suítes",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    },
+    "Outros": {
+      "30001": {
+        "featureId": "30001",
+        "label": "Andares",
+        "measure": null,
+        "value": "1",
+        "icon": null
+      },
+      "30002": {
+        "featureId": "30002",
+        "label": "Aceita FGTS",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    }
+  }
 }

@@ -387,5 +387,81 @@
       "size_kb": 56.21484375,
       "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192714.jpg"
     }
-  ]
+  ],
+  "caracteristicas_extras": {
+    "Áreas privativas": {
+      "20012": {
+        "featureId": "20012",
+        "label": "Ar condicionado",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20017": {
+        "featureId": "20017",
+        "label": "Área de serviço",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20050": {
+        "featureId": "20050",
+        "label": "Closet",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20058": {
+        "featureId": "20058",
+        "label": "Cozinha independente",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20065": {
+        "featureId": "20065",
+        "label": "Despensa",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20166": {
+        "featureId": "20166",
+        "label": "Quintal",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20177": {
+        "featureId": "20177",
+        "label": "Sala de jantar",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20199": {
+        "featureId": "20199",
+        "label": "Varanda",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20230": {
+        "featureId": "20230",
+        "label": "Suítes",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    },
+    "Outros": {
+      "30001": {
+        "featureId": "30001",
+        "label": "Andares",
+        "measure": null,
+        "value": "2",
+        "icon": null
+      }
+    }
+  }
 }

@@ -7,6 +7,7 @@
     "id_imovelweb": "3018326088",
     "preco": "R$ 225.000",
     "condominio": "R$ 0",
+    "iptu": "R$ 1",
     "endereco_completo": "Rua Arinos, 162, Jardim América, Rio de Janeiro, RJ",
     "logradouro": "Rua Arinos, 162",
     "bairro": "Jardim América",
@@ -308,5 +309,46 @@
       "size_kb": 431.318359375,
       "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/88/5499997727.jpg"
     }
-  ]
+  ],
+  "caracteristicas_extras": {
+    "Áreas privativas": {
+      "20017": {
+        "featureId": "20017",
+        "label": "Área de serviço",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20058": {
+        "featureId": "20058",
+        "label": "Cozinha independente",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20074": {
+        "featureId": "20074",
+        "label": "Entrada de serviço",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    },
+    "Outros": {
+      "30002": {
+        "featureId": "30002",
+        "label": "Aceita FGTS",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "30004": {
+        "featureId": "30004",
+        "label": "Posição do Apto",
+        "measure": null,
+        "value": "Frente",
+        "icon": null
+      }
+    }
+  }
 }

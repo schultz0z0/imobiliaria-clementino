@@ -1,0 +1,300 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/jardim-america-cond.-america-life-apto-3-qtos-1-3021262193.html",
+  "dados_gerais": {
+    "titulo": "Jardim América  - Cond. América Life, Apto 3 Qtos, 1 Vga.",
+    "subtitulo": "Apartamento · 68m² · 3 quartos · 1 vaga",
+    "codigo_imovel": "0017",
+    "id_imovelweb": "3021262193",
+    "preco": "R$ 158.000",
+    "condominio": "R$ 290",
+    "endereco_completo": "Rua Georges Bizer, 413, Jardim América, Rio de Janeiro, RJ",
+    "logradouro": "Rua Georges Bizer, 413",
+    "bairro": "Jardim América",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.808634300000000",
+      "longitude": "-43.319056100000000",
+      "google_maps_url": "https://www.google.com/maps?q=-22.808634300000000,-43.319056100000000"
+    },
+    "data_publicacao": "Não informada",
+    "antiguidade": "Não informada"
+  },
+  "operacoes": [
+    {
+      "finalidade": "Venda",
+      "preco": "R$ 158.000"
+    }
+  ],
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "69",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "68",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiro",
+      "measure": null,
+      "value": "1",
+      "icon": "bano"
+    },
+    "CFT7": {
+      "featureId": "CFT7",
+      "label": "vaga",
+      "measure": null,
+      "value": "1",
+      "icon": "cochera"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "3",
+      "icon": "dormitorio"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "20",
+      "icon": "antiguedad"
+    }
+  },
+  "caracteristicas_extras": {
+    "Áreas comuns": {
+      "10016": {
+        "featureId": "10016",
+        "label": "Área de lazer",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "10030": {
+        "featureId": "10030",
+        "label": "Câmeras de segurança",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "10048": {
+        "featureId": "10048",
+        "label": "Churrasqueira (parrilla)",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "10084": {
+        "featureId": "10084",
+        "label": "Estacionamento para visitantes",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "10140": {
+        "featureId": "10140",
+        "label": "Piscina",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "10152": {
+        "featureId": "10152",
+        "label": "Playground",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "10158": {
+        "featureId": "10158",
+        "label": "Portaria 24 horas",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "10165": {
+        "featureId": "10165",
+        "label": "Quadra poliesportiva",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "10181": {
+        "featureId": "10181",
+        "label": "Salão de festas",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    },
+    "Áreas privativas": {
+      "20010": {
+        "featureId": "20010",
+        "label": "Aquecedor",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20017": {
+        "featureId": "20017",
+        "label": "Área de serviço",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20057": {
+        "featureId": "20057",
+        "label": "Cozinha Gourmet",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    }
+  },
+  "descricao": "Em Jardim América, no Residencial América Life, apartamento de 69m² no 4º andar, composto por sala, 3 quartos e 1 vaga de garagem. O condomínio possui área de lazer, espaço gourmet, piscina, churrasqueiras, quadra poliesportiva e playground. Imóvel à venda por R$ 158.000, com condomínio de R$ 290.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 18,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Apartamento de 3 quartos, Rio de Janeiro",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/resize/2/30/21/26/21/93/1200x1200/5693168366.jpg?isFirstImage=true"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Apartamento à venda com 3 quartos em Jardim América",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/resize/2/30/21/26/21/93/1200x1200/5693168379.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Em Jardim América - Residencial América Life, Apto 69m², 4º andar, sala, 3 Qtos,",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/resize/2/30/21/26/21/93/1200x1200/5693168367.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Apartamento de 69m² à venda com 3 quartos",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/resize/2/30/21/26/21/93/1200x1200/5693168375.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Apartamento de 69m² à venda em Jardim América",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/resize/2/30/21/26/21/93/1200x1200/5693168374.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Apartamento de 69m² à venda em Jardim América",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/resize/2/30/21/26/21/93/1200x1200/5693168373.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Apartamento de 3 quartos à venda por R$ 158.000",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/resize/2/30/21/26/21/93/1200x1200/5693168400.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Apartamento · 68m² · 3 quartos · 1 vaga - Imobiliária Clementino",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/resize/2/30/21/26/21/93/1200x1200/5693168376.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Apartamento de 3 quartos à venda",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/resize/2/30/21/26/21/93/1200x1200/5693168405.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Apartamento · 68m² · 3 quartos · 1 vaga",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/resize/2/30/21/26/21/93/1200x1200/5693168370.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Apartamento de 3 quartos, Rio de Janeiro",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/resize/2/30/21/26/21/93/1200x1200/5693168372.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Apartamento à venda com 3 quartos em Jardim América",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/resize/2/30/21/26/21/93/1200x1200/5693168383.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Em Jardim América - Residencial América Life, Apto 69m², 4º andar, sala, 3 Qtos,",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/resize/2/30/21/26/21/93/1200x1200/5693168381.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Apartamento de 69m² à venda com 3 quartos",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/resize/2/30/21/26/21/93/1200x1200/5693168378.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Apartamento de 69m² à venda em Jardim América",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/resize/2/30/21/26/21/93/1200x1200/5693168369.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Apartamento de 69m² à venda em Jardim América",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/resize/2/30/21/26/21/93/1200x1200/5693168365.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Apartamento de 3 quartos à venda por R$ 158.000",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/resize/2/30/21/26/21/93/1200x1200/5693168382.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Apartamento · 68m² · 3 quartos · 1 vaga - Imobiliária Clementino",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/resize/2/30/21/26/21/93/1200x1200/5693168371.jpg"
+    }
+  ]
+}

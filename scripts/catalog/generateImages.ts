@@ -122,7 +122,7 @@ const run = async (): Promise<void> => {
   const overrides = JSON.parse(
     readFileSync(join(siteRoot, 'content', 'catalog-overrides.json'), 'utf8'),
   ) as CatalogOverrides;
-  const validation = validateCatalog(entries, overrides, 49);
+  const validation = validateCatalog(entries, overrides, 53);
   if (validation.errors.length > 0) throw new Error(`Catálogo inválido: ${validation.errors.length} erro(s).`);
   const stats = await generateAllImages(entries, join(siteRoot, 'public', 'imoveis'));
   console.log(`Imagens: ${stats.generatedFiles} geradas, ${stats.reusedFiles} reutilizadas.`);

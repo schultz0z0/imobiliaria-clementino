@@ -17,9 +17,12 @@ test('contains the complete real property inventory', () => {
     photoCount += record.fotos.length;
   }
 
-  assert.equal(folders.length, 49);
-  assert.equal(ids.size, 49);
-  assert.equal(photoCount, 1_416);
+  assert.equal(folders.length, 53);
+  assert.equal(ids.size, 53);
+  for (const requiredId of ['3043565436', '3043564937', '3021262193', '3041818174']) {
+    assert.ok(ids.has(requiredId), `Property ${requiredId} must exist in the content inventory.`);
+  }
+  assert.equal(photoCount, 1_543);
 });
 
 test('keeps property 0055 as a sale at its advertised sale price', () => {
@@ -42,4 +45,26 @@ test('keeps property 0055 as a sale at its advertised sale price', () => {
   assert.equal(property.priceValue, 158_000);
   assert.equal(property.price, 'R$\u00a0158.000');
   assert.doesNotMatch(property.desc, /aluguel|loca[cç][aã]o/i);
+});
+
+test('keeps property 0017 as a R$ 158,000 sale with its confirmed condominium charge', () => {
+  const propertyId = '3021262193';
+  const folder = readdirSync(contentRoot, { withFileTypes: true })
+    .find((entry) => entry.isDirectory() && entry.name.endsWith(propertyId));
+
+  assert.ok(folder, `Property ${propertyId} must exist in the content inventory.`);
+
+  const record = JSON.parse(
+    readFileSync(join(contentRoot, folder.name, 'dados_imovel.json'), 'utf8'),
+  );
+  const overrides = JSON.parse(
+    readFileSync(join(process.cwd(), 'content', 'catalog-overrides.json'), 'utf8'),
+  );
+  const property = normalizeProperty(record, folder.name, overrides);
+
+  assert.equal(property.reference, '0017');
+  assert.equal(property.type, 'Venda');
+  assert.equal(property.priceValue, 158_000);
+  assert.equal(property.condoPrice, 290);
+  assert.doesNotMatch(property.desc, /250\.000|aluguel|loca[cç][aã]o/i);
 });

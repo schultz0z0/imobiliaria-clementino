@@ -32,7 +32,7 @@ export const slugify = (value: string): string => value
   .replace(/^-+|-+$/g, '');
 
 const parseFeatureNumber = (feature: RawFeature | undefined): number => {
-  if (!feature) return 0;
+  if (!feature?.value) return 0;
   const parsed = Number(feature.value.replace(',', '.'));
   return Number.isFinite(parsed) && parsed >= 0 ? parsed : 0;
 };
@@ -60,8 +60,23 @@ const formatFeature = (feature: RawFeature): string | null => {
   if (!label) return null;
   const normalizedLabel = normalizeSearchText(label);
   if (/^(tot\.?|util|quartos?|banheiros?|suites?|vagas?)$/.test(normalizedLabel)) return null;
+  const value = feature.value?.trim();
   const measure = feature.measure ? ` ${feature.measure}` : '';
-  return `${label}: ${feature.value}${measure}`;
+  return value ? `${label}: ${value}${measure}` : label;
+};
+
+const formatExtraFeature = (category: string, feature: RawFeature): string | null => {
+  const label = feature.label?.trim();
+  if (!label) return null;
+  const value = feature.value?.trim();
+  const measure = feature.measure ? ` ${feature.measure}` : '';
+  return value ? `${category} — ${label}: ${value}${measure}` : `${category} — ${label}`;
+};
+
+const parseCoordinate = (value: string | number | undefined): number | undefined => {
+  if (value === undefined || value === '') return undefined;
+  const parsed = Number(typeof value === 'string' ? value.replace(',', '.') : value);
+  return Number.isFinite(parsed) ? parsed : undefined;
 };
 
 export const normalizeProperty = (
@@ -71,21 +86,50 @@ export const normalizeProperty = (
 ): WebsiteProperty => {
   const general = record.dados_gerais;
   const id = general.id_imovelweb.trim();
-  const priceValue = parseBrl(general.preco);
-  if (priceValue === null) throw new Error(`Preço inválido para o imóvel ${id}.`);
-
   const type = resolvePurpose(record, overrides);
+  const normalizedOperations = (record.operacoes ?? [])
+    .map((operation) => {
+      const priceValue = parseBrl(operation.preco);
+      if (priceValue === null || priceValue <= 0) {
+        throw new Error(`Preço inválido na operação ${operation.finalidade} do imóvel ${id}.`);
+      }
+      return {
+        type: operation.finalidade,
+        price: `${BRL_FORMATTER.format(priceValue)}${operation.finalidade === 'Aluguel' ? ' / mês' : ''}`,
+        priceValue,
+      };
+    });
+  const fallbackPriceValue = parseBrl(general.preco);
+  if (fallbackPriceValue === null && normalizedOperations.length === 0) {
+    throw new Error(`Preço inválido para o imóvel ${id}.`);
+  }
+  const prices = normalizedOperations.length > 0
+    ? normalizedOperations
+    : [{
+      type,
+      price: `${BRL_FORMATTER.format(fallbackPriceValue!)}${type === 'Aluguel' ? ' / mês' : ''}`,
+      priceValue: fallbackPriceValue!,
+    }];
+  const primaryPrice = prices.find((operation) => operation.type === type);
+  if (!primaryPrice) {
+    throw new Error(`O imóvel ${id} não possui valor para a finalidade ${type}.`);
+  }
   const areaValue = parseFeatureNumber(
     record.caracteristicas_principais.CFT101 ?? record.caracteristicas_principais.CFT100,
   );
+  const totalAreaValue = parseFeatureNumber(record.caracteristicas_principais.CFT100);
   const images = [...record.fotos]
     .sort((left, right) => left.index - right.index)
     .map((photo) => `/imoveis/${id}/foto-${String(photo.index).padStart(2, '0')}.webp`);
-  const features = Array.from(new Set(
-    Object.values(record.caracteristicas_principais)
+  const features = Array.from(new Set([
+    ...Object.values(record.caracteristicas_principais)
       .map(formatFeature)
       .filter((feature): feature is string => Boolean(feature)),
-  ));
+    ...Object.entries(record.caracteristicas_extras ?? {})
+      .flatMap(([category, categoryFeatures]) => Object.values(categoryFeatures)
+        .map((feature) => formatExtraFeature(category, feature)))
+      .filter((feature): feature is string => Boolean(feature)),
+  ]));
 
   return {
     id,
@@ -99,18 +143,24 @@ export const normalizeProperty = (
     city: general.cidade.trim(),
     district: general.bairro.trim(),
     state: general.estado?.trim().toUpperCase() || undefined,
-    price: `${BRL_FORMATTER.format(priceValue)}${type === 'Aluguel' ? ' / mês' : ''}`,
-    priceValue,
-    condoPrice: parseBrl(general.condominio) ?? undefined,
+    price: primaryPrice.price,
+    priceValue: primaryPrice.priceValue,
+    prices,
+    condoPrice: parseBrl(general.condominio) ?? 0,
+    iptuPrice: parseBrl(general.iptu ?? '') ?? 0,
     beds: parseFeatureNumber(record.caracteristicas_principais.CFT2),
     suites: parseFeatureNumber(record.caracteristicas_principais.CFT4),
     baths: parseFeatureNumber(record.caracteristicas_principais.CFT3),
     parkingSpaces: parseFeatureNumber(record.caracteristicas_principais.CFT7),
     area: `${areaValue}m²`,
     areaValue,
+    totalArea: `${totalAreaValue}m²`,
+    totalAreaValue,
+    latitude: parseCoordinate(general.coordenadas?.latitude),
+    longitude: parseCoordinate(general.coordenadas?.longitude),
     propertyType: general.subtitulo.split('·')[0]?.trim() || 'Imóvel',
     type,
-    desc: record.descricao.trim(),
+    desc: record.descricao.replace(/<br\s*\/?>/gi, '\n').trim(),
     features,
   };
 };

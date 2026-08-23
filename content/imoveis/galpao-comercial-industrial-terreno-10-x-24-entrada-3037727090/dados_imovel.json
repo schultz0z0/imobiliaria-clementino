@@ -517,5 +517,23 @@
       "size_kb": 62.5078125,
       "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874111.jpg"
     }
-  ]
+  ],
+  "caracteristicas_extras": {
+    "Outros": {
+      "30001": {
+        "featureId": "30001",
+        "label": "Andares",
+        "measure": null,
+        "value": "2",
+        "icon": null
+      },
+      "30002": {
+        "featureId": "30002",
+        "label": "Aceita FGTS",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    }
+  }
 }

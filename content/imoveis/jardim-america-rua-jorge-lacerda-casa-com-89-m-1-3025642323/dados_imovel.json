@@ -382,5 +382,16 @@
       "size_kb": 116.365234375,
       "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063169.jpg"
     }
-  ]
+  ],
+  "caracteristicas_extras": {
+    "Ambientes": {
+      "20228": {
+        "featureId": "20228",
+        "label": "Entrada independiente",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    }
+  }
 }

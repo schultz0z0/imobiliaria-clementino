@@ -355,5 +355,30 @@
       "size_kb": 214.3203125,
       "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/32/20/17/82/6484443113.jpg"
     }
-  ]
+  ],
+  "caracteristicas_extras": {
+    "Outros": {
+      "30001": {
+        "featureId": "30001",
+        "label": "Andares",
+        "measure": null,
+        "value": "3",
+        "icon": null
+      },
+      "30002": {
+        "featureId": "30002",
+        "label": "Aceita FGTS",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "30004": {
+        "featureId": "30004",
+        "label": "Posição do Apto",
+        "measure": null,
+        "value": "Frente",
+        "icon": null
+      }
+    }
+  }
 }

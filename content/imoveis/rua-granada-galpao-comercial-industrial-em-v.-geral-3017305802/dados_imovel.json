@@ -20,6 +20,16 @@
     "data_publicacao": "26/08/2025",
     "antiguidade": "Publicado há 358 dias"
   },
+  "operacoes": [
+    {
+      "finalidade": "Venda",
+      "preco": "R$ 420.000"
+    },
+    {
+      "finalidade": "Aluguel",
+      "preco": "R$ 5.000"
+    }
+  ],
   "caracteristicas_principais": {
     "CFT100": {
       "featureId": "CFT100",

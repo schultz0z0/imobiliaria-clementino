@@ -407,5 +407,79 @@
       "size_kb": 380.9462890625,
       "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/22/03/59/05/5727006530.jpg"
     }
-  ]
+  ],
+  "caracteristicas_extras": {
+    "Áreas privativas": {
+      "20017": {
+        "featureId": "20017",
+        "label": "Área de serviço",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20058": {
+        "featureId": "20058",
+        "label": "Cozinha independente",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20065": {
+        "featureId": "20065",
+        "label": "Despensa",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20077": {
+        "featureId": "20077",
+        "label": "Escritório",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20110": {
+        "featureId": "20110",
+        "label": "Jardim",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20117": {
+        "featureId": "20117",
+        "label": "Lavanderia",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20135": {
+        "featureId": "20135",
+        "label": "Permite animais",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20166": {
+        "featureId": "20166",
+        "label": "Quintal",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20199": {
+        "featureId": "20199",
+        "label": "Varanda",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20230": {
+        "featureId": "20230",
+        "label": "Suítes",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    }
+  }
 }

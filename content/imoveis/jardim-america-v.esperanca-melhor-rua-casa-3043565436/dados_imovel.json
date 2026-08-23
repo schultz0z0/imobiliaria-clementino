@@ -1,0 +1,379 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/jardim-america-v.esperanca-melhor-rua-casa-3043565436.html",
+  "dados_gerais": {
+    "titulo": "Jardim América - V.Esperança, Melhor Rua, Casa, Quintal, 1 Qto, Sala Jantar/Estar, Cozinha e Terraço",
+    "subtitulo": "Casa · 73m² · 1 quarto",
+    "codigo_imovel": "0023",
+    "id_imovelweb": "3043565436",
+    "preco": "R$ 190.000",
+    "condominio": "Não informado / Isento",
+    "endereco_completo": "Travessa Antônio Lopes, 142, Jardim América, Rio de Janeiro, RJ",
+    "logradouro": "Travessa Antônio Lopes, 142",
+    "bairro": "Jardim América",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.814382700000000",
+      "longitude": "-43.317329900000000",
+      "google_maps_url": "https://www.google.com/maps?q=-22.814382700000000,-43.317329900000000"
+    },
+    "data_publicacao": "Não informada",
+    "antiguidade": "Não informada"
+  },
+  "operacoes": [
+    {
+      "finalidade": "Venda",
+      "preco": "R$ 190.000"
+    }
+  ],
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "75",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "73",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiro",
+      "measure": null,
+      "value": "1",
+      "icon": "bano"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "1",
+      "icon": "dormitorio"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "40",
+      "icon": "antiguedad"
+    }
+  },
+  "caracteristicas_extras": {
+    "Ambientes": {
+      "20228": {
+        "featureId": "20228",
+        "label": "Entrada independiente",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    },
+    "Áreas privativas": {
+      "20017": {
+        "featureId": "20017",
+        "label": "Área de serviço",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20057": {
+        "featureId": "20057",
+        "label": "Cozinha Gourmet",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20135": {
+        "featureId": "20135",
+        "label": "Permite animais",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20166": {
+        "featureId": "20166",
+        "label": "Quintal",
+        "measure": null,
+        "value": null,
+        "icon": null
+      },
+      "20177": {
+        "featureId": "20177",
+        "label": "Sala de jantar",
+        "measure": null,
+        "value": null,
+        "icon": null
+      }
+    },
+    "Outros": {
+      "30001": {
+        "featureId": "30001",
+        "label": "Andares",
+        "measure": null,
+        "value": "1",
+        "icon": null
+      }
+    }
+  },
+  "descricao": "Esta casa térrea com entrada independente está disponível para venda no Jardim América. O imóvel apresenta 73 m² de área construída bem distribuídos em 1 quarto, 1 banheiro, sala de jantar e uma cozinha gourmet funcional, além de área de serviço separada. O espaço externo conta com um quintal privativo ideal para quem tem animais de estimação, pois o imóvel permite animais. Localizada em uma região residencial consolidada e muito tranquila, a casa oferece excelente conectividade com vias principais do bairro, proximidade a padarias, farmácias, mercados e pontos de transporte público local, garantindo praticidade e conforto para o cotidiano.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 35,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Casa de 1 quarto, Rio de Janeiro",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265598.jpg?isFirstImage=true"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Casa en venda de 1 quarto Jardim América",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265587.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Esta casa térrea com entrada independente está disponível para venda no Jardim A",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265605.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Casa venda 75m² de 1 quarto",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265584.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Casa 75m² venda Jardim América",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265604.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Casa 75m² venda Jardim América",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265586.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Casa de 1 quarto venda R$ 190.000",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265594.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Casa · 73m² · 1 quarto - Imobiliária Clementino",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265609.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Casa venda de 1 quarto",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265590.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Casa · 73m² · 1 quarto",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265599.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Casa en venda de 1 quarto Jardim América",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265588.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Esta casa térrea com entrada independente está disponível para venda no Jardim A",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265591.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Casa venda 75m² de 1 quarto",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265583.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Casa 75m² venda Jardim América",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265592.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Casa 75m² venda Jardim América",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265601.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Casa de 1 quarto venda R$ 190.000",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265603.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Casa · 73m² · 1 quarto - Imobiliária Clementino",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265600.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Casa venda de 1 quarto",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265597.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Casa · 73m² · 1 quarto",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265593.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Casa de 1 quarto, Rio de Janeiro",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265595.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Esta casa térrea com entrada independente está disponível para venda no Jardim A",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265585.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Casa venda 75m² de 1 quarto",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265582.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Casa 75m² venda Jardim América",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265589.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Casa de 1 quarto venda R$ 190.000",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265596.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Casa venda de 1 quarto",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265608.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Casa venda de 1 quarto",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119270059.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Casa · 73m² · 1 quarto",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119270061.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Casa de 1 quarto, Rio de Janeiro",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265606.jpg"
+    },
+    {
+      "index": 29,
+      "filename": "foto_29.jpg",
+      "relative_path": "fotos/foto_29.jpg",
+      "title": "Casa de 1 quarto, Rio de Janeiro",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119270057.jpg"
+    },
+    {
+      "index": 30,
+      "filename": "foto_30.jpg",
+      "relative_path": "fotos/foto_30.jpg",
+      "title": "Casa en venda de 1 quarto Jardim América",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265607.jpg"
+    },
+    {
+      "index": 31,
+      "filename": "foto_31.jpg",
+      "relative_path": "fotos/foto_31.jpg",
+      "title": "Casa en venda de 1 quarto Jardim América",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119270056.jpg"
+    },
+    {
+      "index": 32,
+      "filename": "foto_32.jpg",
+      "relative_path": "fotos/foto_32.jpg",
+      "title": "Esta casa térrea com entrada independente está disponível para venda no Jardim A",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119270058.jpg"
+    },
+    {
+      "index": 33,
+      "filename": "foto_33.jpg",
+      "relative_path": "fotos/foto_33.jpg",
+      "title": "Casa venda 75m² de 1 quarto",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119265602.jpg"
+    },
+    {
+      "index": 34,
+      "filename": "foto_34.jpg",
+      "relative_path": "fotos/foto_34.jpg",
+      "title": "Casa venda 75m² de 1 quarto",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119270054.jpg"
+    },
+    {
+      "index": 35,
+      "filename": "foto_35.jpg",
+      "relative_path": "fotos/foto_35.jpg",
+      "title": "Casa 75m² venda Jardim América",
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/43/56/54/36/1200x1200/7119270055.jpg"
+    }
+  ]
+}

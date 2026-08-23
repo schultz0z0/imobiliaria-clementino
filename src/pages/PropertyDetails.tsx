@@ -51,7 +51,20 @@ export const PropertyDetails = () => {
             <div className="flex flex-wrap items-center gap-3"><span className="rounded-[var(--radius-compact)] border border-[#d7b661]/30 bg-[#d7b661]/10 px-3 py-1 text-xs font-semibold text-[#d7b661]">{property.type}</span><span className="text-xs uppercase tracking-[0.18em] text-white/35">Ref. {property.reference}</span></div>
             <h1 className="mt-5 text-4xl font-semibold leading-tight tracking-tight text-white md:text-6xl">{property.title}</h1>
             <p className="mt-5 flex items-start gap-2 text-base text-white/55"><MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[#d7b661]" />{property.location}</p>
-            <div className="mt-8 flex flex-wrap items-end gap-x-6 gap-y-2"><strong className="text-4xl font-semibold text-[#d7b661]">{property.price}</strong>{property.condoPrice > 0 && <span className="pb-1 text-sm text-white/45">Condomínio: {property.condoPrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>}</div>
+            <div className="mt-8 grid gap-3">
+              {(property.prices?.length ? property.prices : [{ type: property.type, price: property.price }]).map((operation) => (
+                <div key={`${operation.type}-${operation.price}`} className="flex flex-wrap items-end gap-x-3 gap-y-1">
+                  <span className="pb-1 text-xs font-semibold uppercase tracking-[0.16em] text-white/40">{operation.type}</span>
+                  <strong className="text-4xl font-semibold text-[#d7b661]">{operation.price}</strong>
+                </div>
+              ))}
+              {(property.condoPrice > 0 || property.iptuPrice > 0) && (
+                <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm text-white/45">
+                  {property.condoPrice > 0 && <span>Condomínio: {property.condoPrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>}
+                  {property.iptuPrice > 0 && <span>IPTU: {property.iptuPrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</span>}
+                </div>
+              )}
+            </div>
             <div className="mt-9"><PropertyFacts property={property} /></div>
 
             <section className="mt-14"><h2 className="text-2xl font-semibold text-white">Sobre o imóvel</h2><p className="mt-5 whitespace-pre-line text-base leading-8 text-white/60">{property.desc}</p></section>
