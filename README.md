@@ -78,11 +78,10 @@ O build estático é gerado pelo `Dockerfile` multi-stage e servido pelo Nginx. 
 - Traefik executando no mesmo Docker Engine, com acesso ao Docker Socket.
 - Os entrypoints do Traefik chamados `web` e `websecure`.
 - O certificate resolver do Traefik chamado `letsencrypt`.
-- Registro DNS de `clementinoimoveis.com.br` apontando para a VPS.
-- Registro DNS de `www.clementinoimoveis.com.br` apontando para a VPS.
+- Registro DNS de `imobiliaria.solucoes-nexus.tech` apontando para a VPS.
 - Portas TCP 80 e 443 liberadas para o Traefik.
 
-Se a VPS não tiver IPv6 configurado, não crie um registro AAAA. Antes de iniciar a aplicação, confirme que os dois nomes já resolvem para o endereço correto da VPS para que o Let's Encrypt consiga validar os certificados.
+Se a VPS não tiver IPv6 configurado, não crie um registro AAAA. Antes de iniciar a aplicação, confirme que o domínio já resolve para o endereço correto da VPS para que o Let's Encrypt consiga validar o certificado.
 
 ### Primeira implantação
 
@@ -93,9 +92,9 @@ cp .env.production.example .env.production
 docker compose --env-file .env.production -f compose.prod.yaml up -d --build
 ```
 
-O arquivo `.env.production` não deve ser commitado. O valor padrão do domínio já é `clementinoimoveis.com.br`.
+O arquivo `.env.production` não deve ser commitado. O valor padrão do domínio já é `imobiliaria.solucoes-nexus.tech`.
 
-O container do site não publica portas diretamente no host. O Traefik usa as labels para enviar o tráfego HTTPS à porta interna 80 do Nginx. O endereço `www.clementinoimoveis.com.br` é redirecionado permanentemente para `https://clementinoimoveis.com.br`.
+O container do site não publica portas diretamente no host. O Traefik usa as labels para enviar o tráfego HTTPS de `imobiliaria.solucoes-nexus.tech` à porta interna 80 do Nginx.
 
 ### Estado, healthcheck e logs
 

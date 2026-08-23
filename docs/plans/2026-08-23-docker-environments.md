@@ -63,7 +63,7 @@ Expected: FAIL because the Compose and environment example do not exist.
 
 **Step 2: Add the environment example**
 
-Define `COMPOSE_PROJECT_NAME=imobiliaria-clementino` and `DOMAIN=clementinoimoveis.com.br`. Do not add credentials or ACME configuration because those remain owned by the isolated Traefik deployment.
+Define `COMPOSE_PROJECT_NAME=imobiliaria-clementino` and `DOMAIN=imobiliaria.solucoes-nexus.tech`. Do not add credentials or ACME configuration because those remain owned by the isolated Traefik deployment.
 
 **Step 3: Create the production service**
 
@@ -72,8 +72,6 @@ Build the existing production `Dockerfile`, expose internal port 80, use `restar
 - `traefik.enable=true`
 - the apex HTTPS router on `websecure`
 - TLS through `letsencrypt`
-- the `www` HTTPS router
-- a permanent `redirectregex` middleware from `www` to the apex domain
 - the explicit Nginx load-balancer port 80
 
 Do not add the Traefik service, a Compose dependency, a public host port, or an external proxy network.
@@ -116,7 +114,7 @@ Add clone, build/start, logs, status, update, rollback guidance, and the `www` r
 
 **Step 4: Verify documented commands and names**
 
-Run: `rg -n "compose.dev.yaml|compose.prod.yaml|clementinoimoveis.com.br|localhost:4174" README.md`
+Run: `rg -n "compose.dev.yaml|compose.prod.yaml|imobiliaria.solucoes-nexus.tech|localhost:4174" README.md`
 
 Expected: all environment commands and endpoints are present.
 
