@@ -1,0 +1,305 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/botafogo-apto-91m-3-qtos-1-wc-vista-lateral-pro-3017305805.html",
+  "dados_gerais": {
+    "titulo": "Botafogo - Apto 91m², 3 Qtos, 1 WC, Vista Lateral Pro Cristo",
+    "subtitulo": "Apartamento · 91m² · 3 quartos",
+    "codigo_imovel": "AP0029",
+    "id_imovelweb": "3017305805",
+    "preco": "R$ 830.000",
+    "condominio": "R$ 1160",
+    "endereco_completo": "Rua Voluntários da Pátria, Botafogo, Rio de Janeiro, RJ",
+    "logradouro": "Rua Voluntários da Pátria",
+    "bairro": "Botafogo",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.9527217",
+      "longitude": "-43.1880723",
+      "google_maps_url": "https://www.google.com/maps?q=-22.9527217,-43.1880723"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 358 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "91",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "91",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiro",
+      "measure": null,
+      "value": "1",
+      "icon": "bano"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "3",
+      "icon": "dormitorio"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "30",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Apartamento amplo com 91m², claro, arejado e com vista lateral para o Cristo Redentor. Composto por sala ampla, 3 quartos com armários planejados, banheiro social, cozinha integrada à área de serviço e dependência completa.<br>O prédio oferece acessibilidade, bicicletário, espaço com brinquedos para crianças e salão de festas. <br>Excelente localização, próximo ao farto comércio do bairro, da Cobal do Humaitá e com mobilidade para os demais bairros.<br>Possibilidade de alugar vaga no condomínio.?<br>Não perca esta oportunidade única de morar ou investir.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "(21) 96",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 26,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Apartamento · 91m² · 3 quartos",
+      "size_bytes": 68058,
+      "size_kb": 66.462890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512434.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Apartamento de 3 quartos, Rio de Janeiro",
+      "size_bytes": 56135,
+      "size_kb": 54.8193359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512468.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Apartamento en venda de 3 quartos Botafogo",
+      "size_bytes": 49086,
+      "size_kb": 47.935546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512488.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Apartamento amplo com 91m², claro, arejado e com vista lateral para o Cristo Red",
+      "size_bytes": 46867,
+      "size_kb": 45.7685546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512676.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Apartamento venda 91m² de 3 quartos",
+      "size_bytes": 43738,
+      "size_kb": 42.712890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512415.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Apartamento 91m² venda Botafogo",
+      "size_bytes": 71226,
+      "size_kb": 69.556640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512469.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Apartamento 91m² venda Botafogo",
+      "size_bytes": 54001,
+      "size_kb": 52.7353515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512467.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Apartamento de 3 quartos venda R$ 830.000",
+      "size_bytes": 69109,
+      "size_kb": 67.4892578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512484.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Apartamento · 91m² · 3 quartos - Imobiliária Clementino",
+      "size_bytes": 92750,
+      "size_kb": 90.576171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512516.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Apartamento venda de 3 quartos",
+      "size_bytes": 97105,
+      "size_kb": 94.8291015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512459.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Apartamento · 91m² · 3 quartos",
+      "size_bytes": 83090,
+      "size_kb": 81.142578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512698.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Apartamento de 3 quartos, Rio de Janeiro",
+      "size_bytes": 70910,
+      "size_kb": 69.248046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512528.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Apartamento en venda de 3 quartos Botafogo",
+      "size_bytes": 92215,
+      "size_kb": 90.0537109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512583.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Apartamento amplo com 91m², claro, arejado e com vista lateral para o Cristo Red",
+      "size_bytes": 50298,
+      "size_kb": 49.119140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512499.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Apartamento venda 91m² de 3 quartos",
+      "size_bytes": 43921,
+      "size_kb": 42.8916015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512489.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Apartamento 91m² venda Botafogo",
+      "size_bytes": 67998,
+      "size_kb": 66.404296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512496.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Apartamento 91m² venda Botafogo",
+      "size_bytes": 65225,
+      "size_kb": 63.6962890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512563.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Apartamento de 3 quartos venda R$ 830.000",
+      "size_bytes": 75582,
+      "size_kb": 73.810546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512513.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Apartamento · 91m² · 3 quartos - Imobiliária Clementino",
+      "size_bytes": 64041,
+      "size_kb": 62.5400390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512475.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Apartamento venda de 3 quartos",
+      "size_bytes": 55280,
+      "size_kb": 53.984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512498.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Apartamento · 91m² · 3 quartos",
+      "size_bytes": 80423,
+      "size_kb": 78.5380859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512568.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Apartamento de 3 quartos, Rio de Janeiro",
+      "size_bytes": 76043,
+      "size_kb": 74.2607421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512526.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Apartamento en venda de 3 quartos Botafogo",
+      "size_bytes": 170696,
+      "size_kb": 166.6953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512630.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Apartamento amplo com 91m², claro, arejado e com vista lateral para o Cristo Red",
+      "size_bytes": 141280,
+      "size_kb": 137.96875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512507.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Apartamento venda 91m² de 3 quartos",
+      "size_bytes": 228109,
+      "size_kb": 222.7626953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512580.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Apartamento 91m² venda Botafogo",
+      "size_bytes": 226563,
+      "size_kb": 221.2529296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/05/5438512619.jpg"
+    }
+  ]
+}

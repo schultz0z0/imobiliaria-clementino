@@ -1,0 +1,40 @@
+{
+  "name": "imobiliaria-clementino-website",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 4174 --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 4174",
+    "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
+    "lint": "tsc --noEmit",
+    "test": "tsx --test src/**/*.test.ts scripts/**/*.test.ts",
+    "catalog:generate": "tsx scripts/catalog/generateCatalog.ts --write",
+    "catalog:verify": "tsx scripts/catalog/generateCatalog.ts --verify",
+    "catalog:images": "tsx scripts/catalog/generateImages.ts",
+    "predev": "npm run catalog:verify && npm run catalog:images",
+    "prebuild": "npm run catalog:verify && npm run catalog:images"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.14",
+    "@vitejs/plugin-react": "^5.0.4",
+    "lucide-react": "^0.546.0",
+    "motion": "^12.23.24",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.14.1",
+    "vite": "^6.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "autoprefixer": "^10.4.21",
+    "sharp": "^0.35.3",
+    "tailwindcss": "^4.1.14",
+    "tsx": "^4.21.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}

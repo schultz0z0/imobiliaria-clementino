@@ -1,0 +1,350 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/j.-america-rua-prof-costa-ribeiro-lindo-sobrado-3017305792.html",
+  "dados_gerais": {
+    "titulo": "J. América, Rua Profº Costa Ribeiro - Lindo Sobrado, Fdos 120m², 2 Qts + Terraço",
+    "subtitulo": "Apartamento · 98m² · 2 quartos",
+    "codigo_imovel": "AP0015",
+    "id_imovelweb": "3017305792",
+    "preco": "R$ 150.000",
+    "condominio": "R$ 0",
+    "endereco_completo": "Rua Professor Costa Ribeiro, 530, Jardim América, Rio de Janeiro, RJ",
+    "logradouro": "Rua Professor Costa Ribeiro, 530",
+    "bairro": "Jardim América",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8072542",
+      "longitude": "-43.3270729",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8072542,-43.3270729"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 358 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "120",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "98",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiros",
+      "measure": null,
+      "value": "2",
+      "icon": "bano"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "2",
+      "icon": "dormitorio"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "29",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Em Jardim América, próximo ao ponto final da linha 774 (Madureira - Jardim América). Lindo imóvel tipo sobrado, de fundos, só tem 2 aptos no prédiodos fundos, e não tem condomínio. O apto possui 2 salas, 2 quartos, 2 banheiros, e área total de 110m² e 98m² de área útil. Perfeito para moradia ou investimento! Valor do imóvel: R$ 150.000,00. Aceita financiamento bancário, O imóvel está disponível para visita em horários flexíveis. Agende sua visita agora mesmo.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 31,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 291725,
+      "size_kb": 284.8876953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438515214.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Apartamento en venda de 2 quartos Jardim América",
+      "size_bytes": 275796,
+      "size_kb": 269.33203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438515187.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Em Jardim América, próximo ao ponto final da linha 774 (Madureira - Jardim Améri",
+      "size_bytes": 180739,
+      "size_kb": 176.5029296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438514881.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Apartamento venda 120m² de 2 quartos",
+      "size_bytes": 227743,
+      "size_kb": 222.4052734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438515387.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Apartamento 120m² venda Jardim América",
+      "size_bytes": 148128,
+      "size_kb": 144.65625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438517680.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Apartamento 120m² venda Jardim América",
+      "size_bytes": 162740,
+      "size_kb": 158.92578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438517703.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Apartamento de 2 quartos venda R$ 150.000",
+      "size_bytes": 135777,
+      "size_kb": 132.5947265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438515201.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Apartamento · 98m² · 2 quartos - Imobiliária Clementino",
+      "size_bytes": 249934,
+      "size_kb": 244.076171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438514887.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Apartamento venda de 2 quartos",
+      "size_bytes": 169394,
+      "size_kb": 165.423828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438515252.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Apartamento · 98m² · 2 quartos",
+      "size_bytes": 117647,
+      "size_kb": 114.8896484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438514967.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 171506,
+      "size_kb": 167.486328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438515362.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Apartamento en venda de 2 quartos Jardim América",
+      "size_bytes": 148388,
+      "size_kb": 144.91015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438515169.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Em Jardim América, próximo ao ponto final da linha 774 (Madureira - Jardim Améri",
+      "size_bytes": 172736,
+      "size_kb": 168.6875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438515134.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Apartamento venda 120m² de 2 quartos",
+      "size_bytes": 137850,
+      "size_kb": 134.619140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438514903.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Apartamento 120m² venda Jardim América",
+      "size_bytes": 169250,
+      "size_kb": 165.283203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438514969.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Apartamento 120m² venda Jardim América",
+      "size_bytes": 180016,
+      "size_kb": 175.796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438515004.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Apartamento de 2 quartos venda R$ 150.000",
+      "size_bytes": 162947,
+      "size_kb": 159.1279296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438515108.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Apartamento · 98m² · 2 quartos - Imobiliária Clementino",
+      "size_bytes": 169872,
+      "size_kb": 165.890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438515076.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Apartamento venda de 2 quartos",
+      "size_bytes": 119526,
+      "size_kb": 116.724609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438515200.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Apartamento · 98m² · 2 quartos",
+      "size_bytes": 235976,
+      "size_kb": 230.4453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438515188.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 170828,
+      "size_kb": 166.82421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438515186.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Apartamento en venda de 2 quartos Jardim América",
+      "size_bytes": 176555,
+      "size_kb": 172.4169921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438515139.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Em Jardim América, próximo ao ponto final da linha 774 (Madureira - Jardim Améri",
+      "size_bytes": 171646,
+      "size_kb": 167.623046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438515118.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Apartamento venda 120m² de 2 quartos",
+      "size_bytes": 168576,
+      "size_kb": 164.625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438515218.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Apartamento 120m² venda Jardim América",
+      "size_bytes": 153065,
+      "size_kb": 149.4775390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438515066.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Apartamento 120m² venda Jardim América",
+      "size_bytes": 162263,
+      "size_kb": 158.4599609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438515061.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Apartamento de 2 quartos venda R$ 150.000",
+      "size_bytes": 203562,
+      "size_kb": 198.791015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438515166.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Apartamento · 98m² · 2 quartos - Imobiliária Clementino",
+      "size_bytes": 154376,
+      "size_kb": 150.7578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438514988.jpg"
+    },
+    {
+      "index": 29,
+      "filename": "foto_29.jpg",
+      "relative_path": "fotos/foto_29.jpg",
+      "title": "Apartamento venda de 2 quartos",
+      "size_bytes": 118920,
+      "size_kb": 116.1328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438515128.jpg"
+    },
+    {
+      "index": 30,
+      "filename": "foto_30.jpg",
+      "relative_path": "fotos/foto_30.jpg",
+      "title": "Apartamento · 98m² · 2 quartos",
+      "size_bytes": 135208,
+      "size_kb": 132.0390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438514985.jpg"
+    },
+    {
+      "index": 31,
+      "filename": "foto_31.jpg",
+      "relative_path": "fotos/foto_31.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 175112,
+      "size_kb": 171.0078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/92/5438515161.jpg"
+    }
+  ]
+}

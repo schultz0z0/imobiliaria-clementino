@@ -1,0 +1,346 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/casa-duplex-c-140-m-varandao-2-quartos-2-suites-3042851381.html",
+  "dados_gerais": {
+    "titulo": "Casa Duplex c/ 140 m², Varandão, 2 Quartos, 2 Suítes, 4 Banheiros, em Coelho Neto, Quintal e Garagem",
+    "subtitulo": "Casa · 135m² · 2 quartos · 3 vagas",
+    "codigo_imovel": "0085",
+    "id_imovelweb": "3042851381",
+    "preco": "R$ 1.500",
+    "condominio": "Não informado / Isento",
+    "endereco_completo": "Rua Parnaíba, Coelho Neto, Rio de Janeiro, RJ",
+    "logradouro": "Rua Parnaíba",
+    "bairro": "Coelho Neto",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8360230",
+      "longitude": "-43.3489801",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8360230,-43.3489801"
+    },
+    "data_publicacao": "15/08/2026",
+    "antiguidade": "Publicado há 5 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "140",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "135",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiros",
+      "measure": null,
+      "value": "4",
+      "icon": "bano"
+    },
+    "CFT7": {
+      "featureId": "CFT7",
+      "label": "vaga",
+      "measure": null,
+      "value": "3",
+      "icon": "cochera"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "2",
+      "icon": "dormitorio"
+    },
+    "CFT4": {
+      "featureId": "CFT4",
+      "label": "suítes",
+      "measure": null,
+      "value": "2",
+      "icon": "toilete"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "35",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Casa disponível para venda em Coelho Neto, Rio de Janeiro. A propriedade, com 30 anos de idade, oferece 140 m² de área construída em um terreno de 189 m².\nO imóvel distribui-se em 2 andares e apresenta 2 quartos, sendo 2 suítes, e um total de 4 banheiros. A cozinha é funcional e a casa inclui despensa e área de serviço, proporcionando organização e praticidade para o dia a dia.\nNa área externa, a casa dispõe de 3 vagas de garagem, além de uma entrada independente que oferece maior autonomia aos moradores.\nCoelho Neto é um bairro com infraestrutura completa, caracterizado por seu ambiente residencial e familiar. A região conta com fácil acesso a transportes públicos, incluindo a estação de metrô Coelho Neto e diversas linhas de ônibus, além de importantes vias como a Avenida Brasil. Há uma variedade de comércios e serviços próximos, como supermercados, farmácias e agências bancárias e Clínica da Família, atendendo às necessidades de seus moradores.\nO imóvel será alugado para, no máximo 4 pessoas da mesma família. Pedimos o equivalente a 2 meses de depósito caução como garantia fiança e renda comprovada até 3 vezes o valor de aluguel.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 29,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Casa de 2 quartos, Rio de Janeiro",
+      "size_bytes": 230479,
+      "size_kb": 225.0771484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774819.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Casa en aluguel de 2 quartos Coelho Neto",
+      "size_bytes": 108851,
+      "size_kb": 106.2998046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774793.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Casa disponível para venda em Coelho Neto, Rio de Janeiro. A propriedade, com 30",
+      "size_bytes": 131579,
+      "size_kb": 128.4951171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774812.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Casa aluguel 140m² de 2 quartos",
+      "size_bytes": 169266,
+      "size_kb": 165.298828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774791.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Casa 140m² aluguel Coelho Neto",
+      "size_bytes": 155177,
+      "size_kb": 151.5400390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774796.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Casa 140m² aluguel Coelho Neto",
+      "size_bytes": 106734,
+      "size_kb": 104.232421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774795.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Casa de 2 quartos aluguel R$ 1.500",
+      "size_bytes": 64961,
+      "size_kb": 63.4384765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774786.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Casa · 135m² · 2 quartos · 3 vagas - Imobiliária Clementino",
+      "size_bytes": 149151,
+      "size_kb": 145.6552734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774794.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Casa aluguel de 2 quartos",
+      "size_bytes": 66319,
+      "size_kb": 64.7646484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774799.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Casa · 135m² · 2 quartos · 3 vagas",
+      "size_bytes": 152036,
+      "size_kb": 148.47265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774816.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Casa de 2 quartos, Rio de Janeiro",
+      "size_bytes": 111734,
+      "size_kb": 109.115234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774788.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Casa en aluguel de 2 quartos Coelho Neto",
+      "size_bytes": 129150,
+      "size_kb": 126.123046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774807.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Casa disponível para venda em Coelho Neto, Rio de Janeiro. A propriedade, com 30",
+      "size_bytes": 141884,
+      "size_kb": 138.55859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774827.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Casa aluguel 140m² de 2 quartos",
+      "size_bytes": 124914,
+      "size_kb": 121.986328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774797.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Casa 140m² aluguel Coelho Neto",
+      "size_bytes": 116750,
+      "size_kb": 114.013671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774830.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Casa 140m² aluguel Coelho Neto",
+      "size_bytes": 96199,
+      "size_kb": 93.9443359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774802.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Casa de 2 quartos aluguel R$ 1.500",
+      "size_bytes": 104745,
+      "size_kb": 102.2900390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774784.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Casa · 135m² · 2 quartos · 3 vagas - Imobiliária Clementino",
+      "size_bytes": 104356,
+      "size_kb": 101.91015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774801.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Casa aluguel de 2 quartos",
+      "size_bytes": 112493,
+      "size_kb": 109.8564453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774810.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Casa · 135m² · 2 quartos · 3 vagas",
+      "size_bytes": 113464,
+      "size_kb": 110.8046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774811.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Casa de 2 quartos, Rio de Janeiro",
+      "size_bytes": 141498,
+      "size_kb": 138.181640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774835.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Casa en aluguel de 2 quartos Coelho Neto",
+      "size_bytes": 136615,
+      "size_kb": 133.4130859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774814.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Casa disponível para venda em Coelho Neto, Rio de Janeiro. A propriedade, com 30",
+      "size_bytes": 139740,
+      "size_kb": 136.46484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774798.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Casa aluguel 140m² de 2 quartos",
+      "size_bytes": 125462,
+      "size_kb": 122.521484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774809.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Casa 140m² aluguel Coelho Neto",
+      "size_bytes": 114570,
+      "size_kb": 111.884765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774832.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Casa 140m² aluguel Coelho Neto",
+      "size_bytes": 217697,
+      "size_kb": 212.5947265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774831.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Casa de 2 quartos aluguel R$ 1.500",
+      "size_bytes": 72134,
+      "size_kb": 70.443359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774813.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Casa · 135m² · 2 quartos · 3 vagas - Imobiliária Clementino",
+      "size_bytes": 125268,
+      "size_kb": 122.33203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774808.jpg"
+    },
+    {
+      "index": 29,
+      "filename": "foto_29.jpg",
+      "relative_path": "fotos/foto_29.jpg",
+      "title": "Casa aluguel de 2 quartos",
+      "size_bytes": 154222,
+      "size_kb": 150.607421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/42/85/13/81/7081774806.jpg"
+    }
+  ]
+}

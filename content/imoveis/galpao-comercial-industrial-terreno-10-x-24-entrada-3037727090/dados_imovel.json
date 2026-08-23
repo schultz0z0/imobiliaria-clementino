@@ -1,0 +1,521 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/galpao-comercial-industrial-terreno-10-x-24-entrada-3037727090.html",
+  "dados_gerais": {
+    "titulo": "Galpão Comercial/Industrial, terreno 10 x 24, entrada para carga e descarga. Área total coberta 320m",
+    "subtitulo": "Comercial · 318m² · 4 quartos",
+    "codigo_imovel": "003",
+    "id_imovelweb": "3037727090",
+    "preco": "R$ 750.000",
+    "condominio": "Não informado / Isento",
+    "endereco_completo": "Rua Jornalista Geraldo Rocha, 750, Jardim América, Rio de Janeiro, RJ",
+    "logradouro": "Rua Jornalista Geraldo Rocha, 750",
+    "bairro": "Jardim América",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8109177",
+      "longitude": "-43.3193232",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8109177,-43.3193232"
+    },
+    "data_publicacao": "14/06/2026",
+    "antiguidade": "Publicado há 67 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "320",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "318",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiros",
+      "measure": null,
+      "value": "4",
+      "icon": "bano"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "4",
+      "icon": "dormitorio"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "29",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Galpão Comercial/Industrial, terreno 10 x 24, entrada para carga e descarga. Área total coberta com 200m², e área descoberta com 60m². Salas/escritórios, banheiros, ideal para o seu negócio. Disponível para venda em Jardim América. Esta propriedade possui 318 m² de área construída e uma área total de 320 m², distribuídos em 2 andares. A idade do imóvel é de 29 anos. A propriedade aceita FGTS como forma de pagamento. A localização em Jardim América oferece acesso a diversas conveniências. A região dispõe de infraestrutura comercial e de serviços, incluindo opções de transporte público e vias de acesso importantes. O bairro é conhecido por seu ambiente consolidado, com proximidade a estabelecimentos comerciais e serviços essenciais.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 50,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Comercial de 4 quartos, Rio de Janeiro",
+      "size_bytes": 83761,
+      "size_kb": 81.7978515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874134.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Comercial en venda de 4 quartos Jardim América",
+      "size_bytes": 49905,
+      "size_kb": 48.7353515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874121.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Galpão Comercial/Industrial, terreno 10 x 24, entrada para carga e descarga. Áre",
+      "size_bytes": 61097,
+      "size_kb": 59.6650390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874089.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Comercial venda 320m² de 4 quartos",
+      "size_bytes": 53614,
+      "size_kb": 52.357421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874119.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Comercial 320m² venda Jardim América",
+      "size_bytes": 59048,
+      "size_kb": 57.6640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874128.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Comercial 320m² venda Jardim América",
+      "size_bytes": 48911,
+      "size_kb": 47.7646484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874100.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Comercial de 4 quartos venda R$ 750.000",
+      "size_bytes": 71656,
+      "size_kb": 69.9765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874125.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Comercial · 318m² · 4 quartos - Imobiliária Clementino",
+      "size_bytes": 55656,
+      "size_kb": 54.3515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874109.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Comercial venda de 4 quartos",
+      "size_bytes": 52868,
+      "size_kb": 51.62890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874090.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Comercial · 318m² · 4 quartos",
+      "size_bytes": 82521,
+      "size_kb": 80.5869140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874103.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Comercial de 4 quartos, Rio de Janeiro",
+      "size_bytes": 52634,
+      "size_kb": 51.400390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874130.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Comercial en venda de 4 quartos Jardim América",
+      "size_bytes": 46947,
+      "size_kb": 45.8466796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874091.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Galpão Comercial/Industrial, terreno 10 x 24, entrada para carga e descarga. Áre",
+      "size_bytes": 89403,
+      "size_kb": 87.3076171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874126.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Comercial venda 320m² de 4 quartos",
+      "size_bytes": 69234,
+      "size_kb": 67.611328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874114.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Comercial 320m² venda Jardim América",
+      "size_bytes": 43563,
+      "size_kb": 42.5419921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874116.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Comercial 320m² venda Jardim América",
+      "size_bytes": 98345,
+      "size_kb": 96.0400390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874127.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Comercial de 4 quartos venda R$ 750.000",
+      "size_bytes": 109548,
+      "size_kb": 106.98046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874098.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Comercial · 318m² · 4 quartos - Imobiliária Clementino",
+      "size_bytes": 55312,
+      "size_kb": 54.015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874120.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Comercial venda de 4 quartos",
+      "size_bytes": 64008,
+      "size_kb": 62.5078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874102.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Comercial · 318m² · 4 quartos",
+      "size_bytes": 78465,
+      "size_kb": 76.6259765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874107.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Comercial de 4 quartos, Rio de Janeiro",
+      "size_bytes": 65417,
+      "size_kb": 63.8837890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874117.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Comercial en venda de 4 quartos Jardim América",
+      "size_bytes": 66691,
+      "size_kb": 65.1279296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874136.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Galpão Comercial/Industrial, terreno 10 x 24, entrada para carga e descarga. Áre",
+      "size_bytes": 88156,
+      "size_kb": 86.08984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874124.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Comercial venda 320m² de 4 quartos",
+      "size_bytes": 70750,
+      "size_kb": 69.091796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874096.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Comercial 320m² venda Jardim América",
+      "size_bytes": 62130,
+      "size_kb": 60.673828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874133.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Comercial 320m² venda Jardim América",
+      "size_bytes": 123527,
+      "size_kb": 120.6318359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874129.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Comercial de 4 quartos venda R$ 750.000",
+      "size_bytes": 99662,
+      "size_kb": 97.326171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874108.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Comercial · 318m² · 4 quartos - Imobiliária Clementino",
+      "size_bytes": 113466,
+      "size_kb": 110.806640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874094.jpg"
+    },
+    {
+      "index": 29,
+      "filename": "foto_29.jpg",
+      "relative_path": "fotos/foto_29.jpg",
+      "title": "Comercial venda de 4 quartos",
+      "size_bytes": 106908,
+      "size_kb": 104.40234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874101.jpg"
+    },
+    {
+      "index": 30,
+      "filename": "foto_30.jpg",
+      "relative_path": "fotos/foto_30.jpg",
+      "title": "Comercial · 318m² · 4 quartos",
+      "size_bytes": 81652,
+      "size_kb": 79.73828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874106.jpg"
+    },
+    {
+      "index": 31,
+      "filename": "foto_31.jpg",
+      "relative_path": "fotos/foto_31.jpg",
+      "title": "Comercial de 4 quartos, Rio de Janeiro",
+      "size_bytes": 62130,
+      "size_kb": 60.673828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874088.jpg"
+    },
+    {
+      "index": 32,
+      "filename": "foto_32.jpg",
+      "relative_path": "fotos/foto_32.jpg",
+      "title": "Comercial en venda de 4 quartos Jardim América",
+      "size_bytes": 123527,
+      "size_kb": 120.6318359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874132.jpg"
+    },
+    {
+      "index": 33,
+      "filename": "foto_33.jpg",
+      "relative_path": "fotos/foto_33.jpg",
+      "title": "Galpão Comercial/Industrial, terreno 10 x 24, entrada para carga e descarga. Áre",
+      "size_bytes": 99662,
+      "size_kb": 97.326171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874097.jpg"
+    },
+    {
+      "index": 34,
+      "filename": "foto_34.jpg",
+      "relative_path": "fotos/foto_34.jpg",
+      "title": "Comercial venda 320m² de 4 quartos",
+      "size_bytes": 113466,
+      "size_kb": 110.806640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874122.jpg"
+    },
+    {
+      "index": 35,
+      "filename": "foto_35.jpg",
+      "relative_path": "fotos/foto_35.jpg",
+      "title": "Comercial 320m² venda Jardim América",
+      "size_bytes": 106908,
+      "size_kb": 104.40234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874104.jpg"
+    },
+    {
+      "index": 36,
+      "filename": "foto_36.jpg",
+      "relative_path": "fotos/foto_36.jpg",
+      "title": "Comercial 320m² venda Jardim América",
+      "size_bytes": 60352,
+      "size_kb": 58.9375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874131.jpg"
+    },
+    {
+      "index": 37,
+      "filename": "foto_37.jpg",
+      "relative_path": "fotos/foto_37.jpg",
+      "title": "Comercial de 4 quartos venda R$ 750.000",
+      "size_bytes": 68038,
+      "size_kb": 66.443359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874099.jpg"
+    },
+    {
+      "index": 38,
+      "filename": "foto_38.jpg",
+      "relative_path": "fotos/foto_38.jpg",
+      "title": "Comercial · 318m² · 4 quartos - Imobiliária Clementino",
+      "size_bytes": 70750,
+      "size_kb": 69.091796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874092.jpg"
+    },
+    {
+      "index": 39,
+      "filename": "foto_39.jpg",
+      "relative_path": "fotos/foto_39.jpg",
+      "title": "Comercial venda de 4 quartos",
+      "size_bytes": 121956,
+      "size_kb": 119.09765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874123.jpg"
+    },
+    {
+      "index": 40,
+      "filename": "foto_40.jpg",
+      "relative_path": "fotos/foto_40.jpg",
+      "title": "Comercial · 318m² · 4 quartos",
+      "size_bytes": 41417,
+      "size_kb": 40.4462890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874093.jpg"
+    },
+    {
+      "index": 41,
+      "filename": "foto_41.jpg",
+      "relative_path": "fotos/foto_41.jpg",
+      "title": "Comercial de 4 quartos, Rio de Janeiro",
+      "size_bytes": 30940,
+      "size_kb": 30.21484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874112.jpg"
+    },
+    {
+      "index": 42,
+      "filename": "foto_42.jpg",
+      "relative_path": "fotos/foto_42.jpg",
+      "title": "Comercial en venda de 4 quartos Jardim América",
+      "size_bytes": 67100,
+      "size_kb": 65.52734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874087.jpg"
+    },
+    {
+      "index": 43,
+      "filename": "foto_43.jpg",
+      "relative_path": "fotos/foto_43.jpg",
+      "title": "Galpão Comercial/Industrial, terreno 10 x 24, entrada para carga e descarga. Áre",
+      "size_bytes": 74901,
+      "size_kb": 73.1455078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874095.jpg"
+    },
+    {
+      "index": 44,
+      "filename": "foto_44.jpg",
+      "relative_path": "fotos/foto_44.jpg",
+      "title": "Comercial venda 320m² de 4 quartos",
+      "size_bytes": 120582,
+      "size_kb": 117.755859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874115.jpg"
+    },
+    {
+      "index": 45,
+      "filename": "foto_45.jpg",
+      "relative_path": "fotos/foto_45.jpg",
+      "title": "Comercial 320m² venda Jardim América",
+      "size_bytes": 78325,
+      "size_kb": 76.4892578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874135.jpg"
+    },
+    {
+      "index": 46,
+      "filename": "foto_46.jpg",
+      "relative_path": "fotos/foto_46.jpg",
+      "title": "Comercial 320m² venda Jardim América",
+      "size_bytes": 59855,
+      "size_kb": 58.4521484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874113.jpg"
+    },
+    {
+      "index": 47,
+      "filename": "foto_47.jpg",
+      "relative_path": "fotos/foto_47.jpg",
+      "title": "Comercial de 4 quartos venda R$ 750.000",
+      "size_bytes": 65417,
+      "size_kb": 63.8837890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874110.jpg"
+    },
+    {
+      "index": 48,
+      "filename": "foto_48.jpg",
+      "relative_path": "fotos/foto_48.jpg",
+      "title": "Comercial · 318m² · 4 quartos - Imobiliária Clementino",
+      "size_bytes": 66691,
+      "size_kb": 65.1279296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874118.jpg"
+    },
+    {
+      "index": 49,
+      "filename": "foto_49.jpg",
+      "relative_path": "fotos/foto_49.jpg",
+      "title": "Comercial venda de 4 quartos",
+      "size_bytes": 78465,
+      "size_kb": 76.6259765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874105.jpg"
+    },
+    {
+      "index": 50,
+      "filename": "foto_50.jpg",
+      "relative_path": "fotos/foto_50.jpg",
+      "title": "Comercial · 318m² · 4 quartos",
+      "size_bytes": 64008,
+      "size_kb": 62.5078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/37/72/70/90/6816874111.jpg"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/barra-da-tijuca-midtown-sala-comercial-54m-3017305798.html",
+  "dados_gerais": {
+    "titulo": "Barra da Tijuca - Midtown, Sala Comercial 54m², Duplex, Tipo Cobertura.",
+    "subtitulo": "Comercial · 54m² · 1 vaga",
+    "codigo_imovel": "SA0001",
+    "id_imovelweb": "3017305798",
+    "preco": "R$ 220.000",
+    "condominio": "R$ 2000",
+    "endereco_completo": "Avenida das Américas, Barra da Tijuca, Rio de Janeiro, RJ",
+    "logradouro": "Avenida das Américas",
+    "bairro": "Barra da Tijuca",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-23.0076006",
+      "longitude": "-43.4381311",
+      "google_maps_url": "https://www.google.com/maps?q=-23.0076006,-43.4381311"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 358 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "54",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "54",
+      "icon": "scubierta"
+    },
+    "CFT7": {
+      "featureId": "CFT7",
+      "label": "vaga",
+      "measure": null,
+      "value": "1",
+      "icon": "cochera"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "20",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Na Barra da Tijuca, Shopping Midtown Nova Ipanema, sala comercial com 54m², duplex, com algumas benfeitorias como: rebaixamento de teto, piso cerâmico, clara e ventilada. Em Frente ao BRT e Barra Shopping e New York. Portaria e segurança 24Hs. Condomínio: R$ 2.000; IPTU: R$ 850,00. Doctos Ok. Pronta para Uso. Possui 1 Vga de Garagem e estacionamento para visitantes. Aceito entrada de 130.000, e parcelo o restante.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 19,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Comercial , Rio de Janeiro",
+      "size_bytes": 70519,
+      "size_kb": 68.8662109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/98/5438529905.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Comercial en venda  Barra da Tijuca",
+      "size_bytes": 131805,
+      "size_kb": 128.7158203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/98/5438529980.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Na Barra da Tijuca, Shopping Midtown Nova Ipanema, sala comercial com 54m², dupl",
+      "size_bytes": 169769,
+      "size_kb": 165.7900390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/98/5438532194.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Comercial venda 54m² ",
+      "size_bytes": 233207,
+      "size_kb": 227.7412109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/98/5438530007.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Comercial 54m² venda Barra da Tijuca",
+      "size_bytes": 135107,
+      "size_kb": 131.9404296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/98/5438529955.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Comercial 54m² venda Barra da Tijuca",
+      "size_bytes": 132221,
+      "size_kb": 129.1220703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/98/5438530109.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Comercial  venda R$ 220.000",
+      "size_bytes": 161600,
+      "size_kb": 157.8125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/98/5438529982.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Comercial · 54m² · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 187340,
+      "size_kb": 182.94921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/98/5438530004.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Comercial venda ",
+      "size_bytes": 205472,
+      "size_kb": 200.65625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/98/5438530052.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Comercial · 54m² · 1 vaga",
+      "size_bytes": 225811,
+      "size_kb": 220.5185546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/98/5438530024.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Comercial , Rio de Janeiro",
+      "size_bytes": 217157,
+      "size_kb": 212.0673828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/98/5438530844.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Comercial en venda  Barra da Tijuca",
+      "size_bytes": 231763,
+      "size_kb": 226.3310546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/98/5438530000.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Na Barra da Tijuca, Shopping Midtown Nova Ipanema, sala comercial com 54m², dupl",
+      "size_bytes": 196676,
+      "size_kb": 192.06640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/98/5438530995.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Comercial venda 54m² ",
+      "size_bytes": 130964,
+      "size_kb": 127.89453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/98/5438530742.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Comercial 54m² venda Barra da Tijuca",
+      "size_bytes": 175886,
+      "size_kb": 171.763671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/98/5438529996.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Comercial 54m² venda Barra da Tijuca",
+      "size_bytes": 183792,
+      "size_kb": 179.484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/98/5438530816.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Comercial  venda R$ 220.000",
+      "size_bytes": 180094,
+      "size_kb": 175.873046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/98/5438530458.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Comercial · 54m² · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 187625,
+      "size_kb": 183.2275390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/98/5438530439.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Comercial venda ",
+      "size_bytes": 220535,
+      "size_kb": 215.3662109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/98/5438530082.jpg"
+    }
+  ]
+}

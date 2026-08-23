@@ -1,0 +1,346 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/copacabana-av.-atlantica-cobertura-linear-425m-4-3017305809.html",
+  "dados_gerais": {
+    "titulo": "Copacabana- Av. Atlântica, Cobertura Linear 425m², 4 Suítes, 6 WC, Vista Mar, Posto 4",
+    "subtitulo": "Casa · 425m² · 4 quartos · 1 vaga",
+    "codigo_imovel": "CA002",
+    "id_imovelweb": "3017305809",
+    "preco": "R$ 12.325.000",
+    "condominio": "R$ 5860",
+    "endereco_completo": "Avenida Atlântica, Copacabana, Rio de Janeiro, RJ",
+    "logradouro": "Avenida Atlântica",
+    "bairro": "Copacabana",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.9694629",
+      "longitude": "-43.1813203",
+      "google_maps_url": "https://www.google.com/maps?q=-22.9694629,-43.1813203"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 358 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "425",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "425",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiros",
+      "measure": null,
+      "value": "6",
+      "icon": "bano"
+    },
+    "CFT7": {
+      "featureId": "CFT7",
+      "label": "vaga",
+      "measure": null,
+      "value": "1",
+      "icon": "cochera"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "4",
+      "icon": "dormitorio"
+    },
+    "CFT4": {
+      "featureId": "CFT4",
+      "label": "suítes",
+      "measure": null,
+      "value": "4",
+      "icon": "toilete"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "40",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Cobertura residencial, à venda em Copacabana, Av. Atlântica, vista mar, com 4 quartos e 6 banheiros, ideal para famílias grandes ou quem busca espaço e conforto. Possui 425 m² de área construída, distribuídos de forma inteligente para otimizar cada ambiente. A casa conta com 4 suítes, proporcionando privacidade e comodidade aos moradores. Além disso, dispõe de 1 vaga de garagem.<br>Localizada em uma região privilegiada de Copacabana, a casa está próxima a diversos serviços e comércios, como supermercados, farmácias, escolas e hospitais. A área é conhecida por sua infraestrutura completa e facilidade de acesso a transporte público, incluindo ônibus e metrô. A praia de Copacabana, um dos principais cartões postais do Rio de Janeiro, está a poucos minutos de distância, oferecendo lazer e entretenimento para toda a família. O bairro possui um ambiente residencial tranquilo e seguro, com ruas arborizadas e bem cuidadas.<br>Oportunidade: Valor reduzido de R$ <span class='descripcionDatosAnunciante'><button class='btn btn-link js-verDatos' href='#'>Ver dados</button></span> para R$ <span class='descripcionDatosAnunciante'><button class='btn btn-link js-verDatos' href='#'>Ver dados</button></span>.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 29,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Casa de 4 quartos, Rio de Janeiro",
+      "size_bytes": 104869,
+      "size_kb": 102.4111328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515690.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Casa en venda de 4 quartos Copacabana",
+      "size_bytes": 112417,
+      "size_kb": 109.7822265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515698.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Cobertura residencial, à venda em Copacabana, Av. Atlântica, vista mar, com 4 qu",
+      "size_bytes": 113718,
+      "size_kb": 111.052734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515578.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Casa venda 425m² de 4 quartos",
+      "size_bytes": 130991,
+      "size_kb": 127.9208984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515527.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Casa 425m² venda Copacabana",
+      "size_bytes": 123884,
+      "size_kb": 120.98046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515431.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Casa 425m² venda Copacabana",
+      "size_bytes": 106318,
+      "size_kb": 103.826171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515686.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Casa de 4 quartos venda R$ 12.325.000",
+      "size_bytes": 114766,
+      "size_kb": 112.076171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515498.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Casa · 425m² · 4 quartos · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 115126,
+      "size_kb": 112.427734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515497.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Casa venda de 4 quartos",
+      "size_bytes": 138004,
+      "size_kb": 134.76953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515627.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Casa · 425m² · 4 quartos · 1 vaga",
+      "size_bytes": 94158,
+      "size_kb": 91.951171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515663.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Casa de 4 quartos, Rio de Janeiro",
+      "size_bytes": 143159,
+      "size_kb": 139.8037109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515471.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Casa en venda de 4 quartos Copacabana",
+      "size_bytes": 114743,
+      "size_kb": 112.0537109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515719.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Cobertura residencial, à venda em Copacabana, Av. Atlântica, vista mar, com 4 qu",
+      "size_bytes": 129932,
+      "size_kb": 126.88671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515689.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Casa venda 425m² de 4 quartos",
+      "size_bytes": 149460,
+      "size_kb": 145.95703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515711.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Casa 425m² venda Copacabana",
+      "size_bytes": 98639,
+      "size_kb": 96.3271484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515707.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Casa 425m² venda Copacabana",
+      "size_bytes": 99723,
+      "size_kb": 97.3857421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515658.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Casa de 4 quartos venda R$ 12.325.000",
+      "size_bytes": 116249,
+      "size_kb": 113.5244140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515696.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Casa · 425m² · 4 quartos · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 152642,
+      "size_kb": 149.064453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515486.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Casa venda de 4 quartos",
+      "size_bytes": 126156,
+      "size_kb": 123.19921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515703.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Casa · 425m² · 4 quartos · 1 vaga",
+      "size_bytes": 114303,
+      "size_kb": 111.6240234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515721.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Casa de 4 quartos, Rio de Janeiro",
+      "size_bytes": 117583,
+      "size_kb": 114.8271484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515443.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Casa en venda de 4 quartos Copacabana",
+      "size_bytes": 108161,
+      "size_kb": 105.6259765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515606.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Cobertura residencial, à venda em Copacabana, Av. Atlântica, vista mar, com 4 qu",
+      "size_bytes": 103973,
+      "size_kb": 101.5361328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438517791.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Casa venda 425m² de 4 quartos",
+      "size_bytes": 123682,
+      "size_kb": 120.783203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438517884.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Casa 425m² venda Copacabana",
+      "size_bytes": 119639,
+      "size_kb": 116.8349609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515600.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Casa 425m² venda Copacabana",
+      "size_bytes": 114716,
+      "size_kb": 112.02734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515475.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Casa de 4 quartos venda R$ 12.325.000",
+      "size_bytes": 104709,
+      "size_kb": 102.2548828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515495.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Casa venda de 4 quartos",
+      "size_bytes": 94450,
+      "size_kb": 92.236328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5438515541.jpg"
+    },
+    {
+      "index": 29,
+      "filename": "foto_29.jpg",
+      "relative_path": "fotos/foto_29.jpg",
+      "title": "Casa · 425m² · 4 quartos · 1 vaga",
+      "size_bytes": 134408,
+      "size_kb": 131.2578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/09/5818941826.jpg"
+    }
+  ]
+}

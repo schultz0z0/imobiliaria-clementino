@@ -1,0 +1,519 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/casa-de-condominio-com-4-quartos-436m-a-venda-em-3017305811.html",
+  "dados_gerais": {
+    "titulo": "Casa de condomínio com 4 quartos, 436m², à venda em Niterói, Vila Progresso",
+    "subtitulo": "Casa · 436m² · 4 quartos · 2 vagas",
+    "codigo_imovel": "CA023",
+    "id_imovelweb": "3017305811",
+    "preco": "R$ 1.190.000",
+    "condominio": "R$ 2008",
+    "endereco_completo": "Avenida Nelson de Oliveira e Silva, Vila Progresso, Niterói, RJ",
+    "logradouro": "Avenida Nelson de Oliveira e Silva",
+    "bairro": "Vila Progresso",
+    "cidade": "Niterói",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.9062267",
+      "longitude": "-43.0424276",
+      "google_maps_url": "https://www.google.com/maps?q=-22.9062267,-43.0424276"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 358 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "436",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "436",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiros",
+      "measure": null,
+      "value": "8",
+      "icon": "bano"
+    },
+    "CFT7": {
+      "featureId": "CFT7",
+      "label": "vaga",
+      "measure": null,
+      "value": "2",
+      "icon": "cochera"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "4",
+      "icon": "dormitorio"
+    },
+    "CFT4": {
+      "featureId": "CFT4",
+      "label": "suítes",
+      "measure": null,
+      "value": "4",
+      "icon": "toilete"
+    }
+  },
+  "descricao": "???? Viva em Harmonia com a Natureza no Condomínio Ubá Independência ???? \nEsta esplêndida casa de 436m², situada no prestigiado condomínio de Pendotiba, é um verdadeiro oásis para aqueles que buscam espaço, conforto, natureza e segurança. Com aproximadamente 1.500m² de terreno, esta residência proporciona uma vista panorâmica deslumbrante para a exuberante vegetação local. \nO terreno abriga um pomar farto e diversificado, oferecendo frutas frescas como manga, tangerina, nêspera, cajú, maracujá, limões, laranjas e goiaba. Há espaço para uma horta e possibilidades de expansão da propriedade, incluindo a construção de uma piscina no platô disponível. \nPreparada para o conforto de seus moradores, a casa conta com estrutura para a instalação de um elevador panorâmico e paredes térmicas feitas de bloco celular autoclavado, garantindo temperatura agradável em todas as estações. \nA distribuição da casa compreende três pavimentos, oferecendo espaços generosos para acomodar sua família com comodidade e estilo. \n1º pavimento: Com um living espaçoso de mais de 70m² e pé-direito alto com vista para o jardim, este ambiente é perfeito para momentos de convívio. Possui ainda uma área de depósito e lavabo. Na área externa, uma ampla garagem com um banheiro completo. \n2º pavimento: Este pavimento abriga uma sala de jantar e área íntima com 55m², cozinha equipada com armários planejados da Romanzza, copa e despensa. Além disso, um quarto e uma varanda espaçosa com preparação para churrasqueira. \n3º pavimento: Aqui, você encontrará quatro suítes, sendo três com closet e a suíte master com 38,5m², hidromassagem e um amplo closet. Todas as suítes têm preparação para instalação de aparelhos de ar-condicionado split. \nAlém disso, há espaço para acomodar dois veículos com facilidade. \nEsta é a oportunidade perfeita para viver com conforto, harmonia com a natureza e segurança em uma das melhores localidades de Pendotiba. Venha conhecer! ????",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 49,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Casa · 436m² · 4 quartos · 2 vagas",
+      "size_bytes": 75933,
+      "size_kb": 74.1533203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535392.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Casa de 4 quartos, Niterói",
+      "size_bytes": 78732,
+      "size_kb": 76.88671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535271.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Casa en venda de 4 quartos Vila Progresso",
+      "size_bytes": 73527,
+      "size_kb": 71.8037109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535340.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "???? Viva em Harmonia com a Natureza no Condomínio Ubá Independência ???? <br>Es",
+      "size_bytes": 53993,
+      "size_kb": 52.7275390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535309.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Casa venda 436m² de 4 quartos",
+      "size_bytes": 80649,
+      "size_kb": 78.7587890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535307.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Casa 436m² venda Vila Progresso",
+      "size_bytes": 47212,
+      "size_kb": 46.10546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535441.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Casa 436m² venda Vila Progresso",
+      "size_bytes": 71276,
+      "size_kb": 69.60546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535370.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Casa de 4 quartos venda R$ 1.190.000",
+      "size_bytes": 38010,
+      "size_kb": 37.119140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535338.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Casa · 436m² · 4 quartos · 2 vagas - Imobiliária Clementino",
+      "size_bytes": 49589,
+      "size_kb": 48.4267578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535483.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Casa venda de 4 quartos",
+      "size_bytes": 92069,
+      "size_kb": 89.9111328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535302.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Casa · 436m² · 4 quartos · 2 vagas",
+      "size_bytes": 132959,
+      "size_kb": 129.8427734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535430.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Casa de 4 quartos, Niterói",
+      "size_bytes": 74037,
+      "size_kb": 72.3017578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535320.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Casa en venda de 4 quartos Vila Progresso",
+      "size_bytes": 48738,
+      "size_kb": 47.595703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535280.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "???? Viva em Harmonia com a Natureza no Condomínio Ubá Independência ???? <br>Es",
+      "size_bytes": 32652,
+      "size_kb": 31.88671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535244.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Casa venda 436m² de 4 quartos",
+      "size_bytes": 116283,
+      "size_kb": 113.5576171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535408.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Casa 436m² venda Vila Progresso",
+      "size_bytes": 68259,
+      "size_kb": 66.6591796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535239.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Casa 436m² venda Vila Progresso",
+      "size_bytes": 43086,
+      "size_kb": 42.076171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535270.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Casa de 4 quartos venda R$ 1.190.000",
+      "size_bytes": 72343,
+      "size_kb": 70.6474609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535426.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Casa · 436m² · 4 quartos · 2 vagas - Imobiliária Clementino",
+      "size_bytes": 29377,
+      "size_kb": 28.6884765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535255.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Casa venda de 4 quartos",
+      "size_bytes": 28581,
+      "size_kb": 27.9111328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535283.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Casa · 436m² · 4 quartos · 2 vagas",
+      "size_bytes": 93893,
+      "size_kb": 91.6923828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535387.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Casa de 4 quartos, Niterói",
+      "size_bytes": 91507,
+      "size_kb": 89.3623046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535292.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Casa en venda de 4 quartos Vila Progresso",
+      "size_bytes": 26853,
+      "size_kb": 26.2236328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535276.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "???? Viva em Harmonia com a Natureza no Condomínio Ubá Independência ???? <br>Es",
+      "size_bytes": 34284,
+      "size_kb": 33.48046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535206.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Casa venda 436m² de 4 quartos",
+      "size_bytes": 67489,
+      "size_kb": 65.9072265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535439.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Casa 436m² venda Vila Progresso",
+      "size_bytes": 44340,
+      "size_kb": 43.30078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535347.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Casa 436m² venda Vila Progresso",
+      "size_bytes": 37851,
+      "size_kb": 36.9638671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535210.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Casa de 4 quartos venda R$ 1.190.000",
+      "size_bytes": 65804,
+      "size_kb": 64.26171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535321.jpg"
+    },
+    {
+      "index": 29,
+      "filename": "foto_29.jpg",
+      "relative_path": "fotos/foto_29.jpg",
+      "title": "Casa · 436m² · 4 quartos · 2 vagas - Imobiliária Clementino",
+      "size_bytes": 72060,
+      "size_kb": 70.37109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535323.jpg"
+    },
+    {
+      "index": 30,
+      "filename": "foto_30.jpg",
+      "relative_path": "fotos/foto_30.jpg",
+      "title": "Casa venda de 4 quartos",
+      "size_bytes": 47405,
+      "size_kb": 46.2939453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535231.jpg"
+    },
+    {
+      "index": 31,
+      "filename": "foto_31.jpg",
+      "relative_path": "fotos/foto_31.jpg",
+      "title": "Casa · 436m² · 4 quartos · 2 vagas",
+      "size_bytes": 78416,
+      "size_kb": 76.578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535427.jpg"
+    },
+    {
+      "index": 32,
+      "filename": "foto_32.jpg",
+      "relative_path": "fotos/foto_32.jpg",
+      "title": "Casa de 4 quartos, Niterói",
+      "size_bytes": 27888,
+      "size_kb": 27.234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535504.jpg"
+    },
+    {
+      "index": 33,
+      "filename": "foto_33.jpg",
+      "relative_path": "fotos/foto_33.jpg",
+      "title": "Casa en venda de 4 quartos Vila Progresso",
+      "size_bytes": 34638,
+      "size_kb": 33.826171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535314.jpg"
+    },
+    {
+      "index": 34,
+      "filename": "foto_34.jpg",
+      "relative_path": "fotos/foto_34.jpg",
+      "title": "???? Viva em Harmonia com a Natureza no Condomínio Ubá Independência ???? <br>Es",
+      "size_bytes": 50563,
+      "size_kb": 49.3779296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535306.jpg"
+    },
+    {
+      "index": 35,
+      "filename": "foto_35.jpg",
+      "relative_path": "fotos/foto_35.jpg",
+      "title": "Casa venda 436m² de 4 quartos",
+      "size_bytes": 50460,
+      "size_kb": 49.27734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535228.jpg"
+    },
+    {
+      "index": 36,
+      "filename": "foto_36.jpg",
+      "relative_path": "fotos/foto_36.jpg",
+      "title": "Casa 436m² venda Vila Progresso",
+      "size_bytes": 32302,
+      "size_kb": 31.544921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535236.jpg"
+    },
+    {
+      "index": 37,
+      "filename": "foto_37.jpg",
+      "relative_path": "fotos/foto_37.jpg",
+      "title": "Casa 436m² venda Vila Progresso",
+      "size_bytes": 109232,
+      "size_kb": 106.671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535354.jpg"
+    },
+    {
+      "index": 38,
+      "filename": "foto_38.jpg",
+      "relative_path": "fotos/foto_38.jpg",
+      "title": "Casa de 4 quartos venda R$ 1.190.000",
+      "size_bytes": 100744,
+      "size_kb": 98.3828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535313.jpg"
+    },
+    {
+      "index": 39,
+      "filename": "foto_39.jpg",
+      "relative_path": "fotos/foto_39.jpg",
+      "title": "Casa · 436m² · 4 quartos · 2 vagas - Imobiliária Clementino",
+      "size_bytes": 28084,
+      "size_kb": 27.42578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535253.jpg"
+    },
+    {
+      "index": 40,
+      "filename": "foto_40.jpg",
+      "relative_path": "fotos/foto_40.jpg",
+      "title": "Casa venda de 4 quartos",
+      "size_bytes": 45491,
+      "size_kb": 44.4248046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535520.jpg"
+    },
+    {
+      "index": 41,
+      "filename": "foto_41.jpg",
+      "relative_path": "fotos/foto_41.jpg",
+      "title": "Casa de 4 quartos, Niterói",
+      "size_bytes": 132010,
+      "size_kb": 128.916015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535606.jpg"
+    },
+    {
+      "index": 42,
+      "filename": "foto_42.jpg",
+      "relative_path": "fotos/foto_42.jpg",
+      "title": "Casa en venda de 4 quartos Vila Progresso",
+      "size_bytes": 29412,
+      "size_kb": 28.72265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535233.jpg"
+    },
+    {
+      "index": 43,
+      "filename": "foto_43.jpg",
+      "relative_path": "fotos/foto_43.jpg",
+      "title": "???? Viva em Harmonia com a Natureza no Condomínio Ubá Independência ???? <br>Es",
+      "size_bytes": 35774,
+      "size_kb": 34.935546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535214.jpg"
+    },
+    {
+      "index": 44,
+      "filename": "foto_44.jpg",
+      "relative_path": "fotos/foto_44.jpg",
+      "title": "Casa venda 436m² de 4 quartos",
+      "size_bytes": 33605,
+      "size_kb": 32.8173828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535251.jpg"
+    },
+    {
+      "index": 45,
+      "filename": "foto_45.jpg",
+      "relative_path": "fotos/foto_45.jpg",
+      "title": "Casa 436m² venda Vila Progresso",
+      "size_bytes": 88088,
+      "size_kb": 86.0234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535391.jpg"
+    },
+    {
+      "index": 46,
+      "filename": "foto_46.jpg",
+      "relative_path": "fotos/foto_46.jpg",
+      "title": "Casa 436m² venda Vila Progresso",
+      "size_bytes": 31026,
+      "size_kb": 30.298828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535332.jpg"
+    },
+    {
+      "index": 47,
+      "filename": "foto_47.jpg",
+      "relative_path": "fotos/foto_47.jpg",
+      "title": "Casa de 4 quartos venda R$ 1.190.000",
+      "size_bytes": 81415,
+      "size_kb": 79.5068359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535334.jpg"
+    },
+    {
+      "index": 48,
+      "filename": "foto_48.jpg",
+      "relative_path": "fotos/foto_48.jpg",
+      "title": "Casa · 436m² · 4 quartos · 2 vagas - Imobiliária Clementino",
+      "size_bytes": 104815,
+      "size_kb": 102.3583984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535310.jpg"
+    },
+    {
+      "index": 49,
+      "filename": "foto_49.jpg",
+      "relative_path": "fotos/foto_49.jpg",
+      "title": "Casa venda de 4 quartos",
+      "size_bytes": 45748,
+      "size_kb": 44.67578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/11/5438535290.jpg"
+    }
+  ]
+}

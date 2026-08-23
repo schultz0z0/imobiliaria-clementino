@@ -1,0 +1,375 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/jardim-america-r.-prof-pires-salgado-apto-varanda-3018774505.html",
+  "dados_gerais": {
+    "titulo": "Jardim América - R. Profº Pires Salgado, Apto Varanda, 2 Qts, Fds",
+    "subtitulo": "Apartamento · 75m² · 2 quartos · 1 vaga",
+    "codigo_imovel": "446QDQP",
+    "id_imovelweb": "3018774505",
+    "preco": "R$ 250.000",
+    "condominio": "Não informado / Isento",
+    "endereco_completo": "Rua Professor Pires Salgado,, Jardim América, Rio de Janeiro, RJ",
+    "logradouro": "Rua Professor Pires Salgado,",
+    "bairro": "Jardim América",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8088343",
+      "longitude": "-43.3275931",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8088343,-43.3275931"
+    },
+    "data_publicacao": "20/09/2025",
+    "antiguidade": "Publicado há 333 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "78",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "75",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiro",
+      "measure": null,
+      "value": "1",
+      "icon": "bano"
+    },
+    "CFT7": {
+      "featureId": "CFT7",
+      "label": "vaga",
+      "measure": null,
+      "value": "1",
+      "icon": "cochera"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "2",
+      "icon": "dormitorio"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "30",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Em Jardim América, na Rua Profº Pires Salgado, próximo ao depósito da Supergasbras, ponto final dos ônibus e vans, vendo apto térreo, de fundos, com varanda, sala 2 ambientes, circulação, banheiro social, 2 quartos, cozinha e área de serviço externa com tanque.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 33,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 1659428,
+      "size_kb": 1620.53515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922714.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Apartamento en venda de 2 quartos Jardim América",
+      "size_bytes": 1162722,
+      "size_kb": 1135.470703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922715.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Em Jardim América, na Rua Profº Pires Salgado, próximo ao depósito da Supergasbr",
+      "size_bytes": 718042,
+      "size_kb": 701.212890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922700.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Apartamento venda 78m² de 2 quartos",
+      "size_bytes": 931008,
+      "size_kb": 909.1875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922712.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Apartamento 78m² venda Jardim América",
+      "size_bytes": 1089765,
+      "size_kb": 1064.2236328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922692.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Apartamento 78m² venda Jardim América",
+      "size_bytes": 757281,
+      "size_kb": 739.5322265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922703.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Apartamento de 2 quartos venda R$ 250.000",
+      "size_bytes": 1115533,
+      "size_kb": 1089.3876953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922711.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Apartamento · 75m² · 2 quartos · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 1573955,
+      "size_kb": 1537.0654296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922713.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Apartamento venda de 2 quartos",
+      "size_bytes": 577240,
+      "size_kb": 563.7109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922706.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Apartamento · 75m² · 2 quartos · 1 vaga",
+      "size_bytes": 611861,
+      "size_kb": 597.5205078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922709.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 250707,
+      "size_kb": 244.8310546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922707.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Apartamento en venda de 2 quartos Jardim América",
+      "size_bytes": 370999,
+      "size_kb": 362.3037109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922695.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Em Jardim América, na Rua Profº Pires Salgado, próximo ao depósito da Supergasbr",
+      "size_bytes": 534865,
+      "size_kb": 522.3291015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922701.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Apartamento venda 78m² de 2 quartos",
+      "size_bytes": 292479,
+      "size_kb": 285.6240234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922698.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Apartamento 78m² venda Jardim América",
+      "size_bytes": 390154,
+      "size_kb": 381.009765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922696.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Apartamento 78m² venda Jardim América",
+      "size_bytes": 412876,
+      "size_kb": 403.19921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922704.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Apartamento de 2 quartos venda R$ 250.000",
+      "size_bytes": 443254,
+      "size_kb": 432.865234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922708.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Apartamento · 75m² · 2 quartos · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 394337,
+      "size_kb": 385.0947265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922705.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Apartamento venda de 2 quartos",
+      "size_bytes": 429623,
+      "size_kb": 419.5537109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922693.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Apartamento · 75m² · 2 quartos · 1 vaga",
+      "size_bytes": 439087,
+      "size_kb": 428.7958984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922710.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 277351,
+      "size_kb": 270.8505859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922694.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Apartamento en venda de 2 quartos Jardim América",
+      "size_bytes": 532295,
+      "size_kb": 519.8193359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922716.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Em Jardim América, na Rua Profº Pires Salgado, próximo ao depósito da Supergasbr",
+      "size_bytes": 550251,
+      "size_kb": 537.3544921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922717.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Apartamento venda 78m² de 2 quartos",
+      "size_bytes": 517915,
+      "size_kb": 505.7763671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922719.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Apartamento 78m² venda Jardim América",
+      "size_bytes": 511150,
+      "size_kb": 499.169921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922697.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Apartamento 78m² venda Jardim América",
+      "size_bytes": 500062,
+      "size_kb": 488.341796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922699.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Apartamento de 2 quartos venda R$ 250.000",
+      "size_bytes": 505195,
+      "size_kb": 493.3544921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922720.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Apartamento · 75m² · 2 quartos · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 408689,
+      "size_kb": 399.1103515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922702.jpg"
+    },
+    {
+      "index": 29,
+      "filename": "foto_29.jpg",
+      "relative_path": "fotos/foto_29.jpg",
+      "title": "Apartamento venda de 2 quartos",
+      "size_bytes": 385658,
+      "size_kb": 376.619140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922722.jpg"
+    },
+    {
+      "index": 30,
+      "filename": "foto_30.jpg",
+      "relative_path": "fotos/foto_30.jpg",
+      "title": "Apartamento · 75m² · 2 quartos · 1 vaga",
+      "size_bytes": 374230,
+      "size_kb": 365.458984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922718.jpg"
+    },
+    {
+      "index": 31,
+      "filename": "foto_31.jpg",
+      "relative_path": "fotos/foto_31.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 609908,
+      "size_kb": 595.61328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922724.jpg"
+    },
+    {
+      "index": 32,
+      "filename": "foto_32.jpg",
+      "relative_path": "fotos/foto_32.jpg",
+      "title": "Apartamento en venda de 2 quartos Jardim América",
+      "size_bytes": 466209,
+      "size_kb": 455.2822265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922721.jpg"
+    },
+    {
+      "index": 33,
+      "filename": "foto_33.jpg",
+      "relative_path": "fotos/foto_33.jpg",
+      "title": "Em Jardim América, na Rua Profº Pires Salgado, próximo ao depósito da Supergasbr",
+      "size_bytes": 534865,
+      "size_kb": 522.3291015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/77/45/05/5524922723.jpg"
+    }
+  ]
+}

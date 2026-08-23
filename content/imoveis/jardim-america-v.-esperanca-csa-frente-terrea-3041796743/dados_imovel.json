@@ -1,0 +1,332 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/jardim-america-v.-esperanca-csa-frente-terrea-3041796743.html",
+  "dados_gerais": {
+    "titulo": "Jardim América - V. Esperança, Csa Frente, Térrea, Sala, 1 Quarto, Banheiro Social, Cozinha, Quintal",
+    "subtitulo": "Casa · 55m² · 1 quarto",
+    "codigo_imovel": "1007",
+    "id_imovelweb": "3041796743",
+    "preco": "R$ 950",
+    "condominio": "Não informado / Isento",
+    "endereco_completo": "Rua Antônio Lopes, Jardim América, Rio de Janeiro, RJ",
+    "logradouro": "Rua Antônio Lopes",
+    "bairro": "Jardim América",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8116966",
+      "longitude": "-43.3178822",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8116966,-43.3178822"
+    },
+    "data_publicacao": "03/08/2026",
+    "antiguidade": "Publicado há 16 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "60",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "55",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiro",
+      "measure": null,
+      "value": "1",
+      "icon": "bano"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "1",
+      "icon": "dormitorio"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "45",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Augo casa em Jardim América - Vila Esperança, na melhor quadra, próximo da Rua Fernandes da Cunha, térrea com quintal, sala , corredor, banheiro social completo, box blindex, 1 quarto , , cozinha com armários, quintal com área de lavanderia. Tem 1 cômodo dentro da casa que precisa de melhorias, e pode usar como 2º qto, mas a reforma é por conta do inquilino, se quiser usar. O aluguel é R$ 950,00, com 2 meses de depósito como garantia fiança e renda comprovada até 3 vezes o valor de aluguel.\nÁgua e Light, juntos paga em torno de 100,00.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 29,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Casa de 1 quarto, Rio de Janeiro",
+      "size_bytes": 90332,
+      "size_kb": 88.21484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541614.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Casa en aluguel de 1 quarto Jardim América",
+      "size_bytes": 119205,
+      "size_kb": 116.4111328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541630.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Augo casa em Jardim América - Vila Esperança, na melhor quadra, próximo da Rua F",
+      "size_bytes": 149740,
+      "size_kb": 146.23046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541633.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Casa aluguel 60m² de 1 quarto",
+      "size_bytes": 114516,
+      "size_kb": 111.83203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541632.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Casa 60m² aluguel Jardim América",
+      "size_bytes": 89848,
+      "size_kb": 87.7421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541621.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Casa 60m² aluguel Jardim América",
+      "size_bytes": 101024,
+      "size_kb": 98.65625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541617.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Casa de 1 quarto aluguel R$ 950",
+      "size_bytes": 105927,
+      "size_kb": 103.4443359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541616.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Casa · 55m² · 1 quarto - Imobiliária Clementino",
+      "size_bytes": 112039,
+      "size_kb": 109.4130859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541641.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Casa aluguel de 1 quarto",
+      "size_bytes": 101327,
+      "size_kb": 98.9521484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541615.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Casa · 55m² · 1 quarto",
+      "size_bytes": 80470,
+      "size_kb": 78.583984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541626.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Casa de 1 quarto, Rio de Janeiro",
+      "size_bytes": 92580,
+      "size_kb": 90.41015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541638.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Casa en aluguel de 1 quarto Jardim América",
+      "size_bytes": 113388,
+      "size_kb": 110.73046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541634.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Augo casa em Jardim América - Vila Esperança, na melhor quadra, próximo da Rua F",
+      "size_bytes": 131277,
+      "size_kb": 128.2001953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541618.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Casa aluguel 60m² de 1 quarto",
+      "size_bytes": 125848,
+      "size_kb": 122.8984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541628.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Casa 60m² aluguel Jardim América",
+      "size_bytes": 134130,
+      "size_kb": 130.986328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541629.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Casa 60m² aluguel Jardim América",
+      "size_bytes": 102186,
+      "size_kb": 99.791015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541635.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Casa de 1 quarto aluguel R$ 950",
+      "size_bytes": 104029,
+      "size_kb": 101.5908203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541631.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Casa · 55m² · 1 quarto - Imobiliária Clementino",
+      "size_bytes": 135635,
+      "size_kb": 132.4560546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541619.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Casa aluguel de 1 quarto",
+      "size_bytes": 97361,
+      "size_kb": 95.0791015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541620.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Casa · 55m² · 1 quarto",
+      "size_bytes": 104413,
+      "size_kb": 101.9658203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541622.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Casa de 1 quarto, Rio de Janeiro",
+      "size_bytes": 102186,
+      "size_kb": 99.791015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541624.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Casa en aluguel de 1 quarto Jardim América",
+      "size_bytes": 104413,
+      "size_kb": 101.9658203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541639.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Augo casa em Jardim América - Vila Esperança, na melhor quadra, próximo da Rua F",
+      "size_bytes": 106447,
+      "size_kb": 103.9521484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541642.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Casa aluguel 60m² de 1 quarto",
+      "size_bytes": 157710,
+      "size_kb": 154.013671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541623.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Casa 60m² aluguel Jardim América",
+      "size_bytes": 224117,
+      "size_kb": 218.8642578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541637.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Casa 60m² aluguel Jardim América",
+      "size_bytes": 216825,
+      "size_kb": 211.7431640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541640.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Casa de 1 quarto aluguel R$ 950",
+      "size_bytes": 198202,
+      "size_kb": 193.556640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541636.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Casa · 55m² · 1 quarto - Imobiliária Clementino",
+      "size_bytes": 206578,
+      "size_kb": 201.736328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541627.jpg"
+    },
+    {
+      "index": 29,
+      "filename": "foto_29.jpg",
+      "relative_path": "fotos/foto_29.jpg",
+      "title": "Casa aluguel de 1 quarto",
+      "size_bytes": 134830,
+      "size_kb": 131.669921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/67/43/7026541625.jpg"
+    }
+  ]
+}

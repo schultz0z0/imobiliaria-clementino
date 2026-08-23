@@ -1,0 +1,436 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/jardim-america-casa-duplex-com-4-qtos-suite-140m-3017305821.html",
+  "dados_gerais": {
+    "titulo": "Jardim América - Casa Duplex com 4 Qtos, Suíte, 140m², Qto Externo, Garagem,",
+    "subtitulo": "Casa · 140m² · 4 quartos · 8 vagas",
+    "codigo_imovel": "CA011",
+    "id_imovelweb": "3017305821",
+    "preco": "R$ 700.000",
+    "condominio": "R$ 0",
+    "endereco_completo": "Rua Antônio de Albuquerque, 761, Jardim América, Rio de Janeiro, RJ",
+    "logradouro": "Rua Antônio de Albuquerque, 761",
+    "bairro": "Jardim América",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8044695",
+      "longitude": "-43.3219508",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8044695,-43.3219508"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 358 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "250",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "140",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiros",
+      "measure": null,
+      "value": "3",
+      "icon": "bano"
+    },
+    "CFT7": {
+      "featureId": "CFT7",
+      "label": "vaga",
+      "measure": null,
+      "value": "8",
+      "icon": "cochera"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "4",
+      "icon": "dormitorio"
+    },
+    "CFT4": {
+      "featureId": "CFT4",
+      "label": "suíte",
+      "measure": null,
+      "value": "1",
+      "icon": "toilete"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "42",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Excelente casa duplex com 250m² de terreno e 140m² de área construída, sendo o 1° piso: varandão, living, hall social, banheiro social, box blindex, 1 quarto, copa, cozinha toda em azulejo, área de serviço, quintal, mais 1 quartinho e garagem para 8 carros, churrasqueira, cisterna com capacidade para 5mil lts. 2° piso: hall íntimo, sala de tv, circulação, banheiro social, box blindex , 3 quartos, sendo 1 suíte dando para varandão. Próximo a Praça Central de Jardim América, Supermercados Rede Economia , Loterias, Correios, Posto de saúde, Transportes e Escolas.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 39,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Casa de 4 quartos, Rio de Janeiro",
+      "size_bytes": 73406,
+      "size_kb": 71.685546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522367.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Casa en venda de 4 quartos Jardim América",
+      "size_bytes": 104293,
+      "size_kb": 101.8486328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522370.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Excelente casa duplex com 250m² de terreno e 140m² de área construída, sendo o 1",
+      "size_bytes": 84883,
+      "size_kb": 82.8935546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522315.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Casa venda 250m² de 4 quartos",
+      "size_bytes": 119025,
+      "size_kb": 116.2353515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522344.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Casa 250m² venda Jardim América",
+      "size_bytes": 63687,
+      "size_kb": 62.1943359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522237.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Casa 250m² venda Jardim América",
+      "size_bytes": 63956,
+      "size_kb": 62.45703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522231.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Casa de 4 quartos venda R$ 700.000",
+      "size_bytes": 68184,
+      "size_kb": 66.5859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522317.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Casa · 140m² · 4 quartos · 8 vagas - Imobiliária Clementino",
+      "size_bytes": 69520,
+      "size_kb": 67.890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522258.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Casa venda de 4 quartos",
+      "size_bytes": 41392,
+      "size_kb": 40.421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522120.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Casa · 140m² · 4 quartos · 8 vagas",
+      "size_bytes": 43534,
+      "size_kb": 42.513671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522192.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Casa de 4 quartos, Rio de Janeiro",
+      "size_bytes": 39894,
+      "size_kb": 38.958984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522152.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Casa en venda de 4 quartos Jardim América",
+      "size_bytes": 49257,
+      "size_kb": 48.1025390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522314.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Excelente casa duplex com 250m² de terreno e 140m² de área construída, sendo o 1",
+      "size_bytes": 54168,
+      "size_kb": 52.8984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522142.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Casa venda 250m² de 4 quartos",
+      "size_bytes": 58448,
+      "size_kb": 57.078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522262.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Casa 250m² venda Jardim América",
+      "size_bytes": 42762,
+      "size_kb": 41.759765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522253.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Casa 250m² venda Jardim América",
+      "size_bytes": 38425,
+      "size_kb": 37.5244140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522303.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Casa de 4 quartos venda R$ 700.000",
+      "size_bytes": 50923,
+      "size_kb": 49.7294921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522289.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Casa · 140m² · 4 quartos · 8 vagas - Imobiliária Clementino",
+      "size_bytes": 44072,
+      "size_kb": 43.0390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522230.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Casa venda de 4 quartos",
+      "size_bytes": 42574,
+      "size_kb": 41.576171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522112.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Casa · 140m² · 4 quartos · 8 vagas",
+      "size_bytes": 54104,
+      "size_kb": 52.8359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522323.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Casa de 4 quartos, Rio de Janeiro",
+      "size_bytes": 55502,
+      "size_kb": 54.201171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522313.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Casa en venda de 4 quartos Jardim América",
+      "size_bytes": 68752,
+      "size_kb": 67.140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522333.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Excelente casa duplex com 250m² de terreno e 140m² de área construída, sendo o 1",
+      "size_bytes": 54142,
+      "size_kb": 52.873046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522228.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Casa venda 250m² de 4 quartos",
+      "size_bytes": 112608,
+      "size_kb": 109.96875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522318.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Casa 250m² venda Jardim América",
+      "size_bytes": 98222,
+      "size_kb": 95.919921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522160.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Casa 250m² venda Jardim América",
+      "size_bytes": 50713,
+      "size_kb": 49.5244140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522979.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Casa de 4 quartos venda R$ 700.000",
+      "size_bytes": 43229,
+      "size_kb": 42.2158203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522305.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Casa · 140m² · 4 quartos · 8 vagas - Imobiliária Clementino",
+      "size_bytes": 50695,
+      "size_kb": 49.5068359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522242.jpg"
+    },
+    {
+      "index": 29,
+      "filename": "foto_29.jpg",
+      "relative_path": "fotos/foto_29.jpg",
+      "title": "Casa venda de 4 quartos",
+      "size_bytes": 60621,
+      "size_kb": 59.2001953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522276.jpg"
+    },
+    {
+      "index": 30,
+      "filename": "foto_30.jpg",
+      "relative_path": "fotos/foto_30.jpg",
+      "title": "Casa · 140m² · 4 quartos · 8 vagas",
+      "size_bytes": 49072,
+      "size_kb": 47.921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522312.jpg"
+    },
+    {
+      "index": 31,
+      "filename": "foto_31.jpg",
+      "relative_path": "fotos/foto_31.jpg",
+      "title": "Casa de 4 quartos, Rio de Janeiro",
+      "size_bytes": 52666,
+      "size_kb": 51.431640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522321.jpg"
+    },
+    {
+      "index": 32,
+      "filename": "foto_32.jpg",
+      "relative_path": "fotos/foto_32.jpg",
+      "title": "Casa en venda de 4 quartos Jardim América",
+      "size_bytes": 64963,
+      "size_kb": 63.4404296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522310.jpg"
+    },
+    {
+      "index": 33,
+      "filename": "foto_33.jpg",
+      "relative_path": "fotos/foto_33.jpg",
+      "title": "Excelente casa duplex com 250m² de terreno e 140m² de área construída, sendo o 1",
+      "size_bytes": 94550,
+      "size_kb": 92.333984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522170.jpg"
+    },
+    {
+      "index": 34,
+      "filename": "foto_34.jpg",
+      "relative_path": "fotos/foto_34.jpg",
+      "title": "Casa venda 250m² de 4 quartos",
+      "size_bytes": 78092,
+      "size_kb": 76.26171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522193.jpg"
+    },
+    {
+      "index": 35,
+      "filename": "foto_35.jpg",
+      "relative_path": "fotos/foto_35.jpg",
+      "title": "Casa 250m² venda Jardim América",
+      "size_bytes": 75180,
+      "size_kb": 73.41796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438523053.jpg"
+    },
+    {
+      "index": 36,
+      "filename": "foto_36.jpg",
+      "relative_path": "fotos/foto_36.jpg",
+      "title": "Casa 250m² venda Jardim América",
+      "size_bytes": 87543,
+      "size_kb": 85.4912109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522264.jpg"
+    },
+    {
+      "index": 37,
+      "filename": "foto_37.jpg",
+      "relative_path": "fotos/foto_37.jpg",
+      "title": "Casa de 4 quartos venda R$ 700.000",
+      "size_bytes": 73257,
+      "size_kb": 71.5400390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522336.jpg"
+    },
+    {
+      "index": 38,
+      "filename": "foto_38.jpg",
+      "relative_path": "fotos/foto_38.jpg",
+      "title": "Casa · 140m² · 4 quartos · 8 vagas - Imobiliária Clementino",
+      "size_bytes": 74510,
+      "size_kb": 72.763671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522365.jpg"
+    },
+    {
+      "index": 39,
+      "filename": "foto_39.jpg",
+      "relative_path": "fotos/foto_39.jpg",
+      "title": "Casa venda de 4 quartos",
+      "size_bytes": 44169,
+      "size_kb": 43.1337890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/21/5438522270.jpg"
+    }
+  ]
+}

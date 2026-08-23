@@ -1,0 +1,251 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/jardim-america-junto-a-pres.dutra-galpao-3018026849.html",
+  "dados_gerais": {
+    "titulo": "Jardim América - Junto a Pres.Dutra - Galpão Industrial, 382m² Construídos",
+    "subtitulo": "Comercial · 372m² · 2 quartos",
+    "codigo_imovel": "00152",
+    "id_imovelweb": "3018026849",
+    "preco": "R$ 350.000",
+    "condominio": "Não informado / Isento",
+    "endereco_completo": "Rua João de Paula Fonseca, Jardim América, Rio de Janeiro, RJ",
+    "logradouro": "Rua João de Paula Fonseca",
+    "bairro": "Jardim América",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8126123",
+      "longitude": "-43.3281018",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8126123,-43.3281018"
+    },
+    "data_publicacao": "09/09/2025",
+    "antiguidade": "Publicado há 345 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "381",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "372",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiro",
+      "measure": null,
+      "value": "1",
+      "icon": "bano"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "2",
+      "icon": "dormitorio"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "40",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Em Jardim América, na Rua João de Paula Fonseca, junto a Rodovia Presidente Dutra, quero vender Galpão para uso industrial ou comercial, possuindo 382;00m² de área construída e 240;00m² de área de terreno, que mede 12;00m² de frente e fundos por 20;00m² nas laterais. O imóvel possui uma área total de galpão com 352;00m² + 02 salas e banheiro.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 20,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Comercial de 2 quartos, Rio de Janeiro",
+      "size_bytes": 1585165,
+      "size_kb": 1548.0126953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/02/68/49/5482819827.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Comercial en venda de 2 quartos Jardim América",
+      "size_bytes": 912744,
+      "size_kb": 891.3515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/02/68/49/5482819825.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Em Jardim América, na Rua João de Paula Fonseca, junto a Rodovia Presidente Dutr",
+      "size_bytes": 1103735,
+      "size_kb": 1077.8662109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/02/68/49/5482819836.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Comercial venda 381m² de 2 quartos",
+      "size_bytes": 1181754,
+      "size_kb": 1154.056640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/02/68/49/5482819837.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Comercial 381m² venda Jardim América",
+      "size_bytes": 726255,
+      "size_kb": 709.2333984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/02/68/49/5482819826.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Comercial 381m² venda Jardim América",
+      "size_bytes": 701245,
+      "size_kb": 684.8095703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/02/68/49/5482819835.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Comercial de 2 quartos venda R$ 350.000",
+      "size_bytes": 601303,
+      "size_kb": 587.2099609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/02/68/49/5482819830.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Comercial · 372m² · 2 quartos - Imobiliária Clementino",
+      "size_bytes": 621801,
+      "size_kb": 607.2275390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/02/68/49/5482819840.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Comercial venda de 2 quartos",
+      "size_bytes": 808655,
+      "size_kb": 789.7021484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/02/68/49/5482819839.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Comercial · 372m² · 2 quartos",
+      "size_bytes": 781170,
+      "size_kb": 762.861328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/02/68/49/5482819838.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Comercial de 2 quartos, Rio de Janeiro",
+      "size_bytes": 673607,
+      "size_kb": 657.8193359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/02/68/49/5482819834.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Comercial en venda de 2 quartos Jardim América",
+      "size_bytes": 671488,
+      "size_kb": 655.75,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/02/68/49/5482819829.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Em Jardim América, na Rua João de Paula Fonseca, junto a Rodovia Presidente Dutr",
+      "size_bytes": 553680,
+      "size_kb": 540.703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/02/68/49/5482819821.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Comercial venda 381m² de 2 quartos",
+      "size_bytes": 597255,
+      "size_kb": 583.2568359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/02/68/49/5482819822.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Comercial 381m² venda Jardim América",
+      "size_bytes": 543258,
+      "size_kb": 530.525390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/02/68/49/5482819831.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Comercial 381m² venda Jardim América",
+      "size_bytes": 729402,
+      "size_kb": 712.306640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/02/68/49/5482819824.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Comercial de 2 quartos venda R$ 350.000",
+      "size_bytes": 596173,
+      "size_kb": 582.2001953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/02/68/49/5482819833.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Comercial · 372m² · 2 quartos - Imobiliária Clementino",
+      "size_bytes": 517062,
+      "size_kb": 504.943359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/02/68/49/5482819828.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Comercial venda de 2 quartos",
+      "size_bytes": 604510,
+      "size_kb": 590.341796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/02/68/49/5482819832.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Comercial · 372m² · 2 quartos",
+      "size_bytes": 583289,
+      "size_kb": 569.6181640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/02/68/49/5482819823.jpg"
+    }
+  ]
+}

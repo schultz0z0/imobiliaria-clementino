@@ -1,0 +1,278 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/vigario-geral-condominio-padre-anchieta-apto-1-qto-3017305793.html",
+  "dados_gerais": {
+    "titulo": "Vigário Geral, Condomínio Padre Anchieta - Apto 1 Qto, Sala, Cozinha e Wc. Vendo/Alugo.",
+    "subtitulo": "Apartamento · 45m² · 1 quarto",
+    "codigo_imovel": "AP0011",
+    "id_imovelweb": "3017305793",
+    "preco": "R$ 75.000",
+    "condominio": "R$ 255",
+    "endereco_completo": "Rua Estrada do Vigário Geral, 525, Vigário Geral, Rio de Janeiro, RJ",
+    "logradouro": "Rua Estrada do Vigário Geral, 525",
+    "bairro": "Vigário Geral",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8168206",
+      "longitude": "-43.3137144",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8168206,-43.3137144"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 358 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "47",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "45",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiro",
+      "measure": null,
+      "value": "1",
+      "icon": "bano"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "1",
+      "icon": "dormitorio"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "59",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Em Vigário Geral - Alugo ou vendo apartamento no Condomínio Padre Anchieta na Estrada de Vigário Geral. Sala, Banheiro Social, Quarto, Cozinha e Área. Condomínio, Área de Lazer, Quadra Esportiva, Brinquedoteca e Salão de Festas. Fica ao lado da Academia ACP.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 23,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Apartamento de 1 quarto, Rio de Janeiro",
+      "size_bytes": 202640,
+      "size_kb": 197.890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/93/5438516355.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Apartamento en venda de 1 quarto Vigário Geral",
+      "size_bytes": 196813,
+      "size_kb": 192.2001953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/93/5438515999.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Em Vigário Geral - Alugo ou vendo apartamento no Condomínio Padre Anchieta na Es",
+      "size_bytes": 179207,
+      "size_kb": 175.0068359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/93/5438516058.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Apartamento venda 47m² de 1 quarto",
+      "size_bytes": 214170,
+      "size_kb": 209.150390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/93/5438516289.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Apartamento 47m² venda Vigário Geral",
+      "size_bytes": 349350,
+      "size_kb": 341.162109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/93/5438516075.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Apartamento 47m² venda Vigário Geral",
+      "size_bytes": 463578,
+      "size_kb": 452.712890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/93/5438516241.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Apartamento de 1 quarto venda R$ 75.000",
+      "size_bytes": 232234,
+      "size_kb": 226.791015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/93/5438516041.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Apartamento · 45m² · 1 quarto - Imobiliária Clementino",
+      "size_bytes": 241719,
+      "size_kb": 236.0537109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/93/5438516042.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Apartamento venda de 1 quarto",
+      "size_bytes": 289878,
+      "size_kb": 283.083984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/93/5438516227.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Apartamento · 45m² · 1 quarto",
+      "size_bytes": 304475,
+      "size_kb": 297.3388671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/93/5438516197.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Apartamento de 1 quarto, Rio de Janeiro",
+      "size_bytes": 236614,
+      "size_kb": 231.068359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/93/5438516090.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Apartamento en venda de 1 quarto Vigário Geral",
+      "size_bytes": 256949,
+      "size_kb": 250.9267578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/93/5438516345.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Em Vigário Geral - Alugo ou vendo apartamento no Condomínio Padre Anchieta na Es",
+      "size_bytes": 307809,
+      "size_kb": 300.5947265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/93/5438516052.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Apartamento venda 47m² de 1 quarto",
+      "size_bytes": 114950,
+      "size_kb": 112.255859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/93/5438515973.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Apartamento 47m² venda Vigário Geral",
+      "size_bytes": 137440,
+      "size_kb": 134.21875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/93/5438516006.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Apartamento 47m² venda Vigário Geral",
+      "size_bytes": 74069,
+      "size_kb": 72.3330078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/93/5438515968.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Apartamento de 1 quarto venda R$ 75.000",
+      "size_bytes": 188397,
+      "size_kb": 183.9814453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/93/5438516011.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Apartamento · 45m² · 1 quarto - Imobiliária Clementino",
+      "size_bytes": 115056,
+      "size_kb": 112.359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/93/5438515996.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Apartamento venda de 1 quarto",
+      "size_bytes": 117626,
+      "size_kb": 114.869140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/93/5438515981.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Apartamento · 45m² · 1 quarto",
+      "size_bytes": 125014,
+      "size_kb": 122.083984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/93/5438515987.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Apartamento de 1 quarto, Rio de Janeiro",
+      "size_bytes": 102266,
+      "size_kb": 99.869140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/93/5438516161.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Apartamento en venda de 1 quarto Vigário Geral",
+      "size_bytes": 131324,
+      "size_kb": 128.24609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/93/5438516186.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Em Vigário Geral - Alugo ou vendo apartamento no Condomínio Padre Anchieta na Es",
+      "size_bytes": 173461,
+      "size_kb": 169.3955078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/93/5438516033.jpg"
+    }
+  ]
+}

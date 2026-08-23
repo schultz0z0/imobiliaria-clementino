@@ -1,0 +1,521 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/jardim-america-casa-linear-quintal-total-3-qtos-3018791156.html",
+  "dados_gerais": {
+    "titulo": "Jardim América - Casa Linear, Quintal, Total 3 Qtos + Anexo, Garagem.",
+    "subtitulo": "Casa · 85m² · 4 vagas",
+    "codigo_imovel": "0017",
+    "id_imovelweb": "3018791156",
+    "preco": "R$ 250.000",
+    "condominio": "R$ 0",
+    "endereco_completo": "Rua Gelabert Simas, 88, Jardim América, Rio de Janeiro, RJ",
+    "logradouro": "Rua Gelabert Simas, 88",
+    "bairro": "Jardim América",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8073002",
+      "longitude": "-43.3285579",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8073002,-43.3285579"
+    },
+    "data_publicacao": "21/09/2025",
+    "antiguidade": "Publicado há 332 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "88",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "85",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiros",
+      "measure": null,
+      "value": "2",
+      "icon": "bano"
+    },
+    "CFT7": {
+      "featureId": "CFT7",
+      "label": "vaga",
+      "measure": null,
+      "value": "4",
+      "icon": "cochera"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "32",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Em Jardim América, Rua Gelabert Simas, Próx. ponto final do 774. Casa linear com 85m², total de 2 quartos + apto anexo tipo sala e quarto. A casa possui um quintal grande, garagem, sala 2 ambientes, dois quartos amplos, 2 banheiros, copa e cozinha. A área externa conta com lavanderia, dois tanques. Doctos ok. Aceito financiamento da Caixa ou outro banco.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 50,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Casa , Rio de Janeiro",
+      "size_bytes": 244334,
+      "size_kb": 238.607421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374865.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Casa en venda  Jardim América",
+      "size_bytes": 261229,
+      "size_kb": 255.1064453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374848.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Em Jardim América, Rua Gelabert Simas, Próx. ponto final do 774. Casa linear com",
+      "size_bytes": 248154,
+      "size_kb": 242.337890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374864.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Casa venda 88m² ",
+      "size_bytes": 265918,
+      "size_kb": 259.685546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374850.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Casa 88m² venda Jardim América",
+      "size_bytes": 251370,
+      "size_kb": 245.478515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374861.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Casa 88m² venda Jardim América",
+      "size_bytes": 265139,
+      "size_kb": 258.9248046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374856.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Casa  venda R$ 250.000",
+      "size_bytes": 182514,
+      "size_kb": 178.236328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374854.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Casa · 85m² · 4 vagas - Imobiliária Clementino",
+      "size_bytes": 166597,
+      "size_kb": 162.6923828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374851.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Casa venda ",
+      "size_bytes": 137960,
+      "size_kb": 134.7265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374857.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Casa · 85m² · 4 vagas",
+      "size_bytes": 205258,
+      "size_kb": 200.447265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374853.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Casa , Rio de Janeiro",
+      "size_bytes": 154150,
+      "size_kb": 150.537109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374852.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Casa en venda  Jardim América",
+      "size_bytes": 189137,
+      "size_kb": 184.7041015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374866.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Em Jardim América, Rua Gelabert Simas, Próx. ponto final do 774. Casa linear com",
+      "size_bytes": 174567,
+      "size_kb": 170.4755859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374840.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Casa venda 88m² ",
+      "size_bytes": 159338,
+      "size_kb": 155.603515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374849.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Casa 88m² venda Jardim América",
+      "size_bytes": 170365,
+      "size_kb": 166.3720703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374855.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Casa 88m² venda Jardim América",
+      "size_bytes": 125677,
+      "size_kb": 122.7314453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374844.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Casa  venda R$ 250.000",
+      "size_bytes": 229076,
+      "size_kb": 223.70703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374867.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Casa · 85m² · 4 vagas - Imobiliária Clementino",
+      "size_bytes": 149335,
+      "size_kb": 145.8349609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374860.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Casa venda ",
+      "size_bytes": 175184,
+      "size_kb": 171.078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374858.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Casa · 85m² · 4 vagas",
+      "size_bytes": 223493,
+      "size_kb": 218.2548828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374859.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Casa , Rio de Janeiro",
+      "size_bytes": 191971,
+      "size_kb": 187.4716796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374871.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Casa en venda  Jardim América",
+      "size_bytes": 175292,
+      "size_kb": 171.18359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374870.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Em Jardim América, Rua Gelabert Simas, Próx. ponto final do 774. Casa linear com",
+      "size_bytes": 188264,
+      "size_kb": 183.8515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374872.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Casa venda 88m² ",
+      "size_bytes": 150623,
+      "size_kb": 147.0927734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374873.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Casa 88m² venda Jardim América",
+      "size_bytes": 129122,
+      "size_kb": 126.095703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374874.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Casa 88m² venda Jardim América",
+      "size_bytes": 189137,
+      "size_kb": 184.7041015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374875.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Casa  venda R$ 250.000",
+      "size_bytes": 170365,
+      "size_kb": 166.3720703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374876.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Casa · 85m² · 4 vagas - Imobiliária Clementino",
+      "size_bytes": 125677,
+      "size_kb": 122.7314453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374877.jpg"
+    },
+    {
+      "index": 29,
+      "filename": "foto_29.jpg",
+      "relative_path": "fotos/foto_29.jpg",
+      "title": "Casa venda ",
+      "size_bytes": 229076,
+      "size_kb": 223.70703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374878.jpg"
+    },
+    {
+      "index": 30,
+      "filename": "foto_30.jpg",
+      "relative_path": "fotos/foto_30.jpg",
+      "title": "Casa · 85m² · 4 vagas",
+      "size_bytes": 149335,
+      "size_kb": 145.8349609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374884.jpg"
+    },
+    {
+      "index": 31,
+      "filename": "foto_31.jpg",
+      "relative_path": "fotos/foto_31.jpg",
+      "title": "Casa , Rio de Janeiro",
+      "size_bytes": 175184,
+      "size_kb": 171.078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374880.jpg"
+    },
+    {
+      "index": 32,
+      "filename": "foto_32.jpg",
+      "relative_path": "fotos/foto_32.jpg",
+      "title": "Casa en venda  Jardim América",
+      "size_bytes": 223493,
+      "size_kb": 218.2548828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374889.jpg"
+    },
+    {
+      "index": 33,
+      "filename": "foto_33.jpg",
+      "relative_path": "fotos/foto_33.jpg",
+      "title": "Em Jardim América, Rua Gelabert Simas, Próx. ponto final do 774. Casa linear com",
+      "size_bytes": 205100,
+      "size_kb": 200.29296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374879.jpg"
+    },
+    {
+      "index": 34,
+      "filename": "foto_34.jpg",
+      "relative_path": "fotos/foto_34.jpg",
+      "title": "Casa venda 88m² ",
+      "size_bytes": 274575,
+      "size_kb": 268.1396484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374887.jpg"
+    },
+    {
+      "index": 35,
+      "filename": "foto_35.jpg",
+      "relative_path": "fotos/foto_35.jpg",
+      "title": "Casa 88m² venda Jardim América",
+      "size_bytes": 200153,
+      "size_kb": 195.4619140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374881.jpg"
+    },
+    {
+      "index": 36,
+      "filename": "foto_36.jpg",
+      "relative_path": "fotos/foto_36.jpg",
+      "title": "Casa 88m² venda Jardim América",
+      "size_bytes": 162129,
+      "size_kb": 158.3291015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374885.jpg"
+    },
+    {
+      "index": 37,
+      "filename": "foto_37.jpg",
+      "relative_path": "fotos/foto_37.jpg",
+      "title": "Casa  venda R$ 250.000",
+      "size_bytes": 173343,
+      "size_kb": 169.2802734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374888.jpg"
+    },
+    {
+      "index": 38,
+      "filename": "foto_38.jpg",
+      "relative_path": "fotos/foto_38.jpg",
+      "title": "Casa · 85m² · 4 vagas - Imobiliária Clementino",
+      "size_bytes": 164533,
+      "size_kb": 160.6767578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374886.jpg"
+    },
+    {
+      "index": 39,
+      "filename": "foto_39.jpg",
+      "relative_path": "fotos/foto_39.jpg",
+      "title": "Casa venda ",
+      "size_bytes": 145747,
+      "size_kb": 142.3310546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374883.jpg"
+    },
+    {
+      "index": 40,
+      "filename": "foto_40.jpg",
+      "relative_path": "fotos/foto_40.jpg",
+      "title": "Casa · 85m² · 4 vagas",
+      "size_bytes": 213162,
+      "size_kb": 208.166015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374882.jpg"
+    },
+    {
+      "index": 41,
+      "filename": "foto_41.jpg",
+      "relative_path": "fotos/foto_41.jpg",
+      "title": "Casa , Rio de Janeiro",
+      "size_bytes": 181304,
+      "size_kb": 177.0546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374845.jpg"
+    },
+    {
+      "index": 42,
+      "filename": "foto_42.jpg",
+      "relative_path": "fotos/foto_42.jpg",
+      "title": "Casa en venda  Jardim América",
+      "size_bytes": 132053,
+      "size_kb": 128.9580078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374842.jpg"
+    },
+    {
+      "index": 43,
+      "filename": "foto_43.jpg",
+      "relative_path": "fotos/foto_43.jpg",
+      "title": "Em Jardim América, Rua Gelabert Simas, Próx. ponto final do 774. Casa linear com",
+      "size_bytes": 159601,
+      "size_kb": 155.8603515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374863.jpg"
+    },
+    {
+      "index": 44,
+      "filename": "foto_44.jpg",
+      "relative_path": "fotos/foto_44.jpg",
+      "title": "Casa venda 88m² ",
+      "size_bytes": 147698,
+      "size_kb": 144.236328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374869.jpg"
+    },
+    {
+      "index": 45,
+      "filename": "foto_45.jpg",
+      "relative_path": "fotos/foto_45.jpg",
+      "title": "Casa 88m² venda Jardim América",
+      "size_bytes": 183566,
+      "size_kb": 179.263671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374862.jpg"
+    },
+    {
+      "index": 46,
+      "filename": "foto_46.jpg",
+      "relative_path": "fotos/foto_46.jpg",
+      "title": "Casa 88m² venda Jardim América",
+      "size_bytes": 174823,
+      "size_kb": 170.7255859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374847.jpg"
+    },
+    {
+      "index": 47,
+      "filename": "foto_47.jpg",
+      "relative_path": "fotos/foto_47.jpg",
+      "title": "Casa  venda R$ 250.000",
+      "size_bytes": 196376,
+      "size_kb": 191.7734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374868.jpg"
+    },
+    {
+      "index": 48,
+      "filename": "foto_48.jpg",
+      "relative_path": "fotos/foto_48.jpg",
+      "title": "Casa · 85m² · 4 vagas - Imobiliária Clementino",
+      "size_bytes": 195596,
+      "size_kb": 191.01171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374846.jpg"
+    },
+    {
+      "index": 49,
+      "filename": "foto_49.jpg",
+      "relative_path": "fotos/foto_49.jpg",
+      "title": "Casa venda ",
+      "size_bytes": 194445,
+      "size_kb": 189.8876953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374843.jpg"
+    },
+    {
+      "index": 50,
+      "filename": "foto_50.jpg",
+      "relative_path": "fotos/foto_50.jpg",
+      "title": "Casa · 85m² · 4 vagas",
+      "size_bytes": 209473,
+      "size_kb": 204.5634765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/79/11/56/5527374841.jpg"
+    }
+  ]
+}

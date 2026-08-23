@@ -1,0 +1,193 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/lgo-do-bicao-cond.-solar-da-vila-apto-de-80-m-2-3028206195.html",
+  "dados_gerais": {
+    "titulo": "Lgo do Bicão - Cond. Solar da Vila, Apto de 80 m², 2 Qtos (Suíte) + 1 Qto Revertido, 2Vgas Demarcada",
+    "subtitulo": "Apartamento · 80m² · 2 quartos · 2 vagas",
+    "codigo_imovel": "0069",
+    "id_imovelweb": "3028206195",
+    "preco": "R$ 335.000",
+    "condominio": "R$ 475",
+    "endereco_completo": "Rua Padre Manoel Rodrigues, 00, Vila da Penha, Rio de Janeiro, RJ",
+    "logradouro": "Rua Padre Manoel Rodrigues, 00",
+    "bairro": "Vila da Penha",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8394441",
+      "longitude": "-43.3130613",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8394441,-43.3130613"
+    },
+    "data_publicacao": "19/02/2026",
+    "antiguidade": "Publicado há 182 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "84",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "80",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiros",
+      "measure": null,
+      "value": "2",
+      "icon": "bano"
+    },
+    "CFT7": {
+      "featureId": "CFT7",
+      "label": "vaga",
+      "measure": null,
+      "value": "2",
+      "icon": "cochera"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "2",
+      "icon": "dormitorio"
+    },
+    "CFT4": {
+      "featureId": "CFT4",
+      "label": "suíte",
+      "measure": null,
+      "value": "1",
+      "icon": "toilete"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "27",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Apartamento à venda em Vila da Penha, Largo do Bicão, Condomínio Solar da Vila, junto ao comércio, bancos e Shopping Carioca. Apto possui 80 m² de área útil. sendo composto de: sala 2 ambientes, 2 quartos, sendo 1 suíte + 1 quarto revertido, total 3 qtos, 2 banheiros, cozinha e área de serviço funcional. Possui 2 vagas de garagem, sendo 1 demarcada e outra no Condomínio.\nO condomínio oferece câmeras de segurança, elevador, playground e salão de festas, além de vigilância 24h, proporcionando segurança e lazer para toda a família. Aceita FGTS e Carta de Crédito. Apartamento, em prédio com 4 andares e 30 anos de idade.\nLocalizado em Vila da Penha, bairro residencial com comércio diversificado e fácil acesso a serviços. Próximo a supermercados, farmácias e escolas, com diversas opções de transporte público. A região oferece um ambiente tranquilo e familiar, ideal para quem busca praticidade e bem-estar.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 12,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 75455,
+      "size_kb": 73.6865234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/28/20/61/95/6103340402.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Apartamento en venda de 2 quartos Vila da Penha",
+      "size_bytes": 59702,
+      "size_kb": 58.302734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/28/20/61/95/6103340414.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Apartamento à venda em Vila da Penha, Largo do Bicão, Condomínio Solar da Vila, ",
+      "size_bytes": 75533,
+      "size_kb": 73.7626953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/28/20/61/95/6103340415.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Apartamento venda 84m² de 2 quartos",
+      "size_bytes": 69731,
+      "size_kb": 68.0966796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/28/20/61/95/6103340411.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Apartamento 84m² venda Vila da Penha",
+      "size_bytes": 69350,
+      "size_kb": 67.724609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/28/20/61/95/6103340401.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Apartamento 84m² venda Vila da Penha",
+      "size_bytes": 58549,
+      "size_kb": 57.1767578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/28/20/61/95/6103340399.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Apartamento de 2 quartos venda R$ 335.000",
+      "size_bytes": 64486,
+      "size_kb": 62.974609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/28/20/61/95/6103340419.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Apartamento · 80m² · 2 quartos · 2 vagas - Imobiliária Clementino",
+      "size_bytes": 67928,
+      "size_kb": 66.3359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/28/20/61/95/6103340420.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Apartamento venda de 2 quartos",
+      "size_bytes": 77394,
+      "size_kb": 75.580078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/28/20/61/95/6103340404.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Apartamento · 80m² · 2 quartos · 2 vagas",
+      "size_bytes": 72588,
+      "size_kb": 70.88671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/28/20/61/95/6103340403.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 80254,
+      "size_kb": 78.373046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/28/20/61/95/6103340416.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Apartamento en venda de 2 quartos Vila da Penha",
+      "size_bytes": 56208,
+      "size_kb": 54.890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/28/20/61/95/6103340405.jpg"
+    }
+  ]
+}

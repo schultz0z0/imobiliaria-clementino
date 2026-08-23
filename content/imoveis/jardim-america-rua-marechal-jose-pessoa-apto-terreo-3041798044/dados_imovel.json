@@ -1,0 +1,465 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/jardim-america-rua-marechal-jose-pessoa-apto-terreo-3041798044.html",
+  "dados_gerais": {
+    "titulo": "Jardim América - Rua Marechal José Pessoa, Apto Térreo Tipo Casa, Varanda, 3 Qtos, 2 Banheiros, 1 Vg",
+    "subtitulo": "Casa · 90m² · 3 quartos · 1 vaga",
+    "codigo_imovel": "0032",
+    "id_imovelweb": "3041798044",
+    "preco": "R$ 1.500",
+    "condominio": "Não informado / Isento",
+    "endereco_completo": "Rua Marechal José Pessoa, Jardim América, Rio de Janeiro, RJ",
+    "logradouro": "Rua Marechal José Pessoa",
+    "bairro": "Jardim América",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8040179",
+      "longitude": "-43.3248961",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8040179,-43.3248961"
+    },
+    "data_publicacao": "03/08/2026",
+    "antiguidade": "Publicado há 9 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "93",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "90",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiros",
+      "measure": null,
+      "value": "2",
+      "icon": "bano"
+    },
+    "CFT7": {
+      "featureId": "CFT7",
+      "label": "vaga",
+      "measure": null,
+      "value": "1",
+      "icon": "cochera"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "3",
+      "icon": "dormitorio"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "37",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Apto Térreo Tipo Casa disponível para aluguel no Jardim América, na Rua Marechal José Pessoa, apresentando 90 m² de área construída e 93 m² de área total. O imóvel conta com 37 anos de história e possui uma distribuição interna funcional com sala de jantar, cozinha, área de serviço e 2 banheiros, sendo 1 sociail e o outro externo. No espaço exterior tem varanda e 1 vaga de garagem.\nA localização garante fácil acesso a avenidas principais, proximidade a escolas de qualidade, supermercados, farmácias e diversas opções de transporte público.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 43,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Casa de 3 quartos, Rio de Janeiro",
+      "size_bytes": 165708,
+      "size_kb": 161.82421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691642.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Casa en aluguel de 3 quartos Jardim América",
+      "size_bytes": 185174,
+      "size_kb": 180.833984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691656.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Apto Térreo Tipo Casa disponível para aluguel no Jardim América, na Rua Marechal",
+      "size_bytes": 114764,
+      "size_kb": 112.07421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691630.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Casa aluguel 93m² de 3 quartos",
+      "size_bytes": 176923,
+      "size_kb": 172.7763671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691647.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Casa 93m² aluguel Jardim América",
+      "size_bytes": 110196,
+      "size_kb": 107.61328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691654.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Casa 93m² aluguel Jardim América",
+      "size_bytes": 93908,
+      "size_kb": 91.70703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691634.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Casa de 3 quartos aluguel R$ 1.500",
+      "size_bytes": 127433,
+      "size_kb": 124.4462890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691659.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Casa · 90m² · 3 quartos · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 157636,
+      "size_kb": 153.94140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691652.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Casa aluguel de 3 quartos",
+      "size_bytes": 92347,
+      "size_kb": 90.1826171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691661.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Casa · 90m² · 3 quartos · 1 vaga",
+      "size_bytes": 157636,
+      "size_kb": 153.94140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691671.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Casa de 3 quartos, Rio de Janeiro",
+      "size_bytes": 165708,
+      "size_kb": 161.82421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691667.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Casa en aluguel de 3 quartos Jardim América",
+      "size_bytes": 143153,
+      "size_kb": 139.7978515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691665.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Apto Térreo Tipo Casa disponível para aluguel no Jardim América, na Rua Marechal",
+      "size_bytes": 152288,
+      "size_kb": 148.71875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691677.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Casa aluguel 93m² de 3 quartos",
+      "size_bytes": 142096,
+      "size_kb": 138.765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691644.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Casa 93m² aluguel Jardim América",
+      "size_bytes": 144416,
+      "size_kb": 141.03125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691651.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Casa 93m² aluguel Jardim América",
+      "size_bytes": 134197,
+      "size_kb": 131.0517578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691663.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Casa de 3 quartos aluguel R$ 1.500",
+      "size_bytes": 141046,
+      "size_kb": 137.740234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691666.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Casa · 90m² · 3 quartos · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 138367,
+      "size_kb": 135.1240234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691649.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Casa aluguel de 3 quartos",
+      "size_bytes": 65370,
+      "size_kb": 63.837890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691640.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Casa · 90m² · 3 quartos · 1 vaga",
+      "size_bytes": 68940,
+      "size_kb": 67.32421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691635.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Casa de 3 quartos, Rio de Janeiro",
+      "size_bytes": 77833,
+      "size_kb": 76.0087890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691632.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Casa en aluguel de 3 quartos Jardim América",
+      "size_bytes": 82345,
+      "size_kb": 80.4150390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691653.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Apto Térreo Tipo Casa disponível para aluguel no Jardim América, na Rua Marechal",
+      "size_bytes": 93348,
+      "size_kb": 91.16015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691660.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Casa aluguel 93m² de 3 quartos",
+      "size_bytes": 95014,
+      "size_kb": 92.787109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691643.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Casa 93m² aluguel Jardim América",
+      "size_bytes": 95200,
+      "size_kb": 92.96875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691669.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Casa 93m² aluguel Jardim América",
+      "size_bytes": 112478,
+      "size_kb": 109.841796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691676.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Casa de 3 quartos aluguel R$ 1.500",
+      "size_bytes": 116769,
+      "size_kb": 114.0322265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691638.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Casa · 90m² · 3 quartos · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 96554,
+      "size_kb": 94.291015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691645.jpg"
+    },
+    {
+      "index": 29,
+      "filename": "foto_29.jpg",
+      "relative_path": "fotos/foto_29.jpg",
+      "title": "Casa aluguel de 3 quartos",
+      "size_bytes": 96554,
+      "size_kb": 94.291015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691637.jpg"
+    },
+    {
+      "index": 30,
+      "filename": "foto_30.jpg",
+      "relative_path": "fotos/foto_30.jpg",
+      "title": "Casa · 90m² · 3 quartos · 1 vaga",
+      "size_bytes": 117645,
+      "size_kb": 114.8876953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691636.jpg"
+    },
+    {
+      "index": 31,
+      "filename": "foto_31.jpg",
+      "relative_path": "fotos/foto_31.jpg",
+      "title": "Casa de 3 quartos, Rio de Janeiro",
+      "size_bytes": 124709,
+      "size_kb": 121.7861328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691664.jpg"
+    },
+    {
+      "index": 32,
+      "filename": "foto_32.jpg",
+      "relative_path": "fotos/foto_32.jpg",
+      "title": "Casa en aluguel de 3 quartos Jardim América",
+      "size_bytes": 93908,
+      "size_kb": 91.70703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691631.jpg"
+    },
+    {
+      "index": 33,
+      "filename": "foto_33.jpg",
+      "relative_path": "fotos/foto_33.jpg",
+      "title": "Apto Térreo Tipo Casa disponível para aluguel no Jardim América, na Rua Marechal",
+      "size_bytes": 110196,
+      "size_kb": 107.61328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691655.jpg"
+    },
+    {
+      "index": 34,
+      "filename": "foto_34.jpg",
+      "relative_path": "fotos/foto_34.jpg",
+      "title": "Casa aluguel 93m² de 3 quartos",
+      "size_bytes": 142096,
+      "size_kb": 138.765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691648.jpg"
+    },
+    {
+      "index": 35,
+      "filename": "foto_35.jpg",
+      "relative_path": "fotos/foto_35.jpg",
+      "title": "Casa 93m² aluguel Jardim América",
+      "size_bytes": 152288,
+      "size_kb": 148.71875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691641.jpg"
+    },
+    {
+      "index": 36,
+      "filename": "foto_36.jpg",
+      "relative_path": "fotos/foto_36.jpg",
+      "title": "Casa 93m² aluguel Jardim América",
+      "size_bytes": 90725,
+      "size_kb": 88.5986328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691662.jpg"
+    },
+    {
+      "index": 37,
+      "filename": "foto_37.jpg",
+      "relative_path": "fotos/foto_37.jpg",
+      "title": "Casa de 3 quartos aluguel R$ 1.500",
+      "size_bytes": 143153,
+      "size_kb": 139.7978515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691650.jpg"
+    },
+    {
+      "index": 38,
+      "filename": "foto_38.jpg",
+      "relative_path": "fotos/foto_38.jpg",
+      "title": "Casa · 90m² · 3 quartos · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 144416,
+      "size_kb": 141.03125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691639.jpg"
+    },
+    {
+      "index": 39,
+      "filename": "foto_39.jpg",
+      "relative_path": "fotos/foto_39.jpg",
+      "title": "Casa aluguel de 3 quartos",
+      "size_bytes": 89561,
+      "size_kb": 87.4619140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691633.jpg"
+    },
+    {
+      "index": 40,
+      "filename": "foto_40.jpg",
+      "relative_path": "fotos/foto_40.jpg",
+      "title": "Casa · 90m² · 3 quartos · 1 vaga",
+      "size_bytes": 77587,
+      "size_kb": 75.7685546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691670.jpg"
+    },
+    {
+      "index": 41,
+      "filename": "foto_41.jpg",
+      "relative_path": "fotos/foto_41.jpg",
+      "title": "Casa de 3 quartos, Rio de Janeiro",
+      "size_bytes": 112488,
+      "size_kb": 109.8515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691646.jpg"
+    },
+    {
+      "index": 42,
+      "filename": "foto_42.jpg",
+      "relative_path": "fotos/foto_42.jpg",
+      "title": "Casa en aluguel de 3 quartos Jardim América",
+      "size_bytes": 88913,
+      "size_kb": 86.8291015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691658.jpg"
+    },
+    {
+      "index": 43,
+      "filename": "foto_43.jpg",
+      "relative_path": "fotos/foto_43.jpg",
+      "title": "Apto Térreo Tipo Casa disponível para aluguel no Jardim América, na Rua Marechal",
+      "size_bytes": 65096,
+      "size_kb": 63.5703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/79/80/44/7026691657.jpg"
+    }
+  ]
+}

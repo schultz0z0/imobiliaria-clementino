@@ -1,0 +1,350 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/del-castilho-junto-ao-pam-apto-de-70-m-de-frente-3024230857.html",
+  "dados_gerais": {
+    "titulo": "Del Castilho, junto ao PAM, Apto de 70 m², de frente, com sol da manhã, 2º andar, apenas um lance de",
+    "subtitulo": "Apartamento · 70m² · 2 quartos",
+    "codigo_imovel": "0078",
+    "id_imovelweb": "3024230857",
+    "preco": "R$ 109.000",
+    "condominio": "R$ 130",
+    "endereco_completo": "Rua Lagoa Redonda, Del Castilho, Rio de Janeiro, RJ",
+    "logradouro": "Rua Lagoa Redonda",
+    "bairro": "Del Castilho",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8739311",
+      "longitude": "-43.2707343",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8739311,-43.2707343"
+    },
+    "data_publicacao": "18/12/2025",
+    "antiguidade": "Publicado há 245 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "75",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "70",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiro",
+      "measure": null,
+      "value": "1",
+      "icon": "bano"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "2",
+      "icon": "dormitorio"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "40",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Apto de 70 m², de frente, com sol da manhã, 2º andar, apenas um lance de escada; Fachada do prédio recém-reformada; Portaria com controle de acesso; Localização privilegiada, com acesso direto à passarela para o *SHOPPING NOVA AMÉRICA e acesso ao METRÔ. Em frente à Praça dos Quiosques, parquinho, campo de futebol e eventos + academia popular e próximo ao PAM de Del Castilho. O imóvel precisa de reforma e possui 2 dormitórios arejados, um banheiro social, sala ampla em dois ambientes, cozinha espaçosa com área de serviço e gás encanado.\nCondomínio: R$ 130,00\nIPTU isento",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 31,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 116498,
+      "size_kb": 113.767578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369513.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Apartamento en venda de 2 quartos Del Castilho",
+      "size_bytes": 248155,
+      "size_kb": 242.3388671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369533.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Apto de 70 m², de frente, com sol da manhã, 2º andar, apenas um lance de escada;",
+      "size_bytes": 167938,
+      "size_kb": 164.001953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369444.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Apartamento venda 75m² de 2 quartos",
+      "size_bytes": 147423,
+      "size_kb": 143.9677734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369470.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Apartamento 75m² venda Del Castilho",
+      "size_bytes": 287854,
+      "size_kb": 281.107421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369475.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Apartamento 75m² venda Del Castilho",
+      "size_bytes": 232221,
+      "size_kb": 226.7783203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369481.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Apartamento de 2 quartos venda R$ 109.000",
+      "size_bytes": 267585,
+      "size_kb": 261.3134765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369549.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Apartamento · 70m² · 2 quartos - Imobiliária Clementino",
+      "size_bytes": 195130,
+      "size_kb": 190.556640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369442.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Apartamento venda de 2 quartos",
+      "size_bytes": 214994,
+      "size_kb": 209.955078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369469.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Apartamento · 70m² · 2 quartos",
+      "size_bytes": 183070,
+      "size_kb": 178.779296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369485.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 101816,
+      "size_kb": 99.4296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369458.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Apartamento en venda de 2 quartos Del Castilho",
+      "size_bytes": 83879,
+      "size_kb": 81.9130859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369488.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Apto de 70 m², de frente, com sol da manhã, 2º andar, apenas um lance de escada;",
+      "size_bytes": 82224,
+      "size_kb": 80.296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369434.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Apartamento venda 75m² de 2 quartos",
+      "size_bytes": 62150,
+      "size_kb": 60.693359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369517.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Apartamento 75m² venda Del Castilho",
+      "size_bytes": 84042,
+      "size_kb": 82.072265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369507.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Apartamento 75m² venda Del Castilho",
+      "size_bytes": 113533,
+      "size_kb": 110.8720703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369463.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Apartamento de 2 quartos venda R$ 109.000",
+      "size_bytes": 98658,
+      "size_kb": 96.345703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369451.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Apartamento · 70m² · 2 quartos - Imobiliária Clementino",
+      "size_bytes": 118172,
+      "size_kb": 115.40234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369467.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Apartamento venda de 2 quartos",
+      "size_bytes": 87724,
+      "size_kb": 85.66796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369453.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Apartamento · 70m² · 2 quartos",
+      "size_bytes": 119361,
+      "size_kb": 116.5634765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369479.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 98212,
+      "size_kb": 95.91015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369440.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Apartamento en venda de 2 quartos Del Castilho",
+      "size_bytes": 92776,
+      "size_kb": 90.6015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369462.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Apto de 70 m², de frente, com sol da manhã, 2º andar, apenas um lance de escada;",
+      "size_bytes": 96252,
+      "size_kb": 93.99609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369515.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Apartamento venda 75m² de 2 quartos",
+      "size_bytes": 110081,
+      "size_kb": 107.5009765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369445.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Apartamento 75m² venda Del Castilho",
+      "size_bytes": 51307,
+      "size_kb": 50.1044921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369478.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Apartamento 75m² venda Del Castilho",
+      "size_bytes": 88778,
+      "size_kb": 86.697265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369525.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Apartamento de 2 quartos venda R$ 109.000",
+      "size_bytes": 78854,
+      "size_kb": 77.005859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369565.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Apartamento · 70m² · 2 quartos - Imobiliária Clementino",
+      "size_bytes": 96350,
+      "size_kb": 94.091796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369436.jpg"
+    },
+    {
+      "index": 29,
+      "filename": "foto_29.jpg",
+      "relative_path": "fotos/foto_29.jpg",
+      "title": "Apartamento venda de 2 quartos",
+      "size_bytes": 52074,
+      "size_kb": 50.853515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369446.jpg"
+    },
+    {
+      "index": 30,
+      "filename": "foto_30.jpg",
+      "relative_path": "fotos/foto_30.jpg",
+      "title": "Apartamento · 70m² · 2 quartos",
+      "size_bytes": 101372,
+      "size_kb": 98.99609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369615.jpg"
+    },
+    {
+      "index": 31,
+      "filename": "foto_31.jpg",
+      "relative_path": "fotos/foto_31.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 122366,
+      "size_kb": 119.498046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/24/23/08/57/5844369505.jpg"
+    }
+  ]
+}

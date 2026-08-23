@@ -1,0 +1,438 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/galpao-com-3-quartos-960m-a-venda-em-rio-de-3017305816.html",
+  "dados_gerais": {
+    "titulo": "Galpão com 3 quartos, 960m², à venda em Rio de Janeiro, Vigário Geral",
+    "subtitulo": "Casa · 960m² · 3 quartos · 5 vagas",
+    "codigo_imovel": "GA001",
+    "id_imovelweb": "3017305816",
+    "preco": "R$ 1.375.000",
+    "condominio": "R$ 0",
+    "endereco_completo": "Rua Correia Dias, Vigário Geral, Rio de Janeiro, RJ",
+    "logradouro": "Rua Correia Dias",
+    "bairro": "Vigário Geral",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8050453",
+      "longitude": "-43.3194220",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8050453,-43.3194220"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 358 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "1250",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "960",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiros",
+      "measure": null,
+      "value": "3",
+      "icon": "bano"
+    },
+    "CFT7": {
+      "featureId": "CFT7",
+      "label": "vaga",
+      "measure": null,
+      "value": "5",
+      "icon": "cochera"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "3",
+      "icon": "dormitorio"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "45",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Galpão Industrial à Venda na Melhor Localização! \nGalpão com 1250m² de terreno, (20,00 X 62,50 m² ), situado na Rua Correia Dias, \nNa parte térrea possui banheiros e vestiários, a área superior da edificação possui um corredor de circulação com acesso a 3 salas, banheiro e copa, possuindo uma área total construída de 90 m² e área do galpão coberta possuindo 870m², sendo considerada o fato de estar numa excelente localização com boa concentração de indústrias e comércios e com grande facilidade no deslocamento de pessoas por causa das várias linhas de transporte coletivo e estação de trem da supervia.\nAproveite esta oportunidade para investimento! Entre em contato hoje mesmo para mais informações.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "(21) 96",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 40,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Casa · 960m² · 3 quartos · 5 vagas",
+      "size_bytes": 135724,
+      "size_kb": 132.54296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438526734.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Casa de 3 quartos, Rio de Janeiro",
+      "size_bytes": 129665,
+      "size_kb": 126.6259765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438542623.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Casa en venda de 3 quartos Vigário Geral",
+      "size_bytes": 146412,
+      "size_kb": 142.98046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438527378.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Galpão Industrial à Venda na Melhor Localização! <br>Galpão com 1250m² de terren",
+      "size_bytes": 68164,
+      "size_kb": 66.56640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438526669.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Casa venda 1250m² de 3 quartos",
+      "size_bytes": 145359,
+      "size_kb": 141.9521484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438526666.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Casa 1250m² venda Vigário Geral",
+      "size_bytes": 56590,
+      "size_kb": 55.263671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438527000.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Casa 1250m² venda Vigário Geral",
+      "size_bytes": 66945,
+      "size_kb": 65.3759765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438526620.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Casa de 3 quartos venda R$ 1.375.000",
+      "size_bytes": 59864,
+      "size_kb": 58.4609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438533460.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Casa · 960m² · 3 quartos · 5 vagas - Imobiliária Clementino",
+      "size_bytes": 87561,
+      "size_kb": 85.5087890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438535858.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Casa venda de 3 quartos",
+      "size_bytes": 52149,
+      "size_kb": 50.9267578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438526618.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Casa · 960m² · 3 quartos · 5 vagas",
+      "size_bytes": 94056,
+      "size_kb": 91.8515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438526705.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Casa de 3 quartos, Rio de Janeiro",
+      "size_bytes": 55450,
+      "size_kb": 54.150390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438533694.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Casa en venda de 3 quartos Vigário Geral",
+      "size_bytes": 68860,
+      "size_kb": 67.24609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438526760.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Galpão Industrial à Venda na Melhor Localização! <br>Galpão com 1250m² de terren",
+      "size_bytes": 81296,
+      "size_kb": 79.390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438526697.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Casa venda 1250m² de 3 quartos",
+      "size_bytes": 59396,
+      "size_kb": 58.00390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438541977.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Casa 1250m² venda Vigário Geral",
+      "size_bytes": 75339,
+      "size_kb": 73.5732421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438526756.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Casa 1250m² venda Vigário Geral",
+      "size_bytes": 132528,
+      "size_kb": 129.421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438527167.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Casa de 3 quartos venda R$ 1.375.000",
+      "size_bytes": 64741,
+      "size_kb": 63.2236328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438527152.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Casa · 960m² · 3 quartos · 5 vagas - Imobiliária Clementino",
+      "size_bytes": 87721,
+      "size_kb": 85.6650390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438535536.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Casa venda de 3 quartos",
+      "size_bytes": 47187,
+      "size_kb": 46.0810546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438526555.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Casa · 960m² · 3 quartos · 5 vagas",
+      "size_bytes": 92972,
+      "size_kb": 90.79296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438536455.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Casa de 3 quartos, Rio de Janeiro",
+      "size_bytes": 69525,
+      "size_kb": 67.8955078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438526691.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Casa en venda de 3 quartos Vigário Geral",
+      "size_bytes": 72566,
+      "size_kb": 70.865234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438527333.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Galpão Industrial à Venda na Melhor Localização! <br>Galpão com 1250m² de terren",
+      "size_bytes": 76628,
+      "size_kb": 74.83203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438527239.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Casa venda 1250m² de 3 quartos",
+      "size_bytes": 59092,
+      "size_kb": 57.70703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438526624.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Casa 1250m² venda Vigário Geral",
+      "size_bytes": 71702,
+      "size_kb": 70.021484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438526973.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Casa 1250m² venda Vigário Geral",
+      "size_bytes": 70074,
+      "size_kb": 68.431640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438526584.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Casa de 3 quartos venda R$ 1.375.000",
+      "size_bytes": 116792,
+      "size_kb": 114.0546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438526743.jpg"
+    },
+    {
+      "index": 29,
+      "filename": "foto_29.jpg",
+      "relative_path": "fotos/foto_29.jpg",
+      "title": "Casa · 960m² · 3 quartos · 5 vagas - Imobiliária Clementino",
+      "size_bytes": 118104,
+      "size_kb": 115.3359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438536257.jpg"
+    },
+    {
+      "index": 30,
+      "filename": "foto_30.jpg",
+      "relative_path": "fotos/foto_30.jpg",
+      "title": "Casa venda de 3 quartos",
+      "size_bytes": 97940,
+      "size_kb": 95.64453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438527326.jpg"
+    },
+    {
+      "index": 31,
+      "filename": "foto_31.jpg",
+      "relative_path": "fotos/foto_31.jpg",
+      "title": "Casa · 960m² · 3 quartos · 5 vagas",
+      "size_bytes": 70062,
+      "size_kb": 68.419921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438526640.jpg"
+    },
+    {
+      "index": 32,
+      "filename": "foto_32.jpg",
+      "relative_path": "fotos/foto_32.jpg",
+      "title": "Casa de 3 quartos, Rio de Janeiro",
+      "size_bytes": 55238,
+      "size_kb": 53.943359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438526577.jpg"
+    },
+    {
+      "index": 33,
+      "filename": "foto_33.jpg",
+      "relative_path": "fotos/foto_33.jpg",
+      "title": "Casa en venda de 3 quartos Vigário Geral",
+      "size_bytes": 65939,
+      "size_kb": 64.3935546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438526787.jpg"
+    },
+    {
+      "index": 34,
+      "filename": "foto_34.jpg",
+      "relative_path": "fotos/foto_34.jpg",
+      "title": "Galpão Industrial à Venda na Melhor Localização! <br>Galpão com 1250m² de terren",
+      "size_bytes": 120788,
+      "size_kb": 117.95703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438526765.jpg"
+    },
+    {
+      "index": 35,
+      "filename": "foto_35.jpg",
+      "relative_path": "fotos/foto_35.jpg",
+      "title": "Casa venda 1250m² de 3 quartos",
+      "size_bytes": 65838,
+      "size_kb": 64.294921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438526616.jpg"
+    },
+    {
+      "index": 36,
+      "filename": "foto_36.jpg",
+      "relative_path": "fotos/foto_36.jpg",
+      "title": "Casa 1250m² venda Vigário Geral",
+      "size_bytes": 79487,
+      "size_kb": 77.6240234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438526607.jpg"
+    },
+    {
+      "index": 37,
+      "filename": "foto_37.jpg",
+      "relative_path": "fotos/foto_37.jpg",
+      "title": "Casa 1250m² venda Vigário Geral",
+      "size_bytes": 89270,
+      "size_kb": 87.177734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438526698.jpg"
+    },
+    {
+      "index": 38,
+      "filename": "foto_38.jpg",
+      "relative_path": "fotos/foto_38.jpg",
+      "title": "Casa de 3 quartos venda R$ 1.375.000",
+      "size_bytes": 84131,
+      "size_kb": 82.1591796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438526686.jpg"
+    },
+    {
+      "index": 39,
+      "filename": "foto_39.jpg",
+      "relative_path": "fotos/foto_39.jpg",
+      "title": "Casa · 960m² · 3 quartos · 5 vagas - Imobiliária Clementino",
+      "size_bytes": 48042,
+      "size_kb": 46.916015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438526572.jpg"
+    },
+    {
+      "index": 40,
+      "filename": "foto_40.jpg",
+      "relative_path": "fotos/foto_40.jpg",
+      "title": "Casa venda de 3 quartos",
+      "size_bytes": 122121,
+      "size_kb": 119.2587890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/16/5438526667.jpg"
+    }
+  ]
+}

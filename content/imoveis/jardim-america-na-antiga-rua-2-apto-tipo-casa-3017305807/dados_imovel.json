@@ -1,0 +1,330 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/jardim-america-na-antiga-rua-2-apto-tipo-casa-3017305807.html",
+  "dados_gerais": {
+    "titulo": "Jardim América, na Antiga Rua 2 - Apto Tipo Casa, Quintal, Total 3 Qtos, 2 Vgs.",
+    "subtitulo": "Apartamento · 65m² · 3 quartos · 2 vagas",
+    "codigo_imovel": "AP0032",
+    "id_imovelweb": "3017305807",
+    "preco": "R$ 245.000",
+    "condominio": "R$ 0",
+    "endereco_completo": "Rua João de Paula Fonseca, Jardim América, Rio de Janeiro, RJ",
+    "logradouro": "Rua João de Paula Fonseca",
+    "bairro": "Jardim América",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8126123",
+      "longitude": "-43.3281018",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8126123,-43.3281018"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 358 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "68",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "65",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiro",
+      "measure": null,
+      "value": "1",
+      "icon": "bano"
+    },
+    "CFT7": {
+      "featureId": "CFT7",
+      "label": "vaga",
+      "measure": null,
+      "value": "2",
+      "icon": "cochera"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "3",
+      "icon": "dormitorio"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "27",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Jardim América, Apto Térreo Tipo Casa, sala 2 ambientes, circulação, 3 quartos, sendo 1 escritório, banheiro social completo, copa e cozinha, quintal nos fundos com área de lavanderia coberta. Todo Acabamento de 1ª qualidade, pisos, azulejos, torneiras, chuveiros, acessórios, toda elétrica e hidráulica. O imóvel possui bomba d'água específica para casos de enchente. Vagas p/ 2 carros. Aceita Carta de Crédito.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 28,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Apartamento de 3 quartos, Rio de Janeiro",
+      "size_bytes": 150175,
+      "size_kb": 146.6552734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539480.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Apartamento en venda de 3 quartos Jardim América",
+      "size_bytes": 388228,
+      "size_kb": 379.12890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539562.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Jardim América, Apto Térreo Tipo Casa, sala 2 ambientes, circulação, 3 quartos, ",
+      "size_bytes": 393883,
+      "size_kb": 384.6513671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539548.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Apartamento venda 68m² de 3 quartos",
+      "size_bytes": 162094,
+      "size_kb": 158.294921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539521.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Apartamento 68m² venda Jardim América",
+      "size_bytes": 193985,
+      "size_kb": 189.4384765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539553.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Apartamento 68m² venda Jardim América",
+      "size_bytes": 153488,
+      "size_kb": 149.890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539538.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Apartamento de 3 quartos venda R$ 245.000",
+      "size_bytes": 179125,
+      "size_kb": 174.9267578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539559.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Apartamento · 65m² · 3 quartos · 2 vagas - Imobiliária Clementino",
+      "size_bytes": 90271,
+      "size_kb": 88.1552734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539550.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Apartamento venda de 3 quartos",
+      "size_bytes": 138498,
+      "size_kb": 135.251953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539513.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Apartamento · 65m² · 3 quartos · 2 vagas",
+      "size_bytes": 94500,
+      "size_kb": 92.28515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539500.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Apartamento de 3 quartos, Rio de Janeiro",
+      "size_bytes": 131331,
+      "size_kb": 128.2529296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539520.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Apartamento en venda de 3 quartos Jardim América",
+      "size_bytes": 153521,
+      "size_kb": 149.9228515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539545.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Jardim América, Apto Térreo Tipo Casa, sala 2 ambientes, circulação, 3 quartos, ",
+      "size_bytes": 214741,
+      "size_kb": 209.7080078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539576.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Apartamento venda 68m² de 3 quartos",
+      "size_bytes": 180835,
+      "size_kb": 176.5966796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539560.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Apartamento 68m² venda Jardim América",
+      "size_bytes": 120208,
+      "size_kb": 117.390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539507.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Apartamento 68m² venda Jardim América",
+      "size_bytes": 121249,
+      "size_kb": 118.4072265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539522.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Apartamento de 3 quartos venda R$ 245.000",
+      "size_bytes": 122472,
+      "size_kb": 119.6015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539499.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Apartamento · 65m² · 3 quartos · 2 vagas - Imobiliária Clementino",
+      "size_bytes": 122862,
+      "size_kb": 119.982421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539516.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Apartamento venda de 3 quartos",
+      "size_bytes": 111189,
+      "size_kb": 108.5830078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539531.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Apartamento · 65m² · 3 quartos · 2 vagas",
+      "size_bytes": 87612,
+      "size_kb": 85.55859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539536.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Apartamento de 3 quartos, Rio de Janeiro",
+      "size_bytes": 146763,
+      "size_kb": 143.3232421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539525.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Apartamento en venda de 3 quartos Jardim América",
+      "size_bytes": 296168,
+      "size_kb": 289.2265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539546.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Jardim América, Apto Térreo Tipo Casa, sala 2 ambientes, circulação, 3 quartos, ",
+      "size_bytes": 263856,
+      "size_kb": 257.671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539556.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Apartamento venda 68m² de 3 quartos",
+      "size_bytes": 275707,
+      "size_kb": 269.2451171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539660.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Apartamento 68m² venda Jardim América",
+      "size_bytes": 221260,
+      "size_kb": 216.07421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539540.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Apartamento 68m² venda Jardim América",
+      "size_bytes": 288889,
+      "size_kb": 282.1181640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539539.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Apartamento de 3 quartos venda R$ 245.000",
+      "size_bytes": 305885,
+      "size_kb": 298.7158203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539561.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Apartamento · 65m² · 3 quartos · 2 vagas - Imobiliária Clementino",
+      "size_bytes": 367451,
+      "size_kb": 358.8388671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/07/5438539571.jpg"
+    }
+  ]
+}

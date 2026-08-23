@@ -1,0 +1,298 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/v.-geral-casa-duplex-varanda-total-4-qtos-e-2-3017305820.html",
+  "dados_gerais": {
+    "titulo": "V. Geral - Casa Duplex, Varanda, Total 4 Qtos e 2 Banhs, Quintal e Área Gourmet.",
+    "subtitulo": "Apartamento · 123m² · 3 quartos",
+    "codigo_imovel": "DU0003",
+    "id_imovelweb": "3017305820",
+    "preco": "R$ 218.000",
+    "condominio": "R$ 0",
+    "endereco_completo": "Rua São Bartolomeu, Vigário Geral, Rio de Janeiro, RJ",
+    "logradouro": "Rua São Bartolomeu",
+    "bairro": "Vigário Geral",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8107659",
+      "longitude": "-43.3059627",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8107659,-43.3059627"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 358 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "123",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "123",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiros",
+      "measure": null,
+      "value": "2",
+      "icon": "bano"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "3",
+      "icon": "dormitorio"
+    }
+  },
+  "descricao": "Em Vigário Geral, casa duplex, 123m², possuindo no 1º piso: sala 2 ambientes, corredor, banheiro social, 01 quarto, copa cozinha, área de lavanderia, quintal com churrasqueira e banheiro de apoio. Escada de acesso ao 2º piso, que possui: varandão, 03 quartos.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "(21) 96",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 26,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Apartamento · 123m² · 3 quartos",
+      "size_bytes": 327971,
+      "size_kb": 320.2841796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5438519308.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Apartamento de 3 quartos, Rio de Janeiro",
+      "size_bytes": 296219,
+      "size_kb": 289.2763671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5438513784.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Apartamento en venda de 3 quartos Vigário Geral",
+      "size_bytes": 189889,
+      "size_kb": 185.4384765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5438513762.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Em Vigário Geral, casa duplex, 123m², possuindo no 1º piso: sala 2 ambientes, co",
+      "size_bytes": 222945,
+      "size_kb": 217.7197265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5438514788.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Apartamento venda 123m² de 3 quartos",
+      "size_bytes": 254917,
+      "size_kb": 248.9423828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5438513836.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Apartamento 123m² venda Vigário Geral",
+      "size_bytes": 167561,
+      "size_kb": 163.6337890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5438521445.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Apartamento 123m² venda Vigário Geral",
+      "size_bytes": 314960,
+      "size_kb": 307.578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5438513850.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Apartamento de 3 quartos venda R$ 218.000",
+      "size_bytes": 192600,
+      "size_kb": 188.0859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5438513849.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Apartamento · 123m² · 3 quartos - Imobiliária Clementino",
+      "size_bytes": 159049,
+      "size_kb": 155.3212890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5438513773.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Apartamento venda de 3 quartos",
+      "size_bytes": 147478,
+      "size_kb": 144.021484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5438513778.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Apartamento · 123m² · 3 quartos",
+      "size_bytes": 116357,
+      "size_kb": 113.6298828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5438513759.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Apartamento de 3 quartos, Rio de Janeiro",
+      "size_bytes": 158857,
+      "size_kb": 155.1337890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5438513835.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Apartamento en venda de 3 quartos Vigário Geral",
+      "size_bytes": 118581,
+      "size_kb": 115.8017578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5438513860.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Em Vigário Geral, casa duplex, 123m², possuindo no 1º piso: sala 2 ambientes, co",
+      "size_bytes": 175164,
+      "size_kb": 171.05859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5438514959.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Apartamento venda 123m² de 3 quartos",
+      "size_bytes": 172657,
+      "size_kb": 168.6103515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5438514418.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Apartamento 123m² venda Vigário Geral",
+      "size_bytes": 136480,
+      "size_kb": 133.28125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5438513648.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Apartamento 123m² venda Vigário Geral",
+      "size_bytes": 177318,
+      "size_kb": 173.162109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5438513643.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Apartamento de 3 quartos venda R$ 218.000",
+      "size_bytes": 109887,
+      "size_kb": 107.3115234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5438513846.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Apartamento · 123m² · 3 quartos - Imobiliária Clementino",
+      "size_bytes": 207190,
+      "size_kb": 202.333984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5438513777.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Apartamento venda de 3 quartos",
+      "size_bytes": 179371,
+      "size_kb": 175.1669921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5438521226.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Apartamento · 123m² · 3 quartos",
+      "size_bytes": 226789,
+      "size_kb": 221.4736328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5438514400.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Apartamento de 3 quartos, Rio de Janeiro",
+      "size_bytes": 118169,
+      "size_kb": 115.3994140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5446804720.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Apartamento en venda de 3 quartos Vigário Geral",
+      "size_bytes": 262829,
+      "size_kb": 256.6689453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5438519174.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Em Vigário Geral, casa duplex, 123m², possuindo no 1º piso: sala 2 ambientes, co",
+      "size_bytes": 460511,
+      "size_kb": 449.7177734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5438513874.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Apartamento venda 123m² de 3 quartos",
+      "size_bytes": 164435,
+      "size_kb": 160.5810546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5438513845.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Apartamento 123m² venda Vigário Geral",
+      "size_bytes": 161982,
+      "size_kb": 158.185546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/20/5438513833.jpg"
+    }
+  ]
+}

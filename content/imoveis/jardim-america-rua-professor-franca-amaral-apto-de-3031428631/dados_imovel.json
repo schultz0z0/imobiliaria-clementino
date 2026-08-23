@@ -1,0 +1,251 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/jardim-america-rua-professor-franca-amaral-apto-de-3031428631.html",
+  "dados_gerais": {
+    "titulo": "Jardim América - Rua Professor França Amaral - Apto de Frente, 78m², 4º Andar, 3 Qtos + 1 Apto Anexo",
+    "subtitulo": "Apartamento · 79m² · 4 quartos",
+    "codigo_imovel": "0097",
+    "id_imovelweb": "3031428631",
+    "preco": "R$ 180.000",
+    "condominio": "Não informado / Isento",
+    "endereco_completo": "R. Prof. França Amaral, 166, Jardim América, Rio de Janeiro, RJ",
+    "logradouro": "R. Prof. França Amaral, 166",
+    "bairro": "Jardim América",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8178225",
+      "longitude": "-43.3188104",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8178225,-43.3188104"
+    },
+    "data_publicacao": "27/03/2026",
+    "antiguidade": "Publicado há 145 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "148",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "79",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiros",
+      "measure": null,
+      "value": "2",
+      "icon": "bano"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "4",
+      "icon": "dormitorio"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "40",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Apartamento à venda em Jardim América, de frente, no 4º andar, com 3 quartos. Possui área de serviço e varanda de fundos. O imóvel conta com 79 m² de área construída e 148 m² de área total, em prédio com 4 andares sem elevador. A posição frontal do apartamento proporciona uma vista livre. São 2 aptos, sendo 1 de frente e outro de fundos, faltando acabamento.\nLocalizado em Jardim América, bairro residencial com fácil acesso a comércios, serviços e transporte público. Próximo a supermercados, farmácias e escolas, facilitando o dia a dia dos moradores.\nO Jardim América é conhecido por sua localização junto a nova Rodoviária BRT Trevo das Margaridas, ideal para quem busca comodidade de vida. Com fácil acesso às principais vias da cidade, como rodovias, avenidas e marginais, o bairro oferece mobilidade e praticidade. A região conta com infraestrutura completa, incluindo hospitais e clínicas, garantindo o bem-estar dos moradores.\nAproveite a oportunidade de morar em um apartamento confortável e bem localizado em Jardim América. Agende sua visita e conheça este imóvel. Aceito 120 mil e o restante em prestações de 2.000,00.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 20,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Apartamento de 4 quartos, Rio de Janeiro",
+      "size_bytes": 117803,
+      "size_kb": 115.0419921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/31/42/86/31/6407970813.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Apartamento en venda de 4 quartos Jardim América",
+      "size_bytes": 100674,
+      "size_kb": 98.314453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/31/42/86/31/6407970822.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Apartamento à venda em Jardim América, de frente, no 4º andar, com 3 quartos. Po",
+      "size_bytes": 83220,
+      "size_kb": 81.26953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/31/42/86/31/6407970819.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Apartamento venda 148m² de 4 quartos",
+      "size_bytes": 65249,
+      "size_kb": 63.7197265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/31/42/86/31/6407970824.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Apartamento 148m² venda Jardim América",
+      "size_bytes": 84114,
+      "size_kb": 82.142578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/31/42/86/31/6407970828.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Apartamento 148m² venda Jardim América",
+      "size_bytes": 86531,
+      "size_kb": 84.5029296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/31/42/86/31/6407970831.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Apartamento de 4 quartos venda R$ 180.000",
+      "size_bytes": 113699,
+      "size_kb": 111.0341796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/31/42/86/31/6407970826.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Apartamento · 79m² · 4 quartos - Imobiliária Clementino",
+      "size_bytes": 79640,
+      "size_kb": 77.7734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/31/42/86/31/6407970814.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Apartamento venda de 4 quartos",
+      "size_bytes": 73057,
+      "size_kb": 71.3447265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/31/42/86/31/6407970820.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Apartamento · 79m² · 4 quartos",
+      "size_bytes": 74765,
+      "size_kb": 73.0126953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/31/42/86/31/6407970833.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Apartamento de 4 quartos, Rio de Janeiro",
+      "size_bytes": 138235,
+      "size_kb": 134.9951171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/31/42/86/31/6407970834.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Apartamento en venda de 4 quartos Jardim América",
+      "size_bytes": 131114,
+      "size_kb": 128.041015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/31/42/86/31/6407970835.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Apartamento à venda em Jardim América, de frente, no 4º andar, com 3 quartos. Po",
+      "size_bytes": 132396,
+      "size_kb": 129.29296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/31/42/86/31/6407970825.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Apartamento venda 148m² de 4 quartos",
+      "size_bytes": 163988,
+      "size_kb": 160.14453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/31/42/86/31/6407970816.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Apartamento 148m² venda Jardim América",
+      "size_bytes": 196128,
+      "size_kb": 191.53125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/31/42/86/31/6407970827.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Apartamento 148m² venda Jardim América",
+      "size_bytes": 138826,
+      "size_kb": 135.572265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/31/42/86/31/6407970818.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Apartamento de 4 quartos venda R$ 180.000",
+      "size_bytes": 101679,
+      "size_kb": 99.2958984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/31/42/86/31/6407970817.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Apartamento · 79m² · 4 quartos - Imobiliária Clementino",
+      "size_bytes": 162818,
+      "size_kb": 159.001953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/31/42/86/31/6407970823.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Apartamento venda de 4 quartos",
+      "size_bytes": 149273,
+      "size_kb": 145.7744140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/31/42/86/31/6407970838.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Apartamento · 79m² · 4 quartos",
+      "size_bytes": 175919,
+      "size_kb": 171.7958984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/31/42/86/31/6407970821.jpg"
+    }
+  ]
+}

@@ -1,0 +1,287 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/jardim-america-residencial-america-life-tipo-3017305761.html",
+  "dados_gerais": {
+    "titulo": "Jardim América - Residencial América Life, Tipo Cobertura, 92m², 2 Salas, 2 Quartos, Terraço, 1 Vga.",
+    "subtitulo": "Apartamento · 92m² · 2 quartos · 1 vaga",
+    "codigo_imovel": "AP0037",
+    "id_imovelweb": "3017305761",
+    "preco": "R$ 230.000",
+    "condominio": "R$ 0",
+    "endereco_completo": "Rua George Bizet, Jardim América, Rio de Janeiro - RJ",
+    "logradouro": "Rua George Bizet",
+    "bairro": "Jardim América",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": -22.8090412,
+      "longitude": -43.3200987,
+      "google_maps_url": "https://www.google.com/maps?q=-22.8090412,-43.3200987"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 358 dias"
+  },
+  "caracteristicas_principais": {
+    "area_total_m2": 92,
+    "area_util_m2": 92,
+    "quartos": 2,
+    "banheiros": 1,
+    "vagas_garagem": 1,
+    "tipo": "Apartamento Cobertura Duplex",
+    "salas": 2,
+    "terraco_descoberto": true,
+    "armarios_planejados": true,
+    "area_de_servico": true,
+    "lazer_condominio": true
+  },
+  "descricao": "Em Jardim América, no Cond. Residencial América Life, apto duplex, tipo cobertura, composto de: 1º Piso: sala, banheiro social com box blindex, arms, 2 quartos, cozinha c/ arms, área de serviço com tanque. 2º Piso: sala tipo home + escritório, podendo fazer + 1 quarto, terraço descoberto podendo fazer área gourmet. Tem 1 vaga pra carro na escritura. Condomínio com área de lazer.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone": "(21) 96402-3524",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 30,
+  "fotos": [
+    {
+      "indice": 1,
+      "arquivo": "foto_01.jpg",
+      "caminho_relativo": "fotos/foto_01.jpg",
+      "titulo": "Apartamento · 92m² · 2 quartos · 1 vaga",
+      "dimensoes_originais": "408x306",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438514981.jpg?isFirstImage=true"
+    },
+    {
+      "indice": 2,
+      "arquivo": "foto_02.jpg",
+      "caminho_relativo": "fotos/foto_02.jpg",
+      "titulo": "Apartamento de 2 quartos, Rio de Janeiro",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515370.jpg"
+    },
+    {
+      "indice": 3,
+      "arquivo": "foto_03.jpg",
+      "caminho_relativo": "fotos/foto_03.jpg",
+      "titulo": "Apartamento en venda de 2 quartos Jardim América",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515309.jpg"
+    },
+    {
+      "indice": 4,
+      "arquivo": "foto_04.jpg",
+      "caminho_relativo": "fotos/foto_04.jpg",
+      "titulo": "Em Jardim América, no Cond. Residencial América Life, apto duplex, tipo cobertur",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515094.jpg"
+    },
+    {
+      "indice": 5,
+      "arquivo": "foto_05.jpg",
+      "caminho_relativo": "fotos/foto_05.jpg",
+      "titulo": "Apartamento venda 92m² de 2 quartos",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515021.jpg"
+    },
+    {
+      "indice": 6,
+      "arquivo": "foto_06.jpg",
+      "caminho_relativo": "fotos/foto_06.jpg",
+      "titulo": "Apartamento 92m² venda Jardim América",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515681.jpg"
+    },
+    {
+      "indice": 7,
+      "arquivo": "foto_07.jpg",
+      "caminho_relativo": "fotos/foto_07.jpg",
+      "titulo": "Apartamento 92m² venda Jardim América",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515414.jpg"
+    },
+    {
+      "indice": 8,
+      "arquivo": "foto_08.jpg",
+      "caminho_relativo": "fotos/foto_08.jpg",
+      "titulo": "Apartamento de 2 quartos venda R$ 230.000",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515325.jpg"
+    },
+    {
+      "indice": 9,
+      "arquivo": "foto_09.jpg",
+      "caminho_relativo": "fotos/foto_09.jpg",
+      "titulo": "Apartamento · 92m² · 2 quartos · 1 vaga - Imobiliária Clementino",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515349.jpg"
+    },
+    {
+      "indice": 10,
+      "arquivo": "foto_10.jpg",
+      "caminho_relativo": "fotos/foto_10.jpg",
+      "titulo": "Apartamento venda de 2 quartos",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515445.jpg"
+    },
+    {
+      "indice": 11,
+      "arquivo": "foto_11.jpg",
+      "caminho_relativo": "fotos/foto_11.jpg",
+      "titulo": "Apartamento · 92m² · 2 quartos · 1 vaga",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515350.jpg"
+    },
+    {
+      "indice": 12,
+      "arquivo": "foto_12.jpg",
+      "caminho_relativo": "fotos/foto_12.jpg",
+      "titulo": "Apartamento de 2 quartos, Rio de Janeiro",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515481.jpg"
+    },
+    {
+      "indice": 13,
+      "arquivo": "foto_13.jpg",
+      "caminho_relativo": "fotos/foto_13.jpg",
+      "titulo": "Apartamento en venda de 2 quartos Jardim América",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438516577.jpg"
+    },
+    {
+      "indice": 14,
+      "arquivo": "foto_14.jpg",
+      "caminho_relativo": "fotos/foto_14.jpg",
+      "titulo": "Em Jardim América, no Cond. Residencial América Life, apto duplex, tipo cobertur",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515389.jpg"
+    },
+    {
+      "indice": 15,
+      "arquivo": "foto_15.jpg",
+      "caminho_relativo": "fotos/foto_15.jpg",
+      "titulo": "Apartamento venda 92m² de 2 quartos",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515683.jpg"
+    },
+    {
+      "indice": 16,
+      "arquivo": "foto_16.jpg",
+      "caminho_relativo": "fotos/foto_16.jpg",
+      "titulo": "Apartamento 92m² venda Jardim América",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515411.jpg"
+    },
+    {
+      "indice": 17,
+      "arquivo": "foto_17.jpg",
+      "caminho_relativo": "fotos/foto_17.jpg",
+      "titulo": "Apartamento 92m² venda Jardim América",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515363.jpg"
+    },
+    {
+      "indice": 18,
+      "arquivo": "foto_18.jpg",
+      "caminho_relativo": "fotos/foto_18.jpg",
+      "titulo": "Apartamento de 2 quartos venda R$ 230.000",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515028.jpg"
+    },
+    {
+      "indice": 19,
+      "arquivo": "foto_19.jpg",
+      "caminho_relativo": "fotos/foto_19.jpg",
+      "titulo": "Apartamento · 92m² · 2 quartos · 1 vaga - Imobiliária Clementino",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515305.jpg"
+    },
+    {
+      "indice": 20,
+      "arquivo": "foto_20.jpg",
+      "caminho_relativo": "fotos/foto_20.jpg",
+      "titulo": "Apartamento venda de 2 quartos",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515249.jpg"
+    },
+    {
+      "indice": 21,
+      "arquivo": "foto_21.jpg",
+      "caminho_relativo": "fotos/foto_21.jpg",
+      "titulo": "Apartamento · 92m² · 2 quartos · 1 vaga",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438522765.jpg"
+    },
+    {
+      "indice": 22,
+      "arquivo": "foto_22.jpg",
+      "caminho_relativo": "fotos/foto_22.jpg",
+      "titulo": "Apartamento de 2 quartos, Rio de Janeiro",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515189.jpg"
+    },
+    {
+      "indice": 23,
+      "arquivo": "foto_23.jpg",
+      "caminho_relativo": "fotos/foto_23.jpg",
+      "titulo": "Apartamento en venda de 2 quartos Jardim América",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515003.jpg"
+    },
+    {
+      "indice": 24,
+      "arquivo": "foto_24.jpg",
+      "caminho_relativo": "fotos/foto_24.jpg",
+      "titulo": "Em Jardim América, no Cond. Residencial América Life, apto duplex, tipo cobertur",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515010.jpg"
+    },
+    {
+      "indice": 25,
+      "arquivo": "foto_25.jpg",
+      "caminho_relativo": "fotos/foto_25.jpg",
+      "titulo": "Apartamento venda 92m² de 2 quartos",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515213.jpg"
+    },
+    {
+      "indice": 26,
+      "arquivo": "foto_26.jpg",
+      "caminho_relativo": "fotos/foto_26.jpg",
+      "titulo": "Apartamento 92m² venda Jardim América",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515538.jpg"
+    },
+    {
+      "indice": 27,
+      "arquivo": "foto_27.jpg",
+      "caminho_relativo": "fotos/foto_27.jpg",
+      "titulo": "Apartamento 92m² venda Jardim América",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515286.jpg"
+    },
+    {
+      "indice": 28,
+      "arquivo": "foto_28.jpg",
+      "caminho_relativo": "fotos/foto_28.jpg",
+      "titulo": "Apartamento de 2 quartos venda R$ 230.000",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438514998.jpg"
+    },
+    {
+      "indice": 29,
+      "arquivo": "foto_29.jpg",
+      "caminho_relativo": "fotos/foto_29.jpg",
+      "titulo": "Apartamento · 92m² · 2 quartos · 1 vaga - Imobiliária Clementino",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515253.jpg"
+    },
+    {
+      "indice": 30,
+      "arquivo": "foto_30.jpg",
+      "caminho_relativo": "fotos/foto_30.jpg",
+      "titulo": "Apartamento venda de 2 quartos",
+      "dimensoes_originais": "1200x1600",
+      "url_original": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/61/1200x1200/5438515406.jpg"
+    }
+  ]
+}

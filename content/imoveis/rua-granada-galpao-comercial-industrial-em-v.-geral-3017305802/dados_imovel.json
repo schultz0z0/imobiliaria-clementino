@@ -1,0 +1,327 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/rua-granada-galpao-comercial-industrial-em-v.-geral-3017305802.html",
+  "dados_gerais": {
+    "titulo": "Rua Granada - Galpão Comercial/Industrial em V. Geral, junto ao Comércio da Pça 2 e Estrada V.Geral.",
+    "subtitulo": "Comercial · 360m²",
+    "codigo_imovel": "PO0003",
+    "id_imovelweb": "3017305802",
+    "preco": "R$ 5.000",
+    "condominio": "R$ 0",
+    "endereco_completo": "Rua Granada, 159, Vigário Geral, Rio de Janeiro, RJ",
+    "logradouro": "Rua Granada, 159",
+    "bairro": "Vigário Geral",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8171875",
+      "longitude": "-43.3109275",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8171875,-43.3109275"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 358 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "390",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "360",
+      "icon": "scubierta"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "30",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Em Vigário Geral, Rua Granada, próximo ao polo comercial da Pça 2. Galpão Comercial/Industrial, junto ao Polo Comercial do bairro, em terreno com 360 m² e possuindo 390 m² de área edificada, composto por salas/escritórios, banheiros, etc... Aceito uma entrada e facilito o restante. Aluguel : R$ 5.000,00. Não paga IPTU.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 30,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Comercial , Rio de Janeiro",
+      "size_bytes": 317800,
+      "size_kb": 310.3515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5438510391.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Comercial en venda  Vigário Geral",
+      "size_bytes": 172662,
+      "size_kb": 168.615234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5438510280.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Em Vigário Geral, Rua Granada, próximo ao polo comercial da Pça 2. Galpão Comerc",
+      "size_bytes": 683757,
+      "size_kb": 667.7314453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477151.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Comercial venda 390m² ",
+      "size_bytes": 1151584,
+      "size_kb": 1124.59375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477149.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Comercial 390m² venda Vigário Geral",
+      "size_bytes": 878860,
+      "size_kb": 858.26171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477145.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Comercial 390m² venda Vigário Geral",
+      "size_bytes": 1283222,
+      "size_kb": 1253.146484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477158.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Comercial  venda R$ 420.000",
+      "size_bytes": 1003075,
+      "size_kb": 979.5654296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477152.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Comercial · 360m² - Imobiliária Clementino",
+      "size_bytes": 1455651,
+      "size_kb": 1421.5341796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477157.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Comercial venda ",
+      "size_bytes": 577095,
+      "size_kb": 563.5693359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477142.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Comercial · 360m²",
+      "size_bytes": 529313,
+      "size_kb": 516.9072265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477148.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Comercial , Rio de Janeiro",
+      "size_bytes": 466279,
+      "size_kb": 455.3505859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477139.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Comercial en venda  Vigário Geral",
+      "size_bytes": 783713,
+      "size_kb": 765.3447265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477146.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Em Vigário Geral, Rua Granada, próximo ao polo comercial da Pça 2. Galpão Comerc",
+      "size_bytes": 968383,
+      "size_kb": 945.6865234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477156.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Comercial venda 390m² ",
+      "size_bytes": 442794,
+      "size_kb": 432.416015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477143.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Comercial 390m² venda Vigário Geral",
+      "size_bytes": 613249,
+      "size_kb": 598.8759765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477147.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Comercial 390m² venda Vigário Geral",
+      "size_bytes": 757785,
+      "size_kb": 740.0244140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477144.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Comercial  venda R$ 420.000",
+      "size_bytes": 1346929,
+      "size_kb": 1315.3603515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477154.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Comercial · 360m² - Imobiliária Clementino",
+      "size_bytes": 1004435,
+      "size_kb": 980.8935546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477155.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Comercial venda ",
+      "size_bytes": 961831,
+      "size_kb": 939.2880859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477141.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Comercial · 360m²",
+      "size_bytes": 812044,
+      "size_kb": 793.01171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477140.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Comercial , Rio de Janeiro",
+      "size_bytes": 842955,
+      "size_kb": 823.1982421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477153.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Comercial en venda  Vigário Geral",
+      "size_bytes": 779088,
+      "size_kb": 760.828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477150.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Em Vigário Geral, Rua Granada, próximo ao polo comercial da Pça 2. Galpão Comerc",
+      "size_bytes": 1079493,
+      "size_kb": 1054.1923828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477159.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Comercial venda 390m² ",
+      "size_bytes": 645439,
+      "size_kb": 630.3115234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477160.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Comercial 390m² venda Vigário Geral",
+      "size_bytes": 995487,
+      "size_kb": 972.1552734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477164.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Comercial 390m² venda Vigário Geral",
+      "size_bytes": 766159,
+      "size_kb": 748.2021484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477162.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Comercial  venda R$ 420.000",
+      "size_bytes": 557187,
+      "size_kb": 544.1279296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477161.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Comercial · 360m² - Imobiliária Clementino",
+      "size_bytes": 700059,
+      "size_kb": 683.6513671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477163.jpg"
+    },
+    {
+      "index": 29,
+      "filename": "foto_29.jpg",
+      "relative_path": "fotos/foto_29.jpg",
+      "title": "Comercial venda ",
+      "size_bytes": 1566211,
+      "size_kb": 1529.5029296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477165.jpg"
+    },
+    {
+      "index": 30,
+      "filename": "foto_30.jpg",
+      "relative_path": "fotos/foto_30.jpg",
+      "title": "Comercial · 360m²",
+      "size_bytes": 949394,
+      "size_kb": 927.142578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/02/5622477166.jpg"
+    }
+  ]
+}

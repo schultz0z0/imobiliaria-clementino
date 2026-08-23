@@ -1,0 +1,233 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/jardim-america-r.-mozart-apto-1-quarto-sl-coz-area-3017305801.html",
+  "dados_gerais": {
+    "titulo": "Jardim América- R. Mozart,Apto, 1 quarto, Sl,Coz, Área C/Tanque",
+    "subtitulo": "Apartamento · 50m² · 1 quarto",
+    "codigo_imovel": "AP018",
+    "id_imovelweb": "3017305801",
+    "preco": "R$ 800",
+    "condominio": "R$ 0",
+    "endereco_completo": "Rua Mozart, Jardim América, Rio de Janeiro, RJ",
+    "logradouro": "Rua Mozart",
+    "bairro": "Jardim América",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8076253",
+      "longitude": "-43.3229738",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8076253,-43.3229738"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 66 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "50",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "50",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiro",
+      "measure": null,
+      "value": "1",
+      "icon": "bano"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "1",
+      "icon": "dormitorio"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "20",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Em Jardim América na R.Mozart, vendo este aconchegante apartamento 50m², 1° andar, localizado em um prédio tranquilo de apenas 2 andares, sem condomínio e com apenas 2 apartamentos por andar. Um verdadeiro achado para quem busca comodidade e economia. <br>Este charmoso apartamento é composto por uma sala acolhedora, um banheiro social com box blindex, um quarto espaçoso, uma cozinha funcional e uma área de serviço com tanque. <br>apenas R$ 135.000 <br>Agende sua visita e faça deste apartamento o seu lar . Entre em contato.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 18,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Apartamento · 50m² · 1 quarto",
+      "size_bytes": 48111,
+      "size_kb": 46.9833984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/01/5438529385.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Apartamento de 1 quarto, Rio de Janeiro",
+      "size_bytes": 51252,
+      "size_kb": 50.05078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/01/5438529398.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Apartamento en aluguel de 1 quarto Jardim América",
+      "size_bytes": 64075,
+      "size_kb": 62.5732421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/01/5438530374.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Em Jardim América na R.Mozart, vendo este aconchegante apartamento 50m², 1° anda",
+      "size_bytes": 86715,
+      "size_kb": 84.6826171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/01/5438529434.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Apartamento aluguel 50m² de 1 quarto",
+      "size_bytes": 78338,
+      "size_kb": 76.501953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/01/5438529483.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Apartamento 50m² aluguel Jardim América",
+      "size_bytes": 64226,
+      "size_kb": 62.720703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/01/5438530392.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Apartamento 50m² aluguel Jardim América",
+      "size_bytes": 73519,
+      "size_kb": 71.7958984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/01/5438529440.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Apartamento de 1 quarto aluguel R$ 800",
+      "size_bytes": 68157,
+      "size_kb": 66.5595703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/01/5438529459.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Apartamento · 50m² · 1 quarto - Imobiliária Clementino",
+      "size_bytes": 45289,
+      "size_kb": 44.2275390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/01/5438530359.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Apartamento aluguel de 1 quarto",
+      "size_bytes": 47120,
+      "size_kb": 46.015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/01/5438530188.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Apartamento · 50m² · 1 quarto",
+      "size_bytes": 80008,
+      "size_kb": 78.1328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/01/5438529431.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Apartamento de 1 quarto, Rio de Janeiro",
+      "size_bytes": 74112,
+      "size_kb": 72.375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/01/5438529522.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Apartamento en aluguel de 1 quarto Jardim América",
+      "size_bytes": 59028,
+      "size_kb": 57.64453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/01/5438529414.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Em Jardim América na R.Mozart, vendo este aconchegante apartamento 50m², 1° anda",
+      "size_bytes": 51934,
+      "size_kb": 50.716796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/01/5438530356.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Apartamento aluguel 50m² de 1 quarto",
+      "size_bytes": 45123,
+      "size_kb": 44.0654296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/01/5438529429.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Apartamento 50m² aluguel Jardim América",
+      "size_bytes": 67721,
+      "size_kb": 66.1337890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/01/5438530430.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Apartamento 50m² aluguel Jardim América",
+      "size_bytes": 62915,
+      "size_kb": 61.4404296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/01/5438529409.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Apartamento de 1 quarto aluguel R$ 800",
+      "size_bytes": 87184,
+      "size_kb": 85.140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/01/5438530344.jpg"
+    }
+  ]
+}

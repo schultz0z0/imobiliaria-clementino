@@ -1,0 +1,391 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/jardim-america-casa-duplex-varanda-2-salas-total-3018249672.html",
+  "dados_gerais": {
+    "titulo": "Jardim América - Casa Duplex, Varanda, 2 Salas, Total 4 Qtos, Suíte, Terraço e Garagem.",
+    "subtitulo": "Casa · 125m² · 4 quartos · 1 vaga",
+    "codigo_imovel": "0062",
+    "id_imovelweb": "3018249672",
+    "preco": "R$ 400.000",
+    "condominio": "Não informado / Isento",
+    "endereco_completo": "RUA Conselheiro  Meirelles, Jardim América, Rio de Janeiro, RJ",
+    "logradouro": "RUA Conselheiro  Meirelles",
+    "bairro": "Jardim América",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8119425",
+      "longitude": "-43.3201541",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8119425,-43.3201541"
+    },
+    "data_publicacao": "12/09/2025",
+    "antiguidade": "Publicado há 341 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "130",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "125",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiros",
+      "measure": null,
+      "value": "4",
+      "icon": "bano"
+    },
+    "CFT7": {
+      "featureId": "CFT7",
+      "label": "vaga",
+      "measure": null,
+      "value": "1",
+      "icon": "cochera"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "4",
+      "icon": "dormitorio"
+    },
+    "CFT4": {
+      "featureId": "CFT4",
+      "label": "suíte",
+      "measure": null,
+      "value": "1",
+      "icon": "toilete"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "29",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Esta casa à venda em Jardim América possui 125 m² de área construída e 130 m² de área total. A propriedade oferece 4 quartos, incluindo 1 suíte, e 4 banheiros. A distribuição interna conta com sala de jantar, cozinha independente, despensa e closet. Nos espaços externos, a casa dispõe de quintal e varanda. A propriedade possui 2 andares e 1 vaga de estacionamento. Entre as comodidades, há ar condicionado e área de serviço. O imóvel tem 29 anos de idade. A região de Jardim América é predominantemente residencial, com acesso facilitado a serviços essenciais e transporte público.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 34,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Casa de 4 quartos, Rio de Janeiro",
+      "size_bytes": 94870,
+      "size_kb": 92.646484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192693.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Casa en venda de 4 quartos Jardim América",
+      "size_bytes": 126349,
+      "size_kb": 123.3876953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192687.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Esta casa à venda em Jardim América possui 125 m² de área construída e 130 m² de",
+      "size_bytes": 45652,
+      "size_kb": 44.58203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192696.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Casa venda 130m² de 4 quartos",
+      "size_bytes": 52610,
+      "size_kb": 51.376953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192709.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Casa 130m² venda Jardim América",
+      "size_bytes": 46435,
+      "size_kb": 45.3466796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192679.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Casa 130m² venda Jardim América",
+      "size_bytes": 33091,
+      "size_kb": 32.3154296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192680.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Casa de 4 quartos venda R$ 400.000",
+      "size_bytes": 30710,
+      "size_kb": 29.990234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192713.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Casa · 125m² · 4 quartos · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 56319,
+      "size_kb": 54.9990234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192688.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Casa venda de 4 quartos",
+      "size_bytes": 41397,
+      "size_kb": 40.4267578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192674.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Casa · 125m² · 4 quartos · 1 vaga",
+      "size_bytes": 40112,
+      "size_kb": 39.171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192673.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Casa de 4 quartos, Rio de Janeiro",
+      "size_bytes": 55716,
+      "size_kb": 54.41015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192682.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Casa en venda de 4 quartos Jardim América",
+      "size_bytes": 61762,
+      "size_kb": 60.314453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192689.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Esta casa à venda em Jardim América possui 125 m² de área construída e 130 m² de",
+      "size_bytes": 52819,
+      "size_kb": 51.5810546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192692.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Casa venda 130m² de 4 quartos",
+      "size_bytes": 41397,
+      "size_kb": 40.4267578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192677.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Casa 130m² venda Jardim América",
+      "size_bytes": 60791,
+      "size_kb": 59.3662109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192698.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Casa 130m² venda Jardim América",
+      "size_bytes": 33091,
+      "size_kb": 32.3154296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192708.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Casa de 4 quartos venda R$ 400.000",
+      "size_bytes": 40112,
+      "size_kb": 39.171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192712.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Casa · 125m² · 4 quartos · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 52598,
+      "size_kb": 51.365234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192690.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Casa venda de 4 quartos",
+      "size_bytes": 76783,
+      "size_kb": 74.9833984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192691.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Casa · 125m² · 4 quartos · 1 vaga",
+      "size_bytes": 69548,
+      "size_kb": 67.91796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192701.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Casa de 4 quartos, Rio de Janeiro",
+      "size_bytes": 71707,
+      "size_kb": 70.0263671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192704.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Casa en venda de 4 quartos Jardim América",
+      "size_bytes": 68993,
+      "size_kb": 67.3759765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192676.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Esta casa à venda em Jardim América possui 125 m² de área construída e 130 m² de",
+      "size_bytes": 70883,
+      "size_kb": 69.2216796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192695.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Casa venda 130m² de 4 quartos",
+      "size_bytes": 61137,
+      "size_kb": 59.7041015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192675.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Casa 130m² venda Jardim América",
+      "size_bytes": 67795,
+      "size_kb": 66.2060546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192700.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Casa 130m² venda Jardim América",
+      "size_bytes": 53577,
+      "size_kb": 52.3212890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192681.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Casa de 4 quartos venda R$ 400.000",
+      "size_bytes": 55432,
+      "size_kb": 54.1328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192716.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Casa · 125m² · 4 quartos · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 69898,
+      "size_kb": 68.259765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192705.jpg"
+    },
+    {
+      "index": 29,
+      "filename": "foto_29.jpg",
+      "relative_path": "fotos/foto_29.jpg",
+      "title": "Casa venda de 4 quartos",
+      "size_bytes": 89299,
+      "size_kb": 87.2060546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192711.jpg"
+    },
+    {
+      "index": 30,
+      "filename": "foto_30.jpg",
+      "relative_path": "fotos/foto_30.jpg",
+      "title": "Casa · 125m² · 4 quartos · 1 vaga",
+      "size_bytes": 82173,
+      "size_kb": 80.2470703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192710.jpg"
+    },
+    {
+      "index": 31,
+      "filename": "foto_31.jpg",
+      "relative_path": "fotos/foto_31.jpg",
+      "title": "Casa de 4 quartos, Rio de Janeiro",
+      "size_bytes": 38728,
+      "size_kb": 37.8203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192672.jpg"
+    },
+    {
+      "index": 32,
+      "filename": "foto_32.jpg",
+      "relative_path": "fotos/foto_32.jpg",
+      "title": "Casa en venda de 4 quartos Jardim América",
+      "size_bytes": 79396,
+      "size_kb": 77.53515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192694.jpg"
+    },
+    {
+      "index": 33,
+      "filename": "foto_33.jpg",
+      "relative_path": "fotos/foto_33.jpg",
+      "title": "Esta casa à venda em Jardim América possui 125 m² de área construída e 130 m² de",
+      "size_bytes": 51941,
+      "size_kb": 50.7236328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192703.jpg"
+    },
+    {
+      "index": 34,
+      "filename": "foto_34.jpg",
+      "relative_path": "fotos/foto_34.jpg",
+      "title": "Casa venda 130m² de 4 quartos",
+      "size_bytes": 57564,
+      "size_kb": 56.21484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/24/96/72/5521192714.jpg"
+    }
+  ]
+}

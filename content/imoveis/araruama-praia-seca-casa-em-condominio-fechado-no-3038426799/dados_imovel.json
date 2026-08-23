@@ -1,0 +1,418 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/araruama-praia-seca-casa-em-condominio-fechado-no-3038426799.html",
+  "dados_gerais": {
+    "titulo": "Araruama-Praia Seca, Casa em Condomínio Fechado, no Centro de Praia Seca. Vendo ótima Casa Linear.",
+    "subtitulo": "Casa · 130m² · 4 quartos · 4 vagas",
+    "codigo_imovel": "0085",
+    "id_imovelweb": "3038426799",
+    "preco": "R$ 480.000",
+    "condominio": "Não informado / Isento",
+    "endereco_completo": "Rua dos Lírios, Araruama, Rio De Janeiro",
+    "logradouro": "Rua dos Lírios",
+    "bairro": "Araruama",
+    "cidade": "Rio De Janeiro",
+    "estado": null,
+    "coordenadas": {
+      "latitude": "-22.9191843",
+      "longitude": "-42.3151200",
+      "google_maps_url": "https://www.google.com/maps?q=-22.9191843,-42.3151200"
+    },
+    "data_publicacao": "24/06/2026",
+    "antiguidade": "Publicado há 57 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "135",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "130",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiros",
+      "measure": null,
+      "value": "3",
+      "icon": "bano"
+    },
+    "CFT7": {
+      "featureId": "CFT7",
+      "label": "vaga",
+      "measure": null,
+      "value": "4",
+      "icon": "cochera"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "4",
+      "icon": "dormitorio"
+    },
+    "CFT4": {
+      "featureId": "CFT4",
+      "label": "suíte",
+      "measure": null,
+      "value": "1",
+      "icon": "toilete"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "10",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Casa disponível para venda em Araruama. A propriedade possui 130 m² de área construída e 135 m² de área total. A distribuição interna inclui o total de 4 quartos, 3 banheiros e 1 suíte. A cozinha é americana e há despensa. A casa conta com varanda e área de serviço. Na parte externa, a propriedade oferece jardim e churrasqueira, além de 4 vagas de estacionamento. O imóvel tem 1 andar e entrada independente. As amenidades do condomínio incluem área de lazer, espaço gourmet e piscina. A propriedade aceita FGTS. A região de Araruama oferece acesso a diversas conveniências e serviços. O imóvel tem área de serviço, quarto de guardados, anexo com dois quartos, banheiro externo, área gourmet com churrasqueira, bancada e pia, ducha, varanda e quintal amplo.\nCaracterísticas do condomínio:\nPortaria e segurança 24 horas\nQuadra poliesportiva\nPiscina adulto e infantil\nAcademia ao ar livre\nSalão de jogos\nÁrea com churrasqueiras\nLagoa privativa\nÁrea arborizada com churrasqueira, bancada e pia, ducha, varanda e quintal amplo.\nCaracterísticas do condomínio:\nPortaria e segurança 24 horas\nQuadra poliesportiva\nPiscina adulto e infantil\nAcademia ao ar livre\nSalão de jogos\nÁrea com churrasqueiras\nLagoa privativa\nÁrea arborizada",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 37,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Casa de 4 quartos, Araruama",
+      "size_bytes": 220341,
+      "size_kb": 215.1767578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6857887240.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Casa en venda de 4 quartos ",
+      "size_bytes": 148440,
+      "size_kb": 144.9609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6857887254.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Casa disponível para venda em Araruama. A propriedade possui 130 m² de área cons",
+      "size_bytes": 171965,
+      "size_kb": 167.9345703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6857887281.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Casa venda 135m² de 4 quartos",
+      "size_bytes": 188903,
+      "size_kb": 184.4755859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6857887227.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Casa 135m² venda ",
+      "size_bytes": 229175,
+      "size_kb": 223.8037109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6857887243.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Casa 135m² venda ",
+      "size_bytes": 208170,
+      "size_kb": 203.291015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6857887237.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Casa de 4 quartos venda R$ 480.000",
+      "size_bytes": 115334,
+      "size_kb": 112.630859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6857887229.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Casa · 130m² · 4 quartos · 4 vagas - Imobiliária Clementino",
+      "size_bytes": 169323,
+      "size_kb": 165.3544921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6857887258.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Casa venda de 4 quartos",
+      "size_bytes": 141129,
+      "size_kb": 137.8212890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6857887228.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Casa · 130m² · 4 quartos · 4 vagas",
+      "size_bytes": 152070,
+      "size_kb": 148.505859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6857887239.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Casa de 4 quartos, Araruama",
+      "size_bytes": 173503,
+      "size_kb": 169.4365234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6857887241.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Casa en venda de 4 quartos ",
+      "size_bytes": 172629,
+      "size_kb": 168.5830078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6857887306.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Casa disponível para venda em Araruama. A propriedade possui 130 m² de área cons",
+      "size_bytes": 158934,
+      "size_kb": 155.208984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6857887242.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Casa venda 135m² de 4 quartos",
+      "size_bytes": 148868,
+      "size_kb": 145.37890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6857887283.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Casa 135m² venda ",
+      "size_bytes": 110081,
+      "size_kb": 107.5009765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6858205299.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Casa 135m² venda ",
+      "size_bytes": 200266,
+      "size_kb": 195.572265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6858205303.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Casa de 4 quartos venda R$ 480.000",
+      "size_bytes": 160730,
+      "size_kb": 156.962890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6858205290.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Casa · 130m² · 4 quartos · 4 vagas - Imobiliária Clementino",
+      "size_bytes": 182139,
+      "size_kb": 177.8701171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6858205287.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Casa venda de 4 quartos",
+      "size_bytes": 145653,
+      "size_kb": 142.2392578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6858205284.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Casa · 130m² · 4 quartos · 4 vagas",
+      "size_bytes": 180683,
+      "size_kb": 176.4482421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6858205292.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Casa de 4 quartos, Araruama",
+      "size_bytes": 112515,
+      "size_kb": 109.8779296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6858205295.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Casa en venda de 4 quartos ",
+      "size_bytes": 157090,
+      "size_kb": 153.408203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6858205308.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Casa disponível para venda em Araruama. A propriedade possui 130 m² de área cons",
+      "size_bytes": 154323,
+      "size_kb": 150.7060546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6858205283.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Casa venda 135m² de 4 quartos",
+      "size_bytes": 194639,
+      "size_kb": 190.0771484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6858205304.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Casa 135m² venda ",
+      "size_bytes": 160625,
+      "size_kb": 156.8603515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6858205297.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Casa 135m² venda ",
+      "size_bytes": 155121,
+      "size_kb": 151.4853515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6858205291.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Casa de 4 quartos venda R$ 480.000",
+      "size_bytes": 149104,
+      "size_kb": 145.609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6858205306.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Casa · 130m² · 4 quartos · 4 vagas - Imobiliária Clementino",
+      "size_bytes": 199770,
+      "size_kb": 195.087890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6858205285.jpg"
+    },
+    {
+      "index": 29,
+      "filename": "foto_29.jpg",
+      "relative_path": "fotos/foto_29.jpg",
+      "title": "Casa venda de 4 quartos",
+      "size_bytes": 179258,
+      "size_kb": 175.056640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6858205309.jpg"
+    },
+    {
+      "index": 30,
+      "filename": "foto_30.jpg",
+      "relative_path": "fotos/foto_30.jpg",
+      "title": "Casa · 130m² · 4 quartos · 4 vagas",
+      "size_bytes": 196477,
+      "size_kb": 191.8720703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6858205311.jpg"
+    },
+    {
+      "index": 31,
+      "filename": "foto_31.jpg",
+      "relative_path": "fotos/foto_31.jpg",
+      "title": "Casa de 4 quartos, Araruama",
+      "size_bytes": 282670,
+      "size_kb": 276.044921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6858205293.jpg"
+    },
+    {
+      "index": 32,
+      "filename": "foto_32.jpg",
+      "relative_path": "fotos/foto_32.jpg",
+      "title": "Casa en venda de 4 quartos ",
+      "size_bytes": 287486,
+      "size_kb": 280.748046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6858205298.jpg"
+    },
+    {
+      "index": 33,
+      "filename": "foto_33.jpg",
+      "relative_path": "fotos/foto_33.jpg",
+      "title": "Casa disponível para venda em Araruama. A propriedade possui 130 m² de área cons",
+      "size_bytes": 235860,
+      "size_kb": 230.33203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6858205288.jpg"
+    },
+    {
+      "index": 34,
+      "filename": "foto_34.jpg",
+      "relative_path": "fotos/foto_34.jpg",
+      "title": "Casa venda 135m² de 4 quartos",
+      "size_bytes": 246023,
+      "size_kb": 240.2568359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6858205296.jpg"
+    },
+    {
+      "index": 35,
+      "filename": "foto_35.jpg",
+      "relative_path": "fotos/foto_35.jpg",
+      "title": "Casa 135m² venda ",
+      "size_bytes": 264324,
+      "size_kb": 258.12890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6858205294.jpg"
+    },
+    {
+      "index": 36,
+      "filename": "foto_36.jpg",
+      "relative_path": "fotos/foto_36.jpg",
+      "title": "Casa 135m² venda ",
+      "size_bytes": 134160,
+      "size_kb": 131.015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6858205282.jpg"
+    },
+    {
+      "index": 37,
+      "filename": "foto_37.jpg",
+      "relative_path": "fotos/foto_37.jpg",
+      "title": "Casa de 4 quartos venda R$ 480.000",
+      "size_bytes": 140142,
+      "size_kb": 136.857421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/38/42/67/99/6858205286.jpg"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --color-gold: #d7b661;
+  --color-gold-hover: #c4a350;
+  --color-bg-dark: #18181b;
+}
+
+:root {
+  color-scheme: dark;
+  --surface: #18181b;
+  --surface-raised: #222225;
+  --gold: #d7b661;
+  --gold-strong: #c4a350;
+  --content: #f7f5ef;
+  --muted: rgba(255, 255, 255, 0.62);
+  --radius-compact: 10px;
+  --radius-control: 12px;
+  --radius-surface: 14px;
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)];
+  }
+  .glass-nav {
+    @apply bg-[#18181b]/80 backdrop-blur-md border-b border-white/5 shadow-sm;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+body {
+  background-color: #18181b;
+  color: #ffffff;
+  font-family: "Outfit", sans-serif;
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+html { scroll-behavior: smooth; }
+button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

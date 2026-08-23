@@ -1,0 +1,170 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/v.-geral-r.-sao-bartolomeu-casa-de-fdos-55-m-3017305764.html",
+  "dados_gerais": {
+    "titulo": "V. Geral, R. São Bartolomeu, Casa de Fdos, 55 m², Sala, 1 Qto, Terraço, Cisterna, Quintal",
+    "subtitulo": "Apartamento · 55m² · 1 quarto",
+    "codigo_imovel": "AP0039",
+    "id_imovelweb": "3017305764",
+    "preco": "R$ 130.000",
+    "condominio": "R$ 0",
+    "endereco_completo": "Rua São Bartolomeu, Vigário Geral, Rio de Janeiro, RJ",
+    "logradouro": "Rua São Bartolomeu",
+    "bairro": "Vigário Geral",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8107659",
+      "longitude": "-43.3059627",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8107659,-43.3059627"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 358 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "55",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "55",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiro",
+      "measure": null,
+      "value": "1",
+      "icon": "bano"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "1",
+      "icon": "dormitorio"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "35",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Vigário Geral - Rua São Bartolomeu, casa de fundos com 55 m², em terreno com mais 2 Csas, composta por 01 saleta, 01 quarto grande, 01 cozinha, 01 banheiro, 01 área na frente, terraço coberto, cisterna. Pintura nova. Imóvel desocupado. Entrar e morar. Isento de IPTU. Água e luz separadas. Doctos ok. Aceito financto bancário. Valor 130.000,00.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "(21) 96",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 11,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Apartamento · 55m² · 1 quarto",
+      "size_bytes": 340836,
+      "size_kb": 332.84765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/64/5438523644.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Apartamento de 1 quarto, Rio de Janeiro",
+      "size_bytes": 389573,
+      "size_kb": 380.4423828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/64/5438523696.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Apartamento en venda de 1 quarto Vigário Geral",
+      "size_bytes": 293085,
+      "size_kb": 286.2158203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/64/5438510149.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Vigário Geral - Rua São Bartolomeu, casa de fundos com 55 m², em terreno com mai",
+      "size_bytes": 441319,
+      "size_kb": 430.9755859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/64/5438522616.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Apartamento venda 55m² de 1 quarto",
+      "size_bytes": 350660,
+      "size_kb": 342.44140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/64/5438517810.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Apartamento 55m² venda Vigário Geral",
+      "size_bytes": 190077,
+      "size_kb": 185.6220703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/64/5438516336.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Apartamento 55m² venda Vigário Geral",
+      "size_bytes": 105066,
+      "size_kb": 102.603515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/64/5438516145.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Apartamento de 1 quarto venda R$ 130.000",
+      "size_bytes": 181529,
+      "size_kb": 177.2744140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/64/5438520163.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Apartamento · 55m² · 1 quarto - Imobiliária Clementino",
+      "size_bytes": 161413,
+      "size_kb": 157.6298828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/64/5438520420.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Apartamento venda de 1 quarto",
+      "size_bytes": 193537,
+      "size_kb": 189.0009765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/64/5438510167.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Apartamento · 55m² · 1 quarto",
+      "size_bytes": 219573,
+      "size_kb": 214.4267578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/64/5438522853.jpg"
+    }
+  ]
+}

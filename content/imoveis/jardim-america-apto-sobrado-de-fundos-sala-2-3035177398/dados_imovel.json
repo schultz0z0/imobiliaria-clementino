@@ -1,0 +1,440 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/jardim-america-apto-sobrado-de-fundos-sala-2-3035177398.html",
+  "dados_gerais": {
+    "titulo": "Jardim América - Apto Sobrado, de Fundos, Sala, 2 Qtos, Banh. Social, Cozinha e Área de Serviço.",
+    "subtitulo": "Apartamento · 90m² · 2 quartos",
+    "codigo_imovel": "0084",
+    "id_imovelweb": "3035177398",
+    "preco": "R$ 900",
+    "condominio": "Não informado / Isento",
+    "endereco_completo": "Rua Plínio Barreto, 81, Jardim América, Rio de Janeiro, RJ",
+    "logradouro": "Rua Plínio Barreto, 81",
+    "bairro": "Jardim América",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8146367",
+      "longitude": "-43.3222275",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8146367,-43.3222275"
+    },
+    "data_publicacao": "13/05/2026",
+    "antiguidade": "Publicado há 13 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "89",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "90",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiro",
+      "measure": null,
+      "value": "1",
+      "icon": "bano"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "2",
+      "icon": "dormitorio"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "40",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Apartamento disponível para aluguel no Jardim América, com 70 m² de área construída. O imóvel conta com 2 quartos, área de serviço. A posição do apartamento é fundos, proporcionando maior privacidade.\nInternamente. O Jardim América é uma região bem localizada, com fácil acesso a diversas opções de comércio e serviços. Próximo a supermercados, farmácias e escolas, o bairro oferece toda a infraestrutura necessária para o dia a dia. A mobilidade é facilitada pelas diversas linhas de ônibus que circulam pela região, além da proximidade com importantes vias de acesso. O bairro é predominantemente residencial, com um ambiente familiar e tranquilo. O imóvel possui sala, 2 quartos, banheiro social, cozinha e área de serviço. A localização do imóvel é fora da área de enchente no bairro.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 41,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 159307,
+      "size_kb": 155.5732421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196196.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Apartamento en aluguel de 2 quartos Jardim América",
+      "size_bytes": 172220,
+      "size_kb": 168.18359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196173.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Apartamento disponível para aluguel no Jardim América, com 70 m² de área constru",
+      "size_bytes": 172098,
+      "size_kb": 168.064453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196199.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Apartamento aluguel 89m² de 2 quartos",
+      "size_bytes": 212792,
+      "size_kb": 207.8046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196185.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Apartamento 89m² aluguel Jardim América",
+      "size_bytes": 183244,
+      "size_kb": 178.94921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196165.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Apartamento 89m² aluguel Jardim América",
+      "size_bytes": 172042,
+      "size_kb": 168.009765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196191.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Apartamento de 2 quartos aluguel R$ 900",
+      "size_bytes": 280769,
+      "size_kb": 274.1884765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196193.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Apartamento · 90m² · 2 quartos - Imobiliária Clementino",
+      "size_bytes": 190994,
+      "size_kb": 186.517578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196180.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Apartamento aluguel de 2 quartos",
+      "size_bytes": 176105,
+      "size_kb": 171.9775390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196164.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Apartamento · 90m² · 2 quartos",
+      "size_bytes": 178812,
+      "size_kb": 174.62109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196181.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 170802,
+      "size_kb": 166.798828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196197.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Apartamento en aluguel de 2 quartos Jardim América",
+      "size_bytes": 107630,
+      "size_kb": 105.107421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196160.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Apartamento disponível para aluguel no Jardim América, com 70 m² de área constru",
+      "size_bytes": 176105,
+      "size_kb": 171.9775390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196186.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Apartamento aluguel 89m² de 2 quartos",
+      "size_bytes": 190994,
+      "size_kb": 186.517578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196179.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Apartamento 89m² aluguel Jardim América",
+      "size_bytes": 178812,
+      "size_kb": 174.62109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196163.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Apartamento 89m² aluguel Jardim América",
+      "size_bytes": 76090,
+      "size_kb": 74.306640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196161.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Apartamento de 2 quartos aluguel R$ 900",
+      "size_bytes": 83969,
+      "size_kb": 82.0009765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196200.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Apartamento · 90m² · 2 quartos - Imobiliária Clementino",
+      "size_bytes": 115570,
+      "size_kb": 112.861328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196184.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Apartamento aluguel de 2 quartos",
+      "size_bytes": 129592,
+      "size_kb": 126.5546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196192.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Apartamento · 90m² · 2 quartos",
+      "size_bytes": 149268,
+      "size_kb": 145.76953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196159.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 128312,
+      "size_kb": 125.3046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196162.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Apartamento en aluguel de 2 quartos Jardim América",
+      "size_bytes": 138252,
+      "size_kb": 135.01171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196167.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Apartamento disponível para aluguel no Jardim América, com 70 m² de área constru",
+      "size_bytes": 157973,
+      "size_kb": 154.2705078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196172.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Apartamento aluguel 89m² de 2 quartos",
+      "size_bytes": 150607,
+      "size_kb": 147.0771484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196194.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Apartamento 89m² aluguel Jardim América",
+      "size_bytes": 180794,
+      "size_kb": 176.556640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196204.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Apartamento 89m² aluguel Jardim América",
+      "size_bytes": 143457,
+      "size_kb": 140.0947265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196190.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Apartamento de 2 quartos aluguel R$ 900",
+      "size_bytes": 138622,
+      "size_kb": 135.373046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196170.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Apartamento · 90m² · 2 quartos - Imobiliária Clementino",
+      "size_bytes": 107653,
+      "size_kb": 105.1298828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196158.jpg"
+    },
+    {
+      "index": 29,
+      "filename": "foto_29.jpg",
+      "relative_path": "fotos/foto_29.jpg",
+      "title": "Apartamento aluguel de 2 quartos",
+      "size_bytes": 186954,
+      "size_kb": 182.572265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196175.jpg"
+    },
+    {
+      "index": 30,
+      "filename": "foto_30.jpg",
+      "relative_path": "fotos/foto_30.jpg",
+      "title": "Apartamento · 90m² · 2 quartos",
+      "size_bytes": 195072,
+      "size_kb": 190.5,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196202.jpg"
+    },
+    {
+      "index": 31,
+      "filename": "foto_31.jpg",
+      "relative_path": "fotos/foto_31.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 181692,
+      "size_kb": 177.43359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196174.jpg"
+    },
+    {
+      "index": 32,
+      "filename": "foto_32.jpg",
+      "relative_path": "fotos/foto_32.jpg",
+      "title": "Apartamento en aluguel de 2 quartos Jardim América",
+      "size_bytes": 178137,
+      "size_kb": 173.9619140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196195.jpg"
+    },
+    {
+      "index": 33,
+      "filename": "foto_33.jpg",
+      "relative_path": "fotos/foto_33.jpg",
+      "title": "Apartamento 89m² aluguel Jardim América",
+      "size_bytes": 169158,
+      "size_kb": 165.193359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196183.jpg"
+    },
+    {
+      "index": 34,
+      "filename": "foto_34.jpg",
+      "relative_path": "fotos/foto_34.jpg",
+      "title": "Apartamento 89m² aluguel Jardim América",
+      "size_bytes": 205691,
+      "size_kb": 200.8701171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196166.jpg"
+    },
+    {
+      "index": 35,
+      "filename": "foto_35.jpg",
+      "relative_path": "fotos/foto_35.jpg",
+      "title": "Apartamento · 90m² · 2 quartos - Imobiliária Clementino",
+      "size_bytes": 152199,
+      "size_kb": 148.6318359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196169.jpg"
+    },
+    {
+      "index": 36,
+      "filename": "foto_36.jpg",
+      "relative_path": "fotos/foto_36.jpg",
+      "title": "Apartamento aluguel de 2 quartos",
+      "size_bytes": 201263,
+      "size_kb": 196.5458984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196182.jpg"
+    },
+    {
+      "index": 37,
+      "filename": "foto_37.jpg",
+      "relative_path": "fotos/foto_37.jpg",
+      "title": "Apartamento · 90m² · 2 quartos",
+      "size_bytes": 174520,
+      "size_kb": 170.4296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196168.jpg"
+    },
+    {
+      "index": 38,
+      "filename": "foto_38.jpg",
+      "relative_path": "fotos/foto_38.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 191561,
+      "size_kb": 187.0712890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196207.jpg"
+    },
+    {
+      "index": 39,
+      "filename": "foto_39.jpg",
+      "relative_path": "fotos/foto_39.jpg",
+      "title": "Apartamento en aluguel de 2 quartos Jardim América",
+      "size_bytes": 182507,
+      "size_kb": 178.2294921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196178.jpg"
+    },
+    {
+      "index": 40,
+      "filename": "foto_40.jpg",
+      "relative_path": "fotos/foto_40.jpg",
+      "title": "Apartamento disponível para aluguel no Jardim América, com 70 m² de área constru",
+      "size_bytes": 158736,
+      "size_kb": 155.015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196187.jpg"
+    },
+    {
+      "index": 41,
+      "filename": "foto_41.jpg",
+      "relative_path": "fotos/foto_41.jpg",
+      "title": "Apartamento aluguel 89m² de 2 quartos",
+      "size_bytes": 120658,
+      "size_kb": 117.830078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/17/73/98/6686196176.jpg"
+    }
+  ]
+}

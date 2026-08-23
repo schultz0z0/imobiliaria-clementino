@@ -1,0 +1,330 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/jardim-america-rua-arinos-apto-65m-fundos-3018326089.html",
+  "dados_gerais": {
+    "titulo": "Jardim América - Rua Arinos, Apto 65m², Fundos, Quintal,  1 Qto, Vga.",
+    "subtitulo": "Apartamento · 67m² · 1 quarto · 1 vaga",
+    "codigo_imovel": "0012",
+    "id_imovelweb": "3018326089",
+    "preco": "R$ 159.000",
+    "condominio": "R$ 0",
+    "endereco_completo": "Rua Arinos, 162, Jardim América, Rio de Janeiro, RJ",
+    "logradouro": "Rua Arinos, 162",
+    "bairro": "Jardim América",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8132024",
+      "longitude": "-43.3201781",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8132024,-43.3201781"
+    },
+    "data_publicacao": "13/09/2025",
+    "antiguidade": "Publicado há 340 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "69",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "67",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiro",
+      "measure": null,
+      "value": "1",
+      "icon": "bano"
+    },
+    "CFT7": {
+      "featureId": "CFT7",
+      "label": "vaga",
+      "measure": null,
+      "value": "1",
+      "icon": "cochera"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "1",
+      "icon": "dormitorio"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "30",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Em Jardim América, vendo apto térreo com 65m² com 1 quarto, mas pode transformar em 2 qtos. Apto de fundos, tranquilo, independente, em prédio familiar, tranquilo, com 2 andares e total de 4 aptos, sem condomínio. Imóvel com quintal, varanda, boa sala, corredor, banheiro social, 1 quarto bom, cozinha, área de serviço. Tem 1 vaga pra carro na servidão. Aceito carta de crédito.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 28,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Apartamento de 1 quarto, Rio de Janeiro",
+      "size_bytes": 1168523,
+      "size_kb": 1141.1357421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844360.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Apartamento en venda de 1 quarto Jardim América",
+      "size_bytes": 1967480,
+      "size_kb": 1921.3671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844367.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Em Jardim América, vendo apto térreo com 65m² com 1 quarto, mas pode transformar",
+      "size_bytes": 1934292,
+      "size_kb": 1888.95703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844368.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Apartamento venda 69m² de 1 quarto",
+      "size_bytes": 1054982,
+      "size_kb": 1030.255859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844364.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Apartamento 69m² venda Jardim América",
+      "size_bytes": 944867,
+      "size_kb": 922.7216796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844349.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Apartamento 69m² venda Jardim América",
+      "size_bytes": 949092,
+      "size_kb": 926.84765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844357.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Apartamento de 1 quarto venda R$ 159.000",
+      "size_bytes": 382718,
+      "size_kb": 373.748046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844348.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Apartamento · 67m² · 1 quarto · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 576840,
+      "size_kb": 563.3203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844358.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Apartamento venda de 1 quarto",
+      "size_bytes": 564470,
+      "size_kb": 551.240234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844352.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Apartamento · 67m² · 1 quarto · 1 vaga",
+      "size_bytes": 430441,
+      "size_kb": 420.3525390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844351.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Apartamento de 1 quarto, Rio de Janeiro",
+      "size_bytes": 614766,
+      "size_kb": 600.357421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844355.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Apartamento en venda de 1 quarto Jardim América",
+      "size_bytes": 526951,
+      "size_kb": 514.6005859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844366.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Em Jardim América, vendo apto térreo com 65m² com 1 quarto, mas pode transformar",
+      "size_bytes": 455531,
+      "size_kb": 444.8544921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844356.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Apartamento venda 69m² de 1 quarto",
+      "size_bytes": 467588,
+      "size_kb": 456.62890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844347.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Apartamento 69m² venda Jardim América",
+      "size_bytes": 722365,
+      "size_kb": 705.4345703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844365.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Apartamento 69m² venda Jardim América",
+      "size_bytes": 454056,
+      "size_kb": 443.4140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844362.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Apartamento de 1 quarto venda R$ 159.000",
+      "size_bytes": 488186,
+      "size_kb": 476.744140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844350.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Apartamento · 67m² · 1 quarto · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 428490,
+      "size_kb": 418.447265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844353.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Apartamento venda de 1 quarto",
+      "size_bytes": 414799,
+      "size_kb": 405.0771484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844361.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Apartamento · 67m² · 1 quarto · 1 vaga",
+      "size_bytes": 561305,
+      "size_kb": 548.1494140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844363.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Apartamento de 1 quarto, Rio de Janeiro",
+      "size_bytes": 598350,
+      "size_kb": 584.326171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844354.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Apartamento en venda de 1 quarto Jardim América",
+      "size_bytes": 533805,
+      "size_kb": 521.2939453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844369.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Em Jardim América, vendo apto térreo com 65m² com 1 quarto, mas pode transformar",
+      "size_bytes": 959454,
+      "size_kb": 936.966796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844371.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Apartamento venda 69m² de 1 quarto",
+      "size_bytes": 523469,
+      "size_kb": 511.2001953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844370.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Apartamento 69m² venda Jardim América",
+      "size_bytes": 673377,
+      "size_kb": 657.5947265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844372.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Apartamento 69m² venda Jardim América",
+      "size_bytes": 1313602,
+      "size_kb": 1282.814453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844374.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Apartamento de 1 quarto venda R$ 159.000",
+      "size_bytes": 1691808,
+      "size_kb": 1652.15625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844373.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Apartamento · 67m² · 1 quarto · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 667536,
+      "size_kb": 651.890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/18/32/60/89/5499844359.jpg"
+    }
+  ]
+}

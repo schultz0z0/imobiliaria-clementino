@@ -1,0 +1,208 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/v.-geral-r.-sao-bartolomeu-casa-de-frente-169-m-3017305787.html",
+  "dados_gerais": {
+    "titulo": "V. Geral - R. São Bartolomeu, Casa de Frente, 169 m², Independente, 2 Varandas, Total 3 Qtos, 2 Banh",
+    "subtitulo": "Casa · 169m² · 2 quartos",
+    "codigo_imovel": "CA0019",
+    "id_imovelweb": "3017305787",
+    "preco": "R$ 239.000",
+    "condominio": "R$ 0",
+    "endereco_completo": "Rua São Bartolomeu, Vigário Geral, Rio de Janeiro, RJ",
+    "logradouro": "Rua São Bartolomeu",
+    "bairro": "Vigário Geral",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8107659",
+      "longitude": "-43.3059627",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8107659,-43.3059627"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 358 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "170",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "169",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiros",
+      "measure": null,
+      "value": "2",
+      "icon": "bano"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "2",
+      "icon": "dormitorio"
+    }
+  },
+  "descricao": "Casa frente de rua com 169 m², independente, em terreno de 840m² com mais duas casas. Imóvel composto de: quintal à frente, varanda, sala 2 ambientes, corredor, banheiro social, 02 quartos, copa cozinha, varanda nos fundos e área de lavanderia com tanque, quarto de serviço. Escada de acesso ao terraço coberto no pavimento superior, com uma copa e banheiro. Entrada da casa independente e água e luz separadas. Documentos ok. Aceita carta de crédito.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "(21) 96",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 16,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Casa · 169m² · 2 quartos",
+      "size_bytes": 271982,
+      "size_kb": 265.607421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/87/5438519245.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Casa de 2 quartos, Rio de Janeiro",
+      "size_bytes": 334854,
+      "size_kb": 327.005859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/87/5438519274.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Casa en venda de 2 quartos Vigário Geral",
+      "size_bytes": 391935,
+      "size_kb": 382.7490234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/87/5438519257.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Casa frente de rua com 169 m², independente, em terreno de 840m² com mais duas c",
+      "size_bytes": 179827,
+      "size_kb": 175.6123046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/87/5438519259.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Casa venda 170m² de 2 quartos",
+      "size_bytes": 139392,
+      "size_kb": 136.125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/87/5438519240.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Casa 170m² venda Vigário Geral",
+      "size_bytes": 189929,
+      "size_kb": 185.4775390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/87/5438519272.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Casa 170m² venda Vigário Geral",
+      "size_bytes": 158482,
+      "size_kb": 154.767578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/87/5438519261.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Casa de 2 quartos venda R$ 239.000",
+      "size_bytes": 206021,
+      "size_kb": 201.1923828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/87/5438519247.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Casa · 169m² · 2 quartos - Imobiliária Clementino",
+      "size_bytes": 175485,
+      "size_kb": 171.3720703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/87/5438519265.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Casa venda de 2 quartos",
+      "size_bytes": 177863,
+      "size_kb": 173.6943359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/87/5438519262.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Casa · 169m² · 2 quartos",
+      "size_bytes": 219947,
+      "size_kb": 214.7919921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/87/5438519231.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Casa de 2 quartos, Rio de Janeiro",
+      "size_bytes": 182701,
+      "size_kb": 178.4189453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/87/5438519266.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Casa en venda de 2 quartos Vigário Geral",
+      "size_bytes": 319472,
+      "size_kb": 311.984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/87/5438519239.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Casa frente de rua com 169 m², independente, em terreno de 840m² com mais duas c",
+      "size_bytes": 199759,
+      "size_kb": 195.0771484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/87/5438519260.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Casa venda 170m² de 2 quartos",
+      "size_bytes": 146108,
+      "size_kb": 142.68359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/87/5438519217.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Casa 170m² venda Vigário Geral",
+      "size_bytes": 215620,
+      "size_kb": 210.56640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/87/5438519256.jpg"
+    }
+  ]
+}

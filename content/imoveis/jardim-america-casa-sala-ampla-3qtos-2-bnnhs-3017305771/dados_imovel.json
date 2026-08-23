@@ -1,0 +1,215 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/jardim-america-casa-sala-ampla-3qtos-2-bnnhs-3017305771.html",
+  "dados_gerais": {
+    "titulo": "Jardim América- Casa, Sala Ampla, 3Qtos, 2 Bnnhs, Varanda e Terraço",
+    "subtitulo": "Casa · 121m² · 3 quartos",
+    "codigo_imovel": "CA0018",
+    "id_imovelweb": "3017305771",
+    "preco": "R$ 380.000",
+    "condominio": "R$ 0",
+    "endereco_completo": "Rua General Oscilio Maia, Jardim América, Rio de Janeiro, RJ",
+    "logradouro": "Rua General Oscilio Maia",
+    "bairro": "Jardim América",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8112968",
+      "longitude": "-43.3281246",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8112968,-43.3281246"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 358 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "122",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "121",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiros",
+      "measure": null,
+      "value": "2",
+      "icon": "bano"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "3",
+      "icon": "dormitorio"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "30",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Em Jardim América Casa muito boa e espaçosa, com 3 andares: :<br>Primeiro Andar- Cozinha, sala, banheiro e uma área de serviço.<br>Segundo andar- 3 quartos, 1 banheiro e uma varanda.<br>Terceiro andar- Terraço<br>Valor: R$ 280 mil",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "(21) 96",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 16,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Casa · 121m² · 3 quartos",
+      "size_bytes": 162120,
+      "size_kb": 158.3203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/71/5438518311.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Casa de 3 quartos, Rio de Janeiro",
+      "size_bytes": 155521,
+      "size_kb": 151.8759765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/71/5438510225.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Casa en venda de 3 quartos Jardim América",
+      "size_bytes": 108834,
+      "size_kb": 106.283203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/71/5438516964.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Em Jardim América Casa muito boa e espaçosa, com 3 andares: :<br>Primeiro Andar-",
+      "size_bytes": 72954,
+      "size_kb": 71.244140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/71/5438518862.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Casa venda 122m² de 3 quartos",
+      "size_bytes": 88164,
+      "size_kb": 86.09765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/71/5438518057.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Casa 122m² venda Jardim América",
+      "size_bytes": 102140,
+      "size_kb": 99.74609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/71/5438518911.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Casa 122m² venda Jardim América",
+      "size_bytes": 75747,
+      "size_kb": 73.9716796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/71/5438520962.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Casa de 3 quartos venda R$ 380.000",
+      "size_bytes": 57995,
+      "size_kb": 56.6357421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/71/5438510858.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Casa · 121m² · 3 quartos - Imobiliária Clementino",
+      "size_bytes": 47453,
+      "size_kb": 46.3408203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/71/5438518165.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Casa venda de 3 quartos",
+      "size_bytes": 55577,
+      "size_kb": 54.2744140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/71/5438510842.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Casa · 121m² · 3 quartos",
+      "size_bytes": 94629,
+      "size_kb": 92.4111328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/71/5438521138.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Casa de 3 quartos, Rio de Janeiro",
+      "size_bytes": 104937,
+      "size_kb": 102.4775390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/71/5438510136.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Casa en venda de 3 quartos Jardim América",
+      "size_bytes": 65431,
+      "size_kb": 63.8974609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/71/5438517049.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Em Jardim América Casa muito boa e espaçosa, com 3 andares: :<br>Primeiro Andar-",
+      "size_bytes": 78550,
+      "size_kb": 76.708984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/71/5438518286.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Casa venda 122m² de 3 quartos",
+      "size_bytes": 82906,
+      "size_kb": 80.962890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/71/5438518859.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Casa 122m² venda Jardim América",
+      "size_bytes": 59080,
+      "size_kb": 57.6953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/71/5438518902.jpg"
+    }
+  ]
+}

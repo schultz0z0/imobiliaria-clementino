@@ -1,0 +1,161 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/d.caxias-bar-cavaleiro-cond.varsovia-carlos-3017305760.html",
+  "dados_gerais": {
+    "titulo": "D.Caxias, Bar Cavaleiro, Cond.Varsóvia, Carlos Sampaio, Apt 62m², 2 Qts, 3ºAndar",
+    "subtitulo": "Apartamento · 62m² · 2 quartos",
+    "codigo_imovel": "AP0016",
+    "id_imovelweb": "3017305760",
+    "preco": "R$ 170.000",
+    "condominio": "R$ 0",
+    "endereco_completo": "Rua Carlos Sampaio, Engenho do Porto, Duque de Caxias, RJ",
+    "logradouro": "Rua Carlos Sampaio",
+    "bairro": "Engenho do Porto",
+    "cidade": "Duque de Caxias",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.7910034",
+      "longitude": "-43.3152643",
+      "google_maps_url": "https://www.google.com/maps?q=-22.7910034,-43.3152643"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 358 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "65",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "62",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiro",
+      "measure": null,
+      "value": "1",
+      "icon": "bano"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "2",
+      "icon": "dormitorio"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "40",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Em Duque de Caxias, junto ao Centro, a 10 minutos à pé do Calçadão de Caxias, Condomínio Habitacional Varsóvia, apto com 62 m², 3º andar, sala em 2 ambientes, banheiro social, 2 qtos, cozinha e área de serviço.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 10,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Apartamento · 62m² · 2 quartos",
+      "size_bytes": 96272,
+      "size_kb": 94.015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/60/5438510440.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Apartamento de 2 quartos, Duque de Caxias",
+      "size_bytes": 99389,
+      "size_kb": 97.0595703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/60/5438510420.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Apartamento en venda de 2 quartos Engenho do Porto",
+      "size_bytes": 71876,
+      "size_kb": 70.19140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/60/5438510423.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Em Duque de Caxias, junto ao Centro, a 10 minutos à pé do Calçadão de Caxias, Co",
+      "size_bytes": 99745,
+      "size_kb": 97.4072265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/60/5438510409.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Apartamento 65m² venda Engenho do Porto",
+      "size_bytes": 104886,
+      "size_kb": 102.427734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/60/5438510452.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Apartamento de 2 quartos venda R$ 170.000",
+      "size_bytes": 106501,
+      "size_kb": 104.0048828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/60/5438510389.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Apartamento · 62m² · 2 quartos - Imobiliária Clementino",
+      "size_bytes": 137979,
+      "size_kb": 134.7451171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/60/5438510457.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Apartamento venda de 2 quartos",
+      "size_bytes": 114707,
+      "size_kb": 112.0185546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/60/5438510438.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Apartamento · 62m² · 2 quartos",
+      "size_bytes": 94222,
+      "size_kb": 92.013671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/60/5438510418.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Apartamento de 2 quartos, Duque de Caxias",
+      "size_bytes": 122260,
+      "size_kb": 119.39453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/60/5438510428.jpg"
+    }
+  ]
+}

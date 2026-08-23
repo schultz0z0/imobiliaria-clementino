@@ -1,0 +1,368 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/jardim-america-apto-tipo-casa-78m-quintal-2-3017305795.html",
+  "dados_gerais": {
+    "titulo": "Jardim América- Apto Tipo Casa , 78m², quintal, 2 quartos, 2 banheiros",
+    "subtitulo": "Apartamento · 75m² · 2 quartos",
+    "codigo_imovel": "AP006",
+    "id_imovelweb": "3017305795",
+    "preco": "R$ 240.000",
+    "condominio": "R$ 0",
+    "endereco_completo": "Rua Álvaro de Magalhães, Jardim América, Rio de Janeiro, RJ",
+    "logradouro": "Rua Álvaro de Magalhães",
+    "bairro": "Jardim América",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8081349",
+      "longitude": "-43.3279393",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8081349,-43.3279393"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 358 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "78",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "75",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiros",
+      "measure": null,
+      "value": "2",
+      "icon": "bano"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "2",
+      "icon": "dormitorio"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "30",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Em Jardim América- Apartamento tipo casa com entrada independente, 78m², quintal, sala, 2 quartos, 2 banheiros, cozinha, área de serviço externa.<br>Rua Álvaro Magalhães.<br>(Aceito Carta de Crédito),",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "(21) 96",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 33,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Apartamento · 75m² · 2 quartos",
+      "size_bytes": 157258,
+      "size_kb": 153.572265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438521526.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 24471,
+      "size_kb": 23.8974609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438525760.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Apartamento en venda de 2 quartos Jardim América",
+      "size_bytes": 69421,
+      "size_kb": 67.7939453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438521423.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Em Jardim América- Apartamento tipo casa com entrada independente, 78m², quintal",
+      "size_bytes": 84683,
+      "size_kb": 82.6982421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438521457.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Apartamento venda 78m² de 2 quartos",
+      "size_bytes": 86631,
+      "size_kb": 84.6005859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438526113.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Apartamento 78m² venda Jardim América",
+      "size_bytes": 96587,
+      "size_kb": 94.3232421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438521214.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Apartamento 78m² venda Jardim América",
+      "size_bytes": 29002,
+      "size_kb": 28.322265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438521196.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Apartamento de 2 quartos venda R$ 240.000",
+      "size_bytes": 159570,
+      "size_kb": 155.830078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438521375.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Apartamento · 75m² · 2 quartos - Imobiliária Clementino",
+      "size_bytes": 36975,
+      "size_kb": 36.1083984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438521213.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Apartamento venda de 2 quartos",
+      "size_bytes": 94638,
+      "size_kb": 92.419921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438521453.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Apartamento · 75m² · 2 quartos",
+      "size_bytes": 100547,
+      "size_kb": 98.1904296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438521391.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 96488,
+      "size_kb": 94.2265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438521387.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Apartamento en venda de 2 quartos Jardim América",
+      "size_bytes": 150028,
+      "size_kb": 146.51171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438521220.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Em Jardim América- Apartamento tipo casa com entrada independente, 78m², quintal",
+      "size_bytes": 103188,
+      "size_kb": 100.76953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438522473.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Apartamento venda 78m² de 2 quartos",
+      "size_bytes": 80231,
+      "size_kb": 78.3505859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438524009.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Apartamento 78m² venda Jardim América",
+      "size_bytes": 67499,
+      "size_kb": 65.9169921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438521373.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Apartamento 78m² venda Jardim América",
+      "size_bytes": 43117,
+      "size_kb": 42.1064453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438521249.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Apartamento de 2 quartos venda R$ 240.000",
+      "size_bytes": 82177,
+      "size_kb": 80.2509765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438521379.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Apartamento · 75m² · 2 quartos - Imobiliária Clementino",
+      "size_bytes": 112230,
+      "size_kb": 109.599609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438521334.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Apartamento venda de 2 quartos",
+      "size_bytes": 64630,
+      "size_kb": 63.115234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438521300.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Apartamento · 75m² · 2 quartos",
+      "size_bytes": 29561,
+      "size_kb": 28.8681640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438522749.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 34276,
+      "size_kb": 33.47265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438521202.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Apartamento en venda de 2 quartos Jardim América",
+      "size_bytes": 41584,
+      "size_kb": 40.609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438521485.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Em Jardim América- Apartamento tipo casa com entrada independente, 78m², quintal",
+      "size_bytes": 102630,
+      "size_kb": 100.224609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438521244.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Apartamento venda 78m² de 2 quartos",
+      "size_bytes": 30281,
+      "size_kb": 29.5712890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438521183.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Apartamento 78m² venda Jardim América",
+      "size_bytes": 84607,
+      "size_kb": 82.6240234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438522181.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Apartamento 78m² venda Jardim América",
+      "size_bytes": 142409,
+      "size_kb": 139.0712890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438522250.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Apartamento de 2 quartos venda R$ 240.000",
+      "size_bytes": 89681,
+      "size_kb": 87.5791015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438521508.jpg"
+    },
+    {
+      "index": 29,
+      "filename": "foto_29.jpg",
+      "relative_path": "fotos/foto_29.jpg",
+      "title": "Apartamento · 75m² · 2 quartos - Imobiliária Clementino",
+      "size_bytes": 89185,
+      "size_kb": 87.0947265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438521491.jpg"
+    },
+    {
+      "index": 30,
+      "filename": "foto_30.jpg",
+      "relative_path": "fotos/foto_30.jpg",
+      "title": "Apartamento venda de 2 quartos",
+      "size_bytes": 151505,
+      "size_kb": 147.9541015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438527279.jpg"
+    },
+    {
+      "index": 31,
+      "filename": "foto_31.jpg",
+      "relative_path": "fotos/foto_31.jpg",
+      "title": "Apartamento · 75m² · 2 quartos",
+      "size_bytes": 76531,
+      "size_kb": 74.7373046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438521462.jpg"
+    },
+    {
+      "index": 32,
+      "filename": "foto_32.jpg",
+      "relative_path": "fotos/foto_32.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 67053,
+      "size_kb": 65.4814453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438526345.jpg"
+    },
+    {
+      "index": 33,
+      "filename": "foto_33.jpg",
+      "relative_path": "fotos/foto_33.jpg",
+      "title": "Apartamento en venda de 2 quartos Jardim América",
+      "size_bytes": 70030,
+      "size_kb": 68.388671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/95/5438521458.jpg"
+    }
+  ]
+}

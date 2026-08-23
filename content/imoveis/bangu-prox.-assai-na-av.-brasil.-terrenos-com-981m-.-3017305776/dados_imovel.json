@@ -1,0 +1,165 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/bangu-prox.-assai-na-av.-brasil.-terrenos-com-981m-.-3017305776.html",
+  "dados_gerais": {
+    "titulo": "Bangu - Próx. Assaí na Av. Brasil. Terrenos com 981m². Com, Ind ou Igreja.",
+    "subtitulo": "Comercial · 981m²",
+    "codigo_imovel": "LO0001",
+    "id_imovelweb": "3017305776",
+    "preco": "R$ 420.000",
+    "condominio": "R$ 0",
+    "endereco_completo": "Rua Pedro Pomar, Bangu, Rio de Janeiro, RJ",
+    "logradouro": "Rua Pedro Pomar",
+    "bairro": "Bangu",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8583124",
+      "longitude": "-43.4811187",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8583124,-43.4811187"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 358 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "981",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "981",
+      "icon": "scubierta"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "20",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Em Bangu, na Rua Pedro Pomar, junto a Avenida Brasil e o Atacadista Assaí em Bangu. Vendo 4 lotes de terreno, totalizando 981m². Ideal para comércio, indústria, Igrejas ou empreendimento. Doctos ok. Aceito entrada e facilito restante.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 12,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Comercial , Rio de Janeiro",
+      "size_bytes": 138202,
+      "size_kb": 134.962890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/76/5438530421.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Comercial en venda  Bangu",
+      "size_bytes": 364104,
+      "size_kb": 355.5703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/76/5438532083.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Em Bangu, na Rua Pedro Pomar, junto a Avenida Brasil e o Atacadista Assaí em Ban",
+      "size_bytes": 358725,
+      "size_kb": 350.3173828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/76/5438530490.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Comercial venda 981m² ",
+      "size_bytes": 365690,
+      "size_kb": 357.119140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/76/5438530457.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Comercial 981m² venda Bangu",
+      "size_bytes": 370950,
+      "size_kb": 362.255859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/76/5438547418.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Comercial 981m² venda Bangu",
+      "size_bytes": 406521,
+      "size_kb": 396.9931640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/76/5438546722.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Comercial  venda R$ 420.000",
+      "size_bytes": 432454,
+      "size_kb": 422.318359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/76/5438532263.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Comercial · 981m² - Imobiliária Clementino",
+      "size_bytes": 451271,
+      "size_kb": 440.6943359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/76/5438546832.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Comercial venda ",
+      "size_bytes": 425813,
+      "size_kb": 415.8330078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/76/5438532180.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Comercial · 981m²",
+      "size_bytes": 462959,
+      "size_kb": 452.1083984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/76/5438546977.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Comercial , Rio de Janeiro",
+      "size_bytes": 449599,
+      "size_kb": 439.0615234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/76/5438546673.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Comercial en venda  Bangu",
+      "size_bytes": 371099,
+      "size_kb": 362.4013671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/76/5438530491.jpg"
+    }
+  ]
+}

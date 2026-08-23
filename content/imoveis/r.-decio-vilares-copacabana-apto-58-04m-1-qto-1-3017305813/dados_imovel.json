@@ -1,0 +1,289 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/r.-decio-vilares-copacabana-apto-58-04m-1-qto-1-3017305813.html",
+  "dados_gerais": {
+    "titulo": "R. Décio Vilares , Copacabana - Apto 58,04m², 1 Qto, 1 WC",
+    "subtitulo": "Apartamento · 58m² · 1 quarto",
+    "codigo_imovel": "AP0003",
+    "id_imovelweb": "3017305813",
+    "preco": "R$ 1.338.866",
+    "condominio": "R$ 805",
+    "endereco_completo": "Rua Décio Vilares, Copacabana, Rio de Janeiro, RJ",
+    "logradouro": "Rua Décio Vilares",
+    "bairro": "Copacabana",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.9655324",
+      "longitude": "-43.1908427",
+      "google_maps_url": "https://www.google.com/maps?q=-22.9655324,-43.1908427"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 358 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "58",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "58",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiro",
+      "measure": null,
+      "value": "1",
+      "icon": "bano"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "1",
+      "icon": "dormitorio"
+    }
+  },
+  "descricao": "Edifício histórico revitalizado no charmoso Bairro Peixoto, com apenas 19 unidades, O Residencial Vilares é uma ótima oportunidade para você que busca um apartamento reformado e contemporâneo no coração de Copacabana, ou para você investidor que procura uma opção promissora e exclusiva.\nApartamento garden com piscina com hidromassagem e cromoterapia, toldo elétrico com proteção solar para maior privacidade, deck em madeira ecológica, bancada gourmet e armários; composto por:\n58,04m². Sala com preparação para TV, prateleira e split; cozinha com bancada, armários, cooktop e forno embutido; quarto com armário, mesa lateral e painel de cabeceira, preparação para TV, mesa de trabalho e split; banheiro com bancada e armário; porta com fechadura eletrônica. \nTodos os acabamentos são novos, incluindo as instalações elétricas e hidráulicas, armários planejados Romanzza, design de interiores único e inspirador, assinados por time de arquitetura. \n1 elevador. \nPróximo ao metrô, áreas de lazer e conveniências do dia a dia.\nCondomínio com:\nEspaço coworking\nLavanderia OMO\nEspaço gourmet\nBicicletário elétrico\nNão perca essa oportunidade!\nEntre em contato e agende sua visita.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 25,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Apartamento · 58m² · 1 quarto",
+      "size_bytes": 73919,
+      "size_kb": 72.1865234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/13/5438510985.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Apartamento de 1 quarto, Rio de Janeiro",
+      "size_bytes": 83419,
+      "size_kb": 81.4638671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/13/5438510992.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Apartamento en venda de 1 quarto Copacabana",
+      "size_bytes": 86186,
+      "size_kb": 84.166015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/13/5438511018.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Edifício histórico revitalizado no charmoso Bairro Peixoto, com apenas 19 unidad",
+      "size_bytes": 67923,
+      "size_kb": 66.3310546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/13/5438512956.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Apartamento venda 58m² de 1 quarto",
+      "size_bytes": 66429,
+      "size_kb": 64.8720703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/13/5438510989.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Apartamento 58m² venda Copacabana",
+      "size_bytes": 73532,
+      "size_kb": 71.80859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/13/5438510974.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Apartamento 58m² venda Copacabana",
+      "size_bytes": 59821,
+      "size_kb": 58.4189453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/13/5438511037.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Apartamento de 1 quarto venda R$ 1.338.866",
+      "size_bytes": 94202,
+      "size_kb": 91.994140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/13/5438510976.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Apartamento · 58m² · 1 quarto - Imobiliária Clementino",
+      "size_bytes": 75715,
+      "size_kb": 73.9404296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/13/5438510968.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Apartamento venda de 1 quarto",
+      "size_bytes": 66725,
+      "size_kb": 65.1611328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/13/5438510965.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Apartamento · 58m² · 1 quarto",
+      "size_bytes": 46922,
+      "size_kb": 45.822265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/13/5438510958.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Apartamento de 1 quarto, Rio de Janeiro",
+      "size_bytes": 64847,
+      "size_kb": 63.3271484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/13/5438511048.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Apartamento en venda de 1 quarto Copacabana",
+      "size_bytes": 68448,
+      "size_kb": 66.84375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/13/5438510978.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Edifício histórico revitalizado no charmoso Bairro Peixoto, com apenas 19 unidad",
+      "size_bytes": 91067,
+      "size_kb": 88.9326171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/13/5438510956.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Apartamento venda 58m² de 1 quarto",
+      "size_bytes": 61593,
+      "size_kb": 60.1494140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/13/5438510999.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Apartamento 58m² venda Copacabana",
+      "size_bytes": 69489,
+      "size_kb": 67.8603515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/13/5438511029.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Apartamento 58m² venda Copacabana",
+      "size_bytes": 76243,
+      "size_kb": 74.4560546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/13/5438513288.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Apartamento de 1 quarto venda R$ 1.338.866",
+      "size_bytes": 81519,
+      "size_kb": 79.6083984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/13/5438511077.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Apartamento · 58m² · 1 quarto - Imobiliária Clementino",
+      "size_bytes": 75596,
+      "size_kb": 73.82421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/13/5438511005.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Apartamento venda de 1 quarto",
+      "size_bytes": 81433,
+      "size_kb": 79.5244140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/13/5438511022.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Apartamento · 58m² · 1 quarto",
+      "size_bytes": 57932,
+      "size_kb": 56.57421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/13/5438510995.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Apartamento de 1 quarto, Rio de Janeiro",
+      "size_bytes": 89737,
+      "size_kb": 87.6337890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/13/5438511011.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Apartamento en venda de 1 quarto Copacabana",
+      "size_bytes": 154963,
+      "size_kb": 151.3310546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/13/5438511101.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Edifício histórico revitalizado no charmoso Bairro Peixoto, com apenas 19 unidad",
+      "size_bytes": 207861,
+      "size_kb": 202.9892578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/13/5438511026.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Apartamento venda 58m² de 1 quarto",
+      "size_bytes": 169053,
+      "size_kb": 165.0908203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/58/13/5438511042.jpg"
+    }
+  ]
+}

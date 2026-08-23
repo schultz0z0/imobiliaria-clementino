@@ -1,0 +1,465 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/botafogo-rio-de-janeiro-rj-apto-3-qtos-1-suite-3017305797.html",
+  "dados_gerais": {
+    "titulo": "Botafogo - Rio de Janeiro, RJ - Apto 3 Qtos, 1 Suíte, 2 Bnh, 1 Vaga Garagem",
+    "subtitulo": "Apartamento · 118m² · 3 quartos · 1 vaga",
+    "codigo_imovel": "AP0027",
+    "id_imovelweb": "3017305797",
+    "preco": "R$ 999.000",
+    "condominio": "R$ 1520",
+    "endereco_completo": "Rua Assunção, Botafogo, Rio de Janeiro, RJ",
+    "logradouro": "Rua Assunção",
+    "bairro": "Botafogo",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.9451038",
+      "longitude": "-43.1866814",
+      "google_maps_url": "https://www.google.com/maps?q=-22.9451038,-43.1866814"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 358 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "118",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "118",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiros",
+      "measure": null,
+      "value": "2",
+      "icon": "bano"
+    },
+    "CFT7": {
+      "featureId": "CFT7",
+      "label": "vaga",
+      "measure": null,
+      "value": "1",
+      "icon": "cochera"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "3",
+      "icon": "dormitorio"
+    },
+    "CFT4": {
+      "featureId": "CFT4",
+      "label": "suíte",
+      "measure": null,
+      "value": "1",
+      "icon": "toilete"
+    }
+  },
+  "descricao": "Excelente apartamento de 118 m², localizado em rua tranquila de Botafogo. Composto por hall de entrada, sala ampla e iluminada, 3 quartos, sendo 1 suíte, com armários planejados e ar-condicionado, banheiros com box blindex, copa-cozinha com armários, área de serviço ampla e arejada, além de dependência completa. <br>O imóvel passou por reforma completa na parte elétrica e hidráulica. Possui 1 vaga no condomínio. Prédio com portaria 24 horas. <br>Próximo a farto comércio e conveniências da região. <br>Não perca esta oportunidade única de morar ou investir.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "(21) 96",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 43,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Apartamento · 118m² · 3 quartos · 1 vaga",
+      "size_bytes": 102554,
+      "size_kb": 100.150390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438528985.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Apartamento de 3 quartos, Rio de Janeiro",
+      "size_bytes": 110135,
+      "size_kb": 107.5537109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438529012.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Apartamento en venda de 3 quartos Botafogo",
+      "size_bytes": 105184,
+      "size_kb": 102.71875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438529018.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Excelente apartamento de 118 m², localizado em rua tranquila de Botafogo. Compos",
+      "size_bytes": 104129,
+      "size_kb": 101.6884765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438528992.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Apartamento venda 118m² de 3 quartos",
+      "size_bytes": 103264,
+      "size_kb": 100.84375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438528936.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Apartamento 118m² venda Botafogo",
+      "size_bytes": 100194,
+      "size_kb": 97.845703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438528954.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Apartamento 118m² venda Botafogo",
+      "size_bytes": 67983,
+      "size_kb": 66.3896484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438529638.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Apartamento de 3 quartos venda R$ 999.000",
+      "size_bytes": 92753,
+      "size_kb": 90.5791015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438528914.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Apartamento · 118m² · 3 quartos · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 63802,
+      "size_kb": 62.306640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438529473.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Apartamento venda de 3 quartos",
+      "size_bytes": 96119,
+      "size_kb": 93.8662109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438528947.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Apartamento · 118m² · 3 quartos · 1 vaga",
+      "size_bytes": 132430,
+      "size_kb": 129.326171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438529028.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Apartamento de 3 quartos, Rio de Janeiro",
+      "size_bytes": 144356,
+      "size_kb": 140.97265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438536617.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Apartamento en venda de 3 quartos Botafogo",
+      "size_bytes": 77432,
+      "size_kb": 75.6171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438529629.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Excelente apartamento de 118 m², localizado em rua tranquila de Botafogo. Compos",
+      "size_bytes": 72868,
+      "size_kb": 71.16015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438534704.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Apartamento venda 118m² de 3 quartos",
+      "size_bytes": 52994,
+      "size_kb": 51.751953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438536523.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Apartamento 118m² venda Botafogo",
+      "size_bytes": 73044,
+      "size_kb": 71.33203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438529004.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Apartamento 118m² venda Botafogo",
+      "size_bytes": 85563,
+      "size_kb": 83.5576171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438528935.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Apartamento de 3 quartos venda R$ 999.000",
+      "size_bytes": 78769,
+      "size_kb": 76.9228515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438528924.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Apartamento · 118m² · 3 quartos · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 74741,
+      "size_kb": 72.9892578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438528949.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Apartamento venda de 3 quartos",
+      "size_bytes": 54306,
+      "size_kb": 53.033203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438534530.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Apartamento · 118m² · 3 quartos · 1 vaga",
+      "size_bytes": 53449,
+      "size_kb": 52.1962890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438528956.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Apartamento de 3 quartos, Rio de Janeiro",
+      "size_bytes": 52731,
+      "size_kb": 51.4951171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438529422.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Apartamento en venda de 3 quartos Botafogo",
+      "size_bytes": 35006,
+      "size_kb": 34.185546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438528916.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Excelente apartamento de 118 m², localizado em rua tranquila de Botafogo. Compos",
+      "size_bytes": 66660,
+      "size_kb": 65.09765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438542596.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Apartamento venda 118m² de 3 quartos",
+      "size_bytes": 61994,
+      "size_kb": 60.541015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438529420.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Apartamento 118m² venda Botafogo",
+      "size_bytes": 58474,
+      "size_kb": 57.103515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438529002.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Apartamento 118m² venda Botafogo",
+      "size_bytes": 57543,
+      "size_kb": 56.1943359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438529622.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Apartamento de 3 quartos venda R$ 999.000",
+      "size_bytes": 69348,
+      "size_kb": 67.72265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438529014.jpg"
+    },
+    {
+      "index": 29,
+      "filename": "foto_29.jpg",
+      "relative_path": "fotos/foto_29.jpg",
+      "title": "Apartamento · 118m² · 3 quartos · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 73735,
+      "size_kb": 72.0068359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438528908.jpg"
+    },
+    {
+      "index": 30,
+      "filename": "foto_30.jpg",
+      "relative_path": "fotos/foto_30.jpg",
+      "title": "Apartamento venda de 3 quartos",
+      "size_bytes": 70303,
+      "size_kb": 68.6552734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438529051.jpg"
+    },
+    {
+      "index": 31,
+      "filename": "foto_31.jpg",
+      "relative_path": "fotos/foto_31.jpg",
+      "title": "Apartamento · 118m² · 3 quartos · 1 vaga",
+      "size_bytes": 117286,
+      "size_kb": 114.537109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438529680.jpg"
+    },
+    {
+      "index": 32,
+      "filename": "foto_32.jpg",
+      "relative_path": "fotos/foto_32.jpg",
+      "title": "Apartamento de 3 quartos, Rio de Janeiro",
+      "size_bytes": 107886,
+      "size_kb": 105.357421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438542787.jpg"
+    },
+    {
+      "index": 33,
+      "filename": "foto_33.jpg",
+      "relative_path": "fotos/foto_33.jpg",
+      "title": "Apartamento en venda de 3 quartos Botafogo",
+      "size_bytes": 210311,
+      "size_kb": 205.3818359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438529029.jpg"
+    },
+    {
+      "index": 34,
+      "filename": "foto_34.jpg",
+      "relative_path": "fotos/foto_34.jpg",
+      "title": "Excelente apartamento de 118 m², localizado em rua tranquila de Botafogo. Compos",
+      "size_bytes": 161322,
+      "size_kb": 157.541015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438530367.jpg"
+    },
+    {
+      "index": 35,
+      "filename": "foto_35.jpg",
+      "relative_path": "fotos/foto_35.jpg",
+      "title": "Apartamento venda 118m² de 3 quartos",
+      "size_bytes": 74455,
+      "size_kb": 72.7099609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438529296.jpg"
+    },
+    {
+      "index": 36,
+      "filename": "foto_36.jpg",
+      "relative_path": "fotos/foto_36.jpg",
+      "title": "Apartamento 118m² venda Botafogo",
+      "size_bytes": 63864,
+      "size_kb": 62.3671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438529110.jpg"
+    },
+    {
+      "index": 37,
+      "filename": "foto_37.jpg",
+      "relative_path": "fotos/foto_37.jpg",
+      "title": "Apartamento 118m² venda Botafogo",
+      "size_bytes": 98167,
+      "size_kb": 95.8662109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438528988.jpg"
+    },
+    {
+      "index": 38,
+      "filename": "foto_38.jpg",
+      "relative_path": "fotos/foto_38.jpg",
+      "title": "Apartamento de 3 quartos venda R$ 999.000",
+      "size_bytes": 98876,
+      "size_kb": 96.55859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438529063.jpg"
+    },
+    {
+      "index": 39,
+      "filename": "foto_39.jpg",
+      "relative_path": "fotos/foto_39.jpg",
+      "title": "Apartamento · 118m² · 3 quartos · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 65799,
+      "size_kb": 64.2568359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438528926.jpg"
+    },
+    {
+      "index": 40,
+      "filename": "foto_40.jpg",
+      "relative_path": "fotos/foto_40.jpg",
+      "title": "Apartamento venda de 3 quartos",
+      "size_bytes": 110703,
+      "size_kb": 108.1083984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438528987.jpg"
+    },
+    {
+      "index": 41,
+      "filename": "foto_41.jpg",
+      "relative_path": "fotos/foto_41.jpg",
+      "title": "Apartamento · 118m² · 3 quartos · 1 vaga",
+      "size_bytes": 329349,
+      "size_kb": 321.6298828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438529257.jpg"
+    },
+    {
+      "index": 42,
+      "filename": "foto_42.jpg",
+      "relative_path": "fotos/foto_42.jpg",
+      "title": "Apartamento de 3 quartos, Rio de Janeiro",
+      "size_bytes": 334110,
+      "size_kb": 326.279296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438529159.jpg"
+    },
+    {
+      "index": 43,
+      "filename": "foto_43.jpg",
+      "relative_path": "fotos/foto_43.jpg",
+      "title": "Apartamento en venda de 3 quartos Botafogo",
+      "size_bytes": 183112,
+      "size_kb": 178.8203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/97/5438529017.jpg"
+    }
+  ]
+}

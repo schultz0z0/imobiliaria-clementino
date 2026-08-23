@@ -1,0 +1,359 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/laranjeiras-rio-de-janeiro-rj-apto-2-qtos-1-bnh-3017305781.html",
+  "dados_gerais": {
+    "titulo": "Laranjeiras - Rio de Janeiro, RJ - Apto 2 Qtos, 1 Bnh, 1 Vaga",
+    "subtitulo": "Apartamento · 93m² · 2 quartos · 1 vaga",
+    "codigo_imovel": "AP0025",
+    "id_imovelweb": "3017305781",
+    "preco": "R$ 838.000",
+    "condominio": "R$ 1723",
+    "endereco_completo": "Rua Coelho Neto, Laranjeiras, Rio de Janeiro, RJ",
+    "logradouro": "Rua Coelho Neto",
+    "bairro": "Laranjeiras",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.9363138",
+      "longitude": "-43.1825999",
+      "google_maps_url": "https://www.google.com/maps?q=-22.9363138,-43.1825999"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 358 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "93",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "93",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiro",
+      "measure": null,
+      "value": "1",
+      "icon": "bano"
+    },
+    "CFT7": {
+      "featureId": "CFT7",
+      "label": "vaga",
+      "measure": null,
+      "value": "1",
+      "icon": "cochera"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "2",
+      "icon": "dormitorio"
+    }
+  },
+  "descricao": "Apartamento de 93 m² em Laranjeiras. Composto por sala de estar que se conecta à sala de jantar, criando um ambiente amplo e agradável; 2 quartos com armários planejados; 1 banheiro social; cozinha compacta é integrada à área de serviço e despensa.<br>A localização é excelente, com fácil acesso ao Fluminense Football Club e ao escritório do Governo do Estado do Rio de Janeiro. O Parque Eduardo Guinle, ideal para passeios e atividades ao ar livre, fica a apenas 11 minutos a pé. Próximo ao Largo do Machado e com fácil acesso ao metrô e outras regiões do Rio.<br>O Condomínio do Edifício Torre 1 conta com salão de festas para os moradores.<br>Não perca esta oportunidade única de morar ou investir. <br>Entre em contato e agende sua visita!?",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "(21) 96",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 32,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Apartamento · 93m² · 2 quartos · 1 vaga",
+      "size_bytes": 95386,
+      "size_kb": 93.150390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438537193.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 78933,
+      "size_kb": 77.0830078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438541250.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Apartamento en venda de 2 quartos Laranjeiras",
+      "size_bytes": 76319,
+      "size_kb": 74.5302734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438537171.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Apartamento de 93 m² em Laranjeiras. Composto por sala de estar que se conecta à",
+      "size_bytes": 84259,
+      "size_kb": 82.2841796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438537172.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Apartamento venda 93m² de 2 quartos",
+      "size_bytes": 71457,
+      "size_kb": 69.7822265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438546584.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Apartamento 93m² venda Laranjeiras",
+      "size_bytes": 39025,
+      "size_kb": 38.1103515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438537359.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Apartamento 93m² venda Laranjeiras",
+      "size_bytes": 74426,
+      "size_kb": 72.681640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438548768.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Apartamento de 2 quartos venda R$ 838.000",
+      "size_bytes": 66549,
+      "size_kb": 64.9892578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438537201.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Apartamento · 93m² · 2 quartos · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 60590,
+      "size_kb": 59.169921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438541403.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Apartamento · 93m² · 2 quartos · 1 vaga",
+      "size_bytes": 61699,
+      "size_kb": 60.2529296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438537285.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 63618,
+      "size_kb": 62.126953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438537164.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Apartamento en venda de 2 quartos Laranjeiras",
+      "size_bytes": 43308,
+      "size_kb": 42.29296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438537371.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Apartamento de 93 m² em Laranjeiras. Composto por sala de estar que se conecta à",
+      "size_bytes": 59183,
+      "size_kb": 57.7958984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438537196.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Apartamento venda 93m² de 2 quartos",
+      "size_bytes": 63030,
+      "size_kb": 61.552734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438548813.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Apartamento 93m² venda Laranjeiras",
+      "size_bytes": 63179,
+      "size_kb": 61.6982421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438541255.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Apartamento 93m² venda Laranjeiras",
+      "size_bytes": 49259,
+      "size_kb": 48.1044921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438537183.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Apartamento de 2 quartos venda R$ 838.000",
+      "size_bytes": 54743,
+      "size_kb": 53.4599609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438537322.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Apartamento · 93m² · 2 quartos · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 41759,
+      "size_kb": 40.7802734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438546927.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Apartamento venda de 2 quartos",
+      "size_bytes": 60839,
+      "size_kb": 59.4130859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438537385.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Apartamento · 93m² · 2 quartos · 1 vaga",
+      "size_bytes": 40706,
+      "size_kb": 39.751953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438537306.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 61688,
+      "size_kb": 60.2421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438537174.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Apartamento en venda de 2 quartos Laranjeiras",
+      "size_bytes": 30800,
+      "size_kb": 30.078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438537143.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Apartamento de 93 m² em Laranjeiras. Composto por sala de estar que se conecta à",
+      "size_bytes": 87432,
+      "size_kb": 85.3828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438537467.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Apartamento venda 93m² de 2 quartos",
+      "size_bytes": 69434,
+      "size_kb": 67.806640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438541303.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Apartamento 93m² venda Laranjeiras",
+      "size_bytes": 59849,
+      "size_kb": 58.4462890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438537147.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Apartamento 93m² venda Laranjeiras",
+      "size_bytes": 55432,
+      "size_kb": 54.1328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438537283.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Apartamento de 2 quartos venda R$ 838.000",
+      "size_bytes": 39625,
+      "size_kb": 38.6962890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438549202.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Apartamento · 93m² · 2 quartos · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 89205,
+      "size_kb": 87.1142578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438537207.jpg"
+    },
+    {
+      "index": 29,
+      "filename": "foto_29.jpg",
+      "relative_path": "fotos/foto_29.jpg",
+      "title": "Apartamento venda de 2 quartos",
+      "size_bytes": 70345,
+      "size_kb": 68.6962890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438537591.jpg"
+    },
+    {
+      "index": 30,
+      "filename": "foto_30.jpg",
+      "relative_path": "fotos/foto_30.jpg",
+      "title": "Apartamento · 93m² · 2 quartos · 1 vaga",
+      "size_bytes": 328911,
+      "size_kb": 321.2021484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438537336.jpg"
+    },
+    {
+      "index": 31,
+      "filename": "foto_31.jpg",
+      "relative_path": "fotos/foto_31.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 150856,
+      "size_kb": 147.3203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438537486.jpg"
+    },
+    {
+      "index": 32,
+      "filename": "foto_32.jpg",
+      "relative_path": "fotos/foto_32.jpg",
+      "title": "Apartamento en venda de 2 quartos Laranjeiras",
+      "size_bytes": 107037,
+      "size_kb": 104.5283203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/81/5438537460.jpg"
+    }
+  ]
+}

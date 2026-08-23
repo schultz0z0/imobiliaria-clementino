@@ -1,0 +1,172 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/vigario-geral-rua-otranto-com-rua-maba-quitinetes-3017305799.html",
+  "dados_gerais": {
+    "titulo": "Vigário Geral - Rua Otranto com Rua Mabá, Quitinetes, Tipo Sla e Qto Próximo ao polo comercial Pça 2",
+    "subtitulo": "Casa · 39m² · 1 quarto",
+    "codigo_imovel": "CA001",
+    "id_imovelweb": "3017305799",
+    "preco": "R$ 600",
+    "condominio": "R$ 0",
+    "endereco_completo": "Rua Otranto, 1393, Vigário Geral, Rio de Janeiro, RJ",
+    "logradouro": "Rua Otranto, 1393",
+    "bairro": "Vigário Geral",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8192474",
+      "longitude": "-43.3129536",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8192474,-43.3129536"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 78 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "40",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "39",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiro",
+      "measure": null,
+      "value": "1",
+      "icon": "bano"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "1",
+      "icon": "dormitorio"
+    }
+  },
+  "descricao": "Em Vigário Geral, na Rua Otranto quase esquina com Rua Mabá, próximo do Polo Comercial Pça 2, BRT e Avenida Brasil. Alugo Kitinetes com sala e quarto grande, separados, cozinha kitchen e banheiro social completo. Aluguel R$ 580,00, já incluída a água.\nContato: 21  ou  whatssap",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 12,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Casa · 39m² · 1 quarto",
+      "size_bytes": 25120,
+      "size_kb": 24.53125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/99/5438513321.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Casa de 1 quarto, Rio de Janeiro",
+      "size_bytes": 20669,
+      "size_kb": 20.1845703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/99/5438513346.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Casa en aluguel de 1 quarto Vigário Geral",
+      "size_bytes": 41793,
+      "size_kb": 40.8134765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/99/5438513395.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Em Vigário Geral, na Rua Otranto quase esquina com Rua Mabá, próximo do Polo Com",
+      "size_bytes": 12013,
+      "size_kb": 11.7314453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/99/5438513238.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Casa aluguel 40m² de 1 quarto",
+      "size_bytes": 15530,
+      "size_kb": 15.166015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/99/5438513227.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Casa 40m² aluguel Vigário Geral",
+      "size_bytes": 31141,
+      "size_kb": 30.4111328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/99/5438513282.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Casa 40m² aluguel Vigário Geral",
+      "size_bytes": 20886,
+      "size_kb": 20.396484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/99/5438513265.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Casa de 1 quarto aluguel R$ 600",
+      "size_bytes": 14982,
+      "size_kb": 14.630859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/99/5438513267.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Casa · 39m² · 1 quarto - Imobiliária Clementino",
+      "size_bytes": 36255,
+      "size_kb": 35.4052734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/99/5438513289.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Casa aluguel de 1 quarto",
+      "size_bytes": 54952,
+      "size_kb": 53.6640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/99/5438513366.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Casa · 39m² · 1 quarto",
+      "size_bytes": 30499,
+      "size_kb": 29.7841796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/99/5438513243.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Casa en aluguel de 1 quarto Vigário Geral",
+      "size_bytes": 36821,
+      "size_kb": 35.9580078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/99/5438513262.jpg"
+    }
+  ]
+}

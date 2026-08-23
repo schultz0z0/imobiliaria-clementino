@@ -1,0 +1,6 @@
+import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+export const InstitutionalPreview = ({ image }: { image: string }) => (
+  <section className="relative z-10 border-y border-white/10 bg-white/[0.025] py-24"><div className="container mx-auto grid items-center gap-12 px-6 lg:grid-cols-2 lg:gap-20"><div className="relative overflow-hidden rounded-[var(--radius-surface)]"><img src={image} alt="Imóvel atendido pela Imobiliária Clementino" loading="lazy" className="aspect-[4/3] w-full object-cover" /><div className="absolute inset-0 ring-1 ring-inset ring-white/10" /></div><div><p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-[#d7b661]">Imobiliária Clementino</p><h2 className="text-4xl font-semibold leading-tight text-white md:text-5xl">Conhecimento local, atendimento direto.</h2><p className="mt-6 text-lg leading-relaxed text-white/58">Desde 2010, a Clementino atua no Rio de Janeiro aproximando pessoas de imóveis para compra e locação, com atenção ao contexto de cada negociação.</p><Link to="/sobre" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#d7b661] hover:text-white">Conheça a Clementino <ArrowRight className="h-4 w-4" /></Link></div></div></section>
+);

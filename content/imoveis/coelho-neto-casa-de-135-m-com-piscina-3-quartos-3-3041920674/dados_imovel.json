@@ -1,0 +1,519 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/coelho-neto-casa-de-135-m-com-piscina-3-quartos-3-3041920674.html",
+  "dados_gerais": {
+    "titulo": "Coelho Neto-Casa de 135 m² com Piscina, 3 quartos, 3 Vagas",
+    "subtitulo": "Casa · 130m² · 3 quartos · 3 vagas",
+    "codigo_imovel": "1009",
+    "id_imovelweb": "3041920674",
+    "preco": "R$ 350.000",
+    "condominio": "Não informado / Isento",
+    "endereco_completo": "Rua Ouseley, Coelho Neto, Rio de Janeiro, RJ",
+    "logradouro": "Rua Ouseley",
+    "bairro": "Coelho Neto",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8258961",
+      "longitude": "-43.3505436",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8258961,-43.3505436"
+    },
+    "data_publicacao": "04/08/2026",
+    "antiguidade": "Publicado há 15 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "135",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "130",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiros",
+      "measure": null,
+      "value": "2",
+      "icon": "bano"
+    },
+    "CFT7": {
+      "featureId": "CFT7",
+      "label": "vaga",
+      "measure": null,
+      "value": "3",
+      "icon": "cochera"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "3",
+      "icon": "dormitorio"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "30",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Casa de 130 m² de área construída disponível para venda no bairro de Coelho Neto. A residência conta com 3 quartos, 2 banheiros funcionais, varanda, sala, cozinha independente, despensa e área de serviço, além de entrada independente que garante maior privacidade. O imóvel possui quintal com piscina e oferece 3 vagas de garagem.\nA região é residencial e bem estabelecida, com comércio de bairro estruturado e oferta de transporte público na proximidade. O entorno conta com supermercados, padarias, farmácias e escolas que facilitam a rotina dos moradores, garantindo fácil acesso às principais vias de ligação do bairro.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 49,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Casa de 3 quartos, Rio de Janeiro",
+      "size_bytes": 124984,
+      "size_kb": 122.0546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986004.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Casa en venda de 3 quartos Coelho Neto",
+      "size_bytes": 117767,
+      "size_kb": 115.0068359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031985978.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Casa de 130 m² de área construída disponível para venda no bairro de Coelho Neto",
+      "size_bytes": 109906,
+      "size_kb": 107.330078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031985998.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Casa venda 135m² de 3 quartos",
+      "size_bytes": 111493,
+      "size_kb": 108.8798828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031985988.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Casa 135m² venda Coelho Neto",
+      "size_bytes": 115614,
+      "size_kb": 112.904296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986016.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Casa 135m² venda Coelho Neto",
+      "size_bytes": 143411,
+      "size_kb": 140.0498046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986000.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Casa de 3 quartos venda R$ 350.000",
+      "size_bytes": 110365,
+      "size_kb": 107.7783203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986017.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Casa · 130m² · 3 quartos · 3 vagas - Imobiliária Clementino",
+      "size_bytes": 109536,
+      "size_kb": 106.96875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986012.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Casa venda de 3 quartos",
+      "size_bytes": 119963,
+      "size_kb": 117.1513671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031985992.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Casa · 130m² · 3 quartos · 3 vagas",
+      "size_bytes": 131509,
+      "size_kb": 128.4267578125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986003.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Casa de 3 quartos, Rio de Janeiro",
+      "size_bytes": 115257,
+      "size_kb": 112.5556640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031985982.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Casa en venda de 3 quartos Coelho Neto",
+      "size_bytes": 95017,
+      "size_kb": 92.7900390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986021.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Casa de 130 m² de área construída disponível para venda no bairro de Coelho Neto",
+      "size_bytes": 85766,
+      "size_kb": 83.755859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986022.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Casa venda 135m² de 3 quartos",
+      "size_bytes": 103839,
+      "size_kb": 101.4052734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031985995.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Casa 135m² venda Coelho Neto",
+      "size_bytes": 106399,
+      "size_kb": 103.9052734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986002.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Casa 135m² venda Coelho Neto",
+      "size_bytes": 90999,
+      "size_kb": 88.8662109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986009.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Casa de 3 quartos venda R$ 350.000",
+      "size_bytes": 96938,
+      "size_kb": 94.666015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031985987.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Casa · 130m² · 3 quartos · 3 vagas - Imobiliária Clementino",
+      "size_bytes": 103275,
+      "size_kb": 100.8544921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986005.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Casa venda de 3 quartos",
+      "size_bytes": 98661,
+      "size_kb": 96.3486328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986018.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Casa · 130m² · 3 quartos · 3 vagas",
+      "size_bytes": 102905,
+      "size_kb": 100.4931640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986001.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Casa de 3 quartos, Rio de Janeiro",
+      "size_bytes": 89319,
+      "size_kb": 87.2255859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031985990.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Casa en venda de 3 quartos Coelho Neto",
+      "size_bytes": 138781,
+      "size_kb": 135.5283203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986024.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Casa de 130 m² de área construída disponível para venda no bairro de Coelho Neto",
+      "size_bytes": 110948,
+      "size_kb": 108.34765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986014.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Casa venda 135m² de 3 quartos",
+      "size_bytes": 128100,
+      "size_kb": 125.09765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031985984.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Casa 135m² venda Coelho Neto",
+      "size_bytes": 77923,
+      "size_kb": 76.0966796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986006.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Casa 135m² venda Coelho Neto",
+      "size_bytes": 82164,
+      "size_kb": 80.23828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986019.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Casa de 3 quartos venda R$ 350.000",
+      "size_bytes": 88493,
+      "size_kb": 86.4189453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031985979.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Casa · 130m² · 3 quartos · 3 vagas - Imobiliária Clementino",
+      "size_bytes": 108540,
+      "size_kb": 105.99609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986015.jpg"
+    },
+    {
+      "index": 29,
+      "filename": "foto_29.jpg",
+      "relative_path": "fotos/foto_29.jpg",
+      "title": "Casa venda de 3 quartos",
+      "size_bytes": 108603,
+      "size_kb": 106.0576171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986007.jpg"
+    },
+    {
+      "index": 30,
+      "filename": "foto_30.jpg",
+      "relative_path": "fotos/foto_30.jpg",
+      "title": "Casa · 130m² · 3 quartos · 3 vagas",
+      "size_bytes": 108200,
+      "size_kb": 105.6640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031985980.jpg"
+    },
+    {
+      "index": 31,
+      "filename": "foto_31.jpg",
+      "relative_path": "fotos/foto_31.jpg",
+      "title": "Casa de 3 quartos, Rio de Janeiro",
+      "size_bytes": 84307,
+      "size_kb": 82.3310546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031985983.jpg"
+    },
+    {
+      "index": 32,
+      "filename": "foto_32.jpg",
+      "relative_path": "fotos/foto_32.jpg",
+      "title": "Casa en venda de 3 quartos Coelho Neto",
+      "size_bytes": 79181,
+      "size_kb": 77.3251953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031985994.jpg"
+    },
+    {
+      "index": 33,
+      "filename": "foto_33.jpg",
+      "relative_path": "fotos/foto_33.jpg",
+      "title": "Casa de 130 m² de área construída disponível para venda no bairro de Coelho Neto",
+      "size_bytes": 90920,
+      "size_kb": 88.7890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031985986.jpg"
+    },
+    {
+      "index": 34,
+      "filename": "foto_34.jpg",
+      "relative_path": "fotos/foto_34.jpg",
+      "title": "Casa venda 135m² de 3 quartos",
+      "size_bytes": 116688,
+      "size_kb": 113.953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031985991.jpg"
+    },
+    {
+      "index": 35,
+      "filename": "foto_35.jpg",
+      "relative_path": "fotos/foto_35.jpg",
+      "title": "Casa 135m² venda Coelho Neto",
+      "size_bytes": 96643,
+      "size_kb": 94.3779296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031985985.jpg"
+    },
+    {
+      "index": 36,
+      "filename": "foto_36.jpg",
+      "relative_path": "fotos/foto_36.jpg",
+      "title": "Casa 135m² venda Coelho Neto",
+      "size_bytes": 86218,
+      "size_kb": 84.197265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031985989.jpg"
+    },
+    {
+      "index": 37,
+      "filename": "foto_37.jpg",
+      "relative_path": "fotos/foto_37.jpg",
+      "title": "Casa de 3 quartos venda R$ 350.000",
+      "size_bytes": 142606,
+      "size_kb": 139.263671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031985996.jpg"
+    },
+    {
+      "index": 38,
+      "filename": "foto_38.jpg",
+      "relative_path": "fotos/foto_38.jpg",
+      "title": "Casa · 130m² · 3 quartos · 3 vagas - Imobiliária Clementino",
+      "size_bytes": 136100,
+      "size_kb": 132.91015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986025.jpg"
+    },
+    {
+      "index": 39,
+      "filename": "foto_39.jpg",
+      "relative_path": "fotos/foto_39.jpg",
+      "title": "Casa venda de 3 quartos",
+      "size_bytes": 129985,
+      "size_kb": 126.9384765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031985981.jpg"
+    },
+    {
+      "index": 40,
+      "filename": "foto_40.jpg",
+      "relative_path": "fotos/foto_40.jpg",
+      "title": "Casa · 130m² · 3 quartos · 3 vagas",
+      "size_bytes": 127121,
+      "size_kb": 124.1416015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031985993.jpg"
+    },
+    {
+      "index": 41,
+      "filename": "foto_41.jpg",
+      "relative_path": "fotos/foto_41.jpg",
+      "title": "Casa de 3 quartos, Rio de Janeiro",
+      "size_bytes": 127298,
+      "size_kb": 124.314453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031985997.jpg"
+    },
+    {
+      "index": 42,
+      "filename": "foto_42.jpg",
+      "relative_path": "fotos/foto_42.jpg",
+      "title": "Casa en venda de 3 quartos Coelho Neto",
+      "size_bytes": 139651,
+      "size_kb": 136.3779296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031985999.jpg"
+    },
+    {
+      "index": 43,
+      "filename": "foto_43.jpg",
+      "relative_path": "fotos/foto_43.jpg",
+      "title": "Casa de 130 m² de área construída disponível para venda no bairro de Coelho Neto",
+      "size_bytes": 111863,
+      "size_kb": 109.2412109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031985977.jpg"
+    },
+    {
+      "index": 44,
+      "filename": "foto_44.jpg",
+      "relative_path": "fotos/foto_44.jpg",
+      "title": "Casa venda 135m² de 3 quartos",
+      "size_bytes": 120599,
+      "size_kb": 117.7724609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986010.jpg"
+    },
+    {
+      "index": 45,
+      "filename": "foto_45.jpg",
+      "relative_path": "fotos/foto_45.jpg",
+      "title": "Casa 135m² venda Coelho Neto",
+      "size_bytes": 130283,
+      "size_kb": 127.2294921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986011.jpg"
+    },
+    {
+      "index": 46,
+      "filename": "foto_46.jpg",
+      "relative_path": "fotos/foto_46.jpg",
+      "title": "Casa 135m² venda Coelho Neto",
+      "size_bytes": 142397,
+      "size_kb": 139.0595703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986023.jpg"
+    },
+    {
+      "index": 47,
+      "filename": "foto_47.jpg",
+      "relative_path": "fotos/foto_47.jpg",
+      "title": "Casa de 3 quartos venda R$ 350.000",
+      "size_bytes": 115232,
+      "size_kb": 112.53125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986008.jpg"
+    },
+    {
+      "index": 48,
+      "filename": "foto_48.jpg",
+      "relative_path": "fotos/foto_48.jpg",
+      "title": "Casa · 130m² · 3 quartos · 3 vagas - Imobiliária Clementino",
+      "size_bytes": 113708,
+      "size_kb": 111.04296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986013.jpg"
+    },
+    {
+      "index": 49,
+      "filename": "foto_49.jpg",
+      "relative_path": "fotos/foto_49.jpg",
+      "title": "Casa venda de 3 quartos",
+      "size_bytes": 114835,
+      "size_kb": 112.1435546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/41/92/06/74/7031986020.jpg"
+    }
+  ]
+}

@@ -1,0 +1,321 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/copacabana-apto-106m-2-qtos-2-bnhs-1-vaga-3017305773.html",
+  "dados_gerais": {
+    "titulo": "Copacabana - Apto 106m², 2 Qtos, 2 Bnhs, 1 Vaga Garagem",
+    "subtitulo": "Apartamento · 106m² · 2 quartos · 1 vaga",
+    "codigo_imovel": "AP0028",
+    "id_imovelweb": "3017305773",
+    "preco": "R$ 999.000",
+    "condominio": "R$ 1498",
+    "endereco_completo": "Rua Barata Ribeiro, Copacabana, Rio de Janeiro, RJ",
+    "logradouro": "Rua Barata Ribeiro",
+    "bairro": "Copacabana",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.9686451",
+      "longitude": "-43.1858006",
+      "google_maps_url": "https://www.google.com/maps?q=-22.9686451,-43.1858006"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 358 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "106",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "106",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiros",
+      "measure": null,
+      "value": "2",
+      "icon": "bano"
+    },
+    "CFT7": {
+      "featureId": "CFT7",
+      "label": "vaga",
+      "measure": null,
+      "value": "1",
+      "icon": "cochera"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "2",
+      "icon": "dormitorio"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "25",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Lindo apartamento de 106 m², no 12º andar, em excelente localização em Copacabana, a apenas 3 quadras da praia e 5 minutos da estação de metrô Cardeal Arcoverde.<br>Composto por uma sala ampla e arejada; 2 quartos, sendo que o primeiro pode ser facilmente convertido em suíte e o segundo conta com um pequeno jardim de inverno; cozinha espaçosa e funcional; 2 banheiros sociais; dependência de empregada e área de serviço completa.<br>Apartamento de frente proporciona vista verde e excelente iluminação natural, com sol da manhã até às <span class='descripcionDatosAnunciante'><button class='btn btn-link js-verDatos' href='#'>Ver dados</button></span> na sala e quarto da frente, e sol da tarde no quarto dos fundos após às 14:00.<br>O prédio é bem administrado, com portaria 24 horas, elevador social e de serviço, e interfone.<br>Não perca esta oportunidade única de morar ou investir.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "(21) 96",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 27,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Apartamento · 106m² · 2 quartos · 1 vaga",
+      "size_bytes": 75192,
+      "size_kb": 73.4296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438517819.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 68235,
+      "size_kb": 66.6357421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438517879.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Apartamento en venda de 2 quartos Copacabana",
+      "size_bytes": 81495,
+      "size_kb": 79.5849609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438517569.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Lindo apartamento de 106 m², no 12º andar, em excelente localização em Copacaban",
+      "size_bytes": 64878,
+      "size_kb": 63.357421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438517679.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Apartamento venda 106m² de 2 quartos",
+      "size_bytes": 74785,
+      "size_kb": 73.0322265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438517562.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Apartamento 106m² venda Copacabana",
+      "size_bytes": 67086,
+      "size_kb": 65.513671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438522400.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Apartamento 106m² venda Copacabana",
+      "size_bytes": 39102,
+      "size_kb": 38.185546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438517595.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Apartamento de 2 quartos venda R$ 999.000",
+      "size_bytes": 46669,
+      "size_kb": 45.5751953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438517576.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Apartamento · 106m² · 2 quartos · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 45678,
+      "size_kb": 44.607421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438517543.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Apartamento venda de 2 quartos",
+      "size_bytes": 46587,
+      "size_kb": 45.4951171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438517604.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Apartamento · 106m² · 2 quartos · 1 vaga",
+      "size_bytes": 56297,
+      "size_kb": 54.9775390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438517592.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 44835,
+      "size_kb": 43.7841796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438517605.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Apartamento en venda de 2 quartos Copacabana",
+      "size_bytes": 56750,
+      "size_kb": 55.419921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438517730.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Lindo apartamento de 106 m², no 12º andar, em excelente localização em Copacaban",
+      "size_bytes": 48186,
+      "size_kb": 47.056640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438517548.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Apartamento venda 106m² de 2 quartos",
+      "size_bytes": 43725,
+      "size_kb": 42.7001953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438517589.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Apartamento 106m² venda Copacabana",
+      "size_bytes": 34406,
+      "size_kb": 33.599609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438517786.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Apartamento 106m² venda Copacabana",
+      "size_bytes": 66729,
+      "size_kb": 65.1650390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438517855.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Apartamento de 2 quartos venda R$ 999.000",
+      "size_bytes": 65400,
+      "size_kb": 63.8671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438520277.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Apartamento · 106m² · 2 quartos · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 65577,
+      "size_kb": 64.0400390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438517619.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Apartamento venda de 2 quartos",
+      "size_bytes": 58403,
+      "size_kb": 57.0341796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438517778.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Apartamento · 106m² · 2 quartos · 1 vaga",
+      "size_bytes": 54205,
+      "size_kb": 52.9345703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438517623.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Apartamento de 2 quartos, Rio de Janeiro",
+      "size_bytes": 57675,
+      "size_kb": 56.3232421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438519945.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Apartamento en venda de 2 quartos Copacabana",
+      "size_bytes": 37729,
+      "size_kb": 36.8447265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438517518.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Lindo apartamento de 106 m², no 12º andar, em excelente localização em Copacaban",
+      "size_bytes": 52417,
+      "size_kb": 51.1884765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438517760.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Apartamento venda 106m² de 2 quartos",
+      "size_bytes": 46042,
+      "size_kb": 44.962890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438523759.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Apartamento 106m² venda Copacabana",
+      "size_bytes": 157574,
+      "size_kb": 153.880859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438522298.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Apartamento 106m² venda Copacabana",
+      "size_bytes": 115676,
+      "size_kb": 112.96484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/73/5438523708.jpg"
+    }
+  ]
+}

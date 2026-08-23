@@ -1,0 +1,386 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/jardim-america-rua-jorge-lacerda-casa-com-89-m-1-3025642323.html",
+  "dados_gerais": {
+    "titulo": "Jardim América - Rua Jorge Lacerda, Casa com 89 m², 1 Pavto, Frente Rua, Varanda, Quintal, 2 Qtos.",
+    "subtitulo": "Casa · 87m² · 2 quartos",
+    "codigo_imovel": "0048",
+    "id_imovelweb": "3025642323",
+    "preco": "R$ 1.600",
+    "condominio": "Não informado / Isento",
+    "endereco_completo": "260, Jardim América, Rio de Janeiro, RJ",
+    "logradouro": "260",
+    "bairro": "Jardim América",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8114870",
+      "longitude": "-43.3207177",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8114870,-43.3207177"
+    },
+    "data_publicacao": "18/01/2026",
+    "antiguidade": "Publicado há 78 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "89",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "87",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiro",
+      "measure": null,
+      "value": "1",
+      "icon": "bano"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "2",
+      "icon": "dormitorio"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "30",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Casa para aluguel no Jardim América, com entrada independente. Possui 1 pavimento, quintal na frente, varanda, 2 quartos e 1 banheiro, ideal para quem busca praticidade. A área construída é de 86 m², proporcionando um bom espaço internamente. A casa oferece ambientes bem distribuídos , e os 2 quartos garantem conforto para a família. A cozinha tem bom espaço, facilitando o dia a dia, sendo a área de serviço externa, e 1 quintal nos fundos.\nO Jardim América é um bairro residencial tranquilo, com fácil acesso a serviços e comércios. Próximo a escolas, supermercados e farmácias e o comércio de venda de cestas básicas, e a região oferece conveniência para os moradores. A mobilidade é facilitada pelas diversas linhas de ônibus e proximidade a importantes vias da cidade.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 35,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Casa de 2 quartos, Rio de Janeiro",
+      "size_bytes": 177448,
+      "size_kb": 173.2890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063177.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Casa en aluguel de 2 quartos Jardim América",
+      "size_bytes": 91961,
+      "size_kb": 89.8056640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/5948530109.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Casa para aluguel no Jardim América, com entrada independente. Possui 1 paviment",
+      "size_bytes": 101839,
+      "size_kb": 99.4521484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/5948530079.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Casa aluguel 89m² de 2 quartos",
+      "size_bytes": 94524,
+      "size_kb": 92.30859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/5948530081.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Casa 89m² aluguel Jardim América",
+      "size_bytes": 103984,
+      "size_kb": 101.546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/5948530074.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Casa 89m² aluguel Jardim América",
+      "size_bytes": 90865,
+      "size_kb": 88.7353515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/5948530091.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Casa de 2 quartos aluguel R$ 1.600",
+      "size_bytes": 82088,
+      "size_kb": 80.1640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/5948530092.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Casa · 87m² · 2 quartos - Imobiliária Clementino",
+      "size_bytes": 110832,
+      "size_kb": 108.234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/5948530103.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Casa aluguel de 2 quartos",
+      "size_bytes": 98911,
+      "size_kb": 96.5927734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/5948530075.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Casa aluguel 89m² de 2 quartos",
+      "size_bytes": 165275,
+      "size_kb": 161.4013671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063165.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Casa 89m² aluguel Jardim América",
+      "size_bytes": 224917,
+      "size_kb": 219.6455078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063156.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Casa 89m² aluguel Jardim América",
+      "size_bytes": 190926,
+      "size_kb": 186.451171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063161.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Casa de 2 quartos aluguel R$ 1.600",
+      "size_bytes": 153450,
+      "size_kb": 149.853515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063157.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Casa · 87m² · 2 quartos - Imobiliária Clementino",
+      "size_bytes": 128037,
+      "size_kb": 125.0361328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063164.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Casa aluguel de 2 quartos",
+      "size_bytes": 99852,
+      "size_kb": 97.51171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063178.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Casa · 87m² · 2 quartos",
+      "size_bytes": 115123,
+      "size_kb": 112.4248046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063151.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Casa de 2 quartos, Rio de Janeiro",
+      "size_bytes": 93447,
+      "size_kb": 91.2568359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063166.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Casa en aluguel de 2 quartos Jardim América",
+      "size_bytes": 79161,
+      "size_kb": 77.3056640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063168.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Casa para aluguel no Jardim América, com entrada independente. Possui 1 paviment",
+      "size_bytes": 75364,
+      "size_kb": 73.59765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063162.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Casa aluguel 89m² de 2 quartos",
+      "size_bytes": 94051,
+      "size_kb": 91.8466796875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063173.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Casa 89m² aluguel Jardim América",
+      "size_bytes": 80439,
+      "size_kb": 78.5537109375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063149.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Casa 89m² aluguel Jardim América",
+      "size_bytes": 100490,
+      "size_kb": 98.134765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063159.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Casa de 2 quartos aluguel R$ 1.600",
+      "size_bytes": 83186,
+      "size_kb": 81.236328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063158.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Casa · 87m² · 2 quartos - Imobiliária Clementino",
+      "size_bytes": 121581,
+      "size_kb": 118.7314453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063171.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Casa aluguel de 2 quartos",
+      "size_bytes": 76918,
+      "size_kb": 75.115234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063160.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Casa · 87m² · 2 quartos",
+      "size_bytes": 111881,
+      "size_kb": 109.2587890625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063163.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Casa de 2 quartos, Rio de Janeiro",
+      "size_bytes": 137321,
+      "size_kb": 134.1025390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063175.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Casa en aluguel de 2 quartos Jardim América",
+      "size_bytes": 87102,
+      "size_kb": 85.060546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063150.jpg"
+    },
+    {
+      "index": 29,
+      "filename": "foto_29.jpg",
+      "relative_path": "fotos/foto_29.jpg",
+      "title": "Casa para aluguel no Jardim América, com entrada independente. Possui 1 paviment",
+      "size_bytes": 88923,
+      "size_kb": 86.8388671875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063155.jpg"
+    },
+    {
+      "index": 30,
+      "filename": "foto_30.jpg",
+      "relative_path": "fotos/foto_30.jpg",
+      "title": "Casa 89m² aluguel Jardim América",
+      "size_bytes": 109825,
+      "size_kb": 107.2509765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063152.jpg"
+    },
+    {
+      "index": 31,
+      "filename": "foto_31.jpg",
+      "relative_path": "fotos/foto_31.jpg",
+      "title": "Casa 89m² aluguel Jardim América",
+      "size_bytes": 113512,
+      "size_kb": 110.8515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063154.jpg"
+    },
+    {
+      "index": 32,
+      "filename": "foto_32.jpg",
+      "relative_path": "fotos/foto_32.jpg",
+      "title": "Casa 89m² aluguel Jardim América",
+      "size_bytes": 89714,
+      "size_kb": 87.611328125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063153.jpg"
+    },
+    {
+      "index": 33,
+      "filename": "foto_33.jpg",
+      "relative_path": "fotos/foto_33.jpg",
+      "title": "Casa de 2 quartos aluguel R$ 1.600",
+      "size_bytes": 118013,
+      "size_kb": 115.2470703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063167.jpg"
+    },
+    {
+      "index": 34,
+      "filename": "foto_34.jpg",
+      "relative_path": "fotos/foto_34.jpg",
+      "title": "Casa · 87m² · 2 quartos - Imobiliária Clementino",
+      "size_bytes": 129011,
+      "size_kb": 125.9873046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063170.jpg"
+    },
+    {
+      "index": 35,
+      "filename": "foto_35.jpg",
+      "relative_path": "fotos/foto_35.jpg",
+      "title": "Casa aluguel de 2 quartos",
+      "size_bytes": 119158,
+      "size_kb": 116.365234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/25/64/23/23/6923063169.jpg"
+    }
+  ]
+}

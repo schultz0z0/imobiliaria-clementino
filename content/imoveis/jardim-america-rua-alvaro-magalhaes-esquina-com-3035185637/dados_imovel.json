@@ -1,0 +1,208 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/jardim-america-rua-alvaro-magalhaes-esquina-com-3035185637.html",
+  "dados_gerais": {
+    "titulo": "Jardim América - Rua Álvaro Magalhães Esquina com Rodolfo Chambeland, Lojão com 75m², 2 Banheiros.",
+    "subtitulo": "Comercial · 76m² · 1 vaga",
+    "codigo_imovel": "089",
+    "id_imovelweb": "3035185637",
+    "preco": "R$ 180.000",
+    "condominio": "R$ 0",
+    "endereco_completo": "Rua Álvaro de Magalhães, 8, Jardim América, Rio de Janeiro, RJ",
+    "logradouro": "Rua Álvaro de Magalhães, 8",
+    "bairro": "Jardim América",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.8072455",
+      "longitude": "-43.3296730",
+      "google_maps_url": "https://www.google.com/maps?q=-22.8072455,-43.3296730"
+    },
+    "data_publicacao": "14/05/2026",
+    "antiguidade": "Publicado há 98 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "78",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "76",
+      "icon": "scubierta"
+    },
+    "CFT7": {
+      "featureId": "CFT7",
+      "label": "vaga",
+      "measure": null,
+      "value": "1",
+      "icon": "cochera"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "40",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Comercial disponível para venda no Jardim América, com 76 m² de área construída e 78 m² de área total. O imóvel possui idade de 40 anos e conta com 1 vaga.\nO espaço interno oferece versatilidade para adaptar-se a diferentes tipos de negócios. A área útil de 76 m² permite a criação de um ambiente funcional e acolhedor para clientes e colaboradores.\nO imóvel dispõe de 1 vaga de estacionamento, facilitando o acesso de clientes e funcionários.\nLocalizado no Jardim América, o comercial está inserido em uma região com grande variedade de serviços e comércios. A área é conhecida por sua infraestrutura completa, com fácil acesso a supermercados, bancos, farmácias e restaurantes. A localização estratégica garante visibilidade e conveniência para o seu negócio. O Jardim América oferece um ambiente dinâmico e propício para o crescimento de empresas de diversos segmentos.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 16,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Comercial , Rio de Janeiro",
+      "size_bytes": 236456,
+      "size_kb": 230.9140625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/18/56/37/6687160333.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Comercial en venda  Jardim América",
+      "size_bytes": 204802,
+      "size_kb": 200.001953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/18/56/37/6687160341.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Comercial disponível para venda no Jardim América, com 76 m² de área construída ",
+      "size_bytes": 220039,
+      "size_kb": 214.8818359375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/18/56/37/6687160340.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Comercial venda 78m² ",
+      "size_bytes": 179522,
+      "size_kb": 175.314453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/18/56/37/6687160339.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Comercial 78m² venda Jardim América",
+      "size_bytes": 93279,
+      "size_kb": 91.0927734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/18/56/37/6687160335.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Comercial 78m² venda Jardim América",
+      "size_bytes": 69972,
+      "size_kb": 68.33203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/18/56/37/6687160336.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Comercial  venda R$ 180.000",
+      "size_bytes": 186144,
+      "size_kb": 181.78125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/18/56/37/6687160342.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Comercial · 76m² · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 91247,
+      "size_kb": 89.1083984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/18/56/37/6687160330.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Comercial venda ",
+      "size_bytes": 85309,
+      "size_kb": 83.3095703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/18/56/37/6687160331.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Comercial · 76m² · 1 vaga",
+      "size_bytes": 69863,
+      "size_kb": 68.2255859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/18/56/37/6687160328.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Comercial , Rio de Janeiro",
+      "size_bytes": 81747,
+      "size_kb": 79.8310546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/18/56/37/6687160338.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Comercial en venda  Jardim América",
+      "size_bytes": 197863,
+      "size_kb": 193.2255859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/18/56/37/6687160348.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Comercial disponível para venda no Jardim América, com 76 m² de área construída ",
+      "size_bytes": 182615,
+      "size_kb": 178.3349609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/18/56/37/6687160334.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Comercial venda 78m² ",
+      "size_bytes": 132033,
+      "size_kb": 128.9384765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/18/56/37/6687160337.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Comercial 78m² venda Jardim América",
+      "size_bytes": 139000,
+      "size_kb": 135.7421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/18/56/37/6687160329.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Comercial 78m² venda Jardim América",
+      "size_bytes": 128594,
+      "size_kb": 125.580078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/35/18/56/37/6687160332.jpg"
+    }
+  ]
+}

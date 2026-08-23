@@ -1,0 +1,337 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/r.-francisco-otaviano-ipanema-apto-de-luxo-39m-1-3017305790.html",
+  "dados_gerais": {
+    "titulo": "R. Francisco Otaviano, Ipanema - Apto De Luxo 39m², 1 Qto, 1 Suíte, 1 WC, 1 Vaga Garagem",
+    "subtitulo": "Apartamento · 39m² · 1 quarto · 1 vaga",
+    "codigo_imovel": "AP0004",
+    "id_imovelweb": "3017305790",
+    "preco": "R$ 1.950.000",
+    "condominio": "R$ 1000",
+    "endereco_completo": "Rua Francisco Otaviano, Copacabana, Rio de Janeiro, RJ",
+    "logradouro": "Rua Francisco Otaviano",
+    "bairro": "Copacabana",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.9871380",
+      "longitude": "-43.1916079",
+      "google_maps_url": "https://www.google.com/maps?q=-22.9871380,-43.1916079"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 358 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "39",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "39",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiro",
+      "measure": null,
+      "value": "1",
+      "icon": "bano"
+    },
+    "CFT7": {
+      "featureId": "CFT7",
+      "label": "vaga",
+      "measure": null,
+      "value": "1",
+      "icon": "cochera"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "1",
+      "icon": "dormitorio"
+    },
+    "CFT4": {
+      "featureId": "CFT4",
+      "label": "suíte",
+      "measure": null,
+      "value": "1",
+      "icon": "toilete"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "2",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Localizado no coração do Arpoador, o Canto Rio não é apenas um endereço, mas uma experiência. Com mais de 2.000m² de área de lazer e serviços exclusivos, este empreendimento já está 100% vendido, sendo essa unidade uma oportunidade rara no mercado.<br>Studio de 38,08m², com varanda e área gourmet, VISTA MAR e experiências inéditas em mais de 2.000m² de área de lazer e serviços na zona sul do Rio de Janeiro;<br>Piscina de 25m com raias, sauna, bar, academia by Companhia Atlética, sala de massagem, sauna, bar, lounge, lavanderia e muito mais. O Canto Rio também se destaca por seus diferenciais tecnológicos, incluindo fechadura smart lock e infraestrutura para comando de voz IOT.<br>Segurança única, com: Sistema de reconhecimento facial para controle de acesso dos moradores com integrac?a?o a? portaria remota; Seguranc?a perimetral monitorada; Circuito de CFTV com acesso remoto; Controle eletro?nico de acesso de vei?culos; Acesso separado de entregas/servic?os;<br>Localizado entre o mar e o que o Rio tem de melhor, a alguns passos de tudo que o Arpoador tem a oferecer.<br>01 vaga na escritura.<br>Não perca esta chance única! Entre em contato e agende sua visita.",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "2196402",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 28,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Apartamento · 39m² · 1 quarto · 1 vaga",
+      "size_bytes": 102441,
+      "size_kb": 100.0400390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514751.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Apartamento de 1 quarto, Rio de Janeiro",
+      "size_bytes": 128230,
+      "size_kb": 125.224609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514753.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Apartamento en venda de 1 quarto Copacabana",
+      "size_bytes": 266184,
+      "size_kb": 259.9453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514932.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Localizado no coração do Arpoador, o Canto Rio não é apenas um endereço, mas uma",
+      "size_bytes": 255746,
+      "size_kb": 249.751953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514729.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Apartamento venda 39m² de 1 quarto",
+      "size_bytes": 91389,
+      "size_kb": 89.2470703125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514733.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Apartamento 39m² venda Copacabana",
+      "size_bytes": 158707,
+      "size_kb": 154.9873046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514775.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Apartamento 39m² venda Copacabana",
+      "size_bytes": 137157,
+      "size_kb": 133.9423828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514824.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Apartamento de 1 quarto venda R$ 1.950.000",
+      "size_bytes": 140191,
+      "size_kb": 136.9052734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514865.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Apartamento · 39m² · 1 quarto · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 129713,
+      "size_kb": 126.6728515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514748.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Apartamento venda de 1 quarto",
+      "size_bytes": 110725,
+      "size_kb": 108.1298828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514629.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Apartamento · 39m² · 1 quarto · 1 vaga",
+      "size_bytes": 139521,
+      "size_kb": 136.2509765625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514674.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Apartamento de 1 quarto, Rio de Janeiro",
+      "size_bytes": 130044,
+      "size_kb": 126.99609375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514831.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Apartamento en venda de 1 quarto Copacabana",
+      "size_bytes": 122058,
+      "size_kb": 119.197265625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514704.jpg"
+    },
+    {
+      "index": 14,
+      "filename": "foto_14.jpg",
+      "relative_path": "fotos/foto_14.jpg",
+      "title": "Localizado no coração do Arpoador, o Canto Rio não é apenas um endereço, mas uma",
+      "size_bytes": 71708,
+      "size_kb": 70.02734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514747.jpg"
+    },
+    {
+      "index": 15,
+      "filename": "foto_15.jpg",
+      "relative_path": "fotos/foto_15.jpg",
+      "title": "Apartamento venda 39m² de 1 quarto",
+      "size_bytes": 91279,
+      "size_kb": 89.1396484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514699.jpg"
+    },
+    {
+      "index": 16,
+      "filename": "foto_16.jpg",
+      "relative_path": "fotos/foto_16.jpg",
+      "title": "Apartamento 39m² venda Copacabana",
+      "size_bytes": 102450,
+      "size_kb": 100.048828125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514719.jpg"
+    },
+    {
+      "index": 17,
+      "filename": "foto_17.jpg",
+      "relative_path": "fotos/foto_17.jpg",
+      "title": "Apartamento 39m² venda Copacabana",
+      "size_bytes": 62951,
+      "size_kb": 61.4755859375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514734.jpg"
+    },
+    {
+      "index": 18,
+      "filename": "foto_18.jpg",
+      "relative_path": "fotos/foto_18.jpg",
+      "title": "Apartamento de 1 quarto venda R$ 1.950.000",
+      "size_bytes": 53277,
+      "size_kb": 52.0283203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514640.jpg"
+    },
+    {
+      "index": 19,
+      "filename": "foto_19.jpg",
+      "relative_path": "fotos/foto_19.jpg",
+      "title": "Apartamento · 39m² · 1 quarto · 1 vaga - Imobiliária Clementino",
+      "size_bytes": 92756,
+      "size_kb": 90.58203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514630.jpg"
+    },
+    {
+      "index": 20,
+      "filename": "foto_20.jpg",
+      "relative_path": "fotos/foto_20.jpg",
+      "title": "Apartamento venda de 1 quarto",
+      "size_bytes": 552702,
+      "size_kb": 539.748046875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438515143.jpg"
+    },
+    {
+      "index": 21,
+      "filename": "foto_21.jpg",
+      "relative_path": "fotos/foto_21.jpg",
+      "title": "Apartamento · 39m² · 1 quarto · 1 vaga",
+      "size_bytes": 293035,
+      "size_kb": 286.1669921875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514787.jpg"
+    },
+    {
+      "index": 22,
+      "filename": "foto_22.jpg",
+      "relative_path": "fotos/foto_22.jpg",
+      "title": "Apartamento de 1 quarto, Rio de Janeiro",
+      "size_bytes": 230428,
+      "size_kb": 225.02734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514805.jpg"
+    },
+    {
+      "index": 23,
+      "filename": "foto_23.jpg",
+      "relative_path": "fotos/foto_23.jpg",
+      "title": "Apartamento en venda de 1 quarto Copacabana",
+      "size_bytes": 188053,
+      "size_kb": 183.6455078125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514858.jpg"
+    },
+    {
+      "index": 24,
+      "filename": "foto_24.jpg",
+      "relative_path": "fotos/foto_24.jpg",
+      "title": "Localizado no coração do Arpoador, o Canto Rio não é apenas um endereço, mas uma",
+      "size_bytes": 184526,
+      "size_kb": 180.201171875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514760.jpg"
+    },
+    {
+      "index": 25,
+      "filename": "foto_25.jpg",
+      "relative_path": "fotos/foto_25.jpg",
+      "title": "Apartamento venda 39m² de 1 quarto",
+      "size_bytes": 62060,
+      "size_kb": 60.60546875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514677.jpg"
+    },
+    {
+      "index": 26,
+      "filename": "foto_26.jpg",
+      "relative_path": "fotos/foto_26.jpg",
+      "title": "Apartamento 39m² venda Copacabana",
+      "size_bytes": 76113,
+      "size_kb": 74.3291015625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514682.jpg"
+    },
+    {
+      "index": 27,
+      "filename": "foto_27.jpg",
+      "relative_path": "fotos/foto_27.jpg",
+      "title": "Apartamento 39m² venda Copacabana",
+      "size_bytes": 39196,
+      "size_kb": 38.27734375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438516700.jpg"
+    },
+    {
+      "index": 28,
+      "filename": "foto_28.jpg",
+      "relative_path": "fotos/foto_28.jpg",
+      "title": "Apartamento de 1 quarto venda R$ 1.950.000",
+      "size_bytes": 51368,
+      "size_kb": 50.1640625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/90/5438514696.jpg"
+    }
+  ]
+}

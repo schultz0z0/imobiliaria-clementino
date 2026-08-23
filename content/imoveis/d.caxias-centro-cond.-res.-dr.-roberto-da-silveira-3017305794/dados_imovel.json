@@ -1,0 +1,188 @@
+{
+  "url": "https://www.imovelweb.com.br/propriedades/d.caxias-centro-cond.-res.-dr.-roberto-da-silveira-3017305794.html",
+  "dados_gerais": {
+    "titulo": "D.Caxias/Centro - Cond. Res. Dr. Roberto da Silveira - Apto 75m², 2°Andar, 3Qtos",
+    "subtitulo": "Apartamento · 74m² · 3 quartos",
+    "codigo_imovel": "AP0022",
+    "id_imovelweb": "3017305794",
+    "preco": "R$ 295.000",
+    "condominio": "R$ 450",
+    "endereco_completo": "Rua Almirante Vandenkolk, Centro, Duque de Caxias, RJ",
+    "logradouro": "Rua Almirante Vandenkolk",
+    "bairro": "Centro",
+    "cidade": "Duque de Caxias",
+    "estado": "RJ",
+    "coordenadas": {
+      "latitude": "-22.7867925",
+      "longitude": "-43.3174763",
+      "google_maps_url": "https://www.google.com/maps?q=-22.7867925,-43.3174763"
+    },
+    "data_publicacao": "26/08/2025",
+    "antiguidade": "Publicado há 358 dias"
+  },
+  "caracteristicas_principais": {
+    "CFT100": {
+      "featureId": "CFT100",
+      "label": "tot.",
+      "measure": "m²",
+      "value": "75",
+      "icon": "stotal"
+    },
+    "CFT101": {
+      "featureId": "CFT101",
+      "label": "útil",
+      "measure": "m²",
+      "value": "74",
+      "icon": "scubierta"
+    },
+    "CFT3": {
+      "featureId": "CFT3",
+      "label": "banheiro",
+      "measure": null,
+      "value": "1",
+      "icon": "bano"
+    },
+    "CFT2": {
+      "featureId": "CFT2",
+      "label": "quarto",
+      "measure": null,
+      "value": "3",
+      "icon": "dormitorio"
+    },
+    "CFT5": {
+      "featureId": "CFT5",
+      "label": "idade do imóvel",
+      "measure": null,
+      "value": "38",
+      "icon": "antiguedad"
+    }
+  },
+  "descricao": "Condomínio Conjunto Residencial Dr. Roberto Silveira,<br>Apto de 75m,² 2º andar, sala, banheiro social, 3 quartos, cozinha e área de serviço, no Centro de Caxias/RJ .",
+  "anunciante": {
+    "nome": "Imobiliária Clementino",
+    "creci": "22953",
+    "telefone_parcial": "(21) 96",
+    "whatsapp": "55 21964023524",
+    "url_perfil": "https://www.imovelweb.com.br/imobiliarias/imobiliaria-clementino_47820822-imoveis.html"
+  },
+  "total_fotos": 13,
+  "fotos": [
+    {
+      "index": 1,
+      "filename": "foto_01.jpg",
+      "relative_path": "fotos/foto_01.jpg",
+      "title": "Apartamento · 74m² · 3 quartos",
+      "size_bytes": 80495,
+      "size_kb": 78.6083984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/94/5438517858.jpg"
+    },
+    {
+      "index": 2,
+      "filename": "foto_02.jpg",
+      "relative_path": "fotos/foto_02.jpg",
+      "title": "Apartamento de 3 quartos, Duque de Caxias",
+      "size_bytes": 85028,
+      "size_kb": 83.03515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/94/5438518733.jpg"
+    },
+    {
+      "index": 3,
+      "filename": "foto_03.jpg",
+      "relative_path": "fotos/foto_03.jpg",
+      "title": "Apartamento en venda de 3 quartos Centro",
+      "size_bytes": 84342,
+      "size_kb": 82.365234375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/94/5438522564.jpg"
+    },
+    {
+      "index": 4,
+      "filename": "foto_04.jpg",
+      "relative_path": "fotos/foto_04.jpg",
+      "title": "Condomínio Conjunto Residencial Dr. Roberto Silveira,<br>Apto de 75m,² 2º andar,",
+      "size_bytes": 117965,
+      "size_kb": 115.2001953125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/94/5438517896.jpg"
+    },
+    {
+      "index": 5,
+      "filename": "foto_05.jpg",
+      "relative_path": "fotos/foto_05.jpg",
+      "title": "Apartamento venda 75m² de 3 quartos",
+      "size_bytes": 110953,
+      "size_kb": 108.3525390625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/94/5438517775.jpg"
+    },
+    {
+      "index": 6,
+      "filename": "foto_06.jpg",
+      "relative_path": "fotos/foto_06.jpg",
+      "title": "Apartamento 75m² venda Centro",
+      "size_bytes": 112406,
+      "size_kb": 109.771484375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/94/5438525160.jpg"
+    },
+    {
+      "index": 7,
+      "filename": "foto_07.jpg",
+      "relative_path": "fotos/foto_07.jpg",
+      "title": "Apartamento 75m² venda Centro",
+      "size_bytes": 84034,
+      "size_kb": 82.064453125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/94/5438525073.jpg"
+    },
+    {
+      "index": 8,
+      "filename": "foto_08.jpg",
+      "relative_path": "fotos/foto_08.jpg",
+      "title": "Apartamento de 3 quartos venda R$ 295.000",
+      "size_bytes": 63936,
+      "size_kb": 62.4375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/94/5438527584.jpg"
+    },
+    {
+      "index": 9,
+      "filename": "foto_09.jpg",
+      "relative_path": "fotos/foto_09.jpg",
+      "title": "Apartamento · 74m² · 3 quartos - Imobiliária Clementino",
+      "size_bytes": 64720,
+      "size_kb": 63.203125,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/94/5438518855.jpg"
+    },
+    {
+      "index": 10,
+      "filename": "foto_10.jpg",
+      "relative_path": "fotos/foto_10.jpg",
+      "title": "Apartamento venda de 3 quartos",
+      "size_bytes": 85169,
+      "size_kb": 83.1728515625,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/94/5438517768.jpg"
+    },
+    {
+      "index": 11,
+      "filename": "foto_11.jpg",
+      "relative_path": "fotos/foto_11.jpg",
+      "title": "Apartamento · 74m² · 3 quartos",
+      "size_bytes": 130095,
+      "size_kb": 127.0458984375,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/94/5438525049.jpg"
+    },
+    {
+      "index": 12,
+      "filename": "foto_12.jpg",
+      "relative_path": "fotos/foto_12.jpg",
+      "title": "Apartamento de 3 quartos, Duque de Caxias",
+      "size_bytes": 142924,
+      "size_kb": 139.57421875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/94/5438517809.jpg"
+    },
+    {
+      "index": 13,
+      "filename": "foto_13.jpg",
+      "relative_path": "fotos/foto_13.jpg",
+      "title": "Apartamento en venda de 3 quartos Centro",
+      "size_bytes": 96963,
+      "size_kb": 94.6904296875,
+      "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/94/5438524834.jpg"
+    }
+  ]
+}
