@@ -12,7 +12,7 @@ Em produção, o Dockerfile multi-stage existente construirá os arquivos estát
 
 ## Roteamento de produção
 
-O router principal atenderá `imobiliaria.solucoes-nexus.tech` no entrypoint `websecure`, usando o resolver `letsencrypt`. Como o endereço já é um subdomínio, não haverá alias adicional com `www`.
+O router principal atenderá `clementinoimoveis.com.br` no entrypoint `websecure`, usando o resolver `letsencrypt`. Um segundo router atenderá `www.clementinoimoveis.com.br` e aplicará um middleware de redirecionamento permanente para o domínio sem `www`.
 
 O container exporá apenas a porta interna `80`. O provider Docker do Traefik obterá o IP privado do container e usará a label explícita da porta do load balancer. Nenhuma porta do site será publicada diretamente pela VPS.
 
@@ -34,4 +34,4 @@ O serviço de produção terá healthcheck HTTP contra o Nginx e `restart: unles
 - O Traefik mantém acesso somente leitura a `/var/run/docker.sock`.
 - Os entrypoints existentes se chamam `web` e `websecure`.
 - O certificate resolver existente se chama `letsencrypt`.
-- Antes da implantação, o registro DNS de `imobiliaria.solucoes-nexus.tech` apontará para a VPS.
+- Antes da implantação, os registros DNS de `clementinoimoveis.com.br` e `www.clementinoimoveis.com.br` apontarão para a VPS.
