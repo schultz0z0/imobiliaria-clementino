@@ -5,7 +5,7 @@
     "subtitulo": "Apartamento · 51m² · 2 quartos · 1 vaga",
     "codigo_imovel": "0055",
     "id_imovelweb": "3023325766",
-    "preco": "R$ 10",
+    "preco": "R$ 158.000",
     "condominio": "R$ 280",
     "endereco_completo": "Rua George Bizet, 413, Jardim América, Rio de Janeiro, RJ",
     "logradouro": "Rua George Bizet, 413",
@@ -64,7 +64,7 @@
       "icon": "antiguedad"
     }
   },
-  "descricao": "Este apartamento está disponível para venda e aluguel no Jardim América, apresentando 51 m² de área construída e 53 m² de área total. O imóvel de frente conta com 2 quartos, 1 banheiro social bem posicionado, sala de estar integrada e 1 vaga de garagem garantida. O edifício de 2 andares oferece excelente infraestrutura com portaria e vigilância 24h para maior segurança.\nNa área de lazer, os moradores dispõem de piscina, solarium, churrasqueira, playground, quadra poliesportiva e salão de festas completo. Aceita FGTS como parte de pagamento. A localização no Jardim América garante fácil acesso a comércios, escolas, supermercados e vias de transporte público em uma das regiões mais tradicionais da cidade.",
+  "descricao": "Este apartamento está disponível para venda no Jardim América, apresentando 51 m² de área construída e 53 m² de área total. O imóvel de frente conta com 2 quartos, 1 banheiro social bem posicionado, sala de estar integrada e 1 vaga de garagem garantida. O edifício de 2 andares oferece excelente infraestrutura com portaria e vigilância 24h para maior segurança.\nNa área de lazer, os moradores dispõem de piscina, solarium, churrasqueira, playground, quadra poliesportiva e salão de festas completo. Aceita FGTS como parte de pagamento. A localização no Jardim América garante fácil acesso a comércios, escolas, supermercados e vias de transporte público em uma das regiões mais tradicionais da cidade.",
   "anunciante": {
     "nome": "Imobiliária Clementino",
     "creci": "22953",
@@ -96,7 +96,7 @@
       "index": 3,
       "filename": "foto_03.jpg",
       "relative_path": "fotos/foto_03.jpg",
-      "title": "Este apartamento está disponível para venda e aluguel no Jardim América, apresen",
+      "title": "Este apartamento está disponível para venda no Jardim América, apresentando 51 m²",
       "size_bytes": 282689,
       "size_kb": 276.0634765625,
       "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/23/32/57/66/5818946169.jpg"
@@ -186,7 +186,7 @@
       "index": 13,
       "filename": "foto_13.jpg",
       "relative_path": "fotos/foto_13.jpg",
-      "title": "Este apartamento está disponível para venda e aluguel no Jardim América, apresen",
+      "title": "Este apartamento está disponível para venda no Jardim América, apresentando 51 m²",
       "size_bytes": 124356,
       "size_kb": 121.44140625,
       "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/23/32/57/66/5795222133.jpg"
@@ -276,7 +276,7 @@
       "index": 23,
       "filename": "foto_23.jpg",
       "relative_path": "fotos/foto_23.jpg",
-      "title": "Este apartamento está disponível para venda e aluguel no Jardim América, apresen",
+      "title": "Este apartamento está disponível para venda no Jardim América, apresentando 51 m²",
       "size_bytes": 86643,
       "size_kb": 84.6123046875,
       "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/23/32/57/66/5818038779.jpg"
@@ -285,7 +285,7 @@
       "index": 24,
       "filename": "foto_24.jpg",
       "relative_path": "fotos/foto_24.jpg",
-      "title": "Este apartamento está disponível para venda e aluguel no Jardim América, apresen",
+      "title": "Este apartamento está disponível para venda no Jardim América, apresentando 51 m²",
       "size_bytes": 282619,
       "size_kb": 275.9951171875,
       "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/23/32/57/66/5818939078.jpg"

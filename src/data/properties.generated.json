@@ -1929,8 +1929,8 @@
     "city": "Rio de Janeiro",
     "district": "Jardim América",
     "state": "RJ",
-    "price": "R$ 10 / mês",
-    "priceValue": 10,
+    "price": "R$ 158.000",
+    "priceValue": 158000,
     "condoPrice": 280,
     "beds": 2,
     "suites": 0,
@@ -1939,8 +1939,8 @@
     "area": "51m²",
     "areaValue": 51,
     "propertyType": "Apartamento",
-    "type": "Aluguel",
-    "desc": "Este apartamento está disponível para venda e aluguel no Jardim América, apresentando 51 m² de área construída e 53 m² de área total. O imóvel de frente conta com 2 quartos, 1 banheiro social bem posicionado, sala de estar integrada e 1 vaga de garagem garantida. O edifício de 2 andares oferece excelente infraestrutura com portaria e vigilância 24h para maior segurança.\nNa área de lazer, os moradores dispõem de piscina, solarium, churrasqueira, playground, quadra poliesportiva e salão de festas completo. Aceita FGTS como parte de pagamento. A localização no Jardim América garante fácil acesso a comércios, escolas, supermercados e vias de transporte público em uma das regiões mais tradicionais da cidade.",
+    "type": "Venda",
+    "desc": "Este apartamento está disponível para venda no Jardim América, apresentando 51 m² de área construída e 53 m² de área total. O imóvel de frente conta com 2 quartos, 1 banheiro social bem posicionado, sala de estar integrada e 1 vaga de garagem garantida. O edifício de 2 andares oferece excelente infraestrutura com portaria e vigilância 24h para maior segurança.\nNa área de lazer, os moradores dispõem de piscina, solarium, churrasqueira, playground, quadra poliesportiva e salão de festas completo. Aceita FGTS como parte de pagamento. A localização no Jardim América garante fácil acesso a comércios, escolas, supermercados e vias de transporte público em uma das regiões mais tradicionais da cidade.",
     "features": [
       "idade do imóvel: 20"
     ]

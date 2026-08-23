@@ -10,7 +10,7 @@
 
 | Item | Informação |
 | :--- | :--- |
-| **💰 Valor de Venda / Locação** | **R$ 10** |
+| **💰 Valor de Venda** | **R$ 158.000** |
 | **🏢 Condomínio** | R$ 280 |
 | **📍 Endereço** | Rua George Bizet, 413, Jardim América, Rio de Janeiro, RJ |
 | **📅 Publicação** | 04/12/2025 (*Publicado há 259 dias*) |
@@ -44,7 +44,7 @@
 ## 📝 Descrição do Imóvel
 
 ```text
-Este apartamento está disponível para venda e aluguel no Jardim América, apresentando 51 m² de área construída e 53 m² de área total. O imóvel de frente conta com 2 quartos, 1 banheiro social bem posicionado, sala de estar integrada e 1 vaga de garagem garantida. O edifício de 2 andares oferece excelente infraestrutura com portaria e vigilância 24h para maior segurança.
+Este apartamento está disponível para venda no Jardim América, apresentando 51 m² de área construída e 53 m² de área total. O imóvel de frente conta com 2 quartos, 1 banheiro social bem posicionado, sala de estar integrada e 1 vaga de garagem garantida. O edifício de 2 andares oferece excelente infraestrutura com portaria e vigilância 24h para maior segurança.
 Na área de lazer, os moradores dispõem de piscina, solarium, churrasqueira, playground, quadra poliesportiva e salão de festas completo. Aceita FGTS como parte de pagamento. A localização no Jardim América garante fácil acesso a comércios, escolas, supermercados e vias de transporte público em uma das regiões mais tradicionais da cidade.
 ```
 
@@ -68,7 +68,7 @@ Todas as fotos em alta resolução estão armazenadas na subpasta [`fotos/`](./f
 | :---: | :--- | :--- | :---: |
 | **01** | [`foto_01.jpg`](./fotos/foto_01.jpg) | Apartamento de 2 quartos, Rio de Janeiro | `331.9 KB` |
 | **02** | [`foto_02.jpg`](./fotos/foto_02.jpg) | Apartamento en venda de 2 quartos Jardim América | `225.2 KB` |
-| **03** | [`foto_03.jpg`](./fotos/foto_03.jpg) | Este apartamento está disponível para venda e aluguel no Jardim América, apresen | `276.1 KB` |
+| **03** | [`foto_03.jpg`](./fotos/foto_03.jpg) | Este apartamento está disponível para venda no Jardim América, apresentando 51 m² | `276.1 KB` |
 | **04** | [`foto_04.jpg`](./fotos/foto_04.jpg) | Apartamento venda 53m² de 2 quartos | `260.6 KB` |
 | **05** | [`foto_05.jpg`](./fotos/foto_05.jpg) | Apartamento 53m² venda Jardim América | `295.1 KB` |
 | **06** | [`foto_06.jpg`](./fotos/foto_06.jpg) | Apartamento 53m² venda Jardim América | `260.8 KB` |
@@ -78,7 +78,7 @@ Todas as fotos em alta resolução estão armazenadas na subpasta [`fotos/`](./f
 | **10** | [`foto_10.jpg`](./fotos/foto_10.jpg) | Apartamento · 51m² · 2 quartos · 1 vaga | `195.0 KB` |
 | **11** | [`foto_11.jpg`](./fotos/foto_11.jpg) | Apartamento de 2 quartos, Rio de Janeiro | `118.3 KB` |
 | **12** | [`foto_12.jpg`](./fotos/foto_12.jpg) | Apartamento en venda de 2 quartos Jardim América | `85.7 KB` |
-| **13** | [`foto_13.jpg`](./fotos/foto_13.jpg) | Este apartamento está disponível para venda e aluguel no Jardim América, apresen | `121.4 KB` |
+| **13** | [`foto_13.jpg`](./fotos/foto_13.jpg) | Este apartamento está disponível para venda no Jardim América, apresentando 51 m² | `121.4 KB` |
 | **14** | [`foto_14.jpg`](./fotos/foto_14.jpg) | Apartamento venda 53m² de 2 quartos | `108.3 KB` |
 | **15** | [`foto_15.jpg`](./fotos/foto_15.jpg) | Apartamento 53m² venda Jardim América | `125.3 KB` |
 | **16** | [`foto_16.jpg`](./fotos/foto_16.jpg) | Apartamento 53m² venda Jardim América | `133.1 KB` |
@@ -88,8 +88,8 @@ Todas as fotos em alta resolução estão armazenadas na subpasta [`fotos/`](./f
 | **20** | [`foto_20.jpg`](./fotos/foto_20.jpg) | Apartamento · 51m² · 2 quartos · 1 vaga | `83.8 KB` |
 | **21** | [`foto_21.jpg`](./fotos/foto_21.jpg) | Apartamento de 2 quartos, Rio de Janeiro | `128.3 KB` |
 | **22** | [`foto_22.jpg`](./fotos/foto_22.jpg) | Apartamento en venda de 2 quartos Jardim América | `121.8 KB` |
-| **23** | [`foto_23.jpg`](./fotos/foto_23.jpg) | Este apartamento está disponível para venda e aluguel no Jardim América, apresen | `84.6 KB` |
-| **24** | [`foto_24.jpg`](./fotos/foto_24.jpg) | Este apartamento está disponível para venda e aluguel no Jardim América, apresen | `276.0 KB` |
+| **23** | [`foto_23.jpg`](./fotos/foto_23.jpg) | Este apartamento está disponível para venda no Jardim América, apresentando 51 m² | `84.6 KB` |
+| **24** | [`foto_24.jpg`](./fotos/foto_24.jpg) | Este apartamento está disponível para venda no Jardim América, apresentando 51 m² | `276.0 KB` |
 
 ---
 
@@ -103,7 +103,7 @@ Todas as fotos em alta resolução estão armazenadas na subpasta [`fotos/`](./f
 
 | Foto 03 | Foto 04 |
 | :---: | :---: |
-| ![Este apartamento está disponível para venda e aluguel no Jardim América, apresen](./fotos/foto_03.jpg) | ![Apartamento venda 53m² de 2 quartos](./fotos/foto_04.jpg) |
+| ![Este apartamento está disponível para venda no Jardim América, apresentando 51 m²](./fotos/foto_03.jpg) | ![Apartamento venda 53m² de 2 quartos](./fotos/foto_04.jpg) |
 </div>
 
 ---
