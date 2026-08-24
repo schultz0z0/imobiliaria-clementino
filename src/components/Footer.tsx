@@ -2,6 +2,7 @@ import { BadgeCheck, Building2, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { siteConfig } from '../config/siteConfig';
 import { buildWhatsAppUrl } from '../contact/whatsapp';
+import { useCookieConsent } from '../privacy/CookieConsentContext';
 
 const footerLinks = [['Início', '/'], ['Imóveis', '/imoveis'], ['Serviços', '/servicos'], ['Sobre', '/sobre'], ['Contato', '/contato']];
 const serviceLinks = [
@@ -12,6 +13,7 @@ const serviceLinks = [
 ];
 
 export const Footer = () => {
+  const { openPreferences } = useCookieConsent();
   const whatsappUrl = buildWhatsAppUrl('Olá! Quero falar com a equipe da Imobiliária Clementino.');
 
   return (
@@ -41,7 +43,15 @@ export const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-7 text-xs text-white/35 md:flex-row md:items-center md:justify-between"><p>© 2026 Imobiliária Clementino. Todos os direitos reservados.</p><p>{siteConfig.creci}</p></div>
+        <div className="mt-14 grid gap-5 border-t border-white/10 pt-7 text-xs text-white/55 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5">
+            <p>© 2026 Imobiliária Clementino. Todos os direitos reservados.</p>
+            <Link to="/aviso-de-privacidade" className="transition-colors hover:text-[#d7b661]">Aviso de Privacidade</Link>
+            <Link to="/politica-de-cookies" className="transition-colors hover:text-[#d7b661]">Política de Cookies</Link>
+            <button type="button" onClick={openPreferences} className="w-fit text-left transition-colors hover:text-[#d7b661]">Preferências de cookies</button>
+          </div>
+          <p>{siteConfig.creci}</p>
+        </div>
       </div>
     </footer>
   );

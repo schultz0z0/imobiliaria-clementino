@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port 4174 --host 0.0.0.0",
-    "build": "vite build",
+    "build": "vite build && npm run seo:prerender",
     "preview": "vite preview --host 0.0.0.0 --port 4174",
     "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
     "lint": "tsc --noEmit",
@@ -13,8 +13,10 @@
     "catalog:generate": "tsx scripts/catalog/generateCatalog.ts --write",
     "catalog:verify": "tsx scripts/catalog/generateCatalog.ts --verify",
     "catalog:images": "tsx scripts/catalog/generateImages.ts",
-    "predev": "npm run catalog:verify && npm run catalog:images",
-    "prebuild": "npm run catalog:verify && npm run catalog:images"
+    "seo:generate": "tsx scripts/seo/generateSeo.ts --public",
+    "seo:prerender": "tsx scripts/seo/generateSeo.ts --dist",
+    "predev": "npm run catalog:verify && npm run catalog:images && npm run seo:generate",
+    "prebuild": "npm run catalog:verify && npm run catalog:images && npm run seo:generate"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.14",
@@ -27,10 +29,12 @@
     "vite": "^6.2.0"
   },
   "devDependencies": {
+    "@testing-library/react": "^16.3.2",
     "@types/node": "^22.14.0",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
     "autoprefixer": "^10.4.21",
+    "jsdom": "^30.0.1",
     "sharp": "^0.35.3",
     "tailwindcss": "^4.1.14",
     "tsx": "^4.21.0",

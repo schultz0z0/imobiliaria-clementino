@@ -18,6 +18,7 @@ export const WhatsAppCta = ({ href, label, variant = 'primary', className = '' }
     href={href}
     target="_blank"
     rel="noreferrer"
+    data-analytics-event="whatsapp_click"
     className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-[var(--radius-control)] px-6 py-3 text-sm font-semibold transition-colors ${variants[variant]} ${className}`}
   >
     <MessageCircle className="h-4 w-4" aria-hidden="true" />

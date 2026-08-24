@@ -7,6 +7,7 @@ import { InstitutionalPreview } from '../components/home/InstitutionalPreview';
 import { NeedsNavigation } from '../components/home/NeedsNavigation';
 import { NeighborhoodHighlights } from '../components/home/NeighborhoodHighlights';
 import { TrustStrip } from '../components/home/TrustStrip';
+import { brandAssets } from '../config/brandAssets';
 import { featuredPropertySlugs } from '../config/editorial';
 import { getPageMetadata } from '../config/pageMetadata';
 import { usePageMeta } from '../hooks/usePageMeta';
@@ -26,7 +27,7 @@ export const Home = () => {
       <NeedsNavigation />
       <NeighborhoodHighlights neighborhoods={neighborhoods} />
       <BuyingJourney />
-      <InstitutionalPreview image={featured[0].image} />
+      <InstitutionalPreview image={brandAssets.institutionalPortrait} />
       <FinalCta />
     </>
   );

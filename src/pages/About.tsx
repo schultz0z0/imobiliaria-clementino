@@ -1,15 +1,15 @@
 import { ArrowRight, BadgeCheck, Building2, CalendarDays, Ear, Eye, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { getAllProperties, getCuratedProperties } from '../catalog/propertyCatalog';
+import { getAllProperties } from '../catalog/propertyCatalog';
 import { WhatsAppCta } from '../components/contact/WhatsAppCta';
-import { featuredPropertySlugs } from '../config/editorial';
+import { Breadcrumbs } from '../components/navigation/Breadcrumbs';
+import { brandAssets } from '../config/brandAssets';
 import { getPageMetadata } from '../config/pageMetadata';
 import { buildWhatsAppUrl } from '../contact/whatsapp';
 import { usePageMeta } from '../hooks/usePageMeta';
 
 export const About = () => {
   usePageMeta(getPageMetadata('about'));
-  const image = getCuratedProperties(featuredPropertySlugs)[0].image;
   const whatsappUrl = buildWhatsAppUrl('Olá! Quero conhecer melhor o trabalho da Imobiliária Clementino.');
   const trustStats = [
     [CalendarDays, 'Desde 2010', 'Atuação imobiliária no Rio de Janeiro'],
@@ -25,9 +25,10 @@ export const About = () => {
   return (
     <div className="relative z-10 pb-24 pt-36 md:pt-44">
       <div className="container mx-auto px-6">
+        <Breadcrumbs items={[{ label: 'Início', path: '/' }, { label: 'Sobre' }]} />
         <div className="grid items-end gap-12 lg:grid-cols-[1.05fr_.95fr] lg:gap-20">
-          <div><p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#d7b661]">Sobre a Clementino</p><h1 className="mt-5 text-5xl font-semibold leading-[1.06] tracking-tight text-white md:text-7xl">Conhecimento local para decisões imobiliárias mais seguras.</h1><p className="mt-7 max-w-2xl text-lg leading-relaxed text-white/58">A Imobiliária Clementino atua no Rio de Janeiro desde 2010, aproximando pessoas de imóveis para compra e locação.</p></div>
-          <div className="overflow-hidden rounded-[var(--radius-surface)] border border-white/10"><img src={image} alt="Imóvel do catálogo da Imobiliária Clementino" className="aspect-[4/3] w-full object-cover" /></div>
+          <div><p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#d7b661]">Sobre a Clementino</p><h1 className="mt-5 text-[2.5rem] font-semibold leading-[1.08] tracking-tight text-white sm:text-5xl md:text-7xl">Conhecimento local para decisões imobiliárias mais seguras.</h1><p className="mt-7 max-w-2xl text-lg leading-relaxed text-white/58">A Imobiliária Clementino atua no Rio de Janeiro desde 2010, aproximando pessoas de imóveis para compra e locação.</p></div>
+          <div className="overflow-hidden rounded-[var(--radius-surface)] border border-white/10"><img src={brandAssets.institutionalPortrait} alt="Retrato institucional da Imobiliária Clementino" className="aspect-[4/3] w-full object-cover object-[center_35%]" /></div>
         </div>
 
         <section aria-label="Indicadores de confiança" className="mt-14 grid gap-px overflow-hidden rounded-[var(--radius-surface)] border border-white/10 bg-white/10 md:grid-cols-3">{trustStats.map(([Icon, value, label]) => <div key={value} className="flex items-start gap-4 bg-[#1c1c1f] p-6"><Icon className="mt-0.5 h-5 w-5 shrink-0 text-[#d7b661]" /><div><strong className="block text-lg font-semibold text-white">{value}</strong><span className="mt-1 block text-sm text-white/45">{label}</span></div></div>)}</section>

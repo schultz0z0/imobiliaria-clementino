@@ -59,9 +59,9 @@ export const HeroSearch = () => {
           </div>
 
           <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
-            <Link to="/imoveis?purpose=Venda" className="text-white/65 transition-colors hover:text-[#d7b661]">Comprar</Link>
-            <Link to="/imoveis?purpose=Aluguel" className="text-white/65 transition-colors hover:text-[#d7b661]">Alugar</Link>
-            <a href={whatsappUrl} target="_blank" rel="noreferrer" className="text-[#d7b661] transition-colors hover:text-white">Falar no WhatsApp</a>
+            <Link to="/imoveis?purpose=Venda" className="inline-flex min-h-11 items-center text-white/65 transition-colors hover:text-[#d7b661]">Comprar</Link>
+            <Link to="/imoveis?purpose=Aluguel" className="inline-flex min-h-11 items-center text-white/65 transition-colors hover:text-[#d7b661]">Alugar</Link>
+            <a href={whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-[#d7b661] transition-colors hover:text-white">Falar no WhatsApp</a>
           </div>
         </div>
       </div>

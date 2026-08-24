@@ -16,4 +16,7 @@ test('renders distinct mobile and desktop hero artwork', () => {
   assert.match(markup, /media="\(max-width: 639px\)"/);
   assert.match(markup, /hero-clementino-mobile\.webp/);
   assert.match(markup, /hero-clementino-desktop-v2\.webp/);
+  assert.match(markup, /min-h-11[^>]*>Comprar<\/a>/);
+  assert.match(markup, /min-h-11[^>]*>Alugar<\/a>/);
+  assert.match(markup, /min-h-11[^>]*>Falar no WhatsApp<\/a>/);
 });
