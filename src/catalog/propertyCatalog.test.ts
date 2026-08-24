@@ -45,15 +45,24 @@ test('returns a deterministic featured subset', () => {
 
 test('resolves the three-property Clementino selection in editorial order', () => {
   const curated = getCuratedProperties(featuredPropertySlugs);
+  const catalogIds = new Set(getAllProperties().map((property) => property.id));
 
   assert.equal(curated.length, 3);
   assert.deepEqual(curated.map((property) => property.slug), featuredPropertySlugs);
   assert.equal(new Set(curated.map((property) => property.id)).size, 3);
-  assert.deepEqual(curated.map((property) => property.district), [
-    'Jardim América',
-    'Jardim América',
-    'Botafogo',
+  assert.deepEqual(curated.map((property) => property.id), [
+    '3017305809',
+    '3037729115',
+    '3028206195',
   ]);
+  assert.deepEqual(curated.map((property) => property.district), [
+    'Copacabana',
+    'Jardim América',
+    'Vila da Penha',
+  ]);
+  assert.ok(catalogIds.has('3017305761'));
+  assert.ok(catalogIds.has('3017305821'));
+  assert.ok(catalogIds.has('3017305797'));
 });
 
 test('rejects a curated slug that is absent from the catalog', () => {

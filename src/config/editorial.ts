@@ -1,5 +1,5 @@
 export const featuredPropertySlugs = [
-  'jardim-america-residencial-america-life-tipo-cobertura-92m2-2-salas-2-quartos-terraco-1-vga-3017305761',
-  'jardim-america-casa-duplex-com-4-qtos-suite-140m2-qto-externo-garagem-3017305821',
-  'botafogo-rio-de-janeiro-rj-apto-3-qtos-1-suite-2-bnh-1-vaga-garagem-3017305797',
+  'copacabana-av-atlantica-cobertura-linear-425m2-4-suites-6-wc-vista-mar-posto-4-3017305809',
+  'jardim-america-casa-linear-terraco-piscina-3-qtos-suite-3037729115',
+  'lgo-do-bicao-cond-solar-da-vila-apto-de-80-m2-2-qtos-suite-1-qto-revertido-2vgas-demarcada-3028206195',
 ] as const;
