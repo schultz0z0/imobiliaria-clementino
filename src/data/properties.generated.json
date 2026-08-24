@@ -273,13 +273,13 @@
     "city": "Rio de Janeiro",
     "district": "Jardim América",
     "state": "RJ",
-    "price": "R$ 380.000",
-    "priceValue": 380000,
+    "price": "R$ 250.000",
+    "priceValue": 250000,
     "prices": [
       {
         "type": "Venda",
-        "price": "R$ 380.000",
-        "priceValue": 380000
+        "price": "R$ 250.000",
+        "priceValue": 250000
       }
     ],
     "condoPrice": 0,
@@ -296,7 +296,7 @@
     "longitude": -43.3281246,
     "propertyType": "Casa",
     "type": "Venda",
-    "desc": "Em Jardim América Casa muito boa e espaçosa, com 3 andares: :\nPrimeiro Andar- Cozinha, sala, banheiro e uma área de serviço.\nSegundo andar- 3 quartos, 1 banheiro e uma varanda.\nTerceiro andar- Terraço\nValor: R$ 280 mil",
+    "desc": "Em Jardim América, casa muito boa e espaçosa, com 3 andares:\nPrimeiro andar: cozinha, sala, banheiro e área de serviço.\nSegundo andar: 3 quartos, 1 banheiro e varanda.\nTerceiro andar: terraço.\nValor: R$ 250 mil",
     "features": [
       "idade do imóvel: 30"
     ]

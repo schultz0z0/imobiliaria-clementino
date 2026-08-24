@@ -68,3 +68,27 @@ test('keeps property 0017 as a R$ 158,000 sale with its confirmed condominium ch
   assert.equal(property.condoPrice, 290);
   assert.doesNotMatch(property.desc, /250\.000|aluguel|loca[cç][aã]o/i);
 });
+
+test('keeps property CA0018 as a R$ 250,000 sale without stale prices in its description', () => {
+  const propertyId = '3017305771';
+  const folder = readdirSync(contentRoot, { withFileTypes: true })
+    .find((entry) => entry.isDirectory() && entry.name.endsWith(propertyId));
+
+  assert.ok(folder, `Property ${propertyId} must exist in the content inventory.`);
+
+  const record = JSON.parse(
+    readFileSync(join(contentRoot, folder.name, 'dados_imovel.json'), 'utf8'),
+  );
+  const overrides = JSON.parse(
+    readFileSync(join(process.cwd(), 'content', 'catalog-overrides.json'), 'utf8'),
+  );
+  const property = normalizeProperty(record, folder.name, overrides);
+
+  assert.equal(property.reference, 'CA0018');
+  assert.equal(property.type, 'Venda');
+  assert.equal(property.priceValue, 250_000);
+  assert.equal(property.price, 'R$\u00a0250.000');
+  assert.match(property.desc, /^Em Jardim América, casa muito boa e espaçosa/);
+  assert.match(property.desc, /Valor: R\$ 250 mil/);
+  assert.doesNotMatch(property.desc, /R\$\s*(?:280|380)(?:\.000|\s*mil)/i);
+});

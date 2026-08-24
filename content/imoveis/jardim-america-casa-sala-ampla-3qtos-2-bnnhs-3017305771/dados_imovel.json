@@ -5,7 +5,7 @@
     "subtitulo": "Casa · 121m² · 3 quartos",
     "codigo_imovel": "CA0018",
     "id_imovelweb": "3017305771",
-    "preco": "R$ 380.000",
+    "preco": "R$ 250.000",
     "condominio": "R$ 0",
     "endereco_completo": "Rua General Oscilio Maia, Jardim América, Rio de Janeiro, RJ",
     "logradouro": "Rua General Oscilio Maia",
@@ -57,7 +57,7 @@
       "icon": "antiguedad"
     }
   },
-  "descricao": "Em Jardim América Casa muito boa e espaçosa, com 3 andares: :<br>Primeiro Andar- Cozinha, sala, banheiro e uma área de serviço.<br>Segundo andar- 3 quartos, 1 banheiro e uma varanda.<br>Terceiro andar- Terraço<br>Valor: R$ 280 mil",
+  "descricao": "Em Jardim América, casa muito boa e espaçosa, com 3 andares:<br>Primeiro andar: cozinha, sala, banheiro e área de serviço.<br>Segundo andar: 3 quartos, 1 banheiro e varanda.<br>Terceiro andar: terraço.<br>Valor: R$ 250 mil",
   "anunciante": {
     "nome": "Imobiliária Clementino",
     "creci": "22953",
@@ -134,7 +134,7 @@
       "index": 8,
       "filename": "foto_08.jpg",
       "relative_path": "fotos/foto_08.jpg",
-      "title": "Casa de 3 quartos venda R$ 380.000",
+      "title": "Casa de 3 quartos à venda por R$ 250.000",
       "size_bytes": 57995,
       "size_kb": 56.6357421875,
       "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/17/30/57/71/5438510858.jpg"

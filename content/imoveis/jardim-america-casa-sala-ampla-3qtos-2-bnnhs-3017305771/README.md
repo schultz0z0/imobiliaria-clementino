@@ -10,7 +10,7 @@
 
 | Item | Informação |
 | :--- | :--- |
-| **💰 Valor de Venda / Locação** | **R$ 380.000** |
+| **💰 Valor de Venda / Locação** | **R$ 250.000** |
 | **🏢 Condomínio** | R$ 0 |
 | **📍 Endereço** | Rua General Oscilio Maia, Jardim América, Rio de Janeiro, RJ |
 | **📅 Publicação** | 26/08/2025 (*Publicado há 358 dias*) |
@@ -43,11 +43,11 @@
 ## 📝 Descrição do Imóvel
 
 ```text
-Em Jardim América Casa muito boa e espaçosa, com 3 andares: :
-Primeiro Andar- Cozinha, sala, banheiro e uma área de serviço.
-Segundo andar- 3 quartos, 1 banheiro e uma varanda.
-Terceiro andar- Terraço
-Valor: R$ 280 mil
+Em Jardim América, casa muito boa e espaçosa, com 3 andares:
+Primeiro andar: cozinha, sala, banheiro e área de serviço.
+Segundo andar: 3 quartos, 1 banheiro e varanda.
+Terceiro andar: terraço.
+Valor: R$ 250 mil
 ```
 
 ---
@@ -75,7 +75,7 @@ Todas as fotos em alta resolução estão armazenadas na subpasta [`fotos/`](./f
 | **05** | [`foto_05.jpg`](./fotos/foto_05.jpg) | Casa venda 122m² de 3 quartos | `86.1 KB` |
 | **06** | [`foto_06.jpg`](./fotos/foto_06.jpg) | Casa 122m² venda Jardim América | `99.7 KB` |
 | **07** | [`foto_07.jpg`](./fotos/foto_07.jpg) | Casa 122m² venda Jardim América | `74.0 KB` |
-| **08** | [`foto_08.jpg`](./fotos/foto_08.jpg) | Casa de 3 quartos venda R$ 380.000 | `56.6 KB` |
+| **08** | [`foto_08.jpg`](./fotos/foto_08.jpg) | Casa de 3 quartos à venda por R$ 250.000 | `56.6 KB` |
 | **09** | [`foto_09.jpg`](./fotos/foto_09.jpg) | Casa · 121m² · 3 quartos - Imobiliária Clementino | `46.3 KB` |
 | **10** | [`foto_10.jpg`](./fotos/foto_10.jpg) | Casa venda de 3 quartos | `54.3 KB` |
 | **11** | [`foto_11.jpg`](./fotos/foto_11.jpg) | Casa · 121m² · 3 quartos | `92.4 KB` |
