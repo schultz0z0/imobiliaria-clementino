@@ -1,4 +1,4 @@
-# Jardim América - V.Esperança, Melhor Rua, Casa, Quintal, 1 Qto, Sala Jantar/Estar, Cozinha e Terraço
+# Casa em Jardim América — Vila Esperança, térrea e com entrada independente
 
 > **Casa · 73m² · 1 quarto**
 > **Link oficial:** [Imovelweb](https://www.imovelweb.com.br/propriedades/jardim-america-v.esperanca-melhor-rua-casa-3043565436.html)
@@ -48,7 +48,8 @@
 
 ## Descrição completa
 
-Esta casa térrea com entrada independente está disponível para venda no Jardim América. O imóvel apresenta 73 m² de área construída bem distribuídos em 1 quarto, 1 banheiro, sala de jantar e uma cozinha gourmet funcional, além de área de serviço separada. O espaço externo conta com um quintal privativo ideal para quem tem animais de estimação, pois o imóvel permite animais. Localizada em uma região residencial consolidada e muito tranquila, a casa oferece excelente conectividade com vias principais do bairro, proximidade a padarias, farmácias, mercados e pontos de transporte público local, garantindo praticidade e conforto para o cotidiano.
+Casa térrea com entrada independente na Vila Esperança, em Jardim América. Possui 73 m² de área construída, um quarto, banheiro, sala de jantar, cozinha gourmet e área de serviço separada.
+A área externa conta com quintal privativo, e o imóvel permite animais. A localização oferece acesso ao comércio, aos serviços e ao transporte público do bairro.
 
 ## Galeria completa (35 fotos)
 

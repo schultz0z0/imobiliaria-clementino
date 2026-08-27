@@ -1,4 +1,4 @@
-# Jardim América- Apto Tipo Casa , 78m², quintal, 2 quartos, 2 banheiros
+# Apartamento em Jardim América — Rua Álvaro de Magalhães, térreo e com quintal
 
 > **Apartamento · 75m² · 2 quartos**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/jardim-america-apto-tipo-casa-78m-quintal-2-3017305795.html](https://www.imovelweb.com.br/propriedades/jardim-america-apto-tipo-casa-78m-quintal-2-3017305795.html)  
@@ -42,13 +42,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Em Jardim América- Apartamento tipo casa com entrada independente, 78m², quintal, sala, 2 quartos, 2 banheiros, cozinha, área de serviço externa.
-Rua Álvaro Magalhães.
-(Aceito Carta de Crédito),
-```
-
----
+Apartamento tipo casa, com entrada independente, na Rua Álvaro de Magalhães, em Jardim América.
+Possui 78 m², quintal, sala, dois quartos, dois banheiros, cozinha e área de serviço externa. Aceita carta de crédito.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

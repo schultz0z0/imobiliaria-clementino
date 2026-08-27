@@ -1,4 +1,4 @@
-# Casa Duplex c/ 140 m², Varandão, 2 Quartos, 2 Suítes, 4 Banheiros, em Coelho Neto, Quintal e Garagem
+# Casa duplex em Coelho Neto — Rua Parnaíba, suítes e garagem
 
 > **Casa · 135m² · 2 quartos · 3 vagas**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/casa-duplex-c-140-m-varandao-2-quartos-2-suites-3042851381.html](https://www.imovelweb.com.br/propriedades/casa-duplex-c-140-m-varandao-2-quartos-2-suites-3042851381.html)  
@@ -44,15 +44,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Casa disponível para venda em Coelho Neto, Rio de Janeiro. A propriedade, com 30 anos de idade, oferece 140 m² de área construída em um terreno de 189 m².
-O imóvel distribui-se em 2 andares e apresenta 2 quartos, sendo 2 suítes, e um total de 4 banheiros. A cozinha é funcional e a casa inclui despensa e área de serviço, proporcionando organização e praticidade para o dia a dia.
-Na área externa, a casa dispõe de 3 vagas de garagem, além de uma entrada independente que oferece maior autonomia aos moradores.
-Coelho Neto é um bairro com infraestrutura completa, caracterizado por seu ambiente residencial e familiar. A região conta com fácil acesso a transportes públicos, incluindo a estação de metrô Coelho Neto e diversas linhas de ônibus, além de importantes vias como a Avenida Brasil. Há uma variedade de comércios e serviços próximos, como supermercados, farmácias e agências bancárias e Clínica da Família, atendendo às necessidades de seus moradores.
-O imóvel será alugado para, no máximo 4 pessoas da mesma família. Pedimos o equivalente a 2 meses de depósito caução como garantia fiança e renda comprovada até 3 vezes o valor de aluguel.
-```
-
----
+Casa duplex para locação na Rua Parnaíba, em Coelho Neto, com 140 m² de área construída em terreno de 189 m². Possui dois quartos — ambos suítes —, quatro banheiros, cozinha, despensa, área de serviço, entrada independente e três vagas de garagem.
+A locação é destinada a até quatro pessoas da mesma família e exige dois meses de depósito caução e comprovação de renda equivalente a três vezes o aluguel.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

@@ -1,7 +1,7 @@
 {
   "url": "https://www.imovelweb.com.br/propriedades/jardim-america-apto-tipo-casa-terreo-3qtos-quintal-3041818174.html",
   "dados_gerais": {
-    "titulo": "Jardim América- Apto Tipo Casa Térreo- 3Qtos, Quintal , 1 Vaga",
+    "titulo": "Casa em Jardim América — Rua Marechal José Pessoa, quintal e vaga",
     "subtitulo": "Casa · 90m² · 3 quartos · 1 vaga",
     "codigo_imovel": "1004",
     "id_imovelweb": "3041818174",
@@ -70,48 +70,8 @@
       "icon": "antiguedad"
     }
   },
-  "caracteristicas_extras": {
-    "Áreas privativas": {
-      "IW_01_001": {
-        "featureId": "IW_01_001",
-        "label": "Área de serviço",
-        "measure": null,
-        "value": null,
-        "icon": null
-      },
-      "IW_01_002": {
-        "featureId": "IW_01_002",
-        "label": "Cozinha independente",
-        "measure": null,
-        "value": null,
-        "icon": null
-      },
-      "IW_01_003": {
-        "featureId": "IW_01_003",
-        "label": "Quintal",
-        "measure": null,
-        "value": null,
-        "icon": null
-      },
-      "IW_01_004": {
-        "featureId": "IW_01_004",
-        "label": "Varanda",
-        "measure": null,
-        "value": null,
-        "icon": null
-      }
-    },
-    "Outros": {
-      "IW_02_001": {
-        "featureId": "IW_02_001",
-        "label": "Andares",
-        "measure": null,
-        "value": "2",
-        "icon": null
-      }
-    }
-  },
-  "descricao": "Alugo Esta casa de 2 andares no tradicional bairro do Jardim América. O imóvel apresenta 90 m² de área construída com uma distribuição prática que engloba 3 quartos, 2 banheiros sociais, cozinha independente e área de serviço funcional.\nNa parte externa, você conta com uma agradável varanda, quintal privativo e 1 vaga de garagem. O imóvel possui 35 anos de construção, mantendo uma estrutura sólida e segura.\nA localização no Jardim América é de fácil acesso a grandes avenidas. O entorno oferece comércio variado, supermercados, escolas e serviços essenciais.",
+  "caracteristicas_extras": {},
+  "descricao": "Casa de dois pavimentos para locação na Rua Marechal José Pessoa, em Jardim América. Possui 90 m² de área construída, três quartos, dois banheiros sociais, cozinha independente e área de serviço.\nA área externa conta com varanda, quintal privativo e uma vaga de garagem.",
   "anunciante": {
     "nome": "Imobiliária Clementino",
     "creci": "22953",

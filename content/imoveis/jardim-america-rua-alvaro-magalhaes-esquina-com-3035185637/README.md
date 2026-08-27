@@ -1,4 +1,4 @@
-# Jardim América - Rua Álvaro Magalhães Esquina com Rodolfo Chambeland, Lojão com 75m², 2 Banheiros.
+# Loja em Jardim América — Esquina das ruas Álvaro de Magalhães e Rodolfo Chambeland
 
 > **Comercial · 76m² · 1 vaga**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/jardim-america-rua-alvaro-magalhaes-esquina-com-3035185637.html](https://www.imovelweb.com.br/propriedades/jardim-america-rua-alvaro-magalhaes-esquina-com-3035185637.html)  
@@ -41,14 +41,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Comercial disponível para venda no Jardim América, com 76 m² de área construída e 78 m² de área total. O imóvel possui idade de 40 anos e conta com 1 vaga.
-O espaço interno oferece versatilidade para adaptar-se a diferentes tipos de negócios. A área útil de 76 m² permite a criação de um ambiente funcional e acolhedor para clientes e colaboradores.
-O imóvel dispõe de 1 vaga de estacionamento, facilitando o acesso de clientes e funcionários.
-Localizado no Jardim América, o comercial está inserido em uma região com grande variedade de serviços e comércios. A área é conhecida por sua infraestrutura completa, com fácil acesso a supermercados, bancos, farmácias e restaurantes. A localização estratégica garante visibilidade e conveniência para o seu negócio. O Jardim América oferece um ambiente dinâmico e propício para o crescimento de empresas de diversos segmentos.
-```
-
----
+Loja de esquina na Rua Álvaro de Magalhães com a Rua Rodolfo Chambeland, em Jardim América. Possui 76 m² de área construída, 78 m² de área total, dois banheiros e uma vaga.
+O espaço interno permite diferentes configurações comerciais e fica em uma região com comércio e serviços variados.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

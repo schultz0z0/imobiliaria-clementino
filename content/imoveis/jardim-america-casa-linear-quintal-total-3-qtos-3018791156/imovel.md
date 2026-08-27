@@ -1,4 +1,4 @@
-# Jardim América - Casa Linear, Quintal, Total 3 Qtos + Anexo, Garagem.
+# Casa em Jardim América — Rua Gelabert Simas, quintal e anexo
 
 > **Casa · 85m² · 4 vagas**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/jardim-america-casa-linear-quintal-total-3-qtos-3018791156.html](https://www.imovelweb.com.br/propriedades/jardim-america-casa-linear-quintal-total-3-qtos-3018791156.html)  
@@ -42,11 +42,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Em Jardim América, Rua Gelabert Simas, Próx. ponto final do 774. Casa linear com 85m², total de 2 quartos + apto anexo tipo sala e quarto. A casa possui um quintal grande, garagem, sala 2 ambientes, dois quartos amplos, 2 banheiros, copa e cozinha. A área externa conta com lavanderia, dois tanques. Doctos ok. Aceito financiamento da Caixa ou outro banco.
-```
-
----
+Casa linear de 85 m² na Rua Gelabert Simas, próxima ao ponto final da linha 774. Possui sala em dois ambientes, dois quartos, dois banheiros, copa, cozinha, quintal amplo e garagem.
+A área externa conta com lavanderia e um apartamento anexo composto por sala e quarto. A documentação está regular e o imóvel aceita financiamento bancário.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

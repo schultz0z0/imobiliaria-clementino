@@ -1,4 +1,4 @@
-# Botafogo - Rio de Janeiro, RJ - Apto 3 Qtos, 1 Suíte, 2 Bnh, 1 Vaga Garagem
+# Apartamento em Botafogo — Rua Assunção, reformado e com vaga
 
 > **Apartamento · 118m² · 3 quartos · 1 vaga**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/botafogo-rio-de-janeiro-rj-apto-3-qtos-1-suite-3017305797.html](https://www.imovelweb.com.br/propriedades/botafogo-rio-de-janeiro-rj-apto-3-qtos-1-suite-3017305797.html)  
@@ -43,14 +43,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Excelente apartamento de 118 m², localizado em rua tranquila de Botafogo. Composto por hall de entrada, sala ampla e iluminada, 3 quartos, sendo 1 suíte, com armários planejados e ar-condicionado, banheiros com box blindex, copa-cozinha com armários, área de serviço ampla e arejada, além de dependência completa. 
-O imóvel passou por reforma completa na parte elétrica e hidráulica. Possui 1 vaga no condomínio. Prédio com portaria 24 horas. 
-Próximo a farto comércio e conveniências da região. 
-Não perca esta oportunidade única de morar ou investir.
-```
-
----
+Apartamento de 118 m² em rua tranquila de Botafogo. Possui hall de entrada, sala ampla, três quartos — sendo uma suíte — com armários planejados e ar-condicionado, banheiros com box blindex, copa-cozinha, área de serviço e dependência completa.
+As instalações elétricas e hidráulicas foram reformadas. O imóvel tem uma vaga no condomínio, e o prédio conta com portaria 24 horas.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

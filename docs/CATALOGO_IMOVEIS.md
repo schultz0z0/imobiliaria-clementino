@@ -53,9 +53,12 @@ No catálogo do site:
 - `id` recebe `id_imovelweb`;
 - `reference` recebe `codigo_imovel` e usa o ID como fallback;
 - `slug` é gerado com o título e o ID;
+- URLs antigas continuam resolvendo o imóvel quando terminam com o mesmo ID técnico;
 - as imagens usam `/imoveis/<id>/...`;
 - a busca considera título, localização, referência e ID;
 - cards, página individual e WhatsApp exibem ou enviam a referência comercial.
+
+Seleções editoriais, como os destaques da home, também devem guardar os IDs em vez dos slugs. Assim, uma revisão de título não remove o imóvel da seleção nem rompe sua ligação com o conteúdo original.
 
 ## Regras protegidas pelo código
 
@@ -84,7 +87,7 @@ npm test
 5. Execute `npm run catalog:generate`.
 6. Execute as validações do catálogo e os testes.
 
-O título pode ser alterado seguindo esse fluxo. O imóvel continuará ligado ao conteúdo pelo ID técnico, embora o slug público gerado possa mudar.
+O título pode ser alterado seguindo esse fluxo. O imóvel continuará ligado ao conteúdo pelo ID técnico, embora o slug público gerado possa mudar. O catálogo mantém compatibilidade com URLs anteriores que contenham esse ID no final.
 
 ## Referência comercial não é chave técnica
 

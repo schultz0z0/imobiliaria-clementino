@@ -1,4 +1,4 @@
-# Casa de condomínio com 4 quartos, 436m², à venda em Niterói, Vila Progresso
+# Casa em condomínio em Vila Progresso — Condomínio Ubá Independência
 
 > **Casa · 436m² · 4 quartos · 2 vagas**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/casa-de-condominio-com-4-quartos-436m-a-venda-em-3017305811.html](https://www.imovelweb.com.br/propriedades/casa-de-condominio-com-4-quartos-436m-a-venda-em-3017305811.html)  
@@ -43,20 +43,9 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-???? Viva em Harmonia com a Natureza no Condomínio Ubá Independência ???? 
-Esta esplêndida casa de 436m², situada no prestigiado condomínio de Pendotiba, é um verdadeiro oásis para aqueles que buscam espaço, conforto, natureza e segurança. Com aproximadamente 1.500m² de terreno, esta residência proporciona uma vista panorâmica deslumbrante para a exuberante vegetação local. 
-O terreno abriga um pomar farto e diversificado, oferecendo frutas frescas como manga, tangerina, nêspera, cajú, maracujá, limões, laranjas e goiaba. Há espaço para uma horta e possibilidades de expansão da propriedade, incluindo a construção de uma piscina no platô disponível. 
-Preparada para o conforto de seus moradores, a casa conta com estrutura para a instalação de um elevador panorâmico e paredes térmicas feitas de bloco celular autoclavado, garantindo temperatura agradável em todas as estações. 
-A distribuição da casa compreende três pavimentos, oferecendo espaços generosos para acomodar sua família com comodidade e estilo. 
-1º pavimento: Com um living espaçoso de mais de 70m² e pé-direito alto com vista para o jardim, este ambiente é perfeito para momentos de convívio. Possui ainda uma área de depósito e lavabo. Na área externa, uma ampla garagem com um banheiro completo. 
-2º pavimento: Este pavimento abriga uma sala de jantar e área íntima com 55m², cozinha equipada com armários planejados da Romanzza, copa e despensa. Além disso, um quarto e uma varanda espaçosa com preparação para churrasqueira. 
-3º pavimento: Aqui, você encontrará quatro suítes, sendo três com closet e a suíte master com 38,5m², hidromassagem e um amplo closet. Todas as suítes têm preparação para instalação de aparelhos de ar-condicionado split. 
-Além disso, há espaço para acomodar dois veículos com facilidade. 
-Esta é a oportunidade perfeita para viver com conforto, harmonia com a natureza e segurança em uma das melhores localidades de Pendotiba. Venha conhecer! ????
-```
-
----
+Casa de 436 m² no Condomínio Ubá Independência, em Pendotiba, construída em terreno de aproximadamente 1.500 m² com vista para a vegetação e pomar com diferentes árvores frutíferas. A estrutura possui paredes térmicas de bloco celular autoclavado e preparação para elevador panorâmico.
+No primeiro pavimento, há living com mais de 70 m² e pé-direito alto, lavabo, depósito e garagem com banheiro. O segundo pavimento reúne sala de jantar, área íntima, cozinha com armários planejados, copa, despensa, um quarto e varanda preparada para churrasqueira.
+O terceiro pavimento possui quatro suítes, três delas com closet. A suíte principal tem 38,5 m², hidromassagem e closet. Todas as suítes contam com preparação para ar-condicionado split.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

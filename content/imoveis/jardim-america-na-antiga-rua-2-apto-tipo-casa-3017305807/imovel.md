@@ -1,4 +1,4 @@
-# Jardim América, na Antiga Rua 2 - Apto Tipo Casa, Quintal, Total 3 Qtos, 2 Vgs.
+# Apartamento em Jardim América — Rua João de Paula Fonseca, térreo e com quintal
 
 > **Apartamento · 65m² · 3 quartos · 2 vagas**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/jardim-america-na-antiga-rua-2-apto-tipo-casa-3017305807.html](https://www.imovelweb.com.br/propriedades/jardim-america-na-antiga-rua-2-apto-tipo-casa-3017305807.html)  
@@ -43,11 +43,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Jardim América, Apto Térreo Tipo Casa, sala 2 ambientes, circulação, 3 quartos, sendo 1 escritório, banheiro social completo, copa e cozinha, quintal nos fundos com área de lavanderia coberta. Todo Acabamento de 1ª qualidade, pisos, azulejos, torneiras, chuveiros, acessórios, toda elétrica e hidráulica. O imóvel possui bomba d'água específica para casos de enchente. Vagas p/ 2 carros. Aceita Carta de Crédito.
-```
-
----
+Apartamento térreo tipo casa em Jardim América. Possui sala em dois ambientes, circulação, três quartos — um deles usado como escritório —, banheiro social, copa, cozinha e quintal com lavanderia coberta.
+O imóvel tem acabamentos renovados, bomba d'água para situações de enchente e espaço para dois carros. Aceita carta de crédito.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

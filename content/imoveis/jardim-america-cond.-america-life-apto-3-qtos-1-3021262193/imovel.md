@@ -1,4 +1,4 @@
-# Jardim América  - Cond. América Life, Apto 3 Qtos, 1 Vga.
+# Apartamento em Jardim América — Residencial América Life, quarto andar
 
 > **Apartamento · 68m² · 3 quartos · 1 vaga**
 > **Link oficial:** [Imovelweb](https://www.imovelweb.com.br/propriedades/jardim-america-cond.-america-life-apto-3-qtos-1-3021262193.html)
@@ -51,7 +51,8 @@
 
 ## Descrição completa
 
-Em Jardim América, no Residencial América Life, apartamento de 69m² no 4º andar, composto por sala, 3 quartos e 1 vaga de garagem. O condomínio possui área de lazer, espaço gourmet, piscina, churrasqueiras, quadra poliesportiva e playground. Imóvel à venda por R$ 158.000, com condomínio de R$ 290.
+Apartamento de 69 m² no quarto andar do Residencial América Life, em Jardim América. Possui sala, três quartos e uma vaga de garagem.
+O condomínio oferece piscina, churrasqueiras, espaço gourmet, quadra poliesportiva, playground e outras áreas de lazer.
 
 ## Galeria completa (18 fotos)
 

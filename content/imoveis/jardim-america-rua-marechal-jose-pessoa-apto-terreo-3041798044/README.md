@@ -1,4 +1,4 @@
-# Jardim América - Rua Marechal José Pessoa, Apto Térreo Tipo Casa, Varanda, 3 Qtos, 2 Banheiros, 1 Vg
+# Apartamento em Jardim América — Rua Marechal José Pessoa, térreo e com varanda
 
 > **Casa · 90m² · 3 quartos · 1 vaga**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/jardim-america-rua-marechal-jose-pessoa-apto-terreo-3041798044.html](https://www.imovelweb.com.br/propriedades/jardim-america-rua-marechal-jose-pessoa-apto-terreo-3041798044.html)  
@@ -43,12 +43,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Apto Térreo Tipo Casa disponível para aluguel no Jardim América, na Rua Marechal José Pessoa, apresentando 90 m² de área construída e 93 m² de área total. O imóvel conta com 37 anos de história e possui uma distribuição interna funcional com sala de jantar, cozinha, área de serviço e 2 banheiros, sendo 1 sociail e o outro externo. No espaço exterior tem varanda e 1 vaga de garagem.
-A localização garante fácil acesso a avenidas principais, proximidade a escolas de qualidade, supermercados, farmácias e diversas opções de transporte público.
-```
-
----
+Apartamento térreo tipo casa para locação na Rua Marechal José Pessoa, em Jardim América. Possui 90 m² de área construída e 93 m² de área total, com sala de jantar, cozinha, área de serviço, dois banheiros — um social e outro externo — e varanda.
+A unidade dispõe de uma vaga de garagem e tem acesso às principais avenidas, ao comércio, às escolas e ao transporte público do bairro.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

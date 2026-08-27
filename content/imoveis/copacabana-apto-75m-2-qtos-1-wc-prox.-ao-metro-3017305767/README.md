@@ -1,4 +1,4 @@
-# Copacabana - Apto 75m², 2 Qtos, 1 WC, Prox. Ao Metrô
+# Apartamento em Copacabana — Rua Inhangá, reformado e próximo ao metrô
 
 > **Apartamento · 75m² · 2 quartos**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/copacabana-apto-75m-2-qtos-1-wc-prox.-ao-metro-3017305767.html](https://www.imovelweb.com.br/propriedades/copacabana-apto-75m-2-qtos-1-wc-prox.-ao-metro-3017305767.html)  
@@ -42,15 +42,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Apartamento de 75 m² totalmente reformado na Rua Inhangá, Copacabana. Composto por sala em dois ambientes com piso em porcelanato e split; 2 quartos amplos com split, iluminados e bem ventilados; cozinha moderna com bancada e cooktop por indução; área de serviço com tanque e instalação para máquina de lavar; banheiro social. 
-Localizado em prédio bem administrado, com portaria em horário comercial, apenas 2 unidades por andar, salão de festas para os moradores. 
-Próximo à estação de metrô, conveniências da região e à praia de Copacabana 
-. 
-Não perca esta oportunidade única de morar ou investir.
-```
-
----
+Apartamento reformado de 75 m² na Rua Inhangá, em Copacabana. Possui sala em dois ambientes com piso em porcelanato e ar-condicionado split, dois quartos amplos e ventilados, cozinha com bancada e cooktop por indução, área de serviço e banheiro social.
+O prédio tem portaria em horário comercial, duas unidades por andar e salão de festas. Fica próximo ao metrô, à praia e às conveniências do bairro.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

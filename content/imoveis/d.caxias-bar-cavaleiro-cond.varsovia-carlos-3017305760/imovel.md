@@ -1,4 +1,4 @@
-# D.Caxias, Bar Cavaleiro, Cond.Varsóvia, Carlos Sampaio, Apt 62m², 2 Qts, 3ºAndar
+# Apartamento em Engenho do Porto — Condomínio Varsóvia, próximo ao Centro de Caxias
 
 > **Apartamento · 62m² · 2 quartos**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/d.caxias-bar-cavaleiro-cond.varsovia-carlos-3017305760.html](https://www.imovelweb.com.br/propriedades/d.caxias-bar-cavaleiro-cond.varsovia-carlos-3017305760.html)  
@@ -42,11 +42,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Em Duque de Caxias, junto ao Centro, a 10 minutos à pé do Calçadão de Caxias, Condomínio Habitacional Varsóvia, apto com 62 m², 3º andar, sala em 2 ambientes, banheiro social, 2 qtos, cozinha e área de serviço.
-```
-
----
+Apartamento no terceiro andar do Condomínio Habitacional Varsóvia, em Engenho do Porto, a cerca de dez minutos a pé do Centro de Duque de Caxias.
+Possui 62 m², sala em dois ambientes, dois quartos, banheiro social, cozinha e área de serviço.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

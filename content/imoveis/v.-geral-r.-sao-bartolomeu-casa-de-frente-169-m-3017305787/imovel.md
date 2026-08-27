@@ -1,4 +1,4 @@
-# V. Geral - R. São Bartolomeu, Casa de Frente, 169 m², Independente, 2 Varandas, Total 3 Qtos, 2 Banh
+# Casa em Vigário Geral — Rua São Bartolomeu, independente e com terraço
 
 > **Casa · 169m² · 2 quartos**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/v.-geral-r.-sao-bartolomeu-casa-de-frente-169-m-3017305787.html](https://www.imovelweb.com.br/propriedades/v.-geral-r.-sao-bartolomeu-casa-de-frente-169-m-3017305787.html)  
@@ -41,11 +41,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Casa frente de rua com 169 m², independente, em terreno de 840m² com mais duas casas. Imóvel composto de: quintal à frente, varanda, sala 2 ambientes, corredor, banheiro social, 02 quartos, copa cozinha, varanda nos fundos e área de lavanderia com tanque, quarto de serviço. Escada de acesso ao terraço coberto no pavimento superior, com uma copa e banheiro. Entrada da casa independente e água e luz separadas. Documentos ok. Aceita carta de crédito.
-```
-
----
+Casa de frente para a rua, com entrada independente e 169 m². O primeiro pavimento possui quintal, varanda, sala em dois ambientes, dois quartos, banheiro social, copa-cozinha, varanda nos fundos, lavanderia e quarto de serviço.
+No pavimento superior, há terraço coberto, copa e banheiro. A água e a energia elétrica são individualizadas, a documentação está regular e o imóvel aceita carta de crédito.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

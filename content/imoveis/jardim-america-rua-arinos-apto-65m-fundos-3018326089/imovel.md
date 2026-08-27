@@ -1,4 +1,4 @@
-# Jardim América - Rua Arinos, Apto 65m², Fundos, Quintal,  1 Qto, Vga.
+# Apartamento em Jardim América — Rua Arinos, térreo e com quintal
 
 > **Apartamento · 67m² · 1 quarto · 1 vaga**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/jardim-america-rua-arinos-apto-65m-fundos-3018326089.html](https://www.imovelweb.com.br/propriedades/jardim-america-rua-arinos-apto-65m-fundos-3018326089.html)  
@@ -43,11 +43,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Em Jardim América, vendo apto térreo com 65m² com 1 quarto, mas pode transformar em 2 qtos. Apto de fundos, tranquilo, independente, em prédio familiar, tranquilo, com 2 andares e total de 4 aptos, sem condomínio. Imóvel com quintal, varanda, boa sala, corredor, banheiro social, 1 quarto bom, cozinha, área de serviço. Tem 1 vaga pra carro na servidão. Aceito carta de crédito.
-```
-
----
+Apartamento térreo de fundos em prédio familiar com quatro unidades e sem cobrança de condomínio, na Rua Arinos. Possui 65 m², varanda, quintal, sala, um quarto com possibilidade de adaptação para dois, banheiro social, cozinha e área de serviço.
+A unidade tem uma vaga na servidão e aceita carta de crédito.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

@@ -1,4 +1,4 @@
-# Jardim América- R. Mozart,Apto, 1 quarto, Sl,Coz, Área C/Tanque
+# Apartamento em Jardim América — Rua Mozart, sem condomínio
 
 > **Apartamento · 50m² · 1 quarto**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/jardim-america-r.-mozart-apto-1-quarto-sl-coz-area-3017305801.html](https://www.imovelweb.com.br/propriedades/jardim-america-r.-mozart-apto-1-quarto-sl-coz-area-3017305801.html)  
@@ -42,14 +42,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Em Jardim América na R.Mozart, vendo este aconchegante apartamento 50m², 1° andar, localizado em um prédio tranquilo de apenas 2 andares, sem condomínio e com apenas 2 apartamentos por andar. Um verdadeiro achado para quem busca comodidade e economia. 
-Este charmoso apartamento é composto por uma sala acolhedora, um banheiro social com box blindex, um quarto espaçoso, uma cozinha funcional e uma área de serviço com tanque. 
-apenas R$ 135.000 
-Agende sua visita e faça deste apartamento o seu lar . Entre em contato.
-```
-
----
+Apartamento de 50 m² no primeiro andar de um prédio com dois pavimentos e apenas duas unidades por andar, sem cobrança de condomínio.
+Possui sala, um quarto, banheiro social com box blindex, cozinha e área de serviço com tanque.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

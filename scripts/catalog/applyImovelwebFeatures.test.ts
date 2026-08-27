@@ -92,6 +92,25 @@ test('preserves explicitly audited legacy characteristics for a finalized listin
   });
 });
 
+test('does not erase verified characteristics when the current page is unavailable', () => {
+  const record = makeRawRecord();
+  record.caracteristicas_extras = {
+    'Áreas privativas': {
+      existing: { featureId: 'existing', label: 'Quintal', measure: null, value: null },
+    },
+  };
+
+  const updated = applyAuditEntry(record, {
+    id: '3042851381',
+    url: 'https://www.imovelweb.com.br/propriedades/exemplo-3042851381.html',
+    status: 'unavailable',
+    note: 'Página sem confirmação suficiente do anúncio.',
+    groups: [],
+  });
+
+  assert.deepEqual(updated.caracteristicas_extras, record.caracteristicas_extras);
+});
+
 test('requires exact 1:1 coverage, matching URLs and usable statuses', () => {
   const sources = [
     { id: '1', url: 'https://www.imovelweb.com.br/propriedades/um-1.html' },
@@ -114,10 +133,17 @@ test('requires exact 1:1 coverage, matching URLs and usable statuses', () => {
     ...valid,
     properties: [valid.properties[0], { ...valid.properties[1], url: 'https://example.com/errada' }],
   }), /URL divergente/i);
+  assert.doesNotThrow(() => validateAuditCoverage(sources, {
+    ...valid,
+    properties: [
+      valid.properties[0],
+      { ...valid.properties[1], status: 'unavailable', note: 'Página não verificável.' },
+    ],
+  }));
   assert.throws(() => validateAuditCoverage(sources, {
     ...valid,
     properties: [valid.properties[0], { ...valid.properties[1], status: 'unavailable' }],
-  }), /indisponível/i);
+  }), /justificativa/i);
   assert.throws(() => validateAuditCoverage(sources, {
     ...valid,
     properties: [valid.properties[0], { ...valid.properties[0] }],
@@ -139,15 +165,22 @@ test('requires exact 1:1 coverage, matching URLs and usable statuses', () => {
   }), /justificativa/i);
 });
 
-test('reports captured, empty and preserved listings separately', () => {
+test('reports captured, empty, preserved and unavailable listings separately', () => {
   const audit: ImovelwebFeatureAudit = {
     generatedAt: '2026-08-27T00:00:00.000Z',
     properties: [
       { id: '1', url: 'https://example.com/1', status: 'captured', groups: [{ category: 'Outros', items: ['Aceita FGTS'] }] },
       { id: '2', url: 'https://example.com/2', status: 'no-section', groups: [] },
       { id: '3', url: 'https://example.com/3', status: 'preserved', note: 'Finalizado.', groups: [] },
+      { id: '4', url: 'https://example.com/4', status: 'unavailable', note: 'Indisponível.', groups: [] },
     ],
   };
 
-  assert.deepEqual(summarizeAudit(audit), { total: 3, captured: 1, noSection: 1, preserved: 1 });
+  assert.deepEqual(summarizeAudit(audit), {
+    total: 4,
+    captured: 1,
+    noSection: 1,
+    preserved: 1,
+    unavailable: 1,
+  });
 });

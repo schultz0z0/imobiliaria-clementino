@@ -13,11 +13,16 @@ export interface ImovelwebFeatureAuditEntry {
   url: string;
   status: 'captured' | 'no-section' | 'preserved' | 'unavailable';
   groups: ImovelwebFeatureGroup[];
+  primaryFacts?: string[];
   note?: string;
 }
 
 export interface ImovelwebFeatureAudit {
   generatedAt: string;
+  selectors?: {
+    primaryFacts: string;
+    extraFeatures: string;
+  };
   properties: ImovelwebFeatureAuditEntry[];
 }
 
@@ -56,12 +61,14 @@ export const toCharacteristicsExtras = (groups: ImovelwebFeatureGroup[]): Charac
 export const applyAuditEntry = (
   record: RawPropertyRecord,
   entry: ImovelwebFeatureAuditEntry,
-): RawPropertyRecord => ({
-  ...record,
-  caracteristicas_extras: entry.status === 'captured' || entry.status === 'preserved'
-    ? toCharacteristicsExtras(entry.groups)
-    : {},
-});
+): RawPropertyRecord => entry.status === 'unavailable'
+  ? record
+  : {
+      ...record,
+      caracteristicas_extras: entry.status === 'captured' || entry.status === 'preserved'
+        ? toCharacteristicsExtras(entry.groups)
+        : {},
+    };
 
 export const validateAuditCoverage = (
   sources: CatalogSourceIdentity[],
@@ -80,9 +87,8 @@ export const validateAuditCoverage = (
     const source = sourceById.get(entry.id);
     if (!source) throw new Error(`Imóvel desconhecido na auditoria: ${entry.id}.`);
     if (source.url !== entry.url) throw new Error(`URL divergente para o imóvel ${entry.id}.`);
-    if (entry.status === 'unavailable') throw new Error(`Anúncio indisponível para o imóvel ${entry.id}: ${entry.note ?? 'sem detalhes'}.`);
-    if (entry.status === 'preserved' && !entry.note?.trim()) {
-      throw new Error(`Imóvel ${entry.id} preservado sem justificativa.`);
+    if ((entry.status === 'preserved' || entry.status === 'unavailable') && !entry.note?.trim()) {
+      throw new Error(`Imóvel ${entry.id} ${entry.status} sem justificativa.`);
     }
     if (entry.status === 'captured' && entry.groups.length === 0) {
       throw new Error(`Imóvel ${entry.id} marcado como capturado sem grupos.`);
@@ -106,6 +112,7 @@ export const summarizeAudit = (audit: ImovelwebFeatureAudit) => ({
   captured: audit.properties.filter((entry) => entry.status === 'captured').length,
   noSection: audit.properties.filter((entry) => entry.status === 'no-section').length,
   preserved: audit.properties.filter((entry) => entry.status === 'preserved').length,
+  unavailable: audit.properties.filter((entry) => entry.status === 'unavailable').length,
 });
 
 const run = (auditPath: string): void => {
@@ -132,7 +139,7 @@ const run = (auditPath: string): void => {
   }
 
   const summary = summarizeAudit(audit);
-  console.log(`Características aplicadas: ${summary.total} imóveis (${summary.captured} com seção; ${summary.noSection} sem seção; ${summary.preserved} preservados).`);
+  console.log(`Características aplicadas: ${summary.total} imóveis (${summary.captured} com seção; ${summary.noSection} sem seção; ${summary.preserved} preservados; ${summary.unavailable} indisponíveis).`);
 };
 
 const isMain = process.argv[1]

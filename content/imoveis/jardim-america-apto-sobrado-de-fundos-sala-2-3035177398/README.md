@@ -1,4 +1,4 @@
-# Jardim América - Apto Sobrado, de Fundos, Sala, 2 Qtos, Banh. Social, Cozinha e Área de Serviço.
+# Apartamento em Jardim América — Rua Plínio Barreto, sobrado de fundos
 
 > **Apartamento · 90m² · 2 quartos**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/jardim-america-apto-sobrado-de-fundos-sala-2-3035177398.html](https://www.imovelweb.com.br/propriedades/jardim-america-apto-sobrado-de-fundos-sala-2-3035177398.html)  
@@ -42,12 +42,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Apartamento disponível para aluguel no Jardim América, com 70 m² de área construída. O imóvel conta com 2 quartos, área de serviço. A posição do apartamento é fundos, proporcionando maior privacidade.
-Internamente. O Jardim América é uma região bem localizada, com fácil acesso a diversas opções de comércio e serviços. Próximo a supermercados, farmácias e escolas, o bairro oferece toda a infraestrutura necessária para o dia a dia. A mobilidade é facilitada pelas diversas linhas de ônibus que circulam pela região, além da proximidade com importantes vias de acesso. O bairro é predominantemente residencial, com um ambiente familiar e tranquilo. O imóvel possui sala, 2 quartos, banheiro social, cozinha e área de serviço. A localização do imóvel é fora da área de enchente no bairro.
-```
-
----
+Apartamento tipo sobrado, de fundos, disponível para locação na Rua Plínio Barreto, em Jardim América. Possui 70 m², sala, dois quartos, banheiro social, cozinha e área de serviço.
+O imóvel fica fora da área de enchente do bairro e tem acesso ao comércio, aos serviços e ao transporte público da região.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

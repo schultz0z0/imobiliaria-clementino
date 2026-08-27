@@ -1,4 +1,4 @@
-# Venda
+# Apartamento em Jardim América — Rua Robert Schumann e acesso ao terraço
 Jardim América - Apto 3 Qtos, Área 78m ², Junto Praça Central , Comércio, Loteria, Transporte
 
 > **Apartamento · 76m² · 2 quartos**  
@@ -43,12 +43,8 @@ Jardim América - Apto 3 Qtos, Área 78m ², Junto Praça Central , Comércio, L
 
 ## 📝 Descrição do Imóvel
 
-```text
-Apartamento à venda em Jardim América, com excelente localização. O imóvel possui 3 quartos , área construída é de 76 m² com direito ao uso da laje do terraço, com uma área total de 146 m², proporcionando espaços bem distribuídos. O apartamento conta com 2 banheiros e está situado na frente do prédio, oferecendo uma vista agradável. O edifício possui 3 andares e aceita FGTS, facilitando a aquisição.
-Jardim América é um bairro residencial tranquilo e bem localizado, com fácil acesso a importantes vias da cidade. A região oferece uma variedade de serviços, como supermercados, farmácias e escolas, tornando o dia a dia mais prático. Além disso, o bairro conta com áreas de lazer, como parques e praças, proporcionando momentos de relaxamento e diversão para toda a família. O transporte público é eficiente, com diversas linhas de ônibus, e junto ao terminal rodoviário do BRT, que ligam o bairro a outras regiões da cidade.
-```
-
----
+Apartamento de frente na Rua Robert Schumann, em Jardim América. Possui três quartos, dois banheiros e 76 m² de área construída, além do direito de uso da laje do terraço, totalizando 146 m².
+O prédio tem três andares, e o imóvel aceita FGTS. A localização fica próxima à Praça Central, ao comércio e ao terminal do BRT.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

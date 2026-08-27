@@ -1,4 +1,4 @@
-# Jardim América - Rua Arinos, Apto 78m², Frente,  2 Qtos, Vga.
+# Apartamento em Jardim América — Rua Arinos, de frente e sem condomínio
 
 > **Apartamento · 78m² · 2 quartos · 1 vaga**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/jardim-america-rua-arinos-apto-78m-frente-2-3018326088.html](https://www.imovelweb.com.br/propriedades/jardim-america-rua-arinos-apto-78m-frente-2-3018326088.html)  
@@ -43,11 +43,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Em Jardim América, Rua Arinos, Apto no 1º andar, 78m², frente pra rua, em prédio familiar e tranquilo, com 2 andares e um total de 4 aptos, sem condomínio. Imóvel composto: boa sala, corredor, banheiro social, 2 quartos de bom tamanho, cozinha e área de serviço. Tem 1 vaga pra carro na servidão. O valor médio da conta de água é de 180,00. Aceito carta de crédito.
-```
-
----
+Apartamento de frente no primeiro andar de um prédio familiar com quatro unidades e sem cobrança de condomínio, na Rua Arinos.
+Possui 78 m², sala, dois quartos, banheiro social, cozinha, área de serviço e uma vaga na servidão. Aceita carta de crédito.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

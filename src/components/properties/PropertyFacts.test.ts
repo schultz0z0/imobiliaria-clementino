@@ -17,23 +17,26 @@ const visibleFactCount = (property: WebsiteProperty) => [
     : '',
 ].filter((value) => value !== 0 && value !== '').length;
 
-test('uses a deterministic two-column compact layout on mobile', () => {
+test('uses balanced cards on mobile and distributes them responsively on larger screens', () => {
   const property = getAllProperties().find((candidate) => visibleFactCount(candidate) === 4);
   assert.ok(property);
 
   const markup = renderToStaticMarkup(createElement(PropertyFacts, { property }));
 
   assert.match(markup, /grid-cols-2/);
-  assert.match(markup, /md:grid-cols-\[repeat\(auto-fit,minmax\(130px,1fr\)\)\]/);
-  assert.match(markup, /min-h-\[88px\]/);
-  assert.match(markup, /md:block/);
+  assert.match(markup, /gap-2/);
+  assert.match(markup, /sm:grid-cols-3/);
+  assert.match(markup, /md:grid-cols-\[repeat\(auto-fit,minmax\(120px,1fr\)\)\]/);
+  assert.match(markup, /min-h-\[104px\]/);
+  assert.match(markup, /tabular-nums/);
 });
 
-test('lets the last mobile fact fill the row when the amount is odd', () => {
+test('keeps the last mobile fact the same width when the amount is odd', () => {
   const property = getAllProperties().find((candidate) => visibleFactCount(candidate) % 2 === 1);
   assert.ok(property);
 
   const markup = renderToStaticMarkup(createElement(PropertyFacts, { property }));
 
-  assert.match(markup, /col-span-2 md:col-span-1/);
+  assert.doesNotMatch(markup, /col-span-2/);
+  assert.equal(markup.match(/data-property-fact="true"/g)?.length, visibleFactCount(property));
 });

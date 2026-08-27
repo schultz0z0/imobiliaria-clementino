@@ -1,4 +1,4 @@
-# Jardim América - Residencial América Life, Tipo Cobertura, 92m², 2 Salas, 2 Quartos, Terraço, 1 Vga.
+# Cobertura duplex em Jardim América — Residencial América Life e terraço
 
 > **Apartamento · 92m² · 2 quartos · 1 vaga**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/jardim-america-residencial-america-life-tipo-3017305761.html](https://www.imovelweb.com.br/propriedades/jardim-america-residencial-america-life-tipo-3017305761.html)  
@@ -50,21 +50,5 @@
 
 ## 📝 Descrição do Imóvel
 
-> *"Em Jardim América, no Cond. Residencial América Life, apto duplex, tipo cobertura, composto de: 1º Piso: sala, banheiro social com box blindex, arms, 2 quartos, cozinha c/ arms, área de serviço com tanque. 2º Piso: sala tipo home + escritório, podendo fazer + 1 quarto, terraço descoberto podendo fazer área gourmet. Tem 1 vaga pra carro na escritura. Condomínio com área de lazer."*
-
-### 🔍 Distribuição por Pavimento:
-
-#### 🔹 **1º Pavimento:**
-- Sala de estar aconchegante e arejada
-- Banheiro social com acabamento em box blindex e armário
-- 2 quartos confortáveis
-- Cozinha com armários embutidos
-- Área de serviço integrada com tanque
-
-#### 🔹 **2º Pavimento:**
-- Sala ampla (utilizada como *Home Theater* / Escritório), com flexibilidade para ser adaptada como **3º quarto**
-- Terraço privativo descoberto com excelente incidência de sol, propício para área gourmet com churrasqueira
-
-#### 🔹 **Condomínio e Garagem:**
-- 1 vaga de garagem demarcada na escritura
-- Condomínio **Residencial América Life** com área de lazer
+Cobertura duplex no Residencial América Life, em Jardim América. No primeiro piso, possui sala, banheiro social com box blindex, dois quartos, cozinha com armários e área de serviço com tanque.
+O segundo piso conta com sala que pode ser usada como home office, terraço descoberto com possibilidade de área gourmet e espaço para mais um quarto. Há uma vaga de garagem na escritura, e o condomínio oferece área de lazer.

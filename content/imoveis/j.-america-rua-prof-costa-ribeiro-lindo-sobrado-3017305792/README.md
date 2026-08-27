@@ -1,4 +1,4 @@
-# J. América, Rua Profº Costa Ribeiro - Lindo Sobrado, Fdos 120m², 2 Qts + Terraço
+# Sobrado em Jardim América — Rua Professor Costa Ribeiro, fundos e terraço
 
 > **Apartamento · 98m² · 2 quartos**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/j.-america-rua-prof-costa-ribeiro-lindo-sobrado-3017305792.html](https://www.imovelweb.com.br/propriedades/j.-america-rua-prof-costa-ribeiro-lindo-sobrado-3017305792.html)  
@@ -42,11 +42,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Em Jardim América, próximo ao ponto final da linha 774 (Madureira - Jardim América). Lindo imóvel tipo sobrado, de fundos, só tem 2 aptos no prédiodos fundos, e não tem condomínio. O apto possui 2 salas, 2 quartos, 2 banheiros, e área total de 110m² e 98m² de área útil. Perfeito para moradia ou investimento! Valor do imóvel: R$ 150.000,00. Aceita financiamento bancário, O imóvel está disponível para visita em horários flexíveis. Agende sua visita agora mesmo.
-```
-
----
+Sobrado de fundos na Rua Professor Costa Ribeiro, em Jardim América, em prédio com apenas duas unidades nos fundos e sem cobrança de condomínio.
+O imóvel possui duas salas, dois quartos, dois banheiros e terraço. Aceita financiamento bancário.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

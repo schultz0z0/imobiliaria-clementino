@@ -1,4 +1,4 @@
-# Jardim América - Rua Professor França Amaral - Apto de Frente, 78m², 4º Andar, 3 Qtos + 1 Apto Anexo
+# Apartamento em Jardim América — Rua Professor França Amaral, de frente e com anexo
 
 > **Apartamento · 79m² · 4 quartos**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/jardim-america-rua-professor-franca-amaral-apto-de-3031428631.html](https://www.imovelweb.com.br/propriedades/jardim-america-rua-professor-franca-amaral-apto-de-3031428631.html)  
@@ -42,14 +42,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Apartamento à venda em Jardim América, de frente, no 4º andar, com 3 quartos. Possui área de serviço e varanda de fundos. O imóvel conta com 79 m² de área construída e 148 m² de área total, em prédio com 4 andares sem elevador. A posição frontal do apartamento proporciona uma vista livre. São 2 aptos, sendo 1 de frente e outro de fundos, faltando acabamento.
-Localizado em Jardim América, bairro residencial com fácil acesso a comércios, serviços e transporte público. Próximo a supermercados, farmácias e escolas, facilitando o dia a dia dos moradores.
-O Jardim América é conhecido por sua localização junto a nova Rodoviária BRT Trevo das Margaridas, ideal para quem busca comodidade de vida. Com fácil acesso às principais vias da cidade, como rodovias, avenidas e marginais, o bairro oferece mobilidade e praticidade. A região conta com infraestrutura completa, incluindo hospitais e clínicas, garantindo o bem-estar dos moradores.
-Aproveite a oportunidade de morar em um apartamento confortável e bem localizado em Jardim América. Agende sua visita e conheça este imóvel. Aceito 120 mil e o restante em prestações de 2.000,00.
-```
-
----
+Apartamento de frente no quarto andar de um prédio sem elevador, na Rua Professor França Amaral. Possui três quartos, área de serviço, varanda nos fundos e vista livre.
+O conjunto inclui ainda um apartamento de fundos que necessita de acabamento. A área construída informada é de 79 m², com 148 m² de área total.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

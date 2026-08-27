@@ -1,4 +1,4 @@
-# Jardim América - V. Esperança, Csa Frente, Térrea, Sala, 1 Quarto, Banheiro Social, Cozinha, Quintal
+# Casa em Jardim América — Vila Esperança, térrea e com quintal
 
 > **Casa · 55m² · 1 quarto**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/jardim-america-v.-esperanca-csa-frente-terrea-3041796743.html](https://www.imovelweb.com.br/propriedades/jardim-america-v.-esperanca-csa-frente-terrea-3041796743.html)  
@@ -42,12 +42,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Augo casa em Jardim América - Vila Esperança, na melhor quadra, próximo da Rua Fernandes da Cunha, térrea com quintal, sala , corredor, banheiro social completo, box blindex, 1 quarto , , cozinha com armários, quintal com área de lavanderia. Tem 1 cômodo dentro da casa que precisa de melhorias, e pode usar como 2º qto, mas a reforma é por conta do inquilino, se quiser usar. O aluguel é R$ 950,00, com 2 meses de depósito como garantia fiança e renda comprovada até 3 vezes o valor de aluguel.
-Água e Light, juntos paga em torno de 100,00.
-```
-
----
+Casa térrea para locação na Vila Esperança, em Jardim América, próxima à Rua Fernandes da Cunha. Possui quintal, sala, corredor, banheiro social com box blindex, um quarto, cozinha com armários e lavanderia.
+Há um cômodo adicional que precisa de melhorias e pode ser adaptado como segundo quarto pelo inquilino. A locação exige dois meses de depósito e comprovação de renda equivalente a três vezes o aluguel.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

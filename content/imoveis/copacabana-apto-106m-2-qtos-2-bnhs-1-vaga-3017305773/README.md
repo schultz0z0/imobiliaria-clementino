@@ -1,4 +1,4 @@
-# Copacabana - Apto 106m², 2 Qtos, 2 Bnhs, 1 Vaga Garagem
+# Apartamento em Copacabana — Rua Barata Ribeiro, andar alto e vaga
 
 > **Apartamento · 106m² · 2 quartos · 1 vaga**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/copacabana-apto-106m-2-qtos-2-bnhs-1-vaga-3017305773.html](https://www.imovelweb.com.br/propriedades/copacabana-apto-106m-2-qtos-2-bnhs-1-vaga-3017305773.html)  
@@ -43,15 +43,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Lindo apartamento de 106 m², no 12º andar, em excelente localização em Copacabana, a apenas 3 quadras da praia e 5 minutos da estação de metrô Cardeal Arcoverde.
-Composto por uma sala ampla e arejada; 2 quartos, sendo que o primeiro pode ser facilmente convertido em suíte e o segundo conta com um pequeno jardim de inverno; cozinha espaçosa e funcional; 2 banheiros sociais; dependência de empregada e área de serviço completa.
-Apartamento de frente proporciona vista verde e excelente iluminação natural, com sol da manhã até às  na sala e quarto da frente, e sol da tarde no quarto dos fundos após às 14:00.
-O prédio é bem administrado, com portaria 24 horas, elevador social e de serviço, e interfone.
-Não perca esta oportunidade única de morar ou investir.
-```
-
----
+Apartamento de 106 m² no 12º andar, localizado na Rua Barata Ribeiro, a três quadras da praia e próximo à estação Cardeal Arcoverde. Possui sala ampla, dois quartos — um deles com possibilidade de conversão em suíte e o outro com jardim de inverno —, cozinha, dois banheiros sociais, dependência completa e área de serviço.
+A unidade é de frente, tem vista para o verde, boa iluminação natural e uma vaga de garagem. O prédio conta com portaria 24 horas, interfone e elevadores social e de serviço.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

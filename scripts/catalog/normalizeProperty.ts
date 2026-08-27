@@ -12,6 +12,26 @@ const normalizeSearchText = (value: string): string => value
   .replace(/\p{Diacritic}/gu, '')
   .toLowerCase();
 
+const decodeHtmlEntities = (value: string): string => value
+  .replace(/&nbsp;|&#160;/gi, ' ')
+  .replace(/&amp;/gi, '&')
+  .replace(/&quot;/gi, '"')
+  .replace(/&#(?:39|x27);/gi, "'")
+  .replace(/&lt;/gi, '<')
+  .replace(/&gt;/gi, '>')
+  .replace(/&#(\d+);/g, (_match, code: string) => String.fromCodePoint(Number(code)))
+  .replace(/&#x([\da-f]+);/gi, (_match, code: string) => String.fromCodePoint(Number.parseInt(code, 16)));
+
+export const sanitizeDescription = (value: string): string => decodeHtmlEntities(value)
+  .replace(/<br\s*\/?>/gi, '\n')
+  .replace(/<\/(?:p|div|li|section|article)>/gi, '\n')
+  .replace(/<[^>]*>/g, '')
+  .split(/\r?\n/)
+  .map((line) => line.replace(/\s+/g, ' ').trim())
+  .filter((line) => line && !/\bver dados\b/i.test(line))
+  .join('\n')
+  .trim();
+
 export const parseBrl = (value: string): number | null => {
   const compact = value.replace(/[^\d,.-]/g, '');
   if (!/\d/.test(compact)) return null;
@@ -163,7 +183,7 @@ export const normalizeProperty = (
     longitude: parseCoordinate(general.coordenadas?.longitude),
     propertyType: general.subtitulo.split('·')[0]?.trim() || 'Imóvel',
     type,
-    desc: record.descricao.replace(/<br\s*\/?>/gi, '\n').trim(),
+    desc: sanitizeDescription(record.descricao),
     featureGroups,
     features,
   };

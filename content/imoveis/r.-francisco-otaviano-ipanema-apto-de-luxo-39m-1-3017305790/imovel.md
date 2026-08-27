@@ -1,4 +1,4 @@
-# R. Francisco Otaviano, Ipanema - Apto De Luxo 39m², 1 Qto, 1 Suíte, 1 WC, 1 Vaga Garagem
+# Studio em Arpoador — Canto Rio, vista para o mar e varanda
 
 > **Apartamento · 39m² · 1 quarto · 1 vaga**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/r.-francisco-otaviano-ipanema-apto-de-luxo-39m-1-3017305790.html](https://www.imovelweb.com.br/propriedades/r.-francisco-otaviano-ipanema-apto-de-luxo-39m-1-3017305790.html)  
@@ -44,17 +44,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Localizado no coração do Arpoador, o Canto Rio não é apenas um endereço, mas uma experiência. Com mais de 2.000m² de área de lazer e serviços exclusivos, este empreendimento já está 100% vendido, sendo essa unidade uma oportunidade rara no mercado.
-Studio de 38,08m², com varanda e área gourmet, VISTA MAR e experiências inéditas em mais de 2.000m² de área de lazer e serviços na zona sul do Rio de Janeiro;
-Piscina de 25m com raias, sauna, bar, academia by Companhia Atlética, sala de massagem, sauna, bar, lounge, lavanderia e muito mais. O Canto Rio também se destaca por seus diferenciais tecnológicos, incluindo fechadura smart lock e infraestrutura para comando de voz IOT.
-Segurança única, com: Sistema de reconhecimento facial para controle de acesso dos moradores com integrac?a?o a? portaria remota; Seguranc?a perimetral monitorada; Circuito de CFTV com acesso remoto; Controle eletro?nico de acesso de vei?culos; Acesso separado de entregas/servic?os;
-Localizado entre o mar e o que o Rio tem de melhor, a alguns passos de tudo que o Arpoador tem a oferecer.
-01 vaga na escritura.
-Não perca esta chance única! Entre em contato e agende sua visita.
-```
-
----
+Studio de 38,08 m² no empreendimento Canto Rio, no Arpoador, com varanda, área gourmet, vista para o mar e uma vaga na escritura.
+O condomínio reúne piscina de 25 metros com raias, academia, sauna, bar, lounge, sala de massagem e lavanderia. Também possui fechadura inteligente, infraestrutura para comando de voz, reconhecimento facial integrado à portaria remota, monitoramento perimetral, circuito de CFTV, controle eletrônico de veículos e acesso separado para entregas e serviços.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

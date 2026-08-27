@@ -1,10 +1,10 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { featuredPropertySlugs } from '../config/editorial';
+import { featuredPropertyIds } from '../config/editorial';
 import {
   filterProperties,
   getAllProperties,
-  getCuratedProperties,
+  getCuratedPropertiesById,
   getFeaturedProperties,
   getPropertyBySlug,
   getRelatedProperties,
@@ -23,6 +23,12 @@ test('finds a property by its stable slug', () => {
 
   assert.deepEqual(getPropertyBySlug(expected.slug), expected);
   assert.equal(getPropertyBySlug('slug-inexistente'), undefined);
+});
+
+test('keeps historical title slugs working through the immutable id suffix', () => {
+  const expected = getAllProperties()[0];
+
+  assert.deepEqual(getPropertyBySlug(`titulo-editorial-antigo-${expected.id}`), expected);
 });
 
 test('searches text without requiring accents', () => {
@@ -44,11 +50,11 @@ test('returns a deterministic featured subset', () => {
 });
 
 test('resolves the three-property Clementino selection in editorial order', () => {
-  const curated = getCuratedProperties(featuredPropertySlugs);
+  const curated = getCuratedPropertiesById(featuredPropertyIds);
   const catalogIds = new Set(getAllProperties().map((property) => property.id));
 
   assert.equal(curated.length, 3);
-  assert.deepEqual(curated.map((property) => property.slug), featuredPropertySlugs);
+  assert.deepEqual(curated.map((property) => property.id), featuredPropertyIds);
   assert.equal(new Set(curated.map((property) => property.id)).size, 3);
   assert.deepEqual(curated.map((property) => property.id), [
     '3017305809',
@@ -65,10 +71,10 @@ test('resolves the three-property Clementino selection in editorial order', () =
   assert.ok(catalogIds.has('3017305797'));
 });
 
-test('rejects a curated slug that is absent from the catalog', () => {
+test('rejects a curated id that is absent from the catalog', () => {
   assert.throws(
-    () => getCuratedProperties(['imovel-inexistente']),
-    /Curated property not found: imovel-inexistente/,
+    () => getCuratedPropertiesById(['9999999999']),
+    /Curated property not found: 9999999999/,
   );
 });
 

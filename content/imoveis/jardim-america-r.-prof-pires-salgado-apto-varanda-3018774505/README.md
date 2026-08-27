@@ -1,4 +1,4 @@
-# Jardim América - R. Profº Pires Salgado, Apto Varanda, 2 Qts, Fds
+# Apartamento em Jardim América — Rua Professor Pires Salgado, térreo e de fundos
 
 > **Apartamento · 75m² · 2 quartos · 1 vaga**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/jardim-america-r.-prof-pires-salgado-apto-varanda-3018774505.html](https://www.imovelweb.com.br/propriedades/jardim-america-r.-prof-pires-salgado-apto-varanda-3018774505.html)  
@@ -43,11 +43,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Em Jardim América, na Rua Profº Pires Salgado, próximo ao depósito da Supergasbras, ponto final dos ônibus e vans, vendo apto térreo, de fundos, com varanda, sala 2 ambientes, circulação, banheiro social, 2 quartos, cozinha e área de serviço externa com tanque.
-```
-
----
+Apartamento térreo de fundos na Rua Professor Pires Salgado, em Jardim América. Possui varanda, sala em dois ambientes, circulação, banheiro social, dois quartos, cozinha e área de serviço externa com tanque.
+Fica próximo ao ponto final de ônibus e vans e ao depósito da Supergasbras.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

@@ -1,4 +1,4 @@
-# Laranjeiras - Rio de Janeiro, RJ - Apto 2 Qtos, 1 Bnh, 1 Vaga
+# Apartamento em Laranjeiras — Rua Coelho Neto e vaga
 
 > **Apartamento · 93m² · 2 quartos · 1 vaga**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/laranjeiras-rio-de-janeiro-rj-apto-2-qtos-1-bnh-3017305781.html](https://www.imovelweb.com.br/propriedades/laranjeiras-rio-de-janeiro-rj-apto-2-qtos-1-bnh-3017305781.html)  
@@ -42,15 +42,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Apartamento de 93 m² em Laranjeiras. Composto por sala de estar que se conecta à sala de jantar, criando um ambiente amplo e agradável; 2 quartos com armários planejados; 1 banheiro social; cozinha compacta é integrada à área de serviço e despensa.
-A localização é excelente, com fácil acesso ao Fluminense Football Club e ao escritório do Governo do Estado do Rio de Janeiro. O Parque Eduardo Guinle, ideal para passeios e atividades ao ar livre, fica a apenas 11 minutos a pé. Próximo ao Largo do Machado e com fácil acesso ao metrô e outras regiões do Rio.
-O Condomínio do Edifício Torre 1 conta com salão de festas para os moradores.
-Não perca esta oportunidade única de morar ou investir. 
-Entre em contato e agende sua visita!?
-```
-
----
+Apartamento de 93 m² em Laranjeiras, com sala de estar integrada à sala de jantar, dois quartos com armários planejados, banheiro social, cozinha, área de serviço e despensa. Possui uma vaga de garagem.
+O condomínio oferece salão de festas. A localização permite acesso ao Parque Eduardo Guinle, ao Largo do Machado, ao metrô e às conveniências do bairro.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

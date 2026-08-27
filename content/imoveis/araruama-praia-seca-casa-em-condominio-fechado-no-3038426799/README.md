@@ -1,4 +1,4 @@
-# Araruama-Praia Seca, Casa em Condomínio Fechado, no Centro de Praia Seca. Vendo ótima Casa Linear.
+# Casa em condomínio em Praia Seca — Área de lazer e lagoa privativa
 
 > **Casa · 130m² · 4 quartos · 4 vagas**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/araruama-praia-seca-casa-em-condominio-fechado-no-3038426799.html](https://www.imovelweb.com.br/propriedades/araruama-praia-seca-casa-em-condominio-fechado-no-3038426799.html)  
@@ -44,29 +44,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Casa disponível para venda em Araruama. A propriedade possui 130 m² de área construída e 135 m² de área total. A distribuição interna inclui o total de 4 quartos, 3 banheiros e 1 suíte. A cozinha é americana e há despensa. A casa conta com varanda e área de serviço. Na parte externa, a propriedade oferece jardim e churrasqueira, além de 4 vagas de estacionamento. O imóvel tem 1 andar e entrada independente. As amenidades do condomínio incluem área de lazer, espaço gourmet e piscina. A propriedade aceita FGTS. A região de Araruama oferece acesso a diversas conveniências e serviços. O imóvel tem área de serviço, quarto de guardados, anexo com dois quartos, banheiro externo, área gourmet com churrasqueira, bancada e pia, ducha, varanda e quintal amplo.
-Características do condomínio:
-Portaria e segurança 24 horas
-Quadra poliesportiva
-Piscina adulto e infantil
-Academia ao ar livre
-Salão de jogos
-Área com churrasqueiras
-Lagoa privativa
-Área arborizada com churrasqueira, bancada e pia, ducha, varanda e quintal amplo.
-Características do condomínio:
-Portaria e segurança 24 horas
-Quadra poliesportiva
-Piscina adulto e infantil
-Academia ao ar livre
-Salão de jogos
-Área com churrasqueiras
-Lagoa privativa
-Área arborizada
-```
-
----
+Casa linear em condomínio fechado no centro de Praia Seca, com 130 m² de área construída e 135 m² de área total. Possui quatro quartos — sendo uma suíte —, três banheiros, cozinha americana, despensa, varanda, área de serviço, anexo, banheiro externo e quatro vagas.
+A área externa conta com quintal, jardim e espaço gourmet com churrasqueira, bancada, pia e ducha. O condomínio oferece portaria e segurança 24 horas, piscinas adulto e infantil, quadra poliesportiva, salão de jogos, academia ao ar livre, churrasqueiras, áreas arborizadas e lagoa privativa.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

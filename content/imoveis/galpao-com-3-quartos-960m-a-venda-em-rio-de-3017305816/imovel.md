@@ -1,4 +1,4 @@
-# Galpão com 3 quartos, 960m², à venda em Rio de Janeiro, Vigário Geral
+# Galpão em Vigário Geral — Rua Correia Dias e estrutura industrial
 
 > **Casa · 960m² · 3 quartos · 5 vagas**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/galpao-com-3-quartos-960m-a-venda-em-rio-de-3017305816.html](https://www.imovelweb.com.br/propriedades/galpao-com-3-quartos-960m-a-venda-em-rio-de-3017305816.html)  
@@ -43,14 +43,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Galpão Industrial à Venda na Melhor Localização! 
-Galpão com 1250m² de terreno, (20,00 X 62,50 m² ), situado na Rua Correia Dias, 
-Na parte térrea possui banheiros e vestiários, a área superior da edificação possui um corredor de circulação com acesso a 3 salas, banheiro e copa, possuindo uma área total construída de 90 m² e área do galpão coberta possuindo 870m², sendo considerada o fato de estar numa excelente localização com boa concentração de indústrias e comércios e com grande facilidade no deslocamento de pessoas por causa das várias linhas de transporte coletivo e estação de trem da supervia.
-Aproveite esta oportunidade para investimento! Entre em contato hoje mesmo para mais informações.
-```
-
----
+Galpão industrial na Rua Correia Dias, em terreno de 1.250 m². A área coberta do galpão possui 870 m², e a edificação complementar soma 90 m².
+No térreo, há banheiros e vestiários. O pavimento superior possui corredor de circulação, três salas, banheiro e copa. A região concentra atividades industriais e comerciais e conta com transporte coletivo e estação de trem.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

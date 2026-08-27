@@ -1,4 +1,4 @@
-# Lgo do Bicão - Cond. Solar da Vila, Apto de 80 m², 2 Qtos (Suíte) + 1 Qto Revertido, 2Vgas Demarcada
+# Apartamento em Vila da Penha — Condomínio Solar da Vila, junto ao Largo do Bicão
 
 > **Apartamento · 80m² · 2 quartos · 2 vagas**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/lgo-do-bicao-cond.-solar-da-vila-apto-de-80-m-2-3028206195.html](https://www.imovelweb.com.br/propriedades/lgo-do-bicao-cond.-solar-da-vila-apto-de-80-m-2-3028206195.html)  
@@ -44,13 +44,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Apartamento à venda em Vila da Penha, Largo do Bicão, Condomínio Solar da Vila, junto ao comércio, bancos e Shopping Carioca. Apto possui 80 m² de área útil. sendo composto de: sala 2 ambientes, 2 quartos, sendo 1 suíte + 1 quarto revertido, total 3 qtos, 2 banheiros, cozinha e área de serviço funcional. Possui 2 vagas de garagem, sendo 1 demarcada e outra no Condomínio.
-O condomínio oferece câmeras de segurança, elevador, playground e salão de festas, além de vigilância 24h, proporcionando segurança e lazer para toda a família. Aceita FGTS e Carta de Crédito. Apartamento, em prédio com 4 andares e 30 anos de idade.
-Localizado em Vila da Penha, bairro residencial com comércio diversificado e fácil acesso a serviços. Próximo a supermercados, farmácias e escolas, com diversas opções de transporte público. A região oferece um ambiente tranquilo e familiar, ideal para quem busca praticidade e bem-estar.
-```
-
----
+Apartamento de 80 m² no Condomínio Solar da Vila, junto ao Largo do Bicão. Possui sala em dois ambientes, dois quartos — sendo uma suíte —, um terceiro quarto revertido, dois banheiros, cozinha, área de serviço e duas vagas de garagem.
+O condomínio conta com câmeras de segurança, vigilância 24 horas, elevador, playground e salão de festas. Aceita FGTS e carta de crédito.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

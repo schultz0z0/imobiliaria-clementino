@@ -1,4 +1,4 @@
-# Jardim América- Apto Tipo Casa Térreo- 3Qtos, Quintal , 1 Vaga
+# Casa em Jardim América — Rua Marechal José Pessoa, quintal e vaga
 
 > **Casa · 90m² · 3 quartos · 1 vaga**
 > **Link oficial:** [Imovelweb](https://www.imovelweb.com.br/propriedades/jardim-america-apto-tipo-casa-terreo-3qtos-quintal-3041818174.html)
@@ -44,9 +44,8 @@
 
 ## Descrição completa
 
-Alugo Esta casa de 2 andares no tradicional bairro do Jardim América. O imóvel apresenta 90 m² de área construída com uma distribuição prática que engloba 3 quartos, 2 banheiros sociais, cozinha independente e área de serviço funcional.
-Na parte externa, você conta com uma agradável varanda, quintal privativo e 1 vaga de garagem. O imóvel possui 35 anos de construção, mantendo uma estrutura sólida e segura.
-A localização no Jardim América é de fácil acesso a grandes avenidas. O entorno oferece comércio variado, supermercados, escolas e serviços essenciais.
+Casa de dois pavimentos para locação na Rua Marechal José Pessoa, em Jardim América. Possui 90 m² de área construída, três quartos, dois banheiros sociais, cozinha independente e área de serviço.
+A área externa conta com varanda, quintal privativo e uma vaga de garagem.
 
 ## Galeria completa (40 fotos)
 

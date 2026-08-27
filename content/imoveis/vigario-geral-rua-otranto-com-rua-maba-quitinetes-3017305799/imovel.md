@@ -1,4 +1,4 @@
-# Vigário Geral - Rua Otranto com Rua Mabá, Quitinetes, Tipo Sla e Qto Próximo ao polo comercial Pça 2
+# Quitinetes em Vigário Geral — Rua Otranto, próximas à Praça 2
 
 > **Casa · 39m² · 1 quarto**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/vigario-geral-rua-otranto-com-rua-maba-quitinetes-3017305799.html](https://www.imovelweb.com.br/propriedades/vigario-geral-rua-otranto-com-rua-maba-quitinetes-3017305799.html)  
@@ -41,12 +41,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Em Vigário Geral, na Rua Otranto quase esquina com Rua Mabá, próximo do Polo Comercial Pça 2, BRT e Avenida Brasil. Alugo Kitinetes com sala e quarto grande, separados, cozinha kitchen e banheiro social completo. Aluguel R$ 580,00, já incluída a água.
-Contato: 21  ou  whatssap
-```
-
----
+Quitinetes para locação na Rua Otranto, quase esquina com a Rua Mabá, em Vigário Geral. As unidades possuem sala e quarto separados, cozinha compacta e banheiro social.
+A localização fica próxima ao polo comercial da Praça 2, ao BRT e à Avenida Brasil. O consumo de água está incluído no aluguel.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

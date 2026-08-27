@@ -1,4 +1,4 @@
-# Galpão Comercial/Industrial, terreno 10 x 24, entrada para carga e descarga. Área total coberta 320m
+# Galpão em Jardim América — Rua Jornalista Geraldo Rocha, acesso para carga e descarga
 
 > **Comercial · 318m² · 4 quartos**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/galpao-comercial-industrial-terreno-10-x-24-entrada-3037727090.html](https://www.imovelweb.com.br/propriedades/galpao-comercial-industrial-terreno-10-x-24-entrada-3037727090.html)  
@@ -42,11 +42,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Galpão Comercial/Industrial, terreno 10 x 24, entrada para carga e descarga. Área total coberta com 200m², e área descoberta com 60m². Salas/escritórios, banheiros, ideal para o seu negócio. Disponível para venda em Jardim América. Esta propriedade possui 318 m² de área construída e uma área total de 320 m², distribuídos em 2 andares. A idade do imóvel é de 29 anos. A propriedade aceita FGTS como forma de pagamento. A localização em Jardim América oferece acesso a diversas conveniências. A região dispõe de infraestrutura comercial e de serviços, incluindo opções de transporte público e vias de acesso importantes. O bairro é conhecido por seu ambiente consolidado, com proximidade a estabelecimentos comerciais e serviços essenciais.
-```
-
----
+Galpão comercial ou industrial na Rua Jornalista Geraldo Rocha, em terreno de 10 por 24 metros, com acesso para carga e descarga. Possui salas, escritórios e banheiros distribuídos em dois pavimentos.
+O cadastro informa 318 m² de área construída e 320 m² de área total. O imóvel aceita FGTS.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

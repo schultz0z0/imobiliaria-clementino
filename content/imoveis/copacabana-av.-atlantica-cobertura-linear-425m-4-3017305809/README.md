@@ -1,4 +1,4 @@
-# Copacabana- Av. Atlântica, Cobertura Linear 425m², 4 Suítes, 6 WC, Vista Mar, Posto 4
+# Cobertura em Copacabana — Avenida Atlântica, vista para o mar no Posto 4
 
 > **Casa · 425m² · 4 quartos · 1 vaga**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/copacabana-av.-atlantica-cobertura-linear-425m-4-3017305809.html](https://www.imovelweb.com.br/propriedades/copacabana-av.-atlantica-cobertura-linear-425m-4-3017305809.html)  
@@ -44,13 +44,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Cobertura residencial, à venda em Copacabana, Av. Atlântica, vista mar, com 4 quartos e 6 banheiros, ideal para famílias grandes ou quem busca espaço e conforto. Possui 425 m² de área construída, distribuídos de forma inteligente para otimizar cada ambiente. A casa conta com 4 suítes, proporcionando privacidade e comodidade aos moradores. Além disso, dispõe de 1 vaga de garagem.
-Localizada em uma região privilegiada de Copacabana, a casa está próxima a diversos serviços e comércios, como supermercados, farmácias, escolas e hospitais. A área é conhecida por sua infraestrutura completa e facilidade de acesso a transporte público, incluindo ônibus e metrô. A praia de Copacabana, um dos principais cartões postais do Rio de Janeiro, está a poucos minutos de distância, oferecendo lazer e entretenimento para toda a família. O bairro possui um ambiente residencial tranquilo e seguro, com ruas arborizadas e bem cuidadas.
-Oportunidade: Valor reduzido de R$  para R$ .
-```
-
----
+Cobertura linear na Avenida Atlântica, em Copacabana, com vista para o mar. Possui 425 m², quatro quartos — todos suítes —, seis banheiros e uma vaga de garagem.
+Os ambientes são amplos e a localização no Posto 4 oferece acesso à praia, ao transporte público e aos serviços do bairro.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

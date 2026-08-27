@@ -1,4 +1,4 @@
-# V. Geral, R. São Bartolomeu, Casa de Fdos, 55 m², Sala, 1 Qto, Terraço, Cisterna, Quintal
+# Casa em Vigário Geral — Rua São Bartolomeu, fundos e terraço
 
 > **Apartamento · 55m² · 1 quarto**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/v.-geral-r.-sao-bartolomeu-casa-de-fdos-55-m-3017305764.html](https://www.imovelweb.com.br/propriedades/v.-geral-r.-sao-bartolomeu-casa-de-fdos-55-m-3017305764.html)  
@@ -42,11 +42,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Vigário Geral - Rua São Bartolomeu, casa de fundos com 55 m², em terreno com mais 2 Csas, composta por 01 saleta, 01 quarto grande, 01 cozinha, 01 banheiro, 01 área na frente, terraço coberto, cisterna. Pintura nova. Imóvel desocupado. Entrar e morar. Isento de IPTU. Água e luz separadas. Doctos ok. Aceito financto bancário. Valor 130.000,00.
-```
-
----
+Casa de fundos com 55 m², situada em terreno compartilhado com outras duas residências na Rua São Bartolomeu. Possui sala, um quarto amplo, cozinha, banheiro, área frontal, terraço coberto, quintal e cisterna.
+O imóvel está desocupado, com pintura nova, água e energia elétrica individualizadas e isenção de IPTU. A documentação está regular e permite financiamento bancário.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

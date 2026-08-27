@@ -1,4 +1,4 @@
-# Rua Granada - Galpão Comercial/Industrial em V. Geral, junto ao Comércio da Pça 2 e Estrada V.Geral.
+# Galpão em Vigário Geral — Rua Granada, próximo à Praça 2
 
 > **Comercial · 360m²**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/rua-granada-galpao-comercial-industrial-em-v.-geral-3017305802.html](https://www.imovelweb.com.br/propriedades/rua-granada-galpao-comercial-industrial-em-v.-geral-3017305802.html)  
@@ -40,11 +40,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Em Vigário Geral, Rua Granada, próximo ao polo comercial da Pça 2. Galpão Comercial/Industrial, junto ao Polo Comercial do bairro, em terreno com 360 m² e possuindo 390 m² de área edificada, composto por salas/escritórios, banheiros, etc... Aceito uma entrada e facilito o restante. Aluguel : R$ 5.000,00. Não paga IPTU.
-```
-
----
+Galpão para uso comercial ou industrial na Rua Granada, próximo ao polo comercial da Praça 2, em Vigário Geral. O terreno possui 360 m² e a área edificada soma 390 m², com salas, escritórios e banheiros.
+O imóvel é isento de IPTU e está disponível tanto para venda quanto para locação.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

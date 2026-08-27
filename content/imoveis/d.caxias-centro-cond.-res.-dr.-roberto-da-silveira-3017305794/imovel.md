@@ -1,4 +1,4 @@
-# D.Caxias/Centro - Cond. Res. Dr. Roberto da Silveira - Apto 75m², 2°Andar, 3Qtos
+# Apartamento em Duque de Caxias — Condomínio Dr. Roberto da Silveira
 
 > **Apartamento · 74m² · 3 quartos**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/d.caxias-centro-cond.-res.-dr.-roberto-da-silveira-3017305794.html](https://www.imovelweb.com.br/propriedades/d.caxias-centro-cond.-res.-dr.-roberto-da-silveira-3017305794.html)  
@@ -42,12 +42,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Condomínio Conjunto Residencial Dr. Roberto Silveira,
-Apto de 75m,² 2º andar, sala, banheiro social, 3 quartos, cozinha e área de serviço, no Centro de Caxias/RJ .
-```
-
----
+Apartamento de 75 m² no segundo andar do Conjunto Residencial Dr. Roberto da Silveira, no Centro de Duque de Caxias.
+Possui sala, três quartos, banheiro social, cozinha e área de serviço.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

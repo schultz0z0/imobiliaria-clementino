@@ -1,4 +1,4 @@
-# Jardim América - Casa Linear, Terraço, Piscina, 3 Qtos, Suíte
+# Casa em Jardim América — Rua Mozart, piscina e terraço
 
 > **Casa · 145m² · 3 quartos · 3 vagas**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/jardim-america-casa-linear-terraco-piscina-3-3037729115.html](https://www.imovelweb.com.br/propriedades/jardim-america-casa-linear-terraco-piscina-3-3037729115.html)  
@@ -44,11 +44,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Propriedade disponível para venda em Jardim América, um bairro residencial consolidado. Esta casa possui 145 m² de superfície construída e se distribui em 3 quartos, sendo 1 suíte, e 3 banheiros. A área social inclui sala e cozinha, com despensa para maior organização. No exterior, a casa oferece uma área de lazer com piscina, ideal para momentos de descanso. Há 3 vagas de estacionamento e entrada independente. A construção tem 29 anos e se desenvolve em 1 andar + terraço. A propriedade aceita FGTS como forma de pagamento. Jardim América é uma região com boa infraestrutura, próxima a comércios locais, escolas e serviços essenciais, facilitando o dia a dia dos moradores.
-```
-
----
+Casa linear na Rua Mozart, em Jardim América, com 145 m² de área construída. Possui sala, cozinha, despensa, três quartos — sendo uma suíte — e três banheiros.
+A área externa oferece piscina, terraço, entrada independente e três vagas de garagem. O imóvel aceita FGTS.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

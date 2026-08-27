@@ -1,4 +1,4 @@
-# Jardim América - Casa Duplex com 4 Qtos, Suíte, 140m², Qto Externo, Garagem,
+# Casa duplex em Jardim América — Rua Antônio de Albuquerque e amplo quintal
 
 > **Casa · 140m² · 4 quartos · 8 vagas**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/jardim-america-casa-duplex-com-4-qtos-suite-140m-3017305821.html](https://www.imovelweb.com.br/propriedades/jardim-america-casa-duplex-com-4-qtos-suite-140m-3017305821.html)  
@@ -44,11 +44,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Excelente casa duplex com 250m² de terreno e 140m² de área construída, sendo o 1° piso: varandão, living, hall social, banheiro social, box blindex, 1 quarto, copa, cozinha toda em azulejo, área de serviço, quintal, mais 1 quartinho e garagem para 8 carros, churrasqueira, cisterna com capacidade para 5mil lts. 2° piso: hall íntimo, sala de tv, circulação, banheiro social, box blindex , 3 quartos, sendo 1 suíte dando para varandão. Próximo a Praça Central de Jardim América, Supermercados Rede Economia , Loterias, Correios, Posto de saúde, Transportes e Escolas.
-```
-
----
+Casa duplex com 140 m² de área construída em terreno de 250 m². O primeiro piso possui varanda ampla, living, hall, banheiro social, um quarto, copa, cozinha, área de serviço, quarto externo e quintal com churrasqueira, cisterna de 5.000 litros e garagem.
+No segundo piso, há hall íntimo, sala de TV, banheiro social e três quartos, sendo uma suíte com acesso à varanda. O imóvel fica próximo à Praça Central de Jardim América e ao comércio do bairro.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

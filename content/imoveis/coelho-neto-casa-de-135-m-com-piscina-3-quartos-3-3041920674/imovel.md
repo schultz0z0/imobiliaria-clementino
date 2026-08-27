@@ -1,4 +1,4 @@
-# Coelho Neto-Casa de 135 m² com Piscina, 3 quartos, 3 Vagas
+# Casa em Coelho Neto — Rua Ouseley, piscina e garagem
 
 > **Casa · 130m² · 3 quartos · 3 vagas**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/coelho-neto-casa-de-135-m-com-piscina-3-quartos-3-3041920674.html](https://www.imovelweb.com.br/propriedades/coelho-neto-casa-de-135-m-com-piscina-3-quartos-3-3041920674.html)  
@@ -43,12 +43,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Casa de 130 m² de área construída disponível para venda no bairro de Coelho Neto. A residência conta com 3 quartos, 2 banheiros funcionais, varanda, sala, cozinha independente, despensa e área de serviço, além de entrada independente que garante maior privacidade. O imóvel possui quintal com piscina e oferece 3 vagas de garagem.
-A região é residencial e bem estabelecida, com comércio de bairro estruturado e oferta de transporte público na proximidade. O entorno conta com supermercados, padarias, farmácias e escolas que facilitam a rotina dos moradores, garantindo fácil acesso às principais vias de ligação do bairro.
-```
-
----
+Casa de 130 m² de área construída na Rua Ouseley, em Coelho Neto. Possui sala, cozinha, despensa, três quartos, dois banheiros, varanda, área de serviço e entrada independente.
+O quintal conta com piscina, e a garagem oferece três vagas. A região possui comércio, escolas, serviços e transporte público.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

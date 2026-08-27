@@ -1,4 +1,4 @@
-# Jardim América - Rua Jorge Lacerda, Casa com 89 m², 1 Pavto, Frente Rua, Varanda, Quintal, 2 Qtos.
+# Casa em Jardim América — Rua Jorge Lacerda, entrada independente e quintal
 
 > **Casa · 87m² · 2 quartos**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/jardim-america-rua-jorge-lacerda-casa-com-89-m-1-3025642323.html](https://www.imovelweb.com.br/propriedades/jardim-america-rua-jorge-lacerda-casa-com-89-m-1-3025642323.html)  
@@ -42,12 +42,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Casa para aluguel no Jardim América, com entrada independente. Possui 1 pavimento, quintal na frente, varanda, 2 quartos e 1 banheiro, ideal para quem busca praticidade. A área construída é de 86 m², proporcionando um bom espaço internamente. A casa oferece ambientes bem distribuídos , e os 2 quartos garantem conforto para a família. A cozinha tem bom espaço, facilitando o dia a dia, sendo a área de serviço externa, e 1 quintal nos fundos.
-O Jardim América é um bairro residencial tranquilo, com fácil acesso a serviços e comércios. Próximo a escolas, supermercados e farmácias e o comércio de venda de cestas básicas, e a região oferece conveniência para os moradores. A mobilidade é facilitada pelas diversas linhas de ônibus e proximidade a importantes vias da cidade.
-```
-
----
+Casa térrea para locação na Rua Jorge Lacerda, em Jardim América, com entrada independente. Possui quintal frontal, varanda, sala, dois quartos, banheiro, cozinha, área de serviço externa e quintal nos fundos.
+A localização oferece acesso ao comércio do bairro, escolas, supermercados, farmácias, linhas de ônibus e vias importantes da região.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

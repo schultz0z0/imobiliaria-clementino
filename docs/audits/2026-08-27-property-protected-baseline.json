@@ -1,0 +1,270 @@
+{
+  "generatedAt": "2026-08-27T11:34:09.687Z",
+  "properties": [
+    {
+      "id": "3017305760",
+      "file": "content/imoveis/d.caxias-bar-cavaleiro-cond.varsovia-carlos-3017305760/dados_imovel.json",
+      "sha256": "ead9bc34f59b0ffef1cef180be87fffe2f2747675f44ce375f741d07ce8dcb86"
+    },
+    {
+      "id": "3017305761",
+      "file": "content/imoveis/jardim-america-residencial-america-life-3017305761/dados_imovel.json",
+      "sha256": "eddfc1a5aa1b1fcc5b4d761a1d51643f47e3bb4b60c8b081d5e3eadab5d9f079"
+    },
+    {
+      "id": "3017305764",
+      "file": "content/imoveis/v.-geral-r.-sao-bartolomeu-casa-de-fdos-55-m-3017305764/dados_imovel.json",
+      "sha256": "ced072eae8320b3e91c08a77f47ed3f6e66fba3aa3704630717f10d2f1c8655d"
+    },
+    {
+      "id": "3017305767",
+      "file": "content/imoveis/copacabana-apto-75m-2-qtos-1-wc-prox.-ao-metro-3017305767/dados_imovel.json",
+      "sha256": "5673fd5b86f4f132d97e1ffc366b8250aacd080a180eaa0a0de5c6f536a22d5c"
+    },
+    {
+      "id": "3017305771",
+      "file": "content/imoveis/jardim-america-casa-sala-ampla-3qtos-2-bnnhs-3017305771/dados_imovel.json",
+      "sha256": "cd3c20e113be060c0ef13d915aef6bb24106e1c17d562e0c768a3a73d4c654a8"
+    },
+    {
+      "id": "3017305773",
+      "file": "content/imoveis/copacabana-apto-106m-2-qtos-2-bnhs-1-vaga-3017305773/dados_imovel.json",
+      "sha256": "971765cd42d7a32118ddbaeafba46d0ef356684b77a4a2fbf53cd3a4d23328b5"
+    },
+    {
+      "id": "3017305776",
+      "file": "content/imoveis/bangu-prox.-assai-na-av.-brasil.-terrenos-com-981m-.-3017305776/dados_imovel.json",
+      "sha256": "80b5ef02d47e5ce137362a91ff0e1fadce7c5b0acdd3ed24425ce1db83373063"
+    },
+    {
+      "id": "3017305781",
+      "file": "content/imoveis/laranjeiras-rio-de-janeiro-rj-apto-2-qtos-1-bnh-3017305781/dados_imovel.json",
+      "sha256": "3fad048a4c167c2d47df45534be0ebbf908b5cc5311e9e3dbcdf146aa019a49d"
+    },
+    {
+      "id": "3017305787",
+      "file": "content/imoveis/v.-geral-r.-sao-bartolomeu-casa-de-frente-169-m-3017305787/dados_imovel.json",
+      "sha256": "064dfd28c1a00f1b91ebf0c08d9a7540ca94e7563fd1c978e8de72cfb4daf160"
+    },
+    {
+      "id": "3017305790",
+      "file": "content/imoveis/r.-francisco-otaviano-ipanema-apto-de-luxo-39m-1-3017305790/dados_imovel.json",
+      "sha256": "6c53208b2d6fe34c8928d540b2509e23ecb072272b2b05960b9b0b1bd6609f20"
+    },
+    {
+      "id": "3017305792",
+      "file": "content/imoveis/j.-america-rua-prof-costa-ribeiro-lindo-sobrado-3017305792/dados_imovel.json",
+      "sha256": "a28010081bbe29fb8756694f7f2b91cbaed08a4b2f0e0ae8cf9e2dbb4d76586d"
+    },
+    {
+      "id": "3017305793",
+      "file": "content/imoveis/vigario-geral-condominio-padre-anchieta-apto-1-qto-3017305793/dados_imovel.json",
+      "sha256": "eca35643a297659e29298f6fdce4480e1a7b2d640c189a0df5afea853fe15996"
+    },
+    {
+      "id": "3017305794",
+      "file": "content/imoveis/d.caxias-centro-cond.-res.-dr.-roberto-da-silveira-3017305794/dados_imovel.json",
+      "sha256": "064f55211489c261553db206d277cc16e04548807d63f344da90379e4d12eb54"
+    },
+    {
+      "id": "3017305795",
+      "file": "content/imoveis/jardim-america-apto-tipo-casa-78m-quintal-2-3017305795/dados_imovel.json",
+      "sha256": "3af0e450e5ffaa4d747e537d5c5934b79cce2cd6787e2f6152a00bdc970a60ff"
+    },
+    {
+      "id": "3017305797",
+      "file": "content/imoveis/botafogo-rio-de-janeiro-rj-apto-3-qtos-1-suite-3017305797/dados_imovel.json",
+      "sha256": "496d6df2ef18d88aa3374a1d995ac690e6722b14fe4a065d27b5e92cc5cb1695"
+    },
+    {
+      "id": "3017305798",
+      "file": "content/imoveis/barra-da-tijuca-midtown-sala-comercial-54m-3017305798/dados_imovel.json",
+      "sha256": "b00d65d6f3477904dc7ad6a860ec0ea87c265ace1c5bcd4dbe38284b905d0df5"
+    },
+    {
+      "id": "3017305799",
+      "file": "content/imoveis/vigario-geral-rua-otranto-com-rua-maba-quitinetes-3017305799/dados_imovel.json",
+      "sha256": "b98e121f05ce38926abb6c99278a13357a751f9d0688e1286dd84592d8b1b125"
+    },
+    {
+      "id": "3017305801",
+      "file": "content/imoveis/jardim-america-r.-mozart-apto-1-quarto-sl-coz-area-3017305801/dados_imovel.json",
+      "sha256": "e40090d76be17f0314e04689d5db3f07259823df3f484862a0f51c325e6f9e8e"
+    },
+    {
+      "id": "3017305802",
+      "file": "content/imoveis/rua-granada-galpao-comercial-industrial-em-v.-geral-3017305802/dados_imovel.json",
+      "sha256": "b25638e017484f5286402995da526b9d3443be4dd36a00604af61017ca706005"
+    },
+    {
+      "id": "3017305805",
+      "file": "content/imoveis/botafogo-apto-91m-3-qtos-1-wc-vista-lateral-pro-3017305805/dados_imovel.json",
+      "sha256": "46f8e22348587cfd59a4daa262e790a69bb3cd4239161b82e4133a6adeb5af67"
+    },
+    {
+      "id": "3017305807",
+      "file": "content/imoveis/jardim-america-na-antiga-rua-2-apto-tipo-casa-3017305807/dados_imovel.json",
+      "sha256": "66e694934e72a02500b7a3d1d4c6696d36f43e4e8f5fec56f300c5427cd0c34e"
+    },
+    {
+      "id": "3017305809",
+      "file": "content/imoveis/copacabana-av.-atlantica-cobertura-linear-425m-4-3017305809/dados_imovel.json",
+      "sha256": "85a3ab2eefc423357f9aad5ca5a15e4003775e5570d4acb4c82554a7530d104b"
+    },
+    {
+      "id": "3017305811",
+      "file": "content/imoveis/casa-de-condominio-com-4-quartos-436m-a-venda-em-3017305811/dados_imovel.json",
+      "sha256": "dfe2c2c50586ff968fc510dcd2d17f849dec54c898efbf72912c20394a0983ae"
+    },
+    {
+      "id": "3017305813",
+      "file": "content/imoveis/r.-decio-vilares-copacabana-apto-58-04m-1-qto-1-3017305813/dados_imovel.json",
+      "sha256": "602e640d2e841d45d90f57469954a905e3f40f53b50bbc1a5248242396632b4c"
+    },
+    {
+      "id": "3017305816",
+      "file": "content/imoveis/galpao-com-3-quartos-960m-a-venda-em-rio-de-3017305816/dados_imovel.json",
+      "sha256": "987d142e2431db36eeb9e66c6366523a81823d76abef4dd80625c02640829908"
+    },
+    {
+      "id": "3017305820",
+      "file": "content/imoveis/v.-geral-casa-duplex-varanda-total-4-qtos-e-2-3017305820/dados_imovel.json",
+      "sha256": "0473ff7f3cdee1561f7d72d94145079faa63d893542234785d7040c6524585f7"
+    },
+    {
+      "id": "3017305821",
+      "file": "content/imoveis/jardim-america-casa-duplex-com-4-qtos-suite-140m-3017305821/dados_imovel.json",
+      "sha256": "988a6e4435c6b575aed4946a47ac447489dc0ef69db7fb2194375a388ea5c899"
+    },
+    {
+      "id": "3018026849",
+      "file": "content/imoveis/jardim-america-junto-a-pres.dutra-galpao-3018026849/dados_imovel.json",
+      "sha256": "fc15aa7dcc234263f9ce3be66e0d4933de16b10bdf5dba24ec12139034b1271b"
+    },
+    {
+      "id": "3018249672",
+      "file": "content/imoveis/jardim-america-casa-duplex-varanda-2-salas-total-3018249672/dados_imovel.json",
+      "sha256": "dff9a635ad334c918cab284a0f282bf4a911dc18957a2f3e8c4c6f2698c9f09d"
+    },
+    {
+      "id": "3018326088",
+      "file": "content/imoveis/jardim-america-rua-arinos-apto-78m-frente-2-3018326088/dados_imovel.json",
+      "sha256": "2329f5d3b2131888840d64c6efa89cf1a93d9b3fd2a045c3351a97fecba4af45"
+    },
+    {
+      "id": "3018326089",
+      "file": "content/imoveis/jardim-america-rua-arinos-apto-65m-fundos-3018326089/dados_imovel.json",
+      "sha256": "04b9ec4356080c0c52bae78e3cc23ed6594bf6803fcc3c7a230fa226885fae7a"
+    },
+    {
+      "id": "3018774505",
+      "file": "content/imoveis/jardim-america-r.-prof-pires-salgado-apto-varanda-3018774505/dados_imovel.json",
+      "sha256": "e49173dcc113292b3fd023aef7c2d76044e2c07025f13ec98fe154bd4e30c0b1"
+    },
+    {
+      "id": "3018791156",
+      "file": "content/imoveis/jardim-america-casa-linear-quintal-total-3-qtos-3018791156/dados_imovel.json",
+      "sha256": "6538290bf4551fe6907699812be398db990409063a0fb70c1c4afcc4d778f857"
+    },
+    {
+      "id": "3021262193",
+      "file": "content/imoveis/jardim-america-cond.-america-life-apto-3-qtos-1-3021262193/dados_imovel.json",
+      "sha256": "1f634c25327d4656a3caeccaa045b0395a6d2fb052473258e0c93e3047b18aa0"
+    },
+    {
+      "id": "3022035905",
+      "file": "content/imoveis/jardim-america-dois-imoveis-terreno-250m-4qtos-3022035905/dados_imovel.json",
+      "sha256": "03cdfbea3ad8770116d6a1932dee72412aeecdccaa49b87b0adedc75d1ac852e"
+    },
+    {
+      "id": "3023325766",
+      "file": "content/imoveis/jardim-america-residencial-a.life-lazer-apto-52m-3023325766/dados_imovel.json",
+      "sha256": "5b466aac5674c93907c66c9dca042c3b8213283f9394148bd925715f79080d33"
+    },
+    {
+      "id": "3024230857",
+      "file": "content/imoveis/del-castilho-junto-ao-pam-apto-de-70-m-de-frente-3024230857/dados_imovel.json",
+      "sha256": "95366014f1df69186d36e6d583e55f126dfc2deac1971af27e720274ea4928af"
+    },
+    {
+      "id": "3025642323",
+      "file": "content/imoveis/jardim-america-rua-jorge-lacerda-casa-com-89-m-1-3025642323/dados_imovel.json",
+      "sha256": "1cb4693b2b77461851c7bb184c22316efc122116715853a7e9218463849b2c82"
+    },
+    {
+      "id": "3028206195",
+      "file": "content/imoveis/lgo-do-bicao-cond.-solar-da-vila-apto-de-80-m-2-3028206195/dados_imovel.json",
+      "sha256": "3690495ad10dfef13f297774781d371b7d37e92e7c31e61b05af12dadfc898d5"
+    },
+    {
+      "id": "3031428631",
+      "file": "content/imoveis/jardim-america-rua-professor-franca-amaral-apto-de-3031428631/dados_imovel.json",
+      "sha256": "1bdee9f2a0dcaa1a0772f214d6285aa9118ee85334a390385cd6f25f3e695792"
+    },
+    {
+      "id": "3032201782",
+      "file": "content/imoveis/venda-jardim-america-apto-3-qtos-area-78m-junto-3032201782/dados_imovel.json",
+      "sha256": "7cc3f314a36ed4a9836a7ae0e00dc7d7f9e14d0678ab7c2f8f8f74d2f5e253e8"
+    },
+    {
+      "id": "3035177398",
+      "file": "content/imoveis/jardim-america-apto-sobrado-de-fundos-sala-2-3035177398/dados_imovel.json",
+      "sha256": "2a26a66a928fb5661203f0e300a16de40fbb8b81d5e34e892ef89c572f8aa4ad"
+    },
+    {
+      "id": "3035185637",
+      "file": "content/imoveis/jardim-america-rua-alvaro-magalhaes-esquina-com-3035185637/dados_imovel.json",
+      "sha256": "f57d45b2eae960fb99f5c9626937a66a3145a546d4000a39a624d8ba4e699226"
+    },
+    {
+      "id": "3037727090",
+      "file": "content/imoveis/galpao-comercial-industrial-terreno-10-x-24-entrada-3037727090/dados_imovel.json",
+      "sha256": "515f7266d21c39678d11f5b60007a8ee4f7842edcf3dbd57985e61706cc1ea63"
+    },
+    {
+      "id": "3037729115",
+      "file": "content/imoveis/jardim-america-casa-linear-terraco-piscina-3-3037729115/dados_imovel.json",
+      "sha256": "078622bbdf9d6544dc584477f548a5bfc58febeedbf944d006f5543b97c0d855"
+    },
+    {
+      "id": "3038426799",
+      "file": "content/imoveis/araruama-praia-seca-casa-em-condominio-fechado-no-3038426799/dados_imovel.json",
+      "sha256": "35b4f5cf27956cbe701564c8e72baefe4525038a67f323d5c355368ee1ce66dc"
+    },
+    {
+      "id": "3041796743",
+      "file": "content/imoveis/jardim-america-v.-esperanca-csa-frente-terrea-3041796743/dados_imovel.json",
+      "sha256": "e9a6a5424ee7a01bc16c7d4f9d054688cd3c6b254b042c6ab20def33f4e9d2ac"
+    },
+    {
+      "id": "3041798044",
+      "file": "content/imoveis/jardim-america-rua-marechal-jose-pessoa-apto-terreo-3041798044/dados_imovel.json",
+      "sha256": "afe8ca7d7ddeabbd5ee2542601ce26157b70db90a6fa18ce78c5806ca8ebfd47"
+    },
+    {
+      "id": "3041818174",
+      "file": "content/imoveis/jardim-america-apto-tipo-casa-terreo-3qtos-quintal-3041818174/dados_imovel.json",
+      "sha256": "62d0c4bef752c6f5575df7ed7ebc30ca2196319530aad4327b8c7055ccc689cb"
+    },
+    {
+      "id": "3041920674",
+      "file": "content/imoveis/coelho-neto-casa-de-135-m-com-piscina-3-quartos-3-3041920674/dados_imovel.json",
+      "sha256": "0983be815a9361dcbe5608b876b12b0f7e61fce343480b1822f91b309489888d"
+    },
+    {
+      "id": "3042851381",
+      "file": "content/imoveis/casa-duplex-c-140-m-varandao-2-quartos-2-suites-3042851381/dados_imovel.json",
+      "sha256": "26451749e9d172f213d67d7e363157ae27760f2d0c55f56f9710fbabc9433161"
+    },
+    {
+      "id": "3043564937",
+      "file": "content/imoveis/parque-columbia-rua-ruanda-prox.-da-crajubar-apto-3043564937/dados_imovel.json",
+      "sha256": "89ed386de217c2cfafd53114fb87d725a8edc635db17acf76f0c42af57cc73d6"
+    },
+    {
+      "id": "3043565436",
+      "file": "content/imoveis/jardim-america-v.esperanca-melhor-rua-casa-3043565436/dados_imovel.json",
+      "sha256": "af7a68a24c65a4d1bdd5f892f36c3432f87d679d0d2d24bd78d41b8446ae226f"
+    }
+  ]
+}

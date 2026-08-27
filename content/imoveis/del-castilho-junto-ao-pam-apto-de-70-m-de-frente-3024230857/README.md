@@ -1,4 +1,4 @@
-# Del Castilho, junto ao PAM, Apto de 70 m², de frente, com sol da manhã, 2º andar, apenas um lance de
+# Apartamento em Del Castilho — Rua Lagoa Redonda, de frente e próximo ao metrô
 
 > **Apartamento · 70m² · 2 quartos**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/del-castilho-junto-ao-pam-apto-de-70-m-de-frente-3024230857.html](https://www.imovelweb.com.br/propriedades/del-castilho-junto-ao-pam-apto-de-70-m-de-frente-3024230857.html)  
@@ -42,13 +42,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Apto de 70 m², de frente, com sol da manhã, 2º andar, apenas um lance de escada; Fachada do prédio recém-reformada; Portaria com controle de acesso; Localização privilegiada, com acesso direto à passarela para o *SHOPPING NOVA AMÉRICA e acesso ao METRÔ. Em frente à Praça dos Quiosques, parquinho, campo de futebol e eventos + academia popular e próximo ao PAM de Del Castilho. O imóvel precisa de reforma e possui 2 dormitórios arejados, um banheiro social, sala ampla em dois ambientes, cozinha espaçosa com área de serviço e gás encanado.
-Condomínio: R$ 130,00
-IPTU isento
-```
-
----
+Apartamento de frente com 70 m², no segundo andar, acessível por um lance de escada. Possui sala em dois ambientes, dois quartos, banheiro social, cozinha, área de serviço e gás encanado. O imóvel precisa de reforma.
+O prédio tem fachada reformada e portaria com controle de acesso. Fica próximo à passarela do Shopping Nova América, ao metrô, ao PAM de Del Castilho e às áreas de lazer do entorno. O IPTU é isento.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

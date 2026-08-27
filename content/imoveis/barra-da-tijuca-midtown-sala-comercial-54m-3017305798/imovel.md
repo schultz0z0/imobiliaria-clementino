@@ -1,4 +1,4 @@
-# Barra da Tijuca - Midtown, Sala Comercial 54m², Duplex, Tipo Cobertura.
+# Sala comercial em Barra da Tijuca — Shopping Midtown, duplex e com vaga
 
 > **Comercial · 54m² · 1 vaga**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/barra-da-tijuca-midtown-sala-comercial-54m-3017305798.html](https://www.imovelweb.com.br/propriedades/barra-da-tijuca-midtown-sala-comercial-54m-3017305798.html)  
@@ -41,11 +41,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Na Barra da Tijuca, Shopping Midtown Nova Ipanema, sala comercial com 54m², duplex, com algumas benfeitorias como: rebaixamento de teto, piso cerâmico, clara e ventilada. Em Frente ao BRT e Barra Shopping e New York. Portaria e segurança 24Hs. Condomínio: R$ 2.000; IPTU: R$ 850,00. Doctos Ok. Pronta para Uso. Possui 1 Vga de Garagem e estacionamento para visitantes. Aceito entrada de 130.000, e parcelo o restante.
-```
-
----
+Sala comercial duplex de 54 m² no Shopping Midtown Nova Ipanema, na Barra da Tijuca. O espaço é claro e ventilado, com piso cerâmico e rebaixamento de teto.
+O empreendimento fica em frente ao BRT, próximo ao BarraShopping e ao New York City Center, com portaria e segurança 24 horas. A unidade possui uma vaga de garagem, e há estacionamento para visitantes.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

@@ -1,4 +1,4 @@
-# Jardim América - Dois Imóveis, Terreno 250m², 4Qtos, Suíte, Escritório, 4 Vagas.
+# Casa em Jardim América — Rua Gelabert Simas, dois pavimentos e amplo quintal
 
 > **Casa · 160m² · 5 quartos · 4 vagas**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/jardim-america-dois-imoveis-terreno-250m-4qtos-3022035905.html](https://www.imovelweb.com.br/propriedades/jardim-america-dois-imoveis-terreno-250m-4qtos-3022035905.html)  
@@ -43,12 +43,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Imóvel em 2 pavimentos, sendo o 1º piso térreo, composto de: varanda, sala em 2 ambientes, corredor, banheiro social, com box blindex, 2 quartos , sendo 1 suíte, cozinha , área de lavanderia externa, quintal grande, garagem para 4 carros . 
-1º andar, composto de : varanda, sala em dois ambientes, corredor, banheiro social, com box blindex, armários, 2 quartos + escritório, lavanderia e área externa + terraço coberto. Estudo proposta.
-```
-
----
+Imóvel de dois pavimentos na Rua Gelabert Simas. O térreo possui varanda, sala em dois ambientes, banheiro social, dois quartos — sendo uma suíte —, cozinha, lavanderia externa, quintal amplo e garagem para quatro carros.
+O pavimento superior conta com varanda, sala em dois ambientes, banheiro social, dois quartos, escritório, lavanderia, área externa e terraço coberto.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

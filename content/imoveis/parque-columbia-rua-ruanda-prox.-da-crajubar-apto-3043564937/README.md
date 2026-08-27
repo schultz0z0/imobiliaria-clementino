@@ -1,4 +1,4 @@
-# Parque Columbia - Rua Ruanda, Próx. da Crajubar, Apto Térreo, Living, Jantar, 3 Qtos, Suíte, 1 Vga.
+# Apartamento em Parque Columbia — Rua Ruanda, térreo e de frente
 
 > **Apartamento · 96m² · 3 quartos · 1 vaga**
 > **Link oficial:** [Imovelweb](https://www.imovelweb.com.br/propriedades/parque-columbia-rua-ruanda-prox.-da-crajubar-apto-3043564937.html)
@@ -45,8 +45,8 @@
 
 ## Descrição completa
 
-Apartamento de frente à venda na Pavuna, com 96 m² de área construída e 98 m² de área total. O imóvel possui uma planta prática de 1 andar que dispõe de sala ampla, 3 quartos, sendo 1 suíte, e 2 banheiros sociais. A unidade conta ainda com cozinha integrada à área de serviço e ar condicionado instalado. Há 1 vaga de garagem disponível. Com 38 anos de construção, o imóvel aceita FGTS.
-A região de Pavuna tem excelente conectividade, com fácil acesso ao metrô e transporte público. A área é residencial e comercial, com escolas, supermercados, farmácias, padarias e diversos serviços essenciais a poucos minutos, garantindo praticidade aos moradores.
+Apartamento térreo e de frente na Rua Ruanda, em Parque Columbia. Possui 96 m² de área útil e 98 m² de área total, com sala ampla, três quartos — sendo uma suíte —, dois banheiros, cozinha integrada à área de serviço, ar-condicionado e uma vaga de garagem.
+O imóvel aceita FGTS e fica próximo ao transporte público, ao comércio e aos serviços da região.
 
 ## Observações de validação
 

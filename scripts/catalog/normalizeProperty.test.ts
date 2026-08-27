@@ -121,3 +121,22 @@ test('converts source HTML line breaks into readable description lines', () => {
 
   assert.equal(property.desc, 'Primeiro parágrafo.\nSegundo parágrafo.\nTerceiro parágrafo.');
 });
+
+test('removes Imovelweb interface markup and sentences whose values are hidden', () => {
+  const record = makeRawRecord();
+  record.descricao = [
+    'Primeiro parágrafo com informação útil.<br>',
+    'Segundo &amp; terceiro parágrafo.<br>',
+    "Oportunidade: Valor reduzido de R$ <span class='descripcionDatosAnunciante'><button class='js-verDatos'>Ver dados</button></span> para R$ <span><button>Ver dados</button></span>.",
+  ].join('');
+
+  const property = normalizeProperty(record, 'pasta-3042851381', {
+    purposeById: { '3042851381': 'Aluguel' },
+  });
+
+  assert.equal(
+    property.desc,
+    'Primeiro parágrafo com informação útil.\nSegundo & terceiro parágrafo.',
+  );
+  assert.doesNotMatch(property.desc, /<[^>]+>|Ver dados|descripcionDatosAnunciante/i);
+});

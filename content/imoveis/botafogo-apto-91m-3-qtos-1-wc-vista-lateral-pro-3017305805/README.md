@@ -1,4 +1,4 @@
-# Botafogo - Apto 91m², 3 Qtos, 1 WC, Vista Lateral Pro Cristo
+# Apartamento em Botafogo — Rua Voluntários da Pátria e vista para o Cristo
 
 > **Apartamento · 91m² · 3 quartos**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/botafogo-apto-91m-3-qtos-1-wc-vista-lateral-pro-3017305805.html](https://www.imovelweb.com.br/propriedades/botafogo-apto-91m-3-qtos-1-wc-vista-lateral-pro-3017305805.html)  
@@ -42,15 +42,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Apartamento amplo com 91m², claro, arejado e com vista lateral para o Cristo Redentor. Composto por sala ampla, 3 quartos com armários planejados, banheiro social, cozinha integrada à área de serviço e dependência completa.
-O prédio oferece acessibilidade, bicicletário, espaço com brinquedos para crianças e salão de festas. 
-Excelente localização, próximo ao farto comércio do bairro, da Cobal do Humaitá e com mobilidade para os demais bairros.
-Possibilidade de alugar vaga no condomínio.?
-Não perca esta oportunidade única de morar ou investir.
-```
-
----
+Apartamento de 91 m², claro e arejado, com vista lateral para o Cristo Redentor. Possui sala ampla, três quartos com armários planejados, banheiro social, cozinha integrada à área de serviço e dependência completa.
+O prédio oferece acessibilidade, bicicletário, espaço infantil e salão de festas. Há possibilidade de locação de vaga no condomínio.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

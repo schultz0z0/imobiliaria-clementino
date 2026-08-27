@@ -1,4 +1,4 @@
-import { getCuratedProperties, getTopNeighborhoods } from '../catalog/propertyCatalog';
+import { getCuratedPropertiesById, getTopNeighborhoods } from '../catalog/propertyCatalog';
 import { BuyingJourney } from '../components/home/BuyingJourney';
 import { FeaturedProperties } from '../components/home/FeaturedProperties';
 import { FinalCta } from '../components/home/FinalCta';
@@ -8,7 +8,7 @@ import { NeedsNavigation } from '../components/home/NeedsNavigation';
 import { NeighborhoodHighlights } from '../components/home/NeighborhoodHighlights';
 import { TrustStrip } from '../components/home/TrustStrip';
 import { brandAssets } from '../config/brandAssets';
-import { featuredPropertySlugs } from '../config/editorial';
+import { featuredPropertyIds } from '../config/editorial';
 import { getPageMetadata } from '../config/pageMetadata';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { usePropertyCatalog } from '../hooks/usePropertyCatalog';
@@ -16,7 +16,7 @@ import { usePropertyCatalog } from '../hooks/usePropertyCatalog';
 export const Home = () => {
   usePageMeta(getPageMetadata('home'));
   const { properties } = usePropertyCatalog();
-  const featured = getCuratedProperties(featuredPropertySlugs);
+  const featured = getCuratedPropertiesById(featuredPropertyIds);
   const neighborhoods = getTopNeighborhoods(4);
 
   return (

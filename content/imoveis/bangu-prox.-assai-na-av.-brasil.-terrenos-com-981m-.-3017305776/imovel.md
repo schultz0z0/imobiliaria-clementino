@@ -1,4 +1,4 @@
-# Bangu - Próx. Assaí na Av. Brasil. Terrenos com 981m². Com, Ind ou Igreja.
+# Terreno em Bangu — Rua Pedro Pomar, próximo à Avenida Brasil
 
 > **Comercial · 981m²**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/bangu-prox.-assai-na-av.-brasil.-terrenos-com-981m-.-3017305776.html](https://www.imovelweb.com.br/propriedades/bangu-prox.-assai-na-av.-brasil.-terrenos-com-981m-.-3017305776.html)  
@@ -40,11 +40,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Em Bangu, na Rua Pedro Pomar, junto a Avenida Brasil e o Atacadista Assaí em Bangu. Vendo 4 lotes de terreno, totalizando 981m². Ideal para comércio, indústria, Igrejas ou empreendimento. Doctos ok. Aceito entrada e facilito restante.
-```
-
----
+Conjunto de quatro lotes na Rua Pedro Pomar, em Bangu, totalizando 981 m². A localização fica próxima à Avenida Brasil e ao Atacadista Assaí.
+O terreno pode atender a usos comerciais, industriais, religiosos ou a novos empreendimentos. A documentação está regular, com possibilidade de negociação da entrada e do saldo.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

@@ -1,4 +1,4 @@
-# Jardim América - Casa Duplex, Varanda, 2 Salas, Total 4 Qtos, Suíte, Terraço e Garagem.
+# Casa duplex em Jardim América — Rua Conselheiro Meirelles, suíte e terraço
 
 > **Casa · 125m² · 4 quartos · 1 vaga**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/jardim-america-casa-duplex-varanda-2-salas-total-3018249672.html](https://www.imovelweb.com.br/propriedades/jardim-america-casa-duplex-varanda-2-salas-total-3018249672.html)  
@@ -44,11 +44,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Esta casa à venda em Jardim América possui 125 m² de área construída e 130 m² de área total. A propriedade oferece 4 quartos, incluindo 1 suíte, e 4 banheiros. A distribuição interna conta com sala de jantar, cozinha independente, despensa e closet. Nos espaços externos, a casa dispõe de quintal e varanda. A propriedade possui 2 andares e 1 vaga de estacionamento. Entre as comodidades, há ar condicionado e área de serviço. O imóvel tem 29 anos de idade. A região de Jardim América é predominantemente residencial, com acesso facilitado a serviços essenciais e transporte público.
-```
-
----
+Casa duplex de 125 m² de área construída em terreno de 130 m², localizada na Rua Conselheiro Meirelles. Possui quatro quartos — sendo uma suíte —, quatro banheiros, sala de jantar, cozinha, despensa e closet.
+A área externa conta com quintal, varanda e uma vaga de garagem. O imóvel também dispõe de ar-condicionado e área de serviço.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

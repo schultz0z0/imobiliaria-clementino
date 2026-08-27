@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import test from 'node:test';
+import { validateEditorialText } from './applyEditorialReview';
 import { normalizeProperty } from './normalizeProperty';
 
 const contentRoot = join(process.cwd(), 'content', 'imoveis');
@@ -23,6 +24,21 @@ test('contains the complete real property inventory', () => {
     assert.ok(ids.has(requiredId), `Property ${requiredId} must exist in the content inventory.`);
   }
   assert.equal(photoCount, 1_543);
+});
+
+test('keeps every title and description within the approved editorial standard', () => {
+  const folders = readdirSync(contentRoot, { withFileTypes: true }).filter((entry) => entry.isDirectory());
+
+  for (const folder of folders) {
+    const record = JSON.parse(readFileSync(join(contentRoot, folder.name, 'dados_imovel.json'), 'utf8'));
+    const id = record.dados_gerais.id_imovelweb;
+
+    assert.ok(folder.name.endsWith(id), `Folder ${folder.name} must remain linked to property ${id}.`);
+    assert.doesNotThrow(
+      () => validateEditorialText(record.dados_gerais.titulo, record.descricao),
+      `Property ${id} must comply with the editorial standard.`,
+    );
+  }
 });
 
 test('keeps property 0055 as a sale at its advertised sale price', () => {
@@ -88,7 +104,8 @@ test('keeps property CA0018 as a R$ 250,000 sale without stale prices in its des
   assert.equal(property.type, 'Venda');
   assert.equal(property.priceValue, 250_000);
   assert.equal(property.price, 'R$\u00a0250.000');
-  assert.match(property.desc, /^Em Jardim América, casa muito boa e espaçosa/);
-  assert.match(property.desc, /Valor: R\$ 250 mil/);
+  assert.equal(property.title, 'Casa em Jardim América — Rua General Oscílio Maia, varanda e terraço');
+  assert.match(property.desc, /^Casa de três pavimentos em Jardim América\./);
+  assert.doesNotMatch(property.desc, /Valor:/i);
   assert.doesNotMatch(property.desc, /R\$\s*(?:280|380)(?:\.000|\s*mil)/i);
 });

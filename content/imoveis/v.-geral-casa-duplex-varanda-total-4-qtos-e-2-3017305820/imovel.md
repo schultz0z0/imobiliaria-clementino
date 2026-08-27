@@ -1,4 +1,4 @@
-# V. Geral - Casa Duplex, Varanda, Total 4 Qtos e 2 Banhs, Quintal e Área Gourmet.
+# Casa duplex em Vigário Geral — Rua São Bartolomeu e área gourmet
 
 > **Apartamento · 123m² · 3 quartos**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/v.-geral-casa-duplex-varanda-total-4-qtos-e-2-3017305820.html](https://www.imovelweb.com.br/propriedades/v.-geral-casa-duplex-varanda-total-4-qtos-e-2-3017305820.html)  
@@ -41,11 +41,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Em Vigário Geral, casa duplex, 123m², possuindo no 1º piso: sala 2 ambientes, corredor, banheiro social, 01 quarto, copa cozinha, área de lavanderia, quintal com churrasqueira e banheiro de apoio. Escada de acesso ao 2º piso, que possui: varandão, 03 quartos.
-```
-
----
+Casa duplex de 123 m² em Vigário Geral. O primeiro piso possui sala em dois ambientes, corredor, banheiro social, um quarto, copa-cozinha, lavanderia e quintal com churrasqueira e banheiro de apoio.
+No segundo piso, há varanda ampla e três quartos.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

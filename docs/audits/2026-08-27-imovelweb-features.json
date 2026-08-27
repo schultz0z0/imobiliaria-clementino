@@ -1,5 +1,9 @@
 {
-  "generatedAt": "2026-08-27T03:16:24.130Z",
+  "generatedAt": "2026-08-27T04:42:26.767Z",
+  "selectors": {
+    "primaryFacts": "#section-icon-features-property",
+    "extraFeatures": "#reactGeneralFeatures"
+  },
   "properties": [
     {
       "id": "3038426799",
@@ -40,37 +44,80 @@
             "Aceita FGTS"
           ]
         }
+      ],
+      "primaryFacts": [
+        "135 m² tot.",
+        "130 m² útil",
+        "3 banheiros",
+        "4 vagas",
+        "4 quartos",
+        "1 suíte",
+        "10 anos"
       ]
     },
     {
       "id": "3017305776",
       "url": "https://www.imovelweb.com.br/propriedades/bangu-prox.-assai-na-av.-brasil.-terrenos-com-981m-.-3017305776.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "981 m² tot.",
+        "981 m² útil",
+        "20 anos"
+      ]
     },
     {
       "id": "3017305798",
       "url": "https://www.imovelweb.com.br/propriedades/barra-da-tijuca-midtown-sala-comercial-54m-3017305798.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "54 m² tot.",
+        "54 m² útil",
+        "1 vaga",
+        "20 anos"
+      ]
     },
     {
       "id": "3017305805",
       "url": "https://www.imovelweb.com.br/propriedades/botafogo-apto-91m-3-qtos-1-wc-vista-lateral-pro-3017305805.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "91 m² tot.",
+        "91 m² útil",
+        "1 banheiro",
+        "3 quartos",
+        "30 anos"
+      ]
     },
     {
       "id": "3017305797",
       "url": "https://www.imovelweb.com.br/propriedades/botafogo-rio-de-janeiro-rj-apto-3-qtos-1-suite-3017305797.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "118 m² tot.",
+        "118 m² útil",
+        "2 banheiros",
+        "1 vaga",
+        "3 quartos",
+        "1 suíte"
+      ]
     },
     {
       "id": "3017305811",
       "url": "https://www.imovelweb.com.br/propriedades/casa-de-condominio-com-4-quartos-436m-a-venda-em-3017305811.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "436 m² tot.",
+        "436 m² útil",
+        "8 banheiros",
+        "2 vagas",
+        "4 quartos",
+        "4 suítes"
+      ]
     },
     {
       "id": "3042851381",
@@ -97,6 +144,15 @@
             "Andares : 2"
           ]
         }
+      ],
+      "primaryFacts": [
+        "140 m² tot.",
+        "135 m² útil",
+        "4 banheiros",
+        "3 vagas",
+        "2 quartos",
+        "2 suítes",
+        "35 anos"
       ]
     },
     {
@@ -127,37 +183,83 @@
             "Varanda"
           ]
         }
+      ],
+      "primaryFacts": [
+        "135 m² tot.",
+        "130 m² útil",
+        "2 banheiros",
+        "3 vagas",
+        "3 quartos",
+        "30 anos"
       ]
     },
     {
       "id": "3017305773",
       "url": "https://www.imovelweb.com.br/propriedades/copacabana-apto-106m-2-qtos-2-bnhs-1-vaga-3017305773.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "106 m² tot.",
+        "106 m² útil",
+        "2 banheiros",
+        "1 vaga",
+        "2 quartos",
+        "25 anos"
+      ]
     },
     {
       "id": "3017305767",
       "url": "https://www.imovelweb.com.br/propriedades/copacabana-apto-75m-2-qtos-1-wc-prox.-ao-metro-3017305767.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "75 m² tot.",
+        "75 m² útil",
+        "1 banheiro",
+        "2 quartos",
+        "25 anos"
+      ]
     },
     {
       "id": "3017305809",
       "url": "https://www.imovelweb.com.br/propriedades/copacabana-av.-atlantica-cobertura-linear-425m-4-3017305809.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "425 m² tot.",
+        "425 m² útil",
+        "6 banheiros",
+        "1 vaga",
+        "4 quartos",
+        "4 suítes",
+        "40 anos"
+      ]
     },
     {
       "id": "3017305760",
       "url": "https://www.imovelweb.com.br/propriedades/d.caxias-bar-cavaleiro-cond.varsovia-carlos-3017305760.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "65 m² tot.",
+        "62 m² útil",
+        "1 banheiro",
+        "2 quartos",
+        "40 anos"
+      ]
     },
     {
       "id": "3017305794",
       "url": "https://www.imovelweb.com.br/propriedades/d.caxias-centro-cond.-res.-dr.-roberto-da-silveira-3017305794.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "75 m² tot.",
+        "74 m² útil",
+        "1 banheiro",
+        "3 quartos",
+        "38 anos"
+      ]
     },
     {
       "id": "3024230857",
@@ -177,13 +279,28 @@
             "Posição do Apto : Frente"
           ]
         }
+      ],
+      "primaryFacts": [
+        "75 m² tot.",
+        "70 m² útil",
+        "1 banheiro",
+        "2 quartos",
+        "40 anos"
       ]
     },
     {
       "id": "3017305816",
       "url": "https://www.imovelweb.com.br/propriedades/galpao-com-3-quartos-960m-a-venda-em-rio-de-3017305816.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "1250 m² tot.",
+        "960 m² útil",
+        "3 banheiros",
+        "5 vagas",
+        "3 quartos",
+        "45 anos"
+      ]
     },
     {
       "id": "3037727090",
@@ -197,14 +314,21 @@
             "Aceita FGTS"
           ]
         }
+      ],
+      "primaryFacts": [
+        "320 m² tot.",
+        "318 m² útil",
+        "4 banheiros",
+        "4 quartos",
+        "29 anos"
       ]
     },
     {
       "id": "3017305792",
       "url": "https://www.imovelweb.com.br/propriedades/j.-america-rua-prof-costa-ribeiro-lindo-sobrado-3017305792.html",
-      "status": "preserved",
+      "status": "no-section",
       "groups": [],
-      "note": "Anúncio finalizado no Imovelweb; não havia características anteriores para preservar."
+      "primaryFacts": []
     },
     {
       "id": "3035177398",
@@ -224,42 +348,49 @@
             "Posição do Apto : Fundos"
           ]
         }
+      ],
+      "primaryFacts": [
+        "89 m² tot.",
+        "90 m² útil",
+        "1 banheiro",
+        "2 quartos",
+        "40 anos"
       ]
     },
     {
       "id": "3017305795",
       "url": "https://www.imovelweb.com.br/propriedades/jardim-america-apto-tipo-casa-78m-quintal-2-3017305795.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "78 m² tot.",
+        "75 m² útil",
+        "2 banheiros",
+        "2 quartos",
+        "30 anos"
+      ]
     },
     {
       "id": "3041818174",
       "url": "https://www.imovelweb.com.br/propriedades/jardim-america-apto-tipo-casa-terreo-3qtos-quintal-3041818174.html",
-      "status": "preserved",
-      "groups": [
-        {
-          "category": "Áreas privativas",
-          "items": [
-            "Área de serviço",
-            "Cozinha independente",
-            "Quintal",
-            "Varanda"
-          ]
-        },
-        {
-          "category": "Outros",
-          "items": [
-            "Andares : 2"
-          ]
-        }
-      ],
-      "note": "Anúncio finalizado no Imovelweb; características preservadas do conteúdo anterior."
+      "status": "no-section",
+      "groups": [],
+      "primaryFacts": []
     },
     {
       "id": "3017305821",
       "url": "https://www.imovelweb.com.br/propriedades/jardim-america-casa-duplex-com-4-qtos-suite-140m-3017305821.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "250 m² tot.",
+        "140 m² útil",
+        "3 banheiros",
+        "8 vagas",
+        "4 quartos",
+        "1 suíte",
+        "42 anos"
+      ]
     },
     {
       "id": "3018249672",
@@ -286,13 +417,29 @@
             "Andares : 2"
           ]
         }
+      ],
+      "primaryFacts": [
+        "130 m² tot.",
+        "125 m² útil",
+        "4 banheiros",
+        "1 vaga",
+        "4 quartos",
+        "1 suíte",
+        "29 anos"
       ]
     },
     {
       "id": "3018791156",
       "url": "https://www.imovelweb.com.br/propriedades/jardim-america-casa-linear-quintal-total-3-qtos-3018791156.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "88 m² tot.",
+        "85 m² útil",
+        "2 banheiros",
+        "4 vagas",
+        "32 anos"
+      ]
     },
     {
       "id": "3037729115",
@@ -326,13 +473,29 @@
             "Aceita FGTS"
           ]
         }
+      ],
+      "primaryFacts": [
+        "150 m² tot.",
+        "145 m² útil",
+        "3 banheiros",
+        "3 vagas",
+        "3 quartos",
+        "1 suíte",
+        "29 anos"
       ]
     },
     {
       "id": "3017305771",
       "url": "https://www.imovelweb.com.br/propriedades/jardim-america-casa-sala-ampla-3qtos-2-bnnhs-3017305771.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "122 m² tot.",
+        "121 m² útil",
+        "2 banheiros",
+        "3 quartos",
+        "30 anos"
+      ]
     },
     {
       "id": "3021262193",
@@ -361,6 +524,14 @@
             "Cozinha Gourmet"
           ]
         }
+      ],
+      "primaryFacts": [
+        "69 m² tot.",
+        "68 m² útil",
+        "1 banheiro",
+        "1 vaga",
+        "3 quartos",
+        "20 anos"
       ]
     },
     {
@@ -383,31 +554,69 @@
             "Suítes"
           ]
         }
+      ],
+      "primaryFacts": [
+        "165 m² tot.",
+        "160 m² útil",
+        "3 banheiros",
+        "4 vagas",
+        "5 quartos",
+        "35 anos"
       ]
     },
     {
       "id": "3018026849",
       "url": "https://www.imovelweb.com.br/propriedades/jardim-america-junto-a-pres.dutra-galpao-3018026849.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "381 m² tot.",
+        "372 m² útil",
+        "1 banheiro",
+        "2 quartos",
+        "40 anos"
+      ]
     },
     {
       "id": "3017305807",
       "url": "https://www.imovelweb.com.br/propriedades/jardim-america-na-antiga-rua-2-apto-tipo-casa-3017305807.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "68 m² tot.",
+        "65 m² útil",
+        "1 banheiro",
+        "2 vagas",
+        "3 quartos",
+        "27 anos"
+      ]
     },
     {
       "id": "3017305801",
       "url": "https://www.imovelweb.com.br/propriedades/jardim-america-r.-mozart-apto-1-quarto-sl-coz-area-3017305801.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "50 m² tot.",
+        "50 m² útil",
+        "1 banheiro",
+        "1 quarto",
+        "20 anos"
+      ]
     },
     {
       "id": "3018774505",
       "url": "https://www.imovelweb.com.br/propriedades/jardim-america-r.-prof-pires-salgado-apto-varanda-3018774505.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "78 m² tot.",
+        "75 m² útil",
+        "1 banheiro",
+        "1 vaga",
+        "2 quartos",
+        "30 anos"
+      ]
     },
     {
       "id": "3023325766",
@@ -435,19 +644,40 @@
             "Posição do Apto : Frente"
           ]
         }
+      ],
+      "primaryFacts": [
+        "53 m² tot.",
+        "51 m² útil",
+        "1 banheiro",
+        "1 vaga",
+        "2 quartos",
+        "20 anos"
       ]
     },
     {
       "id": "3017305761",
       "url": "https://www.imovelweb.com.br/propriedades/jardim-america-residencial-america-life-tipo-3017305761.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "92 m² tot.",
+        "92 m² útil",
+        "1 banheiro",
+        "1 vaga",
+        "2 quartos"
+      ]
     },
     {
       "id": "3035185637",
       "url": "https://www.imovelweb.com.br/propriedades/jardim-america-rua-alvaro-magalhaes-esquina-com-3035185637.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "78 m² tot.",
+        "76 m² útil",
+        "1 vaga",
+        "40 anos"
+      ]
     },
     {
       "id": "3018326089",
@@ -469,6 +699,14 @@
             "Posição do Apto : Fundos"
           ]
         }
+      ],
+      "primaryFacts": [
+        "69 m² tot.",
+        "67 m² útil",
+        "1 banheiro",
+        "1 vaga",
+        "1 quarto",
+        "30 anos"
       ]
     },
     {
@@ -491,6 +729,14 @@
             "Posição do Apto : Frente"
           ]
         }
+      ],
+      "primaryFacts": [
+        "79 m² tot.",
+        "78 m² útil",
+        "1 banheiro",
+        "1 vaga",
+        "2 quartos",
+        "30 anos"
       ]
     },
     {
@@ -504,6 +750,13 @@
             "Entrada independiente"
           ]
         }
+      ],
+      "primaryFacts": [
+        "89 m² tot.",
+        "87 m² útil",
+        "1 banheiro",
+        "2 quartos",
+        "30 anos"
       ]
     },
     {
@@ -521,6 +774,14 @@
             "Varanda"
           ]
         }
+      ],
+      "primaryFacts": [
+        "93 m² tot.",
+        "90 m² útil",
+        "2 banheiros",
+        "1 vaga",
+        "3 quartos",
+        "37 anos"
       ]
     },
     {
@@ -542,6 +803,13 @@
             "Posição do Apto : Frente"
           ]
         }
+      ],
+      "primaryFacts": [
+        "148 m² tot.",
+        "79 m² útil",
+        "2 banheiros",
+        "4 quartos",
+        "40 anos"
       ]
     },
     {
@@ -569,6 +837,13 @@
             "Andares : 2"
           ]
         }
+      ],
+      "primaryFacts": [
+        "60 m² tot.",
+        "55 m² útil",
+        "1 banheiro",
+        "1 quarto",
+        "45 anos"
       ]
     },
     {
@@ -598,13 +873,27 @@
             "Andares : 1"
           ]
         }
+      ],
+      "primaryFacts": [
+        "75 m² tot.",
+        "73 m² útil",
+        "1 banheiro",
+        "1 quarto",
+        "40 anos"
       ]
     },
     {
       "id": "3017305781",
       "url": "https://www.imovelweb.com.br/propriedades/laranjeiras-rio-de-janeiro-rj-apto-2-qtos-1-bnh-3017305781.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "93 m² tot.",
+        "93 m² útil",
+        "1 banheiro",
+        "1 vaga",
+        "2 quartos"
+      ]
     },
     {
       "id": "3028206195",
@@ -635,6 +924,15 @@
             "Posição do Apto : Frente"
           ]
         }
+      ],
+      "primaryFacts": [
+        "84 m² tot.",
+        "80 m² útil",
+        "2 banheiros",
+        "2 vagas",
+        "2 quartos",
+        "1 suíte",
+        "27 anos"
       ]
     },
     {
@@ -657,43 +955,91 @@
             "Posição do Apto : Frente"
           ]
         }
+      ],
+      "primaryFacts": [
+        "98 m² tot.",
+        "96 m² útil",
+        "2 banheiros",
+        "1 vaga",
+        "3 quartos",
+        "1 suíte",
+        "38 anos"
       ]
     },
     {
       "id": "3017305813",
       "url": "https://www.imovelweb.com.br/propriedades/r.-decio-vilares-copacabana-apto-58-04m-1-qto-1-3017305813.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "58 m² tot.",
+        "58 m² útil",
+        "1 banheiro",
+        "1 quarto"
+      ]
     },
     {
       "id": "3017305790",
       "url": "https://www.imovelweb.com.br/propriedades/r.-francisco-otaviano-ipanema-apto-de-luxo-39m-1-3017305790.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "39 m² tot.",
+        "39 m² útil",
+        "1 banheiro",
+        "1 vaga",
+        "1 quarto",
+        "1 suíte",
+        "2 anos"
+      ]
     },
     {
       "id": "3017305802",
       "url": "https://www.imovelweb.com.br/propriedades/rua-granada-galpao-comercial-industrial-em-v.-geral-3017305802.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "390 m² tot.",
+        "360 m² útil",
+        "30 anos"
+      ]
     },
     {
       "id": "3017305820",
       "url": "https://www.imovelweb.com.br/propriedades/v.-geral-casa-duplex-varanda-total-4-qtos-e-2-3017305820.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "123 m² tot.",
+        "123 m² útil",
+        "2 banheiros",
+        "3 quartos"
+      ]
     },
     {
       "id": "3017305764",
       "url": "https://www.imovelweb.com.br/propriedades/v.-geral-r.-sao-bartolomeu-casa-de-fdos-55-m-3017305764.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "55 m² tot.",
+        "55 m² útil",
+        "1 banheiro",
+        "1 quarto",
+        "35 anos"
+      ]
     },
     {
       "id": "3017305787",
       "url": "https://www.imovelweb.com.br/propriedades/v.-geral-r.-sao-bartolomeu-casa-de-frente-169-m-3017305787.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "170 m² tot.",
+        "169 m² útil",
+        "2 banheiros",
+        "2 quartos"
+      ]
     },
     {
       "id": "3032201782",
@@ -708,19 +1054,39 @@
             "Posição do Apto : Frente"
           ]
         }
+      ],
+      "primaryFacts": [
+        "146 m² tot.",
+        "76 m² útil",
+        "2 banheiros",
+        "2 quartos",
+        "40 anos"
       ]
     },
     {
       "id": "3017305793",
       "url": "https://www.imovelweb.com.br/propriedades/vigario-geral-condominio-padre-anchieta-apto-1-qto-3017305793.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "47 m² tot.",
+        "45 m² útil",
+        "1 banheiro",
+        "1 quarto",
+        "59 anos"
+      ]
     },
     {
       "id": "3017305799",
       "url": "https://www.imovelweb.com.br/propriedades/vigario-geral-rua-otranto-com-rua-maba-quitinetes-3017305799.html",
       "status": "no-section",
-      "groups": []
+      "groups": [],
+      "primaryFacts": [
+        "40 m² tot.",
+        "39 m² útil",
+        "1 banheiro",
+        "1 quarto"
+      ]
     }
   ]
 }

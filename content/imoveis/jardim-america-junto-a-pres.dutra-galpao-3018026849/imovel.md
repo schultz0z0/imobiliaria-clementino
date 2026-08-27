@@ -1,4 +1,4 @@
-# Jardim América - Junto a Pres.Dutra - Galpão Industrial, 382m² Construídos
+# Galpão em Jardim América — Rua João de Paula Fonseca, junto à Rodovia Presidente Dutra
 
 > **Comercial · 372m² · 2 quartos**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/jardim-america-junto-a-pres.dutra-galpao-3018026849.html](https://www.imovelweb.com.br/propriedades/jardim-america-junto-a-pres.dutra-galpao-3018026849.html)  
@@ -42,11 +42,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Em Jardim América, na Rua João de Paula Fonseca, junto a Rodovia Presidente Dutra, quero vender Galpão para uso industrial ou comercial, possuindo 382;00m² de área construída e 240;00m² de área de terreno, que mede 12;00m² de frente e fundos por 20;00m² nas laterais. O imóvel possui uma área total de galpão com 352;00m² + 02 salas e banheiro.
-```
-
----
+Galpão para uso industrial ou comercial na Rua João de Paula Fonseca, em Jardim América, próximo à Rodovia Presidente Dutra.
+Possui 382 m² de área construída em terreno de 240 m². A área principal do galpão soma 352 m² e é complementada por duas salas e um banheiro.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

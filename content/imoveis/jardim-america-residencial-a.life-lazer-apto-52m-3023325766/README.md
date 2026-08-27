@@ -1,4 +1,4 @@
-# Jardim América - Residencial A.Life, Lazer, Apto 52m², 1º andar, 2 Qtos, 1 Vg.
+# Apartamento em Jardim América — Residencial América Life, primeiro andar
 
 > **Apartamento · 51m² · 2 quartos · 1 vaga**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/jardim-america-residencial-a.life-lazer-apto-52m-3023325766.html](https://www.imovelweb.com.br/propriedades/jardim-america-residencial-a.life-lazer-apto-52m-3023325766.html)  
@@ -43,12 +43,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Este apartamento está disponível para venda no Jardim América, apresentando 51 m² de área construída e 53 m² de área total. O imóvel de frente conta com 2 quartos, 1 banheiro social bem posicionado, sala de estar integrada e 1 vaga de garagem garantida. O edifício de 2 andares oferece excelente infraestrutura com portaria e vigilância 24h para maior segurança.
-Na área de lazer, os moradores dispõem de piscina, solarium, churrasqueira, playground, quadra poliesportiva e salão de festas completo. Aceita FGTS como parte de pagamento. A localização no Jardim América garante fácil acesso a comércios, escolas, supermercados e vias de transporte público em uma das regiões mais tradicionais da cidade.
-```
-
----
+Apartamento de frente no primeiro andar do Residencial América Life, em Jardim América. Possui 51 m² de área construída e 53 m² de área total, com sala integrada, dois quartos, banheiro social e uma vaga de garagem.
+O condomínio conta com portaria e vigilância 24 horas, piscina, solário, churrasqueira, playground, quadra poliesportiva e salão de festas. Aceita FGTS.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

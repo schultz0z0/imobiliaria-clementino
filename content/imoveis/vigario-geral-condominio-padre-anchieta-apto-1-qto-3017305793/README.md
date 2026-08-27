@@ -1,4 +1,4 @@
-# Vigário Geral, Condomínio Padre Anchieta - Apto 1 Qto, Sala, Cozinha e Wc. Vendo/Alugo.
+# Apartamento em Vigário Geral — Condomínio Padre Anchieta e área de lazer
 
 > **Apartamento · 45m² · 1 quarto**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/vigario-geral-condominio-padre-anchieta-apto-1-qto-3017305793.html](https://www.imovelweb.com.br/propriedades/vigario-geral-condominio-padre-anchieta-apto-1-qto-3017305793.html)  
@@ -42,11 +42,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Em Vigário Geral - Alugo ou vendo apartamento no Condomínio Padre Anchieta na Estrada de Vigário Geral. Sala, Banheiro Social, Quarto, Cozinha e Área. Condomínio, Área de Lazer, Quadra Esportiva, Brinquedoteca e Salão de Festas. Fica ao lado da Academia ACP.
-```
-
----
+Apartamento no Condomínio Padre Anchieta, na Estrada de Vigário Geral. Possui sala, um quarto, banheiro social, cozinha e área de serviço.
+O condomínio oferece área de lazer, quadra esportiva, brinquedoteca e salão de festas, além de ficar ao lado da Academia ACP.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

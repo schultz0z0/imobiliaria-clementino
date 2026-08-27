@@ -1,4 +1,4 @@
-# R. Décio Vilares , Copacabana - Apto 58,04m², 1 Qto, 1 WC
+# Apartamento em Copacabana — Bairro Peixoto, garden com piscina
 
 > **Apartamento · 58m² · 1 quarto**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/r.-decio-vilares-copacabana-apto-58-04m-1-qto-1-3017305813.html](https://www.imovelweb.com.br/propriedades/r.-decio-vilares-copacabana-apto-58-04m-1-qto-1-3017305813.html)  
@@ -41,23 +41,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Edifício histórico revitalizado no charmoso Bairro Peixoto, com apenas 19 unidades, O Residencial Vilares é uma ótima oportunidade para você que busca um apartamento reformado e contemporâneo no coração de Copacabana, ou para você investidor que procura uma opção promissora e exclusiva.
-Apartamento garden com piscina com hidromassagem e cromoterapia, toldo elétrico com proteção solar para maior privacidade, deck em madeira ecológica, bancada gourmet e armários; composto por:
-58,04m². Sala com preparação para TV, prateleira e split; cozinha com bancada, armários, cooktop e forno embutido; quarto com armário, mesa lateral e painel de cabeceira, preparação para TV, mesa de trabalho e split; banheiro com bancada e armário; porta com fechadura eletrônica. 
-Todos os acabamentos são novos, incluindo as instalações elétricas e hidráulicas, armários planejados Romanzza, design de interiores único e inspirador, assinados por time de arquitetura. 
-1 elevador. 
-Próximo ao metrô, áreas de lazer e conveniências do dia a dia.
-Condomínio com:
-Espaço coworking
-Lavanderia OMO
-Espaço gourmet
-Bicicletário elétrico
-Não perca essa oportunidade!
-Entre em contato e agende sua visita.
-```
-
----
+Apartamento garden de 58,04 m² no Residencial Vilares, edifício histórico revitalizado no Bairro Peixoto. A área externa possui piscina com hidromassagem e cromoterapia, toldo elétrico, deck de madeira ecológica e bancada gourmet.
+A unidade conta com sala, cozinha equipada, quarto com armários e espaço de trabalho, banheiro e fechadura eletrônica. As instalações elétricas e hidráulicas são novas. O condomínio oferece coworking, lavanderia, espaço gourmet, bicicletário elétrico e elevador.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 

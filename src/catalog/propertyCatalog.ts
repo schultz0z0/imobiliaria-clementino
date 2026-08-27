@@ -17,6 +17,7 @@ export interface NeighborhoodSummary {
 }
 
 const properties = catalog as WebsiteProperty[];
+const propertiesById = new Map(properties.map((property) => [property.id, property]));
 
 const normalizeSearchText = (value: string): string =>
   value
@@ -27,8 +28,13 @@ const normalizeSearchText = (value: string): string =>
 
 export const getAllProperties = (): WebsiteProperty[] => properties;
 
-export const getPropertyBySlug = (slug: string): WebsiteProperty | undefined =>
-  properties.find((property) => property.slug === slug);
+export const getPropertyBySlug = (slug: string): WebsiteProperty | undefined => {
+  const exactMatch = properties.find((property) => property.slug === slug);
+  if (exactMatch) return exactMatch;
+
+  const id = slug.match(/-(\d{10})$/)?.[1];
+  return id ? propertiesById.get(id) : undefined;
+};
 
 export const filterProperties = (filters: PropertyFilters): WebsiteProperty[] => {
   const query = normalizeSearchText(filters.query ?? '');
@@ -60,15 +66,12 @@ export const filterProperties = (filters: PropertyFilters): WebsiteProperty[] =>
 export const getFeaturedProperties = (limit = 6): WebsiteProperty[] =>
   properties.slice(0, Math.max(0, limit));
 
-export const getCuratedProperties = (slugs: readonly string[]): WebsiteProperty[] => {
-  const bySlug = new Map(properties.map((property) => [property.slug, property]));
-
-  return slugs.map((slug) => {
-    const property = bySlug.get(slug);
-    if (!property) throw new Error(`Curated property not found: ${slug}`);
+export const getCuratedPropertiesById = (ids: readonly string[]): WebsiteProperty[] =>
+  ids.map((id) => {
+    const property = propertiesById.get(id);
+    if (!property) throw new Error(`Curated property not found: ${id}`);
     return property;
   });
-};
 
 export const getRelatedProperties = (
   current: WebsiteProperty,

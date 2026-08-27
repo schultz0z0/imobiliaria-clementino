@@ -1,4 +1,4 @@
-# Jardim América- Casa, Sala Ampla, 3Qtos, 2 Bnnhs, Varanda e Terraço
+# Casa em Jardim América — Rua General Oscílio Maia, varanda e terraço
 
 > **Casa · 121m² · 3 quartos**  
 > 🔗 **Link Oficial:** [https://www.imovelweb.com.br/propriedades/jardim-america-casa-sala-ampla-3qtos-2-bnnhs-3017305771.html](https://www.imovelweb.com.br/propriedades/jardim-america-casa-sala-ampla-3qtos-2-bnnhs-3017305771.html)  
@@ -42,15 +42,8 @@
 
 ## 📝 Descrição do Imóvel
 
-```text
-Em Jardim América, casa muito boa e espaçosa, com 3 andares:
-Primeiro andar: cozinha, sala, banheiro e área de serviço.
-Segundo andar: 3 quartos, 1 banheiro e varanda.
-Terceiro andar: terraço.
-Valor: R$ 250 mil
-```
-
----
+Casa de três pavimentos em Jardim América. O primeiro andar possui sala ampla, cozinha, banheiro e área de serviço.
+No segundo andar, há três quartos, um banheiro e varanda. O terceiro pavimento é ocupado pelo terraço.
 
 ## 🏢 Contato do Anunciante / Imobiliária
 
