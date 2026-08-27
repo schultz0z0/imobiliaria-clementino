@@ -193,36 +193,36 @@
   ],
   "caracteristicas_extras": {
     "Áreas comuns": {
-      "10030": {
-        "featureId": "10030",
+      "IW_01_001": {
+        "featureId": "IW_01_001",
         "label": "Câmeras de segurança",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "10071": {
-        "featureId": "10071",
+      "IW_01_002": {
+        "featureId": "IW_01_002",
         "label": "Elevador",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "10152": {
-        "featureId": "10152",
+      "IW_01_003": {
+        "featureId": "IW_01_003",
         "label": "Playground",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "10181": {
-        "featureId": "10181",
+      "IW_01_004": {
+        "featureId": "IW_01_004",
         "label": "Salão de festas",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "10208": {
-        "featureId": "10208",
+      "IW_01_005": {
+        "featureId": "IW_01_005",
         "label": "Vigilância 24h",
         "measure": null,
         "value": null,
@@ -230,8 +230,8 @@
       }
     },
     "Áreas privativas": {
-      "20017": {
-        "featureId": "20017",
+      "IW_02_001": {
+        "featureId": "IW_02_001",
         "label": "Área de serviço",
         "measure": null,
         "value": null,
@@ -239,22 +239,22 @@
       }
     },
     "Outros": {
-      "30001": {
-        "featureId": "30001",
+      "IW_03_001": {
+        "featureId": "IW_03_001",
         "label": "Andares",
         "measure": null,
         "value": "4",
         "icon": null
       },
-      "30002": {
-        "featureId": "30002",
+      "IW_03_002": {
+        "featureId": "IW_03_002",
         "label": "Aceita FGTS",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "30004": {
-        "featureId": "30004",
+      "IW_03_003": {
+        "featureId": "IW_03_003",
         "label": "Posição do Apto",
         "measure": null,
         "value": "Frente",

@@ -417,8 +417,8 @@
   ],
   "caracteristicas_extras": {
     "Ambientes": {
-      "20228": {
-        "featureId": "20228",
+      "IW_01_001": {
+        "featureId": "IW_01_001",
         "label": "Entrada independiente",
         "measure": null,
         "value": null,
@@ -426,15 +426,15 @@
       }
     },
     "Áreas comuns": {
-      "10016": {
-        "featureId": "10016",
+      "IW_02_001": {
+        "featureId": "IW_02_001",
         "label": "Área de lazer",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "10140": {
-        "featureId": "10140",
+      "IW_02_002": {
+        "featureId": "IW_02_002",
         "label": "Piscina",
         "measure": null,
         "value": null,
@@ -442,64 +442,64 @@
       }
     },
     "Áreas privativas": {
-      "20012": {
-        "featureId": "20012",
+      "IW_03_001": {
+        "featureId": "IW_03_001",
         "label": "Ar condicionado",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20017": {
-        "featureId": "20017",
+      "IW_03_002": {
+        "featureId": "IW_03_002",
         "label": "Área de serviço",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20048": {
-        "featureId": "20048",
+      "IW_03_003": {
+        "featureId": "IW_03_003",
         "label": "Churrasqueira (parrilla)",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20056": {
-        "featureId": "20056",
+      "IW_03_004": {
+        "featureId": "IW_03_004",
         "label": "Cozinha americana",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20065": {
-        "featureId": "20065",
+      "IW_03_005": {
+        "featureId": "IW_03_005",
         "label": "Despensa",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20080": {
-        "featureId": "20080",
+      "IW_03_006": {
+        "featureId": "IW_03_006",
         "label": "Espaço gourmet",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20110": {
-        "featureId": "20110",
+      "IW_03_007": {
+        "featureId": "IW_03_007",
         "label": "Jardim",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20199": {
-        "featureId": "20199",
+      "IW_03_008": {
+        "featureId": "IW_03_008",
         "label": "Varanda",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20230": {
-        "featureId": "20230",
+      "IW_03_009": {
+        "featureId": "IW_03_009",
         "label": "Suítes",
         "measure": null,
         "value": null,
@@ -507,15 +507,15 @@
       }
     },
     "Outros": {
-      "30001": {
-        "featureId": "30001",
+      "IW_04_001": {
+        "featureId": "IW_04_001",
         "label": "Andares",
         "measure": null,
         "value": "1",
         "icon": null
       },
-      "30002": {
-        "featureId": "30002",
+      "IW_04_002": {
+        "featureId": "IW_04_002",
         "label": "Aceita FGTS",
         "measure": null,
         "value": null,

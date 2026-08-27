@@ -330,22 +330,22 @@
   ],
   "caracteristicas_extras": {
     "Áreas privativas": {
-      "20017": {
-        "featureId": "20017",
+      "IW_01_001": {
+        "featureId": "IW_01_001",
         "label": "Área de serviço",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20058": {
-        "featureId": "20058",
+      "IW_01_002": {
+        "featureId": "IW_01_002",
         "label": "Cozinha independente",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20074": {
-        "featureId": "20074",
+      "IW_01_003": {
+        "featureId": "IW_01_003",
         "label": "Entrada de serviço",
         "measure": null,
         "value": null,
@@ -353,15 +353,15 @@
       }
     },
     "Outros": {
-      "30002": {
-        "featureId": "30002",
+      "IW_02_001": {
+        "featureId": "IW_02_001",
         "label": "Aceita FGTS",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "30004": {
-        "featureId": "30004",
+      "IW_02_002": {
+        "featureId": "IW_02_002",
         "label": "Posição do Apto",
         "measure": null,
         "value": "Fundos",

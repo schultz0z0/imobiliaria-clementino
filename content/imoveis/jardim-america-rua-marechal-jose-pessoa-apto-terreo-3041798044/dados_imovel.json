@@ -464,36 +464,36 @@
   ],
   "caracteristicas_extras": {
     "Áreas privativas": {
-      "20017": {
-        "featureId": "20017",
+      "IW_01_001": {
+        "featureId": "IW_01_001",
         "label": "Área de serviço",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20058": {
-        "featureId": "20058",
+      "IW_01_002": {
+        "featureId": "IW_01_002",
         "label": "Cozinha independente",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20166": {
-        "featureId": "20166",
+      "IW_01_003": {
+        "featureId": "IW_01_003",
         "label": "Quintal",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20177": {
-        "featureId": "20177",
+      "IW_01_004": {
+        "featureId": "IW_01_004",
         "label": "Sala de jantar",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20199": {
-        "featureId": "20199",
+      "IW_01_005": {
+        "featureId": "IW_01_005",
         "label": "Varanda",
         "measure": null,
         "value": null,

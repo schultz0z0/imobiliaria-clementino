@@ -390,64 +390,64 @@
   ],
   "caracteristicas_extras": {
     "Áreas privativas": {
-      "20012": {
-        "featureId": "20012",
+      "IW_01_001": {
+        "featureId": "IW_01_001",
         "label": "Ar condicionado",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20017": {
-        "featureId": "20017",
+      "IW_01_002": {
+        "featureId": "IW_01_002",
         "label": "Área de serviço",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20050": {
-        "featureId": "20050",
+      "IW_01_003": {
+        "featureId": "IW_01_003",
         "label": "Closet",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20058": {
-        "featureId": "20058",
+      "IW_01_004": {
+        "featureId": "IW_01_004",
         "label": "Cozinha independente",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20065": {
-        "featureId": "20065",
+      "IW_01_005": {
+        "featureId": "IW_01_005",
         "label": "Despensa",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20166": {
-        "featureId": "20166",
+      "IW_01_006": {
+        "featureId": "IW_01_006",
         "label": "Quintal",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20177": {
-        "featureId": "20177",
+      "IW_01_007": {
+        "featureId": "IW_01_007",
         "label": "Sala de jantar",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20199": {
-        "featureId": "20199",
+      "IW_01_008": {
+        "featureId": "IW_01_008",
         "label": "Varanda",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20230": {
-        "featureId": "20230",
+      "IW_01_009": {
+        "featureId": "IW_01_009",
         "label": "Suítes",
         "measure": null,
         "value": null,
@@ -455,8 +455,8 @@
       }
     },
     "Outros": {
-      "30001": {
-        "featureId": "30001",
+      "IW_02_001": {
+        "featureId": "IW_02_001",
         "label": "Andares",
         "measure": null,
         "value": "2",

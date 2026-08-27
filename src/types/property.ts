@@ -32,5 +32,12 @@ export interface WebsiteProperty {
   propertyType: string;
   type: 'Venda' | 'Aluguel' | 'Ambos';
   desc: string;
+  featureGroups: Array<{
+    category: string;
+    items: Array<{
+      label: string;
+      value?: string;
+    }>;
+  }>;
   features: string[];
 }

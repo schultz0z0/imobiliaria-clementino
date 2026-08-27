@@ -46,9 +46,8 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Em Duque de Caxias, junto ao Centro, a 10 minutos à pé do Calçadão de Caxias, Condomínio Habitacional Varsóvia, apto com 62 m², 3º andar, sala em 2 ambientes, banheiro social, 2 qtos, cozinha e área de serviço.",
-    "features": [
-      "idade do imóvel: 40"
-    ]
+    "featureGroups": [],
+    "features": []
   },
   {
     "id": "3017305761",
@@ -117,12 +116,8 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Em Jardim América, no Cond. Residencial América Life, apto duplex, tipo cobertura, composto de: 1º Piso: sala, banheiro social com box blindex, arms, 2 quartos, cozinha c/ arms, área de serviço com tanque. 2º Piso: sala tipo home + escritório, podendo fazer + 1 quarto, terraço descoberto podendo fazer área gourmet. Tem 1 vaga pra carro na escritura. Condomínio com área de lazer.",
-    "features": [
-      "Terraco descoberto: Sim",
-      "Armarios planejados: Sim",
-      "Area de servico: Sim",
-      "Lazer condominio: Sim"
-    ]
+    "featureGroups": [],
+    "features": []
   },
   {
     "id": "3017305764",
@@ -172,9 +167,8 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Vigário Geral - Rua São Bartolomeu, casa de fundos com 55 m², em terreno com mais 2 Csas, composta por 01 saleta, 01 quarto grande, 01 cozinha, 01 banheiro, 01 área na frente, terraço coberto, cisterna. Pintura nova. Imóvel desocupado. Entrar e morar. Isento de IPTU. Água e luz separadas. Doctos ok. Aceito financto bancário. Valor 130.000,00.",
-    "features": [
-      "idade do imóvel: 35"
-    ]
+    "featureGroups": [],
+    "features": []
   },
   {
     "id": "3017305767",
@@ -240,9 +234,8 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Apartamento de 75 m² totalmente reformado na Rua Inhangá, Copacabana. Composto por sala em dois ambientes com piso em porcelanato e split; 2 quartos amplos com split, iluminados e bem ventilados; cozinha moderna com bancada e cooktop por indução; área de serviço com tanque e instalação para máquina de lavar; banheiro social. \nLocalizado em prédio bem administrado, com portaria em horário comercial, apenas 2 unidades por andar, salão de festas para os moradores. \nPróximo à estação de metrô, conveniências da região e à praia de Copacabana \n. \nNão perca esta oportunidade única de morar ou investir.",
-    "features": [
-      "idade do imóvel: 25"
-    ]
+    "featureGroups": [],
+    "features": []
   },
   {
     "id": "3017305771",
@@ -297,9 +290,8 @@
     "propertyType": "Casa",
     "type": "Venda",
     "desc": "Em Jardim América, casa muito boa e espaçosa, com 3 andares:\nPrimeiro andar: cozinha, sala, banheiro e área de serviço.\nSegundo andar: 3 quartos, 1 banheiro e varanda.\nTerceiro andar: terraço.\nValor: R$ 250 mil",
-    "features": [
-      "idade do imóvel: 30"
-    ]
+    "featureGroups": [],
+    "features": []
   },
   {
     "id": "3017305773",
@@ -365,9 +357,8 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Lindo apartamento de 106 m², no 12º andar, em excelente localização em Copacabana, a apenas 3 quadras da praia e 5 minutos da estação de metrô Cardeal Arcoverde.\nComposto por uma sala ampla e arejada; 2 quartos, sendo que o primeiro pode ser facilmente convertido em suíte e o segundo conta com um pequeno jardim de inverno; cozinha espaçosa e funcional; 2 banheiros sociais; dependência de empregada e área de serviço completa.\nApartamento de frente proporciona vista verde e excelente iluminação natural, com sol da manhã até às <span class='descripcionDatosAnunciante'><button class='btn btn-link js-verDatos' href='#'>Ver dados</button></span> na sala e quarto da frente, e sol da tarde no quarto dos fundos após às 14:00.\nO prédio é bem administrado, com portaria 24 horas, elevador social e de serviço, e interfone.\nNão perca esta oportunidade única de morar ou investir.",
-    "features": [
-      "idade do imóvel: 25"
-    ]
+    "featureGroups": [],
+    "features": []
   },
   {
     "id": "3017305776",
@@ -418,9 +409,8 @@
     "propertyType": "Comercial",
     "type": "Venda",
     "desc": "Em Bangu, na Rua Pedro Pomar, junto a Avenida Brasil e o Atacadista Assaí em Bangu. Vendo 4 lotes de terreno, totalizando 981m². Ideal para comércio, indústria, Igrejas ou empreendimento. Doctos ok. Aceito entrada e facilito restante.",
-    "features": [
-      "idade do imóvel: 20"
-    ]
+    "featureGroups": [],
+    "features": []
   },
   {
     "id": "3017305781",
@@ -491,6 +481,7 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Apartamento de 93 m² em Laranjeiras. Composto por sala de estar que se conecta à sala de jantar, criando um ambiente amplo e agradável; 2 quartos com armários planejados; 1 banheiro social; cozinha compacta é integrada à área de serviço e despensa.\nA localização é excelente, com fácil acesso ao Fluminense Football Club e ao escritório do Governo do Estado do Rio de Janeiro. O Parque Eduardo Guinle, ideal para passeios e atividades ao ar livre, fica a apenas 11 minutos a pé. Próximo ao Largo do Machado e com fácil acesso ao metrô e outras regiões do Rio.\nO Condomínio do Edifício Torre 1 conta com salão de festas para os moradores.\nNão perca esta oportunidade única de morar ou investir. \nEntre em contato e agende sua visita!?",
+    "featureGroups": [],
     "features": []
   },
   {
@@ -546,6 +537,7 @@
     "propertyType": "Casa",
     "type": "Venda",
     "desc": "Casa frente de rua com 169 m², independente, em terreno de 840m² com mais duas casas. Imóvel composto de: quintal à frente, varanda, sala 2 ambientes, corredor, banheiro social, 02 quartos, copa cozinha, varanda nos fundos e área de lavanderia com tanque, quarto de serviço. Escada de acesso ao terraço coberto no pavimento superior, com uma copa e banheiro. Entrada da casa independente e água e luz separadas. Documentos ok. Aceita carta de crédito.",
+    "featureGroups": [],
     "features": []
   },
   {
@@ -613,9 +605,8 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Localizado no coração do Arpoador, o Canto Rio não é apenas um endereço, mas uma experiência. Com mais de 2.000m² de área de lazer e serviços exclusivos, este empreendimento já está 100% vendido, sendo essa unidade uma oportunidade rara no mercado.\nStudio de 38,08m², com varanda e área gourmet, VISTA MAR e experiências inéditas em mais de 2.000m² de área de lazer e serviços na zona sul do Rio de Janeiro;\nPiscina de 25m com raias, sauna, bar, academia by Companhia Atlética, sala de massagem, sauna, bar, lounge, lavanderia e muito mais. O Canto Rio também se destaca por seus diferenciais tecnológicos, incluindo fechadura smart lock e infraestrutura para comando de voz IOT.\nSegurança única, com: Sistema de reconhecimento facial para controle de acesso dos moradores com integrac?a?o a? portaria remota; Seguranc?a perimetral monitorada; Circuito de CFTV com acesso remoto; Controle eletro?nico de acesso de vei?culos; Acesso separado de entregas/servic?os;\nLocalizado entre o mar e o que o Rio tem de melhor, a alguns passos de tudo que o Arpoador tem a oferecer.\n01 vaga na escritura.\nNão perca esta chance única! Entre em contato e agende sua visita.",
-    "features": [
-      "idade do imóvel: 2"
-    ]
+    "featureGroups": [],
+    "features": []
   },
   {
     "id": "3017305792",
@@ -685,9 +676,8 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Em Jardim América, próximo ao ponto final da linha 774 (Madureira - Jardim América). Lindo imóvel tipo sobrado, de fundos, só tem 2 aptos no prédiodos fundos, e não tem condomínio. O apto possui 2 salas, 2 quartos, 2 banheiros, e área total de 110m² e 98m² de área útil. Perfeito para moradia ou investimento! Valor do imóvel: R$ 150.000,00. Aceita financiamento bancário, O imóvel está disponível para visita em horários flexíveis. Agende sua visita agora mesmo.",
-    "features": [
-      "idade do imóvel: 29"
-    ]
+    "featureGroups": [],
+    "features": []
   },
   {
     "id": "3017305793",
@@ -749,9 +739,8 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Em Vigário Geral - Alugo ou vendo apartamento no Condomínio Padre Anchieta na Estrada de Vigário Geral. Sala, Banheiro Social, Quarto, Cozinha e Área. Condomínio, Área de Lazer, Quadra Esportiva, Brinquedoteca e Salão de Festas. Fica ao lado da Academia ACP.",
-    "features": [
-      "idade do imóvel: 59"
-    ]
+    "featureGroups": [],
+    "features": []
   },
   {
     "id": "3017305794",
@@ -803,9 +792,8 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Condomínio Conjunto Residencial Dr. Roberto Silveira,\nApto de 75m,² 2º andar, sala, banheiro social, 3 quartos, cozinha e área de serviço, no Centro de Caxias/RJ .",
-    "features": [
-      "idade do imóvel: 38"
-    ]
+    "featureGroups": [],
+    "features": []
   },
   {
     "id": "3017305795",
@@ -877,9 +865,8 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Em Jardim América- Apartamento tipo casa com entrada independente, 78m², quintal, sala, 2 quartos, 2 banheiros, cozinha, área de serviço externa.\nRua Álvaro Magalhães.\n(Aceito Carta de Crédito),",
-    "features": [
-      "idade do imóvel: 30"
-    ]
+    "featureGroups": [],
+    "features": []
   },
   {
     "id": "3017305797",
@@ -961,6 +948,7 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Excelente apartamento de 118 m², localizado em rua tranquila de Botafogo. Composto por hall de entrada, sala ampla e iluminada, 3 quartos, sendo 1 suíte, com armários planejados e ar-condicionado, banheiros com box blindex, copa-cozinha com armários, área de serviço ampla e arejada, além de dependência completa. \nO imóvel passou por reforma completa na parte elétrica e hidráulica. Possui 1 vaga no condomínio. Prédio com portaria 24 horas. \nPróximo a farto comércio e conveniências da região. \nNão perca esta oportunidade única de morar ou investir.",
+    "featureGroups": [],
     "features": []
   },
   {
@@ -1019,9 +1007,8 @@
     "propertyType": "Comercial",
     "type": "Venda",
     "desc": "Na Barra da Tijuca, Shopping Midtown Nova Ipanema, sala comercial com 54m², duplex, com algumas benfeitorias como: rebaixamento de teto, piso cerâmico, clara e ventilada. Em Frente ao BRT e Barra Shopping e New York. Portaria e segurança 24Hs. Condomínio: R$ 2.000; IPTU: R$ 850,00. Doctos Ok. Pronta para Uso. Possui 1 Vga de Garagem e estacionamento para visitantes. Aceito entrada de 130.000, e parcelo o restante.",
-    "features": [
-      "idade do imóvel: 20"
-    ]
+    "featureGroups": [],
+    "features": []
   },
   {
     "id": "3017305799",
@@ -1072,6 +1059,7 @@
     "propertyType": "Casa",
     "type": "Aluguel",
     "desc": "Em Vigário Geral, na Rua Otranto quase esquina com Rua Mabá, próximo do Polo Comercial Pça 2, BRT e Avenida Brasil. Alugo Kitinetes com sala e quarto grande, separados, cozinha kitchen e banheiro social completo. Aluguel R$ 580,00, já incluída a água.\nContato: 21  ou  whatssap",
+    "featureGroups": [],
     "features": []
   },
   {
@@ -1129,9 +1117,8 @@
     "propertyType": "Apartamento",
     "type": "Aluguel",
     "desc": "Em Jardim América na R.Mozart, vendo este aconchegante apartamento 50m², 1° andar, localizado em um prédio tranquilo de apenas 2 andares, sem condomínio e com apenas 2 apartamentos por andar. Um verdadeiro achado para quem busca comodidade e economia. \nEste charmoso apartamento é composto por uma sala acolhedora, um banheiro social com box blindex, um quarto espaçoso, uma cozinha funcional e uma área de serviço com tanque. \napenas R$ 135.000 \nAgende sua visita e faça deste apartamento o seu lar . Entre em contato.",
-    "features": [
-      "idade do imóvel: 20"
-    ]
+    "featureGroups": [],
+    "features": []
   },
   {
     "id": "3017305802",
@@ -1205,9 +1192,8 @@
     "propertyType": "Comercial",
     "type": "Aluguel",
     "desc": "Em Vigário Geral, Rua Granada, próximo ao polo comercial da Pça 2. Galpão Comercial/Industrial, junto ao Polo Comercial do bairro, em terreno com 360 m² e possuindo 390 m² de área edificada, composto por salas/escritórios, banheiros, etc... Aceito uma entrada e facilito o restante. Aluguel : R$ 5.000,00. Não paga IPTU.",
-    "features": [
-      "idade do imóvel: 30"
-    ]
+    "featureGroups": [],
+    "features": []
   },
   {
     "id": "3017305805",
@@ -1272,9 +1258,8 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Apartamento amplo com 91m², claro, arejado e com vista lateral para o Cristo Redentor. Composto por sala ampla, 3 quartos com armários planejados, banheiro social, cozinha integrada à área de serviço e dependência completa.\nO prédio oferece acessibilidade, bicicletário, espaço com brinquedos para crianças e salão de festas. \nExcelente localização, próximo ao farto comércio do bairro, da Cobal do Humaitá e com mobilidade para os demais bairros.\nPossibilidade de alugar vaga no condomínio.?\nNão perca esta oportunidade única de morar ou investir.",
-    "features": [
-      "idade do imóvel: 30"
-    ]
+    "featureGroups": [],
+    "features": []
   },
   {
     "id": "3017305807",
@@ -1341,9 +1326,8 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Jardim América, Apto Térreo Tipo Casa, sala 2 ambientes, circulação, 3 quartos, sendo 1 escritório, banheiro social completo, copa e cozinha, quintal nos fundos com área de lavanderia coberta. Todo Acabamento de 1ª qualidade, pisos, azulejos, torneiras, chuveiros, acessórios, toda elétrica e hidráulica. O imóvel possui bomba d'água específica para casos de enchente. Vagas p/ 2 carros. Aceita Carta de Crédito.",
-    "features": [
-      "idade do imóvel: 27"
-    ]
+    "featureGroups": [],
+    "features": []
   },
   {
     "id": "3017305809",
@@ -1411,9 +1395,8 @@
     "propertyType": "Casa",
     "type": "Venda",
     "desc": "Cobertura residencial, à venda em Copacabana, Av. Atlântica, vista mar, com 4 quartos e 6 banheiros, ideal para famílias grandes ou quem busca espaço e conforto. Possui 425 m² de área construída, distribuídos de forma inteligente para otimizar cada ambiente. A casa conta com 4 suítes, proporcionando privacidade e comodidade aos moradores. Além disso, dispõe de 1 vaga de garagem.\nLocalizada em uma região privilegiada de Copacabana, a casa está próxima a diversos serviços e comércios, como supermercados, farmácias, escolas e hospitais. A área é conhecida por sua infraestrutura completa e facilidade de acesso a transporte público, incluindo ônibus e metrô. A praia de Copacabana, um dos principais cartões postais do Rio de Janeiro, está a poucos minutos de distância, oferecendo lazer e entretenimento para toda a família. O bairro possui um ambiente residencial tranquilo e seguro, com ruas arborizadas e bem cuidadas.\nOportunidade: Valor reduzido de R$ <span class='descripcionDatosAnunciante'><button class='btn btn-link js-verDatos' href='#'>Ver dados</button></span> para R$ <span class='descripcionDatosAnunciante'><button class='btn btn-link js-verDatos' href='#'>Ver dados</button></span>.",
-    "features": [
-      "idade do imóvel: 40"
-    ]
+    "featureGroups": [],
+    "features": []
   },
   {
     "id": "3017305811",
@@ -1501,6 +1484,7 @@
     "propertyType": "Casa",
     "type": "Venda",
     "desc": "???? Viva em Harmonia com a Natureza no Condomínio Ubá Independência ???? \nEsta esplêndida casa de 436m², situada no prestigiado condomínio de Pendotiba, é um verdadeiro oásis para aqueles que buscam espaço, conforto, natureza e segurança. Com aproximadamente 1.500m² de terreno, esta residência proporciona uma vista panorâmica deslumbrante para a exuberante vegetação local. \nO terreno abriga um pomar farto e diversificado, oferecendo frutas frescas como manga, tangerina, nêspera, cajú, maracujá, limões, laranjas e goiaba. Há espaço para uma horta e possibilidades de expansão da propriedade, incluindo a construção de uma piscina no platô disponível. \nPreparada para o conforto de seus moradores, a casa conta com estrutura para a instalação de um elevador panorâmico e paredes térmicas feitas de bloco celular autoclavado, garantindo temperatura agradável em todas as estações. \nA distribuição da casa compreende três pavimentos, oferecendo espaços generosos para acomodar sua família com comodidade e estilo. \n1º pavimento: Com um living espaçoso de mais de 70m² e pé-direito alto com vista para o jardim, este ambiente é perfeito para momentos de convívio. Possui ainda uma área de depósito e lavabo. Na área externa, uma ampla garagem com um banheiro completo. \n2º pavimento: Este pavimento abriga uma sala de jantar e área íntima com 55m², cozinha equipada com armários planejados da Romanzza, copa e despensa. Além disso, um quarto e uma varanda espaçosa com preparação para churrasqueira. \n3º pavimento: Aqui, você encontrará quatro suítes, sendo três com closet e a suíte master com 38,5m², hidromassagem e um amplo closet. Todas as suítes têm preparação para instalação de aparelhos de ar-condicionado split. \nAlém disso, há espaço para acomodar dois veículos com facilidade. \nEsta é a oportunidade perfeita para viver com conforto, harmonia com a natureza e segurança em uma das melhores localidades de Pendotiba. Venha conhecer! ????",
+    "featureGroups": [],
     "features": []
   },
   {
@@ -1565,6 +1549,7 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Edifício histórico revitalizado no charmoso Bairro Peixoto, com apenas 19 unidades, O Residencial Vilares é uma ótima oportunidade para você que busca um apartamento reformado e contemporâneo no coração de Copacabana, ou para você investidor que procura uma opção promissora e exclusiva.\nApartamento garden com piscina com hidromassagem e cromoterapia, toldo elétrico com proteção solar para maior privacidade, deck em madeira ecológica, bancada gourmet e armários; composto por:\n58,04m². Sala com preparação para TV, prateleira e split; cozinha com bancada, armários, cooktop e forno embutido; quarto com armário, mesa lateral e painel de cabeceira, preparação para TV, mesa de trabalho e split; banheiro com bancada e armário; porta com fechadura eletrônica. \nTodos os acabamentos são novos, incluindo as instalações elétricas e hidráulicas, armários planejados Romanzza, design de interiores único e inspirador, assinados por time de arquitetura. \n1 elevador. \nPróximo ao metrô, áreas de lazer e conveniências do dia a dia.\nCondomínio com:\nEspaço coworking\nLavanderia OMO\nEspaço gourmet\nBicicletário elétrico\nNão perca essa oportunidade!\nEntre em contato e agende sua visita.",
+    "featureGroups": [],
     "features": []
   },
   {
@@ -1644,9 +1629,8 @@
     "propertyType": "Casa",
     "type": "Venda",
     "desc": "Galpão Industrial à Venda na Melhor Localização! \nGalpão com 1250m² de terreno, (20,00 X 62,50 m² ), situado na Rua Correia Dias, \nNa parte térrea possui banheiros e vestiários, a área superior da edificação possui um corredor de circulação com acesso a 3 salas, banheiro e copa, possuindo uma área total construída de 90 m² e área do galpão coberta possuindo 870m², sendo considerada o fato de estar numa excelente localização com boa concentração de indústrias e comércios e com grande facilidade no deslocamento de pessoas por causa das várias linhas de transporte coletivo e estação de trem da supervia.\nAproveite esta oportunidade para investimento! Entre em contato hoje mesmo para mais informações.",
-    "features": [
-      "idade do imóvel: 45"
-    ]
+    "featureGroups": [],
+    "features": []
   },
   {
     "id": "3017305820",
@@ -1711,6 +1695,7 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Em Vigário Geral, casa duplex, 123m², possuindo no 1º piso: sala 2 ambientes, corredor, banheiro social, 01 quarto, copa cozinha, área de lavanderia, quintal com churrasqueira e banheiro de apoio. Escada de acesso ao 2º piso, que possui: varandão, 03 quartos.",
+    "featureGroups": [],
     "features": []
   },
   {
@@ -1789,9 +1774,8 @@
     "propertyType": "Casa",
     "type": "Venda",
     "desc": "Excelente casa duplex com 250m² de terreno e 140m² de área construída, sendo o 1° piso: varandão, living, hall social, banheiro social, box blindex, 1 quarto, copa, cozinha toda em azulejo, área de serviço, quintal, mais 1 quartinho e garagem para 8 carros, churrasqueira, cisterna com capacidade para 5mil lts. 2° piso: hall íntimo, sala de tv, circulação, banheiro social, box blindex , 3 quartos, sendo 1 suíte dando para varandão. Próximo a Praça Central de Jardim América, Supermercados Rede Economia , Loterias, Correios, Posto de saúde, Transportes e Escolas.",
-    "features": [
-      "idade do imóvel: 42"
-    ]
+    "featureGroups": [],
+    "features": []
   },
   {
     "id": "3018026849",
@@ -1850,9 +1834,8 @@
     "propertyType": "Comercial",
     "type": "Venda",
     "desc": "Em Jardim América, na Rua João de Paula Fonseca, junto a Rodovia Presidente Dutra, quero vender Galpão para uso industrial ou comercial, possuindo 382;00m² de área construída e 240;00m² de área de terreno, que mede 12;00m² de frente e fundos por 20;00m² nas laterais. O imóvel possui uma área total de galpão com 352;00m² + 02 salas e banheiro.",
-    "features": [
-      "idade do imóvel: 40"
-    ]
+    "featureGroups": [],
+    "features": []
   },
   {
     "id": "3018249672",
@@ -1925,8 +1908,50 @@
     "propertyType": "Casa",
     "type": "Venda",
     "desc": "Esta casa à venda em Jardim América possui 125 m² de área construída e 130 m² de área total. A propriedade oferece 4 quartos, incluindo 1 suíte, e 4 banheiros. A distribuição interna conta com sala de jantar, cozinha independente, despensa e closet. Nos espaços externos, a casa dispõe de quintal e varanda. A propriedade possui 2 andares e 1 vaga de estacionamento. Entre as comodidades, há ar condicionado e área de serviço. O imóvel tem 29 anos de idade. A região de Jardim América é predominantemente residencial, com acesso facilitado a serviços essenciais e transporte público.",
+    "featureGroups": [
+      {
+        "category": "Áreas privativas",
+        "items": [
+          {
+            "label": "Ar condicionado"
+          },
+          {
+            "label": "Área de serviço"
+          },
+          {
+            "label": "Closet"
+          },
+          {
+            "label": "Cozinha independente"
+          },
+          {
+            "label": "Despensa"
+          },
+          {
+            "label": "Quintal"
+          },
+          {
+            "label": "Sala de jantar"
+          },
+          {
+            "label": "Varanda"
+          },
+          {
+            "label": "Suítes"
+          }
+        ]
+      },
+      {
+        "category": "Outros",
+        "items": [
+          {
+            "label": "Andares",
+            "value": "2"
+          }
+        ]
+      }
+    ],
     "features": [
-      "idade do imóvel: 29",
       "Áreas privativas — Ar condicionado",
       "Áreas privativas — Área de serviço",
       "Áreas privativas — Closet",
@@ -2002,8 +2027,35 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Em Jardim América, Rua Arinos, Apto no 1º andar, 78m², frente pra rua, em prédio familiar e tranquilo, com 2 andares e um total de 4 aptos, sem condomínio. Imóvel composto: boa sala, corredor, banheiro social, 2 quartos de bom tamanho, cozinha e área de serviço. Tem 1 vaga pra carro na servidão. O valor médio da conta de água é de 180,00. Aceito carta de crédito.",
+    "featureGroups": [
+      {
+        "category": "Áreas privativas",
+        "items": [
+          {
+            "label": "Área de serviço"
+          },
+          {
+            "label": "Cozinha independente"
+          },
+          {
+            "label": "Entrada de serviço"
+          }
+        ]
+      },
+      {
+        "category": "Outros",
+        "items": [
+          {
+            "label": "Aceita FGTS"
+          },
+          {
+            "label": "Posição do Apto",
+            "value": "Frente"
+          }
+        ]
+      }
+    ],
     "features": [
-      "idade do imóvel: 30",
       "Áreas privativas — Área de serviço",
       "Áreas privativas — Cozinha independente",
       "Áreas privativas — Entrada de serviço",
@@ -2076,8 +2128,35 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Em Jardim América, vendo apto térreo com 65m² com 1 quarto, mas pode transformar em 2 qtos. Apto de fundos, tranquilo, independente, em prédio familiar, tranquilo, com 2 andares e total de 4 aptos, sem condomínio. Imóvel com quintal, varanda, boa sala, corredor, banheiro social, 1 quarto bom, cozinha, área de serviço. Tem 1 vaga pra carro na servidão. Aceito carta de crédito.",
+    "featureGroups": [
+      {
+        "category": "Áreas privativas",
+        "items": [
+          {
+            "label": "Área de serviço"
+          },
+          {
+            "label": "Cozinha independente"
+          },
+          {
+            "label": "Entrada de serviço"
+          }
+        ]
+      },
+      {
+        "category": "Outros",
+        "items": [
+          {
+            "label": "Aceita FGTS"
+          },
+          {
+            "label": "Posição do Apto",
+            "value": "Fundos"
+          }
+        ]
+      }
+    ],
     "features": [
-      "idade do imóvel: 30",
       "Áreas privativas — Área de serviço",
       "Áreas privativas — Cozinha independente",
       "Áreas privativas — Entrada de serviço",
@@ -2155,9 +2234,8 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Em Jardim América, na Rua Profº Pires Salgado, próximo ao depósito da Supergasbras, ponto final dos ônibus e vans, vendo apto térreo, de fundos, com varanda, sala 2 ambientes, circulação, banheiro social, 2 quartos, cozinha e área de serviço externa com tanque.",
-    "features": [
-      "idade do imóvel: 30"
-    ]
+    "featureGroups": [],
+    "features": []
   },
   {
     "id": "3018791156",
@@ -2246,9 +2324,8 @@
     "propertyType": "Casa",
     "type": "Venda",
     "desc": "Em Jardim América, Rua Gelabert Simas, Próx. ponto final do 774. Casa linear com 85m², total de 2 quartos + apto anexo tipo sala e quarto. A casa possui um quintal grande, garagem, sala 2 ambientes, dois quartos amplos, 2 banheiros, copa e cozinha. A área externa conta com lavanderia, dois tanques. Doctos ok. Aceito financiamento da Caixa ou outro banco.",
-    "features": [
-      "idade do imóvel: 32"
-    ]
+    "featureGroups": [],
+    "features": []
   },
   {
     "id": "3021262193",
@@ -2305,8 +2382,55 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Em Jardim América, no Residencial América Life, apartamento de 69m² no 4º andar, composto por sala, 3 quartos e 1 vaga de garagem. O condomínio possui área de lazer, espaço gourmet, piscina, churrasqueiras, quadra poliesportiva e playground. Imóvel à venda por R$ 158.000, com condomínio de R$ 290.",
+    "featureGroups": [
+      {
+        "category": "Áreas comuns",
+        "items": [
+          {
+            "label": "Área de lazer"
+          },
+          {
+            "label": "Câmeras de segurança"
+          },
+          {
+            "label": "Churrasqueira (parrilla)"
+          },
+          {
+            "label": "Estacionamento para visitantes"
+          },
+          {
+            "label": "Piscina"
+          },
+          {
+            "label": "Playground"
+          },
+          {
+            "label": "Portaria 24 horas"
+          },
+          {
+            "label": "Quadra poliesportiva"
+          },
+          {
+            "label": "Salão de festas"
+          }
+        ]
+      },
+      {
+        "category": "Áreas privativas",
+        "items": [
+          {
+            "label": "Aquecedor"
+          },
+          {
+            "label": "Área de serviço"
+          },
+          {
+            "label": "Cozinha Gourmet"
+          }
+        ]
+      }
+    ],
     "features": [
-      "idade do imóvel: 20",
       "Áreas comuns — Área de lazer",
       "Áreas comuns — Câmeras de segurança",
       "Áreas comuns — Churrasqueira (parrilla)",
@@ -2395,8 +2519,44 @@
     "propertyType": "Casa",
     "type": "Venda",
     "desc": "Imóvel em 2 pavimentos, sendo o 1º piso térreo, composto de: varanda, sala em 2 ambientes, corredor, banheiro social, com box blindex, 2 quartos , sendo 1 suíte, cozinha , área de lavanderia externa, quintal grande, garagem para 4 carros . \n1º andar, composto de : varanda, sala em dois ambientes, corredor, banheiro social, com box blindex, armários, 2 quartos + escritório, lavanderia e área externa + terraço coberto. Estudo proposta.",
+    "featureGroups": [
+      {
+        "category": "Áreas privativas",
+        "items": [
+          {
+            "label": "Área de serviço"
+          },
+          {
+            "label": "Cozinha independente"
+          },
+          {
+            "label": "Despensa"
+          },
+          {
+            "label": "Escritório"
+          },
+          {
+            "label": "Jardim"
+          },
+          {
+            "label": "Lavanderia"
+          },
+          {
+            "label": "Permite animais"
+          },
+          {
+            "label": "Quintal"
+          },
+          {
+            "label": "Varanda"
+          },
+          {
+            "label": "Suítes"
+          }
+        ]
+      }
+    ],
     "features": [
-      "idade do imóvel: 35",
       "Áreas privativas — Área de serviço",
       "Áreas privativas — Cozinha independente",
       "Áreas privativas — Despensa",
@@ -2470,8 +2630,54 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Este apartamento está disponível para venda no Jardim América, apresentando 51 m² de área construída e 53 m² de área total. O imóvel de frente conta com 2 quartos, 1 banheiro social bem posicionado, sala de estar integrada e 1 vaga de garagem garantida. O edifício de 2 andares oferece excelente infraestrutura com portaria e vigilância 24h para maior segurança.\nNa área de lazer, os moradores dispõem de piscina, solarium, churrasqueira, playground, quadra poliesportiva e salão de festas completo. Aceita FGTS como parte de pagamento. A localização no Jardim América garante fácil acesso a comércios, escolas, supermercados e vias de transporte público em uma das regiões mais tradicionais da cidade.",
+    "featureGroups": [
+      {
+        "category": "Áreas comuns",
+        "items": [
+          {
+            "label": "Área de lazer"
+          },
+          {
+            "label": "Churrasqueira (parrilla)"
+          },
+          {
+            "label": "Piscina"
+          },
+          {
+            "label": "Playground"
+          },
+          {
+            "label": "Quadra poliesportiva"
+          },
+          {
+            "label": "Salão de festas"
+          },
+          {
+            "label": "Solarium"
+          },
+          {
+            "label": "Vigilância 24h"
+          }
+        ]
+      },
+      {
+        "category": "Outros",
+        "items": [
+          {
+            "label": "Andares",
+            "value": "2"
+          },
+          {
+            "label": "Aceita FGTS"
+          },
+          {
+            "label": "Posição do Apto",
+            "value": "Frente"
+          }
+        ]
+      }
+    ],
     "features": [
-      "idade do imóvel: 20",
       "Áreas comuns — Área de lazer",
       "Áreas comuns — Churrasqueira (parrilla)",
       "Áreas comuns — Piscina",
@@ -2553,8 +2759,30 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Apto de 70 m², de frente, com sol da manhã, 2º andar, apenas um lance de escada; Fachada do prédio recém-reformada; Portaria com controle de acesso; Localização privilegiada, com acesso direto à passarela para o *SHOPPING NOVA AMÉRICA e acesso ao METRÔ. Em frente à Praça dos Quiosques, parquinho, campo de futebol e eventos + academia popular e próximo ao PAM de Del Castilho. O imóvel precisa de reforma e possui 2 dormitórios arejados, um banheiro social, sala ampla em dois ambientes, cozinha espaçosa com área de serviço e gás encanado.\nCondomínio: R$ 130,00\nIPTU isento",
+    "featureGroups": [
+      {
+        "category": "Áreas privativas",
+        "items": [
+          {
+            "label": "Área de serviço"
+          }
+        ]
+      },
+      {
+        "category": "Outros",
+        "items": [
+          {
+            "label": "Andares",
+            "value": "3"
+          },
+          {
+            "label": "Posição do Apto",
+            "value": "Frente"
+          }
+        ]
+      }
+    ],
     "features": [
-      "idade do imóvel: 40",
       "Áreas privativas — Área de serviço",
       "Outros — Andares: 3",
       "Outros — Posição do Apto: Frente"
@@ -2632,8 +2860,17 @@
     "propertyType": "Casa",
     "type": "Aluguel",
     "desc": "Casa para aluguel no Jardim América, com entrada independente. Possui 1 pavimento, quintal na frente, varanda, 2 quartos e 1 banheiro, ideal para quem busca praticidade. A área construída é de 86 m², proporcionando um bom espaço internamente. A casa oferece ambientes bem distribuídos , e os 2 quartos garantem conforto para a família. A cozinha tem bom espaço, facilitando o dia a dia, sendo a área de serviço externa, e 1 quintal nos fundos.\nO Jardim América é um bairro residencial tranquilo, com fácil acesso a serviços e comércios. Próximo a escolas, supermercados e farmácias e o comércio de venda de cestas básicas, e a região oferece conveniência para os moradores. A mobilidade é facilitada pelas diversas linhas de ônibus e proximidade a importantes vias da cidade.",
+    "featureGroups": [
+      {
+        "category": "Ambientes",
+        "items": [
+          {
+            "label": "Entrada independiente"
+          }
+        ]
+      }
+    ],
     "features": [
-      "idade do imóvel: 30",
       "Ambientes — Entrada independiente"
     ]
   },
@@ -2686,8 +2923,53 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Apartamento à venda em Vila da Penha, Largo do Bicão, Condomínio Solar da Vila, junto ao comércio, bancos e Shopping Carioca. Apto possui 80 m² de área útil. sendo composto de: sala 2 ambientes, 2 quartos, sendo 1 suíte + 1 quarto revertido, total 3 qtos, 2 banheiros, cozinha e área de serviço funcional. Possui 2 vagas de garagem, sendo 1 demarcada e outra no Condomínio.\nO condomínio oferece câmeras de segurança, elevador, playground e salão de festas, além de vigilância 24h, proporcionando segurança e lazer para toda a família. Aceita FGTS e Carta de Crédito. Apartamento, em prédio com 4 andares e 30 anos de idade.\nLocalizado em Vila da Penha, bairro residencial com comércio diversificado e fácil acesso a serviços. Próximo a supermercados, farmácias e escolas, com diversas opções de transporte público. A região oferece um ambiente tranquilo e familiar, ideal para quem busca praticidade e bem-estar.",
+    "featureGroups": [
+      {
+        "category": "Áreas comuns",
+        "items": [
+          {
+            "label": "Câmeras de segurança"
+          },
+          {
+            "label": "Elevador"
+          },
+          {
+            "label": "Playground"
+          },
+          {
+            "label": "Salão de festas"
+          },
+          {
+            "label": "Vigilância 24h"
+          }
+        ]
+      },
+      {
+        "category": "Áreas privativas",
+        "items": [
+          {
+            "label": "Área de serviço"
+          }
+        ]
+      },
+      {
+        "category": "Outros",
+        "items": [
+          {
+            "label": "Andares",
+            "value": "4"
+          },
+          {
+            "label": "Aceita FGTS"
+          },
+          {
+            "label": "Posição do Apto",
+            "value": "Frente"
+          }
+        ]
+      }
+    ],
     "features": [
-      "idade do imóvel: 27",
       "Áreas comuns — Câmeras de segurança",
       "Áreas comuns — Elevador",
       "Áreas comuns — Playground",
@@ -2756,8 +3038,33 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Apartamento à venda em Jardim América, de frente, no 4º andar, com 3 quartos. Possui área de serviço e varanda de fundos. O imóvel conta com 79 m² de área construída e 148 m² de área total, em prédio com 4 andares sem elevador. A posição frontal do apartamento proporciona uma vista livre. São 2 aptos, sendo 1 de frente e outro de fundos, faltando acabamento.\nLocalizado em Jardim América, bairro residencial com fácil acesso a comércios, serviços e transporte público. Próximo a supermercados, farmácias e escolas, facilitando o dia a dia dos moradores.\nO Jardim América é conhecido por sua localização junto a nova Rodoviária BRT Trevo das Margaridas, ideal para quem busca comodidade de vida. Com fácil acesso às principais vias da cidade, como rodovias, avenidas e marginais, o bairro oferece mobilidade e praticidade. A região conta com infraestrutura completa, incluindo hospitais e clínicas, garantindo o bem-estar dos moradores.\nAproveite a oportunidade de morar em um apartamento confortável e bem localizado em Jardim América. Agende sua visita e conheça este imóvel. Aceito 120 mil e o restante em prestações de 2.000,00.",
+    "featureGroups": [
+      {
+        "category": "Áreas privativas",
+        "items": [
+          {
+            "label": "Área de serviço"
+          },
+          {
+            "label": "Varanda"
+          }
+        ]
+      },
+      {
+        "category": "Outros",
+        "items": [
+          {
+            "label": "Andares",
+            "value": "4"
+          },
+          {
+            "label": "Posição do Apto",
+            "value": "Frente"
+          }
+        ]
+      }
+    ],
     "features": [
-      "idade do imóvel: 40",
       "Áreas privativas — Área de serviço",
       "Áreas privativas — Varanda",
       "Outros — Andares: 4",
@@ -2833,8 +3140,25 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Apartamento à venda em Jardim América, com excelente localização. O imóvel possui 3 quartos , área construída é de 76 m² com direito ao uso da laje do terraço, com uma área total de 146 m², proporcionando espaços bem distribuídos. O apartamento conta com 2 banheiros e está situado na frente do prédio, oferecendo uma vista agradável. O edifício possui 3 andares e aceita FGTS, facilitando a aquisição.\nJardim América é um bairro residencial tranquilo e bem localizado, com fácil acesso a importantes vias da cidade. A região oferece uma variedade de serviços, como supermercados, farmácias e escolas, tornando o dia a dia mais prático. Além disso, o bairro conta com áreas de lazer, como parques e praças, proporcionando momentos de relaxamento e diversão para toda a família. O transporte público é eficiente, com diversas linhas de ônibus, e junto ao terminal rodoviário do BRT, que ligam o bairro a outras regiões da cidade.",
+    "featureGroups": [
+      {
+        "category": "Outros",
+        "items": [
+          {
+            "label": "Andares",
+            "value": "3"
+          },
+          {
+            "label": "Aceita FGTS"
+          },
+          {
+            "label": "Posição do Apto",
+            "value": "Frente"
+          }
+        ]
+      }
+    ],
     "features": [
-      "idade do imóvel: 40",
       "Outros — Andares: 3",
       "Outros — Aceita FGTS",
       "Outros — Posição do Apto: Frente"
@@ -2918,8 +3242,30 @@
     "propertyType": "Apartamento",
     "type": "Aluguel",
     "desc": "Apartamento disponível para aluguel no Jardim América, com 70 m² de área construída. O imóvel conta com 2 quartos, área de serviço. A posição do apartamento é fundos, proporcionando maior privacidade.\nInternamente. O Jardim América é uma região bem localizada, com fácil acesso a diversas opções de comércio e serviços. Próximo a supermercados, farmácias e escolas, o bairro oferece toda a infraestrutura necessária para o dia a dia. A mobilidade é facilitada pelas diversas linhas de ônibus que circulam pela região, além da proximidade com importantes vias de acesso. O bairro é predominantemente residencial, com um ambiente familiar e tranquilo. O imóvel possui sala, 2 quartos, banheiro social, cozinha e área de serviço. A localização do imóvel é fora da área de enchente no bairro.",
+    "featureGroups": [
+      {
+        "category": "Áreas privativas",
+        "items": [
+          {
+            "label": "Área de serviço"
+          }
+        ]
+      },
+      {
+        "category": "Outros",
+        "items": [
+          {
+            "label": "Andares",
+            "value": "2"
+          },
+          {
+            "label": "Posição do Apto",
+            "value": "Fundos"
+          }
+        ]
+      }
+    ],
     "features": [
-      "idade do imóvel: 40",
       "Áreas privativas — Área de serviço",
       "Outros — Andares: 2",
       "Outros — Posição do Apto: Fundos"
@@ -2978,9 +3324,8 @@
     "propertyType": "Comercial",
     "type": "Venda",
     "desc": "Comercial disponível para venda no Jardim América, com 76 m² de área construída e 78 m² de área total. O imóvel possui idade de 40 anos e conta com 1 vaga.\nO espaço interno oferece versatilidade para adaptar-se a diferentes tipos de negócios. A área útil de 76 m² permite a criação de um ambiente funcional e acolhedor para clientes e colaboradores.\nO imóvel dispõe de 1 vaga de estacionamento, facilitando o acesso de clientes e funcionários.\nLocalizado no Jardim América, o comercial está inserido em uma região com grande variedade de serviços e comércios. A área é conhecida por sua infraestrutura completa, com fácil acesso a supermercados, bancos, farmácias e restaurantes. A localização estratégica garante visibilidade e conveniência para o seu negócio. O Jardim América oferece um ambiente dinâmico e propício para o crescimento de empresas de diversos segmentos.",
-    "features": [
-      "idade do imóvel: 40"
-    ]
+    "featureGroups": [],
+    "features": []
   },
   {
     "id": "3037727090",
@@ -3069,8 +3414,21 @@
     "propertyType": "Comercial",
     "type": "Venda",
     "desc": "Galpão Comercial/Industrial, terreno 10 x 24, entrada para carga e descarga. Área total coberta com 200m², e área descoberta com 60m². Salas/escritórios, banheiros, ideal para o seu negócio. Disponível para venda em Jardim América. Esta propriedade possui 318 m² de área construída e uma área total de 320 m², distribuídos em 2 andares. A idade do imóvel é de 29 anos. A propriedade aceita FGTS como forma de pagamento. A localização em Jardim América oferece acesso a diversas conveniências. A região dispõe de infraestrutura comercial e de serviços, incluindo opções de transporte público e vias de acesso importantes. O bairro é conhecido por seu ambiente consolidado, com proximidade a estabelecimentos comerciais e serviços essenciais.",
+    "featureGroups": [
+      {
+        "category": "Outros",
+        "items": [
+          {
+            "label": "Andares",
+            "value": "2"
+          },
+          {
+            "label": "Aceita FGTS"
+          }
+        ]
+      }
+    ],
     "features": [
-      "idade do imóvel: 29",
       "Outros — Andares: 2",
       "Outros — Aceita FGTS"
     ]
@@ -3159,8 +3517,51 @@
     "propertyType": "Casa",
     "type": "Venda",
     "desc": "Propriedade disponível para venda em Jardim América, um bairro residencial consolidado. Esta casa possui 145 m² de superfície construída e se distribui em 3 quartos, sendo 1 suíte, e 3 banheiros. A área social inclui sala e cozinha, com despensa para maior organização. No exterior, a casa oferece uma área de lazer com piscina, ideal para momentos de descanso. Há 3 vagas de estacionamento e entrada independente. A construção tem 29 anos e se desenvolve em 1 andar + terraço. A propriedade aceita FGTS como forma de pagamento. Jardim América é uma região com boa infraestrutura, próxima a comércios locais, escolas e serviços essenciais, facilitando o dia a dia dos moradores.",
+    "featureGroups": [
+      {
+        "category": "Ambientes",
+        "items": [
+          {
+            "label": "Entrada independiente"
+          }
+        ]
+      },
+      {
+        "category": "Áreas comuns",
+        "items": [
+          {
+            "label": "Área de lazer"
+          },
+          {
+            "label": "Piscina"
+          }
+        ]
+      },
+      {
+        "category": "Áreas privativas",
+        "items": [
+          {
+            "label": "Área de serviço"
+          },
+          {
+            "label": "Despensa"
+          }
+        ]
+      },
+      {
+        "category": "Outros",
+        "items": [
+          {
+            "label": "Andares",
+            "value": "1"
+          },
+          {
+            "label": "Aceita FGTS"
+          }
+        ]
+      }
+    ],
     "features": [
-      "idade do imóvel: 29",
       "Ambientes — Entrada independiente",
       "Áreas comuns — Área de lazer",
       "Áreas comuns — Piscina",
@@ -3244,8 +3645,72 @@
     "propertyType": "Casa",
     "type": "Venda",
     "desc": "Casa disponível para venda em Araruama. A propriedade possui 130 m² de área construída e 135 m² de área total. A distribuição interna inclui o total de 4 quartos, 3 banheiros e 1 suíte. A cozinha é americana e há despensa. A casa conta com varanda e área de serviço. Na parte externa, a propriedade oferece jardim e churrasqueira, além de 4 vagas de estacionamento. O imóvel tem 1 andar e entrada independente. As amenidades do condomínio incluem área de lazer, espaço gourmet e piscina. A propriedade aceita FGTS. A região de Araruama oferece acesso a diversas conveniências e serviços. O imóvel tem área de serviço, quarto de guardados, anexo com dois quartos, banheiro externo, área gourmet com churrasqueira, bancada e pia, ducha, varanda e quintal amplo.\nCaracterísticas do condomínio:\nPortaria e segurança 24 horas\nQuadra poliesportiva\nPiscina adulto e infantil\nAcademia ao ar livre\nSalão de jogos\nÁrea com churrasqueiras\nLagoa privativa\nÁrea arborizada com churrasqueira, bancada e pia, ducha, varanda e quintal amplo.\nCaracterísticas do condomínio:\nPortaria e segurança 24 horas\nQuadra poliesportiva\nPiscina adulto e infantil\nAcademia ao ar livre\nSalão de jogos\nÁrea com churrasqueiras\nLagoa privativa\nÁrea arborizada",
+    "featureGroups": [
+      {
+        "category": "Ambientes",
+        "items": [
+          {
+            "label": "Entrada independiente"
+          }
+        ]
+      },
+      {
+        "category": "Áreas comuns",
+        "items": [
+          {
+            "label": "Área de lazer"
+          },
+          {
+            "label": "Piscina"
+          }
+        ]
+      },
+      {
+        "category": "Áreas privativas",
+        "items": [
+          {
+            "label": "Ar condicionado"
+          },
+          {
+            "label": "Área de serviço"
+          },
+          {
+            "label": "Churrasqueira (parrilla)"
+          },
+          {
+            "label": "Cozinha americana"
+          },
+          {
+            "label": "Despensa"
+          },
+          {
+            "label": "Espaço gourmet"
+          },
+          {
+            "label": "Jardim"
+          },
+          {
+            "label": "Varanda"
+          },
+          {
+            "label": "Suítes"
+          }
+        ]
+      },
+      {
+        "category": "Outros",
+        "items": [
+          {
+            "label": "Andares",
+            "value": "1"
+          },
+          {
+            "label": "Aceita FGTS"
+          }
+        ]
+      }
+    ],
     "features": [
-      "idade do imóvel: 10",
       "Ambientes — Entrada independiente",
       "Áreas comuns — Área de lazer",
       "Áreas comuns — Piscina",
@@ -3328,8 +3793,40 @@
     "propertyType": "Casa",
     "type": "Aluguel",
     "desc": "Augo casa em Jardim América - Vila Esperança, na melhor quadra, próximo da Rua Fernandes da Cunha, térrea com quintal, sala , corredor, banheiro social completo, box blindex, 1 quarto , , cozinha com armários, quintal com área de lavanderia. Tem 1 cômodo dentro da casa que precisa de melhorias, e pode usar como 2º qto, mas a reforma é por conta do inquilino, se quiser usar. O aluguel é R$ 950,00, com 2 meses de depósito como garantia fiança e renda comprovada até 3 vezes o valor de aluguel.\nÁgua e Light, juntos paga em torno de 100,00.",
+    "featureGroups": [
+      {
+        "category": "Ambientes",
+        "items": [
+          {
+            "label": "Entrada independiente"
+          }
+        ]
+      },
+      {
+        "category": "Áreas privativas",
+        "items": [
+          {
+            "label": "Área de serviço"
+          },
+          {
+            "label": "Cozinha independente"
+          },
+          {
+            "label": "Quintal"
+          }
+        ]
+      },
+      {
+        "category": "Outros",
+        "items": [
+          {
+            "label": "Andares",
+            "value": "2"
+          }
+        ]
+      }
+    ],
     "features": [
-      "idade do imóvel: 45",
       "Ambientes — Entrada independiente",
       "Áreas privativas — Área de serviço",
       "Áreas privativas — Cozinha independente",
@@ -3417,8 +3914,29 @@
     "propertyType": "Casa",
     "type": "Aluguel",
     "desc": "Apto Térreo Tipo Casa disponível para aluguel no Jardim América, na Rua Marechal José Pessoa, apresentando 90 m² de área construída e 93 m² de área total. O imóvel conta com 37 anos de história e possui uma distribuição interna funcional com sala de jantar, cozinha, área de serviço e 2 banheiros, sendo 1 sociail e o outro externo. No espaço exterior tem varanda e 1 vaga de garagem.\nA localização garante fácil acesso a avenidas principais, proximidade a escolas de qualidade, supermercados, farmácias e diversas opções de transporte público.",
+    "featureGroups": [
+      {
+        "category": "Áreas privativas",
+        "items": [
+          {
+            "label": "Área de serviço"
+          },
+          {
+            "label": "Cozinha independente"
+          },
+          {
+            "label": "Quintal"
+          },
+          {
+            "label": "Sala de jantar"
+          },
+          {
+            "label": "Varanda"
+          }
+        ]
+      }
+    ],
     "features": [
-      "idade do imóvel: 37",
       "Áreas privativas — Área de serviço",
       "Áreas privativas — Cozinha independente",
       "Áreas privativas — Quintal",
@@ -3503,8 +4021,35 @@
     "propertyType": "Casa",
     "type": "Aluguel",
     "desc": "Alugo Esta casa de 2 andares no tradicional bairro do Jardim América. O imóvel apresenta 90 m² de área construída com uma distribuição prática que engloba 3 quartos, 2 banheiros sociais, cozinha independente e área de serviço funcional.\nNa parte externa, você conta com uma agradável varanda, quintal privativo e 1 vaga de garagem. O imóvel possui 35 anos de construção, mantendo uma estrutura sólida e segura.\nA localização no Jardim América é de fácil acesso a grandes avenidas. O entorno oferece comércio variado, supermercados, escolas e serviços essenciais.",
+    "featureGroups": [
+      {
+        "category": "Áreas privativas",
+        "items": [
+          {
+            "label": "Área de serviço"
+          },
+          {
+            "label": "Cozinha independente"
+          },
+          {
+            "label": "Quintal"
+          },
+          {
+            "label": "Varanda"
+          }
+        ]
+      },
+      {
+        "category": "Outros",
+        "items": [
+          {
+            "label": "Andares",
+            "value": "2"
+          }
+        ]
+      }
+    ],
     "features": [
-      "idade do imóvel: 35",
       "Áreas privativas — Área de serviço",
       "Áreas privativas — Cozinha independente",
       "Áreas privativas — Quintal",
@@ -3598,8 +4143,48 @@
     "propertyType": "Casa",
     "type": "Venda",
     "desc": "Casa de 130 m² de área construída disponível para venda no bairro de Coelho Neto. A residência conta com 3 quartos, 2 banheiros funcionais, varanda, sala, cozinha independente, despensa e área de serviço, além de entrada independente que garante maior privacidade. O imóvel possui quintal com piscina e oferece 3 vagas de garagem.\nA região é residencial e bem estabelecida, com comércio de bairro estruturado e oferta de transporte público na proximidade. O entorno conta com supermercados, padarias, farmácias e escolas que facilitam a rotina dos moradores, garantindo fácil acesso às principais vias de ligação do bairro.",
+    "featureGroups": [
+      {
+        "category": "Ambientes",
+        "items": [
+          {
+            "label": "Entrada independiente"
+          }
+        ]
+      },
+      {
+        "category": "Áreas comuns",
+        "items": [
+          {
+            "label": "Piscina"
+          }
+        ]
+      },
+      {
+        "category": "Áreas privativas",
+        "items": [
+          {
+            "label": "Área de serviço"
+          },
+          {
+            "label": "Cozinha independente"
+          },
+          {
+            "label": "Despensa"
+          },
+          {
+            "label": "Piscina"
+          },
+          {
+            "label": "Quintal"
+          },
+          {
+            "label": "Varanda"
+          }
+        ]
+      }
+    ],
     "features": [
-      "idade do imóvel: 30",
       "Ambientes — Entrada independiente",
       "Áreas comuns — Piscina",
       "Áreas privativas — Área de serviço",
@@ -3676,8 +4261,40 @@
     "propertyType": "Casa",
     "type": "Aluguel",
     "desc": "Casa disponível para venda em Coelho Neto, Rio de Janeiro. A propriedade, com 30 anos de idade, oferece 140 m² de área construída em um terreno de 189 m².\nO imóvel distribui-se em 2 andares e apresenta 2 quartos, sendo 2 suítes, e um total de 4 banheiros. A cozinha é funcional e a casa inclui despensa e área de serviço, proporcionando organização e praticidade para o dia a dia.\nNa área externa, a casa dispõe de 3 vagas de garagem, além de uma entrada independente que oferece maior autonomia aos moradores.\nCoelho Neto é um bairro com infraestrutura completa, caracterizado por seu ambiente residencial e familiar. A região conta com fácil acesso a transportes públicos, incluindo a estação de metrô Coelho Neto e diversas linhas de ônibus, além de importantes vias como a Avenida Brasil. Há uma variedade de comércios e serviços próximos, como supermercados, farmácias e agências bancárias e Clínica da Família, atendendo às necessidades de seus moradores.\nO imóvel será alugado para, no máximo 4 pessoas da mesma família. Pedimos o equivalente a 2 meses de depósito caução como garantia fiança e renda comprovada até 3 vezes o valor de aluguel.",
+    "featureGroups": [
+      {
+        "category": "Ambientes",
+        "items": [
+          {
+            "label": "Entrada independiente"
+          }
+        ]
+      },
+      {
+        "category": "Áreas privativas",
+        "items": [
+          {
+            "label": "Área de serviço"
+          },
+          {
+            "label": "Quintal"
+          },
+          {
+            "label": "Varanda"
+          }
+        ]
+      },
+      {
+        "category": "Outros",
+        "items": [
+          {
+            "label": "Andares",
+            "value": "2"
+          }
+        ]
+      }
+    ],
     "features": [
-      "idade do imóvel: 35",
       "Ambientes — Entrada independiente",
       "Áreas privativas — Área de serviço",
       "Áreas privativas — Quintal",
@@ -3756,8 +4373,36 @@
     "propertyType": "Apartamento",
     "type": "Venda",
     "desc": "Apartamento de frente à venda na Pavuna, com 96 m² de área construída e 98 m² de área total. O imóvel possui uma planta prática de 1 andar que dispõe de sala ampla, 3 quartos, sendo 1 suíte, e 2 banheiros sociais. A unidade conta ainda com cozinha integrada à área de serviço e ar condicionado instalado. Há 1 vaga de garagem disponível. Com 38 anos de construção, o imóvel aceita FGTS.\nA região de Pavuna tem excelente conectividade, com fácil acesso ao metrô e transporte público. A área é residencial e comercial, com escolas, supermercados, farmácias, padarias e diversos serviços essenciais a poucos minutos, garantindo praticidade aos moradores.",
+    "featureGroups": [
+      {
+        "category": "Áreas privativas",
+        "items": [
+          {
+            "label": "Ar condicionado"
+          },
+          {
+            "label": "Área de serviço"
+          }
+        ]
+      },
+      {
+        "category": "Outros",
+        "items": [
+          {
+            "label": "Andares",
+            "value": "1"
+          },
+          {
+            "label": "Aceita FGTS"
+          },
+          {
+            "label": "Posição do Apto",
+            "value": "Frente"
+          }
+        ]
+      }
+    ],
     "features": [
-      "idade do imóvel: 38",
       "Áreas privativas — Ar condicionado",
       "Áreas privativas — Área de serviço",
       "Outros — Andares: 1",
@@ -3837,8 +4482,46 @@
     "propertyType": "Casa",
     "type": "Venda",
     "desc": "Esta casa térrea com entrada independente está disponível para venda no Jardim América. O imóvel apresenta 73 m² de área construída bem distribuídos em 1 quarto, 1 banheiro, sala de jantar e uma cozinha gourmet funcional, além de área de serviço separada. O espaço externo conta com um quintal privativo ideal para quem tem animais de estimação, pois o imóvel permite animais. Localizada em uma região residencial consolidada e muito tranquila, a casa oferece excelente conectividade com vias principais do bairro, proximidade a padarias, farmácias, mercados e pontos de transporte público local, garantindo praticidade e conforto para o cotidiano.",
+    "featureGroups": [
+      {
+        "category": "Ambientes",
+        "items": [
+          {
+            "label": "Entrada independiente"
+          }
+        ]
+      },
+      {
+        "category": "Áreas privativas",
+        "items": [
+          {
+            "label": "Área de serviço"
+          },
+          {
+            "label": "Cozinha Gourmet"
+          },
+          {
+            "label": "Permite animais"
+          },
+          {
+            "label": "Quintal"
+          },
+          {
+            "label": "Sala de jantar"
+          }
+        ]
+      },
+      {
+        "category": "Outros",
+        "items": [
+          {
+            "label": "Andares",
+            "value": "1"
+          }
+        ]
+      }
+    ],
     "features": [
-      "idade do imóvel: 40",
       "Ambientes — Entrada independiente",
       "Áreas privativas — Área de serviço",
       "Áreas privativas — Cozinha Gourmet",

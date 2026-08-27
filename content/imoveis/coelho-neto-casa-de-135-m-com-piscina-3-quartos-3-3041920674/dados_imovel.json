@@ -518,8 +518,8 @@
   ],
   "caracteristicas_extras": {
     "Ambientes": {
-      "20228": {
-        "featureId": "20228",
+      "IW_01_001": {
+        "featureId": "IW_01_001",
         "label": "Entrada independiente",
         "measure": null,
         "value": null,
@@ -527,8 +527,8 @@
       }
     },
     "Áreas comuns": {
-      "10140": {
-        "featureId": "10140",
+      "IW_02_001": {
+        "featureId": "IW_02_001",
         "label": "Piscina",
         "measure": null,
         "value": null,
@@ -536,43 +536,43 @@
       }
     },
     "Áreas privativas": {
-      "20017": {
-        "featureId": "20017",
+      "IW_03_001": {
+        "featureId": "IW_03_001",
         "label": "Área de serviço",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20058": {
-        "featureId": "20058",
+      "IW_03_002": {
+        "featureId": "IW_03_002",
         "label": "Cozinha independente",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20065": {
-        "featureId": "20065",
+      "IW_03_003": {
+        "featureId": "IW_03_003",
         "label": "Despensa",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20140": {
-        "featureId": "20140",
+      "IW_03_004": {
+        "featureId": "IW_03_004",
         "label": "Piscina",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20166": {
-        "featureId": "20166",
+      "IW_03_005": {
+        "featureId": "IW_03_005",
         "label": "Quintal",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20199": {
-        "featureId": "20199",
+      "IW_03_006": {
+        "featureId": "IW_03_006",
         "label": "Varanda",
         "measure": null,
         "value": null,

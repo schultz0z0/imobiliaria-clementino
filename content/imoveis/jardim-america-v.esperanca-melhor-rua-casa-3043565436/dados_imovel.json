@@ -65,8 +65,8 @@
   },
   "caracteristicas_extras": {
     "Ambientes": {
-      "20228": {
-        "featureId": "20228",
+      "IW_01_001": {
+        "featureId": "IW_01_001",
         "label": "Entrada independiente",
         "measure": null,
         "value": null,
@@ -74,36 +74,36 @@
       }
     },
     "Áreas privativas": {
-      "20017": {
-        "featureId": "20017",
+      "IW_02_001": {
+        "featureId": "IW_02_001",
         "label": "Área de serviço",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20057": {
-        "featureId": "20057",
+      "IW_02_002": {
+        "featureId": "IW_02_002",
         "label": "Cozinha Gourmet",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20135": {
-        "featureId": "20135",
+      "IW_02_003": {
+        "featureId": "IW_02_003",
         "label": "Permite animais",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20166": {
-        "featureId": "20166",
+      "IW_02_004": {
+        "featureId": "IW_02_004",
         "label": "Quintal",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20177": {
-        "featureId": "20177",
+      "IW_02_005": {
+        "featureId": "IW_02_005",
         "label": "Sala de jantar",
         "measure": null,
         "value": null,
@@ -111,8 +111,8 @@
       }
     },
     "Outros": {
-      "30001": {
-        "featureId": "30001",
+      "IW_03_001": {
+        "featureId": "IW_03_001",
         "label": "Andares",
         "measure": null,
         "value": "1",

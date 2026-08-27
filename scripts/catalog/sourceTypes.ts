@@ -5,7 +5,7 @@ export interface RawFeature {
   label: string | null;
   measure: string | null;
   value: string | null;
-  icon?: string;
+  icon?: string | null;
 }
 
 export interface RawPhoto {

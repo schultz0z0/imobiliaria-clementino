@@ -520,15 +520,15 @@
   ],
   "caracteristicas_extras": {
     "Outros": {
-      "30001": {
-        "featureId": "30001",
+      "IW_01_001": {
+        "featureId": "IW_01_001",
         "label": "Andares",
         "measure": null,
         "value": "2",
         "icon": null
       },
-      "30002": {
-        "featureId": "30002",
+      "IW_01_002": {
+        "featureId": "IW_01_002",
         "label": "Aceita FGTS",
         "measure": null,
         "value": null,

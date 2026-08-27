@@ -385,8 +385,8 @@
   ],
   "caracteristicas_extras": {
     "Ambientes": {
-      "20228": {
-        "featureId": "20228",
+      "IW_01_001": {
+        "featureId": "IW_01_001",
         "label": "Entrada independiente",
         "measure": null,
         "value": null,

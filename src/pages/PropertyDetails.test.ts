@@ -60,3 +60,22 @@ test('keeps mobile navigation and fixed conversion actions comfortably tappable'
   assert.match(propertyDetailsSource, /label="WhatsApp"[\s\S]*min-h-12/);
   assert.match(propertyDetailsSource, />Agendar<\/button>/);
 });
+
+test('shows Saiba mais characteristics grouped by their Imovelweb categories', () => {
+  const markup = renderProperty('3028206195');
+
+  assert.match(markup, /Características/);
+  assert.match(markup, /<h3[^>]*>Áreas comuns<\/h3>/);
+  assert.match(markup, /Câmeras de segurança/);
+  assert.match(markup, /<h3[^>]*>Áreas privativas<\/h3>/);
+  assert.match(markup, /Área de serviço/);
+  assert.match(markup, /<h3[^>]*>Outros<\/h3>/);
+  assert.match(markup, /Posição do Apto/);
+});
+
+test('hides characteristics when Imovelweb has no Saiba mais section', () => {
+  const markup = renderProperty('3017305809');
+
+  assert.doesNotMatch(markup, /Características/);
+  assert.doesNotMatch(markup, /idade do imóvel/i);
+});

@@ -55,6 +55,7 @@ npm run build
 - `content/catalog-overrides.json`: ajustes editoriais do catálogo.
 - `src/data/properties.generated.json`: catálogo gerado consumido pelo React.
 - `public/imoveis/`: imagens otimizadas usadas pelo website.
+- [`docs/CATALOGO_IMOVEIS.md`](./docs/CATALOGO_IMOVEIS.md): contrato de identidade que liga content, catálogo, referências e imagens.
 
 Para validar o catálogo:
 

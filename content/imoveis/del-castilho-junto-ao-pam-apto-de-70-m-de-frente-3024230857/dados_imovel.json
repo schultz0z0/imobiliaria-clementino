@@ -349,8 +349,8 @@
   ],
   "caracteristicas_extras": {
     "Áreas privativas": {
-      "20017": {
-        "featureId": "20017",
+      "IW_01_001": {
+        "featureId": "IW_01_001",
         "label": "Área de serviço",
         "measure": null,
         "value": null,
@@ -358,15 +358,15 @@
       }
     },
     "Outros": {
-      "30001": {
-        "featureId": "30001",
+      "IW_02_001": {
+        "featureId": "IW_02_001",
         "label": "Andares",
         "measure": null,
         "value": "3",
         "icon": null
       },
-      "30004": {
-        "featureId": "30004",
+      "IW_02_002": {
+        "featureId": "IW_02_002",
         "label": "Posição do Apto",
         "measure": null,
         "value": "Frente",

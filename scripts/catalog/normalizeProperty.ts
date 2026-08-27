@@ -55,16 +55,6 @@ const resolvePurpose = (record: RawPropertyRecord, overrides: CatalogOverrides):
   throw new Error(`Finalidade ambígua para o imóvel ${id}; adicione um override explícito.`);
 };
 
-const formatFeature = (feature: RawFeature): string | null => {
-  const label = feature.label?.trim();
-  if (!label) return null;
-  const normalizedLabel = normalizeSearchText(label);
-  if (/^(tot\.?|util|quartos?|banheiros?|suites?|vagas?)$/.test(normalizedLabel)) return null;
-  const value = feature.value?.trim();
-  const measure = feature.measure ? ` ${feature.measure}` : '';
-  return value ? `${label}: ${value}${measure}` : label;
-};
-
 const formatExtraFeature = (category: string, feature: RawFeature): string | null => {
   const label = feature.label?.trim();
   if (!label) return null;
@@ -121,15 +111,28 @@ export const normalizeProperty = (
   const images = [...record.fotos]
     .sort((left, right) => left.index - right.index)
     .map((photo) => `/imoveis/${id}/foto-${String(photo.index).padStart(2, '0')}.webp`);
-  const features = Array.from(new Set([
-    ...Object.values(record.caracteristicas_principais)
-      .map(formatFeature)
-      .filter((feature): feature is string => Boolean(feature)),
-    ...Object.entries(record.caracteristicas_extras ?? {})
-      .flatMap(([category, categoryFeatures]) => Object.values(categoryFeatures)
-        .map((feature) => formatExtraFeature(category, feature)))
-      .filter((feature): feature is string => Boolean(feature)),
-  ]));
+  const featureGroups = Object.entries(record.caracteristicas_extras ?? {})
+    .map(([category, categoryFeatures]) => ({
+      category: category.trim(),
+      items: Object.values(categoryFeatures)
+        .map((feature): { label: string; value?: string } | null => {
+          const label = feature.label?.trim();
+          if (!label) return null;
+          const rawValue = feature.value?.trim();
+          const measure = feature.measure?.trim();
+          const value = rawValue ? `${rawValue}${measure ? ` ${measure}` : ''}` : undefined;
+          return value ? { label, value } : { label };
+        })
+        .filter((feature): feature is { label: string; value?: string } => Boolean(feature)),
+    }))
+    .filter((group) => group.category && group.items.length > 0);
+  const features = Array.from(new Set(
+    featureGroups.flatMap(({ category, items }) => items.map((feature) => formatExtraFeature(category, {
+      label: feature.label,
+      value: feature.value ?? null,
+      measure: null,
+    }))).filter((feature): feature is string => Boolean(feature)),
+  ));
 
   return {
     id,
@@ -161,6 +164,7 @@ export const normalizeProperty = (
     propertyType: general.subtitulo.split('·')[0]?.trim() || 'Imóvel',
     type,
     desc: record.descricao.replace(/<br\s*\/?>/gi, '\n').trim(),
+    featureGroups,
     features,
   };
 };

@@ -64,7 +64,31 @@ test('preserves multiple operations, IPTU, coordinates, total area and categoriz
   assert.equal(property.totalAreaValue, 145);
   assert.equal(property.latitude, -22.9);
   assert.equal(property.longitude, -43.2);
+  assert.deepEqual(property.featureGroups, [
+    {
+      category: 'Ambientes',
+      items: [{ label: 'Entrada independente' }],
+    },
+    {
+      category: 'Outros',
+      items: [{ label: 'Andares', value: '2' }],
+    },
+  ]);
   assert.deepEqual(property.features, ['Ambientes — Entrada independente', 'Outros — Andares: 2']);
+});
+
+test('does not invent Saiba mais items from primary characteristics', () => {
+  const record = makeRawRecord();
+  record.caracteristicas_principais.CFT5 = {
+    featureId: 'CFT5', label: 'idade do imóvel', measure: null, value: '40', icon: 'antiguedad',
+  };
+
+  const property = normalizeProperty(record, 'pasta-3042851381', {
+    purposeById: { '3042851381': 'Aluguel' },
+  });
+
+  assert.deepEqual(property.featureGroups, []);
+  assert.deepEqual(property.features, []);
 });
 
 test('rejects invalid or commercially conflicting operations instead of choosing silently', () => {

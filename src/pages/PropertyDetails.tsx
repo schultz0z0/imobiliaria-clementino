@@ -68,7 +68,26 @@ export const PropertyDetails = () => {
             <div className="mt-9"><PropertyFacts property={property} /></div>
 
             <section className="mt-14"><h2 className="text-2xl font-semibold text-white">Sobre o imóvel</h2><p className="mt-5 whitespace-pre-line text-base leading-8 text-white/60">{property.desc}</p></section>
-            {property.features.length > 0 && <section className="mt-14"><h2 className="text-2xl font-semibold text-white">Características</h2><ul className="mt-6 grid gap-3 sm:grid-cols-2">{property.features.map((feature) => <li key={feature} className="flex items-center gap-3 rounded-[var(--radius-control)] border border-white/8 bg-white/[0.025] px-4 py-3 text-sm text-white/60"><CheckCircle2 className="h-4 w-4 shrink-0 text-[#d7b661]" />{feature}</li>)}</ul></section>}
+            {(property.featureGroups ?? []).length > 0 && (
+              <section className="mt-14">
+                <h2 className="text-2xl font-semibold text-white">Características</h2>
+                <div className="mt-6 grid gap-5 md:grid-cols-2">
+                  {property.featureGroups.map((group) => (
+                    <section key={group.category} className="rounded-[var(--radius-surface)] border border-white/8 bg-white/[0.025] p-5">
+                      <h3 className="text-sm font-semibold text-[#d7b661]">{group.category}</h3>
+                      <ul className="mt-4 grid gap-3">
+                        {group.items.map((item) => (
+                          <li key={`${item.label}-${item.value ?? ''}`} className="flex items-start gap-3 text-sm leading-6 text-white/60">
+                            <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-[#d7b661]" />
+                            <span>{item.label}{item.value ? <>: <strong className="font-medium text-white/80">{item.value}</strong></> : null}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </section>
+                  ))}
+                </div>
+              </section>
+            )}
           </main>
 
           <aside className="hidden lg:block"><div className="sticky top-28 rounded-[var(--radius-surface)] border border-[#d7b661]/25 bg-white/[0.04] p-7"><p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#d7b661]">Atendimento direto</p><h2 className="mt-4 text-2xl font-semibold text-white">Quer saber mais sobre este imóvel?</h2><p className="mt-3 text-sm leading-relaxed text-white/50">Fale com a equipe Clementino ou prepare uma solicitação de visita.</p><div className="mt-7 grid gap-3"><WhatsAppCta href={whatsappUrl} label="Falar sobre este imóvel" className="w-full" /><button type="button" onClick={() => setModalOpen(true)} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-[var(--radius-control)] border border-white/15 text-sm font-semibold text-white hover:border-[#d7b661]/60"><CalendarDays className="h-4 w-4 text-[#d7b661]" />Agendar visita</button></div></div></aside>

@@ -72,64 +72,64 @@
   },
   "caracteristicas_extras": {
     "Áreas comuns": {
-      "10016": {
-        "featureId": "10016",
+      "IW_01_001": {
+        "featureId": "IW_01_001",
         "label": "Área de lazer",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "10030": {
-        "featureId": "10030",
+      "IW_01_002": {
+        "featureId": "IW_01_002",
         "label": "Câmeras de segurança",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "10048": {
-        "featureId": "10048",
+      "IW_01_003": {
+        "featureId": "IW_01_003",
         "label": "Churrasqueira (parrilla)",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "10084": {
-        "featureId": "10084",
+      "IW_01_004": {
+        "featureId": "IW_01_004",
         "label": "Estacionamento para visitantes",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "10140": {
-        "featureId": "10140",
+      "IW_01_005": {
+        "featureId": "IW_01_005",
         "label": "Piscina",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "10152": {
-        "featureId": "10152",
+      "IW_01_006": {
+        "featureId": "IW_01_006",
         "label": "Playground",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "10158": {
-        "featureId": "10158",
+      "IW_01_007": {
+        "featureId": "IW_01_007",
         "label": "Portaria 24 horas",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "10165": {
-        "featureId": "10165",
+      "IW_01_008": {
+        "featureId": "IW_01_008",
         "label": "Quadra poliesportiva",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "10181": {
-        "featureId": "10181",
+      "IW_01_009": {
+        "featureId": "IW_01_009",
         "label": "Salão de festas",
         "measure": null,
         "value": null,
@@ -137,22 +137,22 @@
       }
     },
     "Áreas privativas": {
-      "20010": {
-        "featureId": "20010",
+      "IW_02_001": {
+        "featureId": "IW_02_001",
         "label": "Aquecedor",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20017": {
-        "featureId": "20017",
+      "IW_02_002": {
+        "featureId": "IW_02_002",
         "label": "Área de serviço",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "20057": {
-        "featureId": "20057",
+      "IW_02_003": {
+        "featureId": "IW_02_003",
         "label": "Cozinha Gourmet",
         "measure": null,
         "value": null,

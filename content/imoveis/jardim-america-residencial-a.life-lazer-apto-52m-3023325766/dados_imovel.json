@@ -293,57 +293,57 @@
   ],
   "caracteristicas_extras": {
     "Áreas comuns": {
-      "10016": {
-        "featureId": "10016",
+      "IW_01_001": {
+        "featureId": "IW_01_001",
         "label": "Área de lazer",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "10048": {
-        "featureId": "10048",
+      "IW_01_002": {
+        "featureId": "IW_01_002",
         "label": "Churrasqueira (parrilla)",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "10140": {
-        "featureId": "10140",
+      "IW_01_003": {
+        "featureId": "IW_01_003",
         "label": "Piscina",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "10152": {
-        "featureId": "10152",
+      "IW_01_004": {
+        "featureId": "IW_01_004",
         "label": "Playground",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "10165": {
-        "featureId": "10165",
+      "IW_01_005": {
+        "featureId": "IW_01_005",
         "label": "Quadra poliesportiva",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "10181": {
-        "featureId": "10181",
+      "IW_01_006": {
+        "featureId": "IW_01_006",
         "label": "Salão de festas",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "10187": {
-        "featureId": "10187",
+      "IW_01_007": {
+        "featureId": "IW_01_007",
         "label": "Solarium",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "10208": {
-        "featureId": "10208",
+      "IW_01_008": {
+        "featureId": "IW_01_008",
         "label": "Vigilância 24h",
         "measure": null,
         "value": null,
@@ -351,22 +351,22 @@
       }
     },
     "Outros": {
-      "30001": {
-        "featureId": "30001",
+      "IW_02_001": {
+        "featureId": "IW_02_001",
         "label": "Andares",
         "measure": null,
         "value": "2",
         "icon": null
       },
-      "30002": {
-        "featureId": "30002",
+      "IW_02_002": {
+        "featureId": "IW_02_002",
         "label": "Aceita FGTS",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "30004": {
-        "featureId": "30004",
+      "IW_02_003": {
+        "featureId": "IW_02_003",
         "label": "Posição do Apto",
         "measure": null,
         "value": "Frente",

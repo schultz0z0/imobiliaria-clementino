@@ -316,7 +316,7 @@
       "relative_path": "fotos/foto_28.jpg",
       "title": "Apartamento en venda de 2 quartos Jardim América",
       "size_bytes": 189440,
-      "size_kb": 185.0,
+      "size_kb": 185,
       "url": "https://imgbr.imovelwebcdn.com/avisos/2/30/32/20/17/82/6484443022.jpg"
     },
     {
@@ -358,22 +358,22 @@
   ],
   "caracteristicas_extras": {
     "Outros": {
-      "30001": {
-        "featureId": "30001",
+      "IW_01_001": {
+        "featureId": "IW_01_001",
         "label": "Andares",
         "measure": null,
         "value": "3",
         "icon": null
       },
-      "30002": {
-        "featureId": "30002",
+      "IW_01_002": {
+        "featureId": "IW_01_002",
         "label": "Aceita FGTS",
         "measure": null,
         "value": null,
         "icon": null
       },
-      "30004": {
-        "featureId": "30004",
+      "IW_01_003": {
+        "featureId": "IW_01_003",
         "label": "Posição do Apto",
         "measure": null,
         "value": "Frente",
