@@ -112,3 +112,51 @@ exit 0
 rtk proxy npx tsc --noEmit ...explicit Task 3 files...
 exit 0
 ```
+
+## Fix round 2
+
+### RED
+
+The upgrade integration test constructed the actual legacy state: `001_admin_catalog.sql` already recorded, no `public_id` trigger, the old per-property partial index, and three active jobs for different properties. With no `002` present, the runner skipped `001`, applied nothing, and the test failed with:
+
+```text
+Expected applied: ['002_serialize_publication_jobs.sql']
+Actual applied: []
+```
+
+### GREEN
+
+Added `server/migrations/002_serialize_publication_jobs.sql`. In one runner transaction it:
+
+- creates or replaces the immutable-`public_id` function and reinstalls its trigger;
+- removes both the legacy per-property index and any existing global index;
+- deterministically preserves the oldest active job by `(queued_at, id)`;
+- marks every other active legacy job `failed`, sets the schema's terminal timestamp `finished_at = now()`, and records `Superseded by global publication serialization migration`;
+- recreates the stable partial unique global index.
+
+The upgrade test verifies that `001` remains registered and skipped, `002` is applied, legacy jobs retain their audit rows with deterministic terminal states, the trigger/index are installed, and a second migration run skips `002`.
+
+Fresh-database and final verification:
+
+```text
+rtk npm run db:migrate:test
+Migrations applied: 2; skipped: 0
+
+rtk npm run db:migrate:test
+Migrations applied: 0; skipped: 2
+
+rtk npm run test:db
+tests 19; pass 19; fail 0
+
+rtk npm test
+tests 141; pass 141; fail 0
+
+rtk npm run server:build
+exit 0
+
+rtk npm run admin:build
+exit 0
+
+rtk proxy npx tsc --noEmit ...explicit Task 3 files...
+exit 0
+```
