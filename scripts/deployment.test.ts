@@ -18,6 +18,7 @@ test('exposes admin, server, and operations toolchain scripts without removing p
     'server:build',
     'db:migrate',
     'db:seed-admin',
+    'db:reset-admin-password',
     'publisher:run',
     'backup:run',
     'restore:verify',

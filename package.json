@@ -14,6 +14,7 @@
     "db:migrate:test": "node --env-file=server/db/test.env --import tsx server/db/migrate.ts --test-database",
     "test:db": "node --env-file=server/db/test.env --import tsx --test server/db/*.integration.test.ts",
     "db:seed-admin": "tsx scripts/admin/seedAdmin.ts",
+    "db:reset-admin-password": "tsx scripts/admin/resetAdminPassword.ts",
     "publisher:run": "tsx server/publisher/index.ts",
     "backup:run": "tsx scripts/operations/backup.ts",
     "restore:verify": "tsx scripts/operations/verifyBackup.ts",
