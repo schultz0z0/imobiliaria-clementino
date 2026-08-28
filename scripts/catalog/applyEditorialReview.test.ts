@@ -107,6 +107,27 @@ test('synchronizes only the Markdown title and complete-description section', ()
   assert.match(updated, /## Observações de validação\n\n- Manter esta observação\./);
 });
 
+test('preserves the input Markdown newline convention during synchronization', () => {
+  for (const newline of ['\n', '\r\n']) {
+    const markdown = [
+      '# Título antigo',
+      '',
+      '## Descrição completa',
+      '',
+      'Descrição antiga.',
+      '',
+      '## Observações de validação',
+      '',
+      '- Manter esta observação.',
+    ].join(newline);
+
+    const updated = syncEditorialMarkdown(markdown, validAudit.properties[0]);
+
+    assert.match(updated, new RegExp(`## Descrição completa${newline}${newline}Apartamento térreo`));
+    assert.doesNotMatch(updated, newline === '\r\n' ? /(?<!\r)\n/u : /\r\n/u);
+  }
+});
+
 test('supports the legacy Markdown description heading', () => {
   const markdown = [
     '# Título antigo',

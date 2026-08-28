@@ -54,6 +54,7 @@ export const syncEditorialMarkdown = (
   markdown: string,
   entry: EditorialAuditEntry,
 ): string => {
+  const newline = markdown.includes('\r\n') ? '\r\n' : '\n';
   const withTitle = markdown.replace(/^# .+$/m, `# ${entry.title}`);
   const descriptionSection = /(^## (?:Descrição completa|📝 Descrição do Imóvel)\s*\r?\n\r?\n)[\s\S]*?(?=\r?\n## |(?![\s\S]))/m;
   if (!descriptionSection.test(withTitle)) {
@@ -61,7 +62,7 @@ export const syncEditorialMarkdown = (
   }
   return withTitle.replace(
     descriptionSection,
-    (_match, heading: string) => `${heading}${entry.description.trim()}\n`,
+    (_match, heading: string) => `${heading}${entry.description.trim().replace(/\r?\n/g, newline)}${newline}`,
   );
 };
 
