@@ -4,15 +4,16 @@ services:
   postgres-test:
     image: postgres:17-alpine
     environment:
-      POSTGRES_DB: property_admin_test
-      POSTGRES_USER: property_admin_test
-      POSTGRES_PASSWORD: property_admin_test
+      POSTGRES_DB: clementino_admin_test
+      POSTGRES_USER: clementino_admin_test
+      POSTGRES_PASSWORD: clementino_admin_test
+      ALLOW_DESTRUCTIVE_DB_TESTS: "1"
     ports:
       - "127.0.0.1:55439:5432"
     volumes:
       - property-admin-postgres-test-data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U property_admin_test -d property_admin_test"]
+      test: ["CMD-SHELL", "pg_isready -U clementino_admin_test -d clementino_admin_test"]
       interval: 2s
       timeout: 3s
       retries: 20

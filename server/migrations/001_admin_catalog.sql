@@ -59,6 +59,23 @@ CREATE INDEX properties_search_idx ON properties USING gin (
   to_tsvector('simple', public_id || ' ' || commercial_reference || ' ' || slug)
 );
 
+CREATE FUNCTION prevent_property_public_id_change()
+RETURNS trigger
+LANGUAGE plpgsql
+AS $$
+BEGIN
+  IF NEW.public_id IS DISTINCT FROM OLD.public_id THEN
+    RAISE EXCEPTION 'properties.public_id is immutable'
+      USING ERRCODE = 'check_violation';
+  END IF;
+  RETURN NEW;
+END;
+$$;
+
+CREATE TRIGGER properties_public_id_immutable
+  BEFORE UPDATE OF public_id ON properties
+  FOR EACH ROW EXECUTE FUNCTION prevent_property_public_id_change();
+
 CREATE TABLE property_revisions (
   id bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   property_id uuid NOT NULL REFERENCES properties(id) ON DELETE RESTRICT,
@@ -164,8 +181,8 @@ CREATE INDEX publication_jobs_requested_by_idx ON publication_jobs (requested_by
   WHERE requested_by IS NOT NULL;
 CREATE INDEX publication_jobs_queue_idx ON publication_jobs (queued_at, id)
   WHERE status = 'queued';
-CREATE UNIQUE INDEX publication_jobs_one_active_per_property_idx
-  ON publication_jobs (property_id)
+CREATE UNIQUE INDEX publication_jobs_one_active_globally_idx
+  ON publication_jobs ((true))
   WHERE status IN ('queued', 'running');
 
 CREATE TABLE site_releases (

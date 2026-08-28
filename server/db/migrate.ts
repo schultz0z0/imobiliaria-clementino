@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { createPostgresClient, type Sql } from './client.ts';
+import { assertDisposableTestDatabase } from './testDatabaseSafety.ts';
 
 const migrationLockKey = 1_988_042_701;
 const defaultMigrationsDirectory = path.resolve(
@@ -69,9 +70,19 @@ const isMainModule =
   process.argv[1] !== undefined && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
 
 if (isMainModule) {
-  const databaseUrl = argumentValue('--database-url') ?? process.env.DATABASE_URL;
+  const isTestDatabase = process.argv.includes('--test-database');
+  const databaseUrl =
+    argumentValue('--database-url') ??
+    (isTestDatabase ? process.env.TEST_DATABASE_URL : process.env.DATABASE_URL);
   if (!databaseUrl) {
-    throw new Error('DATABASE_URL or --database-url is required');
+    throw new Error(
+      isTestDatabase
+        ? 'TEST_DATABASE_URL or --database-url is required'
+        : 'DATABASE_URL or --database-url is required',
+    );
+  }
+  if (isTestDatabase) {
+    assertDisposableTestDatabase(databaseUrl);
   }
 
   const sql = createPostgresClient(databaseUrl, { max: 1 });

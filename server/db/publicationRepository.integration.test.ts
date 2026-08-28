@@ -12,10 +12,10 @@ import {
   failPublicationJob,
   getPublicationJobById,
 } from './publicationRepository.ts';
+import { assertDisposableTestDatabase } from './testDatabaseSafety.ts';
 
-const testDatabaseUrl =
-  process.env.TEST_DATABASE_URL ??
-  'postgres://property_admin_test:property_admin_test@127.0.0.1:55439/property_admin_test';
+const testDatabaseUrl = process.env.TEST_DATABASE_URL;
+assertDisposableTestDatabase(testDatabaseUrl);
 const sql = createPostgresClient(testDatabaseUrl, { max: 12 });
 const testSuiteLockKey = 1_988_042_702;
 let testSuiteLock: Awaited<ReturnType<typeof sql.reserve>> | undefined;
@@ -101,14 +101,31 @@ after(async () => {
   await sql.end({ timeout: 5 });
 });
 
-test('allows at most one queued or running publication job per property', async () => {
-  const { property, job } = await createQueuedProperty('one-active');
+test('allows at most one queued or running publication job globally', async () => {
+  const { job } = await createQueuedProperty('one-active');
+  const otherProperty = await createPropertyWithDraft(sql, {
+    publicId: 'publication-other-active',
+    commercialReference: 'PUB-other-active',
+    slug: 'publication-other-active',
+    payload: validProperty('PUB-other-active'),
+  });
   assert.equal(job.status, 'queued');
 
   await assert.rejects(
     enqueuePublicationJob(sql, {
-      propertyId: property.id,
-      revisionId: property.revisionId,
+      propertyId: otherProperty.id,
+      revisionId: otherProperty.revisionId,
+    }),
+    (error: unknown) =>
+      typeof error === 'object' && error !== null && 'code' in error && error.code === '23505',
+  );
+
+  const running = await claimNextPublicationJob(sql);
+  assert.equal(running?.status, 'running');
+  await assert.rejects(
+    enqueuePublicationJob(sql, {
+      propertyId: otherProperty.id,
+      revisionId: otherProperty.revisionId,
     }),
     (error: unknown) =>
       typeof error === 'object' && error !== null && 'code' in error && error.code === '23505',
@@ -116,24 +133,41 @@ test('allows at most one queued or running publication job per property', async 
 });
 
 test('claims queued jobs atomically under concurrent workers', async () => {
-  const first = await createQueuedProperty('claim-first');
-  const second = await createQueuedProperty('claim-second');
+  const queued = await createQueuedProperty('claim-singleton');
 
-  const [claimedA, claimedB] = await Promise.all([
+  const claims = await Promise.all([
     claimNextPublicationJob(sql),
     claimNextPublicationJob(sql),
   ]);
+  const claimed = claims.filter((job) => job !== null);
 
-  assert.ok(claimedA);
-  assert.ok(claimedB);
-  assert.notEqual(claimedA.id, claimedB.id);
-  assert.deepEqual(
-    new Set([claimedA.id, claimedB.id]),
-    new Set([first.job.id, second.job.id]),
-  );
-  assert.equal(claimedA.status, 'running');
-  assert.equal(claimedB.status, 'running');
+  assert.equal(claimed.length, 1);
+  assert.equal(claimed[0]?.id, queued.job.id);
+  assert.equal(claimed[0]?.status, 'running');
+  assert.equal(claims.filter((job) => job === null).length, 1);
   assert.equal(await claimNextPublicationJob(sql), null);
+});
+
+test('waits for the explicit site publication advisory lock before claiming', async () => {
+  const { job } = await createQueuedProperty('advisory-lock');
+  const blocker = await sql.reserve();
+  await blocker`SELECT pg_advisory_lock(hashtext('site_publication'))`;
+
+  let claimSettled = false;
+  const claimPromise = claimNextPublicationJob(sql).finally(() => {
+    claimSettled = true;
+  });
+
+  try {
+    await new Promise((resolve) => setTimeout(resolve, 100));
+    assert.equal(claimSettled, false);
+  } finally {
+    await blocker`SELECT pg_advisory_unlock(hashtext('site_publication'))`;
+    blocker.release();
+  }
+
+  const claimed = await claimPromise;
+  assert.equal(claimed?.id, job.id);
 });
 
 test('completes a running job and permits a later job for the same property', async () => {
@@ -152,8 +186,8 @@ test('completes a running job and permits a later job for the same property', as
   assert.equal(next.status, 'queued');
 });
 
-test('records a failed job and its diagnostic message', async () => {
-  const { job } = await createQueuedProperty('failure');
+test('records a failed job and permits the next global publication', async () => {
+  const { property, job } = await createQueuedProperty('failure');
   await claimNextPublicationJob(sql);
 
   const failed = await failPublicationJob(sql, job.id, 'static site generation failed');
@@ -163,4 +197,10 @@ test('records a failed job and its diagnostic message', async () => {
   assert.equal(failed.errorMessage, 'static site generation failed');
   assert.equal(persisted?.status, 'failed');
   assert.equal(persisted?.errorMessage, 'static site generation failed');
+
+  const next = await enqueuePublicationJob(sql, {
+    propertyId: property.id,
+    revisionId: property.revisionId,
+  });
+  assert.equal(next.status, 'queued');
 });

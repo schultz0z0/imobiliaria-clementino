@@ -90,6 +90,7 @@ export const claimNextPublicationJob = async (
   sql: SqlExecutor,
 ): Promise<PublicationJobRecord | null> =>
   withTransaction(sql, async (transaction) => {
+    await transaction`SELECT pg_advisory_xact_lock(hashtext('site_publication'))`;
     const rows = await transaction<PublicationJobRow[]>`
       WITH candidate AS (
         SELECT id

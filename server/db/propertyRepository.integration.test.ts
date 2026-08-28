@@ -11,10 +11,10 @@ import {
   inactivateProperty,
   publishDraft,
 } from './propertyRepository.ts';
+import { assertDisposableTestDatabase } from './testDatabaseSafety.ts';
 
-const testDatabaseUrl =
-  process.env.TEST_DATABASE_URL ??
-  'postgres://property_admin_test:property_admin_test@127.0.0.1:55439/property_admin_test';
+const testDatabaseUrl = process.env.TEST_DATABASE_URL;
+assertDisposableTestDatabase(testDatabaseUrl);
 const sql = createPostgresClient(testDatabaseUrl, { max: 8 });
 const testSuiteLockKey = 1_988_042_702;
 let testSuiteLock: Awaited<ReturnType<typeof sql.reserve>> | undefined;
@@ -153,6 +153,24 @@ test('enforces a unique immutable public id', async () => {
   assert.equal(property?.slug, 'property-stable-one');
 });
 
+test('rejects changing public_id in SQL while allowing an unchanged update', async () => {
+  const created = await createPropertyWithDraft(sql, {
+    publicId: 'property-database-immutable',
+    commercialReference: 'CLI-immutable',
+    slug: 'property-database-immutable',
+    payload: validProperty('CLI-immutable'),
+  });
+
+  await sql`UPDATE properties SET public_id = public_id WHERE id = ${created.id}`;
+  await assert.rejects(
+    sql`UPDATE properties SET public_id = 'property-mutated' WHERE id = ${created.id}`,
+    /public_id is immutable/i,
+  );
+
+  const property = await getPropertyById(sql, created.id);
+  assert.equal(property?.publicId, 'property-database-immutable');
+});
+
 test('increments append-only revisions and keeps draft separate from published', async () => {
   const created = await createPropertyWithDraft(sql, {
     publicId: 'property-revisions',
@@ -178,6 +196,40 @@ test('increments append-only revisions and keeps draft separate from published',
     ORDER BY revision_number
   `;
   assert.deepEqual(revisions.map(({ revision_number }) => Number(revision_number)), [1, 2]);
+});
+
+test('serializes concurrent draft revisions for the same property', async () => {
+  const created = await createPropertyWithDraft(sql, {
+    publicId: 'property-concurrent-revisions',
+    commercialReference: 'CLI-concurrent',
+    slug: 'property-concurrent-revisions',
+    payload: validProperty('CLI-concurrent'),
+  });
+
+  const revisions = await Promise.all(
+    Array.from({ length: 8 }, (_, index) =>
+      createDraftRevision(sql, created.id, validProperty(`CLI-concurrent-${index + 2}`)),
+    ),
+  );
+  const property = await getPropertyById(sql, created.id);
+  const newest = revisions.find(({ revisionNumber }) => revisionNumber === 9);
+
+  assert.deepEqual(
+    revisions.map(({ revisionNumber }) => revisionNumber).sort(),
+    [2, 3, 4, 5, 6, 7, 8, 9],
+  );
+  assert.equal(property?.draftRevisionId, newest?.id);
+
+  const persisted = await sql<{ revision_number: string }[]>`
+    SELECT revision_number
+    FROM property_revisions
+    WHERE property_id = ${created.id}
+    ORDER BY revision_number
+  `;
+  assert.deepEqual(
+    persisted.map(({ revision_number }) => Number(revision_number)),
+    [1, 2, 3, 4, 5, 6, 7, 8, 9],
+  );
 });
 
 test('soft-inactivates a property without deleting its revisions', async () => {
