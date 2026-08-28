@@ -11,6 +11,7 @@
     "server:dev": "tsx watch server/api/index.ts",
     "server:build": "esbuild server/api/index.ts --bundle --platform=node --target=node22 --format=esm --outfile=dist-server/api/index.js",
     "db:migrate": "tsx server/db/migrate.ts",
+    "db:migrate:test": "tsx server/db/migrate.ts --database-url postgres://property_admin_test:property_admin_test@127.0.0.1:55439/property_admin_test",
     "db:seed-admin": "tsx scripts/admin/seedAdmin.ts",
     "publisher:run": "tsx server/publisher/index.ts",
     "backup:run": "tsx scripts/operations/backup.ts",
