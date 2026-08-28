@@ -13,6 +13,11 @@ export type IpFailureRateLimiterOptions = {
   now?: () => number;
 };
 
+export type AttemptReservation = {
+  allowed: boolean;
+  retryAfterMs: number;
+};
+
 export class IpFailureRateLimiter {
   readonly #failureLimit: number;
   readonly #windowMs: number;
@@ -43,6 +48,11 @@ export class IpFailureRateLimiter {
     return this.#entries.size;
   }
 
+  attemptCount(ip: string): number {
+    this.#sweepExpired(this.#now());
+    return this.#entries.get(ip)?.failureTimes.length ?? 0;
+  }
+
   isLimited(ip: string): boolean {
     const now = this.#now();
     this.#sweepExpired(now);
@@ -54,10 +64,17 @@ export class IpFailureRateLimiter {
     return entry.failureTimes.length >= this.#failureLimit;
   }
 
-  recordFailure(ip: string): void {
+  reserveAttempt(ip: string): AttemptReservation {
     const now = this.#now();
     this.#sweepExpired(now);
     let entry = this.#entries.get(ip);
+    if (entry && entry.failureTimes.length >= this.#failureLimit) {
+      this.#touch(entry, now);
+      return {
+        allowed: false,
+        retryAfterMs: Math.max(1, entry.failureTimes[0]! + this.#windowMs - now),
+      };
+    }
     if (!entry) {
       if (this.#entries.size >= this.#maxEntries) {
         this.#evictLeastRecentlyUsed();
@@ -67,6 +84,7 @@ export class IpFailureRateLimiter {
     }
     entry.failureTimes.push(now);
     this.#touch(entry, now);
+    return { allowed: true, retryAfterMs: 0 };
   }
 
   clear(ip: string): void {

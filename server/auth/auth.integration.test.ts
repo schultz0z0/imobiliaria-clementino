@@ -284,6 +284,30 @@ test('rate limits failed login attempts per IP without affecting another IP', as
   await app.close();
 });
 
+test('atomically reserves one concurrent login flow per available IP slot', async () => {
+  await seed();
+  const app = createServer({
+    sql,
+    environment: 'test',
+    auth: { ipAttemptLimit: 1, ipWindowSeconds: 60, accountFailureLimit: 50 },
+  });
+
+  const responses = await Promise.all(
+    Array.from({ length: 8 }, () =>
+      login(app, 'nao-existe', 'invalida', '198.51.100.35'),
+    ),
+  );
+
+  assert.equal(responses.filter(({ statusCode }) => statusCode === 401).length, 1);
+  assert.equal(responses.filter(({ statusCode }) => statusCode === 429).length, 7);
+  assert.ok(
+    responses
+      .filter(({ statusCode }) => statusCode === 429)
+      .every((response) => response.json().error === 'Too many login attempts'),
+  );
+  await app.close();
+});
+
 test('persists account lockout across server instances and never reveals it', async () => {
   await seed();
   const auth = { ipAttemptLimit: 50, accountFailureLimit: 2, lockoutSeconds: 60 };

@@ -242,16 +242,17 @@ export const registerAuthRoutes = (
   });
 
   app.post('/api/admin/auth/login', async (request, reply) => {
-    if (ipRateLimiter.isLimited(request.ip)) {
+    const { username, password } = readLoginBody(request.body);
+    const reservation = ipRateLimiter.reserveAttempt(request.ip);
+    if (!reservation.allowed) {
+      reply.header('Retry-After', Math.max(1, Math.ceil(reservation.retryAfterMs / 1_000)));
       await insertAuditEvent(sql, 'auth.login_rate_limited');
       return reply.code(429).send({ error: 'Too many login attempts' });
     }
 
-    const { username, password } = readLoginBody(request.body);
     const user = await findAdminByUsername(sql, username);
     const passwordMatches = await verifyPassword(user?.password_hash ?? dummyPasswordHash, password);
     if (!user || !passwordMatches || isLocked(user)) {
-      ipRateLimiter.recordFailure(request.ip);
       if (user && !isLocked(user)) {
         await recordAccountFailure(sql, user.id, options);
       }
@@ -292,7 +293,6 @@ export const registerAuthRoutes = (
       return created;
     });
     if (!session) {
-      ipRateLimiter.recordFailure(request.ip);
       await insertAuditEvent(sql, 'auth.login_failed');
       return reply.code(401).send(genericLoginFailure);
     }

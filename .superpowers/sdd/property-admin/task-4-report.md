@@ -115,3 +115,30 @@ Review findings were addressed without expanding the authentication API:
 - `rtk npm run admin:build` and `rtk npm run server:build` — passed.
 - `rtk npm run lint` — passed.
 - `rtk npx tsc -p tsconfig.server.json --allowImportingTsExtensions` — no errors.
+
+## Fix round 2
+
+The route-level check-then-record race was replaced with a synchronous atomic
+reservation before the login handler's first query, hash verification, or other
+awaited work:
+
+- `reserveAttempt` sweeps expired timestamps, reserves one available slot, and
+  returns `{ allowed, retryAfterMs }` synchronously.
+- Rejected requests do not append timestamps. Every IP entry is therefore
+  bounded by `failureLimit` in addition to the existing global cardinality cap.
+- A successful login clears its IP entry; failed or locked logins keep the
+  already-reserved slot. `429` responses include a finite `Retry-After` and do
+  not reveal account state.
+- TTL sweep, deterministic LRU eviction, process-wide cardinality, account
+  lockout, and generic credential failures remain unchanged.
+
+### Fix round 2 TDD evidence
+
+1. RED unit: `reserveAttempt` was absent (`TypeError`) before production changes.
+2. RED route: eight concurrent same-IP requests all reached authentication and
+   returned `401` (`8 !== 1`), demonstrating the async gap.
+3. GREEN focused: limiter tests passed 5/5; the concurrent route regression
+   passed with exactly one `401` flow and seven `429` responses, independent of
+   response order.
+4. GREEN auth/DB: `rtk npm run test:auth` passed 20/20 and `rtk npm run test:db`
+   passed 19/19 against disposable PostgreSQL.
