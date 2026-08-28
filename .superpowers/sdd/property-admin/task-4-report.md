@@ -74,3 +74,44 @@ Implemented on branch `codex/property-admin`, starting from
 The IP window is intentionally process-local and stores no IP address in
 PostgreSQL or audit details. This is correct for the planned single server
 process; horizontal workers would need a shared privacy-reviewed limiter.
+
+## Fix round 1
+
+Review findings were addressed without expanding the authentication API:
+
+- Replaced the unbounded route-local map with `IpFailureRateLimiter`, which has
+  a configurable hard cardinality limit (10,000 by default), rolling TTL sweep,
+  and deterministic least-recently-used eviction. Read-only checks never create
+  entries, expired failures are removed, and a successful login clears the IP.
+- Added four clock-driven unit regressions covering check-only allocation,
+  expiry/sweep, the hard maximum plus deterministic LRU eviction, and the
+  original limit/clear semantics.
+- Exercised the default admin guard on a representative authenticated mutation:
+  the first-login session receives `403 Password change required`, the
+  CSRF-protected change-password route remains allowed, and the replacement
+  session can mutate successfully.
+- Added the official `test:auth` package script. It runs auth unit and real-DB
+  integration tests without adding PostgreSQL-dependent tests to `npm test`.
+- Made administrator insert and `auth.admin_seeded` audit insertion one
+  transaction. A database trigger that deliberately rejects the audit event
+  proves the administrator insert rolls back.
+
+### Fix round 1 TDD evidence
+
+1. RED rate limiter: the unit suite failed with `ERR_MODULE_NOT_FOUND` for
+   `server/auth/ipRateLimiter.ts`.
+2. RED script contract: deployment test failed because `test:auth` was absent
+   (5 passed, 1 failed).
+3. RED atomic seed: forced audit failure left one `admin_users` row (`1 !== 0`).
+4. GREEN focused: rate limiter 4/4, deployment 6/6, seed rollback 1/1.
+5. GREEN official auth script: `rtk npm run test:auth` passed 18/18, including
+   all prior authentication scenarios and the new review regressions.
+
+### Fix round 1 verification
+
+- `rtk npm run test:auth` — 18 passed, 0 failed.
+- `rtk npm run test:db` — 19 passed, 0 failed.
+- `rtk npm test` — 141 passed, 0 failed.
+- `rtk npm run admin:build` and `rtk npm run server:build` — passed.
+- `rtk npm run lint` — passed.
+- `rtk npx tsc -p tsconfig.server.json --allowImportingTsExtensions` — no errors.

@@ -4,6 +4,10 @@ import type { FastifyInstance, FastifyReply, FastifyRequest, preHandlerHookHandl
 
 import { type Sql, withTransaction } from '../db/client.ts';
 import { verifyCsrfToken } from './csrf.ts';
+import {
+  DEFAULT_IP_RATE_LIMIT_MAX_ENTRIES,
+  IpFailureRateLimiter,
+} from './ipRateLimiter.ts';
 import { hashPassword, verifyPassword } from './password.ts';
 import {
   ADMIN_COOKIE_PATH,
@@ -39,6 +43,7 @@ export type AuthOptions = {
   lockoutSeconds?: number;
   ipAttemptLimit?: number;
   ipWindowSeconds?: number;
+  ipRateLimitMaxEntries?: number;
   sessionDurationSeconds?: number;
 };
 
@@ -49,6 +54,8 @@ const resolveAuthOptions = (options: AuthOptions = {}): ResolvedAuthOptions => (
   lockoutSeconds: options.lockoutSeconds ?? 15 * 60,
   ipAttemptLimit: options.ipAttemptLimit ?? 10,
   ipWindowSeconds: options.ipWindowSeconds ?? 60,
+  ipRateLimitMaxEntries:
+    options.ipRateLimitMaxEntries ?? DEFAULT_IP_RATE_LIMIT_MAX_ENTRIES,
   sessionDurationSeconds: options.sessionDurationSeconds ?? DEFAULT_SESSION_DURATION_SECONDS,
 });
 
@@ -223,28 +230,19 @@ export const registerAuthRoutes = (
   authOptions: AuthOptions = {},
 ): void => {
   const options = resolveAuthOptions(authOptions);
-  const failedAttemptsByIp = new Map<string, number[]>();
+  const ipRateLimiter = new IpFailureRateLimiter({
+    failureLimit: options.ipAttemptLimit,
+    windowMs: options.ipWindowSeconds * 1_000,
+    maxEntries: options.ipRateLimitMaxEntries,
+  });
   let dummyPasswordHash = '';
 
   app.addHook('onReady', async () => {
     dummyPasswordHash = await hashPassword(randomBytes(32).toString('base64url'));
   });
 
-  const isIpLimited = (ip: string): boolean => {
-    const cutoff = Date.now() - options.ipWindowSeconds * 1_000;
-    const recent = (failedAttemptsByIp.get(ip) ?? []).filter((attempt) => attempt > cutoff);
-    failedAttemptsByIp.set(ip, recent);
-    return recent.length >= options.ipAttemptLimit;
-  };
-
-  const recordIpFailure = (ip: string): void => {
-    const attempts = failedAttemptsByIp.get(ip) ?? [];
-    attempts.push(Date.now());
-    failedAttemptsByIp.set(ip, attempts);
-  };
-
   app.post('/api/admin/auth/login', async (request, reply) => {
-    if (isIpLimited(request.ip)) {
+    if (ipRateLimiter.isLimited(request.ip)) {
       await insertAuditEvent(sql, 'auth.login_rate_limited');
       return reply.code(429).send({ error: 'Too many login attempts' });
     }
@@ -253,7 +251,7 @@ export const registerAuthRoutes = (
     const user = await findAdminByUsername(sql, username);
     const passwordMatches = await verifyPassword(user?.password_hash ?? dummyPasswordHash, password);
     if (!user || !passwordMatches || isLocked(user)) {
-      recordIpFailure(request.ip);
+      ipRateLimiter.recordFailure(request.ip);
       if (user && !isLocked(user)) {
         await recordAccountFailure(sql, user.id, options);
       }
@@ -294,12 +292,12 @@ export const registerAuthRoutes = (
       return created;
     });
     if (!session) {
-      recordIpFailure(request.ip);
+      ipRateLimiter.recordFailure(request.ip);
       await insertAuditEvent(sql, 'auth.login_failed');
       return reply.code(401).send(genericLoginFailure);
     }
 
-    failedAttemptsByIp.delete(request.ip);
+    ipRateLimiter.clear(request.ip);
     setSessionCookies(reply, session, environment);
     return reply.send({ mustChangePassword: session.mustChangePassword });
   });

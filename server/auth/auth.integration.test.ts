@@ -7,6 +7,7 @@ import { migrate } from '../db/migrate.ts';
 import { assertDisposableTestDatabase } from '../db/testDatabaseSafety.ts';
 import { createServer } from '../api/createServer.ts';
 import { ARGON2_OPTIONS, hashPassword, verifyPassword } from './password.ts';
+import { createAdminGuard } from './routes.ts';
 import { ADMIN_CSRF_COOKIE, ADMIN_SESSION_COOKIE } from './session.ts';
 import { resetAdministratorPassword } from '../../scripts/admin/resetAdminPassword.ts';
 import { seedAdministrator } from '../../scripts/admin/seedAdmin.ts';
@@ -111,6 +112,38 @@ test('enforces one administrator in both repository and database schema', async 
   );
 });
 
+test('rolls back administrator creation when its audit event fails', async () => {
+  await sql.unsafe(`
+    CREATE FUNCTION fail_admin_seed_audit()
+    RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+    BEGIN
+      IF NEW.action = 'auth.admin_seeded' THEN
+        RAISE EXCEPTION 'forced seed audit failure';
+      END IF;
+      RETURN NEW;
+    END;
+    $$;
+    CREATE TRIGGER audit_events_fail_admin_seed
+      BEFORE INSERT ON audit_events
+      FOR EACH ROW EXECUTE FUNCTION fail_admin_seed_audit();
+  `);
+
+  try {
+    await assert.rejects(seed('rollback-admin'), /forced seed audit failure/);
+    const rows = await sql<{ count: string }[]>`
+      SELECT count(*)::text AS count FROM admin_users
+    `;
+    assert.equal(rows[0]?.count, '0');
+  } finally {
+    await sql.unsafe(`
+      DROP TRIGGER IF EXISTS audit_events_fail_admin_seed ON audit_events;
+      DROP FUNCTION IF EXISTS fail_admin_seed_audit();
+    `);
+  }
+});
+
 test('creates a restricted first-login session and stores only token and CSRF hashes', async () => {
   await seed();
   const app = createServer({ sql, environment: 'test' });
@@ -139,8 +172,24 @@ test('creates a restricted first-login session and stores only token and CSRF ha
 test('changes the initial password, clears the flag, and replaces every old session', async () => {
   await seed();
   const app = createServer({ sql, environment: 'test' });
+  app.post(
+    '/api/admin/test-mutation',
+    { preHandler: createAdminGuard(sql, { csrf: true }) },
+    async () => ({ mutated: true }),
+  );
   const first = await login(app, 'administrador', initialPassword);
   const second = await login(app, 'administrador', initialPassword, '198.51.100.11');
+
+  const restricted = await app.inject({
+    method: 'POST',
+    url: '/api/admin/test-mutation',
+    headers: {
+      cookie: cookieHeader(first),
+      'x-csrf-token': csrfToken(first),
+    },
+  });
+  assert.equal(restricted.statusCode, 403);
+  assert.deepEqual(restricted.json(), { error: 'Password change required' });
 
   const changed = await app.inject({
     method: 'POST',
@@ -178,6 +227,16 @@ test('changes the initial password, clears the flag, and replaces every old sess
   });
   assert.equal(accepted.statusCode, 200);
   assert.equal(accepted.json().mustChangePassword, false);
+  const mutation = await app.inject({
+    method: 'POST',
+    url: '/api/admin/test-mutation',
+    headers: {
+      cookie: cookieHeader(changed),
+      'x-csrf-token': csrfToken(changed),
+    },
+  });
+  assert.equal(mutation.statusCode, 200);
+  assert.deepEqual(mutation.json(), { mutated: true });
 
   const oldPassword = await login(app, 'administrador', initialPassword, '198.51.100.12');
   assert.equal(oldPassword.statusCode, 401);
