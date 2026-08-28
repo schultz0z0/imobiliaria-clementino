@@ -316,6 +316,61 @@ test('uses null only to clear optional draft fields and clears coordinate pairs 
   assert.equal(requiredNull.json().error.code, API_ERROR_CODES.VALIDATION_FAILED);
 });
 
+test('clears optional property facts without weakening required facts or publish validation', async () => {
+  const session = await authenticate();
+  const created = await createDraft(session);
+  const complete = validProperty(created.commercialReference, {
+    facts: {
+      isNew: false,
+      ageYears: 8,
+      totalArea: 100,
+      usableArea: 80,
+      bedrooms: 3,
+      bathrooms: 2,
+      suites: 1,
+      parkingSpaces: 1,
+      floors: 7,
+      position: 'front',
+    },
+  });
+  assert.equal((await saveDraft(session, created.id, 1, complete)).statusCode, 200);
+
+  const cleared = await saveDraft(session, created.id, 2, {
+    facts: { totalArea: null, usableArea: null, floors: null, position: null },
+  });
+  assert.equal(cleared.statusCode, 200, cleared.body);
+  const detail = await app.inject({
+    method: 'GET',
+    url: `/api/admin/properties/${created.id}`,
+    headers: authHeaders(session),
+  });
+  assert.equal(detail.statusCode, 200, detail.body);
+  for (const key of ['totalArea', 'usableArea', 'floors', 'position']) {
+    assert.equal(key in detail.json().property.draft.facts, false, key);
+  }
+
+  const oneSided = await saveDraft(session, created.id, 3, {
+    facts: { totalArea: 100, usableArea: 80 },
+  });
+  assert.equal(oneSided.statusCode, 200, oneSided.body);
+  const clearedTotalOnly = await saveDraft(session, created.id, 4, { facts: { totalArea: null } });
+  assert.equal(clearedTotalOnly.statusCode, 200, clearedTotalOnly.body);
+  assert.equal('totalArea' in clearedTotalOnly.json().property.draft.facts, false);
+  assert.equal(clearedTotalOnly.json().property.draft.facts.usableArea, 80);
+
+  const publish = await app.inject({
+    method: 'POST',
+    url: `/api/admin/properties/${created.id}/publish`,
+    headers: authHeaders(session, true),
+    payload: {},
+  });
+  assert.equal(publish.statusCode, 202, publish.body);
+
+  const requiredNull = await saveDraft(session, created.id, 5, { facts: { bedrooms: null } });
+  assert.equal(requiredNull.statusCode, 400);
+  assert.equal(requiredNull.json().error.code, API_ERROR_CODES.VALIDATION_FAILED);
+});
+
 test('synchronizes editorial references with unique commercial references', async () => {
   const session = await authenticate();
   const first = await createDraft(session);

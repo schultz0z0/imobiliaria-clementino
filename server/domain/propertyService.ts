@@ -77,6 +77,10 @@ const publicLocationPatchSchema = propertyDraftSchema.shape.publicLocation
 
 const factsPatchSchema = propertyDraftSchema.shape.facts.partial().extend({
   ageYears: nullablePatchField(propertyDraftSchema.shape.facts.shape.ageYears),
+  totalArea: nullablePatchField(propertyDraftSchema.shape.facts.shape.totalArea),
+  usableArea: nullablePatchField(propertyDraftSchema.shape.facts.shape.usableArea),
+  floors: nullablePatchField(propertyDraftSchema.shape.facts.shape.floors),
+  position: nullablePatchField(propertyDraftSchema.shape.facts.shape.position),
 });
 
 const pricingPatchSchema = propertyDraftSchema.shape.pricing.partial().extend({

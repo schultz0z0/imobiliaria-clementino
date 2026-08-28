@@ -76,3 +76,7 @@ Additional RED cases exposed that PATCH could not clear optional values, referen
 Autosave now synchronizes the editorial reference and unique property commercial reference in its transaction, returning a typed conflict for collisions. Inactivation cancels this property's queued intent with `Cancelled because property was inactivated`, rejects a running intent, and therefore leaves no stale job the worker can claim. List count and items share a read-only repeatable-read transaction.
 
 The focused API suite was extended for clears, reference collisions, queued/running publication races, differing draft/published pointers, rollback injection, persisted concurrent write counts, and structured field issue parsing. It was RED at 10 pass / 3 fail before implementation and GREEN at 15/15 after it.
+
+## Fix round 2 (RED → GREEN)
+
+The PATCH facts envelope now permits `null` only as a clear instruction for `totalArea`, `usableArea`, `floors`, and `position`, matching `ageYears`. The merge removes those keys from the canonical revision; `isNew` and the required counters still reject `null`. The regression verifies full clear, a one-sided area clear retaining the usable area, and a successful publish validation when optional areas are absent. It was RED at 15 pass / 1 fail and GREEN at 16/16.
