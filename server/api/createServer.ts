@@ -8,6 +8,7 @@ import {
   getPostgresClient,
   type Sql,
 } from '../db/client.ts';
+import { registerPropertyRoutes } from './propertyRoutes.ts';
 
 export type CreateServerOptions = {
   sql?: Sql;
@@ -26,6 +27,7 @@ export const createServer = (options: CreateServerOptions = {}) => {
   app.register(fastifyHelmet);
   app.get('/health', async () => ({ status: 'ok' }));
   registerAuthRoutes(app, sql, environment, options.auth);
+  app.register(async (propertyApp) => registerPropertyRoutes(propertyApp, sql));
 
   if (ownsSql) {
     app.addHook('onClose', closePostgresClient);

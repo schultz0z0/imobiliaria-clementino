@@ -7,6 +7,37 @@ import {
   type PropertyDraft,
 } from './propertySchema.ts';
 
+export const API_ERROR_CODES = {
+  AUTH_REQUIRED: 'AUTH_REQUIRED',
+  PASSWORD_CHANGE_REQUIRED: 'PASSWORD_CHANGE_REQUIRED',
+  CSRF_INVALID: 'CSRF_INVALID',
+  VALIDATION_FAILED: 'VALIDATION_FAILED',
+  NOT_FOUND: 'NOT_FOUND',
+  CONFLICT: 'CONFLICT',
+  STALE_REVISION: 'STALE_REVISION',
+  PUBLICATION_JOB_ACTIVE: 'PUBLICATION_JOB_ACTIVE',
+  INVALID_STATE: 'INVALID_STATE',
+} as const;
+
+export type ApiErrorCode = (typeof API_ERROR_CODES)[keyof typeof API_ERROR_CODES];
+
+export const apiFieldIssueSchema = z.strictObject({
+  path: z.array(z.union([z.string(), z.number()])),
+  message: z.string(),
+});
+
+export type ApiFieldIssue = z.infer<typeof apiFieldIssueSchema>;
+
+export const apiErrorResponseSchema = z.strictObject({
+  error: z.strictObject({
+    code: z.enum(Object.values(API_ERROR_CODES)),
+    message: z.string(),
+    issues: z.array(apiFieldIssueSchema).optional(),
+  }),
+});
+
+export type ApiErrorResponse = z.infer<typeof apiErrorResponseSchema>;
+
 const { privateAddress: _privateAddressSchema, ...publicPropertyShape } = propertyDraftSchema.shape;
 
 export const publicPropertySchema = z

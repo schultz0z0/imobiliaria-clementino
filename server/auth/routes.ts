@@ -2,6 +2,7 @@ import { randomBytes } from 'node:crypto';
 
 import type { FastifyInstance, FastifyReply, FastifyRequest, preHandlerHookHandler } from 'fastify';
 
+import { API_ERROR_CODES } from '../../shared/apiContract.ts';
 import { type Sql, withTransaction } from '../db/client.ts';
 import { verifyCsrfToken } from './csrf.ts';
 import {
@@ -197,16 +198,38 @@ const recordAccountFailure = async (
 
 export const createAdminGuard = (
   sql: Sql,
-  options: { allowPasswordChangeRequired?: boolean; csrf?: boolean } = {},
+  options: {
+    allowPasswordChangeRequired?: boolean;
+    csrf?: boolean;
+    typedErrors?: boolean;
+  } = {},
 ): preHandlerHookHandler =>
   async (request, reply) => {
     const session = await getActiveAdminSession(sql, request.cookies[ADMIN_SESSION_COOKIE]);
     if (!session) {
-      await reply.code(401).send({ error: 'Authentication required' });
+      await reply.code(401).send(
+        options.typedErrors
+          ? {
+              error: {
+                code: API_ERROR_CODES.AUTH_REQUIRED,
+                message: 'Authentication required',
+              },
+            }
+          : { error: 'Authentication required' },
+      );
       return;
     }
     if (!options.allowPasswordChangeRequired && session.mustChangePassword) {
-      await reply.code(403).send({ error: 'Password change required' });
+      await reply.code(403).send(
+        options.typedErrors
+          ? {
+              error: {
+                code: API_ERROR_CODES.PASSWORD_CHANGE_REQUIRED,
+                message: 'Password change required',
+              },
+            }
+          : { error: 'Password change required' },
+      );
       return;
     }
     if (
@@ -217,7 +240,16 @@ export const createAdminGuard = (
         request.headers['x-csrf-token'],
       )
     ) {
-      await reply.code(403).send(genericCsrfFailure);
+      await reply.code(403).send(
+        options.typedErrors
+          ? {
+              error: {
+                code: API_ERROR_CODES.CSRF_INVALID,
+                message: genericCsrfFailure.error,
+              },
+            }
+          : genericCsrfFailure,
+      );
       return;
     }
     request.adminSession = session;
