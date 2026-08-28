@@ -28,6 +28,36 @@ export const PROPERTY_SUBTYPES = immutableCatalog([
   { id: 'triplex', label: 'Triplex' },
 ] as const);
 
+export type PropertyType = (typeof PROPERTY_TYPES)[number]['id'];
+export type PropertySubtype = (typeof PROPERTY_SUBTYPES)[number]['id'];
+
+const immutableSubtypeMatrix = <
+  const Matrix extends Record<PropertyType, readonly PropertySubtype[]>,
+>(matrix: Matrix): Matrix => {
+  Object.values(matrix).forEach((subtypes) => Object.freeze(subtypes));
+  return Object.freeze(matrix);
+};
+
+// The approved reference defines residential subtypes only. Keep non-residential
+// compatibility conservative until the product design explicitly adds new options.
+export const PROPERTY_SUBTYPES_BY_TYPE = immutableSubtypeMatrix({
+  apartment: [
+    'penthouse',
+    'duplex',
+    'flat',
+    'garden',
+    'studio',
+    'loft',
+    'standard',
+    'room',
+    'triplex',
+  ],
+  house: ['duplex', 'loft', 'standard', 'room', 'triplex'],
+  commercial: ['loft', 'standard', 'room'],
+  rural: ['standard'],
+  land: ['standard'],
+} as const satisfies Record<PropertyType, readonly PropertySubtype[]>);
+
 export const COMMON_FEATURES = immutableCatalog([
   { id: 'barbecue', label: 'Churrasqueira' },
   { id: 'elevator', label: 'Elevador' },
@@ -100,7 +130,5 @@ export const PRIVATE_FEATURES = immutableCatalog([
   { id: 'tv', label: 'TV' },
 ] as const);
 
-export type PropertyType = (typeof PROPERTY_TYPES)[number]['id'];
-export type PropertySubtype = (typeof PROPERTY_SUBTYPES)[number]['id'];
 export type CommonFeatureId = (typeof COMMON_FEATURES)[number]['id'];
 export type PrivateFeatureId = (typeof PRIVATE_FEATURES)[number]['id'];

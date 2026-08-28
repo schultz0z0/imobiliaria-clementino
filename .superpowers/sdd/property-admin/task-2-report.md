@@ -53,3 +53,15 @@
 - O schema impede que a localização pública repita exatamente as coordenadas privadas e o DTO omite o bloco privado. A estratégia que produzirá o deslocamento geográfico aproximado será responsabilidade da camada de cadastro/publicação futura.
 - `publishablePropertySchema` compartilha as regras completas do draft porque este escopo não definiu exigências adicionais exclusivas da publicação (por exemplo, quantidade mínima de fotos).
 - A revisão confirmou que nenhum arquivo em `content/manual/`, DB ou UI foi alterado.
+
+## Fix round — revisão bloqueante
+
+- Privacidade: `publicLocation.label` é reconstruído pelo DTO a partir de bairro, cidade e UF; o schema canônico rejeita rótulos que divergem desses campos ou contêm rua, número ou complemento, exige `precision: 'approximate'`, exige pares completos de coordenadas e rejeita posições públicas exatas ou quase exatas.
+- Contrato público: `publicPropertySchema` deriva o shape sem `privateAddress` e reaplica todos os refinamentos cruzados (operações/preços, novo/idade, áreas, suítes/quartos, duplicidades, mídia/capa, SEO e rejeição de Imovelweb).
+- Catálogo: `PROPERTY_SUBTYPES_BY_TYPE` é uma matriz imutável com as combinações aprovadas; a validação agora rejeita subtipo incompatível tanto no draft quanto no contrato público.
+
+### Evidências do fix round
+
+- RED da regressão de matriz: `rtk npx tsx --test shared/propertySchema.test.ts shared/featureCatalog.test.ts` — 23 aprovados, 1 falha esperada (`house/penthouse` ainda aceito).
+- GREEN: o mesmo teste — 24 aprovados, 0 falhas.
+- Typecheck focado: `rtk npx tsc --noEmit --strict --skipLibCheck --target ES2022 --module NodeNext --moduleResolution NodeNext --allowImportingTsExtensions --esModuleInterop shared/featureCatalog.ts shared/propertySchema.ts shared/apiContract.ts shared/featureCatalog.test.ts shared/propertySchema.test.ts` — sem erros.

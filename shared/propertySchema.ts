@@ -4,6 +4,7 @@ import {
   COMMON_FEATURES,
   PRIVATE_FEATURES,
   PROPERTY_SUBTYPES,
+  PROPERTY_SUBTYPES_BY_TYPE,
   PROPERTY_TYPES,
   type CommonFeatureId,
   type PrivateFeatureId,
@@ -53,8 +54,20 @@ const privateAddressSchema = z.strictObject({
   longitude: z.number().finite().min(-180).max(180).optional(),
 });
 
+type PublicLocationLabelSource = Pick<
+  z.infer<typeof privateAddressSchema>,
+  'district' | 'city' | 'state'
+>;
+
+export const formatPublicLocationLabel = ({
+  district,
+  city,
+  state,
+}: PublicLocationLabelSource): string =>
+  `${district.trim()}, ${city.trim()} - ${state.trim().toUpperCase()}`;
+
 const publicLocationSchema = z.strictObject({
-  label: conciseText(3, 160),
+  label: conciseText(3, 160).regex(/^[^,\r\n]+,\s*[^,\r\n]+\s+-\s+[A-Z]{2}$/),
   latitude: z.number().finite().min(-90).max(90).optional(),
   longitude: z.number().finite().min(-180).max(180).optional(),
   precision: z.literal('approximate'),
@@ -163,7 +176,13 @@ export const rejectImovelwebReferences = (value: unknown, context: z.RefinementC
 
 const hasDuplicates = (values: readonly string[]) => new Set(values).size !== values.length;
 
-export const propertyDraftSchema = propertyDraftBaseSchema.superRefine((property, context) => {
+type PropertyDraftBase = z.infer<typeof propertyDraftBaseSchema>;
+type SharedPropertyFields = Omit<PropertyDraftBase, 'privateAddress'>;
+
+export const applySharedPropertyRefinements = (
+  property: SharedPropertyFields,
+  context: z.RefinementCtx,
+): void => {
   rejectImovelwebReferences(property, context);
 
   if (hasDuplicates(property.classification.operations)) {
@@ -171,6 +190,16 @@ export const propertyDraftSchema = propertyDraftBaseSchema.superRefine((property
       code: 'custom',
       path: ['classification', 'operations'],
       message: 'As operações não podem se repetir.',
+    });
+  }
+
+  const allowedSubtypes: readonly PropertySubtype[] =
+    PROPERTY_SUBTYPES_BY_TYPE[property.classification.type];
+  if (!allowedSubtypes.includes(property.classification.subtype)) {
+    context.addIssue({
+      code: 'custom',
+      path: ['classification', 'subtype'],
+      message: 'O subtipo não é compatível com o tipo do imóvel.',
     });
   }
 
@@ -209,19 +238,6 @@ export const propertyDraftSchema = propertyDraftBaseSchema.superRefine((property
       code: 'custom',
       path: ['facts', 'usableArea'],
       message: 'A área útil não pode exceder a área total.',
-    });
-  }
-
-  if (
-    property.privateAddress.latitude !== undefined &&
-    property.privateAddress.longitude !== undefined &&
-    property.publicLocation.latitude === property.privateAddress.latitude &&
-    property.publicLocation.longitude === property.privateAddress.longitude
-  ) {
-    context.addIssue({
-      code: 'custom',
-      path: ['publicLocation'],
-      message: 'A localização pública deve ser aproximada e diferente das coordenadas privadas.',
     });
   }
 
@@ -284,6 +300,99 @@ export const propertyDraftSchema = propertyDraftBaseSchema.superRefine((property
       message: 'A imagem de SEO deve pertencer às fotos ordenadas.',
     });
   }
+};
+
+const normalizeLocationText = (value: string): string =>
+  value
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .toLocaleLowerCase('pt-BR')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
+
+const hasIncompleteCoordinates = (latitude?: number, longitude?: number): boolean =>
+  (latitude === undefined) !== (longitude === undefined);
+
+const minimumPublicCoordinateOffset = 0.001;
+
+const applyPrivateLocationRefinements = (
+  property: PropertyDraftBase,
+  context: z.RefinementCtx,
+): void => {
+  const expectedLabel = formatPublicLocationLabel(property.privateAddress);
+  const normalizedPublicLabel = normalizeLocationText(property.publicLocation.label);
+
+  if (normalizedPublicLabel !== normalizeLocationText(expectedLabel)) {
+    context.addIssue({
+      code: 'custom',
+      path: ['publicLocation', 'label'],
+      message: 'O rótulo público deve conter somente bairro, cidade e UF.',
+    });
+  }
+
+  for (const privateToken of [
+    property.privateAddress.street,
+    property.privateAddress.number,
+    property.privateAddress.complement,
+  ]) {
+    if (
+      privateToken !== undefined &&
+      normalizeLocationText(privateToken).length > 0 &&
+      normalizedPublicLabel.includes(normalizeLocationText(privateToken))
+    ) {
+      context.addIssue({
+        code: 'custom',
+        path: ['publicLocation', 'label'],
+        message: 'O rótulo público não pode conter dados do endereço privado.',
+      });
+      break;
+    }
+  }
+
+  if (
+    hasIncompleteCoordinates(
+      property.privateAddress.latitude,
+      property.privateAddress.longitude,
+    )
+  ) {
+    context.addIssue({
+      code: 'custom',
+      path: ['privateAddress'],
+      message: 'Latitude e longitude privadas devem ser informadas juntas.',
+    });
+  }
+
+  if (
+    hasIncompleteCoordinates(property.publicLocation.latitude, property.publicLocation.longitude)
+  ) {
+    context.addIssue({
+      code: 'custom',
+      path: ['publicLocation'],
+      message: 'Latitude e longitude públicas devem ser informadas juntas.',
+    });
+  }
+
+  if (
+    property.privateAddress.latitude !== undefined &&
+    property.privateAddress.longitude !== undefined &&
+    property.publicLocation.latitude !== undefined &&
+    property.publicLocation.longitude !== undefined &&
+    Math.abs(property.publicLocation.latitude - property.privateAddress.latitude) <
+      minimumPublicCoordinateOffset &&
+    Math.abs(property.publicLocation.longitude - property.privateAddress.longitude) <
+      minimumPublicCoordinateOffset
+  ) {
+    context.addIssue({
+      code: 'custom',
+      path: ['publicLocation'],
+      message: 'A localização pública deve manter distância das coordenadas privadas.',
+    });
+  }
+};
+
+export const propertyDraftSchema = propertyDraftBaseSchema.superRefine((property, context) => {
+  applySharedPropertyRefinements(property, context);
+  applyPrivateLocationRefinements(property, context);
 });
 
 export const publishablePropertySchema = propertyDraftSchema;

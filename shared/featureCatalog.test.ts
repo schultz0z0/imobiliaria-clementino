@@ -5,6 +5,7 @@ import {
   COMMON_FEATURES,
   PRIVATE_FEATURES,
   PROPERTY_SUBTYPES,
+  PROPERTY_SUBTYPES_BY_TYPE,
   PROPERTY_TYPES,
 } from './featureCatalog.ts';
 
@@ -121,4 +122,26 @@ test('freezes catalog arrays and entries against accidental runtime mutation', (
     assert.equal(Object.isFrozen(catalog), true);
     assert.equal(catalog.every(Object.isFrozen), true);
   }
+});
+
+test('publishes the exact conservative subtype compatibility matrix as immutable data', () => {
+  assert.deepEqual(PROPERTY_SUBTYPES_BY_TYPE, {
+    apartment: [
+      'penthouse',
+      'duplex',
+      'flat',
+      'garden',
+      'studio',
+      'loft',
+      'standard',
+      'room',
+      'triplex',
+    ],
+    house: ['duplex', 'loft', 'standard', 'room', 'triplex'],
+    commercial: ['loft', 'standard', 'room'],
+    rural: ['standard'],
+    land: ['standard'],
+  });
+  assert.equal(Object.isFrozen(PROPERTY_SUBTYPES_BY_TYPE), true);
+  assert.equal(Object.values(PROPERTY_SUBTYPES_BY_TYPE).every(Object.isFrozen), true);
 });

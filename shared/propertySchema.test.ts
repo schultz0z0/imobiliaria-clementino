@@ -91,6 +91,7 @@ test('accepts each approved property type, subtype and position', () => {
   for (const type of ['apartment', 'house', 'commercial', 'rural', 'land'] as const) {
     const property = validProperty();
     property.classification.type = type;
+    property.classification.subtype = 'standard';
     assert.equal(propertyDraftSchema.safeParse(property).success, true, type);
   }
 
@@ -106,6 +107,7 @@ test('accepts each approved property type, subtype and position', () => {
     'triplex',
   ] as const) {
     const property = validProperty();
+    property.classification.type = 'apartment';
     property.classification.subtype = subtype;
     assert.equal(propertyDraftSchema.safeParse(property).success, true, subtype);
   }
@@ -115,6 +117,25 @@ test('accepts each approved property type, subtype and position', () => {
     property.facts.position = position;
     assert.equal(propertyDraftSchema.safeParse(property).success, true, position);
   }
+});
+
+test('rejects subtype combinations outside the conservative type matrix', () => {
+  for (const [type, subtype] of [
+    ['house', 'penthouse'],
+    ['commercial', 'duplex'],
+    ['rural', 'loft'],
+    ['land', 'room'],
+  ] as const) {
+    const property = validProperty();
+    property.classification.type = type;
+    property.classification.subtype = subtype;
+    assert.equal(propertyDraftSchema.safeParse(property).success, false, `${type}/${subtype}`);
+  }
+
+  const publicProperty = toPublicPropertyDto(validProperty());
+  publicProperty.classification.type = 'land';
+  publicProperty.classification.subtype = 'penthouse';
+  assert.equal(publicPropertySchema.safeParse(publicProperty).success, false);
 });
 
 test('requires at least one operation and the corresponding operation prices', () => {
@@ -241,4 +262,84 @@ test('rejects public coordinates that reproduce the private exact position', () 
   property.publicLocation.longitude = property.privateAddress.longitude;
 
   assert.equal(propertyDraftSchema.safeParse(property).success, false);
+});
+
+test('rejects public labels containing private street, number or complement', () => {
+  for (const label of [
+    'Avenida Paulista, 1000 - Apto 101',
+    'Bela Vista, São Paulo - SP, Avenida Paulista',
+    'Bela Vista, São Paulo - SP, número 1000',
+    'Bela Vista, São Paulo - SP, Apto 101',
+  ]) {
+    const property = validProperty();
+    property.publicLocation.label = label;
+    assert.equal(propertyDraftSchema.safeParse(property).success, false, label);
+  }
+});
+
+test('rejects incomplete coordinate pairs and positions that remain almost exact', () => {
+  const incompletePrivate = validProperty();
+  delete incompletePrivate.privateAddress.longitude;
+  assert.equal(propertyDraftSchema.safeParse(incompletePrivate).success, false);
+
+  const incompletePublic = validProperty();
+  delete incompletePublic.publicLocation.longitude;
+  assert.equal(propertyDraftSchema.safeParse(incompletePublic).success, false);
+
+  const almostExact = validProperty();
+  almostExact.publicLocation.latitude = almostExact.privateAddress.latitude! + 0.0009;
+  almostExact.publicLocation.longitude = almostExact.privateAddress.longitude! - 0.0009;
+  assert.equal(propertyDraftSchema.safeParse(almostExact).success, false);
+});
+
+test('forces the public DTO label from district, city and state', () => {
+  const property = validProperty();
+  property.publicLocation.label = 'Avenida Paulista, 1000, Apto 101';
+
+  const dto = toPublicPropertyDto(property);
+
+  assert.equal(dto.publicLocation.label, 'Bela Vista, São Paulo - SP');
+  assert.equal(JSON.stringify(dto).includes('Avenida Paulista'), false);
+  assert.equal(JSON.stringify(dto).includes('1000'), false);
+  assert.equal(JSON.stringify(dto).includes('Apto 101'), false);
+});
+
+test('public schema rejects missing operation price, incoherent suites and photos without cover', () => {
+  const saleWithoutPrice = toPublicPropertyDto(validProperty());
+  delete saleWithoutPrice.pricing.sale;
+  assert.equal(publicPropertySchema.safeParse(saleWithoutPrice).success, false);
+
+  const tooManySuites = toPublicPropertyDto(validProperty());
+  tooManySuites.facts.suites = tooManySuites.facts.bedrooms + 1;
+  assert.equal(publicPropertySchema.safeParse(tooManySuites).success, false);
+
+  const photosWithoutCover = toPublicPropertyDto(validProperty());
+  delete photosWithoutCover.media.coverPhotoId;
+  assert.equal(publicPropertySchema.safeParse(photosWithoutCover).success, false);
+});
+
+test('public schema retains the remaining canonical cross-field refinements', () => {
+  const duplicateOperation = toPublicPropertyDto(validProperty());
+  duplicateOperation.classification.operations = ['sale', 'sale'];
+  assert.equal(publicPropertySchema.safeParse(duplicateOperation).success, false);
+
+  const newWithAge = toPublicPropertyDto(validProperty());
+  newWithAge.facts.isNew = true;
+  assert.equal(publicPropertySchema.safeParse(newWithAge).success, false);
+
+  const invalidAreas = toPublicPropertyDto(validProperty());
+  invalidAreas.facts.usableArea = invalidAreas.facts.totalArea! + 1;
+  assert.equal(publicPropertySchema.safeParse(invalidAreas).success, false);
+
+  const duplicateFeature = toPublicPropertyDto(validProperty());
+  duplicateFeature.features.common = ['barbecue', 'barbecue'];
+  assert.equal(publicPropertySchema.safeParse(duplicateFeature).success, false);
+
+  const duplicatePhoto = toPublicPropertyDto(validProperty());
+  duplicatePhoto.media.orderedPhotoIds = ['photo-front', 'photo-front'];
+  assert.equal(publicPropertySchema.safeParse(duplicatePhoto).success, false);
+
+  const foreignSeoImage = toPublicPropertyDto(validProperty());
+  foreignSeoImage.seo.imagePhotoId = 'not-in-gallery';
+  assert.equal(publicPropertySchema.safeParse(foreignSeoImage).success, false);
 });
