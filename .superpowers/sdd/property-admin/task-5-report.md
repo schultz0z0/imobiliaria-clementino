@@ -68,3 +68,11 @@ npm run build
 ```
 
 `git diff --check` is clean. The compose test project is stopped with volumes removed after verification.
+
+## Fix round 1 (RED → GREEN)
+
+Additional RED cases exposed that PATCH could not clear optional values, reference updates diverged from `properties.commercial_reference`, and a queued draft-only publish survived inactivation. The draft patch envelope now accepts `null` only as an instruction to remove an optional canonical leaf; coordinate pairs must be cleared together. It never persists `null` into a canonical revision.
+
+Autosave now synchronizes the editorial reference and unique property commercial reference in its transaction, returning a typed conflict for collisions. Inactivation cancels this property's queued intent with `Cancelled because property was inactivated`, rejects a running intent, and therefore leaves no stale job the worker can claim. List count and items share a read-only repeatable-read transaction.
+
+The focused API suite was extended for clears, reference collisions, queued/running publication races, differing draft/published pointers, rollback injection, persisted concurrent write counts, and structured field issue parsing. It was RED at 10 pass / 3 fail before implementation and GREEN at 15/15 after it.

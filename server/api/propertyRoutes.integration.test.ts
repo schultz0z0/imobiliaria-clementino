@@ -2,11 +2,13 @@ import assert from 'node:assert/strict';
 import { after, before, beforeEach, test } from 'node:test';
 
 import { seedAdministrator } from '../../scripts/admin/seedAdmin.ts';
+import { apiFieldIssueSchema } from '../../shared/apiContract.ts';
 import { propertyDraftSchema, type PropertyDraft } from '../../shared/propertySchema.ts';
 import { createAdminSession, type CreatedSession } from '../auth/session.ts';
 import { createPostgresClient } from '../db/client.ts';
 import { migrate } from '../db/migrate.ts';
 import { publishDraft } from '../db/propertyRepository.ts';
+import { claimNextPublicationJob } from '../db/publicationRepository.ts';
 import { assertDisposableTestDatabase } from '../db/testDatabaseSafety.ts';
 import { createServer } from './createServer.ts';
 
@@ -24,6 +26,7 @@ const API_ERROR_CODES = {
   CSRF_INVALID: 'CSRF_INVALID',
   VALIDATION_FAILED: 'VALIDATION_FAILED',
   NOT_FOUND: 'NOT_FOUND',
+  CONFLICT: 'CONFLICT',
   STALE_REVISION: 'STALE_REVISION',
   PUBLICATION_JOB_ACTIVE: 'PUBLICATION_JOB_ACTIVE',
   INVALID_STATE: 'INVALID_STATE',
@@ -204,6 +207,7 @@ test('creates a private incomplete draft with generated immutable identity and r
   assert.equal(created.status, 'draft');
   assert.equal(created.revisionNumber, 1);
   assert.equal(created.publishedRevisionId, null);
+  assert.equal(created.draft.editorial.reference, created.commercialReference);
 
   const detail = await app.inject({
     method: 'GET',
@@ -251,6 +255,88 @@ test('deep-merges strict partial autosaves and requires an optimistic revision',
   assert.equal(saved.json().property.draft.editorial.featured, true);
 });
 
+test('uses null only to clear optional draft fields and clears coordinate pairs atomically', async () => {
+  const session = await authenticate();
+  const created = await createDraft(session);
+  const complete = validProperty(created.commercialReference, {
+    privateAddress: {
+      postalCode: '01310-100',
+      state: 'SP',
+      city: 'Sao Paulo',
+      district: 'Bela Vista',
+      street: 'Avenida Paulista',
+      number: '1000',
+      complement: 'Apto 101',
+      latitude: -23.561,
+      longitude: -46.656,
+    },
+    publicLocation: {
+      label: 'Bela Vista, Sao Paulo - SP',
+      precision: 'approximate',
+      latitude: -23.551,
+      longitude: -46.646,
+    },
+    pricing: { sale: 850_000, condominium: 900, iptu: 210 },
+    media: { orderedPhotoIds: ['photo-1'], coverPhotoId: 'photo-1' },
+    seo: { title: 'SEO title', description: 'SEO description', imagePhotoId: 'photo-1' },
+  });
+  assert.equal((await saveDraft(session, created.id, 1, complete)).statusCode, 200);
+
+  const cleared = await saveDraft(session, created.id, 2, {
+    privateAddress: { complement: null, latitude: null, longitude: null },
+    publicLocation: { latitude: null, longitude: null },
+    facts: { isNew: true, ageYears: null },
+    pricing: { sale: null, condominium: null, iptu: null },
+    media: { coverPhotoId: null },
+    seo: { title: null, description: null, imagePhotoId: null },
+  });
+  assert.equal(cleared.statusCode, 200, cleared.body);
+  const draft = cleared.json().property.draft;
+  assert.equal('complement' in draft.privateAddress, false);
+  assert.equal('latitude' in draft.privateAddress, false);
+  assert.equal('longitude' in draft.privateAddress, false);
+  assert.equal('latitude' in draft.publicLocation, false);
+  assert.equal('longitude' in draft.publicLocation, false);
+  assert.equal('ageYears' in draft.facts, false);
+  assert.equal(draft.facts.isNew, true);
+  assert.equal('sale' in draft.pricing, false);
+  assert.equal('condominium' in draft.pricing, false);
+  assert.equal('iptu' in draft.pricing, false);
+  assert.equal('coverPhotoId' in draft.media, false);
+  assert.deepEqual(draft.seo, {});
+
+  const inconsistentCoordinates = await saveDraft(session, created.id, 3, {
+    privateAddress: { latitude: null },
+  });
+  assert.equal(inconsistentCoordinates.statusCode, 400);
+  assert.equal(inconsistentCoordinates.json().error.code, API_ERROR_CODES.VALIDATION_FAILED);
+
+  const requiredNull = await saveDraft(session, created.id, 3, { editorial: { title: null } });
+  assert.equal(requiredNull.statusCode, 400);
+  assert.equal(requiredNull.json().error.code, API_ERROR_CODES.VALIDATION_FAILED);
+});
+
+test('synchronizes editorial references with unique commercial references', async () => {
+  const session = await authenticate();
+  const first = await createDraft(session);
+  assert.equal((await saveDraft(session, first.id, 1, validProperty(first.commercialReference))).statusCode, 200);
+
+  const renamed = await saveDraft(session, first.id, 2, {
+    editorial: { reference: 'CLI-CUSTOM-REF' },
+  });
+  assert.equal(renamed.statusCode, 200, renamed.body);
+  assert.equal(renamed.json().property.commercialReference, 'CLI-CUSTOM-REF');
+  assert.equal(renamed.json().property.draft.editorial.reference, 'CLI-CUSTOM-REF');
+
+  const second = await createDraft(session);
+  assert.equal((await saveDraft(session, second.id, 1, validProperty(second.commercialReference))).statusCode, 200);
+  const conflict = await saveDraft(session, second.id, 2, {
+    editorial: { reference: 'CLI-CUSTOM-REF' },
+  });
+  assert.equal(conflict.statusCode, 409, conflict.body);
+  assert.equal(conflict.json().error.code, API_ERROR_CODES.CONFLICT);
+});
+
 test('rejects stale concurrent autosaves so exactly one succeeds', async () => {
   const session = await authenticate();
   const created = await createDraft(session);
@@ -264,6 +350,50 @@ test('rejects stale concurrent autosaves so exactly one succeeds', async () => {
   const stale = responses.find(({ statusCode }) => statusCode === 409);
   assert.ok(stale);
   assert.equal(stale.json().error.code, API_ERROR_CODES.STALE_REVISION);
+
+  const persisted = await sql<{ revisions: string; draftSaves: string }[]>`
+    SELECT
+      (SELECT count(*)::text FROM property_revisions WHERE property_id = ${created.id}) AS revisions,
+      (SELECT count(*)::text FROM audit_events
+       WHERE property_id = ${created.id} AND action = 'property.draft_saved') AS "draftSaves"
+  `;
+  assert.deepEqual(Array.from(persisted), [{ revisions: '2', draftSaves: '1' }]);
+});
+
+test('rolls back a failed draft save without exposing the database failure', async () => {
+  const session = await authenticate();
+  const created = await createDraft(session);
+  await sql.unsafe(`
+    CREATE FUNCTION fail_property_draft_audit() RETURNS trigger AS $$
+    BEGIN
+      RAISE EXCEPTION 'injected audit failure';
+    END;
+    $$ LANGUAGE plpgsql;
+    CREATE TRIGGER fail_property_draft_audit_trigger
+    BEFORE INSERT ON audit_events
+    FOR EACH ROW
+    WHEN (NEW.action = 'property.draft_saved')
+    EXECUTE FUNCTION fail_property_draft_audit();
+  `);
+  try {
+    const failed = await saveDraft(session, created.id, 1, { editorial: { featured: true } });
+    assert.equal(failed.statusCode, 500);
+    assert.equal(failed.json().error.code, API_ERROR_CODES.CONFLICT);
+    assert.equal(failed.body.includes('injected audit failure'), false);
+
+    const persisted = await sql<{ revisions: string; draftSaves: string }[]>`
+      SELECT
+        (SELECT count(*)::text FROM property_revisions WHERE property_id = ${created.id}) AS revisions,
+        (SELECT count(*)::text FROM audit_events
+         WHERE property_id = ${created.id} AND action = 'property.draft_saved') AS "draftSaves"
+    `;
+    assert.deepEqual(Array.from(persisted), [{ revisions: '1', draftSaves: '0' }]);
+  } finally {
+    await sql.unsafe(`
+      DROP TRIGGER IF EXISTS fail_property_draft_audit_trigger ON audit_events;
+      DROP FUNCTION IF EXISTS fail_property_draft_audit();
+    `);
+  }
 });
 
 test('rejects unknown and prototype-pollution fields without creating revisions', async () => {
@@ -440,6 +570,9 @@ test('validates publish requests, queues one global job, and does not move publi
   assert.equal(rejected.statusCode, 400);
   assert.equal(rejected.json().error.code, API_ERROR_CODES.VALIDATION_FAILED);
   assert.equal(rejected.json().error.issues.length > 0, true);
+  for (const issue of rejected.json().error.issues) {
+    apiFieldIssueSchema.parse(issue);
+  }
 
   const publishable = await createDraft(session);
   assert.equal(
@@ -493,6 +626,17 @@ test('inactivates and reactivates only valid states while preserving draft/publi
     200,
   );
   await publishDraft(sql, source.id);
+  assert.equal(
+    (await saveDraft(session, source.id, 2, { editorial: { featured: true } })).statusCode,
+    200,
+  );
+  const beforeLifecycle = await sql<
+    { draft_revision_id: string; published_revision_id: string }[]
+  >`SELECT draft_revision_id, published_revision_id FROM properties WHERE id = ${source.id}`;
+  assert.notEqual(
+    beforeLifecycle[0]?.draft_revision_id,
+    beforeLifecycle[0]?.published_revision_id,
+  );
 
   const inactive = await app.inject({
     method: 'POST',
@@ -503,6 +647,7 @@ test('inactivates and reactivates only valid states while preserving draft/publi
   assert.equal(inactive.statusCode, 202, inactive.body);
   assert.equal(inactive.json().property.status, 'inactive');
   assert.equal(inactive.json().job.status, 'queued');
+  assert.equal(inactive.json().job.revisionId, Number(beforeLifecycle[0]?.published_revision_id));
 
   const invalidInactive = await app.inject({
     method: 'POST',
@@ -531,7 +676,8 @@ test('inactivates and reactivates only valid states while preserving draft/publi
   const pointers = await sql<
     { draft_revision_id: string; published_revision_id: string }[]
   >`SELECT draft_revision_id, published_revision_id FROM properties WHERE id = ${source.id}`;
-  assert.equal(pointers[0]?.draft_revision_id, pointers[0]?.published_revision_id);
+  assert.notEqual(pointers[0]?.draft_revision_id, pointers[0]?.published_revision_id);
+  assert.deepEqual(Array.from(pointers), Array.from(beforeLifecycle));
 
   const lifecycleAudit = await sql<{ action: string }[]>`
     SELECT action
@@ -562,6 +708,73 @@ test('inactivates and reactivates only valid states while preserving draft/publi
   assert.equal(draftReactivated.statusCode, 200, draftReactivated.body);
   assert.equal(draftReactivated.json().property.status, 'draft');
   assert.equal(draftReactivated.json().job, null);
+});
+
+test('cancels a queued draft-only publish before inactivation and never lets it become runnable', async () => {
+  const session = await authenticate();
+  const property = await createDraft(session);
+  assert.equal(
+    (await saveDraft(session, property.id, 1, validProperty(property.commercialReference))).statusCode,
+    200,
+  );
+  const queued = await app.inject({
+    method: 'POST',
+    url: `/api/admin/properties/${property.id}/publish`,
+    headers: authHeaders(session, true),
+    payload: {},
+  });
+  assert.equal(queued.statusCode, 202, queued.body);
+
+  const inactive = await app.inject({
+    method: 'POST',
+    url: `/api/admin/properties/${property.id}/inactivate`,
+    headers: authHeaders(session, true),
+    payload: {},
+  });
+  assert.equal(inactive.statusCode, 200, inactive.body);
+  assert.equal(inactive.json().property.status, 'inactive');
+  assert.equal(inactive.json().job, null);
+
+  const jobs = await sql<{ status: string; error_message: string | null }[]>`
+    SELECT status, error_message FROM publication_jobs WHERE id = ${queued.json().job.id}
+  `;
+  assert.deepEqual(Array.from(jobs), [
+    { status: 'failed', error_message: 'Cancelled because property was inactivated' },
+  ]);
+  assert.equal(await claimNextPublicationJob(sql), null);
+});
+
+test('refuses to inactivate while this property publication is already running', async () => {
+  const session = await authenticate();
+  const property = await createDraft(session);
+  assert.equal(
+    (await saveDraft(session, property.id, 1, validProperty(property.commercialReference))).statusCode,
+    200,
+  );
+  const queued = await app.inject({
+    method: 'POST',
+    url: `/api/admin/properties/${property.id}/publish`,
+    headers: authHeaders(session, true),
+    payload: {},
+  });
+  await sql`
+    UPDATE publication_jobs
+    SET status = 'running', started_at = clock_timestamp()
+    WHERE id = ${queued.json().job.id}
+  `;
+
+  const blocked = await app.inject({
+    method: 'POST',
+    url: `/api/admin/properties/${property.id}/inactivate`,
+    headers: authHeaders(session, true),
+    payload: {},
+  });
+  assert.equal(blocked.statusCode, 409, blocked.body);
+  assert.equal(blocked.json().error.code, API_ERROR_CODES.PUBLICATION_JOB_ACTIVE);
+  const status = await sql<{ status: string }[]>`
+    SELECT status FROM properties WHERE id = ${property.id}
+  `;
+  assert.deepEqual(Array.from(status), [{ status: 'draft' }]);
 });
 
 test('returns typed not-found responses, audits mutations, and exposes no DELETE method', async () => {

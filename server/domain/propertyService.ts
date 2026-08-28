@@ -23,6 +23,9 @@ import type { PropertyStatus } from '../db/propertyRepository.ts';
 const partialSection = <T extends z.ZodRawShape>(schema: z.ZodObject<T>) =>
   schema.partial().optional();
 
+const nullablePatchField = <T extends z.ZodType>(schema: T) =>
+  z.union([schema, z.null()]).optional();
+
 export const adminPropertyDraftSchema = z
   .strictObject({
     classification: partialSection(propertyDraftSchema.shape.classification),
@@ -38,6 +41,78 @@ export const adminPropertyDraftSchema = z
   .superRefine(rejectImovelwebReferences);
 
 export type AdminPropertyDraft = z.infer<typeof adminPropertyDraftSchema>;
+
+const privateAddressPatchSchema = propertyDraftSchema.shape.privateAddress
+  .partial()
+  .extend({
+    complement: nullablePatchField(propertyDraftSchema.shape.privateAddress.shape.complement),
+    latitude: nullablePatchField(propertyDraftSchema.shape.privateAddress.shape.latitude),
+    longitude: nullablePatchField(propertyDraftSchema.shape.privateAddress.shape.longitude),
+  })
+  .superRefine((value, context) => {
+    if ((value.latitude === null) !== (value.longitude === null)) {
+      context.addIssue({
+        code: 'custom',
+        path: ['latitude'],
+        message: 'Latitude and longitude must be cleared together.',
+      });
+    }
+  });
+
+const publicLocationPatchSchema = propertyDraftSchema.shape.publicLocation
+  .partial()
+  .extend({
+    latitude: nullablePatchField(propertyDraftSchema.shape.publicLocation.shape.latitude),
+    longitude: nullablePatchField(propertyDraftSchema.shape.publicLocation.shape.longitude),
+  })
+  .superRefine((value, context) => {
+    if ((value.latitude === null) !== (value.longitude === null)) {
+      context.addIssue({
+        code: 'custom',
+        path: ['latitude'],
+        message: 'Latitude and longitude must be cleared together.',
+      });
+    }
+  });
+
+const factsPatchSchema = propertyDraftSchema.shape.facts.partial().extend({
+  ageYears: nullablePatchField(propertyDraftSchema.shape.facts.shape.ageYears),
+});
+
+const pricingPatchSchema = propertyDraftSchema.shape.pricing.partial().extend({
+  sale: nullablePatchField(propertyDraftSchema.shape.pricing.shape.sale),
+  rent: nullablePatchField(propertyDraftSchema.shape.pricing.shape.rent),
+  seasonal: nullablePatchField(propertyDraftSchema.shape.pricing.shape.seasonal),
+  auction: nullablePatchField(propertyDraftSchema.shape.pricing.shape.auction),
+  condominium: nullablePatchField(propertyDraftSchema.shape.pricing.shape.condominium),
+  iptu: nullablePatchField(propertyDraftSchema.shape.pricing.shape.iptu),
+});
+
+const mediaPatchSchema = propertyDraftSchema.shape.media.partial().extend({
+  coverPhotoId: nullablePatchField(propertyDraftSchema.shape.media.shape.coverPhotoId),
+});
+
+const seoPatchSchema = propertyDraftSchema.shape.seo.partial().extend({
+  title: nullablePatchField(propertyDraftSchema.shape.seo.shape.title),
+  description: nullablePatchField(propertyDraftSchema.shape.seo.shape.description),
+  imagePhotoId: nullablePatchField(propertyDraftSchema.shape.seo.shape.imagePhotoId),
+});
+
+export const adminPropertyDraftPatchSchema = z
+  .strictObject({
+    classification: partialSection(propertyDraftSchema.shape.classification),
+    privateAddress: privateAddressPatchSchema.optional(),
+    publicLocation: publicLocationPatchSchema.optional(),
+    facts: factsPatchSchema.optional(),
+    features: partialSection(propertyDraftSchema.shape.features),
+    editorial: partialSection(propertyDraftSchema.shape.editorial),
+    pricing: pricingPatchSchema.optional(),
+    media: mediaPatchSchema.optional(),
+    seo: seoPatchSchema.optional(),
+  })
+  .superRefine(rejectImovelwebReferences);
+
+export type AdminPropertyDraftPatch = z.infer<typeof adminPropertyDraftPatchSchema>;
 
 export type PropertyAdminDto = {
   id: string;
@@ -179,19 +254,26 @@ const generateIdentity = (title = 'novo-imovel') => {
 
 const deepMergeDraft = (
   current: AdminPropertyDraft,
-  patch: AdminPropertyDraft,
+  patch: AdminPropertyDraftPatch,
 ): AdminPropertyDraft => {
   const merged: Record<string, unknown> = { ...current };
-  for (const key of Object.keys(patch) as Array<keyof AdminPropertyDraft>) {
+  for (const key of Object.keys(patch) as Array<keyof AdminPropertyDraftPatch>) {
     const value = patch[key];
     if (value === undefined) {
       continue;
     }
     const previous = current[key];
-    merged[key] = {
+    const nextSection: Record<string, unknown> = {
       ...(previous && typeof previous === 'object' ? previous : {}),
-      ...value,
     };
+    for (const [field, fieldValue] of Object.entries(value)) {
+      if (fieldValue === null) {
+        delete nextSection[field];
+      } else {
+        nextSection[field] = fieldValue;
+      }
+    }
+    merged[key] = nextSection;
   }
   return adminPropertyDraftSchema.parse(merged);
 };
@@ -318,6 +400,7 @@ export const listProperties = async (
   const offset = (filters.page - 1) * filters.limit;
 
   return withTransaction(sql, async (transaction) => {
+    await transaction`SET TRANSACTION ISOLATION LEVEL REPEATABLE READ READ ONLY`;
     const counts = await transaction<{ total: string }[]>`
       SELECT count(*)::text AS total
       FROM properties
@@ -433,49 +516,63 @@ export const savePropertyDraft = async (
   patchInput: unknown,
   actorId: string,
 ): Promise<PropertyAdminDto> => {
-  const patch = adminPropertyDraftSchema.parse(patchInput);
-  return withTransaction(sql, async (transaction) => {
-    const property = await lockProperty(transaction, propertyId);
-    if (Number(property.revision_number) !== expectedRevision) {
+  const patch = adminPropertyDraftPatchSchema.parse(patchInput);
+  try {
+    return await withTransaction(sql, async (transaction) => {
+      const property = await lockProperty(transaction, propertyId);
+      if (Number(property.revision_number) !== expectedRevision) {
+        throw new PropertyServiceError(
+          API_ERROR_CODES.STALE_REVISION,
+          409,
+          'The draft revision is stale',
+        );
+      }
+      const current = adminPropertyDraftSchema.parse(property.payload);
+      const nextDraft = deepMergeDraft(current, patch);
+      const revisionNumber = expectedRevision + 1;
+      const revisions = await transaction<{ id: string }[]>`
+        INSERT INTO property_revisions (property_id, revision_number, payload, created_by)
+        VALUES (
+          ${propertyId},
+          ${revisionNumber},
+          ${transaction.json(nextDraft)},
+          ${actorId}
+        )
+        RETURNING id
+      `;
+      const revision = revisions[0];
+      if (!revision) {
+        throw new Error('Draft revision insert returned no row');
+      }
+      await transaction`
+        UPDATE properties
+        SET
+          draft_revision_id = ${revision.id},
+          commercial_reference = ${nextDraft.editorial?.reference ?? null},
+          updated_at = clock_timestamp()
+        WHERE id = ${propertyId}
+      `;
+      await transaction`
+        INSERT INTO audit_events (actor_id, property_id, action, metadata)
+        VALUES (
+          ${actorId},
+          ${propertyId},
+          'property.draft_saved',
+          ${transaction.json({ revisionNumber })}
+        )
+      `;
+      return getPropertyDetail(transaction, propertyId);
+    });
+  } catch (error) {
+    if (isPostgresError(error, '23505')) {
       throw new PropertyServiceError(
-        API_ERROR_CODES.STALE_REVISION,
+        API_ERROR_CODES.CONFLICT,
         409,
-        'The draft revision is stale',
+        'Commercial reference is already in use',
       );
     }
-    const current = adminPropertyDraftSchema.parse(property.payload);
-    const nextDraft = deepMergeDraft(current, patch);
-    const revisionNumber = expectedRevision + 1;
-    const revisions = await transaction<{ id: string }[]>`
-      INSERT INTO property_revisions (property_id, revision_number, payload, created_by)
-      VALUES (
-        ${propertyId},
-        ${revisionNumber},
-        ${transaction.json(nextDraft)},
-        ${actorId}
-      )
-      RETURNING id
-    `;
-    const revision = revisions[0];
-    if (!revision) {
-      throw new Error('Draft revision insert returned no row');
-    }
-    await transaction`
-      UPDATE properties
-      SET draft_revision_id = ${revision.id}, updated_at = clock_timestamp()
-      WHERE id = ${propertyId}
-    `;
-    await transaction`
-      INSERT INTO audit_events (actor_id, property_id, action, metadata)
-      VALUES (
-        ${actorId},
-        ${propertyId},
-        'property.draft_saved',
-        ${transaction.json({ revisionNumber })}
-      )
-    `;
-    return getPropertyDetail(transaction, propertyId);
-  });
+    throw error;
+  }
 };
 
 export const validatePropertyDraft = async (
@@ -559,6 +656,29 @@ export const requestPropertyPublish = async (
 
 type LifecycleResult = { property: PropertyAdminDto; job: PublicationJobRecord | null };
 
+const cancelQueuedPublicationForInactivation = async (
+  sql: SqlExecutor,
+  propertyId: string,
+): Promise<void> => {
+  await sql`
+    UPDATE publication_jobs
+    SET
+      status = 'failed',
+      error_message = 'Cancelled because property was inactivated',
+      finished_at = clock_timestamp()
+    WHERE property_id = ${propertyId} AND status = 'queued'
+  `;
+  const running = await sql<{ id: string }[]>`
+    SELECT id
+    FROM publication_jobs
+    WHERE property_id = ${propertyId} AND status = 'running'
+    FOR UPDATE
+  `;
+  if (running[0]) {
+    throw activeJobError();
+  }
+};
+
 export const inactivatePropertyDraft = async (
   sql: Sql,
   propertyId: string,
@@ -570,6 +690,7 @@ export const inactivatePropertyDraft = async (
       if (property.status === 'inactive') {
         throw invalidState('Property is already inactive');
       }
+      await cancelQueuedPublicationForInactivation(transaction, propertyId);
       const job = property.published_revision_id
         ? await enqueuePublicationJob(transaction, {
             propertyId,

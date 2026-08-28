@@ -7,6 +7,7 @@ import { createAdminGuard } from '../auth/routes.ts';
 import type { Sql } from '../db/client.ts';
 import {
   adminPropertyDraftSchema,
+  adminPropertyDraftPatchSchema,
   createPropertyDraft,
   duplicateProperty,
   getPropertyDetail,
@@ -166,7 +167,7 @@ export const registerPropertyRoutes = (app: FastifyInstance, sql: Sql): void => 
       try {
         const { id } = propertyIdParamsSchema.parse(request.params);
         const expectedRevision = parseExpectedRevision(request.headers['if-match']);
-        const patch = adminPropertyDraftSchema.parse(request.body);
+        const patch = adminPropertyDraftPatchSchema.parse(request.body);
         const property = await savePropertyDraft(
           sql,
           id,
