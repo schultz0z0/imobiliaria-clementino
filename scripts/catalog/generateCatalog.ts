@@ -5,6 +5,7 @@ import { generateAllImages } from './generateImages';
 import { loadCatalogSource } from './loadCatalogSource';
 import type { CatalogOverrides } from './sourceTypes';
 import { validateCatalog } from './validateCatalog';
+import { matchesGeneratedCatalog } from './verifyGeneratedCatalog';
 
 const run = async (): Promise<void> => {
   const mode = process.argv.includes('--write') ? 'write' : process.argv.includes('--verify') ? 'verify' : null;
@@ -33,7 +34,7 @@ const run = async (): Promise<void> => {
     } catch {
       // A mensagem única abaixo explica também o caso de arquivo ausente.
     }
-    if (current !== serialized) {
+    if (!matchesGeneratedCatalog(current, serialized)) {
       throw new Error('Catálogo gerado desatualizado; execute npm run catalog:generate.');
     }
     console.log(`Catálogo verificado: ${properties.length} imóveis.`);
