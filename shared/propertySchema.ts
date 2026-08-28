@@ -184,6 +184,12 @@ export const applySharedPropertyRefinements = (
   context: z.RefinementCtx,
 ): void => {
   rejectImovelwebReferences(property, context);
+  applyCoordinatePairRefinement(
+    property.publicLocation,
+    context,
+    ['publicLocation'],
+    'Latitude e longitude públicas devem ser informadas juntas.',
+  );
 
   if (hasDuplicates(property.classification.operations)) {
     context.addIssue({
@@ -313,6 +319,23 @@ const normalizeLocationText = (value: string): string =>
 const hasIncompleteCoordinates = (latitude?: number, longitude?: number): boolean =>
   (latitude === undefined) !== (longitude === undefined);
 
+type CoordinatePair = { latitude?: number; longitude?: number };
+
+const applyCoordinatePairRefinement = (
+  coordinates: CoordinatePair,
+  context: z.RefinementCtx,
+  path: PropertyKey[],
+  message: string,
+): void => {
+  if (hasIncompleteCoordinates(coordinates.latitude, coordinates.longitude)) {
+    context.addIssue({
+      code: 'custom',
+      path,
+      message,
+    });
+  }
+};
+
 const minimumPublicCoordinateOffset = 0.001;
 
 const applyPrivateLocationRefinements = (
@@ -330,47 +353,12 @@ const applyPrivateLocationRefinements = (
     });
   }
 
-  for (const privateToken of [
-    property.privateAddress.street,
-    property.privateAddress.number,
-    property.privateAddress.complement,
-  ]) {
-    if (
-      privateToken !== undefined &&
-      normalizeLocationText(privateToken).length > 0 &&
-      normalizedPublicLabel.includes(normalizeLocationText(privateToken))
-    ) {
-      context.addIssue({
-        code: 'custom',
-        path: ['publicLocation', 'label'],
-        message: 'O rótulo público não pode conter dados do endereço privado.',
-      });
-      break;
-    }
-  }
-
-  if (
-    hasIncompleteCoordinates(
-      property.privateAddress.latitude,
-      property.privateAddress.longitude,
-    )
-  ) {
-    context.addIssue({
-      code: 'custom',
-      path: ['privateAddress'],
-      message: 'Latitude e longitude privadas devem ser informadas juntas.',
-    });
-  }
-
-  if (
-    hasIncompleteCoordinates(property.publicLocation.latitude, property.publicLocation.longitude)
-  ) {
-    context.addIssue({
-      code: 'custom',
-      path: ['publicLocation'],
-      message: 'Latitude e longitude públicas devem ser informadas juntas.',
-    });
-  }
+  applyCoordinatePairRefinement(
+    property.privateAddress,
+    context,
+    ['privateAddress'],
+    'Latitude e longitude privadas devem ser informadas juntas.',
+  );
 
   if (
     property.privateAddress.latitude !== undefined &&

@@ -292,6 +292,25 @@ test('rejects incomplete coordinate pairs and positions that remain almost exact
   assert.equal(propertyDraftSchema.safeParse(almostExact).success, false);
 });
 
+test('public schema rejects incomplete coordinate pairs directly', () => {
+  const latitudeOnly = toPublicPropertyDto(validProperty());
+  delete latitudeOnly.publicLocation.longitude;
+  assert.equal(publicPropertySchema.safeParse(latitudeOnly).success, false);
+
+  const longitudeOnly = toPublicPropertyDto(validProperty());
+  delete longitudeOnly.publicLocation.latitude;
+  assert.equal(publicPropertySchema.safeParse(longitudeOnly).success, false);
+});
+
+test('allows a complement that coincides with the district and parses its DTO', () => {
+  const property = validProperty();
+  property.privateAddress.complement = property.privateAddress.district;
+
+  assert.equal(propertyDraftSchema.safeParse(property).success, true);
+  const dto = toPublicPropertyDto(property);
+  assert.equal(dto.publicLocation.label, 'Bela Vista, São Paulo - SP');
+});
+
 test('forces the public DTO label from district, city and state', () => {
   const property = validProperty();
   property.publicLocation.label = 'Avenida Paulista, 1000, Apto 101';

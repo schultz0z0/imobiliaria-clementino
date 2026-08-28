@@ -65,3 +65,15 @@
 - RED da regressão de matriz: `rtk npx tsx --test shared/propertySchema.test.ts shared/featureCatalog.test.ts` — 23 aprovados, 1 falha esperada (`house/penthouse` ainda aceito).
 - GREEN: o mesmo teste — 24 aprovados, 0 falhas.
 - Typecheck focado: `rtk npx tsc --noEmit --strict --skipLibCheck --target ES2022 --module NodeNext --moduleResolution NodeNext --allowImportingTsExtensions --esModuleInterop shared/featureCatalog.ts shared/propertySchema.ts shared/apiContract.ts shared/featureCatalog.test.ts shared/propertySchema.test.ts` — sem erros.
+
+## Fix round 2 — revisão de privacidade e coordenadas
+
+- A regra reutilizável de pares (`latitude`/`longitude`) agora é aplicada tanto ao `publicPropertySchema` quanto ao draft canônico, rejeitando cada caso de coordenada incompleta.
+- A checagem genérica por substring de rua, número ou complemento foi removida; permanece a comparação normalizada com o rótulo canônico `${district}, ${city} - ${state}`, evitando falso positivo quando complemento e bairro coincidem.
+- A separação mínima entre pares privados e públicos e `precision: 'approximate'` foram preservadas; regressões cobrem coordenadas quase exatas, rótulo com endereço e DTO com complemento igual ao bairro.
+
+### Evidências do fix round 2
+
+- RED: `rtk npx tsx --test shared/propertySchema.test.ts shared/featureCatalog.test.ts` — 24 aprovados, 2 falhas esperadas (pares incompletos aceitos pelo schema público e complemento igual ao bairro rejeitado).
+- GREEN: o mesmo teste — 26 aprovados, 0 falhas.
+- Typecheck focado — sem erros.
