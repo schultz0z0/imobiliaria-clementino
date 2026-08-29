@@ -9,6 +9,7 @@ import {
   type Sql,
 } from '../db/client.ts';
 import { registerPropertyRoutes } from './propertyRoutes.ts';
+import { registerLocationRoutes, type LocationRouteOptions } from './locationRoutes.ts';
 
 export type CreateServerOptions = {
   sql?: Sql;
@@ -17,6 +18,7 @@ export type CreateServerOptions = {
   mediaRoot?: string;
   mediaMaxImageBytes?: number;
   logger?: FastifyServerOptions['logger'];
+  location?: LocationRouteOptions;
 };
 
 export const createServer = (options: CreateServerOptions = {}) => {
@@ -30,6 +32,9 @@ export const createServer = (options: CreateServerOptions = {}) => {
   app.get('/health', async () => ({ status: 'ok' }));
   registerAuthRoutes(app, sql, environment, options.auth);
   app.register(async (propertyApp) => registerPropertyRoutes(propertyApp, sql));
+  app.register(async (locationApp) =>
+    registerLocationRoutes(locationApp, sql, { ...options.location, environment }),
+  );
   app.register(async (mediaApp) => {
     const { registerMediaRoutes } = await import('./mediaRoutes.ts');
     await registerMediaRoutes(

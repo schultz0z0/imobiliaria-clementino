@@ -306,8 +306,8 @@ test('rejects incomplete coordinate pairs and positions that remain almost exact
   assert.equal(propertyDraftSchema.safeParse(incompletePublic).success, false);
 
   const almostExact = validProperty();
-  almostExact.publicLocation.latitude = almostExact.privateAddress.latitude! + 0.0009;
-  almostExact.publicLocation.longitude = almostExact.privateAddress.longitude! - 0.0009;
+  almostExact.publicLocation.latitude = almostExact.privateAddress.latitude! + 0.0001;
+  almostExact.publicLocation.longitude = almostExact.privateAddress.longitude! - 0.0001;
   assert.equal(propertyDraftSchema.safeParse(almostExact).success, false);
 });
 

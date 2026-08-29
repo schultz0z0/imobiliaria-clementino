@@ -865,3 +865,55 @@ test('returns typed not-found responses, audits mutations, and exposes no DELETE
   assert.ok(events.every(({ actor_id }) => actor_id === administratorId));
   assert.ok(events.every(({ property_id }) => property_id === created.id));
 });
+
+test('protects CEP and public-location preview routes with admin auth, CSRF, and non-leaking responses', async () => {
+  const unauthenticated = await app.inject({
+    method: 'GET',
+    url: '/api/admin/location/cep/01310-100',
+  });
+  assert.equal(unauthenticated.statusCode, 401);
+  assert.equal(unauthenticated.json().error.code, API_ERROR_CODES.AUTH_REQUIRED);
+
+  const restricted = await authenticate(true);
+  const passwordChangeRequired = await app.inject({
+    method: 'GET',
+    url: '/api/admin/location/cep/01310-100',
+    headers: authHeaders(restricted),
+  });
+  assert.equal(passwordChangeRequired.statusCode, 403);
+  assert.equal(passwordChangeRequired.json().error.code, API_ERROR_CODES.PASSWORD_CHANGE_REQUIRED);
+
+  const session = await authenticate();
+  const csrfRequired = await app.inject({
+    method: 'POST',
+    url: '/api/admin/location/preview',
+    headers: authHeaders(session),
+    payload: {},
+  });
+  assert.equal(csrfRequired.statusCode, 403);
+  assert.equal(csrfRequired.json().error.code, API_ERROR_CODES.CSRF_INVALID);
+
+  const privateAddress = {
+    postalCode: '01310-100',
+    state: 'SP',
+    city: 'Sao Paulo',
+    district: 'Bela Vista',
+    street: 'Avenida Paulista',
+    number: '1000',
+    complement: 'Apto 101',
+    latitude: -23.5614,
+    longitude: -46.6559,
+  };
+  const preview = await app.inject({
+    method: 'POST',
+    url: '/api/admin/location/preview',
+    headers: authHeaders(session, true),
+    payload: { publicId: 'property_preview_test', privateAddress },
+  });
+  assert.equal(preview.statusCode, 200, preview.body);
+  assert.deepEqual(Object.keys(preview.json()), ['publicLocation']);
+  const serialized = preview.body;
+  for (const privateToken of ['Avenida Paulista', '1000', 'Apto 101', '-23.5614', '-46.6559']) {
+    assert.equal(serialized.includes(privateToken), false, privateToken);
+  }
+});

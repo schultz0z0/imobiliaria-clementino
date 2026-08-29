@@ -349,7 +349,22 @@ const applyCoordinatePairRefinement = (
   }
 };
 
-const minimumPublicCoordinateOffset = 0.001;
+export const haversineDistanceMeters = (
+  first: { latitude: number; longitude: number },
+  second: { latitude: number; longitude: number },
+): number => {
+  const radians = Math.PI / 180;
+  const latitudeDelta = (second.latitude - first.latitude) * radians;
+  const longitudeDelta = (second.longitude - first.longitude) * radians;
+  const latitudeA = first.latitude * radians;
+  const latitudeB = second.latitude * radians;
+  const arc =
+    Math.sin(latitudeDelta / 2) ** 2 +
+    Math.cos(latitudeA) * Math.cos(latitudeB) * Math.sin(longitudeDelta / 2) ** 2;
+  return 6_371_008.8 * 2 * Math.atan2(Math.sqrt(arc), Math.sqrt(1 - arc));
+};
+
+const minimumPublicCoordinateDistanceMeters = 100;
 
 const applyPrivateLocationRefinements = (
   property: PropertyDraftBase,
@@ -378,10 +393,8 @@ const applyPrivateLocationRefinements = (
     property.privateAddress.longitude !== undefined &&
     property.publicLocation.latitude !== undefined &&
     property.publicLocation.longitude !== undefined &&
-    Math.abs(property.publicLocation.latitude - property.privateAddress.latitude) <
-      minimumPublicCoordinateOffset &&
-    Math.abs(property.publicLocation.longitude - property.privateAddress.longitude) <
-      minimumPublicCoordinateOffset
+    haversineDistanceMeters(property.privateAddress, property.publicLocation) <
+      minimumPublicCoordinateDistanceMeters
   ) {
     context.addIssue({
       code: 'custom',
