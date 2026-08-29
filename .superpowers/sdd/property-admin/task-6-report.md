@@ -100,3 +100,31 @@ trustworthy real multipage-HEIF fixture could be produced locally. Production
 code still rejects a converter-reported image count other than one and bounds
 all parsed `ispe` dimensions before conversion. Docker was unavailable in the
 original pass and was not claimed as a current validation target here.
+
+## Fix round 2 — publication wiring and recorded-migration remediation
+
+- `recordSuccessfulRelease` is now the production publication-repository
+  boundary for a successful static release. In one transaction it locks the
+  running job, checks the requested revision, requires its media IDs to match
+  the immutable payload exactly, verifies property ownership, inserts the
+  release manifest, records `release_media_refs`, and completes the job. This
+  gives the later publisher a single exported callable path rather than an
+  orphaned release-reference helper.
+- `007_media_duplicate_remediation.sql` repairs installations that had already
+  recorded the original 004 and 005. It safely suspends the append-only trigger
+  during the transactional snapshot rewrite, canonicalizes all ordered IDs,
+  cover IDs and alt-text maps, marks duplicate active rows removed with a GC
+  deadline, backfills positions, and recreates the active-checksum unique index.
+- `stageUploadStream` owns the staging boundary. If a real `Readable` aborts
+  after emitting data, it removes its staging directory before image processing
+  or database work can occur.
+
+### Fix round 2 validation
+
+- `server/db/migrate.integration.test.ts` — 4 passed, including a database with
+  004/005 already recorded; it applied only 006/007, preserved canonical data,
+  and skipped on rerun.
+- `server/db/publicationRepository.integration.test.ts` — 7 passed, including
+  exact release refs, ownership/revision rejection, and release-backed GC retention.
+- `server/api/mediaRoutes.test.ts` plus media unit/storage tests — 18 passed.
+- `server/api/mediaRoutes.integration.test.ts` — 16 passed.

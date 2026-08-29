@@ -265,3 +265,79 @@ test('upgrades populated legacy duplicate media without changing revision histor
     await rm(migrationDirectory, { recursive: true, force: true });
   }
 });
+
+test('remediates duplicate media when legacy 004 and 005 are already recorded', async () => {
+  const legacyDirectory = await mkdtemp(path.join(tmpdir(), 'clementino-004-005-recorded-'));
+  const sourceDirectory = path.resolve('server/migrations');
+  const canonicalId = '44444444-4444-4444-8444-444444444444';
+  const duplicateId = '55555555-5555-4555-8555-555555555555';
+  try {
+    for (const fileName of [
+      '001_admin_catalog.sql',
+      '002_serialize_publication_jobs.sql',
+      '003_admin_auth_security.sql',
+      '004_property_media_management.sql',
+      '005_media_release_references.sql',
+    ]) {
+      await copyFile(path.join(sourceDirectory, fileName), path.join(legacyDirectory, fileName));
+    }
+    await sql.unsafe(`DROP SCHEMA public CASCADE; CREATE SCHEMA public`);
+    await migrate(sql, legacyDirectory);
+    const property = await sql<{ id: string }[]>`
+      INSERT INTO properties (public_id, commercial_reference, slug)
+      VALUES ('recorded-media', 'RECORDED-MEDIA', 'recorded-media') RETURNING id
+    `;
+    const payload = {
+      media: {
+        orderedPhotoIds: [duplicateId, canonicalId, duplicateId],
+        coverPhotoId: duplicateId,
+        altTextByPhotoId: {
+          [canonicalId]: 'Texto canonico preservado',
+          [duplicateId]: 'Texto duplicado removido',
+        },
+      },
+    };
+    const revision = await sql<{ id: string }[]>`
+      INSERT INTO property_revisions (property_id, revision_number, payload)
+      VALUES (${property[0]!.id}, 1, ${sql.json(payload)}) RETURNING id
+    `;
+    await sql`
+      UPDATE properties SET draft_revision_id = ${revision[0]!.id}, published_revision_id = ${revision[0]!.id}
+      WHERE id = ${property[0]!.id}
+    `;
+    await sql`DROP INDEX property_media_active_content_unique_idx`;
+    await sql.unsafe(`
+      INSERT INTO property_media (
+        id, property_id, revision_id, photo_id, storage_key, mime_type, byte_size, width, height, checksum_sha256
+      ) VALUES
+        ('${canonicalId}', '${property[0]!.id}', ${revision[0]!.id}, '${canonicalId}', 'private/recorded-canonical', 'image/png', 1, 1, 1, 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'),
+        ('${duplicateId}', '${property[0]!.id}', ${revision[0]!.id}, '${duplicateId}', 'private/recorded-duplicate', 'image/png', 1, 1, 1, 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb')
+    `);
+
+    const repaired = await migrate(sql, sourceDirectory);
+    assert.deepEqual(repaired.applied, [
+      '006_media_release_gc_delete.sql',
+      '007_media_duplicate_remediation.sql',
+    ]);
+    const rows = await sql<{ id: string; removed_at: Date | null; position: number }[]>`
+      SELECT id, removed_at, position FROM property_media WHERE property_id = ${property[0]!.id} ORDER BY id
+    `;
+    assert.deepEqual(rows.map((row) => ({ id: row.id, active: row.removed_at === null, position: row.position })), [
+      { id: canonicalId, active: true, position: 0 },
+      { id: duplicateId, active: false, position: 0 },
+    ]);
+    const rewritten = await sql<{ payload: typeof payload }[]>`
+      SELECT payload FROM property_revisions WHERE id = ${revision[0]!.id}
+    `;
+    assert.deepEqual(rewritten[0]?.payload.media, {
+      orderedPhotoIds: [canonicalId],
+      coverPhotoId: canonicalId,
+      altTextByPhotoId: { [canonicalId]: 'Texto canonico preservado' },
+    });
+    const rerun = await migrate(sql, sourceDirectory);
+    assert.equal(rerun.applied.length, 0);
+    assert.ok(rerun.skipped.includes('007_media_duplicate_remediation.sql'));
+  } finally {
+    await rm(legacyDirectory, { recursive: true, force: true });
+  }
+});

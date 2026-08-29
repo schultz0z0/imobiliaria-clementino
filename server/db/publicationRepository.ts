@@ -1,4 +1,5 @@
 import { type SqlExecutor, withTransaction } from './client.ts';
+import { recordReleaseMediaReferences } from './releaseMediaRepository.ts';
 
 export type PublicationStatus = 'queued' | 'running' | 'succeeded' | 'failed';
 
@@ -19,6 +20,20 @@ export type EnqueuePublicationJobInput = {
   propertyId: string;
   revisionId: number;
   requestedBy?: string | null;
+};
+
+export type RecordSuccessfulReleaseInput = {
+  jobId: number;
+  revisionId: number;
+  releasePath: string;
+  mediaIds: readonly string[];
+  createdBy?: string | null;
+};
+
+export type SuccessfulReleaseRecord = {
+  id: number;
+  releasePath: string;
+  job: PublicationJobRecord;
 };
 
 type PublicationJobRow = {
@@ -159,6 +174,70 @@ export const completePublicationJob = (
   sql: SqlExecutor,
   jobId: number,
 ): Promise<PublicationJobRecord> => finishPublicationJob(sql, jobId, 'succeeded', null);
+
+/**
+ * Publisher-facing completion boundary: the release manifest, job completion,
+ * and concrete media references commit together. `mediaIds` is accepted from
+ * the publisher only after it matches the immutable revision snapshot exactly.
+ */
+export const recordSuccessfulRelease = async (
+  sql: SqlExecutor,
+  input: RecordSuccessfulReleaseInput,
+): Promise<SuccessfulReleaseRecord> =>
+  withTransaction(sql, async (transaction) => {
+    if (!input.releasePath.trim()) {
+      throw new Error('A successful release requires a non-empty release path');
+    }
+    const jobs = await transaction<PublicationJobRow[]>`
+      SELECT ${transaction.unsafe(jobColumns)}
+      FROM publication_jobs WHERE id = ${input.jobId} FOR UPDATE
+    `;
+    const job = jobs[0];
+    if (!job || job.status !== 'running') {
+      throw new Error(`Running publication job not found: ${input.jobId}`);
+    }
+    if (Number(job.revision_id) !== input.revisionId) {
+      throw new Error('Successful release revision does not match the publication job');
+    }
+    const revisions = await transaction<{ payload: { media?: { orderedPhotoIds?: unknown } } }[]>`
+      SELECT payload FROM property_revisions
+      WHERE id = ${input.revisionId} AND property_id = ${job.property_id}
+    `;
+    const orderedPhotoIds = revisions[0]?.payload.media?.orderedPhotoIds;
+    if (!Array.isArray(orderedPhotoIds) || !orderedPhotoIds.every((id) => typeof id === 'string')) {
+      throw new Error('Publication revision has invalid media IDs');
+    }
+    if (
+      orderedPhotoIds.length !== input.mediaIds.length ||
+      orderedPhotoIds.some((mediaId, index) => mediaId !== input.mediaIds[index])
+    ) {
+      throw new Error('Successful release media IDs must exactly match the publication revision');
+    }
+    for (const mediaId of input.mediaIds) {
+      const owned = await transaction<{ id: string }[]>`
+        SELECT id FROM property_media WHERE id = ${mediaId} AND property_id = ${job.property_id}
+      `;
+      if (!owned[0]) {
+        throw new Error(`Release media ${mediaId} does not belong to the publication property`);
+      }
+    }
+    const releases = await transaction<{ id: string }[]>`
+      INSERT INTO site_releases (publication_job_id, manifest, created_by)
+      VALUES (
+        ${input.jobId},
+        ${transaction.json({ releasePath: input.releasePath })},
+        ${input.createdBy ?? null}
+      )
+      RETURNING id
+    `;
+    const release = releases[0];
+    if (!release) {
+      throw new Error('Failed to record successful site release');
+    }
+    await recordReleaseMediaReferences(transaction, Number(release.id), input.mediaIds);
+    const completed = await finishPublicationJob(transaction, input.jobId, 'succeeded', null);
+    return { id: Number(release.id), releasePath: input.releasePath, job: completed };
+  });
 
 export const failPublicationJob = (
   sql: SqlExecutor,

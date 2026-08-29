@@ -101,6 +101,41 @@ const isMultipartLimitError = (error: unknown): boolean =>
     String(error.code),
   );
 
+export const stageUploadStream = async (input: {
+  storage: MediaStorage;
+  stream: NodeJS.ReadableStream;
+  maxImageBytes: number;
+}): Promise<{
+  staging: Awaited<ReturnType<MediaStorage['createStagingArea']>>;
+  stagedOriginalPath: string;
+  byteSize: number;
+}> => {
+  const staging = await input.storage.createStagingArea();
+  const stagedOriginalPath = path.join(staging.directory, 'upload');
+  let byteSize = 0;
+  const limiter = new Transform({
+    transform(chunk: Buffer, _encoding, callback) {
+      byteSize += chunk.byteLength;
+      if (byteSize > input.maxImageBytes) {
+        callback(new ImageValidationError('IMAGE_TOO_LARGE', 'Images may not exceed 20 MB'));
+        return;
+      }
+      callback(null, chunk);
+    },
+  });
+  try {
+    await pipeline(
+      input.stream,
+      limiter,
+      createWriteStream(stagedOriginalPath, { flags: 'wx', mode: 0o600 }),
+    );
+    return { staging, stagedOriginalPath, byteSize };
+  } catch (error) {
+    await input.storage.removeContained(staging.directory);
+    throw error;
+  }
+};
+
 const handleRouteError = (reply: FastifyReply, error: unknown) => {
   if (isMultipartLimitError(error)) {
     return sendApiError(
@@ -211,25 +246,14 @@ export const registerMediaRoutes = async (
             }
             continue;
           }
-          staging = await storage.createStagingArea();
-          stagedOriginalPath = path.join(staging.directory, 'upload');
-          const limiter = new Transform({
-            transform(chunk: Buffer, _encoding, callback) {
-              byteSize += chunk.byteLength;
-              if (byteSize > maxImageBytes) {
-                callback(
-                  new ImageValidationError('IMAGE_TOO_LARGE', 'Images may not exceed 20 MB'),
-                );
-                return;
-              }
-              callback(null, chunk);
-            },
+          const staged = await stageUploadStream({
+            storage,
+            stream: part.file,
+            maxImageBytes,
           });
-          await pipeline(
-            part.file,
-            limiter,
-            createWriteStream(stagedOriginalPath, { flags: 'wx', mode: 0o600 }),
-          );
+          staging = staged.staging;
+          stagedOriginalPath = staged.stagedOriginalPath;
+          byteSize = staged.byteSize;
           if (part.file.truncated) {
             throw new ImageValidationError('IMAGE_TOO_LARGE', 'Images may not exceed 20 MB');
           }
