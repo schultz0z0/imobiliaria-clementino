@@ -311,6 +311,24 @@ test('rejects incomplete coordinate pairs and positions that remain almost exact
   assert.equal(propertyDraftSchema.safeParse(almostExact).success, false);
 });
 
+test('enforces 100 m through 1 km public-coordinate bounds in draft and publish schemas', () => {
+  const atMeridianDistance = (meters: number) => ({
+    latitude: validProperty().privateAddress.latitude! + (meters / 6_371_008.8) * (180 / Math.PI),
+    longitude: validProperty().privateAddress.longitude!,
+  });
+  for (const [distance, expected] of [
+    [99, false],
+    [100, true],
+    [1_000, true],
+    [1_001, false],
+  ] as const) {
+    const property = validProperty();
+    Object.assign(property.publicLocation, atMeridianDistance(distance));
+    assert.equal(propertyDraftSchema.safeParse(property).success, expected, `draft ${distance} m`);
+    assert.equal(publishablePropertySchema.safeParse(property).success, expected, `publish ${distance} m`);
+  }
+});
+
 test('public schema rejects incomplete coordinate pairs directly', () => {
   const latitudeOnly = toPublicPropertyDto(validProperty());
   delete latitudeOnly.publicLocation.longitude;

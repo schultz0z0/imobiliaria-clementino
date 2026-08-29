@@ -364,7 +364,13 @@ export const haversineDistanceMeters = (
   return 6_371_008.8 * 2 * Math.atan2(Math.sqrt(arc), Math.sqrt(1 - arc));
 };
 
-const minimumPublicCoordinateDistanceMeters = 100;
+export const PUBLIC_LOCATION_MIN_DISTANCE_METERS = 100;
+export const PUBLIC_LOCATION_MAX_DISTANCE_METERS = 1_000;
+export const PUBLIC_LOCATION_DISTANCE_TOLERANCE_METERS = 0.01;
+
+export const isPublicLocationDistanceWithinBounds = (distanceMeters: number): boolean =>
+  distanceMeters >= PUBLIC_LOCATION_MIN_DISTANCE_METERS - PUBLIC_LOCATION_DISTANCE_TOLERANCE_METERS &&
+  distanceMeters <= PUBLIC_LOCATION_MAX_DISTANCE_METERS + PUBLIC_LOCATION_DISTANCE_TOLERANCE_METERS;
 
 const applyPrivateLocationRefinements = (
   property: PropertyDraftBase,
@@ -388,13 +394,17 @@ const applyPrivateLocationRefinements = (
     'Latitude e longitude privadas devem ser informadas juntas.',
   );
 
-  if (
+  const hasBothCoordinatePairs =
     property.privateAddress.latitude !== undefined &&
     property.privateAddress.longitude !== undefined &&
     property.publicLocation.latitude !== undefined &&
-    property.publicLocation.longitude !== undefined &&
-    haversineDistanceMeters(property.privateAddress, property.publicLocation) <
-      minimumPublicCoordinateDistanceMeters
+    property.publicLocation.longitude !== undefined;
+  const coordinateDistance = hasBothCoordinatePairs
+    ? haversineDistanceMeters(property.privateAddress, property.publicLocation)
+    : undefined;
+  if (
+    coordinateDistance !== undefined &&
+    !isPublicLocationDistanceWithinBounds(coordinateDistance)
   ) {
     context.addIssue({
       code: 'custom',

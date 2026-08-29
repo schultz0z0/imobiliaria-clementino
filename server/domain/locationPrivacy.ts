@@ -1,11 +1,18 @@
 import { createHmac } from 'node:crypto';
 
-import { formatPublicLocationLabel, haversineDistanceMeters } from '../../shared/propertySchema.ts';
+import {
+  formatPublicLocationLabel,
+  haversineDistanceMeters,
+  isPublicLocationDistanceWithinBounds,
+  PUBLIC_LOCATION_DISTANCE_TOLERANCE_METERS,
+  PUBLIC_LOCATION_MAX_DISTANCE_METERS,
+  PUBLIC_LOCATION_MIN_DISTANCE_METERS,
+} from '../../shared/propertySchema.ts';
 
 export { haversineDistanceMeters } from '../../shared/propertySchema.ts';
 
-export const LOCATION_PRIVACY_MIN_DISTANCE_METERS = 100;
-export const LOCATION_PRIVACY_MAX_DISTANCE_METERS = 1_000;
+export const LOCATION_PRIVACY_MIN_DISTANCE_METERS = PUBLIC_LOCATION_MIN_DISTANCE_METERS;
+export const LOCATION_PRIVACY_MAX_DISTANCE_METERS = PUBLIC_LOCATION_MAX_DISTANCE_METERS;
 const GENERATED_MIN_DISTANCE_METERS = 150;
 const GENERATED_MAX_DISTANCE_METERS = 350;
 const DEVELOPMENT_LOCATION_PRIVACY_SECRET = 'development-only-location-privacy-secret';
@@ -126,10 +133,10 @@ export const derivePublicLocation = ({
   }
   const coordinates = manualCoordinates ?? deterministicOffset(publicId, exact, secret);
   const distance = haversineDistanceMeters(exact, coordinates);
-  if (manualCoordinates && distance < LOCATION_PRIVACY_MIN_DISTANCE_METERS) {
-    throw new LocationPrivacyError('The public marker must be at least 100 m from the exact location.');
-  }
-  if (manualCoordinates && distance > LOCATION_PRIVACY_MAX_DISTANCE_METERS) {
+  if (manualCoordinates && !isPublicLocationDistanceWithinBounds(distance)) {
+    if (distance < LOCATION_PRIVACY_MIN_DISTANCE_METERS - PUBLIC_LOCATION_DISTANCE_TOLERANCE_METERS) {
+      throw new LocationPrivacyError('The public marker must be at least 100 m from the exact location.');
+    }
     throw new LocationPrivacyError('The public marker must be within 1.000 m of the exact location.');
   }
   return { label, ...coordinates, precision: 'approximate' };
