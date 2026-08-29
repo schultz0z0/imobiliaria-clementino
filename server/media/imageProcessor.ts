@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 import { execFile } from 'node:child_process';
 import { createReadStream } from 'node:fs';
-import { mkdir, rm } from 'node:fs/promises';
+import { mkdir, readFile, rm } from 'node:fs/promises';
 import path from 'node:path';
 import { promisify } from 'node:util';
 
@@ -55,10 +55,96 @@ const derivativeSpecifications = {
 };
 const execFileAsync = promisify(execFile);
 
+const MAX_HEIF_BOX_DEPTH = 16;
+const heifContainerTypes = new Set(['meta', 'moov', 'trak', 'mdia', 'minf', 'stbl', 'iprp', 'ipco']);
+
+export type HeifDimensions = { width: number; height: number };
+
+const safeHeifDimension = (width: number, height: number): HeifDimensions => {
+  if (!Number.isSafeInteger(width) || !Number.isSafeInteger(height) || width < 1 || height < 1) {
+    throw new ImageValidationError('INVALID_IMAGE', 'The HEIF container has invalid dimensions');
+  }
+  if (
+    width > MAX_IMAGE_WIDTH ||
+    height > MAX_IMAGE_HEIGHT ||
+    width * height > MAX_IMAGE_PIXELS
+  ) {
+    throw new ImageValidationError(
+      'IMAGE_DIMENSIONS_EXCEEDED',
+      'Image dimensions exceed the safe decoder limits',
+    );
+  }
+  return { width, height };
+};
+
+/**
+ * Reads only structurally bounded ISO-BMFF boxes. HEIF's `ispe` entries are
+ * checked before any native converter starts, so an unavailable `heif-info`
+ * binary cannot weaken the pixel limit on Windows.
+ */
+export const readHeifDimensions = async (sourcePath: string): Promise<HeifDimensions> => {
+  const bytes = await readFile(sourcePath);
+  const dimensions: HeifDimensions[] = [];
+
+  const walk = (start: number, end: number, depth: number, skip = 0): void => {
+    if (depth > MAX_HEIF_BOX_DEPTH || start + skip > end) {
+      throw new ImageValidationError('INVALID_IMAGE', 'The HEIF container has invalid box nesting');
+    }
+    let offset = start + skip;
+    while (offset < end) {
+      if (end - offset < 8) {
+        throw new ImageValidationError('INVALID_IMAGE', 'The HEIF container has a truncated box');
+      }
+      let size = bytes.readUInt32BE(offset);
+      const type = bytes.toString('ascii', offset + 4, offset + 8);
+      let headerSize = 8;
+      if (size === 1) {
+        if (end - offset < 16) {
+          throw new ImageValidationError('INVALID_IMAGE', 'The HEIF container has a truncated large box');
+        }
+        const largeSize = bytes.readBigUInt64BE(offset + 8);
+        if (largeSize > BigInt(Number.MAX_SAFE_INTEGER)) {
+          throw new ImageValidationError('INVALID_IMAGE', 'The HEIF container has an invalid box size');
+        }
+        size = Number(largeSize);
+        headerSize = 16;
+      } else if (size === 0) {
+        size = end - offset;
+      }
+      if (size < headerSize || offset + size > end) {
+        throw new ImageValidationError('INVALID_IMAGE', 'The HEIF container has an invalid box size');
+      }
+      const payloadStart = offset + headerSize;
+      const boxEnd = offset + size;
+      if (type === 'ispe') {
+        if (boxEnd - payloadStart < 12) {
+          throw new ImageValidationError('INVALID_IMAGE', 'The HEIF ispe box is truncated');
+        }
+        dimensions.push(
+          safeHeifDimension(bytes.readUInt32BE(payloadStart + 4), bytes.readUInt32BE(payloadStart + 8)),
+        );
+      } else if (heifContainerTypes.has(type)) {
+        walk(payloadStart, boxEnd, depth + 1, type === 'meta' ? 4 : 0);
+      }
+      offset = boxEnd;
+    }
+  };
+
+  walk(0, bytes.byteLength, 0);
+  if (dimensions.length === 0) {
+    throw new ImageValidationError('INVALID_IMAGE', 'The HEIF container has no bounded image dimensions');
+  }
+  return dimensions.reduce(
+    (largest, current) =>
+      current.width * current.height > largest.width * largest.height ? current : largest,
+  );
+};
+
 const decodeHeifWithSystemCodec = async (
   sourcePath: string,
   destinationPath: string,
 ): Promise<void> => {
+  await readHeifDimensions(sourcePath);
   try {
     const { stdout } = await execFileAsync('heif-info', [sourcePath], {
       timeout: 10_000,
@@ -172,6 +258,7 @@ export const processPropertyImage = async (input: {
     let usedHeifFallback = false;
     if (['image/heic', 'image/heif'].includes(detected.mime)) {
       const decodedPath = path.join(input.outputDirectory, 'decoded-heif.png');
+      await readHeifDimensions(input.inputPath);
       try {
         await (input.heifDecoder ?? decodeHeifWithSystemCodec)(input.inputPath, decodedPath);
         decoderInputPath = decodedPath;

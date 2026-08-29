@@ -60,3 +60,43 @@ docker compose -f compose.test.yaml down -v
 
 Use only the root `compose.test.yaml` and its disposable test volume for that
 cleanup.
+
+## Fix round 1 — release-safe media retention
+
+- Concrete `release_media_refs` now retain deferred media only while a release
+  is active. GC is re-evaluated for the current published revision, release
+  expiry, and deletion of the final release (`006_media_release_gc_delete.sql`).
+- The immutable revision payload stores `altTextByPhotoId`; the integration
+  regression proves a published revision keeps its old alt text while the
+  newer draft snapshot uses the edited value.
+- Hash-addressed derivatives are exclusive creates. An injected rollback of a
+  same-content re-upload preserves the already-published shared paths; two
+  concurrent identical uploads leave one active valid row and no staging
+  directory. Staging cleanup is now awaited before the upload response is sent.
+- Failed rollback cleanup is not silent: unresolved paths are persisted to
+  `media_cleanup_queue` with an actionable reason.
+- Native isolated PostgreSQL validation ran on `127.0.0.1:55439`, using only
+  `.tmp/pg-task6-final` in this worktree. The populated legacy-upgrade
+  regression found that 004 conflicted with the append-only revision trigger;
+  004 now temporarily disables that trigger inside its migration transaction,
+  canonicalizes duplicate checksums/snapshot order, then re-enables it.
+- The route accepts an actual exactly-20 MiB image stream, rejects 20 MiB + 1
+  byte, and leaves no staging data on abort. A constructed valid two-page TIFF
+  is rejected before derivatives are rendered.
+
+### Fresh validation
+
+- `node --env-file=server/db/test.env --import tsx --test server/db/migrate.integration.test.ts` — 3 passed.
+- `npx tsx --test server/media/imageProcessor.test.ts server/media/storage.test.ts` — 17 passed.
+- `node --env-file=server/db/test.env --import tsx --test server/api/mediaRoutes.integration.test.ts` — 16 passed.
+- `node --env-file=server/db/test.env --import tsx --test server/api/propertyRoutes.integration.test.ts server/auth/auth.integration.test.ts server/db/propertyRepository.integration.test.ts server/db/publicationRepository.integration.test.ts` — exited 0.
+- `npm test`, `npm run lint`, `npm run media:typecheck`, `npm run server:build`, and `npm run build` — exited 0.
+
+### HEIF and container note
+
+The host smoke ran the real single-image HEIC fixture through `heif-convert`.
+This Windows runtime does not provide `heif-info` or an HEIF encoder, so no
+trustworthy real multipage-HEIF fixture could be produced locally. Production
+code still rejects a converter-reported image count other than one and bounds
+all parsed `ispe` dimensions before conversion. Docker was unavailable in the
+original pass and was not claimed as a current validation target here.

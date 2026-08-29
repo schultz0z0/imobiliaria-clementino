@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { mkdtemp, rm, writeFile } from 'node:fs/promises';
+import { copyFile, mkdtemp, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { after, before, test } from 'node:test';
@@ -180,7 +180,11 @@ test('rolls back an invalid migration without recording its version', async () =
       'utf8',
     );
 
-    await assert.rejects(migrate(sql, migrationsDirectory), /does not exist/i);
+    await assert.rejects(
+      migrate(sql, migrationsDirectory),
+      (error: unknown) =>
+        typeof error === 'object' && error !== null && 'code' in error && error.code === '42883',
+    );
 
     const tables = await sql<{ name: string | null }[]>`
       SELECT to_regclass('public.migration_should_rollback')::text AS name
@@ -192,5 +196,72 @@ test('rolls back an invalid migration without recording its version', async () =
     assert.equal(versions[0]?.count, '0');
   } finally {
     await rm(migrationsDirectory, { recursive: true, force: true });
+  }
+});
+
+test('upgrades populated legacy duplicate media without changing revision history or canonical order', async () => {
+  const migrationDirectory = await mkdtemp(path.join(tmpdir(), 'clementino-media-upgrade-'));
+  const sourceDirectory = path.resolve('server/migrations');
+  const canonicalId = '11111111-1111-4111-8111-111111111111';
+  const duplicateId = '22222222-2222-4222-8222-222222222222';
+  try {
+    for (const fileName of [
+      '001_admin_catalog.sql',
+      '002_serialize_publication_jobs.sql',
+      '003_admin_auth_security.sql',
+    ]) {
+      await copyFile(path.join(sourceDirectory, fileName), path.join(migrationDirectory, fileName));
+    }
+    await sql.unsafe(`DROP SCHEMA public CASCADE; CREATE SCHEMA public`);
+    await migrate(sql, migrationDirectory);
+    const property = await sql<{ id: string }[]>`
+      INSERT INTO properties (public_id, commercial_reference, slug)
+      VALUES ('legacy-media', 'LEGACY-MEDIA', 'legacy-media') RETURNING id
+    `;
+    const payload = {
+      media: {
+        orderedPhotoIds: [duplicateId, canonicalId, duplicateId],
+        coverPhotoId: duplicateId,
+        altTextByPhotoId: {
+          [canonicalId]: 'Texto canonico preservado',
+          [duplicateId]: 'Texto duplicado substituido',
+        },
+      },
+    };
+    const revision = await sql<{ id: string }[]>`
+      INSERT INTO property_revisions (property_id, revision_number, payload)
+      VALUES (${property[0]!.id}, 1, ${sql.json(payload)}) RETURNING id
+    `;
+    await sql`
+      UPDATE properties SET draft_revision_id = ${revision[0]!.id}, published_revision_id = ${revision[0]!.id}
+      WHERE id = ${property[0]!.id}
+    `;
+    await sql.unsafe(`
+      INSERT INTO property_media (
+        id, property_id, revision_id, photo_id, storage_key, mime_type, byte_size, width, height, checksum_sha256
+      ) VALUES
+        ('${canonicalId}', '${property[0]!.id}', ${revision[0]!.id}, '${canonicalId}', 'private/canonical', 'image/png', 1, 1, 1, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'),
+        ('${duplicateId}', '${property[0]!.id}', ${revision[0]!.id}, '${duplicateId}', 'private/duplicate', 'image/png', 1, 1, 1, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+    `);
+
+    const upgraded = await migrate(sql, sourceDirectory);
+    assert.ok(upgraded.applied.includes('004_property_media_management.sql'));
+    const media = await sql<{ id: string; removed_at: Date | null; position: number }[]>`
+      SELECT id, removed_at, position FROM property_media WHERE property_id = ${property[0]!.id} ORDER BY id
+    `;
+    assert.deepEqual(media.map((row) => ({ id: row.id, active: row.removed_at === null, position: row.position })), [
+      { id: canonicalId, active: true, position: 0 },
+      { id: duplicateId, active: false, position: 0 },
+    ]);
+    const revisions = await sql<{ payload: typeof payload }[]>`
+      SELECT payload FROM property_revisions WHERE property_id = ${property[0]!.id}
+    `;
+    assert.deepEqual(revisions[0]?.payload.media.orderedPhotoIds, [canonicalId]);
+    assert.equal(revisions[0]?.payload.media.coverPhotoId, canonicalId);
+    assert.deepEqual(revisions[0]?.payload.media.altTextByPhotoId, {
+      [canonicalId]: 'Texto canonico preservado',
+    });
+  } finally {
+    await rm(migrationDirectory, { recursive: true, force: true });
   }
 });

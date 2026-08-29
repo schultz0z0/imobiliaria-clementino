@@ -13,6 +13,7 @@ import {
   ImageValidationError,
   MAX_IMAGE_BYTES,
   processPropertyImage,
+  readHeifDimensions,
 } from './imageProcessor.ts';
 
 const temporaryDirectories: string[] = [];
@@ -227,6 +228,34 @@ test('accepts a real TIFF image and validates it through the decoder', async () 
   assert.equal((await sharp(result.derivatives.gallery.path).metadata()).format, 'webp');
 });
 
+test('rejects a real two-page TIFF before rendering derivatives', async () => {
+  const directory = await temporaryDirectory();
+  const singlePage = await readFile(tiffFixture);
+  assert.equal(singlePage.toString('ascii', 0, 2), 'II');
+  const firstIfdOffset = singlePage.readUInt32LE(4);
+  const entryCount = singlePage.readUInt16LE(firstIfdOffset);
+  const nextIfdOffset = firstIfdOffset + 2 + entryCount * 12;
+  const firstPage = Buffer.from(singlePage);
+  const secondIfdOffset = firstPage.byteLength;
+  firstPage.writeUInt32LE(secondIfdOffset, nextIfdOffset);
+  const secondPage = Buffer.from(singlePage.subarray(firstIfdOffset, nextIfdOffset + 4));
+  secondPage.writeUInt32LE(0, secondPage.byteLength - 4);
+  const inputPath = path.join(directory, 'two-pages.tiff');
+  const twoPageTiff = Buffer.concat([firstPage, secondPage]);
+  await writeFile(inputPath, twoPageTiff);
+  assert.equal((await sharp(inputPath, { pages: -1 }).metadata()).pages, 2);
+
+  await assert.rejects(
+    processPropertyImage({
+      inputPath,
+      outputDirectory: path.join(directory, 'processed'),
+      byteSize: twoPageTiff.byteLength,
+    }),
+    (error: unknown) =>
+      error instanceof ImageValidationError && error.code === 'MULTIPAGE_IMAGE_UNSUPPORTED',
+  );
+});
+
 test('accepts a real HEIC fixture through the production decoder fallback contract', async () => {
   const directory = await temporaryDirectory();
   const decodedPng = await sharp({
@@ -258,3 +287,41 @@ test(
     assert.equal(result.mimeType, 'image/heif');
   },
 );
+
+test('rejects an oversized bounded HEIF ispe box before invoking the converter', async () => {
+  const directory = await temporaryDirectory();
+  const inputPath = path.join(directory, 'oversized.heic');
+  const ispe = Buffer.alloc(20);
+  ispe.writeUInt32BE(20, 0);
+  ispe.write('ispe', 4, 'ascii');
+  ispe.writeUInt32BE(0, 8);
+  ispe.writeUInt32BE(12_001, 12);
+  ispe.writeUInt32BE(12_001, 16);
+  await writeFile(
+    inputPath,
+    Buffer.concat([Buffer.from([0, 0, 0, 12]), Buffer.from('ftypheic', 'ascii'), ispe]),
+  );
+
+  let invoked = false;
+  await assert.rejects(
+    processPropertyImage({
+      inputPath,
+      outputDirectory: path.join(directory, 'processed'),
+      byteSize: 32,
+      heifDecoder: async () => {
+        invoked = true;
+      },
+    }),
+    (error: unknown) =>
+      error instanceof ImageValidationError && error.code === 'IMAGE_DIMENSIONS_EXCEEDED',
+  );
+  assert.equal(invoked, false);
+});
+
+test('extracts dimensions from the real HEIC fixture with bounded ISO-BMFF parsing', async () => {
+  const dimensions = await readHeifDimensions(heicFixture);
+  assert.ok(dimensions.width > 0);
+  assert.ok(dimensions.height > 0);
+  assert.ok(dimensions.width <= 12_000);
+  assert.ok(dimensions.height <= 12_000);
+});

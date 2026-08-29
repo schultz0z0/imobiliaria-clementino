@@ -154,11 +154,21 @@ const draftWithMedia = (
   draft: AdminPropertyDraft,
   orderedPhotoIds: string[],
   coverPhotoId?: string,
+  altTextByPhotoId: Record<string, string> = draft.media?.altTextByPhotoId ?? {},
 ): AdminPropertyDraft => {
   const next = structuredClone(draft);
   next.media = {
     orderedPhotoIds,
     ...(coverPhotoId ? { coverPhotoId } : {}),
+    ...(orderedPhotoIds.length > 0
+      ? {
+          altTextByPhotoId: Object.fromEntries(
+            orderedPhotoIds.flatMap((photoId) =>
+              altTextByPhotoId[photoId] ? [[photoId, altTextByPhotoId[photoId]]] : [],
+            ),
+          ),
+        }
+      : {}),
   };
   if (next.seo?.imagePhotoId && !orderedPhotoIds.includes(next.seo.imagePhotoId)) {
     delete next.seo.imagePhotoId;
@@ -172,15 +182,22 @@ const cleanupPromotedUpload = async (
   mediaId: string,
   publicId: string,
   paths: string[],
-): Promise<void> => {
-  await Promise.allSettled(paths.map((targetPath) => storage.removeContained(targetPath)));
-  await Promise.allSettled([
-    storage.removeContained(storage.privateOriginalDirectory(propertyId, mediaId)),
-  ]);
-  await Promise.allSettled([
-    storage.pruneEmptyDirectory(storage.privatePropertyDirectory(propertyId)),
-    storage.pruneEmptyDirectory(storage.publicPropertyDirectory(publicId)),
-  ]);
+): Promise<string[]> => {
+  const cleanupTargets = [
+    ...paths,
+    storage.privateOriginalDirectory(propertyId, mediaId),
+  ];
+  const cleanupResults = await Promise.allSettled(
+    cleanupTargets.map((targetPath) => storage.removeContained(targetPath)),
+  );
+  const pruneTasks = [storage.pruneEmptyDirectory(storage.privatePropertyDirectory(propertyId))];
+  if (publicId) {
+    pruneTasks.push(storage.pruneEmptyDirectory(storage.publicPropertyDirectory(publicId)));
+  }
+  await Promise.allSettled(pruneTasks);
+  return cleanupResults.flatMap((result, index) =>
+    result.status === 'rejected' ? [cleanupTargets[index]!] : [],
+  );
 };
 
 export const createUploadedPhoto = async (input: {
@@ -201,14 +218,21 @@ export const createUploadedPhoto = async (input: {
     return await withTransaction(input.sql, async (transaction) => {
       const property = await lockProperty(transaction, input.propertyId, input.expectedRevision);
       publicId = property.public_id;
+      await transaction`SELECT pg_advisory_xact_lock(hashtextextended(${`${input.propertyId}:${input.processed.checksumSha256}`}, 0))`;
       const currentPhotos = await activePhotos(transaction, input.propertyId);
+      if (currentPhotos.length >= 100) {
+        throw invalidMedia('A property may have at most 100 active photos', ['file']);
+      }
       const currentIds = currentPhotos.map(({ id }) => id);
       const defaultAlt = `Foto do imóvel: ${property.payload.editorial?.title ?? property.public_id}`;
       const altText = altTextSchema.parse(input.altText ?? defaultAlt.slice(0, 180));
       const nextIds = [...currentIds, mediaId];
       const currentCover = property.payload.media?.coverPhotoId;
       const nextCover = currentCover && currentIds.includes(currentCover) ? currentCover : mediaId;
-      const nextDraft = draftWithMedia(property.payload, nextIds, nextCover);
+      const nextDraft = draftWithMedia(property.payload, nextIds, nextCover, {
+        ...(property.payload.media?.altTextByPhotoId ?? {}),
+        [mediaId]: altText,
+      });
       const revisionId = await insertRevision(
         transaction,
         property,
@@ -242,15 +266,24 @@ export const createUploadedPhoto = async (input: {
           id, property_id, mime_type, byte_size, width, height,
           checksum_sha256, alt_text, position, removed_at
       `;
-      await input.storage.promoteFile(input.stagedOriginalPath, originalPath, 0o600);
+      const originalPromotion = await input.storage.promoteFile(
+        input.stagedOriginalPath,
+        originalPath,
+        0o600,
+      );
+      if (!originalPromotion.created) {
+        throw new Error('Refusing to reuse a private media original');
+      }
       promotedPaths.push(originalPath);
       for (const variant of ['cover', 'gallery', 'thumb'] as const) {
-        await input.storage.promoteFile(
+        const promotion = await input.storage.promoteFile(
           input.processed.derivatives[variant].path,
           derivativePaths[variant],
           0o644,
         );
-        promotedPaths.push(derivativePaths[variant]);
+        if (promotion.created) {
+          promotedPaths.push(derivativePaths[variant]);
+        }
       }
       await attachRevision(transaction, input.propertyId, revisionId);
       await audit(transaction, input.actorId, input.propertyId, 'property.photo_uploaded', {
@@ -264,7 +297,25 @@ export const createUploadedPhoto = async (input: {
       };
     });
   } catch (error) {
-    await cleanupPromotedUpload(input.storage, input.propertyId, mediaId, publicId, promotedPaths);
+    const failedCleanupPaths = await cleanupPromotedUpload(
+      input.storage,
+      input.propertyId,
+      mediaId,
+      publicId,
+      promotedPaths,
+    );
+    if (failedCleanupPaths.length > 0) {
+      await input.sql`
+        INSERT INTO media_cleanup_queue (property_id, media_id, paths, failure_reason)
+        VALUES (
+          ${input.propertyId},
+          ${mediaId},
+          ${input.sql.json(failedCleanupPaths)},
+          ${'Promoted media cleanup failed after a rolled-back upload'}
+        )
+      `;
+      throw new Error('Media cleanup was queued after a failed upload');
+    }
     if (isPostgresError(error, '23505')) {
       throw new PropertyServiceError(
         API_ERROR_CODES.CONFLICT,
@@ -350,11 +401,20 @@ export const editPropertyPhoto = async (input: {
     if (!rows[0]) {
       throw notFound();
     }
+    const nextDraft = draftWithMedia(
+      property.payload,
+      property.payload.media?.orderedPhotoIds ?? [],
+      property.payload.media?.coverPhotoId,
+      {
+        ...(property.payload.media?.altTextByPhotoId ?? {}),
+        [input.photoId]: altText,
+      },
+    );
     const revisionId = await insertRevision(
       transaction,
       property,
       input.expectedRevision,
-      property.payload,
+      nextDraft,
       input.actorId,
     );
     await attachRevision(transaction, input.propertyId, revisionId);
@@ -384,7 +444,12 @@ export const deletePropertyPhoto = async (input: {
     const nextIds = photos.map(({ id }) => id).filter((id) => id !== input.photoId);
     const currentCover = property.payload.media?.coverPhotoId;
     const nextCover = currentCover === input.photoId ? nextIds[0] : currentCover;
-    const nextDraft = draftWithMedia(property.payload, nextIds, nextCover);
+    const nextDraft = draftWithMedia(
+      property.payload,
+      nextIds,
+      nextCover,
+      property.payload.media?.altTextByPhotoId ?? {},
+    );
     const revisionId = await insertRevision(
       transaction,
       property,
@@ -402,9 +467,10 @@ export const deletePropertyPhoto = async (input: {
         )
         OR EXISTS (
           SELECT 1
-          FROM site_releases
-          JOIN publication_jobs ON publication_jobs.id = site_releases.publication_job_id
-          WHERE publication_jobs.property_id = ${input.propertyId}
+          FROM release_media_refs
+          JOIN site_releases ON site_releases.id = release_media_refs.release_id
+          WHERE release_media_refs.media_id = ${input.photoId}
+            AND (site_releases.expires_at IS NULL OR site_releases.expires_at > clock_timestamp())
         )
       ) AS retained
     `;

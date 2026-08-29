@@ -200,6 +200,25 @@ test('requires unique ordered photos and exactly one valid cover when photos exi
   assert.equal(propertyDraftSchema.safeParse(noPhotos).success, true);
 });
 
+test('stores bounded revisioned alt text only for ordered UUID photos', () => {
+  const property = validProperty();
+  const firstPhoto = '11111111-1111-4111-8111-111111111111';
+  const secondPhoto = '22222222-2222-4222-8222-222222222222';
+  property.media = {
+    orderedPhotoIds: [firstPhoto, secondPhoto],
+    coverPhotoId: firstPhoto,
+    altTextByPhotoId: {
+      [firstPhoto]: 'Sala integrada, iluminada e com vista aberta',
+      [secondPhoto]: 'Varanda ampla com espaço para refeições',
+    },
+  };
+  property.seo.imagePhotoId = firstPhoto;
+  assert.equal(propertyDraftSchema.safeParse(property).success, true);
+
+  property.media.altTextByPhotoId = { 'not-a-uuid': 'Texto alternativo inválido' };
+  assert.equal(propertyDraftSchema.safeParse(property).success, false);
+});
+
 test('requires the SEO image to belong to the ordered photo set', () => {
   const property = validProperty();
   property.seo.imagePhotoId = 'not-in-gallery';

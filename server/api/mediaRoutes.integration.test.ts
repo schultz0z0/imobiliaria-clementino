@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { mkdtemp, readdir, rm, stat } from 'node:fs/promises';
+import { access, mkdtemp, readdir, rm, stat } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { after, before, beforeEach, test } from 'node:test';
@@ -11,7 +11,13 @@ import { createAdminSession, type CreatedSession } from '../auth/session.ts';
 import { createPostgresClient } from '../db/client.ts';
 import { migrate } from '../db/migrate.ts';
 import { publishDraft } from '../db/propertyRepository.ts';
+import {
+  expireReleaseMediaReferences,
+  recordReleaseMediaReferences,
+} from '../db/releaseMediaRepository.ts';
 import { assertDisposableTestDatabase } from '../db/testDatabaseSafety.ts';
+import { MediaStorage } from '../media/storage.ts';
+import { MAX_IMAGE_BYTES } from '../media/imageProcessor.ts';
 import { createServer } from './createServer.ts';
 
 const testDatabaseUrl = process.env.TEST_DATABASE_URL;
@@ -253,6 +259,7 @@ test('streams a byte-sniffed upload, creates immutable derivatives, and defaults
   assert.deepEqual(updated.draft.media, {
     orderedPhotoIds: [photo.id],
     coverPhotoId: photo.id,
+    altTextByPhotoId: { [photo.id]: photo.altText },
   });
   assert.equal(photo.mimeType, 'image/png');
   assert.match(photo.altText, /^Foto do im.vel/i);
@@ -285,6 +292,52 @@ test('rejects an oversized multipart file while streaming it', async () => {
   const huge = Buffer.alloc(testFileLimit + 1, 0);
   const oversized = await upload(session, property.id, 1, huge);
   assert.equal(oversized.statusCode, 413, oversized.body);
+});
+
+test('accepts an actual 20 MB stream, rejects one extra byte, and removes staging on abort', async () => {
+  const session = await authenticate();
+  const property = await createDraft(session);
+  const largeRoot = await mkdtemp(path.join(tmpdir(), 'clementino-media-limit-'));
+  const largeApp = createServer({ sql, environment: 'test', mediaRoot: largeRoot });
+  await largeApp.ready();
+  try {
+    const image = await png('#023047');
+    const exact = Buffer.concat([image, Buffer.alloc(MAX_IMAGE_BYTES - image.byteLength)]);
+    assert.equal(exact.byteLength, MAX_IMAGE_BYTES);
+    const exactBoundary = `exact-${crypto.randomUUID()}`;
+    const accepted = await largeApp.inject({
+      method: 'POST',
+      url: `/api/admin/properties/${property.id}/photos`,
+      headers: {
+        ...authHeaders(session, true),
+        'if-match': '"1"',
+        'content-type': `multipart/form-data; boundary=${exactBoundary}`,
+      },
+      payload: multipartBody(exactBoundary, exact, { mime: 'image/png' }),
+    });
+    assert.equal(accepted.statusCode, 201, accepted.body);
+
+    const plusOne = Buffer.concat([exact, Buffer.alloc(1)]);
+    const oversizedBoundary = `oversized-${crypto.randomUUID()}`;
+    const rejected = await largeApp.inject({
+      method: 'POST',
+      url: `/api/admin/properties/${property.id}/photos`,
+      headers: {
+        ...authHeaders(session, true),
+        'if-match': '"2"',
+        'content-type': `multipart/form-data; boundary=${oversizedBoundary}`,
+      },
+      payload: multipartBody(oversizedBoundary, plusOne, { mime: 'image/png' }),
+    });
+    assert.equal(rejected.statusCode, 413, rejected.body);
+    const staging = await readdir(path.join(largeRoot, '.staging')).catch(
+      (error: NodeJS.ErrnoException) => (error.code === 'ENOENT' ? [] : Promise.reject(error)),
+    );
+    assert.deepEqual(staging, []);
+  } finally {
+    await largeApp.close();
+    await rm(largeRoot, { recursive: true, force: true, maxRetries: 5, retryDelay: 50 });
+  }
 });
 
 test('rejects a second multipart file without creating media', async () => {
@@ -363,6 +416,10 @@ test('enforces exact owned active photo order, cover membership, and optimistic 
   assert.deepEqual(ordered.json().property.draft.media, {
     orderedPhotoIds: [secondId, firstId],
     coverPhotoId: secondId,
+    altTextByPhotoId: {
+      [secondId]: second.json().photo.altText,
+      [firstId]: first.json().photo.altText,
+    },
   });
 
   const stale = await app.inject({
@@ -452,4 +509,237 @@ test('removes every newly promoted file if the database transaction fails', asyn
       DROP FUNCTION IF EXISTS fail_media_upload_audit();
     `);
   }
+});
+
+test('persists actionable cleanup work when rollback cleanup fails', async () => {
+  const session = await authenticate();
+  const property = await createDraft(session);
+  const originalRemoveContained = MediaStorage.prototype.removeContained;
+  MediaStorage.prototype.removeContained = async function (targetPath: string): Promise<void> {
+    if (targetPath.includes(`${path.sep}private${path.sep}`)) {
+      throw new Error('injected private cleanup failure');
+    }
+    await originalRemoveContained.call(this, targetPath);
+  };
+  await sql.unsafe(`
+    CREATE FUNCTION fail_queued_media_upload_audit() RETURNS trigger AS $$
+    BEGIN RAISE EXCEPTION 'injected media audit failure'; END;
+    $$ LANGUAGE plpgsql;
+    CREATE TRIGGER fail_queued_media_upload_audit_trigger
+    BEFORE INSERT ON audit_events
+    FOR EACH ROW WHEN (NEW.action = 'property.photo_uploaded')
+    EXECUTE FUNCTION fail_queued_media_upload_audit();
+  `);
+  try {
+    const failed = await upload(session, property.id, 1, await png('#ff006e'));
+    assert.equal(failed.statusCode, 500, failed.body);
+    const queued = await sql<{ paths: string[]; failure_reason: string; resolved_at: Date | null }[]>`
+      SELECT paths, failure_reason, resolved_at FROM media_cleanup_queue
+      WHERE property_id = ${property.id}
+    `;
+    assert.equal(queued.length, 1);
+    assert.equal(queued[0]?.resolved_at, null);
+    assert.match(queued[0]?.failure_reason ?? '', /cleanup failed/i);
+    assert.ok(queued[0]?.paths.some((target) => target.includes(`${path.sep}private${path.sep}`)));
+  } finally {
+    MediaStorage.prototype.removeContained = originalRemoveContained;
+    await sql.unsafe(`
+      DROP TRIGGER IF EXISTS fail_queued_media_upload_audit_trigger ON audit_events;
+      DROP FUNCTION IF EXISTS fail_queued_media_upload_audit();
+    `);
+  }
+});
+
+test('preserves shared deterministic derivatives when an identical re-upload rolls back', async () => {
+  const session = await authenticate();
+  const property = await createDraft(session);
+  const image = await png('#006d77');
+  const first = await upload(session, property.id, 1, image);
+  assert.equal(first.statusCode, 201, first.body);
+
+  const firstPaths = await sql<
+    { storage_key: string; cover_storage_key: string; gallery_storage_key: string; thumb_storage_key: string }[]
+  >`
+    SELECT storage_key, cover_storage_key, gallery_storage_key, thumb_storage_key
+    FROM property_media WHERE id = ${first.json().photo.id as string}
+  `;
+  const paths = firstPaths[0]!;
+  await sql.unsafe(`DROP INDEX property_media_active_content_unique_idx`);
+  await sql.unsafe(`
+    CREATE FUNCTION fail_duplicate_photo_audit() RETURNS trigger AS $$
+    BEGIN RAISE EXCEPTION 'injected duplicate upload failure'; END;
+    $$ LANGUAGE plpgsql;
+    CREATE TRIGGER fail_duplicate_photo_audit_trigger
+    BEFORE INSERT ON audit_events
+    FOR EACH ROW WHEN (NEW.action = 'property.photo_uploaded')
+    EXECUTE FUNCTION fail_duplicate_photo_audit();
+  `);
+  try {
+    const failed = await upload(session, property.id, 2, image);
+    assert.equal(failed.statusCode, 500, failed.body);
+    const active = await sql<{ count: string }[]>`
+      SELECT count(*)::text AS count FROM property_media
+      WHERE property_id = ${property.id} AND removed_at IS NULL
+    `;
+    assert.equal(active[0]?.count, '1');
+    for (const key of [
+      paths.storage_key,
+      paths.cover_storage_key,
+      paths.gallery_storage_key,
+      paths.thumb_storage_key,
+    ]) {
+      await access(path.join(mediaRoot, ...key.split('/')));
+    }
+  } finally {
+    await sql.unsafe(`
+      DROP TRIGGER IF EXISTS fail_duplicate_photo_audit_trigger ON audit_events;
+      DROP FUNCTION IF EXISTS fail_duplicate_photo_audit();
+      CREATE UNIQUE INDEX property_media_active_content_unique_idx
+        ON property_media (property_id, checksum_sha256) WHERE removed_at IS NULL;
+    `);
+  }
+});
+
+test('serializes concurrent identical uploads with one active valid media row and no staging orphan', async () => {
+  const session = await authenticate();
+  const property = await createDraft(session);
+  const image = await png('#0077b6');
+  const responses = await Promise.all([
+    upload(session, property.id, 1, image),
+    upload(session, property.id, 1, image),
+  ]);
+  assert.equal(
+    responses.filter((response) => response.statusCode === 201).length,
+    1,
+    responses.map((response) => `${response.statusCode}: ${response.body}`).join('\n'),
+  );
+  assert.equal(responses.filter((response) => response.statusCode === 409).length, 1);
+  const media = await sql<
+    { storage_key: string; cover_storage_key: string; gallery_storage_key: string; thumb_storage_key: string }[]
+  >`
+    SELECT storage_key, cover_storage_key, gallery_storage_key, thumb_storage_key
+    FROM property_media WHERE property_id = ${property.id} AND removed_at IS NULL
+  `;
+  assert.equal(media.length, 1);
+  for (const key of [
+    media[0]!.storage_key,
+    media[0]!.cover_storage_key,
+    media[0]!.gallery_storage_key,
+    media[0]!.thumb_storage_key,
+  ]) {
+    await access(path.join(mediaRoot, ...key.split('/')));
+  }
+  const stagingRoot = path.join(mediaRoot, '.staging');
+  const stagingEntries = await readdir(stagingRoot).catch((error: NodeJS.ErrnoException) =>
+    error.code === 'ENOENT' ? [] : Promise.reject(error),
+  );
+  assert.deepEqual(
+    await Promise.all(
+      stagingEntries.map(async (entry) => ({ entry, contents: await readdir(path.join(stagingRoot, entry)) })),
+    ),
+    [],
+  );
+});
+
+test('keeps published alt text snapshot while the draft gets its own newer alt text', async () => {
+  const session = await authenticate();
+  const property = await createDraft(session);
+  await completeDraft(session, property);
+  const uploaded = await upload(session, property.id, 2, await png('#9b2226'), {
+    altText: 'Texto alternativo publicado',
+  });
+  assert.equal(uploaded.statusCode, 201, uploaded.body);
+  const photoId = uploaded.json().photo.id as string;
+  await publishDraft(sql, property.id);
+  const edited = await app.inject({
+    method: 'PATCH',
+    url: `/api/admin/properties/${property.id}/photos/${photoId}`,
+    headers: { ...authHeaders(session, true), 'if-match': '"3"' },
+    payload: { altText: 'Texto alternativo novo no rascunho' },
+  });
+  assert.equal(edited.statusCode, 200, edited.body);
+  const revisions = await sql<{ revision_number: string; payload: { media: { altTextByPhotoId: Record<string, string> } } }[]>`
+    SELECT revision_number, payload FROM property_revisions
+    WHERE property_id = ${property.id} AND revision_number IN (3, 4)
+    ORDER BY revision_number
+  `;
+  assert.equal(revisions[0]?.payload.media.altTextByPhotoId[photoId], 'Texto alternativo publicado');
+  assert.equal(revisions[1]?.payload.media.altTextByPhotoId[photoId], 'Texto alternativo novo no rascunho');
+});
+
+test('retains deleted media for explicit active releases and makes it GC eligible after release expiry', async () => {
+  const session = await authenticate();
+  const property = await createDraft(session);
+  await completeDraft(session, property);
+  const uploaded = await upload(session, property.id, 2, await png('#3a86ff'));
+  assert.equal(uploaded.statusCode, 201, uploaded.body);
+  const photoId = uploaded.json().photo.id as string;
+  await publishDraft(sql, property.id);
+  const publishedRevision = await sql<{ draft_revision_id: string }[]>`
+    SELECT draft_revision_id FROM properties WHERE id = ${property.id}
+  `;
+  const job = await sql<{ id: string }[]>`
+    INSERT INTO publication_jobs (property_id, revision_id, status, started_at, finished_at)
+    VALUES (${property.id}, ${publishedRevision[0]!.draft_revision_id}, 'succeeded', clock_timestamp(), clock_timestamp())
+    RETURNING id
+  `;
+  const release = await sql<{ id: string }[]>`
+    INSERT INTO site_releases (publication_job_id, manifest) VALUES (${job[0]!.id}, '{}'::jsonb)
+    RETURNING id
+  `;
+  await recordReleaseMediaReferences(sql, Number(release[0]!.id), [photoId]);
+  const deleted = await app.inject({
+    method: 'DELETE',
+    url: `/api/admin/properties/${property.id}/photos/${photoId}`,
+    headers: { ...authHeaders(session, true), 'if-match': '"3"' },
+  });
+  assert.equal(deleted.statusCode, 200, deleted.body);
+  await publishDraft(sql, property.id);
+  const retained = await sql<{ retained_for_publication: boolean; gc_eligible_at: Date | null }[]>`
+    SELECT retained_for_publication, gc_eligible_at FROM property_media WHERE id = ${photoId}
+  `;
+  assert.equal(retained[0]?.retained_for_publication, true);
+  assert.equal(retained[0]?.gc_eligible_at, null);
+  await expireReleaseMediaReferences(sql, Number(release[0]!.id));
+  const eligible = await sql<{ retained_for_publication: boolean; gc_eligible_at: Date | null }[]>`
+    SELECT retained_for_publication, gc_eligible_at FROM property_media WHERE id = ${photoId}
+  `;
+  assert.equal(eligible[0]?.retained_for_publication, false);
+  assert.ok(eligible[0]?.gc_eligible_at);
+});
+
+test('reevaluates deferred GC when the last explicit release is removed', async () => {
+  const session = await authenticate();
+  const property = await createDraft(session);
+  await completeDraft(session, property);
+  const uploaded = await upload(session, property.id, 2, await png('#8338ec'));
+  assert.equal(uploaded.statusCode, 201, uploaded.body);
+  const photoId = uploaded.json().photo.id as string;
+  await publishDraft(sql, property.id);
+  const revision = await sql<{ draft_revision_id: string }[]>`
+    SELECT draft_revision_id FROM properties WHERE id = ${property.id}
+  `;
+  const job = await sql<{ id: string }[]>`
+    INSERT INTO publication_jobs (property_id, revision_id, status, started_at, finished_at)
+    VALUES (${property.id}, ${revision[0]!.draft_revision_id}, 'succeeded', clock_timestamp(), clock_timestamp())
+    RETURNING id
+  `;
+  const release = await sql<{ id: string }[]>`
+    INSERT INTO site_releases (publication_job_id, manifest) VALUES (${job[0]!.id}, '{}'::jsonb)
+    RETURNING id
+  `;
+  await recordReleaseMediaReferences(sql, Number(release[0]!.id), [photoId]);
+  const deleted = await app.inject({
+    method: 'DELETE',
+    url: `/api/admin/properties/${property.id}/photos/${photoId}`,
+    headers: { ...authHeaders(session, true), 'if-match': '"3"' },
+  });
+  assert.equal(deleted.statusCode, 200, deleted.body);
+  await publishDraft(sql, property.id);
+  await sql`DELETE FROM site_releases WHERE id = ${release[0]!.id}`;
+  const eligible = await sql<{ retained_for_publication: boolean; gc_eligible_at: Date | null }[]>`
+    SELECT retained_for_publication, gc_eligible_at FROM property_media WHERE id = ${photoId}
+  `;
+  assert.equal(eligible[0]?.retained_for_publication, false);
+  assert.ok(eligible[0]?.gc_eligible_at);
 });

@@ -67,3 +67,20 @@ test('atomically promotes staged originals with restrictive best-effort permissi
     assert.equal((await stat(finalPath)).mode & 0o777, 0o600);
   }
 });
+
+test('never overwrites an existing deterministic derivative and reports reuse', async () => {
+  const root = await temporaryDirectory();
+  const storage = new MediaStorage(root);
+  const hash = 'b'.repeat(64);
+  const finalPath = storage.publicDerivativePath('property-example', hash, 'cover');
+  const first = await storage.createStagingArea();
+  const second = await storage.createStagingArea();
+  const firstUpload = path.join(first.directory, 'cover.webp');
+  const secondUpload = path.join(second.directory, 'cover.webp');
+  await writeFile(firstUpload, 'canonical image');
+  await writeFile(secondUpload, 'new image must not replace canonical');
+
+  assert.deepEqual(await storage.promoteFile(firstUpload, finalPath, 0o644), { created: true });
+  assert.deepEqual(await storage.promoteFile(secondUpload, finalPath, 0o644), { created: false });
+  assert.equal(await readFile(finalPath, 'utf8'), 'canonical image');
+});

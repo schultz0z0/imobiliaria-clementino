@@ -57,7 +57,18 @@ const sendApiError = (
 
 const parseExpectedRevision = (header: string | string[] | undefined): number => {
   const value = Array.isArray(header) ? header[0] : header;
-  const normalized = value?.trim().replace(/^W\//, '').replace(/^"|"$/g, '');
+  const raw = value?.trim();
+  if (raw?.startsWith('W/')) {
+    throw new z.ZodError([
+      {
+        code: 'custom',
+        path: ['headers', 'if-match'],
+        message: 'Weak If-Match validators are not accepted for draft mutations.',
+        input: value,
+      },
+    ]);
+  }
+  const normalized = raw?.replace(/^"|"$/g, '');
   if (!normalized || !/^\d+$/.test(normalized)) {
     throw new z.ZodError([
       {
@@ -122,7 +133,7 @@ const handleRouteError = (reply: FastifyReply, error: unknown) => {
   return sendApiError(
     reply,
     500,
-    API_ERROR_CODES.CONFLICT,
+    API_ERROR_CODES.INTERNAL_ERROR,
     'The property media request could not be completed',
   );
 };
@@ -152,6 +163,14 @@ export const registerMediaRoutes = async (
     },
     async (request, reply) => {
       let staging: Awaited<ReturnType<MediaStorage['createStagingArea']>> | undefined;
+      const removeStaging = async (): Promise<void> => {
+        if (!staging) {
+          return;
+        }
+        const directory = staging.directory;
+        staging = undefined;
+        await storage.removeContained(directory);
+      };
       try {
         const { id } = propertyParamsSchema.parse(request.params);
         const expectedRevision = parseExpectedRevision(request.headers['if-match']);
@@ -237,13 +256,17 @@ export const registerMediaRoutes = async (
           byteSize,
           altText,
         });
+        await removeStaging();
         return reply.code(201).send(result);
       } catch (error) {
+        try {
+          await removeStaging();
+        } catch (cleanupError) {
+          return handleRouteError(reply, cleanupError);
+        }
         return handleRouteError(reply, error);
       } finally {
-        if (staging) {
-          await storage.removeContained(staging.directory);
-        }
+        await removeStaging();
       }
     },
   );

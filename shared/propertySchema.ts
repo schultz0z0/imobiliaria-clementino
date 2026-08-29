@@ -112,6 +112,9 @@ const pricingSchema = z.strictObject({
 const mediaSchema = z.strictObject({
   orderedPhotoIds: z.array(conciseText(1, 200)),
   coverPhotoId: conciseText(1, 200).optional(),
+  altTextByPhotoId: z
+    .record(z.string().uuid(), conciseText(5, 180))
+    .optional(),
 });
 
 const seoSchema = z.strictObject({
@@ -264,6 +267,16 @@ export const applySharedPropertyRefinements = (
   }
 
   const photoIds = property.media.orderedPhotoIds;
+  if (
+    property.media.altTextByPhotoId &&
+    Object.keys(property.media.altTextByPhotoId).some((photoId) => !photoIds.includes(photoId))
+  ) {
+    context.addIssue({
+      code: 'custom',
+      path: ['media', 'altTextByPhotoId'],
+      message: 'O texto alternativo deve pertencer a uma foto ordenada.',
+    });
+  }
   if (hasDuplicates(photoIds)) {
     context.addIssue({
       code: 'custom',

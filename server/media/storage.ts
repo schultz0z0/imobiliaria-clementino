@@ -1,5 +1,5 @@
 import { randomUUID } from 'node:crypto';
-import { chmod, mkdir, rename, rm, rmdir } from 'node:fs/promises';
+import { chmod, link, mkdir, rm, rmdir, unlink } from 'node:fs/promises';
 import path from 'node:path';
 
 export type MediaDerivative = 'cover' | 'gallery' | 'thumb';
@@ -95,7 +95,11 @@ export class MediaStorage {
     return { id, directory };
   }
 
-  async promoteFile(sourcePath: string, destinationPath: string, mode: number): Promise<void> {
+  async promoteFile(
+    sourcePath: string,
+    destinationPath: string,
+    mode: number,
+  ): Promise<{ created: boolean }> {
     const source = path.resolve(sourcePath);
     const destination = path.resolve(destinationPath);
     if (!source.startsWith(`${this.resolveContained('.staging')}${path.sep}`)) {
@@ -108,8 +112,19 @@ export class MediaStorage {
     const isPrivate = destination.startsWith(`${this.resolveContained('private')}${path.sep}`);
     await mkdir(directory, { recursive: true, mode: isPrivate ? 0o700 : 0o755 });
     await bestEffortChmod(directory, isPrivate ? 0o700 : 0o755);
-    await rename(source, destination);
+    try {
+      // `link` is an exclusive filesystem create: unlike rename it never
+      // replaces an immutable hash-addressed public asset under contention.
+      await link(source, destination);
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code === 'EEXIST') {
+        return { created: false };
+      }
+      throw error;
+    }
     await bestEffortChmod(destination, mode);
+    await unlink(source);
+    return { created: true };
   }
 
   async removeContained(targetPath: string): Promise<void> {
