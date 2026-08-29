@@ -144,6 +144,22 @@ export type PropertyListFilters = {
   state?: string;
   city?: string;
   district?: string;
+  sort: 'updated-desc' | 'updated-asc' | 'title-asc' | 'title-desc' | 'price-asc' | 'price-desc';
+};
+
+export type AdminPropertySummaryDto = {
+  id: string;
+  publicId: string;
+  reference: string;
+  slug: string;
+  status: PropertyStatus;
+  title: string;
+  location: { district: string; city: string; state: string };
+  classification: {
+    operations: Array<'sale' | 'rent' | 'seasonal' | 'auction'>;
+  };
+  firstPrice: number | null;
+  updatedAt: Date;
 };
 
 type PropertyAdminRow = {
@@ -160,6 +176,21 @@ type PropertyAdminRow = {
   created_at: Date;
   updated_at: Date;
   inactivated_at: Date | null;
+};
+
+type PropertySummaryRow = {
+  id: string;
+  public_id: string;
+  commercial_reference: string;
+  slug: string;
+  status: PropertyStatus;
+  title: string | null;
+  district: string | null;
+  city: string | null;
+  state: string | null;
+  operations: unknown;
+  first_price: string | number | null;
+  updated_at: Date;
 };
 
 type LockedPropertyRow = {
@@ -204,6 +235,56 @@ const toPropertyAdminDto = (row: PropertyAdminRow): PropertyAdminDto => ({
   updatedAt: row.updated_at,
   inactivatedAt: row.inactivated_at,
 });
+
+const propertySummaryColumns = `
+  properties.id,
+  properties.public_id,
+  properties.commercial_reference,
+  properties.slug,
+  properties.status,
+  draft_revision.payload #>> '{editorial,title}' AS title,
+  draft_revision.payload #>> '{privateAddress,district}' AS district,
+  draft_revision.payload #>> '{privateAddress,city}' AS city,
+  draft_revision.payload #>> '{privateAddress,state}' AS state,
+  draft_revision.payload #> '{classification,operations}' AS operations,
+  CASE draft_revision.payload #>> '{classification,operations,0}'
+    WHEN 'sale' THEN draft_revision.payload #>> '{pricing,sale}'
+    WHEN 'rent' THEN draft_revision.payload #>> '{pricing,rent}'
+    WHEN 'seasonal' THEN draft_revision.payload #>> '{pricing,seasonal}'
+    WHEN 'auction' THEN draft_revision.payload #>> '{pricing,auction}'
+    ELSE NULL
+  END AS first_price,
+  properties.updated_at
+`;
+
+const propertyFirstPriceExpression = `
+  CASE draft_revision.payload #>> '{classification,operations,0}'
+    WHEN 'sale' THEN (draft_revision.payload #>> '{pricing,sale}')::numeric
+    WHEN 'rent' THEN (draft_revision.payload #>> '{pricing,rent}')::numeric
+    WHEN 'seasonal' THEN (draft_revision.payload #>> '{pricing,seasonal}')::numeric
+    WHEN 'auction' THEN (draft_revision.payload #>> '{pricing,auction}')::numeric
+    ELSE NULL
+  END
+`;
+
+const toPropertySummaryDto = (row: PropertySummaryRow): AdminPropertySummaryDto => {
+  const operations = Array.isArray(row.operations)
+    ? row.operations.filter((operation): operation is AdminPropertySummaryDto['classification']['operations'][number] =>
+      ['sale', 'rent', 'seasonal', 'auction'].includes(String(operation)))
+    : [];
+  return {
+    id: row.id,
+    publicId: row.public_id,
+    reference: row.commercial_reference,
+    slug: row.slug,
+    status: row.status,
+    title: row.title?.trim() || 'Imóvel sem título',
+    location: { district: row.district ?? '', city: row.city ?? '', state: row.state ?? '' },
+    classification: { operations },
+    firstPrice: row.first_price === null ? null : Number(row.first_price),
+    updatedAt: row.updated_at,
+  };
+};
 
 export class PropertyServiceError extends Error {
   constructor(
@@ -391,7 +472,7 @@ export const listProperties = async (
   sql: Sql,
   filters: PropertyListFilters,
 ): Promise<{
-  items: PropertyAdminDto[];
+  items: AdminPropertySummaryDto[];
   pagination: { page: number; limit: number; total: number; pages: number };
 }> => {
   const search = filters.search?.trim() || null;
@@ -438,8 +519,8 @@ export const listProperties = async (
           ) ILIKE '%' || ${search} || '%'
         )
     `;
-    const rows = await transaction<PropertyAdminRow[]>`
-      SELECT ${transaction.unsafe(propertyColumns)}
+    const rows = await transaction<PropertySummaryRow[]>`
+      SELECT ${transaction.unsafe(propertySummaryColumns)}
       FROM properties
       JOIN property_revisions AS draft_revision
         ON draft_revision.id = properties.draft_revision_id
@@ -472,13 +553,20 @@ export const listProperties = async (
             draft_revision.payload #>> '{privateAddress,complement}'
           ) ILIKE '%' || ${search} || '%'
         )
-      ORDER BY properties.updated_at DESC, properties.id DESC
+      ORDER BY
+        CASE WHEN ${filters.sort} = 'updated-desc' THEN properties.updated_at END DESC NULLS LAST,
+        CASE WHEN ${filters.sort} = 'updated-asc' THEN properties.updated_at END ASC NULLS LAST,
+        CASE WHEN ${filters.sort} = 'title-asc' THEN lower(draft_revision.payload #>> '{editorial,title}') END ASC NULLS LAST,
+        CASE WHEN ${filters.sort} = 'title-desc' THEN lower(draft_revision.payload #>> '{editorial,title}') END DESC NULLS LAST,
+        CASE WHEN ${filters.sort} = 'price-asc' THEN ${transaction.unsafe(propertyFirstPriceExpression)} END ASC NULLS LAST,
+        CASE WHEN ${filters.sort} = 'price-desc' THEN ${transaction.unsafe(propertyFirstPriceExpression)} END DESC NULLS LAST,
+        properties.id DESC
       LIMIT ${filters.limit}
       OFFSET ${offset}
     `;
     const total = Number(counts[0]?.total ?? 0);
     return {
-      items: rows.map(toPropertyAdminDto),
+      items: rows.map(toPropertySummaryDto),
       pagination: {
         page: filters.page,
         limit: filters.limit,

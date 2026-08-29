@@ -4,44 +4,35 @@ import { JSDOM } from 'jsdom';
 import React, { act } from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
-import type { PropertyAdminApi, PropertyAdminDto, PropertyListResponse } from '../api/client.ts';
+import type { AdminPropertySummaryDto, PropertyAdminApi, PropertyAdminDto, PropertyListResponse, PublicationJobSummary } from '../api/client.ts';
 import { Dashboard } from './Dashboard.tsx';
 
-const makeProperty = (overrides: Partial<PropertyAdminDto> = {}): PropertyAdminDto => ({
+const makeProperty = (overrides: Partial<AdminPropertySummaryDto> = {}): AdminPropertySummaryDto => ({
   id: 'df7f12dc-e127-4e24-90bf-74ca905ad78c',
   publicId: 'CLI-0001',
-  commercialReference: 'REF-001',
+  reference: 'REF-001',
   slug: 'apartamento-copacabana',
   status: 'published',
-  revisionNumber: 3,
-  draftRevisionId: 3,
-  publishedRevisionId: 2,
-  draft: {
-    classification: { operations: ['sale'], type: 'apartment', subtype: 'standard' },
-    privateAddress: { state: 'RJ', city: 'Rio de Janeiro', district: 'Copacabana', street: 'Rua Barata Ribeiro' },
-    editorial: { title: 'Apartamento em Copacabana', reference: 'REF-001', featured: false },
-    pricing: { sale: 1_250_000 },
-    media: { orderedPhotoIds: [] },
-  },
-  published: null,
-  createdAt: '2026-08-20T12:00:00.000Z',
+  title: 'Apartamento em Copacabana',
+  location: { state: 'RJ', city: 'Rio de Janeiro', district: 'Copacabana' },
+  classification: { operations: ['sale'] },
+  firstPrice: 1_250_000,
   updatedAt: '2026-08-28T12:00:00.000Z',
-  inactivatedAt: null,
   ...overrides,
 });
 
-const response = (items: PropertyAdminDto[], total = items.length): PropertyListResponse => ({
+const response = (items: AdminPropertySummaryDto[], total = items.length): PropertyListResponse => ({
   items,
   pagination: { page: 1, limit: 20, total, pages: total ? 1 : 0 },
 });
 
-const createApi = (handler: PropertyAdminApi['listProperties']): PropertyAdminApi => ({
+const createApi = (handler: PropertyAdminApi['listProperties'], publication: PublicationJobSummary | null = { status: 'succeeded', queuedAt: '2026-08-28T11:55:00.000Z', finishedAt: '2026-08-28T12:00:00.000Z', property: { publicId: 'CLI-0001', reference: 'REF-001', slug: 'apartamento-copacabana', title: 'Apartamento em Copacabana', status: 'published' } }): PropertyAdminApi => ({
   listProperties: handler,
-  getLatestPublication: async () => ({ publication: { id: 12, status: 'succeeded', queuedAt: '2026-08-28T11:55:00.000Z', finishedAt: '2026-08-28T12:00:00.000Z' } }),
+  getLatestPublication: async () => ({ publication }),
   publishProperty: async () => ({ job: { id: 1, status: 'queued' } }),
-  inactivateProperty: async () => ({ property: makeProperty({ status: 'inactive' }), job: null }),
-  reactivateProperty: async () => ({ property: makeProperty(), job: null }),
-  duplicateProperty: async () => ({ property: makeProperty({ status: 'draft' }) }),
+  inactivateProperty: async () => ({ property: {} as PropertyAdminDto, job: null }),
+  reactivateProperty: async () => ({ property: {} as PropertyAdminDto, job: null }),
+  duplicateProperty: async () => ({ property: {} as PropertyAdminDto }),
 });
 
 const renderDashboard = async (api: PropertyAdminApi) => {
@@ -103,4 +94,18 @@ test('dashboard exposes loading, empty, error and retry states', async () => {
   assert.match(failing.container.textContent ?? '', /Nenhum imóvel cadastrado/);
   await act(async () => failing.root.unmount());
   Object.assign(globalThis, failing.previous);
+});
+
+test('dashboard describes an inactivation job as a site removal instead of a publication', async () => {
+  const publication: PublicationJobSummary = {
+    status: 'succeeded',
+    queuedAt: '2026-08-28T11:55:00.000Z',
+    finishedAt: '2026-08-28T12:00:00.000Z',
+    property: { publicId: 'CLI-0001', reference: 'REF-001', slug: 'apartamento-copacabana', title: 'Apartamento em Copacabana', status: 'inactive' },
+  };
+  const { container, root, previous } = await renderDashboard(createApi(async () => response([makeProperty({ status: 'inactive' })]), publication));
+  assert.match(container.textContent ?? '', /Retirada concluída/);
+  assert.doesNotMatch(container.textContent ?? '', /Publicada/);
+  await act(async () => root.unmount());
+  Object.assign(globalThis, previous);
 });

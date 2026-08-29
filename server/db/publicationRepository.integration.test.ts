@@ -10,6 +10,7 @@ import {
   completePublicationJob,
   enqueuePublicationJob,
   failPublicationJob,
+  getLatestPublicationSummary,
   getPublicationJobById,
   recordSuccessfulRelease,
 } from './publicationRepository.ts';
@@ -131,6 +132,36 @@ test('allows at most one queued or running publication job globally', async () =
     (error: unknown) =>
       typeof error === 'object' && error !== null && 'code' in error && error.code === '23505',
   );
+});
+
+test('latest publication identity comes from the exact job revision and rejects mismatches', async () => {
+  const first = await createQueuedProperty('latest-first');
+  await claimNextPublicationJob(sql);
+  await failPublicationJob(sql, first.job.id, 'expected test failure');
+  const latest = await createQueuedProperty('latest-second');
+
+  const summary = await getLatestPublicationSummary(sql);
+  assert.deepEqual(summary?.property, {
+    publicId: latest.property.publicId,
+    reference: latest.property.commercialReference,
+    slug: latest.property.slug,
+    title: 'Casa residencial perto da praia',
+    status: 'draft',
+  });
+  assert.equal(summary?.status, 'queued');
+
+  await claimNextPublicationJob(sql);
+  await failPublicationJob(sql, latest.job.id, 'expected test failure');
+  await assert.rejects(
+    sql`
+      INSERT INTO publication_jobs (property_id, revision_id)
+      VALUES (${first.property.id}, ${latest.property.revisionId})
+    `,
+    (error: unknown) => typeof error === 'object' && error !== null && 'code' in error && error.code === '23503',
+  );
+  const afterRejectedMismatch = await getLatestPublicationSummary(sql);
+  assert.equal(afterRejectedMismatch?.property.publicId, latest.property.publicId);
+  assert.equal(afterRejectedMismatch?.status, 'failed');
 });
 
 test('claims queued jobs atomically under concurrent workers', async () => {

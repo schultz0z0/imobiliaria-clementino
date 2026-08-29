@@ -2,43 +2,57 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { JSDOM } from 'jsdom';
 import React, { act } from 'react';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter, useLocation, useNavigate } from 'react-router-dom';
 
-import type { PropertyAdminApi, PropertyAdminDto, PropertyListQuery, PropertyListResponse } from '../api/client.ts';
+import type { AdminPropertySummaryDto, PropertyAdminApi, PropertyAdminDto, PropertyListQuery, PropertyListResponse } from '../api/client.ts';
 import { PropertyList } from './PropertyList.tsx';
 
-const property = (id: string, title: string, updatedAt: string, sale: number, status: PropertyAdminDto['status'] = 'published'): PropertyAdminDto => ({
+const property = (id: string, title: string, updatedAt: string, sale: number, status: AdminPropertySummaryDto['status'] = 'published'): AdminPropertySummaryDto => ({
   id,
   publicId: `CLI-${id.slice(0, 4)}`,
-  commercialReference: `REF-${id.slice(0, 4)}`,
+  reference: `REF-${id.slice(0, 4)}`,
   slug: title.toLowerCase().replaceAll(' ', '-'),
   status,
-  revisionNumber: 2,
-  draftRevisionId: 2,
-  publishedRevisionId: status === 'draft' ? null : 1,
-  draft: {
-    classification: { operations: ['sale'], type: 'apartment', subtype: 'standard' },
-    privateAddress: { state: 'RJ', city: 'Rio de Janeiro', district: 'Copacabana', street: 'Rua Dias Ferreira' },
-    editorial: { title, reference: `REF-${id.slice(0, 4)}`, featured: false },
-    pricing: { sale },
-    media: { orderedPhotoIds: [] },
-  },
-  published: null,
-  createdAt: '2026-08-20T12:00:00.000Z',
+  title,
+  location: { state: 'RJ', city: 'Rio de Janeiro', district: 'Copacabana' },
+  classification: { operations: ['sale'] },
+  firstPrice: sale,
   updatedAt,
-  inactivatedAt: status === 'inactive' ? '2026-08-29T12:00:00.000Z' : null,
 });
 
-const response = (items: PropertyAdminDto[]): PropertyListResponse => ({ items, pagination: { page: 1, limit: 100, total: items.length, pages: items.length ? 1 : 0 } });
+const detail = (summary: AdminPropertySummaryDto): PropertyAdminDto => ({
+  id: summary.id,
+  publicId: summary.publicId,
+  commercialReference: summary.reference,
+  slug: summary.slug,
+  status: summary.status,
+  revisionNumber: 1,
+  draftRevisionId: 1,
+  publishedRevisionId: summary.status === 'draft' ? null : 1,
+  draft: { editorial: { title: summary.title, reference: summary.reference }, media: { orderedPhotoIds: [] } },
+  published: null,
+  createdAt: summary.updatedAt,
+  updatedAt: summary.updatedAt,
+  inactivatedAt: summary.status === 'inactive' ? summary.updatedAt : null,
+});
 
-const renderList = async (api: PropertyAdminApi) => {
+const response = (items: AdminPropertySummaryDto[]): PropertyListResponse => ({ items, pagination: { page: 1, limit: 20, total: items.length, pages: items.length ? 1 : 0 } });
+
+const LocationProbe = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  return <><output data-location>{`${location.pathname}${location.search}`}</output><button type="button" data-history-back onClick={() => navigate(-1)}>Voltar histórico</button></>;
+};
+
+const renderList = async (api: PropertyAdminApi, entry = '/imoveis', previousEntry?: string) => {
   const dom = new JSDOM('<!doctype html><div id="root"></div>', { url: 'https://admin.clementinoimoveis.com.br/imoveis' });
   const previous = { document: globalThis.document, window: globalThis.window, HTMLElement: globalThis.HTMLElement, HTMLInputElement: globalThis.HTMLInputElement, HTMLSelectElement: globalThis.HTMLSelectElement, FormData: globalThis.FormData, IS_REACT_ACT_ENVIRONMENT: globalThis.IS_REACT_ACT_ENVIRONMENT };
   Object.assign(globalThis, { document: dom.window.document, window: dom.window, HTMLElement: dom.window.HTMLElement, HTMLInputElement: dom.window.HTMLInputElement, HTMLSelectElement: dom.window.HTMLSelectElement, FormData: dom.window.FormData, IS_REACT_ACT_ENVIRONMENT: true });
   const { createRoot } = await import('react-dom/client');
   const container = document.querySelector('#root')!;
   const root = createRoot(container);
-  await act(async () => { root.render(<MemoryRouter><PropertyList api={api} /></MemoryRouter>); await Promise.resolve(); await Promise.resolve(); });
+  const entries = previousEntry ? [previousEntry, entry] : [entry];
+  await act(async () => { root.render(<MemoryRouter initialEntries={entries} initialIndex={entries.length - 1}><PropertyList api={api} /><LocationProbe /></MemoryRouter>); await Promise.resolve(); await Promise.resolve(); });
   return { container, root, previous };
 };
 
@@ -52,9 +66,9 @@ test('list sends search and approved filters and sorts the returned properties',
     listProperties: async (query) => { calls.push(query); return response(items); },
     getLatestPublication: async () => ({ publication: null }),
     publishProperty: async () => ({ job: { id: 7, status: 'queued' } }),
-    inactivateProperty: async (id) => ({ property: items.find((item) => item.id === id)!, job: null }),
-    reactivateProperty: async (id) => ({ property: items.find((item) => item.id === id)!, job: null }),
-    duplicateProperty: async () => ({ property: items[0]! }),
+    inactivateProperty: async (id) => ({ property: detail(items.find((item) => item.id === id)!), job: null }),
+    reactivateProperty: async (id) => ({ property: detail(items.find((item) => item.id === id)!), job: null }),
+    duplicateProperty: async () => ({ property: detail(items[0]!) }),
   };
   const { container, root, previous } = await renderList(api);
   const set = (name: string, value: string) => {
@@ -71,12 +85,13 @@ test('list sends search and approved filters and sorts the returned properties',
     await Promise.resolve(); await Promise.resolve();
   });
   assert.deepEqual(calls.at(-1), {
-    page: 1, limit: 100, search: 'Copacabana REF-2222 CLI-2222 Rua Dias Ferreira', status: 'published', operation: 'sale', type: 'apartment', state: 'RJ', city: 'Rio de Janeiro', district: 'Copacabana',
+    page: 1, limit: 20, search: 'Copacabana REF-2222 CLI-2222 Rua Dias Ferreira', status: 'published', operation: 'sale', type: 'apartment', state: 'RJ', city: 'Rio de Janeiro', district: 'Copacabana', sort: 'updated-desc',
   });
   const sort = container.querySelector<HTMLSelectElement>('[name="sort"]')!;
   await act(async () => { sort.value = 'title-asc'; sort.dispatchEvent(new window.Event('change', { bubbles: true })); });
-  const titles = Array.from(container.querySelectorAll('[data-property-title]')).map((node) => node.textContent);
-  assert.deepEqual(titles, ['Alfa', 'Zulu']);
+  await act(async () => { await Promise.resolve(); await Promise.resolve(); });
+  assert.equal(calls.at(-1)?.sort, 'title-asc');
+  assert.match(container.querySelector('[data-location]')?.textContent ?? '', /sort=title-asc/);
   assert.doesNotMatch(container.textContent ?? '', /Imovelweb|desempenho|plano/i);
   await act(async () => root.unmount()); Object.assign(globalThis, previous);
 });
@@ -84,13 +99,14 @@ test('list sends search and approved filters and sorts the returned properties',
 test('list exposes view/edit and safe lifecycle actions without hover-only controls', async () => {
   const source = property('33333333-3333-4333-8333-333333333333', 'Leblon', '2026-08-29T12:00:00Z', 2_500_000);
   const calls: string[] = [];
+  let current = source;
   const api: PropertyAdminApi = {
-    listProperties: async () => response([source]),
+    listProperties: async () => response([current]),
     getLatestPublication: async () => ({ publication: null }),
     publishProperty: async (id) => { calls.push(`publish:${id}`); return { job: { id: 9, status: 'queued' } }; },
-    inactivateProperty: async (id) => { calls.push(`inactivate:${id}`); return { property: { ...source, status: 'inactive' }, job: null }; },
-    reactivateProperty: async (id) => { calls.push(`reactivate:${id}`); return { property: source, job: null }; },
-    duplicateProperty: async (id) => { calls.push(`duplicate:${id}`); return { property: { ...source, id: '44444444-4444-4444-8444-444444444444', status: 'draft' } }; },
+    inactivateProperty: async (id) => { calls.push(`inactivate:${id}`); current = { ...source, status: 'inactive' }; return { property: detail(current), job: null }; },
+    reactivateProperty: async (id) => { calls.push(`reactivate:${id}`); current = source; return { property: detail(source), job: null }; },
+    duplicateProperty: async (id) => { calls.push(`duplicate:${id}`); return { property: detail({ ...source, id: '44444444-4444-4444-8444-444444444444', status: 'draft' }) }; },
   };
   const { container, root, previous } = await renderList(api);
   const oldConfirm = window.confirm;
@@ -127,5 +143,106 @@ test('list has loading, empty, error and retry states', async () => {
   const retry = Array.from(container.querySelectorAll('button')).find((button) => /tentar novamente/i.test(button.textContent ?? ''))!;
   await act(async () => { retry.click(); await Promise.resolve(); await Promise.resolve(); });
   assert.match(container.textContent ?? '', /Nenhum imóvel encontrado/);
+  await act(async () => root.unmount()); Object.assign(globalThis, previous);
+});
+
+test('URL initializes every filter, sort and page while fetching only the current server page', async () => {
+  const calls: PropertyListQuery[] = [];
+  const item = property('55555555-5555-4555-8555-555555555555', 'Ipanema', '2026-08-29T12:00:00Z', 1_800_000);
+  const api: PropertyAdminApi = {
+    listProperties: async (query) => { calls.push(query); return { items: [item], pagination: { page: query.page ?? 1, limit: 20, total: 21, pages: 2 } }; },
+    getLatestPublication: async () => ({ publication: null }), publishProperty: async () => ({ job: { id: 1, status: 'queued' } }), inactivateProperty: async () => ({ property: detail(item), job: null }), reactivateProperty: async () => ({ property: detail(item), job: null }), duplicateProperty: async () => ({ property: detail(item) }),
+  };
+  const entry = '/imoveis?search=Ipanema&status=published&operation=sale&type=apartment&state=RJ&city=Rio+de+Janeiro&district=Ipanema&sort=title-desc&page=2';
+  const { container, root, previous } = await renderList(api, entry, '/imoveis?status=draft&sort=price-asc&page=1');
+  assert.equal(calls.length, 1);
+  assert.deepEqual(calls[0], { page: 2, limit: 20, search: 'Ipanema', status: 'published', operation: 'sale', type: 'apartment', state: 'RJ', city: 'Rio de Janeiro', district: 'Ipanema', sort: 'title-desc' });
+  assert.equal(container.querySelector<HTMLSelectElement>('[name="sort"]')!.value, 'title-desc');
+  assert.match(container.textContent ?? '', /Página 2 de 2/);
+  assert.ok(Array.from(container.querySelectorAll('button')).some((button) => /Página anterior/.test(button.getAttribute('aria-label') ?? '')));
+  await act(async () => { container.querySelector<HTMLButtonElement>('[data-history-back]')!.click(); await Promise.resolve(); await Promise.resolve(); });
+  assert.equal(calls.at(-1)?.status, 'draft');
+  assert.equal(calls.at(-1)?.sort, 'price-asc');
+  assert.equal(container.querySelector<HTMLSelectElement>('[name="status"]')!.value, 'draft');
+  await act(async () => root.unmount()); Object.assign(globalThis, previous);
+});
+
+test('successful mutations refetch the current versioned query instead of patching stale local cards', async () => {
+  const source = property('66666666-6666-4666-8666-666666666666', 'Botafogo', '2026-08-29T12:00:00Z', 1_100_000);
+  let listCalls = 0;
+  const api: PropertyAdminApi = {
+    listProperties: async () => { listCalls += 1; return response([source]); }, getLatestPublication: async () => ({ publication: null }),
+    publishProperty: async () => ({ job: { id: 2, status: 'queued' } }), inactivateProperty: async () => ({ property: detail({ ...source, status: 'inactive' }), job: null }), reactivateProperty: async () => ({ property: detail(source), job: null }), duplicateProperty: async () => ({ property: detail({ ...source, id: '77777777-7777-4777-8777-777777777777', status: 'draft' }) }),
+  };
+  const { container, root, previous } = await renderList(api);
+  const oldConfirm = window.confirm; window.confirm = () => true;
+  const publish = Array.from(container.querySelectorAll<HTMLButtonElement>('button')).find((button) => /^Publicar$/.test(button.textContent ?? ''))!;
+  await act(async () => { publish.click(); await Promise.resolve(); await Promise.resolve(); await Promise.resolve(); });
+  assert.equal(listCalls, 2);
+  assert.match(container.textContent ?? '', /Publicação solicitada/);
+  window.confirm = oldConfirm;
+  await act(async () => root.unmount()); Object.assign(globalThis, previous);
+});
+
+test('a slower obsolete request cannot replace the newest filtered page', async () => {
+  const oldItem = property('88888888-8888-4888-8888-888888888888', 'Resposta antiga', '2026-08-28T12:00:00Z', 800_000);
+  const newItem = property('99999999-9999-4999-8999-999999999999', 'Resposta atual', '2026-08-29T12:00:00Z', 900_000, 'draft');
+  let resolveOld!: (value: PropertyListResponse) => void;
+  const oldResponse = new Promise<PropertyListResponse>((resolve) => { resolveOld = resolve; });
+  let calls = 0;
+  const api: PropertyAdminApi = {
+    listProperties: async (query) => {
+      calls += 1;
+      return calls === 1 ? oldResponse : response(query.status === 'draft' ? [newItem] : [oldItem]);
+    },
+    getLatestPublication: async () => ({ publication: null }),
+    publishProperty: async () => ({ job: { id: 3, status: 'queued' } }),
+    inactivateProperty: async () => ({ property: detail(oldItem), job: null }),
+    reactivateProperty: async () => ({ property: detail(oldItem), job: null }),
+    duplicateProperty: async () => ({ property: detail(oldItem) }),
+  };
+  const { container, root, previous } = await renderList(api);
+  const status = container.querySelector<HTMLSelectElement>('[name="status"]')!;
+  await act(async () => {
+    status.value = 'draft';
+    status.dispatchEvent(new window.Event('change', { bubbles: true }));
+    container.querySelector<HTMLFormElement>('form')!.dispatchEvent(new window.Event('submit', { bubbles: true, cancelable: true }));
+    await Promise.resolve(); await Promise.resolve();
+  });
+  assert.match(container.textContent ?? '', /Resposta atual/);
+  await act(async () => { resolveOld(response([oldItem])); await Promise.resolve(); await Promise.resolve(); });
+  assert.match(container.textContent ?? '', /Resposta atual/);
+  assert.doesNotMatch(container.textContent ?? '', /Resposta antiga/);
+  await act(async () => root.unmount()); Object.assign(globalThis, previous);
+});
+
+test('a completed mutation refreshes the filters that are current at completion time', async () => {
+  const source = property('aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa', 'Origem', '2026-08-29T12:00:00Z', 1_000_000);
+  let finishPublish!: () => void;
+  const publishing = new Promise<{ job: { id: number; status: 'queued' } }>((resolve) => { finishPublish = () => resolve({ job: { id: 4, status: 'queued' } }); });
+  const calls: PropertyListQuery[] = [];
+  const api: PropertyAdminApi = {
+    listProperties: async (query) => { calls.push(query); return response([source]); },
+    getLatestPublication: async () => ({ publication: null }),
+    publishProperty: async () => publishing,
+    inactivateProperty: async () => ({ property: detail(source), job: null }),
+    reactivateProperty: async () => ({ property: detail(source), job: null }),
+    duplicateProperty: async () => ({ property: detail(source) }),
+  };
+  const { container, root, previous } = await renderList(api);
+  const oldConfirm = window.confirm; window.confirm = () => true;
+  const publish = Array.from(container.querySelectorAll<HTMLButtonElement>('button')).find((button) => /^Publicar$/.test(button.textContent ?? ''))!;
+  await act(async () => { publish.click(); await Promise.resolve(); });
+  const status = container.querySelector<HTMLSelectElement>('[name="status"]')!;
+  await act(async () => {
+    status.value = 'draft';
+    status.dispatchEvent(new window.Event('change', { bubbles: true }));
+    container.querySelector<HTMLFormElement>('form')!.dispatchEvent(new window.Event('submit', { bubbles: true, cancelable: true }));
+    await Promise.resolve(); await Promise.resolve();
+  });
+  await act(async () => { finishPublish(); await Promise.resolve(); await Promise.resolve(); await Promise.resolve(); });
+  assert.equal(calls.at(-1)?.status, 'draft');
+  assert.equal(calls.at(-1)?.sort, 'updated-desc');
+  window.confirm = oldConfirm;
   await act(async () => root.unmount()); Object.assign(globalThis, previous);
 });

@@ -34,6 +34,7 @@ const listQuerySchema = z.strictObject({
   state: z.string().trim().length(2).optional(),
   city: z.string().trim().min(1).max(100).optional(),
   district: z.string().trim().min(1).max(100).optional(),
+  sort: z.enum(['updated-desc', 'updated-asc', 'title-asc', 'title-desc', 'price-asc', 'price-desc']).default('updated-desc'),
 });
 
 const sendApiError = (

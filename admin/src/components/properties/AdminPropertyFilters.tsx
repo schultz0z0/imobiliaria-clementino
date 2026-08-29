@@ -25,7 +25,7 @@ export const AdminPropertyFilters = ({ initialValues, sort, onApply, onClear, on
       onSubmit={(event) => {
         event.preventDefault();
         const data = new window.FormData(event.currentTarget);
-        const filters: PropertyListQuery = { page: 1, limit: 100 };
+        const filters: PropertyListQuery = { page: 1, limit: 20 };
         const search = value(data, 'search');
         const status = value(data, 'status');
         const operation = value(data, 'operation');

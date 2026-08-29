@@ -356,6 +356,7 @@ test('remediates duplicate media when legacy 004 and 005 are already recorded', 
     assert.deepEqual(repaired.applied, [
       '006_media_release_gc_delete.sql',
       '007_media_duplicate_remediation.sql',
+      '008_publication_latest_index.sql',
     ]);
     const rows = await sql<{ id: string; removed_at: Date | null; position: number }[]>`
       SELECT id, removed_at, position FROM property_media WHERE property_id = ${property[0]!.id} ORDER BY id
@@ -437,6 +438,59 @@ test('remediates duplicate media when legacy 004 and 005 are already recorded', 
     const rerun = await migrate(sql, sourceDirectory);
     assert.equal(rerun.applied.length, 0);
     assert.ok(rerun.skipped.includes('007_media_duplicate_remediation.sql'));
+  } finally {
+    await rm(legacyDirectory, { recursive: true, force: true });
+  }
+});
+
+test('upgrades a populated 007 database with the latest-publication index idempotently', async () => {
+  const legacyDirectory = await mkdtemp(path.join(tmpdir(), 'clementino-007-recorded-'));
+  const sourceDirectory = path.resolve('server/migrations');
+  try {
+    for (const fileName of [
+      '001_admin_catalog.sql',
+      '002_serialize_publication_jobs.sql',
+      '003_admin_auth_security.sql',
+      '004_property_media_management.sql',
+      '005_media_release_references.sql',
+      '006_media_release_gc_delete.sql',
+      '007_media_duplicate_remediation.sql',
+    ]) {
+      await copyFile(path.join(sourceDirectory, fileName), path.join(legacyDirectory, fileName));
+    }
+    await sql.unsafe(`DROP SCHEMA public CASCADE; CREATE SCHEMA public`);
+    await migrate(sql, legacyDirectory);
+    const property = await sql<{ id: string }[]>`
+      INSERT INTO properties (public_id, commercial_reference, slug)
+      VALUES ('latest-index-upgrade', 'LATEST-INDEX', 'latest-index-upgrade') RETURNING id
+    `;
+    const revision = await sql<{ id: string }[]>`
+      INSERT INTO property_revisions (property_id, revision_number, payload)
+      VALUES (${property[0]!.id}, 1, '{"editorial":{"title":"Index upgrade"}}'::jsonb)
+      RETURNING id
+    `;
+    await sql`
+      UPDATE properties SET draft_revision_id = ${revision[0]!.id} WHERE id = ${property[0]!.id}
+    `;
+    await sql`
+      INSERT INTO publication_jobs (property_id, revision_id)
+      VALUES (${property[0]!.id}, ${revision[0]!.id})
+    `;
+
+    const upgraded = await migrate(sql, sourceDirectory);
+    assert.deepEqual(upgraded.applied, ['008_publication_latest_index.sql']);
+    const indexes = await sql<{ indexdef: string }[]>`
+      SELECT indexdef FROM pg_indexes
+      WHERE schemaname = 'public' AND indexname = 'publication_jobs_latest_idx'
+    `;
+    assert.equal(indexes.length, 1);
+    assert.match(indexes[0]!.indexdef, /\(queued_at DESC, id DESC\)/i);
+    const jobs = await sql<{ count: string }[]>`SELECT count(*)::text AS count FROM publication_jobs`;
+    assert.equal(jobs[0]?.count, '1');
+
+    const rerun = await migrate(sql, sourceDirectory);
+    assert.equal(rerun.applied.length, 0);
+    assert.ok(rerun.skipped.includes('008_publication_latest_index.sql'));
   } finally {
     await rm(legacyDirectory, { recursive: true, force: true });
   }

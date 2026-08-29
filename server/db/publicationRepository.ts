@@ -257,14 +257,66 @@ export const getPublicationJobById = async (
   return rows[0] ? toPublicationJobRecord(rows[0]) : null;
 };
 
-export const getLatestPublicationJob = async (
+export type LatestPublicationSummary = {
+  status: PublicationStatus;
+  queuedAt: Date;
+  startedAt: Date | null;
+  finishedAt: Date | null;
+  property: { publicId: string; reference: string; slug: string; title: string; status: 'draft' | 'published' | 'inactive' };
+};
+
+type LatestPublicationRow = {
+  status: PublicationStatus;
+  queued_at: Date;
+  started_at: Date | null;
+  finished_at: Date | null;
+  public_id: string | null;
+  commercial_reference: string | null;
+  slug: string | null;
+  title: string | null;
+  property_status: 'draft' | 'published' | 'inactive' | null;
+};
+
+export const getLatestPublicationSummary = async (
   sql: SqlExecutor,
-): Promise<PublicationJobRecord | null> => {
-  const rows = await sql<PublicationJobRow[]>`
-    SELECT ${sql.unsafe(jobColumns)}
-    FROM publication_jobs
-    ORDER BY queued_at DESC, id DESC
-    LIMIT 1
+): Promise<LatestPublicationSummary | null> => {
+  const rows = await sql<LatestPublicationRow[]>`
+    WITH latest_job AS MATERIALIZED (
+      SELECT status, queued_at, started_at, finished_at, property_id, revision_id
+      FROM publication_jobs
+      ORDER BY queued_at DESC, id DESC
+      LIMIT 1
+    )
+    SELECT
+      jobs.status,
+      jobs.queued_at,
+      jobs.started_at,
+      jobs.finished_at,
+      properties.public_id,
+      properties.commercial_reference,
+      properties.slug,
+      properties.status AS property_status,
+      revisions.payload #>> '{editorial,title}' AS title
+    FROM latest_job AS jobs
+    LEFT JOIN properties ON properties.id = jobs.property_id
+    LEFT JOIN property_revisions AS revisions
+      ON revisions.id = jobs.revision_id AND revisions.property_id = jobs.property_id
   `;
-  return rows[0] ? toPublicationJobRecord(rows[0]) : null;
+  const row = rows[0];
+  if (!row || !row.public_id || !row.commercial_reference || !row.slug || !row.title?.trim() || !row.property_status) {
+    return null;
+  }
+  return {
+    status: row.status,
+    queuedAt: row.queued_at,
+    startedAt: row.started_at,
+    finishedAt: row.finished_at,
+    property: {
+      publicId: row.public_id,
+      reference: row.commercial_reference,
+      slug: row.slug,
+      title: row.title.trim(),
+      status: row.property_status,
+    },
+  };
 };

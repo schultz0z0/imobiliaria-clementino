@@ -1,14 +1,20 @@
 import { AlertCircle, Building2, Clock3, FilePenLine, Plus, RefreshCw, Rocket } from 'lucide-react';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { adminApi, type PropertyAdminApi, type PropertyAdminDto, type PropertyStatus, type PublicationJobSummary } from '../api/client.ts';
+import { adminApi, type AdminPropertySummaryDto, type PropertyAdminApi, type PropertyStatus, type PublicationJobSummary } from '../api/client.ts';
 
-type DashboardData = { totals: Record<PropertyStatus, number>; recent: PropertyAdminDto[]; latestPublished: PropertyAdminDto | null; latestPublication: PublicationJobSummary | null };
+type DashboardData = { totals: Record<PropertyStatus, number>; recent: AdminPropertySummaryDto[]; latestPublication: PublicationJobSummary | null };
 const statusCards: Array<{ status: PropertyStatus; label: string; description: string }> = [
   { status: 'published', label: 'Publicados', description: 'Visíveis no catálogo' },
   { status: 'draft', label: 'Rascunhos', description: 'Aguardando revisão' },
   { status: 'inactive', label: 'Inativos', description: 'Retirados do catálogo' },
 ];
+const publicationStatusLabel = (publication: PublicationJobSummary) => {
+  if (publication.property.status === 'inactive') {
+    return ({ queued: 'Retirada na fila', running: 'Retirada em processamento', succeeded: 'Retirada concluída', failed: 'Retirada falhou' } as const)[publication.status];
+  }
+  return ({ queued: 'Na fila', running: 'Processando', succeeded: 'Publicada', failed: 'Falhou' } as const)[publication.status];
+};
 const formatDate = (value: string) => new Intl.DateTimeFormat('pt-BR', { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(value));
 
 export const Dashboard = ({ api = adminApi }: { api?: PropertyAdminApi }) => {
@@ -25,7 +31,7 @@ export const Dashboard = ({ api = adminApi }: { api?: PropertyAdminApi }) => {
         api.listProperties({ page: 1, limit: 4 }),
         api.getLatestPublication(),
       ]);
-      setData({ totals: { draft: drafts.pagination.total, published: published.pagination.total, inactive: inactive.pagination.total }, recent: recent.items, latestPublished: published.items[0] ?? null, latestPublication: latestPublication.publication });
+      setData({ totals: { draft: drafts.pagination.total, published: published.pagination.total, inactive: inactive.pagination.total }, recent: recent.items, latestPublication: latestPublication.publication });
       setState('ready');
     } catch { setState('error'); }
   }, [api]);
@@ -41,8 +47,8 @@ export const Dashboard = ({ api = adminApi }: { api?: PropertyAdminApi }) => {
       {total === 0 ? <div className="empty-state"><Building2 aria-hidden="true" /><h2>Nenhum imóvel cadastrado</h2><p>Use “Cadastrar imóvel” para criar o primeiro rascunho do catálogo.</p></div> : <>
         <div className="dashboard-stats" aria-label="Totais por status">{statusCards.map((card) => <Link key={card.status} className={`stat-card stat-${card.status}`} to={`/imoveis?status=${card.status}`}><span>{card.label}</span><strong>{data!.totals[card.status]}</strong><small>{card.description}</small></Link>)}</div>
         <div className="dashboard-grid">
-          <section className="content-card" aria-labelledby="latest-publication-title"><div className="section-title-row"><div><p className="eyebrow">Site público</p><h2 id="latest-publication-title">Última publicação</h2></div><Rocket aria-hidden="true" /></div>{data!.latestPublication ? <div className="publication-summary"><span className={`status-badge publication-${data!.latestPublication.status}`}>{({ queued: 'Na fila', running: 'Processando', succeeded: 'Publicada', failed: 'Falhou' } as const)[data!.latestPublication.status]}</span><strong>{data!.latestPublished?.draft.editorial?.title ?? `Publicação #${data!.latestPublication.id}`}</strong><p>{data!.latestPublication.finishedAt ? `Finalizada em ${formatDate(data!.latestPublication.finishedAt)}.` : `Solicitada em ${data!.latestPublication.queuedAt ? formatDate(data!.latestPublication.queuedAt) : 'data não informada'}.`}</p><small>O site só muda depois que a publicação termina e todas as validações passam.</small></div> : <div className="inline-empty"><Clock3 aria-hidden="true" /><p>Ainda não há uma publicação processada.</p></div>}</section>
-          <section className="content-card" aria-labelledby="recent-properties-title"><div className="section-title-row"><div><p className="eyebrow">Atividade</p><h2 id="recent-properties-title">Alterados recentemente</h2></div><FilePenLine aria-hidden="true" /></div><ul className="recent-list">{data!.recent.map((property) => <li key={property.id}><Link to={`/imoveis/${property.id}/editar`}><span><strong>{property.draft.editorial?.title ?? 'Imóvel sem título'}</strong><small>{property.commercialReference} · {property.draft.privateAddress?.district ?? 'Localização não informada'}</small></span><time dateTime={property.updatedAt}>{formatDate(property.updatedAt)}</time></Link></li>)}</ul><Link className="text-link" to="/imoveis">Ver todos os imóveis</Link></section>
+          <section className="content-card" aria-labelledby="latest-publication-title"><div className="section-title-row"><div><p className="eyebrow">Site público</p><h2 id="latest-publication-title">Última publicação</h2></div><Rocket aria-hidden="true" /></div>{data!.latestPublication ? <div className="publication-summary"><span className={`status-badge publication-${data!.latestPublication.status}`}>{publicationStatusLabel(data!.latestPublication)}</span><strong>{data!.latestPublication.property.title}</strong><p>{data!.latestPublication.finishedAt ? `Finalizada em ${formatDate(data!.latestPublication.finishedAt)}.` : `Solicitada em ${data!.latestPublication.queuedAt ? formatDate(data!.latestPublication.queuedAt) : 'data não informada'}.`}</p><small>{data!.latestPublication.property.reference} · O site só muda depois que a solicitação termina e todas as validações passam.</small></div> : <div className="inline-empty"><Clock3 aria-hidden="true" /><p>Ainda não há uma publicação processada.</p></div>}</section>
+          <section className="content-card" aria-labelledby="recent-properties-title"><div className="section-title-row"><div><p className="eyebrow">Atividade</p><h2 id="recent-properties-title">Alterados recentemente</h2></div><FilePenLine aria-hidden="true" /></div><ul className="recent-list">{data!.recent.map((property) => <li key={property.id}><Link to={`/imoveis/${property.id}/editar`}><span><strong>{property.title}</strong><small>{property.reference} · {property.location.district || 'Localização não informada'}</small></span><time dateTime={property.updatedAt}>{formatDate(property.updatedAt)}</time></Link></li>)}</ul><Link className="text-link" to="/imoveis">Ver todos os imóveis</Link></section>
         </div>
       </>}
     </section>

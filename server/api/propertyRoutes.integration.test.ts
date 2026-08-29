@@ -273,8 +273,8 @@ test('uses null only to clear optional draft fields and clears coordinate pairs 
     publicLocation: {
       label: 'Bela Vista, Sao Paulo - SP',
       precision: 'approximate',
-      latitude: -23.551,
-      longitude: -46.646,
+      latitude: -23.559,
+      longitude: -46.654,
     },
     pricing: { sale: 850_000, condominium: 900, iptu: 210 },
     media: { orderedPhotoIds: ['photo-1'], coverPhotoId: 'photo-1' },
@@ -481,7 +481,7 @@ test('rejects unknown and prototype-pollution fields without creating revisions'
   assert.equal(revisions[0]?.count, '1');
 });
 
-test('lists with bounded pagination, stable ordering, private search, and canonical filters', async () => {
+test('lists sanitized summaries with bounded pagination, server sorting, private search, and canonical filters', async () => {
   const session = await authenticate();
   const target = await createDraft(session);
   const targetPayload = validProperty(target.commercialReference);
@@ -529,8 +529,18 @@ test('lists with bounded pagination, stable ordering, private search, and canoni
   });
   assert.equal(filtered.statusCode, 200, filtered.body);
   assert.equal(filtered.json().items.length, 1);
-  assert.equal(filtered.json().items[0].id, target.id);
-  assert.equal(filtered.json().items[0].draft.privateAddress.street, 'Avenida Paulista');
+  const summary = filtered.json().items[0];
+  assert.equal(summary.id, target.id);
+  assert.equal(summary.publicId, target.publicId);
+  assert.equal(summary.reference, target.commercialReference);
+  assert.equal(summary.title, targetPayload.editorial.title);
+  assert.deepEqual(summary.location, { district: 'Bela Vista', city: 'Sao Paulo', state: 'SP' });
+  assert.deepEqual(summary.classification, { operations: ['sale'] });
+  assert.equal(summary.firstPrice, 850_000);
+  for (const forbidden of ['draft', 'published', 'privateAddress', 'publicLocation', 'description', 'pricing', 'facts', 'features', 'media', 'seo']) {
+    assert.equal(forbidden in summary, false, forbidden);
+  }
+  assert.doesNotMatch(JSON.stringify(summary), /Avenida Paulista|1578|complement|latitude|longitude|original|storage|imovelweb/i);
   assert.deepEqual(filtered.json().pagination, { page: 1, limit: 20, total: 1, pages: 1 });
 
   for (const search of [
@@ -567,6 +577,31 @@ test('lists with bounded pagination, stable ordering, private search, and canoni
     repeatedAgain.json().items.map(({ id }: { id: string }) => id),
   );
 
+  const titleSorted = await app.inject({
+    method: 'GET',
+    url: '/api/admin/properties?sort=title-asc&page=1&limit=20',
+    headers: authHeaders(session),
+  });
+  assert.equal(titleSorted.statusCode, 200, titleSorted.body);
+  assert.deepEqual(titleSorted.json().items.map(({ title }: { title: string }) => title), [
+    'Apartamento ensolarado na Bela Vista',
+    'Casa residencial perto da praia',
+  ]);
+  const priceSorted = await app.inject({
+    method: 'GET',
+    url: '/api/admin/properties?sort=price-asc&page=1&limit=1',
+    headers: authHeaders(session),
+  });
+  assert.equal(priceSorted.statusCode, 200, priceSorted.body);
+  assert.equal(priceSorted.json().items[0].firstPrice, 6_500);
+  assert.deepEqual(priceSorted.json().pagination, { page: 1, limit: 1, total: 2, pages: 2 });
+  const secondPage = await app.inject({
+    method: 'GET',
+    url: '/api/admin/properties?sort=price-asc&page=2&limit=1',
+    headers: authHeaders(session),
+  });
+  assert.equal(secondPage.json().items[0].firstPrice, 850_000);
+
   const unbounded = await app.inject({
     method: 'GET',
     url: '/api/admin/properties?limit=1000',
@@ -574,6 +609,14 @@ test('lists with bounded pagination, stable ordering, private search, and canoni
   });
   assert.equal(unbounded.statusCode, 400);
   assert.equal(unbounded.json().error.code, API_ERROR_CODES.VALIDATION_FAILED);
+
+  const invalidSort = await app.inject({
+    method: 'GET',
+    url: '/api/admin/properties?sort=private-address-asc',
+    headers: authHeaders(session),
+  });
+  assert.equal(invalidSort.statusCode, 400);
+  assert.equal(invalidSort.json().error.code, API_ERROR_CODES.VALIDATION_FAILED);
 });
 
 test('duplicates canonical content as a distinct media-free draft without publication history', async () => {

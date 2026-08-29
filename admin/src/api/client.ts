@@ -39,6 +39,19 @@ export type PropertyAdminDto = {
   inactivatedAt: string | null;
 };
 
+export type AdminPropertySummaryDto = {
+  id: string;
+  publicId: string;
+  reference: string;
+  slug: string;
+  status: PropertyStatus;
+  title: string;
+  location: { district: string; city: string; state: string };
+  classification: { operations: PropertyOperation[] };
+  firstPrice: number | null;
+  updatedAt: string;
+};
+
 export type PropertyListQuery = {
   page?: number;
   limit?: number;
@@ -49,26 +62,28 @@ export type PropertyListQuery = {
   state?: string;
   city?: string;
   district?: string;
+  sort?: 'updated-desc' | 'updated-asc' | 'title-asc' | 'title-desc' | 'price-asc' | 'price-desc';
 };
 
 export type PropertyListResponse = {
-  items: PropertyAdminDto[];
+  items: AdminPropertySummaryDto[];
   pagination: { page: number; limit: number; total: number; pages: number };
 };
 
 export type PublicationJobSummary = {
-  id: number;
   status: 'queued' | 'running' | 'succeeded' | 'failed';
   queuedAt?: string;
   startedAt?: string | null;
   finishedAt?: string | null;
+  property: { publicId: string; reference: string; slug: string; title: string; status: PropertyStatus };
 };
-export type PropertyLifecycleResponse = { property: PropertyAdminDto; job: PublicationJobSummary | null };
+export type PublicationMutationJob = { id: number; status: 'queued' | 'running' | 'succeeded' | 'failed' };
+export type PropertyLifecycleResponse = { property: PropertyAdminDto; job: PublicationMutationJob | null };
 
 export type PropertyAdminApi = {
   listProperties: (query?: PropertyListQuery) => Promise<PropertyListResponse>;
   getLatestPublication: () => Promise<{ publication: PublicationJobSummary | null }>;
-  publishProperty: (id: string) => Promise<{ job: PublicationJobSummary }>;
+  publishProperty: (id: string) => Promise<{ job: PublicationMutationJob }>;
   inactivateProperty: (id: string) => Promise<PropertyLifecycleResponse>;
   reactivateProperty: (id: string) => Promise<PropertyLifecycleResponse>;
   duplicateProperty: (id: string) => Promise<{ property: PropertyAdminDto }>;
@@ -167,7 +182,7 @@ export class AdminApiClient implements AuthApi, PropertyAdminApi {
     return this.request('/publications/latest');
   }
 
-  publishProperty(id: string): Promise<{ job: PublicationJobSummary }> {
+  publishProperty(id: string): Promise<{ job: PublicationMutationJob }> {
     return this.request(`/properties/${encodeURIComponent(id)}/publish`, { method: 'POST', body: '{}' });
   }
 
