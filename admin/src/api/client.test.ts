@@ -69,3 +69,38 @@ test('only a real 401 emits expiration; semantic password failures preserve the 
   assert.equal(expirations, 1);
   globalThis.fetch = previousFetch;
 });
+
+test('property queries and lifecycle requests use the typed admin endpoints with CSRF', async () => {
+  const dom = new JSDOM('', { url: 'https://admin.clementinoimoveis.com.br/' });
+  const previousDocument = globalThis.document;
+  const previousFetch = globalThis.fetch;
+  globalThis.document = dom.window.document;
+  document.cookie = 'clementino_admin_csrf=property-csrf; Path=/; SameSite=Strict';
+  const requests: Request[] = [];
+  globalThis.fetch = async (input, init) => {
+    requests.push(new Request(new URL(String(input), dom.window.location.href), init));
+    const path = String(input);
+    if (path.includes('/publications/latest')) return Response.json({ publication: null });
+    if (path.includes('/duplicate')) return Response.json({ property: { id: 'copy' } }, { status: 201 });
+    if (path.includes('/publish')) return Response.json({ job: { id: 8, status: 'queued' } }, { status: 202 });
+    if (path.includes('/inactivate') || path.includes('/reactivate')) return Response.json({ property: { id: 'one' }, job: null });
+    return Response.json({ items: [], pagination: { page: 1, limit: 100, total: 0, pages: 0 } });
+  };
+  const client = new AdminApiClient();
+  await client.listProperties({ page: 1, limit: 100, search: 'Leblon REF-10', status: 'published', state: 'RJ' });
+  await client.getLatestPublication();
+  await client.publishProperty('one');
+  await client.inactivateProperty('one');
+  await client.reactivateProperty('one');
+  await client.duplicateProperty('one');
+  assert.match(requests[0]!.url, /search=Leblon(?:\+|%20)REF-10/);
+  assert.match(requests[0]!.url, /status=published/);
+  assert.match(requests[0]!.url, /state=RJ/);
+  assert.match(requests[1]!.url, /\/publications\/latest$/);
+  for (const request of requests.slice(2)) {
+    assert.equal(request.method, 'POST');
+    assert.equal(request.headers.get('x-csrf-token'), 'property-csrf');
+  }
+  globalThis.document = previousDocument;
+  globalThis.fetch = previousFetch;
+});

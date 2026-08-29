@@ -10,6 +10,7 @@ import {
 } from '../db/client.ts';
 import { registerPropertyRoutes } from './propertyRoutes.ts';
 import { registerLocationRoutes, type LocationRouteOptions } from './locationRoutes.ts';
+import { registerPublicationRoutes } from './publicationRoutes.ts';
 
 export type CreateServerOptions = {
   sql?: Sql;
@@ -32,6 +33,7 @@ export const createServer = (options: CreateServerOptions = {}) => {
   app.get('/health', async () => ({ status: 'ok' }));
   registerAuthRoutes(app, sql, environment, options.auth);
   app.register(async (propertyApp) => registerPropertyRoutes(propertyApp, sql));
+  app.register(async (publicationApp) => registerPublicationRoutes(publicationApp, sql));
   app.register(async (locationApp) =>
     registerLocationRoutes(locationApp, sql, { ...options.location, environment }),
   );

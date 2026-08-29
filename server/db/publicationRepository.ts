@@ -256,3 +256,15 @@ export const getPublicationJobById = async (
   `;
   return rows[0] ? toPublicationJobRecord(rows[0]) : null;
 };
+
+export const getLatestPublicationJob = async (
+  sql: SqlExecutor,
+): Promise<PublicationJobRecord | null> => {
+  const rows = await sql<PublicationJobRow[]>`
+    SELECT ${sql.unsafe(jobColumns)}
+    FROM publication_jobs
+    ORDER BY queued_at DESC, id DESC
+    LIMIT 1
+  `;
+  return rows[0] ? toPublicationJobRecord(rows[0]) : null;
+};

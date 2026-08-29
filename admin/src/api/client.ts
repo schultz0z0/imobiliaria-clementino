@@ -3,6 +3,77 @@ const CSRF_COOKIE_NAME = 'clementino_admin_csrf';
 export type SessionState = { authenticated: boolean; mustChangePassword: boolean };
 export type AuthResult = { mustChangePassword: boolean };
 
+export type PropertyStatus = 'draft' | 'published' | 'inactive';
+export type PropertyOperation = 'sale' | 'rent' | 'seasonal' | 'auction';
+export type PropertyType = 'apartment' | 'house' | 'commercial' | 'rural' | 'land';
+
+export type AdminPropertyDraftDto = {
+  classification?: { operations?: PropertyOperation[]; type?: PropertyType; subtype?: string };
+  privateAddress?: {
+    postalCode?: string;
+    state?: string;
+    city?: string;
+    district?: string;
+    street?: string;
+    number?: string;
+    complement?: string;
+  };
+  editorial?: { title?: string; reference?: string; featured?: boolean };
+  pricing?: Partial<Record<PropertyOperation | 'condominium' | 'iptu', number>>;
+  media?: { orderedPhotoIds?: string[]; coverPhotoId?: string };
+};
+
+export type PropertyAdminDto = {
+  id: string;
+  publicId: string;
+  commercialReference: string;
+  slug: string;
+  status: PropertyStatus;
+  revisionNumber: number;
+  draftRevisionId: number;
+  publishedRevisionId: number | null;
+  draft: AdminPropertyDraftDto;
+  published: unknown | null;
+  createdAt: string;
+  updatedAt: string;
+  inactivatedAt: string | null;
+};
+
+export type PropertyListQuery = {
+  page?: number;
+  limit?: number;
+  search?: string;
+  status?: PropertyStatus;
+  operation?: PropertyOperation;
+  type?: PropertyType;
+  state?: string;
+  city?: string;
+  district?: string;
+};
+
+export type PropertyListResponse = {
+  items: PropertyAdminDto[];
+  pagination: { page: number; limit: number; total: number; pages: number };
+};
+
+export type PublicationJobSummary = {
+  id: number;
+  status: 'queued' | 'running' | 'succeeded' | 'failed';
+  queuedAt?: string;
+  startedAt?: string | null;
+  finishedAt?: string | null;
+};
+export type PropertyLifecycleResponse = { property: PropertyAdminDto; job: PublicationJobSummary | null };
+
+export type PropertyAdminApi = {
+  listProperties: (query?: PropertyListQuery) => Promise<PropertyListResponse>;
+  getLatestPublication: () => Promise<{ publication: PublicationJobSummary | null }>;
+  publishProperty: (id: string) => Promise<{ job: PublicationJobSummary }>;
+  inactivateProperty: (id: string) => Promise<PropertyLifecycleResponse>;
+  reactivateProperty: (id: string) => Promise<PropertyLifecycleResponse>;
+  duplicateProperty: (id: string) => Promise<{ property: PropertyAdminDto }>;
+};
+
 export type AuthApi = {
   getSession: () => Promise<SessionState>;
   login: (username: string, password: string) => Promise<AuthResult>;
@@ -33,7 +104,7 @@ const getErrorCode = (value: unknown): string | undefined => {
   return typeof code === 'string' ? code : undefined;
 };
 
-export class AdminApiClient implements AuthApi {
+export class AdminApiClient implements AuthApi, PropertyAdminApi {
   private readonly unauthorizedHandlers = new Set<() => void>();
 
   constructor(private readonly baseUrl = '/api/admin') {}
@@ -81,6 +152,35 @@ export class AdminApiClient implements AuthApi {
 
   logout(): Promise<void> {
     return this.request('/auth/logout', { method: 'POST' });
+  }
+
+  listProperties(query: PropertyListQuery = {}): Promise<PropertyListResponse> {
+    const search = new URLSearchParams();
+    for (const [key, value] of Object.entries(query)) {
+      if (value !== undefined && value !== '') search.set(key, String(value));
+    }
+    const suffix = search.size ? `?${search.toString()}` : '';
+    return this.request(`/properties${suffix}`);
+  }
+
+  getLatestPublication(): Promise<{ publication: PublicationJobSummary | null }> {
+    return this.request('/publications/latest');
+  }
+
+  publishProperty(id: string): Promise<{ job: PublicationJobSummary }> {
+    return this.request(`/properties/${encodeURIComponent(id)}/publish`, { method: 'POST', body: '{}' });
+  }
+
+  inactivateProperty(id: string): Promise<PropertyLifecycleResponse> {
+    return this.request(`/properties/${encodeURIComponent(id)}/inactivate`, { method: 'POST', body: '{}' });
+  }
+
+  reactivateProperty(id: string): Promise<PropertyLifecycleResponse> {
+    return this.request(`/properties/${encodeURIComponent(id)}/reactivate`, { method: 'POST', body: '{}' });
+  }
+
+  duplicateProperty(id: string): Promise<{ property: PropertyAdminDto }> {
+    return this.request(`/properties/${encodeURIComponent(id)}/duplicate`, { method: 'POST', body: '{}' });
   }
 }
 
