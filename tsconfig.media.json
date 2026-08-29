@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "lib": ["ES2022"],
+    "types": ["node"],
+    "strict": true
+  },
+  "files": [
+    "server/api/mediaRoutes.ts",
+    "server/media/imageProcessor.ts",
+    "server/media/mediaService.ts",
+    "server/media/storage.ts"
+  ],
+  "include": []
+}

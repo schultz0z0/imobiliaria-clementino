@@ -14,6 +14,8 @@ export type CreateServerOptions = {
   sql?: Sql;
   environment?: string;
   auth?: AuthOptions;
+  mediaRoot?: string;
+  mediaMaxImageBytes?: number;
   logger?: FastifyServerOptions['logger'];
 };
 
@@ -28,6 +30,15 @@ export const createServer = (options: CreateServerOptions = {}) => {
   app.get('/health', async () => ({ status: 'ok' }));
   registerAuthRoutes(app, sql, environment, options.auth);
   app.register(async (propertyApp) => registerPropertyRoutes(propertyApp, sql));
+  app.register(async (mediaApp) => {
+    const { registerMediaRoutes } = await import('./mediaRoutes.ts');
+    await registerMediaRoutes(
+      mediaApp,
+      sql,
+      options.mediaRoot ?? process.env.MEDIA_ROOT ?? '/data/media',
+      options.mediaMaxImageBytes,
+    );
+  });
 
   if (ownsSql) {
     app.addHook('onClose', closePostgresClient);
