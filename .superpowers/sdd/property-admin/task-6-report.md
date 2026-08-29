@@ -151,3 +151,23 @@ original pass and was not claimed as a current validation target here.
   preserves its active storage state, makes the duplicate eligible, and allows
   the canonical row to become eligible after publication moves and the release
   expires. The migration rerun is skipped.
+
+## Fix round 4 — duplicate-only release references
+
+- `007_media_duplicate_remediation.sql` now materializes the desired release
+  references by `(release_id, canonical_id)` before it deletes any duplicate
+  reference. It groups every source timestamp to the earliest value, deletes
+  only rows whose `media_id` is in the duplicate mapping, then upserts the
+  canonical references while retaining the earliest timestamp across a
+  pre-existing canonical row and every duplicate source.
+- The recorded-004/005 fixture now includes one active release with two
+  duplicate references and no canonical reference. Migration 007 produces one
+  canonical reference with the earliest source timestamp, retains the
+  canonical media, makes both removed duplicates GC eligible, and remains
+  skipped on rerun.
+
+### Fix round 4 validation
+
+- Native isolated PostgreSQL on `127.0.0.1:55439`:
+  `server/db/migrate.integration.test.ts` — 4 passed.
+- `npm run lint` — exited 0.

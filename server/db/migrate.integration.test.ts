@@ -271,6 +271,7 @@ test('remediates duplicate media when legacy 004 and 005 are already recorded', 
   const sourceDirectory = path.resolve('server/migrations');
   const canonicalId = '44444444-4444-4444-8444-444444444444';
   const duplicateId = '55555555-5555-4555-8555-555555555555';
+  const secondDuplicateId = '66666666-6666-4666-8666-666666666666';
   try {
     for (const fileName of [
       '001_admin_catalog.sql',
@@ -289,11 +290,12 @@ test('remediates duplicate media when legacy 004 and 005 are already recorded', 
     `;
     const payload = {
       media: {
-        orderedPhotoIds: [duplicateId, canonicalId, duplicateId],
+        orderedPhotoIds: [duplicateId, canonicalId, secondDuplicateId, duplicateId],
         coverPhotoId: duplicateId,
         altTextByPhotoId: {
           [canonicalId]: 'Texto canonico preservado',
           [duplicateId]: 'Texto duplicado removido',
+          [secondDuplicateId]: 'Segundo texto duplicado removido',
         },
       },
     };
@@ -311,8 +313,13 @@ test('remediates duplicate media when legacy 004 and 005 are already recorded', 
         id, property_id, revision_id, photo_id, storage_key, mime_type, byte_size, width, height, checksum_sha256
       ) VALUES
         ('${canonicalId}', '${property[0]!.id}', ${revision[0]!.id}, '${canonicalId}', 'private/recorded-canonical', 'image/png', 1, 1, 1, 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'),
-        ('${duplicateId}', '${property[0]!.id}', ${revision[0]!.id}, '${duplicateId}', 'private/recorded-duplicate', 'image/png', 1, 1, 1, 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb')
+        ('${duplicateId}', '${property[0]!.id}', ${revision[0]!.id}, '${duplicateId}', 'private/recorded-duplicate', 'image/png', 1, 1, 1, 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'),
+        ('${secondDuplicateId}', '${property[0]!.id}', ${revision[0]!.id}, '${secondDuplicateId}', 'private/recorded-second-duplicate', 'image/png', 1, 1, 1, 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb')
     `);
+    await sql`
+      ALTER TABLE release_media_refs
+      ADD COLUMN created_at timestamptz NOT NULL DEFAULT clock_timestamp()
+    `;
     const job = await sql<{ id: string }[]>`
       INSERT INTO publication_jobs (property_id, revision_id, status, started_at, finished_at)
       VALUES (${property[0]!.id}, ${revision[0]!.id}, 'succeeded', clock_timestamp(), clock_timestamp())
@@ -323,10 +330,26 @@ test('remediates duplicate media when legacy 004 and 005 are already recorded', 
       RETURNING id
     `;
     await sql`
-      INSERT INTO release_media_refs (release_id, media_id) VALUES (${release[0]!.id}, ${duplicateId})
+      INSERT INTO release_media_refs (release_id, media_id, created_at)
+      VALUES
+        (${release[0]!.id}, ${duplicateId}, '2026-01-02T03:04:05Z'::timestamptz),
+        (${release[0]!.id}, ${canonicalId}, '2026-01-04T03:04:05Z'::timestamptz)
+    `;
+    const duplicateOnlyJob = await sql<{ id: string }[]>`
+      INSERT INTO publication_jobs (property_id, revision_id, status, started_at, finished_at)
+      VALUES (${property[0]!.id}, ${revision[0]!.id}, 'succeeded', clock_timestamp(), clock_timestamp())
+      RETURNING id::text AS id
+    `;
+    const duplicateOnlyRelease = await sql<{ id: string }[]>`
+      INSERT INTO site_releases (publication_job_id, manifest)
+      VALUES (${duplicateOnlyJob[0]!.id}, '{"secondary":true}'::jsonb)
+      RETURNING id::text AS id
     `;
     await sql`
-      INSERT INTO release_media_refs (release_id, media_id) VALUES (${release[0]!.id}, ${canonicalId})
+      INSERT INTO release_media_refs (release_id, media_id, created_at)
+      VALUES
+        (${duplicateOnlyRelease[0]!.id}, ${duplicateId}, '2026-01-03T03:04:05Z'::timestamptz),
+        (${duplicateOnlyRelease[0]!.id}, ${secondDuplicateId}, '2026-01-01T03:04:05Z'::timestamptz)
     `;
 
     const repaired = await migrate(sql, sourceDirectory);
@@ -340,11 +363,22 @@ test('remediates duplicate media when legacy 004 and 005 are already recorded', 
     assert.deepEqual(rows.map((row) => ({ id: row.id, active: row.removed_at === null, position: row.position })), [
       { id: canonicalId, active: true, position: 0 },
       { id: duplicateId, active: false, position: 0 },
+      { id: secondDuplicateId, active: false, position: 0 },
     ]);
-    const references = await sql<{ media_id: string }[]>`
-      SELECT media_id FROM release_media_refs WHERE release_id = ${release[0]!.id}
+    const references = await sql<{ release_id: string; media_id: string; created_at: Date }[]>`
+      SELECT release_id::text, media_id, created_at FROM release_media_refs
+      WHERE release_id IN (${release[0]!.id}, ${duplicateOnlyRelease[0]!.id})
+      ORDER BY release_id
     `;
-    assert.deepEqual(references.map((row) => row.media_id), [canonicalId]);
+    assert.deepEqual(
+      references.map((row) => ({ releaseId: row.release_id, mediaId: row.media_id })),
+      [
+        { releaseId: release[0]!.id, mediaId: canonicalId },
+        { releaseId: duplicateOnlyRelease[0]!.id, mediaId: canonicalId },
+      ],
+    );
+    assert.equal(references[0]?.created_at.toISOString(), '2026-01-02T03:04:05.000Z');
+    assert.equal(references[1]?.created_at.toISOString(), '2026-01-01T03:04:05.000Z');
     const canonicalState = await sql<
       { removed_at: Date | null; retained_for_publication: boolean; gc_eligible_at: Date | null }[]
     >`
@@ -353,12 +387,23 @@ test('remediates duplicate media when legacy 004 and 005 are already recorded', 
     assert.equal(canonicalState[0]?.removed_at, null);
     assert.equal(canonicalState[0]?.gc_eligible_at, null);
     const duplicateState = await sql<
-      { retained_for_publication: boolean; gc_eligible_at: Date | null }[]
+      { id: string; retained_for_publication: boolean; gc_eligible_at: Date | null }[]
     >`
-      SELECT retained_for_publication, gc_eligible_at FROM property_media WHERE id = ${duplicateId}
+      SELECT id, retained_for_publication, gc_eligible_at FROM property_media
+      WHERE id IN (${duplicateId}, ${secondDuplicateId})
+      ORDER BY id
     `;
-    assert.equal(duplicateState[0]?.retained_for_publication, false);
-    assert.ok(duplicateState[0]?.gc_eligible_at);
+    assert.deepEqual(
+      duplicateState.map(({ id, retained_for_publication, gc_eligible_at }) => ({
+        id,
+        retained: retained_for_publication,
+        eligible: gc_eligible_at instanceof Date,
+      })),
+      [
+        { id: duplicateId, retained: false, eligible: true },
+        { id: secondDuplicateId, retained: false, eligible: true },
+      ],
+    );
     const rewritten = await sql<{ payload: typeof payload }[]>`
       SELECT payload FROM property_revisions WHERE id = ${revision[0]!.id}
     `;
@@ -374,7 +419,10 @@ test('remediates duplicate media when legacy 004 and 005 are already recorded', 
     await sql`
       UPDATE properties SET published_revision_id = ${emptyRevision[0]!.id} WHERE id = ${property[0]!.id}
     `;
-    await sql`UPDATE site_releases SET expires_at = clock_timestamp() WHERE id = ${release[0]!.id}`;
+    await sql`
+      UPDATE site_releases SET expires_at = clock_timestamp()
+      WHERE id IN (${release[0]!.id}, ${duplicateOnlyRelease[0]!.id})
+    `;
     await sql`
       UPDATE property_media
       SET removed_at = clock_timestamp(), retained_for_publication = false, gc_eligible_at = clock_timestamp()

@@ -49,6 +49,13 @@ CREATE TEMP TABLE media_duplicate_remap (
   property_id uuid NOT NULL
 ) ON COMMIT DROP;
 
+CREATE TEMP TABLE media_duplicate_release_refs (
+  release_id bigint NOT NULL,
+  canonical_id uuid NOT NULL,
+  created_at timestamptz NOT NULL,
+  PRIMARY KEY (release_id, canonical_id)
+) ON COMMIT DROP;
+
 INSERT INTO media_duplicate_remap (duplicate_id, canonical_id, property_id)
 SELECT media.id, duplicates.canonical_id, media.property_id
 FROM property_media AS media
@@ -63,25 +70,28 @@ JOIN (
  AND duplicates.checksum_sha256 = media.checksum_sha256
 WHERE media.id <> duplicates.canonical_id AND media.removed_at IS NULL;
 
--- Keep the earliest known reference timestamp if two legacy references merge
--- into the same (release_id, canonical_id) primary key.
-UPDATE release_media_refs AS canonical_ref
-SET created_at = LEAST(canonical_ref.created_at, duplicate_ref.created_at)
-FROM release_media_refs AS duplicate_ref
-JOIN media_duplicate_remap AS remap ON remap.duplicate_id = duplicate_ref.media_id
-WHERE canonical_ref.release_id = duplicate_ref.release_id
-  AND canonical_ref.media_id = remap.canonical_id;
+-- A release can point at multiple duplicate rows without already pointing at
+-- the canonical row. Materialize the desired canonical references first so
+-- that remapping never transiently violates (release_id, media_id).
+INSERT INTO media_duplicate_release_refs (release_id, canonical_id, created_at)
+SELECT ref.release_id, remap.canonical_id, min(ref.created_at)
+FROM release_media_refs AS ref
+JOIN media_duplicate_remap AS remap ON remap.duplicate_id = ref.media_id
+GROUP BY ref.release_id, remap.canonical_id;
 
-DELETE FROM release_media_refs AS duplicate_ref
-USING media_duplicate_remap AS remap, release_media_refs AS canonical_ref
-WHERE duplicate_ref.media_id = remap.duplicate_id
-  AND canonical_ref.release_id = duplicate_ref.release_id
-  AND canonical_ref.media_id = remap.canonical_id;
-
-UPDATE release_media_refs AS ref
-SET media_id = remap.canonical_id
-FROM media_duplicate_remap AS remap
+-- This predicate only removes references to duplicate IDs in this migration's
+-- mapping; unrelated release media remains untouched.
+DELETE FROM release_media_refs AS ref
+USING media_duplicate_remap AS remap
 WHERE ref.media_id = remap.duplicate_id;
+
+-- Existing canonical references and every duplicate source converge here.
+-- The oldest source timestamp remains the canonical reference timestamp.
+INSERT INTO release_media_refs AS canonical_ref (release_id, media_id, created_at)
+SELECT release_id, canonical_id, created_at
+FROM media_duplicate_release_refs
+ON CONFLICT (release_id, media_id) DO UPDATE
+SET created_at = LEAST(canonical_ref.created_at, EXCLUDED.created_at);
 
 DROP INDEX IF EXISTS property_media_active_content_unique_idx;
 ALTER TABLE property_revisions DISABLE TRIGGER property_revisions_append_only;
