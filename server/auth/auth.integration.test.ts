@@ -41,10 +41,13 @@ const seed = async (username = 'administrador') =>
   seedAdministrator(sql, { username, password: initialPassword });
 
 const cookieHeader = (response: Awaited<ReturnType<ReturnType<typeof createServer>['inject']>>) =>
-  response.cookies.map((cookie) => `${cookie.name}=${cookie.value}`).join('; ');
+  response.cookies
+    .filter((cookie) => cookie.maxAge !== 0)
+    .map((cookie) => `${cookie.name}=${cookie.value}`)
+    .join('; ');
 
 const csrfToken = (response: Awaited<ReturnType<ReturnType<typeof createServer>['inject']>>) => {
-  const cookie = response.cookies.find(({ name }) => name === ADMIN_CSRF_COOKIE);
+  const cookie = response.cookies.find(({ name, maxAge }) => name === ADMIN_CSRF_COOKIE && maxAge !== 0);
   assert.ok(cookie?.value);
   return cookie.value;
 };
@@ -156,6 +159,10 @@ test('creates a restricted first-login session and stores only token and CSRF ha
   const csrfCookie = response.cookies.find(({ name }) => name === ADMIN_CSRF_COOKIE);
   assert.ok(sessionCookie?.value);
   assert.ok(csrfCookie?.value);
+  assert.equal(sessionCookie?.path, '/api/admin');
+  assert.equal(csrfCookie?.path, '/');
+  assert.ok(response.cookies.some(({ name, path, maxAge }) =>
+    name === ADMIN_CSRF_COOKIE && path === '/api/admin' && maxAge === 0));
   const sessions = await sql<
     { token_hash: string; csrf_secret_hash: string; revoked_at: Date | null }[]
   >`SELECT token_hash, csrf_secret_hash, revoked_at FROM admin_sessions`;
@@ -242,6 +249,43 @@ test('changes the initial password, clears the flag, and replaces every old sess
   assert.equal(oldPassword.statusCode, 401);
   const newPassword = await login(app, 'administrador', changedPassword, '198.51.100.13');
   assert.equal(newPassword.statusCode, 200);
+  await app.close();
+});
+
+test('keeps the session usable after semantic password-change failures', async () => {
+  await seed();
+  const app = createServer({ sql, environment: 'test' });
+  const session = await login(app, 'administrador', initialPassword);
+  const headers = {
+    cookie: cookieHeader(session),
+    'x-csrf-token': csrfToken(session),
+  };
+
+  const wrongCurrent = await app.inject({
+    method: 'POST', url: '/api/admin/auth/change-password', headers,
+    payload: { currentPassword: 'Senha atual incorreta 2026!', newPassword: changedPassword },
+  });
+  assert.equal(wrongCurrent.statusCode, 400);
+  assert.deepEqual(wrongCurrent.json(), {
+    error: { code: 'CURRENT_PASSWORD_INVALID', message: 'Current password is invalid' },
+  });
+
+  const weak = await app.inject({
+    method: 'POST', url: '/api/admin/auth/change-password', headers,
+    payload: { currentPassword: initialPassword, newPassword: 'fraca' },
+  });
+  assert.equal(weak.statusCode, 400);
+  assert.deepEqual(weak.json(), {
+    error: { code: 'VALIDATION_FAILED', message: 'Password does not meet requirements' },
+  });
+
+  const stillActive = await app.inject({ method: 'GET', url: '/api/admin/auth/session', headers });
+  assert.equal(stillActive.statusCode, 200);
+  const changed = await app.inject({
+    method: 'POST', url: '/api/admin/auth/change-password', headers,
+    payload: { currentPassword: initialPassword, newPassword: changedPassword },
+  });
+  assert.equal(changed.statusCode, 200);
   await app.close();
 });
 
@@ -346,7 +390,11 @@ test('uses finite, strictly scoped cookies and enables Secure only in production
 
   await truncateAuth();
   await seed();
-  const productionApp = createServer({ sql, environment: 'production' });
+  const productionApp = createServer({
+    sql,
+    environment: 'production',
+    location: { privacySecret: 'auth-cookie-test-location-secret-2026' },
+  });
   const production = await login(productionApp, 'administrador', initialPassword);
   const productionSession = setCookieHeaders(production).find((value) =>
     value.startsWith(`${ADMIN_SESSION_COOKIE}=`),
@@ -359,6 +407,8 @@ test('uses finite, strictly scoped cookies and enables Secure only in production
   assert.match(productionSession, /; Secure/i);
   assert.match(productionSession, /HttpOnly/i);
   assert.match(productionCsrf, /; Secure/i);
+  assert.match(productionCsrf, /Path=\//i);
+  assert.doesNotMatch(productionCsrf, /Path=\/api\/admin/i);
   assert.doesNotMatch(productionCsrf, /HttpOnly/i);
   await productionApp.close();
 });
@@ -438,7 +488,11 @@ test('protects logout with CSRF, revokes the session, and clears both cookies', 
 
   assert.equal(response.statusCode, 204);
   assert.equal(response.cookies.find(({ name }) => name === ADMIN_SESSION_COOKIE)?.maxAge, 0);
-  assert.equal(response.cookies.find(({ name }) => name === ADMIN_CSRF_COOKIE)?.maxAge, 0);
+  assert.ok(response.cookies.some(({ name, path, maxAge }) =>
+    name === ADMIN_CSRF_COOKIE && path === '/' && maxAge === 0));
+  assert.ok(response.cookies.some(({ name, path, maxAge }) =>
+    name === ADMIN_CSRF_COOKIE && path === '/api/admin' && maxAge === 0));
+  assert.equal(response.cookies.find(({ name }) => name === ADMIN_SESSION_COOKIE)?.path, '/api/admin');
   const rows = await sql<{ revoked_at: Date | null }[]>`
     SELECT revoked_at FROM admin_sessions
   `;

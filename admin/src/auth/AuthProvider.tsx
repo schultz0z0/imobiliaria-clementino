@@ -1,11 +1,12 @@
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
-import { adminApi, type AuthApi } from '../api/client.ts';
+import { adminApi, ApiError, type AuthApi } from '../api/client.ts';
 
 type AuthStatus = 'loading' | 'anonymous' | 'authenticated' | 'error';
 type AuthContextValue = {
   status: AuthStatus;
   mustChangePassword: boolean;
   sessionExpired: boolean;
+  logoutError: boolean;
   login: (username: string, password: string) => Promise<void>;
   changePassword: (currentPassword: string, newPassword: string) => Promise<void>;
   logout: () => Promise<void>;
@@ -18,6 +19,7 @@ export const AuthProvider = ({ children, api = adminApi }: { children: ReactNode
   const [status, setStatus] = useState<AuthStatus>('loading');
   const [mustChangePassword, setMustChangePassword] = useState(false);
   const [sessionExpired, setSessionExpired] = useState(false);
+  const [logoutError, setLogoutError] = useState(false);
   const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
@@ -32,6 +34,7 @@ export const AuthProvider = ({ children, api = adminApi }: { children: ReactNode
   }, [api, attempt]);
 
   useEffect(() => api.onUnauthorized?.(() => {
+    setLogoutError(false);
     setSessionExpired(true);
     setMustChangePassword(false);
     setStatus('anonymous');
@@ -39,6 +42,7 @@ export const AuthProvider = ({ children, api = adminApi }: { children: ReactNode
 
   const login = useCallback(async (username: string, password: string) => {
     const result = await api.login(username, password);
+    setLogoutError(false);
     setSessionExpired(false);
     setMustChangePassword(result.mustChangePassword);
     setStatus('authenticated');
@@ -49,16 +53,26 @@ export const AuthProvider = ({ children, api = adminApi }: { children: ReactNode
     setStatus('authenticated');
   }, [api]);
   const logout = useCallback(async () => {
-    try { await api.logout(); } finally {
+    setLogoutError(false);
+    try {
+      await api.logout();
       setMustChangePassword(false);
       setSessionExpired(false);
       setStatus('anonymous');
+    } catch (error) {
+      if (error instanceof ApiError && error.status === 401) {
+        setMustChangePassword(false);
+        setSessionExpired(true);
+        setStatus('anonymous');
+        return;
+      }
+      setLogoutError(true);
     }
   }, [api]);
   const value = useMemo<AuthContextValue>(() => ({
-    status, mustChangePassword, sessionExpired, login, changePassword, logout,
+    status, mustChangePassword, sessionExpired, logoutError, login, changePassword, logout,
     retry: () => setAttempt((current) => current + 1),
-  }), [changePassword, login, logout, mustChangePassword, sessionExpired, status]);
+  }), [changePassword, login, logout, logoutError, mustChangePassword, sessionExpired, status]);
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 

@@ -6,6 +6,7 @@ import { hashSecret } from './csrf.ts';
 export const ADMIN_SESSION_COOKIE = 'clementino_admin_session';
 export const ADMIN_CSRF_COOKIE = 'clementino_admin_csrf';
 export const ADMIN_COOKIE_PATH = '/api/admin';
+export const ADMIN_CSRF_COOKIE_PATH = '/';
 export const DEFAULT_SESSION_DURATION_SECONDS = 60 * 60 * 8;
 
 export type AdminSession = {

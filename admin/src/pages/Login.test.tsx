@@ -4,7 +4,7 @@ import { JSDOM } from 'jsdom';
 import React, { act } from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
-import type { AuthApi } from '../api/client.ts';
+import { ApiError, type AuthApi } from '../api/client.ts';
 import { AuthProvider } from '../auth/AuthProvider.tsx';
 import { Login } from './Login.tsx';
 
@@ -131,6 +131,36 @@ test('login only presents a generic failure and routes a first access to passwor
   assert.ok(container.querySelector('input[name="currentPassword"]'));
   assert.ok(container.querySelector('input[name="newPassword"]'));
 
+  await act(async () => root.unmount());
+  restoreDom(previous);
+});
+
+test('forced password change explains a wrong current password without losing the form', async () => {
+  const { dom, previous } = setupDom();
+  const api: AuthApi = {
+    getSession: async () => ({ authenticated: true, mustChangePassword: true }),
+    login: async () => ({ mustChangePassword: true }),
+    changePassword: async () => { throw new ApiError(400, 'CURRENT_PASSWORD_INVALID'); },
+    logout: async () => undefined,
+  };
+  const { createRoot } = await import('react-dom/client');
+  const container = document.querySelector('#root')!;
+  const root = createRoot(container);
+  await act(async () => {
+    root.render(<MemoryRouter><AuthProvider api={api}><Login /></AuthProvider></MemoryRouter>);
+    await Promise.resolve();
+  });
+  await act(async () => {
+    input(container.querySelector('input[name="currentPassword"]')!, 'incorreta', dom);
+    input(container.querySelector('input[name="newPassword"]')!, 'Nova senha segura 2026!', dom);
+    input(container.querySelector('input[name="confirmPassword"]')!, 'Nova senha segura 2026!', dom);
+  });
+  await act(async () => {
+    container.querySelector('form')!.dispatchEvent(new dom.window.Event('submit', { bubbles: true, cancelable: true }));
+    await Promise.resolve();
+  });
+  assert.match(container.querySelector('[role="alert"]')?.textContent ?? '', /senha atual não confere/i);
+  assert.equal((container.querySelector('input[name="newPassword"]') as HTMLInputElement).value, 'Nova senha segura 2026!');
   await act(async () => root.unmount());
   restoreDom(previous);
 });

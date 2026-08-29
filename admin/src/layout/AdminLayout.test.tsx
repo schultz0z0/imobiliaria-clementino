@@ -5,7 +5,7 @@ import { JSDOM } from 'jsdom';
 import React, { act } from 'react';
 import { MemoryRouter } from 'react-router-dom';
 
-import type { AuthApi } from '../api/client.ts';
+import { ApiError, type AuthApi } from '../api/client.ts';
 import { AuthProvider } from '../auth/AuthProvider.tsx';
 import { AdminLayout } from './AdminLayout.tsx';
 
@@ -73,13 +73,11 @@ test('authenticated shell exposes landmarks, keyboard navigation and logout', as
 
 test('expired session returns to login with a useful, non-sensitive notice', async () => {
   const { previous } = setupDom();
-  let expire!: () => void;
   const api: AuthApi = {
     getSession: async () => ({ authenticated: true, mustChangePassword: false }),
     login: async () => ({ mustChangePassword: false }),
     changePassword: async () => ({ mustChangePassword: false }),
-    logout: async () => undefined,
-    onUnauthorized: (handler) => { expire = handler; return () => undefined; },
+    logout: async () => { throw new ApiError(401); },
   };
   const { createRoot } = await import('react-dom/client');
   const container = document.querySelector('#root')!;
@@ -94,10 +92,42 @@ test('expired session returns to login with a useful, non-sensitive notice', asy
     );
     await Promise.resolve();
   });
-  await act(async () => expire());
+  const logout = Array.from(container.querySelectorAll<HTMLButtonElement>('button')).find(
+    (button) => button.textContent?.includes('Sair'),
+  )!;
+  await act(async () => { logout.click(); await Promise.resolve(); });
   assert.match(container.textContent ?? '', /Sua sessão expirou/);
   assert.ok(container.querySelector('input[name="username"]'));
 
+  await act(async () => root.unmount());
+  Object.assign(globalThis, previous);
+});
+
+test('logout keeps the shell active and offers recovery after 403 or network failure', async () => {
+  const { previous } = setupDom();
+  const failures: unknown[] = [new ApiError(403), new Error('network details must stay private')];
+  const api: AuthApi = {
+    getSession: async () => ({ authenticated: true, mustChangePassword: false }),
+    login: async () => ({ mustChangePassword: false }),
+    changePassword: async () => ({ mustChangePassword: false }),
+    logout: async () => { throw failures.shift(); },
+  };
+  const { createRoot } = await import('react-dom/client');
+  const container = document.querySelector('#root')!;
+  const root = createRoot(container);
+  await act(async () => {
+    root.render(<MemoryRouter><AuthProvider api={api}><AdminLayout><h1>Imóveis</h1></AdminLayout></AuthProvider></MemoryRouter>);
+    await Promise.resolve();
+  });
+  for (let index = 0; index < 2; index += 1) {
+    const logout = Array.from(container.querySelectorAll<HTMLButtonElement>('button')).find(
+      (button) => button.textContent?.includes('Sair'),
+    )!;
+    await act(async () => { logout.click(); await Promise.resolve(); });
+    assert.match(container.textContent ?? '', /Não foi possível sair com segurança/);
+    assert.ok(container.querySelector('nav[aria-label="Navegação principal"]'));
+    assert.doesNotMatch(container.textContent ?? '', /network details/);
+  }
   await act(async () => root.unmount());
   Object.assign(globalThis, previous);
 });
@@ -109,5 +139,7 @@ test('admin stylesheet is mobile-first, prevents horizontal overflow and respect
   assert.match(css, /:focus-visible/);
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
   assert.match(css, /@media\s*\(min-width:/);
+  assert.match(css, /--admin-accent:\s*#76530d/);
+  assert.match(css, /\.admin-brand\s*\{[^}]*min-height:\s*44px/s);
   assert.doesNotMatch(css, /\.public-site|#PROPERTY/);
 });

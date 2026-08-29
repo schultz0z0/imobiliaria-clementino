@@ -1,10 +1,11 @@
-import { Eye, EyeOff, KeyRound, LoaderCircle, LockKeyhole } from 'lucide-react';
+import { Building2, Eye, EyeOff, KeyRound, LoaderCircle, LockKeyhole } from 'lucide-react';
 import React, { useState, type FormEvent } from 'react';
+import { ApiError } from '../api/client.ts';
 import { useAuth } from '../auth/AuthProvider.tsx';
 
 const Brand = () => (
   <div className="auth-brand" aria-label="Clementino Imóveis">
-    <span className="brand-mark" aria-hidden="true">C</span>
+    <span className="brand-mark" aria-hidden="true"><Building2 /></span>
     <span><strong>Clementino</strong><small>Imóveis</small></span>
   </div>
 );
@@ -28,7 +29,7 @@ const PasswordField = ({ id, name, label, value, onChange, autoComplete }: {
 };
 
 const ChangePassword = () => {
-  const { changePassword, logout } = useAuth();
+  const { changePassword, logout, logoutError } = useAuth();
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmation, setConfirmation] = useState('');
@@ -39,7 +40,15 @@ const ChangePassword = () => {
     if (newPassword !== confirmation) { setError('As novas senhas precisam ser iguais.'); return; }
     setPending(true); setError('');
     try { await changePassword(currentPassword, newPassword); }
-    catch { setError('Não foi possível alterar a senha. Confira os dados e tente novamente.'); }
+    catch (failure) {
+      if (failure instanceof ApiError && failure.code === 'CURRENT_PASSWORD_INVALID') {
+        setError('A senha atual não confere. Tente novamente.');
+      } else if (failure instanceof ApiError && failure.code === 'VALIDATION_FAILED') {
+        setError('A nova senha não atende aos requisitos de segurança.');
+      } else {
+        setError('Não foi possível alterar a senha. Confira os dados e tente novamente.');
+      }
+    }
     finally { setPending(false); }
   };
   return (
@@ -50,6 +59,7 @@ const ChangePassword = () => {
         <h1 id="password-title">Crie uma nova senha</h1>
         <p className="auth-intro">Por segurança, atualize a senha provisória antes de continuar.</p>
         {error ? <p className="form-alert" role="alert">{error}</p> : null}
+        {logoutError ? <p className="form-alert" role="alert">Não foi possível sair com segurança. Tente novamente.</p> : null}
         <form onSubmit={submit}>
           <PasswordField id="current-password" name="currentPassword" label="Senha atual" value={currentPassword} onChange={setCurrentPassword} autoComplete="current-password" />
           <PasswordField id="new-password" name="newPassword" label="Nova senha" value={newPassword} onChange={setNewPassword} autoComplete="new-password" />

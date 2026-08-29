@@ -42,12 +42,50 @@ Implemented from `ae065d8` on `codex/property-admin`.
 - `rtk npm test` — 141 passed, 0 failed.
 - `rtk git diff --check` — passed.
 
-## Dependency noted for integration
+## Review fix round
 
-The client implements the Task 4 double-submit contract by reading
-`clementino_admin_csrf` and sending `x-csrf-token`. Task 4 currently scopes that
-readable cookie to `/api/admin`; therefore Task 16/17 integration must either
-serve the SPA under a compatible path or, preferably, make the readable CSRF
-cookie available to the admin origin root while keeping the session cookie
-restricted and `HttpOnly`. This Task intentionally did not alter the reviewed
-Tasks 1–7 server contract.
+Independent review findings were addressed with browser, UI and real-PostgreSQL
+regressions:
+
+- The session cookie remains `HttpOnly` and scoped to `/api/admin`; only the
+  double-submit CSRF cookie is readable at the admin origin root. Login and
+  password replacement also expire the legacy `/api/admin` CSRF cookie, and
+  logout clears both current and legacy paths to avoid duplicate-name parsing.
+- Password-change failures are now typed. A wrong current password uses
+  `CURRENT_PASSWORD_INVALID` and a rejected password policy uses
+  `VALIDATION_FAILED`, both with HTTP 400. Neither triggers session-expiration,
+  and the form displays a useful non-sensitive message while preserving input.
+- Logout transitions to anonymous only after success or a real session 401.
+  Network and 403 failures keep the authenticated shell mounted, show a
+  recoverable alert, and are consumed without an unhandled rejection.
+- The header brand target is at least 44 px. Login and shell reuse the
+  institutional Lucide `Building2` mark and an explicit high-contrast
+  `--admin-accent`/`--admin-accent-contrast` pair instead of an invented
+  monogram.
+
+### Review TDD evidence
+
+1. RED client/UI: 5/9 passed. Logout 401/403/network rejected through the event
+   handler, the password form only showed its fallback message, and the cookie
+   regression failed before the root-path contract existed.
+2. RED server compatibility: the focused PostgreSQL test failed because no
+   legacy-path CSRF clearing cookie was emitted.
+3. GREEN client/UI: 10/10 passed, covering root cookie/header behavior without
+   session-token exposure, current-password and policy failures, successful
+   replacement, actual 401 expiration, and 204/401/403/network logout paths.
+4. GREEN auth with isolated PostgreSQL: 21/21 passed, including cookie paths and
+   cleanup, semantic password failures, preserved session and successful retry.
+
+### Review verification
+
+- Focused admin/client suite: 10 passed, 0 failed.
+- `rtk npm run test:auth`: 21 passed, 0 failed against an isolated PostgreSQL 16
+  cluster on `127.0.0.1:55439`; the cluster was stopped and removed afterward.
+- `rtk npm test`: 141 passed, 0 failed.
+- Explicit admin TypeScript check: no errors.
+- `rtk npm run lint`, `rtk npm run admin:build`, and
+  `rtk npm run server:build`: passed.
+- The repository-wide server TypeScript project still reports pre-existing
+  errors in property-route integration fixtures and location-schema narrowing;
+  none are in the Task 8 files. The production server bundle succeeds.
+- `rtk git diff --check`: passed.

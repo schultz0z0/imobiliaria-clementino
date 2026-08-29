@@ -12,6 +12,7 @@ import {
 import { hashPassword, verifyPassword } from './password.ts';
 import {
   ADMIN_COOKIE_PATH,
+  ADMIN_CSRF_COOKIE_PATH,
   ADMIN_CSRF_COOKIE,
   ADMIN_SESSION_COOKIE,
   createAdminSession,
@@ -75,13 +76,23 @@ const cookieOptions = (
   environment: string,
   expiresAt: Date,
   httpOnly: boolean,
+  path: string,
 ) => ({
   httpOnly,
   secure: environment === 'production',
   sameSite: 'strict' as const,
-  path: ADMIN_COOKIE_PATH,
+  path,
   expires: expiresAt,
   maxAge: Math.max(1, Math.floor((expiresAt.getTime() - Date.now()) / 1_000)),
+});
+
+const expiredCookieOptions = (environment: string, path: string, httpOnly: boolean) => ({
+  path,
+  httpOnly,
+  sameSite: 'strict' as const,
+  secure: environment === 'production',
+  expires: new Date(0),
+  maxAge: 0,
 });
 
 const setSessionCookies = (
@@ -92,25 +103,34 @@ const setSessionCookies = (
   reply.setCookie(
     ADMIN_SESSION_COOKIE,
     session.token,
-    cookieOptions(environment, session.expiresAt, true),
+    cookieOptions(environment, session.expiresAt, true, ADMIN_COOKIE_PATH),
   );
   reply.setCookie(
     ADMIN_CSRF_COOKIE,
     session.csrfToken,
-    cookieOptions(environment, session.expiresAt, false),
+    cookieOptions(environment, session.expiresAt, false, ADMIN_CSRF_COOKIE_PATH),
+  );
+  // Remove cookies issued by releases that scoped the readable double-submit
+  // token to the API path. Keeping both paths can make cookie parsing ambiguous.
+  reply.clearCookie(
+    ADMIN_CSRF_COOKIE,
+    expiredCookieOptions(environment, ADMIN_COOKIE_PATH, false),
   );
 };
 
 const clearSessionCookies = (reply: FastifyReply, environment: string): void => {
-  const options = {
-    path: ADMIN_COOKIE_PATH,
-    sameSite: 'strict' as const,
-    secure: environment === 'production',
-    expires: new Date(0),
-    maxAge: 0,
-  };
-  reply.clearCookie(ADMIN_SESSION_COOKIE, { ...options, httpOnly: true });
-  reply.clearCookie(ADMIN_CSRF_COOKIE, { ...options, httpOnly: false });
+  reply.clearCookie(
+    ADMIN_SESSION_COOKIE,
+    expiredCookieOptions(environment, ADMIN_COOKIE_PATH, true),
+  );
+  reply.clearCookie(
+    ADMIN_CSRF_COOKIE,
+    expiredCookieOptions(environment, ADMIN_CSRF_COOKIE_PATH, false),
+  );
+  reply.clearCookie(
+    ADMIN_CSRF_COOKIE,
+    expiredCookieOptions(environment, ADMIN_COOKIE_PATH, false),
+  );
 };
 
 const readLoginBody = (body: unknown): { username: string; password: string } => {
@@ -350,15 +370,30 @@ export const registerAuthRoutes = (
     },
     async (request, reply) => {
       const body = readChangePasswordBody(request.body);
-      if (!body || !(await verifyPassword(request.adminSession!.passwordHash, body.currentPassword))) {
-        return reply.code(401).send(genericLoginFailure);
+      if (!body) {
+        return reply.code(400).send({
+          error: { code: API_ERROR_CODES.VALIDATION_FAILED, message: 'Invalid password change request' },
+        });
+      }
+      if (!(await verifyPassword(request.adminSession!.passwordHash, body.currentPassword))) {
+        return reply.code(400).send({
+          error: {
+            code: API_ERROR_CODES.CURRENT_PASSWORD_INVALID,
+            message: 'Current password is invalid',
+          },
+        });
       }
 
       let nextPasswordHash: string;
       try {
         nextPasswordHash = await hashPassword(body.newPassword);
       } catch {
-        return reply.code(400).send({ error: 'Password does not meet requirements' });
+        return reply.code(400).send({
+          error: {
+            code: API_ERROR_CODES.VALIDATION_FAILED,
+            message: 'Password does not meet requirements',
+          },
+        });
       }
 
       const replacement = await withTransaction(sql, async (transaction) => {
