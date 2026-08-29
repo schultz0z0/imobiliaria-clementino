@@ -313,6 +313,21 @@ test('remediates duplicate media when legacy 004 and 005 are already recorded', 
         ('${canonicalId}', '${property[0]!.id}', ${revision[0]!.id}, '${canonicalId}', 'private/recorded-canonical', 'image/png', 1, 1, 1, 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'),
         ('${duplicateId}', '${property[0]!.id}', ${revision[0]!.id}, '${duplicateId}', 'private/recorded-duplicate', 'image/png', 1, 1, 1, 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb')
     `);
+    const job = await sql<{ id: string }[]>`
+      INSERT INTO publication_jobs (property_id, revision_id, status, started_at, finished_at)
+      VALUES (${property[0]!.id}, ${revision[0]!.id}, 'succeeded', clock_timestamp(), clock_timestamp())
+      RETURNING id
+    `;
+    const release = await sql<{ id: string }[]>`
+      INSERT INTO site_releases (publication_job_id, manifest) VALUES (${job[0]!.id}, '{}'::jsonb)
+      RETURNING id
+    `;
+    await sql`
+      INSERT INTO release_media_refs (release_id, media_id) VALUES (${release[0]!.id}, ${duplicateId})
+    `;
+    await sql`
+      INSERT INTO release_media_refs (release_id, media_id) VALUES (${release[0]!.id}, ${canonicalId})
+    `;
 
     const repaired = await migrate(sql, sourceDirectory);
     assert.deepEqual(repaired.applied, [
@@ -326,6 +341,24 @@ test('remediates duplicate media when legacy 004 and 005 are already recorded', 
       { id: canonicalId, active: true, position: 0 },
       { id: duplicateId, active: false, position: 0 },
     ]);
+    const references = await sql<{ media_id: string }[]>`
+      SELECT media_id FROM release_media_refs WHERE release_id = ${release[0]!.id}
+    `;
+    assert.deepEqual(references.map((row) => row.media_id), [canonicalId]);
+    const canonicalState = await sql<
+      { removed_at: Date | null; retained_for_publication: boolean; gc_eligible_at: Date | null }[]
+    >`
+      SELECT removed_at, retained_for_publication, gc_eligible_at FROM property_media WHERE id = ${canonicalId}
+    `;
+    assert.equal(canonicalState[0]?.removed_at, null);
+    assert.equal(canonicalState[0]?.gc_eligible_at, null);
+    const duplicateState = await sql<
+      { retained_for_publication: boolean; gc_eligible_at: Date | null }[]
+    >`
+      SELECT retained_for_publication, gc_eligible_at FROM property_media WHERE id = ${duplicateId}
+    `;
+    assert.equal(duplicateState[0]?.retained_for_publication, false);
+    assert.ok(duplicateState[0]?.gc_eligible_at);
     const rewritten = await sql<{ payload: typeof payload }[]>`
       SELECT payload FROM property_revisions WHERE id = ${revision[0]!.id}
     `;
@@ -334,6 +367,25 @@ test('remediates duplicate media when legacy 004 and 005 are already recorded', 
       coverPhotoId: canonicalId,
       altTextByPhotoId: { [canonicalId]: 'Texto canonico preservado' },
     });
+    const emptyRevision = await sql<{ id: string }[]>`
+      INSERT INTO property_revisions (property_id, revision_number, payload)
+      VALUES (${property[0]!.id}, 2, ${sql.json({ media: { orderedPhotoIds: [] } })}) RETURNING id
+    `;
+    await sql`
+      UPDATE properties SET published_revision_id = ${emptyRevision[0]!.id} WHERE id = ${property[0]!.id}
+    `;
+    await sql`UPDATE site_releases SET expires_at = clock_timestamp() WHERE id = ${release[0]!.id}`;
+    await sql`
+      UPDATE property_media
+      SET removed_at = clock_timestamp(), retained_for_publication = false, gc_eligible_at = clock_timestamp()
+      WHERE id = ${canonicalId}
+    `;
+    await sql`SELECT refresh_property_media_gc(${property[0]!.id})`;
+    const expiredCanonical = await sql<{ retained_for_publication: boolean; gc_eligible_at: Date | null }[]>`
+      SELECT retained_for_publication, gc_eligible_at FROM property_media WHERE id = ${canonicalId}
+    `;
+    assert.equal(expiredCanonical[0]?.retained_for_publication, false);
+    assert.ok(expiredCanonical[0]?.gc_eligible_at);
     const rerun = await migrate(sql, sourceDirectory);
     assert.equal(rerun.applied.length, 0);
     assert.ok(rerun.skipped.includes('007_media_duplicate_remediation.sql'));

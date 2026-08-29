@@ -128,3 +128,26 @@ original pass and was not claimed as a current validation target here.
   exact release refs, ownership/revision rejection, and release-backed GC retention.
 - `server/api/mediaRoutes.test.ts` plus media unit/storage tests — 18 passed.
 - `server/api/mediaRoutes.integration.test.ts` — 16 passed.
+
+## Fix round 3 — release-reference remapping dependency ledger
+
+- `007_media_duplicate_remediation.sql` now materializes duplicate-to-canonical
+  mappings in a transaction-local table before media rows are deferred. It
+  remaps every active release reference first, merges a pre-existing canonical
+  reference deterministically (retaining the earliest available timestamp),
+  rewrites all revision snapshots, and then refreshes GC for each affected
+  property. The canonical active row stays physically retained; the duplicate
+  has no release reference and becomes GC eligible only after that refresh.
+- Publication integration remains an explicit Task 13 dependency, not a fake
+  current callsite: `recordSuccessfulRelease` is the only release-creation API
+  and Task 13 MUST invoke it after a validated release swap. The Task 13 brief
+  and report carry this ledger entry; those auxiliary planning files are not
+  part of this Task 6 commit and require whole-branch review when Task 13 lands.
+
+### Fix round 3 validation
+
+- The recorded-004/005 migration fixture contains both duplicate and canonical
+  references for an active release. 007 leaves only the canonical reference,
+  preserves its active storage state, makes the duplicate eligible, and allows
+  the canonical row to become eligible after publication moves and the release
+  expires. The migration rerun is skipped.

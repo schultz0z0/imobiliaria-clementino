@@ -40,41 +40,84 @@ BEGIN
 END;
 $$;
 
+ALTER TABLE release_media_refs
+  ADD COLUMN IF NOT EXISTS created_at timestamptz NOT NULL DEFAULT clock_timestamp();
+
+CREATE TEMP TABLE media_duplicate_remap (
+  duplicate_id uuid PRIMARY KEY,
+  canonical_id uuid NOT NULL,
+  property_id uuid NOT NULL
+) ON COMMIT DROP;
+
+INSERT INTO media_duplicate_remap (duplicate_id, canonical_id, property_id)
+SELECT media.id, duplicates.canonical_id, media.property_id
+FROM property_media AS media
+JOIN (
+  SELECT property_id, checksum_sha256, min(id::text)::uuid AS canonical_id
+  FROM property_media
+  WHERE removed_at IS NULL
+  GROUP BY property_id, checksum_sha256
+  HAVING count(*) > 1
+) AS duplicates
+  ON duplicates.property_id = media.property_id
+ AND duplicates.checksum_sha256 = media.checksum_sha256
+WHERE media.id <> duplicates.canonical_id AND media.removed_at IS NULL;
+
+-- Keep the earliest known reference timestamp if two legacy references merge
+-- into the same (release_id, canonical_id) primary key.
+UPDATE release_media_refs AS canonical_ref
+SET created_at = LEAST(canonical_ref.created_at, duplicate_ref.created_at)
+FROM release_media_refs AS duplicate_ref
+JOIN media_duplicate_remap AS remap ON remap.duplicate_id = duplicate_ref.media_id
+WHERE canonical_ref.release_id = duplicate_ref.release_id
+  AND canonical_ref.media_id = remap.canonical_id;
+
+DELETE FROM release_media_refs AS duplicate_ref
+USING media_duplicate_remap AS remap, release_media_refs AS canonical_ref
+WHERE duplicate_ref.media_id = remap.duplicate_id
+  AND canonical_ref.release_id = duplicate_ref.release_id
+  AND canonical_ref.media_id = remap.canonical_id;
+
+UPDATE release_media_refs AS ref
+SET media_id = remap.canonical_id
+FROM media_duplicate_remap AS remap
+WHERE ref.media_id = remap.duplicate_id;
+
 DROP INDEX IF EXISTS property_media_active_content_unique_idx;
 ALTER TABLE property_revisions DISABLE TRIGGER property_revisions_append_only;
 
 DO $$
-DECLARE duplicate_group record;
 DECLARE duplicate_media record;
 BEGIN
-  FOR duplicate_group IN
-    SELECT property_id, checksum_sha256, min(id::text)::uuid AS canonical_id, array_agg(id) AS media_ids
-    FROM property_media
-    WHERE removed_at IS NULL
-    GROUP BY property_id, checksum_sha256
-    HAVING count(*) > 1
+  FOR duplicate_media IN
+    SELECT duplicate_id, canonical_id, property_id FROM media_duplicate_remap
   LOOP
-    FOR duplicate_media IN
-      SELECT unnest(duplicate_group.media_ids) AS media_id, duplicate_group.canonical_id AS canonical_id
-    LOOP
-      IF duplicate_media.media_id <> duplicate_media.canonical_id THEN
-        UPDATE property_revisions
-        SET payload = canonicalize_property_media_payload(
-          payload, duplicate_media.media_id::text, duplicate_media.canonical_id::text
-        )
-        WHERE property_id = duplicate_group.property_id;
-        UPDATE property_media
-        SET removed_at = clock_timestamp(),
-            retained_for_publication = false,
-            gc_eligible_at = clock_timestamp() + interval '30 days'
-        WHERE id = duplicate_media.media_id AND removed_at IS NULL;
-      END IF;
-    END LOOP;
+    UPDATE property_revisions
+    SET payload = canonicalize_property_media_payload(
+      payload, duplicate_media.duplicate_id::text, duplicate_media.canonical_id::text
+    )
+    WHERE property_id = duplicate_media.property_id;
+    -- The constraint requires a valid deferred-GC state immediately; the
+    -- property-level refresh below is authoritative for the final outcome.
+    UPDATE property_media
+    SET removed_at = clock_timestamp(),
+        retained_for_publication = false,
+        gc_eligible_at = clock_timestamp() + interval '30 days'
+    WHERE id = duplicate_media.duplicate_id AND removed_at IS NULL;
   END LOOP;
 END;
 $$;
 
 ALTER TABLE property_revisions ENABLE TRIGGER property_revisions_append_only;
+
+DO $$
+DECLARE affected_property record;
+BEGIN
+  FOR affected_property IN SELECT DISTINCT property_id FROM media_duplicate_remap LOOP
+    PERFORM refresh_property_media_gc(affected_property.property_id);
+  END LOOP;
+END;
+$$;
 
 WITH latest_payload_position AS (
   SELECT media.id,
