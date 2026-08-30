@@ -1,3 +1,6 @@
+import type { ApiFieldIssue } from '../../../shared/apiContract.ts';
+import type { PropertyDraft } from '../../../shared/propertySchema.ts';
+
 const CSRF_COOKIE_NAME = 'clementino_admin_csrf';
 
 export type SessionState = { authenticated: boolean; mustChangePassword: boolean };
@@ -7,21 +10,13 @@ export type PropertyStatus = 'draft' | 'published' | 'inactive';
 export type PropertyOperation = 'sale' | 'rent' | 'seasonal' | 'auction';
 export type PropertyType = 'apartment' | 'house' | 'commercial' | 'rural' | 'land';
 
-export type AdminPropertyDraftDto = {
-  classification?: { operations?: PropertyOperation[]; type?: PropertyType; subtype?: string };
-  privateAddress?: {
-    postalCode?: string;
-    state?: string;
-    city?: string;
-    district?: string;
-    street?: string;
-    number?: string;
-    complement?: string;
-  };
-  editorial?: { title?: string; reference?: string; featured?: boolean };
-  pricing?: Partial<Record<PropertyOperation | 'condominium' | 'iptu', number>>;
-  media?: { orderedPhotoIds?: string[]; coverPhotoId?: string };
-};
+export type DeepPartial<T> = T extends readonly (infer Item)[]
+  ? Item[]
+  : T extends object
+    ? { [Key in keyof T]?: DeepPartial<T[Key]> | null }
+    : T;
+
+export type AdminPropertyDraftDto = DeepPartial<PropertyDraft>;
 
 export type PropertyAdminDto = {
   id: string;
@@ -89,6 +84,27 @@ export type PropertyAdminApi = {
   duplicateProperty: (id: string) => Promise<{ property: PropertyAdminDto }>;
 };
 
+export type MediaPhotoDto = {
+  id: string; mimeType: string; byteSize: number; width: number; height: number;
+  checksumSha256: string; altText: string; position: number;
+};
+
+export type CepLookupResponse =
+  | { ok: true; address: NonNullable<AdminPropertyDraftDto['privateAddress']> }
+  | { ok: false; error: { code: string; message: string } };
+
+export type PropertyEditorApi = {
+  createProperty: (draft?: AdminPropertyDraftDto, signal?: AbortSignal) => Promise<{ property: PropertyAdminDto }>;
+  getProperty: (id: string, signal?: AbortSignal) => Promise<{ property: PropertyAdminDto }>;
+  patchProperty: (id: string, revision: number, patch: AdminPropertyDraftDto, signal?: AbortSignal) => Promise<{ property: PropertyAdminDto }>;
+  lookupCep: (cep: string, signal?: AbortSignal) => Promise<CepLookupResponse>;
+  previewLocation: (input: { publicId: string; privateAddress: NonNullable<AdminPropertyDraftDto['privateAddress']>; manualCoordinates?: { latitude: number; longitude: number } }, signal?: AbortSignal) => Promise<{ publicLocation: NonNullable<AdminPropertyDraftDto['publicLocation']> }>;
+  uploadPhoto: (id: string, revision: number, file: File, altText: string, signal?: AbortSignal) => Promise<{ photo: MediaPhotoDto; property: PropertyAdminDto }>;
+  reorderPhotos: (id: string, revision: number, orderedPhotoIds: string[], coverPhotoId: string, signal?: AbortSignal) => Promise<{ property: PropertyAdminDto }>;
+  editPhoto: (id: string, photoId: string, revision: number, altText: string, signal?: AbortSignal) => Promise<{ photo: MediaPhotoDto; property: PropertyAdminDto }>;
+  deletePhoto: (id: string, photoId: string, revision: number, signal?: AbortSignal) => Promise<{ property: PropertyAdminDto; deletion: { state: string; retainedForPublication: boolean } }>;
+};
+
 export type AuthApi = {
   getSession: () => Promise<SessionState>;
   login: (username: string, password: string) => Promise<AuthResult>;
@@ -98,9 +114,15 @@ export type AuthApi = {
 };
 
 export class ApiError extends Error {
-  constructor(public readonly status: number, public readonly code?: string) {
+  constructor(
+    public readonly status: number,
+    public readonly code?: string,
+    public readonly issues: ApiFieldIssue[] = [],
+    message?: string,
+  ) {
     super('A solicitação não pôde ser concluída.');
     this.name = 'ApiError';
+    if (message) this.message = message;
   }
 }
 
@@ -119,7 +141,19 @@ const getErrorCode = (value: unknown): string | undefined => {
   return typeof code === 'string' ? code : undefined;
 };
 
-export class AdminApiClient implements AuthApi, PropertyAdminApi {
+const getErrorDetails = (value: unknown): { code?: string; message?: string; issues?: ApiFieldIssue[] } => {
+  if (typeof value !== 'object' || value === null || !('error' in value)) return {};
+  const error = (value as { error: unknown }).error;
+  if (typeof error !== 'object' || error === null) return {};
+  const details = error as { code?: unknown; message?: unknown; issues?: unknown };
+  return {
+    code: typeof details.code === 'string' ? details.code : undefined,
+    message: typeof details.message === 'string' ? details.message : undefined,
+    issues: Array.isArray(details.issues) ? details.issues as ApiFieldIssue[] : undefined,
+  };
+};
+
+export class AdminApiClient implements AuthApi, PropertyAdminApi, PropertyEditorApi {
   private readonly unauthorizedHandlers = new Set<() => void>();
 
   constructor(private readonly baseUrl = '/api/admin') {}
@@ -131,7 +165,7 @@ export class AdminApiClient implements AuthApi, PropertyAdminApi {
 
   private async request<T>(path: string, init: RequestInit = {}, notifyUnauthorized = true): Promise<T> {
     const headers = new Headers(init.headers);
-    if (init.body !== undefined && !headers.has('content-type')) headers.set('content-type', 'application/json');
+    if (init.body !== undefined && !(init.body instanceof FormData) && !headers.has('content-type')) headers.set('content-type', 'application/json');
     const method = (init.method ?? 'GET').toUpperCase();
     if (!['GET', 'HEAD', 'OPTIONS'].includes(method)) {
       const csrf = readCookie(CSRF_COOKIE_NAME);
@@ -141,7 +175,8 @@ export class AdminApiClient implements AuthApi, PropertyAdminApi {
     if (!response.ok) {
       const body = await response.json().catch(() => undefined);
       if (response.status === 401 && notifyUnauthorized) this.unauthorizedHandlers.forEach((handler) => handler());
-      throw new ApiError(response.status, getErrorCode(body));
+      const details = getErrorDetails(body);
+      throw new ApiError(response.status, details.code ?? getErrorCode(body), details.issues, details.message);
     }
     if (response.status === 204) return undefined as T;
     return (await response.json()) as T;
@@ -196,6 +231,55 @@ export class AdminApiClient implements AuthApi, PropertyAdminApi {
 
   duplicateProperty(id: string): Promise<{ property: PropertyAdminDto }> {
     return this.request(`/properties/${encodeURIComponent(id)}/duplicate`, { method: 'POST', body: '{}' });
+  }
+
+  createProperty(draft: AdminPropertyDraftDto = {}, signal?: AbortSignal): Promise<{ property: PropertyAdminDto }> {
+    return this.request('/properties', { method: 'POST', body: JSON.stringify({ draft }), signal });
+  }
+
+  getProperty(id: string, signal?: AbortSignal): Promise<{ property: PropertyAdminDto }> {
+    return this.request(`/properties/${encodeURIComponent(id)}`, { signal });
+  }
+
+  patchProperty(id: string, revision: number, patch: AdminPropertyDraftDto, signal?: AbortSignal): Promise<{ property: PropertyAdminDto }> {
+    return this.request(`/properties/${encodeURIComponent(id)}/draft`, {
+      method: 'PATCH', headers: { 'if-match': String(revision) }, body: JSON.stringify(patch), signal,
+    });
+  }
+
+  lookupCep(cep: string, signal?: AbortSignal): Promise<CepLookupResponse> {
+    return this.request(`/location/cep/${encodeURIComponent(cep)}`, { signal });
+  }
+
+  previewLocation(input: Parameters<PropertyEditorApi['previewLocation']>[0], signal?: AbortSignal): ReturnType<PropertyEditorApi['previewLocation']> {
+    return this.request('/location/preview', { method: 'POST', body: JSON.stringify(input), signal });
+  }
+
+  uploadPhoto(id: string, revision: number, file: File, altText: string, signal?: AbortSignal): ReturnType<PropertyEditorApi['uploadPhoto']> {
+    const body = new FormData();
+    body.append('file', file);
+    body.append('altText', altText);
+    return this.request(`/properties/${encodeURIComponent(id)}/photos`, {
+      method: 'POST', headers: { 'if-match': String(revision) }, body, signal,
+    });
+  }
+
+  reorderPhotos(id: string, revision: number, orderedPhotoIds: string[], coverPhotoId: string, signal?: AbortSignal): ReturnType<PropertyEditorApi['reorderPhotos']> {
+    return this.request(`/properties/${encodeURIComponent(id)}/photos/order`, {
+      method: 'PATCH', headers: { 'if-match': String(revision) }, body: JSON.stringify({ orderedPhotoIds, coverPhotoId }), signal,
+    });
+  }
+
+  editPhoto(id: string, photoId: string, revision: number, altText: string, signal?: AbortSignal): ReturnType<PropertyEditorApi['editPhoto']> {
+    return this.request(`/properties/${encodeURIComponent(id)}/photos/${encodeURIComponent(photoId)}`, {
+      method: 'PATCH', headers: { 'if-match': String(revision) }, body: JSON.stringify({ altText }), signal,
+    });
+  }
+
+  deletePhoto(id: string, photoId: string, revision: number, signal?: AbortSignal): ReturnType<PropertyEditorApi['deletePhoto']> {
+    return this.request(`/properties/${encodeURIComponent(id)}/photos/${encodeURIComponent(photoId)}`, {
+      method: 'DELETE', headers: { 'if-match': String(revision) }, signal,
+    });
   }
 }
 
