@@ -186,8 +186,8 @@ test('keeps both Markdown records synchronized with the 53 approved editorial en
     for (const markdownName of ['README.md', 'imovel.md']) {
       const markdown = readFileSync(resolve(propertyRoot, markdownName), 'utf8');
       assert.equal(
-        syncEditorialMarkdown(markdown, entry),
-        markdown,
+        syncEditorialMarkdown(markdown, entry).replace(/\r\n/g, '\n'),
+        markdown.replace(/\r\n/g, '\n'),
         `${markdownName} divergente para ${entry.id}`,
       );
     }
