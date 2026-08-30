@@ -133,3 +133,8 @@ git switch main
 ## Build de produção sem Compose
 
 O build estático é gerado em `dist/` por `npm run build`. O `Dockerfile` incluído constrói o frontend e o publica com Nginx, incluindo fallback de rotas para o React Router.
+# Administração e deploy
+
+O painel seguro fica em `admin.clementinoimoveis.com.br` em produção. Consulte
+[docs/ADMIN-DEPLOYMENT.md](docs/ADMIN-DEPLOYMENT.md) para atualização, backup,
+persistência e rollback, e o checklist de [cutover](docs/audits/property-admin-cutover.md).
