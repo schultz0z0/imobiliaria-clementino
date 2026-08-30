@@ -34,3 +34,76 @@ services:
       - 'traefik.http.middlewares.imobiliaria-www-redirect.redirectregex.replacement=https://$${1}'
       - "traefik.http.middlewares.imobiliaria-www-redirect.redirectregex.permanent=true"
       - "traefik.http.services.imobiliaria.loadbalancer.server.port=80"
+
+  admin:
+    build:
+      context: .
+      dockerfile: Dockerfile.admin.prod
+    restart: unless-stopped
+    expose: ["80"]
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.imobiliaria-admin.rule=Host(`${ADMIN_DOMAIN:-admin.${DOMAIN}}`)"
+      - "traefik.http.routers.imobiliaria-admin.entrypoints=websecure"
+      - "traefik.http.routers.imobiliaria-admin.tls=true"
+      - "traefik.http.routers.imobiliaria-admin.tls.certresolver=letsencrypt"
+      - "traefik.http.services.imobiliaria-admin.loadbalancer.server.port=80"
+
+  admin-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: api
+    restart: unless-stopped
+    expose: ["3000"]
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: ${DATABASE_URL:?DATABASE_URL is required}
+      SESSION_SECRET: ${SESSION_SECRET:?SESSION_SECRET is required}
+      MEDIA_ROOT: /data/media
+      PUBLISHED_ROOT: /data/published
+    volumes:
+      - media_data:/data/media
+      - published_releases:/data/published
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  publisher:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: api
+    restart: unless-stopped
+    command: ["node", "dist-server/publisher/index.js"]
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: ${DATABASE_URL:?DATABASE_URL is required}
+      MEDIA_ROOT: /data/media
+      PUBLISHED_ROOT: /data/published
+    volumes:
+      - media_data:/data/media
+      - published_releases:/data/published
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-clementino}
+      POSTGRES_USER: ${POSTGRES_USER:-clementino}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  postgres_data:
+  media_data:
+  published_releases:

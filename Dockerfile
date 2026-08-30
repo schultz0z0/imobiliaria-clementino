@@ -20,6 +20,7 @@ COPY shared ./shared
 COPY server ./server
 COPY scripts ./scripts
 RUN npm run server:build
+RUN npm run publisher:build
 RUN node server/media/codecSmoke.mjs
 
 FROM node:22-bookworm-slim AS api
