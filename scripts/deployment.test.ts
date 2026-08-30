@@ -89,3 +89,14 @@ test('nginx revalidates prerendered HTML while keeping fingerprinted assets immu
     /location \/assets\/ \{[\s\S]*add_header Cache-Control "public, immutable";[\s\S]*\}/,
   );
 });
+
+test('development compose keeps admin, publisher and postgres persistent and private', () => {
+  const compose = readFileSync(new URL('../compose.dev.yaml', import.meta.url), 'utf8');
+  for (const service of ['website:', 'admin-api:', 'publisher:', 'postgres:']) assert.match(compose, new RegExp(`\\n  ${service}`));
+  for (const volume of ['dev_postgres_data:', 'dev_media_private:', 'dev_media_public:', 'dev_releases:', 'admin_node_modules:', 'publisher_node_modules:']) assert.match(compose, new RegExp(`\\n  ${volume}`));
+  assert.match(compose, /"4175:3000"/);
+  assert.match(compose, /"4174:4174"/);
+  assert.doesNotMatch(compose, /postgres:[\s\S]*?ports:/);
+  assert.match(compose, /healthcheck:/g);
+  assert.match(readFileSync(new URL('../.env.development.example', import.meta.url), 'utf8'), /ADMIN_SESSION_SECRET/);
+});

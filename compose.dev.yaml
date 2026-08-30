@@ -16,5 +16,79 @@ services:
       - .:/app
       - node_modules:/app/node_modules
 
+  admin-api:
+    build:
+      context: .
+      dockerfile: Dockerfile.admin-api.dev
+    init: true
+    ports:
+      - "4175:3000"
+    env_file:
+      - ${DEV_ENV_FILE:-.env.development.example}
+    environment:
+      NODE_ENV: development
+      DATABASE_URL: postgresql://clementino_dev:clementino_dev@postgres:5432/clementino_dev
+      MEDIA_ROOT: /data/media
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - .:/app
+      - admin_node_modules:/app/node_modules
+      - dev_media_private:/data/media/private
+      - dev_media_public:/data/media/public
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"fetch('http://127.0.0.1:3000/health').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))\""]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  publisher:
+    build:
+      context: .
+      dockerfile: Dockerfile.publisher.dev
+    init: true
+    env_file:
+      - ${DEV_ENV_FILE:-.env.development.example}
+    environment:
+      NODE_ENV: development
+      DATABASE_URL: postgresql://clementino_dev:clementino_dev@postgres:5432/clementino_dev
+      MEDIA_ROOT: /data/media
+      PUBLIC_RELEASE_ROOT: /data/releases
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - .:/app
+      - publisher_node_modules:/app/node_modules
+      - dev_media_private:/data/media/private
+      - dev_media_public:/data/media/public
+      - dev_releases:/data/releases
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"process.exit(0)\""]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: clementino_dev
+      POSTGRES_USER: clementino_dev
+      POSTGRES_PASSWORD: clementino_dev
+    volumes:
+      - dev_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U clementino_dev -d clementino_dev"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
 volumes:
   node_modules:
+  admin_node_modules:
+  publisher_node_modules:
+  dev_postgres_data:
+  dev_media_private:
+  dev_media_public:
+  dev_releases:

@@ -19,13 +19,14 @@ O site ficará disponível em `http://localhost:4174`.
 
 Requisitos: Docker Desktop para Windows configurado para containers Linux.
 
-Para construir e iniciar o ambiente com hot reload:
+Para construir e iniciar o ambiente com hot reload (site, painel, API, publisher e PostgreSQL persistente):
 
 ```bash
-docker compose -f compose.dev.yaml up --build
+copy .env.development.example .env.development
+docker compose --env-file .env.development -f compose.dev.yaml up --build
 ```
 
-O site ficará disponível em `http://localhost:4174`. As alterações feitas nos arquivos locais serão refletidas pelo Vite dentro do container. As dependências Linux ficam no volume Docker `imobiliaria-clementino-dev_node_modules`, sem substituir o `node_modules` do Windows.
+O site ficará disponível em `http://localhost:4174` e o painel em `http://localhost:4175`. As alterações feitas nos arquivos locais serão refletidas pelo Vite dentro do container. O PostgreSQL, mídias privadas/públicas, releases publicadas e dependências Linux ficam em volumes nomeados; `docker compose down` preserva esses dados. Use `down -v` somente em um ambiente de teste descartável.
 
 Para executar em segundo plano, acompanhar os logs e parar o ambiente:
 
