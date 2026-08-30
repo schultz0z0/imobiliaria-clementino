@@ -59,7 +59,6 @@ services:
     environment:
       NODE_ENV: production
       DATABASE_URL: ${DATABASE_URL:?DATABASE_URL is required}
-      SESSION_SECRET: ${SESSION_SECRET:?SESSION_SECRET is required}
       MEDIA_ROOT: /data/media
       PUBLISHED_ROOT: /data/published
     volumes:
