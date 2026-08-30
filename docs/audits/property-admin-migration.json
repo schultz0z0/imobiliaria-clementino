@@ -1,0 +1,3204 @@
+{
+  "generatedAt": "2026-08-30T04:58:27.158Z",
+  "dryRun": true,
+  "total": 53,
+  "entries": [
+    {
+      "publicId": "3017305760",
+      "reference": "AP0016",
+      "slug": "apartamento-em-engenho-do-porto-condominio-varsovia-proximo-ao-centro-de-caxias-3017305760",
+      "title": "Apartamento em Engenho do Porto — Condomínio Varsóvia, próximo ao Centro de Caxias",
+      "description": "Apartamento no terceiro andar do Condomínio Habitacional Varsóvia, em Engenho do Porto, a cerca de dez minutos a pé do Centro de Duque de Caxias.\nPossui 62 m², sala em dois ambientes, dois quartos, banheiro social, cozinha e área de serviço.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 170.000",
+          "priceValue": 170000
+        }
+      ],
+      "location": {
+        "district": "Engenho do Porto",
+        "city": "Duque de Caxias",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 2,
+        "baths": 1,
+        "suites": 0,
+        "parkingSpaces": 0,
+        "areaValue": 62,
+        "totalAreaValue": 65
+      },
+      "photos": [
+        "/imoveis/3017305760/foto-01.webp",
+        "/imoveis/3017305760/foto-02.webp",
+        "/imoveis/3017305760/foto-03.webp",
+        "/imoveis/3017305760/foto-04.webp",
+        "/imoveis/3017305760/foto-05.webp",
+        "/imoveis/3017305760/foto-06.webp",
+        "/imoveis/3017305760/foto-07.webp",
+        "/imoveis/3017305760/foto-08.webp",
+        "/imoveis/3017305760/foto-09.webp",
+        "/imoveis/3017305760/foto-10.webp"
+      ],
+      "sourceFolder": "d.caxias-bar-cavaleiro-cond.varsovia-carlos-3017305760"
+    },
+    {
+      "publicId": "3017305761",
+      "reference": "AP0037",
+      "slug": "cobertura-duplex-em-jardim-america-residencial-america-life-e-terraco-3017305761",
+      "title": "Cobertura duplex em Jardim América — Residencial América Life e terraço",
+      "description": "Cobertura duplex no Residencial América Life, em Jardim América. No primeiro piso, possui sala, banheiro social com box blindex, dois quartos, cozinha com armários e área de serviço com tanque.\nO segundo piso conta com sala que pode ser usada como home office, terraço descoberto com possibilidade de área gourmet e espaço para mais um quarto. Há uma vaga de garagem na escritura, e o condomínio oferece área de lazer.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 230.000",
+          "priceValue": 230000
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 2,
+        "baths": 1,
+        "suites": 0,
+        "parkingSpaces": 1,
+        "areaValue": 92,
+        "totalAreaValue": 92
+      },
+      "photos": [
+        "/imoveis/3017305761/foto-01.webp",
+        "/imoveis/3017305761/foto-02.webp",
+        "/imoveis/3017305761/foto-03.webp",
+        "/imoveis/3017305761/foto-04.webp",
+        "/imoveis/3017305761/foto-05.webp",
+        "/imoveis/3017305761/foto-06.webp",
+        "/imoveis/3017305761/foto-07.webp",
+        "/imoveis/3017305761/foto-08.webp",
+        "/imoveis/3017305761/foto-09.webp",
+        "/imoveis/3017305761/foto-10.webp",
+        "/imoveis/3017305761/foto-11.webp",
+        "/imoveis/3017305761/foto-12.webp",
+        "/imoveis/3017305761/foto-13.webp",
+        "/imoveis/3017305761/foto-14.webp",
+        "/imoveis/3017305761/foto-15.webp",
+        "/imoveis/3017305761/foto-16.webp",
+        "/imoveis/3017305761/foto-17.webp",
+        "/imoveis/3017305761/foto-18.webp",
+        "/imoveis/3017305761/foto-19.webp",
+        "/imoveis/3017305761/foto-20.webp",
+        "/imoveis/3017305761/foto-21.webp",
+        "/imoveis/3017305761/foto-22.webp",
+        "/imoveis/3017305761/foto-23.webp",
+        "/imoveis/3017305761/foto-24.webp",
+        "/imoveis/3017305761/foto-25.webp",
+        "/imoveis/3017305761/foto-26.webp",
+        "/imoveis/3017305761/foto-27.webp",
+        "/imoveis/3017305761/foto-28.webp",
+        "/imoveis/3017305761/foto-29.webp",
+        "/imoveis/3017305761/foto-30.webp"
+      ],
+      "sourceFolder": "jardim-america-residencial-america-life-3017305761"
+    },
+    {
+      "publicId": "3017305764",
+      "reference": "AP0039",
+      "slug": "casa-em-vigario-geral-rua-sao-bartolomeu-fundos-e-terraco-3017305764",
+      "title": "Casa em Vigário Geral — Rua São Bartolomeu, fundos e terraço",
+      "description": "Casa de fundos com 55 m², situada em terreno compartilhado com outras duas residências na Rua São Bartolomeu. Possui sala, um quarto amplo, cozinha, banheiro, área frontal, terraço coberto, quintal e cisterna.\nO imóvel está desocupado, com pintura nova, água e energia elétrica individualizadas e isenção de IPTU. A documentação está regular e permite financiamento bancário.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 130.000",
+          "priceValue": 130000
+        }
+      ],
+      "location": {
+        "district": "Vigário Geral",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 1,
+        "baths": 1,
+        "suites": 0,
+        "parkingSpaces": 0,
+        "areaValue": 55,
+        "totalAreaValue": 55
+      },
+      "photos": [
+        "/imoveis/3017305764/foto-01.webp",
+        "/imoveis/3017305764/foto-02.webp",
+        "/imoveis/3017305764/foto-03.webp",
+        "/imoveis/3017305764/foto-04.webp",
+        "/imoveis/3017305764/foto-05.webp",
+        "/imoveis/3017305764/foto-06.webp",
+        "/imoveis/3017305764/foto-07.webp",
+        "/imoveis/3017305764/foto-08.webp",
+        "/imoveis/3017305764/foto-09.webp",
+        "/imoveis/3017305764/foto-10.webp",
+        "/imoveis/3017305764/foto-11.webp"
+      ],
+      "sourceFolder": "v.-geral-r.-sao-bartolomeu-casa-de-fdos-55-m-3017305764"
+    },
+    {
+      "publicId": "3017305767",
+      "reference": "AP0030",
+      "slug": "apartamento-em-copacabana-rua-inhanga-reformado-e-proximo-ao-metro-3017305767",
+      "title": "Apartamento em Copacabana — Rua Inhangá, reformado e próximo ao metrô",
+      "description": "Apartamento reformado de 75 m² na Rua Inhangá, em Copacabana. Possui sala em dois ambientes com piso em porcelanato e ar-condicionado split, dois quartos amplos e ventilados, cozinha com bancada e cooktop por indução, área de serviço e banheiro social.\nO prédio tem portaria em horário comercial, duas unidades por andar e salão de festas. Fica próximo ao metrô, à praia e às conveniências do bairro.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 1.045.000",
+          "priceValue": 1045000
+        }
+      ],
+      "location": {
+        "district": "Copacabana",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 2,
+        "baths": 1,
+        "suites": 0,
+        "parkingSpaces": 0,
+        "areaValue": 75,
+        "totalAreaValue": 75
+      },
+      "photos": [
+        "/imoveis/3017305767/foto-01.webp",
+        "/imoveis/3017305767/foto-02.webp",
+        "/imoveis/3017305767/foto-03.webp",
+        "/imoveis/3017305767/foto-04.webp",
+        "/imoveis/3017305767/foto-05.webp",
+        "/imoveis/3017305767/foto-06.webp",
+        "/imoveis/3017305767/foto-07.webp",
+        "/imoveis/3017305767/foto-08.webp",
+        "/imoveis/3017305767/foto-09.webp",
+        "/imoveis/3017305767/foto-10.webp",
+        "/imoveis/3017305767/foto-11.webp",
+        "/imoveis/3017305767/foto-12.webp",
+        "/imoveis/3017305767/foto-13.webp",
+        "/imoveis/3017305767/foto-14.webp",
+        "/imoveis/3017305767/foto-15.webp",
+        "/imoveis/3017305767/foto-16.webp",
+        "/imoveis/3017305767/foto-17.webp",
+        "/imoveis/3017305767/foto-18.webp",
+        "/imoveis/3017305767/foto-19.webp",
+        "/imoveis/3017305767/foto-20.webp",
+        "/imoveis/3017305767/foto-21.webp",
+        "/imoveis/3017305767/foto-22.webp",
+        "/imoveis/3017305767/foto-23.webp",
+        "/imoveis/3017305767/foto-24.webp",
+        "/imoveis/3017305767/foto-25.webp",
+        "/imoveis/3017305767/foto-26.webp",
+        "/imoveis/3017305767/foto-27.webp"
+      ],
+      "sourceFolder": "copacabana-apto-75m-2-qtos-1-wc-prox.-ao-metro-3017305767"
+    },
+    {
+      "publicId": "3017305771",
+      "reference": "CA0018",
+      "slug": "casa-em-jardim-america-rua-general-oscilio-maia-varanda-e-terraco-3017305771",
+      "title": "Casa em Jardim América — Rua General Oscílio Maia, varanda e terraço",
+      "description": "Casa de três pavimentos em Jardim América. O primeiro andar possui sala ampla, cozinha, banheiro e área de serviço.\nNo segundo andar, há três quartos, um banheiro e varanda. O terceiro pavimento é ocupado pelo terraço.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 250.000",
+          "priceValue": 250000
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 3,
+        "baths": 2,
+        "suites": 0,
+        "parkingSpaces": 0,
+        "areaValue": 121,
+        "totalAreaValue": 122
+      },
+      "photos": [
+        "/imoveis/3017305771/foto-01.webp",
+        "/imoveis/3017305771/foto-02.webp",
+        "/imoveis/3017305771/foto-03.webp",
+        "/imoveis/3017305771/foto-04.webp",
+        "/imoveis/3017305771/foto-05.webp",
+        "/imoveis/3017305771/foto-06.webp",
+        "/imoveis/3017305771/foto-07.webp",
+        "/imoveis/3017305771/foto-08.webp",
+        "/imoveis/3017305771/foto-09.webp",
+        "/imoveis/3017305771/foto-10.webp",
+        "/imoveis/3017305771/foto-11.webp",
+        "/imoveis/3017305771/foto-12.webp",
+        "/imoveis/3017305771/foto-13.webp",
+        "/imoveis/3017305771/foto-14.webp",
+        "/imoveis/3017305771/foto-15.webp",
+        "/imoveis/3017305771/foto-16.webp"
+      ],
+      "sourceFolder": "jardim-america-casa-sala-ampla-3qtos-2-bnnhs-3017305771"
+    },
+    {
+      "publicId": "3017305773",
+      "reference": "AP0028",
+      "slug": "apartamento-em-copacabana-rua-barata-ribeiro-andar-alto-e-vaga-3017305773",
+      "title": "Apartamento em Copacabana — Rua Barata Ribeiro, andar alto e vaga",
+      "description": "Apartamento de 106 m² no 12º andar, localizado na Rua Barata Ribeiro, a três quadras da praia e próximo à estação Cardeal Arcoverde. Possui sala ampla, dois quartos — um deles com possibilidade de conversão em suíte e o outro com jardim de inverno —, cozinha, dois banheiros sociais, dependência completa e área de serviço.\nA unidade é de frente, tem vista para o verde, boa iluminação natural e uma vaga de garagem. O prédio conta com portaria 24 horas, interfone e elevadores social e de serviço.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 999.000",
+          "priceValue": 999000
+        }
+      ],
+      "location": {
+        "district": "Copacabana",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 2,
+        "baths": 2,
+        "suites": 0,
+        "parkingSpaces": 1,
+        "areaValue": 106,
+        "totalAreaValue": 106
+      },
+      "photos": [
+        "/imoveis/3017305773/foto-01.webp",
+        "/imoveis/3017305773/foto-02.webp",
+        "/imoveis/3017305773/foto-03.webp",
+        "/imoveis/3017305773/foto-04.webp",
+        "/imoveis/3017305773/foto-05.webp",
+        "/imoveis/3017305773/foto-06.webp",
+        "/imoveis/3017305773/foto-07.webp",
+        "/imoveis/3017305773/foto-08.webp",
+        "/imoveis/3017305773/foto-09.webp",
+        "/imoveis/3017305773/foto-10.webp",
+        "/imoveis/3017305773/foto-11.webp",
+        "/imoveis/3017305773/foto-12.webp",
+        "/imoveis/3017305773/foto-13.webp",
+        "/imoveis/3017305773/foto-14.webp",
+        "/imoveis/3017305773/foto-15.webp",
+        "/imoveis/3017305773/foto-16.webp",
+        "/imoveis/3017305773/foto-17.webp",
+        "/imoveis/3017305773/foto-18.webp",
+        "/imoveis/3017305773/foto-19.webp",
+        "/imoveis/3017305773/foto-20.webp",
+        "/imoveis/3017305773/foto-21.webp",
+        "/imoveis/3017305773/foto-22.webp",
+        "/imoveis/3017305773/foto-23.webp",
+        "/imoveis/3017305773/foto-24.webp",
+        "/imoveis/3017305773/foto-25.webp",
+        "/imoveis/3017305773/foto-26.webp",
+        "/imoveis/3017305773/foto-27.webp"
+      ],
+      "sourceFolder": "copacabana-apto-106m-2-qtos-2-bnhs-1-vaga-3017305773"
+    },
+    {
+      "publicId": "3017305776",
+      "reference": "LO0001",
+      "slug": "terreno-em-bangu-rua-pedro-pomar-proximo-a-avenida-brasil-3017305776",
+      "title": "Terreno em Bangu — Rua Pedro Pomar, próximo à Avenida Brasil",
+      "description": "Conjunto de quatro lotes na Rua Pedro Pomar, em Bangu, totalizando 981 m². A localização fica próxima à Avenida Brasil e ao Atacadista Assaí.\nO terreno pode atender a usos comerciais, industriais, religiosos ou a novos empreendimentos. A documentação está regular, com possibilidade de negociação da entrada e do saldo.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 420.000",
+          "priceValue": 420000
+        }
+      ],
+      "location": {
+        "district": "Bangu",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 0,
+        "baths": 0,
+        "suites": 0,
+        "parkingSpaces": 0,
+        "areaValue": 981,
+        "totalAreaValue": 981
+      },
+      "photos": [
+        "/imoveis/3017305776/foto-01.webp",
+        "/imoveis/3017305776/foto-02.webp",
+        "/imoveis/3017305776/foto-03.webp",
+        "/imoveis/3017305776/foto-04.webp",
+        "/imoveis/3017305776/foto-05.webp",
+        "/imoveis/3017305776/foto-06.webp",
+        "/imoveis/3017305776/foto-07.webp",
+        "/imoveis/3017305776/foto-08.webp",
+        "/imoveis/3017305776/foto-09.webp",
+        "/imoveis/3017305776/foto-10.webp",
+        "/imoveis/3017305776/foto-11.webp",
+        "/imoveis/3017305776/foto-12.webp"
+      ],
+      "sourceFolder": "bangu-prox.-assai-na-av.-brasil.-terrenos-com-981m-.-3017305776"
+    },
+    {
+      "publicId": "3017305781",
+      "reference": "AP0025",
+      "slug": "apartamento-em-laranjeiras-rua-coelho-neto-e-vaga-3017305781",
+      "title": "Apartamento em Laranjeiras — Rua Coelho Neto e vaga",
+      "description": "Apartamento de 93 m² em Laranjeiras, com sala de estar integrada à sala de jantar, dois quartos com armários planejados, banheiro social, cozinha, área de serviço e despensa. Possui uma vaga de garagem.\nO condomínio oferece salão de festas. A localização permite acesso ao Parque Eduardo Guinle, ao Largo do Machado, ao metrô e às conveniências do bairro.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 838.000",
+          "priceValue": 838000
+        }
+      ],
+      "location": {
+        "district": "Laranjeiras",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 2,
+        "baths": 1,
+        "suites": 0,
+        "parkingSpaces": 1,
+        "areaValue": 93,
+        "totalAreaValue": 93
+      },
+      "photos": [
+        "/imoveis/3017305781/foto-01.webp",
+        "/imoveis/3017305781/foto-02.webp",
+        "/imoveis/3017305781/foto-03.webp",
+        "/imoveis/3017305781/foto-04.webp",
+        "/imoveis/3017305781/foto-05.webp",
+        "/imoveis/3017305781/foto-06.webp",
+        "/imoveis/3017305781/foto-07.webp",
+        "/imoveis/3017305781/foto-08.webp",
+        "/imoveis/3017305781/foto-09.webp",
+        "/imoveis/3017305781/foto-10.webp",
+        "/imoveis/3017305781/foto-11.webp",
+        "/imoveis/3017305781/foto-12.webp",
+        "/imoveis/3017305781/foto-13.webp",
+        "/imoveis/3017305781/foto-14.webp",
+        "/imoveis/3017305781/foto-15.webp",
+        "/imoveis/3017305781/foto-16.webp",
+        "/imoveis/3017305781/foto-17.webp",
+        "/imoveis/3017305781/foto-18.webp",
+        "/imoveis/3017305781/foto-19.webp",
+        "/imoveis/3017305781/foto-20.webp",
+        "/imoveis/3017305781/foto-21.webp",
+        "/imoveis/3017305781/foto-22.webp",
+        "/imoveis/3017305781/foto-23.webp",
+        "/imoveis/3017305781/foto-24.webp",
+        "/imoveis/3017305781/foto-25.webp",
+        "/imoveis/3017305781/foto-26.webp",
+        "/imoveis/3017305781/foto-27.webp",
+        "/imoveis/3017305781/foto-28.webp",
+        "/imoveis/3017305781/foto-29.webp",
+        "/imoveis/3017305781/foto-30.webp",
+        "/imoveis/3017305781/foto-31.webp",
+        "/imoveis/3017305781/foto-32.webp"
+      ],
+      "sourceFolder": "laranjeiras-rio-de-janeiro-rj-apto-2-qtos-1-bnh-3017305781"
+    },
+    {
+      "publicId": "3017305787",
+      "reference": "CA0019",
+      "slug": "casa-em-vigario-geral-rua-sao-bartolomeu-independente-e-com-terraco-3017305787",
+      "title": "Casa em Vigário Geral — Rua São Bartolomeu, independente e com terraço",
+      "description": "Casa de frente para a rua, com entrada independente e 169 m². O primeiro pavimento possui quintal, varanda, sala em dois ambientes, dois quartos, banheiro social, copa-cozinha, varanda nos fundos, lavanderia e quarto de serviço.\nNo pavimento superior, há terraço coberto, copa e banheiro. A água e a energia elétrica são individualizadas, a documentação está regular e o imóvel aceita carta de crédito.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 239.000",
+          "priceValue": 239000
+        }
+      ],
+      "location": {
+        "district": "Vigário Geral",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 2,
+        "baths": 2,
+        "suites": 0,
+        "parkingSpaces": 0,
+        "areaValue": 169,
+        "totalAreaValue": 170
+      },
+      "photos": [
+        "/imoveis/3017305787/foto-01.webp",
+        "/imoveis/3017305787/foto-02.webp",
+        "/imoveis/3017305787/foto-03.webp",
+        "/imoveis/3017305787/foto-04.webp",
+        "/imoveis/3017305787/foto-05.webp",
+        "/imoveis/3017305787/foto-06.webp",
+        "/imoveis/3017305787/foto-07.webp",
+        "/imoveis/3017305787/foto-08.webp",
+        "/imoveis/3017305787/foto-09.webp",
+        "/imoveis/3017305787/foto-10.webp",
+        "/imoveis/3017305787/foto-11.webp",
+        "/imoveis/3017305787/foto-12.webp",
+        "/imoveis/3017305787/foto-13.webp",
+        "/imoveis/3017305787/foto-14.webp",
+        "/imoveis/3017305787/foto-15.webp",
+        "/imoveis/3017305787/foto-16.webp"
+      ],
+      "sourceFolder": "v.-geral-r.-sao-bartolomeu-casa-de-frente-169-m-3017305787"
+    },
+    {
+      "publicId": "3017305790",
+      "reference": "AP0004",
+      "slug": "studio-em-arpoador-canto-rio-vista-para-o-mar-e-varanda-3017305790",
+      "title": "Studio em Arpoador — Canto Rio, vista para o mar e varanda",
+      "description": "Studio de 38,08 m² no empreendimento Canto Rio, no Arpoador, com varanda, área gourmet, vista para o mar e uma vaga na escritura.\nO condomínio reúne piscina de 25 metros com raias, academia, sauna, bar, lounge, sala de massagem e lavanderia. Também possui fechadura inteligente, infraestrutura para comando de voz, reconhecimento facial integrado à portaria remota, monitoramento perimetral, circuito de CFTV, controle eletrônico de veículos e acesso separado para entregas e serviços.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 1.950.000",
+          "priceValue": 1950000
+        }
+      ],
+      "location": {
+        "district": "Copacabana",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 1,
+        "baths": 1,
+        "suites": 1,
+        "parkingSpaces": 1,
+        "areaValue": 39,
+        "totalAreaValue": 39
+      },
+      "photos": [
+        "/imoveis/3017305790/foto-01.webp",
+        "/imoveis/3017305790/foto-02.webp",
+        "/imoveis/3017305790/foto-03.webp",
+        "/imoveis/3017305790/foto-04.webp",
+        "/imoveis/3017305790/foto-05.webp",
+        "/imoveis/3017305790/foto-06.webp",
+        "/imoveis/3017305790/foto-07.webp",
+        "/imoveis/3017305790/foto-08.webp",
+        "/imoveis/3017305790/foto-09.webp",
+        "/imoveis/3017305790/foto-10.webp",
+        "/imoveis/3017305790/foto-11.webp",
+        "/imoveis/3017305790/foto-12.webp",
+        "/imoveis/3017305790/foto-13.webp",
+        "/imoveis/3017305790/foto-14.webp",
+        "/imoveis/3017305790/foto-15.webp",
+        "/imoveis/3017305790/foto-16.webp",
+        "/imoveis/3017305790/foto-17.webp",
+        "/imoveis/3017305790/foto-18.webp",
+        "/imoveis/3017305790/foto-19.webp",
+        "/imoveis/3017305790/foto-20.webp",
+        "/imoveis/3017305790/foto-21.webp",
+        "/imoveis/3017305790/foto-22.webp",
+        "/imoveis/3017305790/foto-23.webp",
+        "/imoveis/3017305790/foto-24.webp",
+        "/imoveis/3017305790/foto-25.webp",
+        "/imoveis/3017305790/foto-26.webp",
+        "/imoveis/3017305790/foto-27.webp",
+        "/imoveis/3017305790/foto-28.webp"
+      ],
+      "sourceFolder": "r.-francisco-otaviano-ipanema-apto-de-luxo-39m-1-3017305790"
+    },
+    {
+      "publicId": "3017305792",
+      "reference": "AP0015",
+      "slug": "sobrado-em-jardim-america-rua-professor-costa-ribeiro-fundos-e-terraco-3017305792",
+      "title": "Sobrado em Jardim América — Rua Professor Costa Ribeiro, fundos e terraço",
+      "description": "Sobrado de fundos na Rua Professor Costa Ribeiro, em Jardim América, em prédio com apenas duas unidades nos fundos e sem cobrança de condomínio.\nO imóvel possui duas salas, dois quartos, dois banheiros e terraço. Aceita financiamento bancário.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 150.000",
+          "priceValue": 150000
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 2,
+        "baths": 2,
+        "suites": 0,
+        "parkingSpaces": 0,
+        "areaValue": 98,
+        "totalAreaValue": 120
+      },
+      "photos": [
+        "/imoveis/3017305792/foto-01.webp",
+        "/imoveis/3017305792/foto-02.webp",
+        "/imoveis/3017305792/foto-03.webp",
+        "/imoveis/3017305792/foto-04.webp",
+        "/imoveis/3017305792/foto-05.webp",
+        "/imoveis/3017305792/foto-06.webp",
+        "/imoveis/3017305792/foto-07.webp",
+        "/imoveis/3017305792/foto-08.webp",
+        "/imoveis/3017305792/foto-09.webp",
+        "/imoveis/3017305792/foto-10.webp",
+        "/imoveis/3017305792/foto-11.webp",
+        "/imoveis/3017305792/foto-12.webp",
+        "/imoveis/3017305792/foto-13.webp",
+        "/imoveis/3017305792/foto-14.webp",
+        "/imoveis/3017305792/foto-15.webp",
+        "/imoveis/3017305792/foto-16.webp",
+        "/imoveis/3017305792/foto-17.webp",
+        "/imoveis/3017305792/foto-18.webp",
+        "/imoveis/3017305792/foto-19.webp",
+        "/imoveis/3017305792/foto-20.webp",
+        "/imoveis/3017305792/foto-21.webp",
+        "/imoveis/3017305792/foto-22.webp",
+        "/imoveis/3017305792/foto-23.webp",
+        "/imoveis/3017305792/foto-24.webp",
+        "/imoveis/3017305792/foto-25.webp",
+        "/imoveis/3017305792/foto-26.webp",
+        "/imoveis/3017305792/foto-27.webp",
+        "/imoveis/3017305792/foto-28.webp",
+        "/imoveis/3017305792/foto-29.webp",
+        "/imoveis/3017305792/foto-30.webp",
+        "/imoveis/3017305792/foto-31.webp"
+      ],
+      "sourceFolder": "j.-america-rua-prof-costa-ribeiro-lindo-sobrado-3017305792"
+    },
+    {
+      "publicId": "3017305793",
+      "reference": "AP0011",
+      "slug": "apartamento-em-vigario-geral-condominio-padre-anchieta-e-area-de-lazer-3017305793",
+      "title": "Apartamento em Vigário Geral — Condomínio Padre Anchieta e área de lazer",
+      "description": "Apartamento no Condomínio Padre Anchieta, na Estrada de Vigário Geral. Possui sala, um quarto, banheiro social, cozinha e área de serviço.\nO condomínio oferece área de lazer, quadra esportiva, brinquedoteca e salão de festas, além de ficar ao lado da Academia ACP.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 75.000",
+          "priceValue": 75000
+        }
+      ],
+      "location": {
+        "district": "Vigário Geral",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 1,
+        "baths": 1,
+        "suites": 0,
+        "parkingSpaces": 0,
+        "areaValue": 45,
+        "totalAreaValue": 47
+      },
+      "photos": [
+        "/imoveis/3017305793/foto-01.webp",
+        "/imoveis/3017305793/foto-02.webp",
+        "/imoveis/3017305793/foto-03.webp",
+        "/imoveis/3017305793/foto-04.webp",
+        "/imoveis/3017305793/foto-05.webp",
+        "/imoveis/3017305793/foto-06.webp",
+        "/imoveis/3017305793/foto-07.webp",
+        "/imoveis/3017305793/foto-08.webp",
+        "/imoveis/3017305793/foto-09.webp",
+        "/imoveis/3017305793/foto-10.webp",
+        "/imoveis/3017305793/foto-11.webp",
+        "/imoveis/3017305793/foto-12.webp",
+        "/imoveis/3017305793/foto-13.webp",
+        "/imoveis/3017305793/foto-14.webp",
+        "/imoveis/3017305793/foto-15.webp",
+        "/imoveis/3017305793/foto-16.webp",
+        "/imoveis/3017305793/foto-17.webp",
+        "/imoveis/3017305793/foto-18.webp",
+        "/imoveis/3017305793/foto-19.webp",
+        "/imoveis/3017305793/foto-20.webp",
+        "/imoveis/3017305793/foto-21.webp",
+        "/imoveis/3017305793/foto-22.webp",
+        "/imoveis/3017305793/foto-23.webp"
+      ],
+      "sourceFolder": "vigario-geral-condominio-padre-anchieta-apto-1-qto-3017305793"
+    },
+    {
+      "publicId": "3017305794",
+      "reference": "AP0022",
+      "slug": "apartamento-em-duque-de-caxias-condominio-dr-roberto-da-silveira-3017305794",
+      "title": "Apartamento em Duque de Caxias — Condomínio Dr. Roberto da Silveira",
+      "description": "Apartamento de 75 m² no segundo andar do Conjunto Residencial Dr. Roberto da Silveira, no Centro de Duque de Caxias.\nPossui sala, três quartos, banheiro social, cozinha e área de serviço.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 295.000",
+          "priceValue": 295000
+        }
+      ],
+      "location": {
+        "district": "Centro",
+        "city": "Duque de Caxias",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 3,
+        "baths": 1,
+        "suites": 0,
+        "parkingSpaces": 0,
+        "areaValue": 74,
+        "totalAreaValue": 75
+      },
+      "photos": [
+        "/imoveis/3017305794/foto-01.webp",
+        "/imoveis/3017305794/foto-02.webp",
+        "/imoveis/3017305794/foto-03.webp",
+        "/imoveis/3017305794/foto-04.webp",
+        "/imoveis/3017305794/foto-05.webp",
+        "/imoveis/3017305794/foto-06.webp",
+        "/imoveis/3017305794/foto-07.webp",
+        "/imoveis/3017305794/foto-08.webp",
+        "/imoveis/3017305794/foto-09.webp",
+        "/imoveis/3017305794/foto-10.webp",
+        "/imoveis/3017305794/foto-11.webp",
+        "/imoveis/3017305794/foto-12.webp",
+        "/imoveis/3017305794/foto-13.webp"
+      ],
+      "sourceFolder": "d.caxias-centro-cond.-res.-dr.-roberto-da-silveira-3017305794"
+    },
+    {
+      "publicId": "3017305795",
+      "reference": "AP006",
+      "slug": "apartamento-em-jardim-america-rua-alvaro-de-magalhaes-terreo-e-com-quintal-3017305795",
+      "title": "Apartamento em Jardim América — Rua Álvaro de Magalhães, térreo e com quintal",
+      "description": "Apartamento tipo casa, com entrada independente, na Rua Álvaro de Magalhães, em Jardim América.\nPossui 78 m², quintal, sala, dois quartos, dois banheiros, cozinha e área de serviço externa. Aceita carta de crédito.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 240.000",
+          "priceValue": 240000
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 2,
+        "baths": 2,
+        "suites": 0,
+        "parkingSpaces": 0,
+        "areaValue": 75,
+        "totalAreaValue": 78
+      },
+      "photos": [
+        "/imoveis/3017305795/foto-01.webp",
+        "/imoveis/3017305795/foto-02.webp",
+        "/imoveis/3017305795/foto-03.webp",
+        "/imoveis/3017305795/foto-04.webp",
+        "/imoveis/3017305795/foto-05.webp",
+        "/imoveis/3017305795/foto-06.webp",
+        "/imoveis/3017305795/foto-07.webp",
+        "/imoveis/3017305795/foto-08.webp",
+        "/imoveis/3017305795/foto-09.webp",
+        "/imoveis/3017305795/foto-10.webp",
+        "/imoveis/3017305795/foto-11.webp",
+        "/imoveis/3017305795/foto-12.webp",
+        "/imoveis/3017305795/foto-13.webp",
+        "/imoveis/3017305795/foto-14.webp",
+        "/imoveis/3017305795/foto-15.webp",
+        "/imoveis/3017305795/foto-16.webp",
+        "/imoveis/3017305795/foto-17.webp",
+        "/imoveis/3017305795/foto-18.webp",
+        "/imoveis/3017305795/foto-19.webp",
+        "/imoveis/3017305795/foto-20.webp",
+        "/imoveis/3017305795/foto-21.webp",
+        "/imoveis/3017305795/foto-22.webp",
+        "/imoveis/3017305795/foto-23.webp",
+        "/imoveis/3017305795/foto-24.webp",
+        "/imoveis/3017305795/foto-25.webp",
+        "/imoveis/3017305795/foto-26.webp",
+        "/imoveis/3017305795/foto-27.webp",
+        "/imoveis/3017305795/foto-28.webp",
+        "/imoveis/3017305795/foto-29.webp",
+        "/imoveis/3017305795/foto-30.webp",
+        "/imoveis/3017305795/foto-31.webp",
+        "/imoveis/3017305795/foto-32.webp",
+        "/imoveis/3017305795/foto-33.webp"
+      ],
+      "sourceFolder": "jardim-america-apto-tipo-casa-78m-quintal-2-3017305795"
+    },
+    {
+      "publicId": "3017305797",
+      "reference": "AP0027",
+      "slug": "apartamento-em-botafogo-rua-assuncao-reformado-e-com-vaga-3017305797",
+      "title": "Apartamento em Botafogo — Rua Assunção, reformado e com vaga",
+      "description": "Apartamento de 118 m² em rua tranquila de Botafogo. Possui hall de entrada, sala ampla, três quartos — sendo uma suíte — com armários planejados e ar-condicionado, banheiros com box blindex, copa-cozinha, área de serviço e dependência completa.\nAs instalações elétricas e hidráulicas foram reformadas. O imóvel tem uma vaga no condomínio, e o prédio conta com portaria 24 horas.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 999.000",
+          "priceValue": 999000
+        }
+      ],
+      "location": {
+        "district": "Botafogo",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 3,
+        "baths": 2,
+        "suites": 1,
+        "parkingSpaces": 1,
+        "areaValue": 118,
+        "totalAreaValue": 118
+      },
+      "photos": [
+        "/imoveis/3017305797/foto-01.webp",
+        "/imoveis/3017305797/foto-02.webp",
+        "/imoveis/3017305797/foto-03.webp",
+        "/imoveis/3017305797/foto-04.webp",
+        "/imoveis/3017305797/foto-05.webp",
+        "/imoveis/3017305797/foto-06.webp",
+        "/imoveis/3017305797/foto-07.webp",
+        "/imoveis/3017305797/foto-08.webp",
+        "/imoveis/3017305797/foto-09.webp",
+        "/imoveis/3017305797/foto-10.webp",
+        "/imoveis/3017305797/foto-11.webp",
+        "/imoveis/3017305797/foto-12.webp",
+        "/imoveis/3017305797/foto-13.webp",
+        "/imoveis/3017305797/foto-14.webp",
+        "/imoveis/3017305797/foto-15.webp",
+        "/imoveis/3017305797/foto-16.webp",
+        "/imoveis/3017305797/foto-17.webp",
+        "/imoveis/3017305797/foto-18.webp",
+        "/imoveis/3017305797/foto-19.webp",
+        "/imoveis/3017305797/foto-20.webp",
+        "/imoveis/3017305797/foto-21.webp",
+        "/imoveis/3017305797/foto-22.webp",
+        "/imoveis/3017305797/foto-23.webp",
+        "/imoveis/3017305797/foto-24.webp",
+        "/imoveis/3017305797/foto-25.webp",
+        "/imoveis/3017305797/foto-26.webp",
+        "/imoveis/3017305797/foto-27.webp",
+        "/imoveis/3017305797/foto-28.webp",
+        "/imoveis/3017305797/foto-29.webp",
+        "/imoveis/3017305797/foto-30.webp",
+        "/imoveis/3017305797/foto-31.webp",
+        "/imoveis/3017305797/foto-32.webp",
+        "/imoveis/3017305797/foto-33.webp",
+        "/imoveis/3017305797/foto-34.webp",
+        "/imoveis/3017305797/foto-35.webp",
+        "/imoveis/3017305797/foto-36.webp",
+        "/imoveis/3017305797/foto-37.webp",
+        "/imoveis/3017305797/foto-38.webp",
+        "/imoveis/3017305797/foto-39.webp",
+        "/imoveis/3017305797/foto-40.webp",
+        "/imoveis/3017305797/foto-41.webp",
+        "/imoveis/3017305797/foto-42.webp",
+        "/imoveis/3017305797/foto-43.webp"
+      ],
+      "sourceFolder": "botafogo-rio-de-janeiro-rj-apto-3-qtos-1-suite-3017305797"
+    },
+    {
+      "publicId": "3017305798",
+      "reference": "SA0001",
+      "slug": "sala-comercial-em-barra-da-tijuca-shopping-midtown-duplex-e-com-vaga-3017305798",
+      "title": "Sala comercial em Barra da Tijuca — Shopping Midtown, duplex e com vaga",
+      "description": "Sala comercial duplex de 54 m² no Shopping Midtown Nova Ipanema, na Barra da Tijuca. O espaço é claro e ventilado, com piso cerâmico e rebaixamento de teto.\nO empreendimento fica em frente ao BRT, próximo ao BarraShopping e ao New York City Center, com portaria e segurança 24 horas. A unidade possui uma vaga de garagem, e há estacionamento para visitantes.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 220.000",
+          "priceValue": 220000
+        }
+      ],
+      "location": {
+        "district": "Barra da Tijuca",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 0,
+        "baths": 0,
+        "suites": 0,
+        "parkingSpaces": 1,
+        "areaValue": 54,
+        "totalAreaValue": 54
+      },
+      "photos": [
+        "/imoveis/3017305798/foto-01.webp",
+        "/imoveis/3017305798/foto-02.webp",
+        "/imoveis/3017305798/foto-03.webp",
+        "/imoveis/3017305798/foto-04.webp",
+        "/imoveis/3017305798/foto-05.webp",
+        "/imoveis/3017305798/foto-06.webp",
+        "/imoveis/3017305798/foto-07.webp",
+        "/imoveis/3017305798/foto-08.webp",
+        "/imoveis/3017305798/foto-09.webp",
+        "/imoveis/3017305798/foto-10.webp",
+        "/imoveis/3017305798/foto-11.webp",
+        "/imoveis/3017305798/foto-12.webp",
+        "/imoveis/3017305798/foto-13.webp",
+        "/imoveis/3017305798/foto-14.webp",
+        "/imoveis/3017305798/foto-15.webp",
+        "/imoveis/3017305798/foto-16.webp",
+        "/imoveis/3017305798/foto-17.webp",
+        "/imoveis/3017305798/foto-18.webp",
+        "/imoveis/3017305798/foto-19.webp"
+      ],
+      "sourceFolder": "barra-da-tijuca-midtown-sala-comercial-54m-3017305798"
+    },
+    {
+      "publicId": "3017305799",
+      "reference": "CA001",
+      "slug": "quitinetes-em-vigario-geral-rua-otranto-proximas-a-praca-2-3017305799",
+      "title": "Quitinetes em Vigário Geral — Rua Otranto, próximas à Praça 2",
+      "description": "Quitinetes para locação na Rua Otranto, quase esquina com a Rua Mabá, em Vigário Geral. As unidades possuem sala e quarto separados, cozinha compacta e banheiro social.\nA localização fica próxima ao polo comercial da Praça 2, ao BRT e à Avenida Brasil. O consumo de água está incluído no aluguel.",
+      "operation": "Aluguel",
+      "prices": [
+        {
+          "type": "Aluguel",
+          "price": "R$ 600 / mês",
+          "priceValue": 600
+        }
+      ],
+      "location": {
+        "district": "Vigário Geral",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 1,
+        "baths": 1,
+        "suites": 0,
+        "parkingSpaces": 0,
+        "areaValue": 39,
+        "totalAreaValue": 40
+      },
+      "photos": [
+        "/imoveis/3017305799/foto-01.webp",
+        "/imoveis/3017305799/foto-02.webp",
+        "/imoveis/3017305799/foto-03.webp",
+        "/imoveis/3017305799/foto-04.webp",
+        "/imoveis/3017305799/foto-05.webp",
+        "/imoveis/3017305799/foto-06.webp",
+        "/imoveis/3017305799/foto-07.webp",
+        "/imoveis/3017305799/foto-08.webp",
+        "/imoveis/3017305799/foto-09.webp",
+        "/imoveis/3017305799/foto-10.webp",
+        "/imoveis/3017305799/foto-11.webp",
+        "/imoveis/3017305799/foto-12.webp"
+      ],
+      "sourceFolder": "vigario-geral-rua-otranto-com-rua-maba-quitinetes-3017305799"
+    },
+    {
+      "publicId": "3017305801",
+      "reference": "AP018",
+      "slug": "apartamento-em-jardim-america-rua-mozart-sem-condominio-3017305801",
+      "title": "Apartamento em Jardim América — Rua Mozart, sem condomínio",
+      "description": "Apartamento de 50 m² no primeiro andar de um prédio com dois pavimentos e apenas duas unidades por andar, sem cobrança de condomínio.\nPossui sala, um quarto, banheiro social com box blindex, cozinha e área de serviço com tanque.",
+      "operation": "Aluguel",
+      "prices": [
+        {
+          "type": "Aluguel",
+          "price": "R$ 800 / mês",
+          "priceValue": 800
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 1,
+        "baths": 1,
+        "suites": 0,
+        "parkingSpaces": 0,
+        "areaValue": 50,
+        "totalAreaValue": 50
+      },
+      "photos": [
+        "/imoveis/3017305801/foto-01.webp",
+        "/imoveis/3017305801/foto-02.webp",
+        "/imoveis/3017305801/foto-03.webp",
+        "/imoveis/3017305801/foto-04.webp",
+        "/imoveis/3017305801/foto-05.webp",
+        "/imoveis/3017305801/foto-06.webp",
+        "/imoveis/3017305801/foto-07.webp",
+        "/imoveis/3017305801/foto-08.webp",
+        "/imoveis/3017305801/foto-09.webp",
+        "/imoveis/3017305801/foto-10.webp",
+        "/imoveis/3017305801/foto-11.webp",
+        "/imoveis/3017305801/foto-12.webp",
+        "/imoveis/3017305801/foto-13.webp",
+        "/imoveis/3017305801/foto-14.webp",
+        "/imoveis/3017305801/foto-15.webp",
+        "/imoveis/3017305801/foto-16.webp",
+        "/imoveis/3017305801/foto-17.webp",
+        "/imoveis/3017305801/foto-18.webp"
+      ],
+      "sourceFolder": "jardim-america-r.-mozart-apto-1-quarto-sl-coz-area-3017305801"
+    },
+    {
+      "publicId": "3017305802",
+      "reference": "PO0003",
+      "slug": "galpao-em-vigario-geral-rua-granada-proximo-a-praca-2-3017305802",
+      "title": "Galpão em Vigário Geral — Rua Granada, próximo à Praça 2",
+      "description": "Galpão para uso comercial ou industrial na Rua Granada, próximo ao polo comercial da Praça 2, em Vigário Geral. O terreno possui 360 m² e a área edificada soma 390 m², com salas, escritórios e banheiros.\nO imóvel é isento de IPTU e está disponível tanto para venda quanto para locação.",
+      "operation": "Aluguel",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 420.000",
+          "priceValue": 420000
+        },
+        {
+          "type": "Aluguel",
+          "price": "R$ 5.000 / mês",
+          "priceValue": 5000
+        }
+      ],
+      "location": {
+        "district": "Vigário Geral",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 0,
+        "baths": 0,
+        "suites": 0,
+        "parkingSpaces": 0,
+        "areaValue": 360,
+        "totalAreaValue": 390
+      },
+      "photos": [
+        "/imoveis/3017305802/foto-01.webp",
+        "/imoveis/3017305802/foto-02.webp",
+        "/imoveis/3017305802/foto-03.webp",
+        "/imoveis/3017305802/foto-04.webp",
+        "/imoveis/3017305802/foto-05.webp",
+        "/imoveis/3017305802/foto-06.webp",
+        "/imoveis/3017305802/foto-07.webp",
+        "/imoveis/3017305802/foto-08.webp",
+        "/imoveis/3017305802/foto-09.webp",
+        "/imoveis/3017305802/foto-10.webp",
+        "/imoveis/3017305802/foto-11.webp",
+        "/imoveis/3017305802/foto-12.webp",
+        "/imoveis/3017305802/foto-13.webp",
+        "/imoveis/3017305802/foto-14.webp",
+        "/imoveis/3017305802/foto-15.webp",
+        "/imoveis/3017305802/foto-16.webp",
+        "/imoveis/3017305802/foto-17.webp",
+        "/imoveis/3017305802/foto-18.webp",
+        "/imoveis/3017305802/foto-19.webp",
+        "/imoveis/3017305802/foto-20.webp",
+        "/imoveis/3017305802/foto-21.webp",
+        "/imoveis/3017305802/foto-22.webp",
+        "/imoveis/3017305802/foto-23.webp",
+        "/imoveis/3017305802/foto-24.webp",
+        "/imoveis/3017305802/foto-25.webp",
+        "/imoveis/3017305802/foto-26.webp",
+        "/imoveis/3017305802/foto-27.webp",
+        "/imoveis/3017305802/foto-28.webp",
+        "/imoveis/3017305802/foto-29.webp",
+        "/imoveis/3017305802/foto-30.webp"
+      ],
+      "sourceFolder": "rua-granada-galpao-comercial-industrial-em-v.-geral-3017305802"
+    },
+    {
+      "publicId": "3017305805",
+      "reference": "AP0029",
+      "slug": "apartamento-em-botafogo-rua-voluntarios-da-patria-e-vista-para-o-cristo-3017305805",
+      "title": "Apartamento em Botafogo — Rua Voluntários da Pátria e vista para o Cristo",
+      "description": "Apartamento de 91 m², claro e arejado, com vista lateral para o Cristo Redentor. Possui sala ampla, três quartos com armários planejados, banheiro social, cozinha integrada à área de serviço e dependência completa.\nO prédio oferece acessibilidade, bicicletário, espaço infantil e salão de festas. Há possibilidade de locação de vaga no condomínio.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 830.000",
+          "priceValue": 830000
+        }
+      ],
+      "location": {
+        "district": "Botafogo",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 3,
+        "baths": 1,
+        "suites": 0,
+        "parkingSpaces": 0,
+        "areaValue": 91,
+        "totalAreaValue": 91
+      },
+      "photos": [
+        "/imoveis/3017305805/foto-01.webp",
+        "/imoveis/3017305805/foto-02.webp",
+        "/imoveis/3017305805/foto-03.webp",
+        "/imoveis/3017305805/foto-04.webp",
+        "/imoveis/3017305805/foto-05.webp",
+        "/imoveis/3017305805/foto-06.webp",
+        "/imoveis/3017305805/foto-07.webp",
+        "/imoveis/3017305805/foto-08.webp",
+        "/imoveis/3017305805/foto-09.webp",
+        "/imoveis/3017305805/foto-10.webp",
+        "/imoveis/3017305805/foto-11.webp",
+        "/imoveis/3017305805/foto-12.webp",
+        "/imoveis/3017305805/foto-13.webp",
+        "/imoveis/3017305805/foto-14.webp",
+        "/imoveis/3017305805/foto-15.webp",
+        "/imoveis/3017305805/foto-16.webp",
+        "/imoveis/3017305805/foto-17.webp",
+        "/imoveis/3017305805/foto-18.webp",
+        "/imoveis/3017305805/foto-19.webp",
+        "/imoveis/3017305805/foto-20.webp",
+        "/imoveis/3017305805/foto-21.webp",
+        "/imoveis/3017305805/foto-22.webp",
+        "/imoveis/3017305805/foto-23.webp",
+        "/imoveis/3017305805/foto-24.webp",
+        "/imoveis/3017305805/foto-25.webp",
+        "/imoveis/3017305805/foto-26.webp"
+      ],
+      "sourceFolder": "botafogo-apto-91m-3-qtos-1-wc-vista-lateral-pro-3017305805"
+    },
+    {
+      "publicId": "3017305807",
+      "reference": "AP0032",
+      "slug": "apartamento-em-jardim-america-rua-joao-de-paula-fonseca-terreo-e-com-quintal-3017305807",
+      "title": "Apartamento em Jardim América — Rua João de Paula Fonseca, térreo e com quintal",
+      "description": "Apartamento térreo tipo casa em Jardim América. Possui sala em dois ambientes, circulação, três quartos — um deles usado como escritório —, banheiro social, copa, cozinha e quintal com lavanderia coberta.\nO imóvel tem acabamentos renovados, bomba d'água para situações de enchente e espaço para dois carros. Aceita carta de crédito.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 245.000",
+          "priceValue": 245000
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 3,
+        "baths": 1,
+        "suites": 0,
+        "parkingSpaces": 2,
+        "areaValue": 65,
+        "totalAreaValue": 68
+      },
+      "photos": [
+        "/imoveis/3017305807/foto-01.webp",
+        "/imoveis/3017305807/foto-02.webp",
+        "/imoveis/3017305807/foto-03.webp",
+        "/imoveis/3017305807/foto-04.webp",
+        "/imoveis/3017305807/foto-05.webp",
+        "/imoveis/3017305807/foto-06.webp",
+        "/imoveis/3017305807/foto-07.webp",
+        "/imoveis/3017305807/foto-08.webp",
+        "/imoveis/3017305807/foto-09.webp",
+        "/imoveis/3017305807/foto-10.webp",
+        "/imoveis/3017305807/foto-11.webp",
+        "/imoveis/3017305807/foto-12.webp",
+        "/imoveis/3017305807/foto-13.webp",
+        "/imoveis/3017305807/foto-14.webp",
+        "/imoveis/3017305807/foto-15.webp",
+        "/imoveis/3017305807/foto-16.webp",
+        "/imoveis/3017305807/foto-17.webp",
+        "/imoveis/3017305807/foto-18.webp",
+        "/imoveis/3017305807/foto-19.webp",
+        "/imoveis/3017305807/foto-20.webp",
+        "/imoveis/3017305807/foto-21.webp",
+        "/imoveis/3017305807/foto-22.webp",
+        "/imoveis/3017305807/foto-23.webp",
+        "/imoveis/3017305807/foto-24.webp",
+        "/imoveis/3017305807/foto-25.webp",
+        "/imoveis/3017305807/foto-26.webp",
+        "/imoveis/3017305807/foto-27.webp",
+        "/imoveis/3017305807/foto-28.webp"
+      ],
+      "sourceFolder": "jardim-america-na-antiga-rua-2-apto-tipo-casa-3017305807"
+    },
+    {
+      "publicId": "3017305809",
+      "reference": "CA002",
+      "slug": "cobertura-em-copacabana-avenida-atlantica-vista-para-o-mar-no-posto-4-3017305809",
+      "title": "Cobertura em Copacabana — Avenida Atlântica, vista para o mar no Posto 4",
+      "description": "Cobertura linear na Avenida Atlântica, em Copacabana, com vista para o mar. Possui 425 m², quatro quartos — todos suítes —, seis banheiros e uma vaga de garagem.\nOs ambientes são amplos e a localização no Posto 4 oferece acesso à praia, ao transporte público e aos serviços do bairro.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 12.325.000",
+          "priceValue": 12325000
+        }
+      ],
+      "location": {
+        "district": "Copacabana",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 4,
+        "baths": 6,
+        "suites": 4,
+        "parkingSpaces": 1,
+        "areaValue": 425,
+        "totalAreaValue": 425
+      },
+      "photos": [
+        "/imoveis/3017305809/foto-01.webp",
+        "/imoveis/3017305809/foto-02.webp",
+        "/imoveis/3017305809/foto-03.webp",
+        "/imoveis/3017305809/foto-04.webp",
+        "/imoveis/3017305809/foto-05.webp",
+        "/imoveis/3017305809/foto-06.webp",
+        "/imoveis/3017305809/foto-07.webp",
+        "/imoveis/3017305809/foto-08.webp",
+        "/imoveis/3017305809/foto-09.webp",
+        "/imoveis/3017305809/foto-10.webp",
+        "/imoveis/3017305809/foto-11.webp",
+        "/imoveis/3017305809/foto-12.webp",
+        "/imoveis/3017305809/foto-13.webp",
+        "/imoveis/3017305809/foto-14.webp",
+        "/imoveis/3017305809/foto-15.webp",
+        "/imoveis/3017305809/foto-16.webp",
+        "/imoveis/3017305809/foto-17.webp",
+        "/imoveis/3017305809/foto-18.webp",
+        "/imoveis/3017305809/foto-19.webp",
+        "/imoveis/3017305809/foto-20.webp",
+        "/imoveis/3017305809/foto-21.webp",
+        "/imoveis/3017305809/foto-22.webp",
+        "/imoveis/3017305809/foto-23.webp",
+        "/imoveis/3017305809/foto-24.webp",
+        "/imoveis/3017305809/foto-25.webp",
+        "/imoveis/3017305809/foto-26.webp",
+        "/imoveis/3017305809/foto-27.webp",
+        "/imoveis/3017305809/foto-28.webp",
+        "/imoveis/3017305809/foto-29.webp"
+      ],
+      "sourceFolder": "copacabana-av.-atlantica-cobertura-linear-425m-4-3017305809"
+    },
+    {
+      "publicId": "3017305811",
+      "reference": "CA023",
+      "slug": "casa-em-condominio-em-vila-progresso-condominio-uba-independencia-3017305811",
+      "title": "Casa em condomínio em Vila Progresso — Condomínio Ubá Independência",
+      "description": "Casa de 436 m² no Condomínio Ubá Independência, em Pendotiba, construída em terreno de aproximadamente 1.500 m² com vista para a vegetação e pomar com diferentes árvores frutíferas. A estrutura possui paredes térmicas de bloco celular autoclavado e preparação para elevador panorâmico.\nNo primeiro pavimento, há living com mais de 70 m² e pé-direito alto, lavabo, depósito e garagem com banheiro. O segundo pavimento reúne sala de jantar, área íntima, cozinha com armários planejados, copa, despensa, um quarto e varanda preparada para churrasqueira.\nO terceiro pavimento possui quatro suítes, três delas com closet. A suíte principal tem 38,5 m², hidromassagem e closet. Todas as suítes contam com preparação para ar-condicionado split.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 1.190.000",
+          "priceValue": 1190000
+        }
+      ],
+      "location": {
+        "district": "Vila Progresso",
+        "city": "Niterói",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 4,
+        "baths": 8,
+        "suites": 4,
+        "parkingSpaces": 2,
+        "areaValue": 436,
+        "totalAreaValue": 436
+      },
+      "photos": [
+        "/imoveis/3017305811/foto-01.webp",
+        "/imoveis/3017305811/foto-02.webp",
+        "/imoveis/3017305811/foto-03.webp",
+        "/imoveis/3017305811/foto-04.webp",
+        "/imoveis/3017305811/foto-05.webp",
+        "/imoveis/3017305811/foto-06.webp",
+        "/imoveis/3017305811/foto-07.webp",
+        "/imoveis/3017305811/foto-08.webp",
+        "/imoveis/3017305811/foto-09.webp",
+        "/imoveis/3017305811/foto-10.webp",
+        "/imoveis/3017305811/foto-11.webp",
+        "/imoveis/3017305811/foto-12.webp",
+        "/imoveis/3017305811/foto-13.webp",
+        "/imoveis/3017305811/foto-14.webp",
+        "/imoveis/3017305811/foto-15.webp",
+        "/imoveis/3017305811/foto-16.webp",
+        "/imoveis/3017305811/foto-17.webp",
+        "/imoveis/3017305811/foto-18.webp",
+        "/imoveis/3017305811/foto-19.webp",
+        "/imoveis/3017305811/foto-20.webp",
+        "/imoveis/3017305811/foto-21.webp",
+        "/imoveis/3017305811/foto-22.webp",
+        "/imoveis/3017305811/foto-23.webp",
+        "/imoveis/3017305811/foto-24.webp",
+        "/imoveis/3017305811/foto-25.webp",
+        "/imoveis/3017305811/foto-26.webp",
+        "/imoveis/3017305811/foto-27.webp",
+        "/imoveis/3017305811/foto-28.webp",
+        "/imoveis/3017305811/foto-29.webp",
+        "/imoveis/3017305811/foto-30.webp",
+        "/imoveis/3017305811/foto-31.webp",
+        "/imoveis/3017305811/foto-32.webp",
+        "/imoveis/3017305811/foto-33.webp",
+        "/imoveis/3017305811/foto-34.webp",
+        "/imoveis/3017305811/foto-35.webp",
+        "/imoveis/3017305811/foto-36.webp",
+        "/imoveis/3017305811/foto-37.webp",
+        "/imoveis/3017305811/foto-38.webp",
+        "/imoveis/3017305811/foto-39.webp",
+        "/imoveis/3017305811/foto-40.webp",
+        "/imoveis/3017305811/foto-41.webp",
+        "/imoveis/3017305811/foto-42.webp",
+        "/imoveis/3017305811/foto-43.webp",
+        "/imoveis/3017305811/foto-44.webp",
+        "/imoveis/3017305811/foto-45.webp",
+        "/imoveis/3017305811/foto-46.webp",
+        "/imoveis/3017305811/foto-47.webp",
+        "/imoveis/3017305811/foto-48.webp",
+        "/imoveis/3017305811/foto-49.webp"
+      ],
+      "sourceFolder": "casa-de-condominio-com-4-quartos-436m-a-venda-em-3017305811"
+    },
+    {
+      "publicId": "3017305813",
+      "reference": "AP0003",
+      "slug": "apartamento-em-copacabana-bairro-peixoto-garden-com-piscina-3017305813",
+      "title": "Apartamento em Copacabana — Bairro Peixoto, garden com piscina",
+      "description": "Apartamento garden de 58,04 m² no Residencial Vilares, edifício histórico revitalizado no Bairro Peixoto. A área externa possui piscina com hidromassagem e cromoterapia, toldo elétrico, deck de madeira ecológica e bancada gourmet.\nA unidade conta com sala, cozinha equipada, quarto com armários e espaço de trabalho, banheiro e fechadura eletrônica. As instalações elétricas e hidráulicas são novas. O condomínio oferece coworking, lavanderia, espaço gourmet, bicicletário elétrico e elevador.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 1.338.866",
+          "priceValue": 1338866
+        }
+      ],
+      "location": {
+        "district": "Copacabana",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 1,
+        "baths": 1,
+        "suites": 0,
+        "parkingSpaces": 0,
+        "areaValue": 58,
+        "totalAreaValue": 58
+      },
+      "photos": [
+        "/imoveis/3017305813/foto-01.webp",
+        "/imoveis/3017305813/foto-02.webp",
+        "/imoveis/3017305813/foto-03.webp",
+        "/imoveis/3017305813/foto-04.webp",
+        "/imoveis/3017305813/foto-05.webp",
+        "/imoveis/3017305813/foto-06.webp",
+        "/imoveis/3017305813/foto-07.webp",
+        "/imoveis/3017305813/foto-08.webp",
+        "/imoveis/3017305813/foto-09.webp",
+        "/imoveis/3017305813/foto-10.webp",
+        "/imoveis/3017305813/foto-11.webp",
+        "/imoveis/3017305813/foto-12.webp",
+        "/imoveis/3017305813/foto-13.webp",
+        "/imoveis/3017305813/foto-14.webp",
+        "/imoveis/3017305813/foto-15.webp",
+        "/imoveis/3017305813/foto-16.webp",
+        "/imoveis/3017305813/foto-17.webp",
+        "/imoveis/3017305813/foto-18.webp",
+        "/imoveis/3017305813/foto-19.webp",
+        "/imoveis/3017305813/foto-20.webp",
+        "/imoveis/3017305813/foto-21.webp",
+        "/imoveis/3017305813/foto-22.webp",
+        "/imoveis/3017305813/foto-23.webp",
+        "/imoveis/3017305813/foto-24.webp",
+        "/imoveis/3017305813/foto-25.webp"
+      ],
+      "sourceFolder": "r.-decio-vilares-copacabana-apto-58-04m-1-qto-1-3017305813"
+    },
+    {
+      "publicId": "3017305816",
+      "reference": "GA001",
+      "slug": "galpao-em-vigario-geral-rua-correia-dias-e-estrutura-industrial-3017305816",
+      "title": "Galpão em Vigário Geral — Rua Correia Dias e estrutura industrial",
+      "description": "Galpão industrial na Rua Correia Dias, em terreno de 1.250 m². A área coberta do galpão possui 870 m², e a edificação complementar soma 90 m².\nNo térreo, há banheiros e vestiários. O pavimento superior possui corredor de circulação, três salas, banheiro e copa. A região concentra atividades industriais e comerciais e conta com transporte coletivo e estação de trem.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 1.375.000",
+          "priceValue": 1375000
+        }
+      ],
+      "location": {
+        "district": "Vigário Geral",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 3,
+        "baths": 3,
+        "suites": 0,
+        "parkingSpaces": 5,
+        "areaValue": 960,
+        "totalAreaValue": 1250
+      },
+      "photos": [
+        "/imoveis/3017305816/foto-01.webp",
+        "/imoveis/3017305816/foto-02.webp",
+        "/imoveis/3017305816/foto-03.webp",
+        "/imoveis/3017305816/foto-04.webp",
+        "/imoveis/3017305816/foto-05.webp",
+        "/imoveis/3017305816/foto-06.webp",
+        "/imoveis/3017305816/foto-07.webp",
+        "/imoveis/3017305816/foto-08.webp",
+        "/imoveis/3017305816/foto-09.webp",
+        "/imoveis/3017305816/foto-10.webp",
+        "/imoveis/3017305816/foto-11.webp",
+        "/imoveis/3017305816/foto-12.webp",
+        "/imoveis/3017305816/foto-13.webp",
+        "/imoveis/3017305816/foto-14.webp",
+        "/imoveis/3017305816/foto-15.webp",
+        "/imoveis/3017305816/foto-16.webp",
+        "/imoveis/3017305816/foto-17.webp",
+        "/imoveis/3017305816/foto-18.webp",
+        "/imoveis/3017305816/foto-19.webp",
+        "/imoveis/3017305816/foto-20.webp",
+        "/imoveis/3017305816/foto-21.webp",
+        "/imoveis/3017305816/foto-22.webp",
+        "/imoveis/3017305816/foto-23.webp",
+        "/imoveis/3017305816/foto-24.webp",
+        "/imoveis/3017305816/foto-25.webp",
+        "/imoveis/3017305816/foto-26.webp",
+        "/imoveis/3017305816/foto-27.webp",
+        "/imoveis/3017305816/foto-28.webp",
+        "/imoveis/3017305816/foto-29.webp",
+        "/imoveis/3017305816/foto-30.webp",
+        "/imoveis/3017305816/foto-31.webp",
+        "/imoveis/3017305816/foto-32.webp",
+        "/imoveis/3017305816/foto-33.webp",
+        "/imoveis/3017305816/foto-34.webp",
+        "/imoveis/3017305816/foto-35.webp",
+        "/imoveis/3017305816/foto-36.webp",
+        "/imoveis/3017305816/foto-37.webp",
+        "/imoveis/3017305816/foto-38.webp",
+        "/imoveis/3017305816/foto-39.webp",
+        "/imoveis/3017305816/foto-40.webp"
+      ],
+      "sourceFolder": "galpao-com-3-quartos-960m-a-venda-em-rio-de-3017305816"
+    },
+    {
+      "publicId": "3017305820",
+      "reference": "DU0003",
+      "slug": "casa-duplex-em-vigario-geral-rua-sao-bartolomeu-e-area-gourmet-3017305820",
+      "title": "Casa duplex em Vigário Geral — Rua São Bartolomeu e área gourmet",
+      "description": "Casa duplex de 123 m² em Vigário Geral. O primeiro piso possui sala em dois ambientes, corredor, banheiro social, um quarto, copa-cozinha, lavanderia e quintal com churrasqueira e banheiro de apoio.\nNo segundo piso, há varanda ampla e três quartos.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 218.000",
+          "priceValue": 218000
+        }
+      ],
+      "location": {
+        "district": "Vigário Geral",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 3,
+        "baths": 2,
+        "suites": 0,
+        "parkingSpaces": 0,
+        "areaValue": 123,
+        "totalAreaValue": 123
+      },
+      "photos": [
+        "/imoveis/3017305820/foto-01.webp",
+        "/imoveis/3017305820/foto-02.webp",
+        "/imoveis/3017305820/foto-03.webp",
+        "/imoveis/3017305820/foto-04.webp",
+        "/imoveis/3017305820/foto-05.webp",
+        "/imoveis/3017305820/foto-06.webp",
+        "/imoveis/3017305820/foto-07.webp",
+        "/imoveis/3017305820/foto-08.webp",
+        "/imoveis/3017305820/foto-09.webp",
+        "/imoveis/3017305820/foto-10.webp",
+        "/imoveis/3017305820/foto-11.webp",
+        "/imoveis/3017305820/foto-12.webp",
+        "/imoveis/3017305820/foto-13.webp",
+        "/imoveis/3017305820/foto-14.webp",
+        "/imoveis/3017305820/foto-15.webp",
+        "/imoveis/3017305820/foto-16.webp",
+        "/imoveis/3017305820/foto-17.webp",
+        "/imoveis/3017305820/foto-18.webp",
+        "/imoveis/3017305820/foto-19.webp",
+        "/imoveis/3017305820/foto-20.webp",
+        "/imoveis/3017305820/foto-21.webp",
+        "/imoveis/3017305820/foto-22.webp",
+        "/imoveis/3017305820/foto-23.webp",
+        "/imoveis/3017305820/foto-24.webp",
+        "/imoveis/3017305820/foto-25.webp",
+        "/imoveis/3017305820/foto-26.webp"
+      ],
+      "sourceFolder": "v.-geral-casa-duplex-varanda-total-4-qtos-e-2-3017305820"
+    },
+    {
+      "publicId": "3017305821",
+      "reference": "CA011",
+      "slug": "casa-duplex-em-jardim-america-rua-antonio-de-albuquerque-e-amplo-quintal-3017305821",
+      "title": "Casa duplex em Jardim América — Rua Antônio de Albuquerque e amplo quintal",
+      "description": "Casa duplex com 140 m² de área construída em terreno de 250 m². O primeiro piso possui varanda ampla, living, hall, banheiro social, um quarto, copa, cozinha, área de serviço, quarto externo e quintal com churrasqueira, cisterna de 5.000 litros e garagem.\nNo segundo piso, há hall íntimo, sala de TV, banheiro social e três quartos, sendo uma suíte com acesso à varanda. O imóvel fica próximo à Praça Central de Jardim América e ao comércio do bairro.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 700.000",
+          "priceValue": 700000
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 4,
+        "baths": 3,
+        "suites": 1,
+        "parkingSpaces": 8,
+        "areaValue": 140,
+        "totalAreaValue": 250
+      },
+      "photos": [
+        "/imoveis/3017305821/foto-01.webp",
+        "/imoveis/3017305821/foto-02.webp",
+        "/imoveis/3017305821/foto-03.webp",
+        "/imoveis/3017305821/foto-04.webp",
+        "/imoveis/3017305821/foto-05.webp",
+        "/imoveis/3017305821/foto-06.webp",
+        "/imoveis/3017305821/foto-07.webp",
+        "/imoveis/3017305821/foto-08.webp",
+        "/imoveis/3017305821/foto-09.webp",
+        "/imoveis/3017305821/foto-10.webp",
+        "/imoveis/3017305821/foto-11.webp",
+        "/imoveis/3017305821/foto-12.webp",
+        "/imoveis/3017305821/foto-13.webp",
+        "/imoveis/3017305821/foto-14.webp",
+        "/imoveis/3017305821/foto-15.webp",
+        "/imoveis/3017305821/foto-16.webp",
+        "/imoveis/3017305821/foto-17.webp",
+        "/imoveis/3017305821/foto-18.webp",
+        "/imoveis/3017305821/foto-19.webp",
+        "/imoveis/3017305821/foto-20.webp",
+        "/imoveis/3017305821/foto-21.webp",
+        "/imoveis/3017305821/foto-22.webp",
+        "/imoveis/3017305821/foto-23.webp",
+        "/imoveis/3017305821/foto-24.webp",
+        "/imoveis/3017305821/foto-25.webp",
+        "/imoveis/3017305821/foto-26.webp",
+        "/imoveis/3017305821/foto-27.webp",
+        "/imoveis/3017305821/foto-28.webp",
+        "/imoveis/3017305821/foto-29.webp",
+        "/imoveis/3017305821/foto-30.webp",
+        "/imoveis/3017305821/foto-31.webp",
+        "/imoveis/3017305821/foto-32.webp",
+        "/imoveis/3017305821/foto-33.webp",
+        "/imoveis/3017305821/foto-34.webp",
+        "/imoveis/3017305821/foto-35.webp",
+        "/imoveis/3017305821/foto-36.webp",
+        "/imoveis/3017305821/foto-37.webp",
+        "/imoveis/3017305821/foto-38.webp",
+        "/imoveis/3017305821/foto-39.webp"
+      ],
+      "sourceFolder": "jardim-america-casa-duplex-com-4-qtos-suite-140m-3017305821"
+    },
+    {
+      "publicId": "3018026849",
+      "reference": "00152",
+      "slug": "galpao-em-jardim-america-rua-joao-de-paula-fonseca-junto-a-rodovia-presidente-dutra-3018026849",
+      "title": "Galpão em Jardim América — Rua João de Paula Fonseca, junto à Rodovia Presidente Dutra",
+      "description": "Galpão para uso industrial ou comercial na Rua João de Paula Fonseca, em Jardim América, próximo à Rodovia Presidente Dutra.\nPossui 382 m² de área construída em terreno de 240 m². A área principal do galpão soma 352 m² e é complementada por duas salas e um banheiro.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 350.000",
+          "priceValue": 350000
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 2,
+        "baths": 1,
+        "suites": 0,
+        "parkingSpaces": 0,
+        "areaValue": 372,
+        "totalAreaValue": 381
+      },
+      "photos": [
+        "/imoveis/3018026849/foto-01.webp",
+        "/imoveis/3018026849/foto-02.webp",
+        "/imoveis/3018026849/foto-03.webp",
+        "/imoveis/3018026849/foto-04.webp",
+        "/imoveis/3018026849/foto-05.webp",
+        "/imoveis/3018026849/foto-06.webp",
+        "/imoveis/3018026849/foto-07.webp",
+        "/imoveis/3018026849/foto-08.webp",
+        "/imoveis/3018026849/foto-09.webp",
+        "/imoveis/3018026849/foto-10.webp",
+        "/imoveis/3018026849/foto-11.webp",
+        "/imoveis/3018026849/foto-12.webp",
+        "/imoveis/3018026849/foto-13.webp",
+        "/imoveis/3018026849/foto-14.webp",
+        "/imoveis/3018026849/foto-15.webp",
+        "/imoveis/3018026849/foto-16.webp",
+        "/imoveis/3018026849/foto-17.webp",
+        "/imoveis/3018026849/foto-18.webp",
+        "/imoveis/3018026849/foto-19.webp",
+        "/imoveis/3018026849/foto-20.webp"
+      ],
+      "sourceFolder": "jardim-america-junto-a-pres.dutra-galpao-3018026849"
+    },
+    {
+      "publicId": "3018249672",
+      "reference": "0062",
+      "slug": "casa-duplex-em-jardim-america-rua-conselheiro-meirelles-suite-e-terraco-3018249672",
+      "title": "Casa duplex em Jardim América — Rua Conselheiro Meirelles, suíte e terraço",
+      "description": "Casa duplex de 125 m² de área construída em terreno de 130 m², localizada na Rua Conselheiro Meirelles. Possui quatro quartos — sendo uma suíte —, quatro banheiros, sala de jantar, cozinha, despensa e closet.\nA área externa conta com quintal, varanda e uma vaga de garagem. O imóvel também dispõe de ar-condicionado e área de serviço.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 400.000",
+          "priceValue": 400000
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 4,
+        "baths": 4,
+        "suites": 1,
+        "parkingSpaces": 1,
+        "areaValue": 125,
+        "totalAreaValue": 130
+      },
+      "photos": [
+        "/imoveis/3018249672/foto-01.webp",
+        "/imoveis/3018249672/foto-02.webp",
+        "/imoveis/3018249672/foto-03.webp",
+        "/imoveis/3018249672/foto-04.webp",
+        "/imoveis/3018249672/foto-05.webp",
+        "/imoveis/3018249672/foto-06.webp",
+        "/imoveis/3018249672/foto-07.webp",
+        "/imoveis/3018249672/foto-08.webp",
+        "/imoveis/3018249672/foto-09.webp",
+        "/imoveis/3018249672/foto-10.webp",
+        "/imoveis/3018249672/foto-11.webp",
+        "/imoveis/3018249672/foto-12.webp",
+        "/imoveis/3018249672/foto-13.webp",
+        "/imoveis/3018249672/foto-14.webp",
+        "/imoveis/3018249672/foto-15.webp",
+        "/imoveis/3018249672/foto-16.webp",
+        "/imoveis/3018249672/foto-17.webp",
+        "/imoveis/3018249672/foto-18.webp",
+        "/imoveis/3018249672/foto-19.webp",
+        "/imoveis/3018249672/foto-20.webp",
+        "/imoveis/3018249672/foto-21.webp",
+        "/imoveis/3018249672/foto-22.webp",
+        "/imoveis/3018249672/foto-23.webp",
+        "/imoveis/3018249672/foto-24.webp",
+        "/imoveis/3018249672/foto-25.webp",
+        "/imoveis/3018249672/foto-26.webp",
+        "/imoveis/3018249672/foto-27.webp",
+        "/imoveis/3018249672/foto-28.webp",
+        "/imoveis/3018249672/foto-29.webp",
+        "/imoveis/3018249672/foto-30.webp",
+        "/imoveis/3018249672/foto-31.webp",
+        "/imoveis/3018249672/foto-32.webp",
+        "/imoveis/3018249672/foto-33.webp",
+        "/imoveis/3018249672/foto-34.webp"
+      ],
+      "sourceFolder": "jardim-america-casa-duplex-varanda-2-salas-total-3018249672"
+    },
+    {
+      "publicId": "3018326088",
+      "reference": "0013",
+      "slug": "apartamento-em-jardim-america-rua-arinos-de-frente-e-sem-condominio-3018326088",
+      "title": "Apartamento em Jardim América — Rua Arinos, de frente e sem condomínio",
+      "description": "Apartamento de frente no primeiro andar de um prédio familiar com quatro unidades e sem cobrança de condomínio, na Rua Arinos.\nPossui 78 m², sala, dois quartos, banheiro social, cozinha, área de serviço e uma vaga na servidão. Aceita carta de crédito.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 225.000",
+          "priceValue": 225000
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 2,
+        "baths": 1,
+        "suites": 0,
+        "parkingSpaces": 1,
+        "areaValue": 78,
+        "totalAreaValue": 79
+      },
+      "photos": [
+        "/imoveis/3018326088/foto-01.webp",
+        "/imoveis/3018326088/foto-02.webp",
+        "/imoveis/3018326088/foto-03.webp",
+        "/imoveis/3018326088/foto-04.webp",
+        "/imoveis/3018326088/foto-05.webp",
+        "/imoveis/3018326088/foto-06.webp",
+        "/imoveis/3018326088/foto-07.webp",
+        "/imoveis/3018326088/foto-08.webp",
+        "/imoveis/3018326088/foto-09.webp",
+        "/imoveis/3018326088/foto-10.webp",
+        "/imoveis/3018326088/foto-11.webp",
+        "/imoveis/3018326088/foto-12.webp",
+        "/imoveis/3018326088/foto-13.webp",
+        "/imoveis/3018326088/foto-14.webp",
+        "/imoveis/3018326088/foto-15.webp",
+        "/imoveis/3018326088/foto-16.webp",
+        "/imoveis/3018326088/foto-17.webp",
+        "/imoveis/3018326088/foto-18.webp",
+        "/imoveis/3018326088/foto-19.webp",
+        "/imoveis/3018326088/foto-20.webp",
+        "/imoveis/3018326088/foto-21.webp",
+        "/imoveis/3018326088/foto-22.webp",
+        "/imoveis/3018326088/foto-23.webp",
+        "/imoveis/3018326088/foto-24.webp",
+        "/imoveis/3018326088/foto-25.webp",
+        "/imoveis/3018326088/foto-26.webp"
+      ],
+      "sourceFolder": "jardim-america-rua-arinos-apto-78m-frente-2-3018326088"
+    },
+    {
+      "publicId": "3018326089",
+      "reference": "0012",
+      "slug": "apartamento-em-jardim-america-rua-arinos-terreo-e-com-quintal-3018326089",
+      "title": "Apartamento em Jardim América — Rua Arinos, térreo e com quintal",
+      "description": "Apartamento térreo de fundos em prédio familiar com quatro unidades e sem cobrança de condomínio, na Rua Arinos. Possui 65 m², varanda, quintal, sala, um quarto com possibilidade de adaptação para dois, banheiro social, cozinha e área de serviço.\nA unidade tem uma vaga na servidão e aceita carta de crédito.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 159.000",
+          "priceValue": 159000
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 1,
+        "baths": 1,
+        "suites": 0,
+        "parkingSpaces": 1,
+        "areaValue": 67,
+        "totalAreaValue": 69
+      },
+      "photos": [
+        "/imoveis/3018326089/foto-01.webp",
+        "/imoveis/3018326089/foto-02.webp",
+        "/imoveis/3018326089/foto-03.webp",
+        "/imoveis/3018326089/foto-04.webp",
+        "/imoveis/3018326089/foto-05.webp",
+        "/imoveis/3018326089/foto-06.webp",
+        "/imoveis/3018326089/foto-07.webp",
+        "/imoveis/3018326089/foto-08.webp",
+        "/imoveis/3018326089/foto-09.webp",
+        "/imoveis/3018326089/foto-10.webp",
+        "/imoveis/3018326089/foto-11.webp",
+        "/imoveis/3018326089/foto-12.webp",
+        "/imoveis/3018326089/foto-13.webp",
+        "/imoveis/3018326089/foto-14.webp",
+        "/imoveis/3018326089/foto-15.webp",
+        "/imoveis/3018326089/foto-16.webp",
+        "/imoveis/3018326089/foto-17.webp",
+        "/imoveis/3018326089/foto-18.webp",
+        "/imoveis/3018326089/foto-19.webp",
+        "/imoveis/3018326089/foto-20.webp",
+        "/imoveis/3018326089/foto-21.webp",
+        "/imoveis/3018326089/foto-22.webp",
+        "/imoveis/3018326089/foto-23.webp",
+        "/imoveis/3018326089/foto-24.webp",
+        "/imoveis/3018326089/foto-25.webp",
+        "/imoveis/3018326089/foto-26.webp",
+        "/imoveis/3018326089/foto-27.webp",
+        "/imoveis/3018326089/foto-28.webp"
+      ],
+      "sourceFolder": "jardim-america-rua-arinos-apto-65m-fundos-3018326089"
+    },
+    {
+      "publicId": "3018774505",
+      "reference": "446QDQP",
+      "slug": "apartamento-em-jardim-america-rua-professor-pires-salgado-terreo-e-de-fundos-3018774505",
+      "title": "Apartamento em Jardim América — Rua Professor Pires Salgado, térreo e de fundos",
+      "description": "Apartamento térreo de fundos na Rua Professor Pires Salgado, em Jardim América. Possui varanda, sala em dois ambientes, circulação, banheiro social, dois quartos, cozinha e área de serviço externa com tanque.\nFica próximo ao ponto final de ônibus e vans e ao depósito da Supergasbras.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 250.000",
+          "priceValue": 250000
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 2,
+        "baths": 1,
+        "suites": 0,
+        "parkingSpaces": 1,
+        "areaValue": 75,
+        "totalAreaValue": 78
+      },
+      "photos": [
+        "/imoveis/3018774505/foto-01.webp",
+        "/imoveis/3018774505/foto-02.webp",
+        "/imoveis/3018774505/foto-03.webp",
+        "/imoveis/3018774505/foto-04.webp",
+        "/imoveis/3018774505/foto-05.webp",
+        "/imoveis/3018774505/foto-06.webp",
+        "/imoveis/3018774505/foto-07.webp",
+        "/imoveis/3018774505/foto-08.webp",
+        "/imoveis/3018774505/foto-09.webp",
+        "/imoveis/3018774505/foto-10.webp",
+        "/imoveis/3018774505/foto-11.webp",
+        "/imoveis/3018774505/foto-12.webp",
+        "/imoveis/3018774505/foto-13.webp",
+        "/imoveis/3018774505/foto-14.webp",
+        "/imoveis/3018774505/foto-15.webp",
+        "/imoveis/3018774505/foto-16.webp",
+        "/imoveis/3018774505/foto-17.webp",
+        "/imoveis/3018774505/foto-18.webp",
+        "/imoveis/3018774505/foto-19.webp",
+        "/imoveis/3018774505/foto-20.webp",
+        "/imoveis/3018774505/foto-21.webp",
+        "/imoveis/3018774505/foto-22.webp",
+        "/imoveis/3018774505/foto-23.webp",
+        "/imoveis/3018774505/foto-24.webp",
+        "/imoveis/3018774505/foto-25.webp",
+        "/imoveis/3018774505/foto-26.webp",
+        "/imoveis/3018774505/foto-27.webp",
+        "/imoveis/3018774505/foto-28.webp",
+        "/imoveis/3018774505/foto-29.webp",
+        "/imoveis/3018774505/foto-30.webp",
+        "/imoveis/3018774505/foto-31.webp",
+        "/imoveis/3018774505/foto-32.webp",
+        "/imoveis/3018774505/foto-33.webp"
+      ],
+      "sourceFolder": "jardim-america-r.-prof-pires-salgado-apto-varanda-3018774505"
+    },
+    {
+      "publicId": "3018791156",
+      "reference": "0017",
+      "slug": "casa-em-jardim-america-rua-gelabert-simas-quintal-e-anexo-3018791156",
+      "title": "Casa em Jardim América — Rua Gelabert Simas, quintal e anexo",
+      "description": "Casa linear de 85 m² na Rua Gelabert Simas, próxima ao ponto final da linha 774. Possui sala em dois ambientes, dois quartos, dois banheiros, copa, cozinha, quintal amplo e garagem.\nA área externa conta com lavanderia e um apartamento anexo composto por sala e quarto. A documentação está regular e o imóvel aceita financiamento bancário.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 250.000",
+          "priceValue": 250000
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 0,
+        "baths": 2,
+        "suites": 0,
+        "parkingSpaces": 4,
+        "areaValue": 85,
+        "totalAreaValue": 88
+      },
+      "photos": [
+        "/imoveis/3018791156/foto-01.webp",
+        "/imoveis/3018791156/foto-02.webp",
+        "/imoveis/3018791156/foto-03.webp",
+        "/imoveis/3018791156/foto-04.webp",
+        "/imoveis/3018791156/foto-05.webp",
+        "/imoveis/3018791156/foto-06.webp",
+        "/imoveis/3018791156/foto-07.webp",
+        "/imoveis/3018791156/foto-08.webp",
+        "/imoveis/3018791156/foto-09.webp",
+        "/imoveis/3018791156/foto-10.webp",
+        "/imoveis/3018791156/foto-11.webp",
+        "/imoveis/3018791156/foto-12.webp",
+        "/imoveis/3018791156/foto-13.webp",
+        "/imoveis/3018791156/foto-14.webp",
+        "/imoveis/3018791156/foto-15.webp",
+        "/imoveis/3018791156/foto-16.webp",
+        "/imoveis/3018791156/foto-17.webp",
+        "/imoveis/3018791156/foto-18.webp",
+        "/imoveis/3018791156/foto-19.webp",
+        "/imoveis/3018791156/foto-20.webp",
+        "/imoveis/3018791156/foto-21.webp",
+        "/imoveis/3018791156/foto-22.webp",
+        "/imoveis/3018791156/foto-23.webp",
+        "/imoveis/3018791156/foto-24.webp",
+        "/imoveis/3018791156/foto-25.webp",
+        "/imoveis/3018791156/foto-26.webp",
+        "/imoveis/3018791156/foto-27.webp",
+        "/imoveis/3018791156/foto-28.webp",
+        "/imoveis/3018791156/foto-29.webp",
+        "/imoveis/3018791156/foto-30.webp",
+        "/imoveis/3018791156/foto-31.webp",
+        "/imoveis/3018791156/foto-32.webp",
+        "/imoveis/3018791156/foto-33.webp",
+        "/imoveis/3018791156/foto-34.webp",
+        "/imoveis/3018791156/foto-35.webp",
+        "/imoveis/3018791156/foto-36.webp",
+        "/imoveis/3018791156/foto-37.webp",
+        "/imoveis/3018791156/foto-38.webp",
+        "/imoveis/3018791156/foto-39.webp",
+        "/imoveis/3018791156/foto-40.webp",
+        "/imoveis/3018791156/foto-41.webp",
+        "/imoveis/3018791156/foto-42.webp",
+        "/imoveis/3018791156/foto-43.webp",
+        "/imoveis/3018791156/foto-44.webp",
+        "/imoveis/3018791156/foto-45.webp",
+        "/imoveis/3018791156/foto-46.webp",
+        "/imoveis/3018791156/foto-47.webp",
+        "/imoveis/3018791156/foto-48.webp",
+        "/imoveis/3018791156/foto-49.webp",
+        "/imoveis/3018791156/foto-50.webp"
+      ],
+      "sourceFolder": "jardim-america-casa-linear-quintal-total-3-qtos-3018791156"
+    },
+    {
+      "publicId": "3021262193",
+      "reference": "0017",
+      "slug": "apartamento-em-jardim-america-residencial-america-life-quarto-andar-3021262193",
+      "title": "Apartamento em Jardim América — Residencial América Life, quarto andar",
+      "description": "Apartamento de 69 m² no quarto andar do Residencial América Life, em Jardim América. Possui sala, três quartos e uma vaga de garagem.\nO condomínio oferece piscina, churrasqueiras, espaço gourmet, quadra poliesportiva, playground e outras áreas de lazer.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 158.000",
+          "priceValue": 158000
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 3,
+        "baths": 1,
+        "suites": 0,
+        "parkingSpaces": 1,
+        "areaValue": 68,
+        "totalAreaValue": 69
+      },
+      "photos": [
+        "/imoveis/3021262193/foto-01.webp",
+        "/imoveis/3021262193/foto-02.webp",
+        "/imoveis/3021262193/foto-03.webp",
+        "/imoveis/3021262193/foto-04.webp",
+        "/imoveis/3021262193/foto-05.webp",
+        "/imoveis/3021262193/foto-06.webp",
+        "/imoveis/3021262193/foto-07.webp",
+        "/imoveis/3021262193/foto-08.webp",
+        "/imoveis/3021262193/foto-09.webp",
+        "/imoveis/3021262193/foto-10.webp",
+        "/imoveis/3021262193/foto-11.webp",
+        "/imoveis/3021262193/foto-12.webp",
+        "/imoveis/3021262193/foto-13.webp",
+        "/imoveis/3021262193/foto-14.webp",
+        "/imoveis/3021262193/foto-15.webp",
+        "/imoveis/3021262193/foto-16.webp",
+        "/imoveis/3021262193/foto-17.webp",
+        "/imoveis/3021262193/foto-18.webp"
+      ],
+      "sourceFolder": "jardim-america-cond.-america-life-apto-3-qtos-1-3021262193"
+    },
+    {
+      "publicId": "3022035905",
+      "reference": "44AR7K5",
+      "slug": "casa-em-jardim-america-rua-gelabert-simas-dois-pavimentos-e-amplo-quintal-3022035905",
+      "title": "Casa em Jardim América — Rua Gelabert Simas, dois pavimentos e amplo quintal",
+      "description": "Imóvel de dois pavimentos na Rua Gelabert Simas. O térreo possui varanda, sala em dois ambientes, banheiro social, dois quartos — sendo uma suíte —, cozinha, lavanderia externa, quintal amplo e garagem para quatro carros.\nO pavimento superior conta com varanda, sala em dois ambientes, banheiro social, dois quartos, escritório, lavanderia, área externa e terraço coberto.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 350.000",
+          "priceValue": 350000
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 5,
+        "baths": 3,
+        "suites": 0,
+        "parkingSpaces": 4,
+        "areaValue": 160,
+        "totalAreaValue": 165
+      },
+      "photos": [
+        "/imoveis/3022035905/foto-01.webp",
+        "/imoveis/3022035905/foto-02.webp",
+        "/imoveis/3022035905/foto-03.webp",
+        "/imoveis/3022035905/foto-04.webp",
+        "/imoveis/3022035905/foto-05.webp",
+        "/imoveis/3022035905/foto-06.webp",
+        "/imoveis/3022035905/foto-07.webp",
+        "/imoveis/3022035905/foto-08.webp",
+        "/imoveis/3022035905/foto-09.webp",
+        "/imoveis/3022035905/foto-10.webp",
+        "/imoveis/3022035905/foto-11.webp",
+        "/imoveis/3022035905/foto-12.webp",
+        "/imoveis/3022035905/foto-13.webp",
+        "/imoveis/3022035905/foto-14.webp",
+        "/imoveis/3022035905/foto-15.webp",
+        "/imoveis/3022035905/foto-16.webp",
+        "/imoveis/3022035905/foto-17.webp",
+        "/imoveis/3022035905/foto-18.webp",
+        "/imoveis/3022035905/foto-19.webp",
+        "/imoveis/3022035905/foto-20.webp",
+        "/imoveis/3022035905/foto-21.webp",
+        "/imoveis/3022035905/foto-22.webp",
+        "/imoveis/3022035905/foto-23.webp",
+        "/imoveis/3022035905/foto-24.webp",
+        "/imoveis/3022035905/foto-25.webp",
+        "/imoveis/3022035905/foto-26.webp",
+        "/imoveis/3022035905/foto-27.webp",
+        "/imoveis/3022035905/foto-28.webp",
+        "/imoveis/3022035905/foto-29.webp",
+        "/imoveis/3022035905/foto-30.webp",
+        "/imoveis/3022035905/foto-31.webp",
+        "/imoveis/3022035905/foto-32.webp",
+        "/imoveis/3022035905/foto-33.webp",
+        "/imoveis/3022035905/foto-34.webp",
+        "/imoveis/3022035905/foto-35.webp",
+        "/imoveis/3022035905/foto-36.webp",
+        "/imoveis/3022035905/foto-37.webp"
+      ],
+      "sourceFolder": "jardim-america-dois-imoveis-terreno-250m-4qtos-3022035905"
+    },
+    {
+      "publicId": "3023325766",
+      "reference": "0055",
+      "slug": "apartamento-em-jardim-america-residencial-america-life-primeiro-andar-3023325766",
+      "title": "Apartamento em Jardim América — Residencial América Life, primeiro andar",
+      "description": "Apartamento de frente no primeiro andar do Residencial América Life, em Jardim América. Possui 51 m² de área construída e 53 m² de área total, com sala integrada, dois quartos, banheiro social e uma vaga de garagem.\nO condomínio conta com portaria e vigilância 24 horas, piscina, solário, churrasqueira, playground, quadra poliesportiva e salão de festas. Aceita FGTS.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 158.000",
+          "priceValue": 158000
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 2,
+        "baths": 1,
+        "suites": 0,
+        "parkingSpaces": 1,
+        "areaValue": 51,
+        "totalAreaValue": 53
+      },
+      "photos": [
+        "/imoveis/3023325766/foto-01.webp",
+        "/imoveis/3023325766/foto-02.webp",
+        "/imoveis/3023325766/foto-03.webp",
+        "/imoveis/3023325766/foto-04.webp",
+        "/imoveis/3023325766/foto-05.webp",
+        "/imoveis/3023325766/foto-06.webp",
+        "/imoveis/3023325766/foto-07.webp",
+        "/imoveis/3023325766/foto-08.webp",
+        "/imoveis/3023325766/foto-09.webp",
+        "/imoveis/3023325766/foto-10.webp",
+        "/imoveis/3023325766/foto-11.webp",
+        "/imoveis/3023325766/foto-12.webp",
+        "/imoveis/3023325766/foto-13.webp",
+        "/imoveis/3023325766/foto-14.webp",
+        "/imoveis/3023325766/foto-15.webp",
+        "/imoveis/3023325766/foto-16.webp",
+        "/imoveis/3023325766/foto-17.webp",
+        "/imoveis/3023325766/foto-18.webp",
+        "/imoveis/3023325766/foto-19.webp",
+        "/imoveis/3023325766/foto-20.webp",
+        "/imoveis/3023325766/foto-21.webp",
+        "/imoveis/3023325766/foto-22.webp",
+        "/imoveis/3023325766/foto-23.webp",
+        "/imoveis/3023325766/foto-24.webp"
+      ],
+      "sourceFolder": "jardim-america-residencial-a.life-lazer-apto-52m-3023325766"
+    },
+    {
+      "publicId": "3024230857",
+      "reference": "0078",
+      "slug": "apartamento-em-del-castilho-rua-lagoa-redonda-de-frente-e-proximo-ao-metro-3024230857",
+      "title": "Apartamento em Del Castilho — Rua Lagoa Redonda, de frente e próximo ao metrô",
+      "description": "Apartamento de frente com 70 m², no segundo andar, acessível por um lance de escada. Possui sala em dois ambientes, dois quartos, banheiro social, cozinha, área de serviço e gás encanado. O imóvel precisa de reforma.\nO prédio tem fachada reformada e portaria com controle de acesso. Fica próximo à passarela do Shopping Nova América, ao metrô, ao PAM de Del Castilho e às áreas de lazer do entorno. O IPTU é isento.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 109.000",
+          "priceValue": 109000
+        }
+      ],
+      "location": {
+        "district": "Del Castilho",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 2,
+        "baths": 1,
+        "suites": 0,
+        "parkingSpaces": 0,
+        "areaValue": 70,
+        "totalAreaValue": 75
+      },
+      "photos": [
+        "/imoveis/3024230857/foto-01.webp",
+        "/imoveis/3024230857/foto-02.webp",
+        "/imoveis/3024230857/foto-03.webp",
+        "/imoveis/3024230857/foto-04.webp",
+        "/imoveis/3024230857/foto-05.webp",
+        "/imoveis/3024230857/foto-06.webp",
+        "/imoveis/3024230857/foto-07.webp",
+        "/imoveis/3024230857/foto-08.webp",
+        "/imoveis/3024230857/foto-09.webp",
+        "/imoveis/3024230857/foto-10.webp",
+        "/imoveis/3024230857/foto-11.webp",
+        "/imoveis/3024230857/foto-12.webp",
+        "/imoveis/3024230857/foto-13.webp",
+        "/imoveis/3024230857/foto-14.webp",
+        "/imoveis/3024230857/foto-15.webp",
+        "/imoveis/3024230857/foto-16.webp",
+        "/imoveis/3024230857/foto-17.webp",
+        "/imoveis/3024230857/foto-18.webp",
+        "/imoveis/3024230857/foto-19.webp",
+        "/imoveis/3024230857/foto-20.webp",
+        "/imoveis/3024230857/foto-21.webp",
+        "/imoveis/3024230857/foto-22.webp",
+        "/imoveis/3024230857/foto-23.webp",
+        "/imoveis/3024230857/foto-24.webp",
+        "/imoveis/3024230857/foto-25.webp",
+        "/imoveis/3024230857/foto-26.webp",
+        "/imoveis/3024230857/foto-27.webp",
+        "/imoveis/3024230857/foto-28.webp",
+        "/imoveis/3024230857/foto-29.webp",
+        "/imoveis/3024230857/foto-30.webp",
+        "/imoveis/3024230857/foto-31.webp"
+      ],
+      "sourceFolder": "del-castilho-junto-ao-pam-apto-de-70-m-de-frente-3024230857"
+    },
+    {
+      "publicId": "3025642323",
+      "reference": "0048",
+      "slug": "casa-em-jardim-america-rua-jorge-lacerda-entrada-independente-e-quintal-3025642323",
+      "title": "Casa em Jardim América — Rua Jorge Lacerda, entrada independente e quintal",
+      "description": "Casa térrea para locação na Rua Jorge Lacerda, em Jardim América, com entrada independente. Possui quintal frontal, varanda, sala, dois quartos, banheiro, cozinha, área de serviço externa e quintal nos fundos.\nA localização oferece acesso ao comércio do bairro, escolas, supermercados, farmácias, linhas de ônibus e vias importantes da região.",
+      "operation": "Aluguel",
+      "prices": [
+        {
+          "type": "Aluguel",
+          "price": "R$ 1.600 / mês",
+          "priceValue": 1600
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 2,
+        "baths": 1,
+        "suites": 0,
+        "parkingSpaces": 0,
+        "areaValue": 87,
+        "totalAreaValue": 89
+      },
+      "photos": [
+        "/imoveis/3025642323/foto-01.webp",
+        "/imoveis/3025642323/foto-02.webp",
+        "/imoveis/3025642323/foto-03.webp",
+        "/imoveis/3025642323/foto-04.webp",
+        "/imoveis/3025642323/foto-05.webp",
+        "/imoveis/3025642323/foto-06.webp",
+        "/imoveis/3025642323/foto-07.webp",
+        "/imoveis/3025642323/foto-08.webp",
+        "/imoveis/3025642323/foto-09.webp",
+        "/imoveis/3025642323/foto-10.webp",
+        "/imoveis/3025642323/foto-11.webp",
+        "/imoveis/3025642323/foto-12.webp",
+        "/imoveis/3025642323/foto-13.webp",
+        "/imoveis/3025642323/foto-14.webp",
+        "/imoveis/3025642323/foto-15.webp",
+        "/imoveis/3025642323/foto-16.webp",
+        "/imoveis/3025642323/foto-17.webp",
+        "/imoveis/3025642323/foto-18.webp",
+        "/imoveis/3025642323/foto-19.webp",
+        "/imoveis/3025642323/foto-20.webp",
+        "/imoveis/3025642323/foto-21.webp",
+        "/imoveis/3025642323/foto-22.webp",
+        "/imoveis/3025642323/foto-23.webp",
+        "/imoveis/3025642323/foto-24.webp",
+        "/imoveis/3025642323/foto-25.webp",
+        "/imoveis/3025642323/foto-26.webp",
+        "/imoveis/3025642323/foto-27.webp",
+        "/imoveis/3025642323/foto-28.webp",
+        "/imoveis/3025642323/foto-29.webp",
+        "/imoveis/3025642323/foto-30.webp",
+        "/imoveis/3025642323/foto-31.webp",
+        "/imoveis/3025642323/foto-32.webp",
+        "/imoveis/3025642323/foto-33.webp",
+        "/imoveis/3025642323/foto-34.webp",
+        "/imoveis/3025642323/foto-35.webp"
+      ],
+      "sourceFolder": "jardim-america-rua-jorge-lacerda-casa-com-89-m-1-3025642323"
+    },
+    {
+      "publicId": "3028206195",
+      "reference": "0069",
+      "slug": "apartamento-em-vila-da-penha-condominio-solar-da-vila-junto-ao-largo-do-bicao-3028206195",
+      "title": "Apartamento em Vila da Penha — Condomínio Solar da Vila, junto ao Largo do Bicão",
+      "description": "Apartamento de 80 m² no Condomínio Solar da Vila, junto ao Largo do Bicão. Possui sala em dois ambientes, dois quartos — sendo uma suíte —, um terceiro quarto revertido, dois banheiros, cozinha, área de serviço e duas vagas de garagem.\nO condomínio conta com câmeras de segurança, vigilância 24 horas, elevador, playground e salão de festas. Aceita FGTS e carta de crédito.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 335.000",
+          "priceValue": 335000
+        }
+      ],
+      "location": {
+        "district": "Vila da Penha",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 2,
+        "baths": 2,
+        "suites": 1,
+        "parkingSpaces": 2,
+        "areaValue": 80,
+        "totalAreaValue": 84
+      },
+      "photos": [
+        "/imoveis/3028206195/foto-01.webp",
+        "/imoveis/3028206195/foto-02.webp",
+        "/imoveis/3028206195/foto-03.webp",
+        "/imoveis/3028206195/foto-04.webp",
+        "/imoveis/3028206195/foto-05.webp",
+        "/imoveis/3028206195/foto-06.webp",
+        "/imoveis/3028206195/foto-07.webp",
+        "/imoveis/3028206195/foto-08.webp",
+        "/imoveis/3028206195/foto-09.webp",
+        "/imoveis/3028206195/foto-10.webp",
+        "/imoveis/3028206195/foto-11.webp",
+        "/imoveis/3028206195/foto-12.webp"
+      ],
+      "sourceFolder": "lgo-do-bicao-cond.-solar-da-vila-apto-de-80-m-2-3028206195"
+    },
+    {
+      "publicId": "3031428631",
+      "reference": "0097",
+      "slug": "apartamento-em-jardim-america-rua-professor-franca-amaral-de-frente-e-com-anexo-3031428631",
+      "title": "Apartamento em Jardim América — Rua Professor França Amaral, de frente e com anexo",
+      "description": "Apartamento de frente no quarto andar de um prédio sem elevador, na Rua Professor França Amaral. Possui três quartos, área de serviço, varanda nos fundos e vista livre.\nO conjunto inclui ainda um apartamento de fundos que necessita de acabamento. A área construída informada é de 79 m², com 148 m² de área total.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 180.000",
+          "priceValue": 180000
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 4,
+        "baths": 2,
+        "suites": 0,
+        "parkingSpaces": 0,
+        "areaValue": 79,
+        "totalAreaValue": 148
+      },
+      "photos": [
+        "/imoveis/3031428631/foto-01.webp",
+        "/imoveis/3031428631/foto-02.webp",
+        "/imoveis/3031428631/foto-03.webp",
+        "/imoveis/3031428631/foto-04.webp",
+        "/imoveis/3031428631/foto-05.webp",
+        "/imoveis/3031428631/foto-06.webp",
+        "/imoveis/3031428631/foto-07.webp",
+        "/imoveis/3031428631/foto-08.webp",
+        "/imoveis/3031428631/foto-09.webp",
+        "/imoveis/3031428631/foto-10.webp",
+        "/imoveis/3031428631/foto-11.webp",
+        "/imoveis/3031428631/foto-12.webp",
+        "/imoveis/3031428631/foto-13.webp",
+        "/imoveis/3031428631/foto-14.webp",
+        "/imoveis/3031428631/foto-15.webp",
+        "/imoveis/3031428631/foto-16.webp",
+        "/imoveis/3031428631/foto-17.webp",
+        "/imoveis/3031428631/foto-18.webp",
+        "/imoveis/3031428631/foto-19.webp",
+        "/imoveis/3031428631/foto-20.webp"
+      ],
+      "sourceFolder": "jardim-america-rua-professor-franca-amaral-apto-de-3031428631"
+    },
+    {
+      "publicId": "3032201782",
+      "reference": "0060",
+      "slug": "apartamento-em-jardim-america-rua-robert-schumann-e-acesso-ao-terraco-3032201782",
+      "title": "Apartamento em Jardim América — Rua Robert Schumann e acesso ao terraço",
+      "description": "Apartamento de frente na Rua Robert Schumann, em Jardim América. Possui três quartos, dois banheiros e 76 m² de área construída, além do direito de uso da laje do terraço, totalizando 146 m².\nO prédio tem três andares, e o imóvel aceita FGTS. A localização fica próxima à Praça Central, ao comércio e ao terminal do BRT.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 450.000",
+          "priceValue": 450000
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 2,
+        "baths": 2,
+        "suites": 0,
+        "parkingSpaces": 0,
+        "areaValue": 76,
+        "totalAreaValue": 146
+      },
+      "photos": [
+        "/imoveis/3032201782/foto-01.webp",
+        "/imoveis/3032201782/foto-02.webp",
+        "/imoveis/3032201782/foto-03.webp",
+        "/imoveis/3032201782/foto-04.webp",
+        "/imoveis/3032201782/foto-05.webp",
+        "/imoveis/3032201782/foto-06.webp",
+        "/imoveis/3032201782/foto-07.webp",
+        "/imoveis/3032201782/foto-08.webp",
+        "/imoveis/3032201782/foto-09.webp",
+        "/imoveis/3032201782/foto-10.webp",
+        "/imoveis/3032201782/foto-11.webp",
+        "/imoveis/3032201782/foto-12.webp",
+        "/imoveis/3032201782/foto-13.webp",
+        "/imoveis/3032201782/foto-14.webp",
+        "/imoveis/3032201782/foto-15.webp",
+        "/imoveis/3032201782/foto-16.webp",
+        "/imoveis/3032201782/foto-17.webp",
+        "/imoveis/3032201782/foto-18.webp",
+        "/imoveis/3032201782/foto-19.webp",
+        "/imoveis/3032201782/foto-20.webp",
+        "/imoveis/3032201782/foto-21.webp",
+        "/imoveis/3032201782/foto-22.webp",
+        "/imoveis/3032201782/foto-23.webp",
+        "/imoveis/3032201782/foto-24.webp",
+        "/imoveis/3032201782/foto-25.webp",
+        "/imoveis/3032201782/foto-26.webp",
+        "/imoveis/3032201782/foto-27.webp",
+        "/imoveis/3032201782/foto-28.webp",
+        "/imoveis/3032201782/foto-29.webp",
+        "/imoveis/3032201782/foto-30.webp",
+        "/imoveis/3032201782/foto-31.webp",
+        "/imoveis/3032201782/foto-32.webp"
+      ],
+      "sourceFolder": "venda-jardim-america-apto-3-qtos-area-78m-junto-3032201782"
+    },
+    {
+      "publicId": "3035177398",
+      "reference": "0084",
+      "slug": "apartamento-em-jardim-america-rua-plinio-barreto-sobrado-de-fundos-3035177398",
+      "title": "Apartamento em Jardim América — Rua Plínio Barreto, sobrado de fundos",
+      "description": "Apartamento tipo sobrado, de fundos, disponível para locação na Rua Plínio Barreto, em Jardim América. Possui 70 m², sala, dois quartos, banheiro social, cozinha e área de serviço.\nO imóvel fica fora da área de enchente do bairro e tem acesso ao comércio, aos serviços e ao transporte público da região.",
+      "operation": "Aluguel",
+      "prices": [
+        {
+          "type": "Aluguel",
+          "price": "R$ 900 / mês",
+          "priceValue": 900
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 2,
+        "baths": 1,
+        "suites": 0,
+        "parkingSpaces": 0,
+        "areaValue": 90,
+        "totalAreaValue": 89
+      },
+      "photos": [
+        "/imoveis/3035177398/foto-01.webp",
+        "/imoveis/3035177398/foto-02.webp",
+        "/imoveis/3035177398/foto-03.webp",
+        "/imoveis/3035177398/foto-04.webp",
+        "/imoveis/3035177398/foto-05.webp",
+        "/imoveis/3035177398/foto-06.webp",
+        "/imoveis/3035177398/foto-07.webp",
+        "/imoveis/3035177398/foto-08.webp",
+        "/imoveis/3035177398/foto-09.webp",
+        "/imoveis/3035177398/foto-10.webp",
+        "/imoveis/3035177398/foto-11.webp",
+        "/imoveis/3035177398/foto-12.webp",
+        "/imoveis/3035177398/foto-13.webp",
+        "/imoveis/3035177398/foto-14.webp",
+        "/imoveis/3035177398/foto-15.webp",
+        "/imoveis/3035177398/foto-16.webp",
+        "/imoveis/3035177398/foto-17.webp",
+        "/imoveis/3035177398/foto-18.webp",
+        "/imoveis/3035177398/foto-19.webp",
+        "/imoveis/3035177398/foto-20.webp",
+        "/imoveis/3035177398/foto-21.webp",
+        "/imoveis/3035177398/foto-22.webp",
+        "/imoveis/3035177398/foto-23.webp",
+        "/imoveis/3035177398/foto-24.webp",
+        "/imoveis/3035177398/foto-25.webp",
+        "/imoveis/3035177398/foto-26.webp",
+        "/imoveis/3035177398/foto-27.webp",
+        "/imoveis/3035177398/foto-28.webp",
+        "/imoveis/3035177398/foto-29.webp",
+        "/imoveis/3035177398/foto-30.webp",
+        "/imoveis/3035177398/foto-31.webp",
+        "/imoveis/3035177398/foto-32.webp",
+        "/imoveis/3035177398/foto-33.webp",
+        "/imoveis/3035177398/foto-34.webp",
+        "/imoveis/3035177398/foto-35.webp",
+        "/imoveis/3035177398/foto-36.webp",
+        "/imoveis/3035177398/foto-37.webp",
+        "/imoveis/3035177398/foto-38.webp",
+        "/imoveis/3035177398/foto-39.webp",
+        "/imoveis/3035177398/foto-40.webp",
+        "/imoveis/3035177398/foto-41.webp"
+      ],
+      "sourceFolder": "jardim-america-apto-sobrado-de-fundos-sala-2-3035177398"
+    },
+    {
+      "publicId": "3035185637",
+      "reference": "089",
+      "slug": "loja-em-jardim-america-esquina-das-ruas-alvaro-de-magalhaes-e-rodolfo-chambeland-3035185637",
+      "title": "Loja em Jardim América — Esquina das ruas Álvaro de Magalhães e Rodolfo Chambeland",
+      "description": "Loja de esquina na Rua Álvaro de Magalhães com a Rua Rodolfo Chambeland, em Jardim América. Possui 76 m² de área construída, 78 m² de área total, dois banheiros e uma vaga.\nO espaço interno permite diferentes configurações comerciais e fica em uma região com comércio e serviços variados.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 180.000",
+          "priceValue": 180000
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 0,
+        "baths": 0,
+        "suites": 0,
+        "parkingSpaces": 1,
+        "areaValue": 76,
+        "totalAreaValue": 78
+      },
+      "photos": [
+        "/imoveis/3035185637/foto-01.webp",
+        "/imoveis/3035185637/foto-02.webp",
+        "/imoveis/3035185637/foto-03.webp",
+        "/imoveis/3035185637/foto-04.webp",
+        "/imoveis/3035185637/foto-05.webp",
+        "/imoveis/3035185637/foto-06.webp",
+        "/imoveis/3035185637/foto-07.webp",
+        "/imoveis/3035185637/foto-08.webp",
+        "/imoveis/3035185637/foto-09.webp",
+        "/imoveis/3035185637/foto-10.webp",
+        "/imoveis/3035185637/foto-11.webp",
+        "/imoveis/3035185637/foto-12.webp",
+        "/imoveis/3035185637/foto-13.webp",
+        "/imoveis/3035185637/foto-14.webp",
+        "/imoveis/3035185637/foto-15.webp",
+        "/imoveis/3035185637/foto-16.webp"
+      ],
+      "sourceFolder": "jardim-america-rua-alvaro-magalhaes-esquina-com-3035185637"
+    },
+    {
+      "publicId": "3037727090",
+      "reference": "003",
+      "slug": "galpao-em-jardim-america-rua-jornalista-geraldo-rocha-acesso-para-carga-e-descarga-3037727090",
+      "title": "Galpão em Jardim América — Rua Jornalista Geraldo Rocha, acesso para carga e descarga",
+      "description": "Galpão comercial ou industrial na Rua Jornalista Geraldo Rocha, em terreno de 10 por 24 metros, com acesso para carga e descarga. Possui salas, escritórios e banheiros distribuídos em dois pavimentos.\nO cadastro informa 318 m² de área construída e 320 m² de área total. O imóvel aceita FGTS.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 750.000",
+          "priceValue": 750000
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 4,
+        "baths": 4,
+        "suites": 0,
+        "parkingSpaces": 0,
+        "areaValue": 318,
+        "totalAreaValue": 320
+      },
+      "photos": [
+        "/imoveis/3037727090/foto-01.webp",
+        "/imoveis/3037727090/foto-02.webp",
+        "/imoveis/3037727090/foto-03.webp",
+        "/imoveis/3037727090/foto-04.webp",
+        "/imoveis/3037727090/foto-05.webp",
+        "/imoveis/3037727090/foto-06.webp",
+        "/imoveis/3037727090/foto-07.webp",
+        "/imoveis/3037727090/foto-08.webp",
+        "/imoveis/3037727090/foto-09.webp",
+        "/imoveis/3037727090/foto-10.webp",
+        "/imoveis/3037727090/foto-11.webp",
+        "/imoveis/3037727090/foto-12.webp",
+        "/imoveis/3037727090/foto-13.webp",
+        "/imoveis/3037727090/foto-14.webp",
+        "/imoveis/3037727090/foto-15.webp",
+        "/imoveis/3037727090/foto-16.webp",
+        "/imoveis/3037727090/foto-17.webp",
+        "/imoveis/3037727090/foto-18.webp",
+        "/imoveis/3037727090/foto-19.webp",
+        "/imoveis/3037727090/foto-20.webp",
+        "/imoveis/3037727090/foto-21.webp",
+        "/imoveis/3037727090/foto-22.webp",
+        "/imoveis/3037727090/foto-23.webp",
+        "/imoveis/3037727090/foto-24.webp",
+        "/imoveis/3037727090/foto-25.webp",
+        "/imoveis/3037727090/foto-26.webp",
+        "/imoveis/3037727090/foto-27.webp",
+        "/imoveis/3037727090/foto-28.webp",
+        "/imoveis/3037727090/foto-29.webp",
+        "/imoveis/3037727090/foto-30.webp",
+        "/imoveis/3037727090/foto-31.webp",
+        "/imoveis/3037727090/foto-32.webp",
+        "/imoveis/3037727090/foto-33.webp",
+        "/imoveis/3037727090/foto-34.webp",
+        "/imoveis/3037727090/foto-35.webp",
+        "/imoveis/3037727090/foto-36.webp",
+        "/imoveis/3037727090/foto-37.webp",
+        "/imoveis/3037727090/foto-38.webp",
+        "/imoveis/3037727090/foto-39.webp",
+        "/imoveis/3037727090/foto-40.webp",
+        "/imoveis/3037727090/foto-41.webp",
+        "/imoveis/3037727090/foto-42.webp",
+        "/imoveis/3037727090/foto-43.webp",
+        "/imoveis/3037727090/foto-44.webp",
+        "/imoveis/3037727090/foto-45.webp",
+        "/imoveis/3037727090/foto-46.webp",
+        "/imoveis/3037727090/foto-47.webp",
+        "/imoveis/3037727090/foto-48.webp",
+        "/imoveis/3037727090/foto-49.webp",
+        "/imoveis/3037727090/foto-50.webp"
+      ],
+      "sourceFolder": "galpao-comercial-industrial-terreno-10-x-24-entrada-3037727090"
+    },
+    {
+      "publicId": "3037729115",
+      "reference": "0088",
+      "slug": "casa-em-jardim-america-rua-mozart-piscina-e-terraco-3037729115",
+      "title": "Casa em Jardim América — Rua Mozart, piscina e terraço",
+      "description": "Casa linear na Rua Mozart, em Jardim América, com 145 m² de área construída. Possui sala, cozinha, despensa, três quartos — sendo uma suíte — e três banheiros.\nA área externa oferece piscina, terraço, entrada independente e três vagas de garagem. O imóvel aceita FGTS.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 650.000",
+          "priceValue": 650000
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 3,
+        "baths": 3,
+        "suites": 1,
+        "parkingSpaces": 3,
+        "areaValue": 145,
+        "totalAreaValue": 150
+      },
+      "photos": [
+        "/imoveis/3037729115/foto-01.webp",
+        "/imoveis/3037729115/foto-02.webp",
+        "/imoveis/3037729115/foto-03.webp",
+        "/imoveis/3037729115/foto-04.webp",
+        "/imoveis/3037729115/foto-05.webp",
+        "/imoveis/3037729115/foto-06.webp",
+        "/imoveis/3037729115/foto-07.webp",
+        "/imoveis/3037729115/foto-08.webp",
+        "/imoveis/3037729115/foto-09.webp",
+        "/imoveis/3037729115/foto-10.webp",
+        "/imoveis/3037729115/foto-11.webp",
+        "/imoveis/3037729115/foto-12.webp",
+        "/imoveis/3037729115/foto-13.webp",
+        "/imoveis/3037729115/foto-14.webp",
+        "/imoveis/3037729115/foto-15.webp",
+        "/imoveis/3037729115/foto-16.webp",
+        "/imoveis/3037729115/foto-17.webp",
+        "/imoveis/3037729115/foto-18.webp",
+        "/imoveis/3037729115/foto-19.webp",
+        "/imoveis/3037729115/foto-20.webp",
+        "/imoveis/3037729115/foto-21.webp",
+        "/imoveis/3037729115/foto-22.webp",
+        "/imoveis/3037729115/foto-23.webp",
+        "/imoveis/3037729115/foto-24.webp",
+        "/imoveis/3037729115/foto-25.webp",
+        "/imoveis/3037729115/foto-26.webp",
+        "/imoveis/3037729115/foto-27.webp",
+        "/imoveis/3037729115/foto-28.webp",
+        "/imoveis/3037729115/foto-29.webp",
+        "/imoveis/3037729115/foto-30.webp",
+        "/imoveis/3037729115/foto-31.webp",
+        "/imoveis/3037729115/foto-32.webp",
+        "/imoveis/3037729115/foto-33.webp",
+        "/imoveis/3037729115/foto-34.webp",
+        "/imoveis/3037729115/foto-35.webp",
+        "/imoveis/3037729115/foto-36.webp",
+        "/imoveis/3037729115/foto-37.webp",
+        "/imoveis/3037729115/foto-38.webp",
+        "/imoveis/3037729115/foto-39.webp",
+        "/imoveis/3037729115/foto-40.webp",
+        "/imoveis/3037729115/foto-41.webp",
+        "/imoveis/3037729115/foto-42.webp",
+        "/imoveis/3037729115/foto-43.webp",
+        "/imoveis/3037729115/foto-44.webp",
+        "/imoveis/3037729115/foto-45.webp",
+        "/imoveis/3037729115/foto-46.webp",
+        "/imoveis/3037729115/foto-47.webp"
+      ],
+      "sourceFolder": "jardim-america-casa-linear-terraco-piscina-3-3037729115"
+    },
+    {
+      "publicId": "3038426799",
+      "reference": "0085",
+      "slug": "casa-em-condominio-em-praia-seca-area-de-lazer-e-lagoa-privativa-3038426799",
+      "title": "Casa em condomínio em Praia Seca — Área de lazer e lagoa privativa",
+      "description": "Casa linear em condomínio fechado no centro de Praia Seca, com 130 m² de área construída e 135 m² de área total. Possui quatro quartos — sendo uma suíte —, três banheiros, cozinha americana, despensa, varanda, área de serviço, anexo, banheiro externo e quatro vagas.\nA área externa conta com quintal, jardim e espaço gourmet com churrasqueira, bancada, pia e ducha. O condomínio oferece portaria e segurança 24 horas, piscinas adulto e infantil, quadra poliesportiva, salão de jogos, academia ao ar livre, churrasqueiras, áreas arborizadas e lagoa privativa.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 480.000",
+          "priceValue": 480000
+        }
+      ],
+      "location": {
+        "district": "Praia Seca",
+        "city": "Araruama",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 4,
+        "baths": 3,
+        "suites": 1,
+        "parkingSpaces": 4,
+        "areaValue": 130,
+        "totalAreaValue": 135
+      },
+      "photos": [
+        "/imoveis/3038426799/foto-01.webp",
+        "/imoveis/3038426799/foto-02.webp",
+        "/imoveis/3038426799/foto-03.webp",
+        "/imoveis/3038426799/foto-04.webp",
+        "/imoveis/3038426799/foto-05.webp",
+        "/imoveis/3038426799/foto-06.webp",
+        "/imoveis/3038426799/foto-07.webp",
+        "/imoveis/3038426799/foto-08.webp",
+        "/imoveis/3038426799/foto-09.webp",
+        "/imoveis/3038426799/foto-10.webp",
+        "/imoveis/3038426799/foto-11.webp",
+        "/imoveis/3038426799/foto-12.webp",
+        "/imoveis/3038426799/foto-13.webp",
+        "/imoveis/3038426799/foto-14.webp",
+        "/imoveis/3038426799/foto-15.webp",
+        "/imoveis/3038426799/foto-16.webp",
+        "/imoveis/3038426799/foto-17.webp",
+        "/imoveis/3038426799/foto-18.webp",
+        "/imoveis/3038426799/foto-19.webp",
+        "/imoveis/3038426799/foto-20.webp",
+        "/imoveis/3038426799/foto-21.webp",
+        "/imoveis/3038426799/foto-22.webp",
+        "/imoveis/3038426799/foto-23.webp",
+        "/imoveis/3038426799/foto-24.webp",
+        "/imoveis/3038426799/foto-25.webp",
+        "/imoveis/3038426799/foto-26.webp",
+        "/imoveis/3038426799/foto-27.webp",
+        "/imoveis/3038426799/foto-28.webp",
+        "/imoveis/3038426799/foto-29.webp",
+        "/imoveis/3038426799/foto-30.webp",
+        "/imoveis/3038426799/foto-31.webp",
+        "/imoveis/3038426799/foto-32.webp",
+        "/imoveis/3038426799/foto-33.webp",
+        "/imoveis/3038426799/foto-34.webp",
+        "/imoveis/3038426799/foto-35.webp",
+        "/imoveis/3038426799/foto-36.webp",
+        "/imoveis/3038426799/foto-37.webp"
+      ],
+      "sourceFolder": "araruama-praia-seca-casa-em-condominio-fechado-no-3038426799"
+    },
+    {
+      "publicId": "3041796743",
+      "reference": "1007",
+      "slug": "casa-em-jardim-america-vila-esperanca-terrea-e-com-quintal-3041796743",
+      "title": "Casa em Jardim América — Vila Esperança, térrea e com quintal",
+      "description": "Casa térrea para locação na Vila Esperança, em Jardim América, próxima à Rua Fernandes da Cunha. Possui quintal, sala, corredor, banheiro social com box blindex, um quarto, cozinha com armários e lavanderia.\nHá um cômodo adicional que precisa de melhorias e pode ser adaptado como segundo quarto pelo inquilino. A locação exige dois meses de depósito e comprovação de renda equivalente a três vezes o aluguel.",
+      "operation": "Aluguel",
+      "prices": [
+        {
+          "type": "Aluguel",
+          "price": "R$ 950 / mês",
+          "priceValue": 950
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 1,
+        "baths": 1,
+        "suites": 0,
+        "parkingSpaces": 0,
+        "areaValue": 55,
+        "totalAreaValue": 60
+      },
+      "photos": [
+        "/imoveis/3041796743/foto-01.webp",
+        "/imoveis/3041796743/foto-02.webp",
+        "/imoveis/3041796743/foto-03.webp",
+        "/imoveis/3041796743/foto-04.webp",
+        "/imoveis/3041796743/foto-05.webp",
+        "/imoveis/3041796743/foto-06.webp",
+        "/imoveis/3041796743/foto-07.webp",
+        "/imoveis/3041796743/foto-08.webp",
+        "/imoveis/3041796743/foto-09.webp",
+        "/imoveis/3041796743/foto-10.webp",
+        "/imoveis/3041796743/foto-11.webp",
+        "/imoveis/3041796743/foto-12.webp",
+        "/imoveis/3041796743/foto-13.webp",
+        "/imoveis/3041796743/foto-14.webp",
+        "/imoveis/3041796743/foto-15.webp",
+        "/imoveis/3041796743/foto-16.webp",
+        "/imoveis/3041796743/foto-17.webp",
+        "/imoveis/3041796743/foto-18.webp",
+        "/imoveis/3041796743/foto-19.webp",
+        "/imoveis/3041796743/foto-20.webp",
+        "/imoveis/3041796743/foto-21.webp",
+        "/imoveis/3041796743/foto-22.webp",
+        "/imoveis/3041796743/foto-23.webp",
+        "/imoveis/3041796743/foto-24.webp",
+        "/imoveis/3041796743/foto-25.webp",
+        "/imoveis/3041796743/foto-26.webp",
+        "/imoveis/3041796743/foto-27.webp",
+        "/imoveis/3041796743/foto-28.webp",
+        "/imoveis/3041796743/foto-29.webp"
+      ],
+      "sourceFolder": "jardim-america-v.-esperanca-csa-frente-terrea-3041796743"
+    },
+    {
+      "publicId": "3041798044",
+      "reference": "0032",
+      "slug": "apartamento-em-jardim-america-rua-marechal-jose-pessoa-terreo-e-com-varanda-3041798044",
+      "title": "Apartamento em Jardim América — Rua Marechal José Pessoa, térreo e com varanda",
+      "description": "Apartamento térreo tipo casa para locação na Rua Marechal José Pessoa, em Jardim América. Possui 90 m² de área construída e 93 m² de área total, com sala de jantar, cozinha, área de serviço, dois banheiros — um social e outro externo — e varanda.\nA unidade dispõe de uma vaga de garagem e tem acesso às principais avenidas, ao comércio, às escolas e ao transporte público do bairro.",
+      "operation": "Aluguel",
+      "prices": [
+        {
+          "type": "Aluguel",
+          "price": "R$ 1.500 / mês",
+          "priceValue": 1500
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 3,
+        "baths": 2,
+        "suites": 0,
+        "parkingSpaces": 1,
+        "areaValue": 90,
+        "totalAreaValue": 93
+      },
+      "photos": [
+        "/imoveis/3041798044/foto-01.webp",
+        "/imoveis/3041798044/foto-02.webp",
+        "/imoveis/3041798044/foto-03.webp",
+        "/imoveis/3041798044/foto-04.webp",
+        "/imoveis/3041798044/foto-05.webp",
+        "/imoveis/3041798044/foto-06.webp",
+        "/imoveis/3041798044/foto-07.webp",
+        "/imoveis/3041798044/foto-08.webp",
+        "/imoveis/3041798044/foto-09.webp",
+        "/imoveis/3041798044/foto-10.webp",
+        "/imoveis/3041798044/foto-11.webp",
+        "/imoveis/3041798044/foto-12.webp",
+        "/imoveis/3041798044/foto-13.webp",
+        "/imoveis/3041798044/foto-14.webp",
+        "/imoveis/3041798044/foto-15.webp",
+        "/imoveis/3041798044/foto-16.webp",
+        "/imoveis/3041798044/foto-17.webp",
+        "/imoveis/3041798044/foto-18.webp",
+        "/imoveis/3041798044/foto-19.webp",
+        "/imoveis/3041798044/foto-20.webp",
+        "/imoveis/3041798044/foto-21.webp",
+        "/imoveis/3041798044/foto-22.webp",
+        "/imoveis/3041798044/foto-23.webp",
+        "/imoveis/3041798044/foto-24.webp",
+        "/imoveis/3041798044/foto-25.webp",
+        "/imoveis/3041798044/foto-26.webp",
+        "/imoveis/3041798044/foto-27.webp",
+        "/imoveis/3041798044/foto-28.webp",
+        "/imoveis/3041798044/foto-29.webp",
+        "/imoveis/3041798044/foto-30.webp",
+        "/imoveis/3041798044/foto-31.webp",
+        "/imoveis/3041798044/foto-32.webp",
+        "/imoveis/3041798044/foto-33.webp",
+        "/imoveis/3041798044/foto-34.webp",
+        "/imoveis/3041798044/foto-35.webp",
+        "/imoveis/3041798044/foto-36.webp",
+        "/imoveis/3041798044/foto-37.webp",
+        "/imoveis/3041798044/foto-38.webp",
+        "/imoveis/3041798044/foto-39.webp",
+        "/imoveis/3041798044/foto-40.webp",
+        "/imoveis/3041798044/foto-41.webp",
+        "/imoveis/3041798044/foto-42.webp",
+        "/imoveis/3041798044/foto-43.webp"
+      ],
+      "sourceFolder": "jardim-america-rua-marechal-jose-pessoa-apto-terreo-3041798044"
+    },
+    {
+      "publicId": "3041818174",
+      "reference": "1004",
+      "slug": "casa-em-jardim-america-rua-marechal-jose-pessoa-quintal-e-vaga-3041818174",
+      "title": "Casa em Jardim América — Rua Marechal José Pessoa, quintal e vaga",
+      "description": "Casa de dois pavimentos para locação na Rua Marechal José Pessoa, em Jardim América. Possui 90 m² de área construída, três quartos, dois banheiros sociais, cozinha independente e área de serviço.\nA área externa conta com varanda, quintal privativo e uma vaga de garagem.",
+      "operation": "Aluguel",
+      "prices": [
+        {
+          "type": "Aluguel",
+          "price": "R$ 1.500 / mês",
+          "priceValue": 1500
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 3,
+        "baths": 2,
+        "suites": 0,
+        "parkingSpaces": 1,
+        "areaValue": 90,
+        "totalAreaValue": 93
+      },
+      "photos": [
+        "/imoveis/3041818174/foto-01.webp",
+        "/imoveis/3041818174/foto-02.webp",
+        "/imoveis/3041818174/foto-03.webp",
+        "/imoveis/3041818174/foto-04.webp",
+        "/imoveis/3041818174/foto-05.webp",
+        "/imoveis/3041818174/foto-06.webp",
+        "/imoveis/3041818174/foto-07.webp",
+        "/imoveis/3041818174/foto-08.webp",
+        "/imoveis/3041818174/foto-09.webp",
+        "/imoveis/3041818174/foto-10.webp",
+        "/imoveis/3041818174/foto-11.webp",
+        "/imoveis/3041818174/foto-12.webp",
+        "/imoveis/3041818174/foto-13.webp",
+        "/imoveis/3041818174/foto-14.webp",
+        "/imoveis/3041818174/foto-15.webp",
+        "/imoveis/3041818174/foto-16.webp",
+        "/imoveis/3041818174/foto-17.webp",
+        "/imoveis/3041818174/foto-18.webp",
+        "/imoveis/3041818174/foto-19.webp",
+        "/imoveis/3041818174/foto-20.webp",
+        "/imoveis/3041818174/foto-21.webp",
+        "/imoveis/3041818174/foto-22.webp",
+        "/imoveis/3041818174/foto-23.webp",
+        "/imoveis/3041818174/foto-24.webp",
+        "/imoveis/3041818174/foto-25.webp",
+        "/imoveis/3041818174/foto-26.webp",
+        "/imoveis/3041818174/foto-27.webp",
+        "/imoveis/3041818174/foto-28.webp",
+        "/imoveis/3041818174/foto-29.webp",
+        "/imoveis/3041818174/foto-30.webp",
+        "/imoveis/3041818174/foto-31.webp",
+        "/imoveis/3041818174/foto-32.webp",
+        "/imoveis/3041818174/foto-33.webp",
+        "/imoveis/3041818174/foto-34.webp",
+        "/imoveis/3041818174/foto-35.webp",
+        "/imoveis/3041818174/foto-36.webp",
+        "/imoveis/3041818174/foto-37.webp",
+        "/imoveis/3041818174/foto-38.webp",
+        "/imoveis/3041818174/foto-39.webp",
+        "/imoveis/3041818174/foto-40.webp"
+      ],
+      "sourceFolder": "jardim-america-apto-tipo-casa-terreo-3qtos-quintal-3041818174"
+    },
+    {
+      "publicId": "3041920674",
+      "reference": "1009",
+      "slug": "casa-em-coelho-neto-rua-ouseley-piscina-e-garagem-3041920674",
+      "title": "Casa em Coelho Neto — Rua Ouseley, piscina e garagem",
+      "description": "Casa de 130 m² de área construída na Rua Ouseley, em Coelho Neto. Possui sala, cozinha, despensa, três quartos, dois banheiros, varanda, área de serviço e entrada independente.\nO quintal conta com piscina, e a garagem oferece três vagas. A região possui comércio, escolas, serviços e transporte público.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 350.000",
+          "priceValue": 350000
+        }
+      ],
+      "location": {
+        "district": "Coelho Neto",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 3,
+        "baths": 2,
+        "suites": 0,
+        "parkingSpaces": 3,
+        "areaValue": 130,
+        "totalAreaValue": 135
+      },
+      "photos": [
+        "/imoveis/3041920674/foto-01.webp",
+        "/imoveis/3041920674/foto-02.webp",
+        "/imoveis/3041920674/foto-03.webp",
+        "/imoveis/3041920674/foto-04.webp",
+        "/imoveis/3041920674/foto-05.webp",
+        "/imoveis/3041920674/foto-06.webp",
+        "/imoveis/3041920674/foto-07.webp",
+        "/imoveis/3041920674/foto-08.webp",
+        "/imoveis/3041920674/foto-09.webp",
+        "/imoveis/3041920674/foto-10.webp",
+        "/imoveis/3041920674/foto-11.webp",
+        "/imoveis/3041920674/foto-12.webp",
+        "/imoveis/3041920674/foto-13.webp",
+        "/imoveis/3041920674/foto-14.webp",
+        "/imoveis/3041920674/foto-15.webp",
+        "/imoveis/3041920674/foto-16.webp",
+        "/imoveis/3041920674/foto-17.webp",
+        "/imoveis/3041920674/foto-18.webp",
+        "/imoveis/3041920674/foto-19.webp",
+        "/imoveis/3041920674/foto-20.webp",
+        "/imoveis/3041920674/foto-21.webp",
+        "/imoveis/3041920674/foto-22.webp",
+        "/imoveis/3041920674/foto-23.webp",
+        "/imoveis/3041920674/foto-24.webp",
+        "/imoveis/3041920674/foto-25.webp",
+        "/imoveis/3041920674/foto-26.webp",
+        "/imoveis/3041920674/foto-27.webp",
+        "/imoveis/3041920674/foto-28.webp",
+        "/imoveis/3041920674/foto-29.webp",
+        "/imoveis/3041920674/foto-30.webp",
+        "/imoveis/3041920674/foto-31.webp",
+        "/imoveis/3041920674/foto-32.webp",
+        "/imoveis/3041920674/foto-33.webp",
+        "/imoveis/3041920674/foto-34.webp",
+        "/imoveis/3041920674/foto-35.webp",
+        "/imoveis/3041920674/foto-36.webp",
+        "/imoveis/3041920674/foto-37.webp",
+        "/imoveis/3041920674/foto-38.webp",
+        "/imoveis/3041920674/foto-39.webp",
+        "/imoveis/3041920674/foto-40.webp",
+        "/imoveis/3041920674/foto-41.webp",
+        "/imoveis/3041920674/foto-42.webp",
+        "/imoveis/3041920674/foto-43.webp",
+        "/imoveis/3041920674/foto-44.webp",
+        "/imoveis/3041920674/foto-45.webp",
+        "/imoveis/3041920674/foto-46.webp",
+        "/imoveis/3041920674/foto-47.webp",
+        "/imoveis/3041920674/foto-48.webp",
+        "/imoveis/3041920674/foto-49.webp"
+      ],
+      "sourceFolder": "coelho-neto-casa-de-135-m-com-piscina-3-quartos-3-3041920674"
+    },
+    {
+      "publicId": "3042851381",
+      "reference": "0085",
+      "slug": "casa-duplex-em-coelho-neto-rua-parnaiba-suites-e-garagem-3042851381",
+      "title": "Casa duplex em Coelho Neto — Rua Parnaíba, suítes e garagem",
+      "description": "Casa duplex para locação na Rua Parnaíba, em Coelho Neto, com 140 m² de área construída em terreno de 189 m². Possui dois quartos — ambos suítes —, quatro banheiros, cozinha, despensa, área de serviço, entrada independente e três vagas de garagem.\nA locação é destinada a até quatro pessoas da mesma família e exige dois meses de depósito caução e comprovação de renda equivalente a três vezes o aluguel.",
+      "operation": "Aluguel",
+      "prices": [
+        {
+          "type": "Aluguel",
+          "price": "R$ 1.500 / mês",
+          "priceValue": 1500
+        }
+      ],
+      "location": {
+        "district": "Coelho Neto",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 2,
+        "baths": 4,
+        "suites": 2,
+        "parkingSpaces": 3,
+        "areaValue": 135,
+        "totalAreaValue": 140
+      },
+      "photos": [
+        "/imoveis/3042851381/foto-01.webp",
+        "/imoveis/3042851381/foto-02.webp",
+        "/imoveis/3042851381/foto-03.webp",
+        "/imoveis/3042851381/foto-04.webp",
+        "/imoveis/3042851381/foto-05.webp",
+        "/imoveis/3042851381/foto-06.webp",
+        "/imoveis/3042851381/foto-07.webp",
+        "/imoveis/3042851381/foto-08.webp",
+        "/imoveis/3042851381/foto-09.webp",
+        "/imoveis/3042851381/foto-10.webp",
+        "/imoveis/3042851381/foto-11.webp",
+        "/imoveis/3042851381/foto-12.webp",
+        "/imoveis/3042851381/foto-13.webp",
+        "/imoveis/3042851381/foto-14.webp",
+        "/imoveis/3042851381/foto-15.webp",
+        "/imoveis/3042851381/foto-16.webp",
+        "/imoveis/3042851381/foto-17.webp",
+        "/imoveis/3042851381/foto-18.webp",
+        "/imoveis/3042851381/foto-19.webp",
+        "/imoveis/3042851381/foto-20.webp",
+        "/imoveis/3042851381/foto-21.webp",
+        "/imoveis/3042851381/foto-22.webp",
+        "/imoveis/3042851381/foto-23.webp",
+        "/imoveis/3042851381/foto-24.webp",
+        "/imoveis/3042851381/foto-25.webp",
+        "/imoveis/3042851381/foto-26.webp",
+        "/imoveis/3042851381/foto-27.webp",
+        "/imoveis/3042851381/foto-28.webp",
+        "/imoveis/3042851381/foto-29.webp"
+      ],
+      "sourceFolder": "casa-duplex-c-140-m-varandao-2-quartos-2-suites-3042851381"
+    },
+    {
+      "publicId": "3043564937",
+      "reference": "0022",
+      "slug": "apartamento-em-parque-columbia-rua-ruanda-terreo-e-de-frente-3043564937",
+      "title": "Apartamento em Parque Columbia — Rua Ruanda, térreo e de frente",
+      "description": "Apartamento térreo e de frente na Rua Ruanda, em Parque Columbia. Possui 96 m² de área útil e 98 m² de área total, com sala ampla, três quartos — sendo uma suíte —, dois banheiros, cozinha integrada à área de serviço, ar-condicionado e uma vaga de garagem.\nO imóvel aceita FGTS e fica próximo ao transporte público, ao comércio e aos serviços da região.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 310.000",
+          "priceValue": 310000
+        }
+      ],
+      "location": {
+        "district": "Pavuna",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 3,
+        "baths": 2,
+        "suites": 1,
+        "parkingSpaces": 1,
+        "areaValue": 96,
+        "totalAreaValue": 98
+      },
+      "photos": [
+        "/imoveis/3043564937/foto-01.webp",
+        "/imoveis/3043564937/foto-02.webp",
+        "/imoveis/3043564937/foto-03.webp",
+        "/imoveis/3043564937/foto-04.webp",
+        "/imoveis/3043564937/foto-05.webp",
+        "/imoveis/3043564937/foto-06.webp",
+        "/imoveis/3043564937/foto-07.webp",
+        "/imoveis/3043564937/foto-08.webp",
+        "/imoveis/3043564937/foto-09.webp",
+        "/imoveis/3043564937/foto-10.webp",
+        "/imoveis/3043564937/foto-11.webp",
+        "/imoveis/3043564937/foto-12.webp",
+        "/imoveis/3043564937/foto-13.webp",
+        "/imoveis/3043564937/foto-14.webp",
+        "/imoveis/3043564937/foto-15.webp",
+        "/imoveis/3043564937/foto-16.webp",
+        "/imoveis/3043564937/foto-17.webp",
+        "/imoveis/3043564937/foto-18.webp",
+        "/imoveis/3043564937/foto-19.webp",
+        "/imoveis/3043564937/foto-20.webp",
+        "/imoveis/3043564937/foto-21.webp",
+        "/imoveis/3043564937/foto-22.webp",
+        "/imoveis/3043564937/foto-23.webp",
+        "/imoveis/3043564937/foto-24.webp",
+        "/imoveis/3043564937/foto-25.webp",
+        "/imoveis/3043564937/foto-26.webp",
+        "/imoveis/3043564937/foto-27.webp",
+        "/imoveis/3043564937/foto-28.webp",
+        "/imoveis/3043564937/foto-29.webp",
+        "/imoveis/3043564937/foto-30.webp",
+        "/imoveis/3043564937/foto-31.webp",
+        "/imoveis/3043564937/foto-32.webp",
+        "/imoveis/3043564937/foto-33.webp",
+        "/imoveis/3043564937/foto-34.webp"
+      ],
+      "sourceFolder": "parque-columbia-rua-ruanda-prox.-da-crajubar-apto-3043564937"
+    },
+    {
+      "publicId": "3043565436",
+      "reference": "0023",
+      "slug": "casa-em-jardim-america-vila-esperanca-terrea-e-com-entrada-independente-3043565436",
+      "title": "Casa em Jardim América — Vila Esperança, térrea e com entrada independente",
+      "description": "Casa térrea com entrada independente na Vila Esperança, em Jardim América. Possui 73 m² de área construída, um quarto, banheiro, sala de jantar, cozinha gourmet e área de serviço separada.\nA área externa conta com quintal privativo, e o imóvel permite animais. A localização oferece acesso ao comércio, aos serviços e ao transporte público do bairro.",
+      "operation": "Venda",
+      "prices": [
+        {
+          "type": "Venda",
+          "price": "R$ 190.000",
+          "priceValue": 190000
+        }
+      ],
+      "location": {
+        "district": "Jardim América",
+        "city": "Rio de Janeiro",
+        "state": "RJ"
+      },
+      "facts": {
+        "beds": 1,
+        "baths": 1,
+        "suites": 0,
+        "parkingSpaces": 0,
+        "areaValue": 73,
+        "totalAreaValue": 75
+      },
+      "photos": [
+        "/imoveis/3043565436/foto-01.webp",
+        "/imoveis/3043565436/foto-02.webp",
+        "/imoveis/3043565436/foto-03.webp",
+        "/imoveis/3043565436/foto-04.webp",
+        "/imoveis/3043565436/foto-05.webp",
+        "/imoveis/3043565436/foto-06.webp",
+        "/imoveis/3043565436/foto-07.webp",
+        "/imoveis/3043565436/foto-08.webp",
+        "/imoveis/3043565436/foto-09.webp",
+        "/imoveis/3043565436/foto-10.webp",
+        "/imoveis/3043565436/foto-11.webp",
+        "/imoveis/3043565436/foto-12.webp",
+        "/imoveis/3043565436/foto-13.webp",
+        "/imoveis/3043565436/foto-14.webp",
+        "/imoveis/3043565436/foto-15.webp",
+        "/imoveis/3043565436/foto-16.webp",
+        "/imoveis/3043565436/foto-17.webp",
+        "/imoveis/3043565436/foto-18.webp",
+        "/imoveis/3043565436/foto-19.webp",
+        "/imoveis/3043565436/foto-20.webp",
+        "/imoveis/3043565436/foto-21.webp",
+        "/imoveis/3043565436/foto-22.webp",
+        "/imoveis/3043565436/foto-23.webp",
+        "/imoveis/3043565436/foto-24.webp",
+        "/imoveis/3043565436/foto-25.webp",
+        "/imoveis/3043565436/foto-26.webp",
+        "/imoveis/3043565436/foto-27.webp",
+        "/imoveis/3043565436/foto-28.webp",
+        "/imoveis/3043565436/foto-29.webp",
+        "/imoveis/3043565436/foto-30.webp",
+        "/imoveis/3043565436/foto-31.webp",
+        "/imoveis/3043565436/foto-32.webp",
+        "/imoveis/3043565436/foto-33.webp",
+        "/imoveis/3043565436/foto-34.webp",
+        "/imoveis/3043565436/foto-35.webp"
+      ],
+      "sourceFolder": "jardim-america-v.esperanca-melhor-rua-casa-3043565436"
+    }
+  ],
+  "redactedFields": [
+    "imovelwebUrl",
+    "google_maps_url",
+    "originalMediaUrl"
+  ],
+  "warnings": []
+}
