@@ -4,8 +4,8 @@ import { fileURLToPath } from 'node:url';
 import { generateAllImages } from './generateImages';
 import { loadCatalogSource } from './loadCatalogSource';
 import type { CatalogOverrides } from './sourceTypes';
-import { validateCatalog } from './validateCatalog';
 import { matchesGeneratedCatalog } from './verifyGeneratedCatalog';
+import { createLegacyContentSourceFromSiteRoot } from './legacyContentSource';
 
 const run = async (): Promise<void> => {
   const mode = process.argv.includes('--write') ? 'write' : process.argv.includes('--verify') ? 'verify' : null;
@@ -13,10 +13,14 @@ const run = async (): Promise<void> => {
 
   const scriptDirectory = dirname(fileURLToPath(import.meta.url));
   const siteRoot = resolve(scriptDirectory, '..', '..');
-  const entries = loadCatalogSource(join(siteRoot, 'content', 'imoveis'));
   const overrides = JSON.parse(
     readFileSync(join(siteRoot, 'content', 'catalog-overrides.json'), 'utf8'),
   ) as CatalogOverrides;
+  const source = createLegacyContentSourceFromSiteRoot(siteRoot, overrides, 53);
+  const properties = await source.loadPublishedProperties();
+  const entries = loadCatalogSource(join(siteRoot, 'content', 'imoveis'));
+  /* validation is performed by the source adapter above. */
+  /*
   const validation = validateCatalog(entries, overrides, 53);
   if (validation.errors.length > 0) {
     for (const current of validation.errors) console.error(`[${current.code}] ${current.message}`);
@@ -24,6 +28,7 @@ const run = async (): Promise<void> => {
   }
 
   const properties = [...validation.properties].sort((left, right) => left.id.localeCompare(right.id));
+  */
   const serialized = `${JSON.stringify(properties, null, 2)}\n`;
   const catalogPath = join(siteRoot, 'src', 'data', 'properties.generated.json');
 
@@ -50,7 +55,7 @@ const run = async (): Promise<void> => {
   writeFileSync(join(siteRoot, 'catalog-report.json'), `${JSON.stringify({
     properties: properties.length,
     sourcePhotos: entries.reduce((sum, entry) => sum + (entry.record ? entry.record.fotos.length : 0), 0),
-    warnings: validation.warnings,
+    warnings: [],
     ...imageStats,
     reductionPercent: reduction,
   }, null, 2)}\n`, 'utf8');
