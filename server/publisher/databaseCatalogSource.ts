@@ -1,12 +1,6 @@
 import type { WebsiteProperty } from '../../src/types/property.ts';
-import {
-  COMMON_FEATURES,
-  PRIVATE_FEATURES,
-  PROPERTY_SUBTYPES,
-  PROPERTY_TYPES,
-  publishablePropertySchema,
-  type PublishableProperty,
-} from '../../shared/propertySchema.ts';
+import { COMMON_FEATURES, PRIVATE_FEATURES, PROPERTY_SUBTYPES, PROPERTY_TYPES } from '../../shared/featureCatalog.ts';
+import { publishablePropertySchema, type PublishableProperty } from '../../shared/propertySchema.ts';
 import type { SqlExecutor } from '../db/client.ts';
 import type { CatalogSource, CanonicalPublishedProperty } from '../../scripts/catalog/catalogSource.ts';
 

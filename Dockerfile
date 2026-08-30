@@ -31,6 +31,8 @@ RUN apt-get update \
 COPY package.json package-lock.json ./
 RUN npm ci --omit=dev
 COPY --from=api-builder /app/dist-server ./dist-server
+COPY --from=builder /app/dist ./site-dist
+COPY --from=builder /app/src/data/properties.generated.json ./site-catalog.json
 RUN mkdir -p /data/media/private /data/media/public \
   && chown -R node:node /data/media \
   && chmod 700 /data/media/private \
