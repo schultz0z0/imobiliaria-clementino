@@ -19,6 +19,7 @@ import {
   type PublicationJobRecord,
 } from '../db/publicationRepository.ts';
 import type { PropertyStatus } from '../db/propertyRepository.ts';
+import { assessPropertyQuality, type PropertyQuality } from './propertyQuality.ts';
 
 /**
  * Drafts are intentionally more permissive than publishable payloads. The
@@ -761,6 +762,11 @@ export const validatePropertyDraft = async (
     ? { publishable: true, issues: [] }
     : { publishable: false, issues: toFieldIssues(result.error) };
 };
+
+export const getPropertyQuality = async (
+  sql: SqlExecutor,
+  propertyId: string,
+): Promise<PropertyQuality> => assessPropertyQuality((await getPropertyDetail(sql, propertyId)).draft);
 
 export const duplicateProperty = async (
   sql: Sql,

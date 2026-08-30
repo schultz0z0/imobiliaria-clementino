@@ -82,6 +82,7 @@ export type PropertyAdminApi = {
   inactivateProperty: (id: string) => Promise<PropertyLifecycleResponse>;
   reactivateProperty: (id: string) => Promise<PropertyLifecycleResponse>;
   duplicateProperty: (id: string) => Promise<{ property: PropertyAdminDto }>;
+  getPropertyQuality?: (id: string) => Promise<{ score: number; checks: Array<{ id: string; label: string; points: number; passed: boolean; recommendation?: string }>; recommendations: string[]; publishable: boolean; blockingIssues: ApiFieldIssue[] }>;
 };
 
 export type MediaPhotoDto = {

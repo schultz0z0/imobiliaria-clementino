@@ -11,6 +11,7 @@ import {
   createPropertyDraft,
   duplicateProperty,
   getPropertyDetail,
+  getPropertyQuality,
   inactivatePropertyDraft,
   listProperties,
   PropertyServiceError,
@@ -258,6 +259,19 @@ export const registerPropertyRoutes = (app: FastifyInstance, sql: Sql): void => 
       try {
         const { id } = propertyIdParamsSchema.parse(request.params);
         return reply.send(await validatePropertyDraft(sql, id));
+      } catch (error) {
+        return handleRouteError(reply, error);
+      }
+    },
+  );
+
+  app.get(
+    '/api/admin/properties/:id/quality',
+    { preHandler: readGuard },
+    async (request, reply) => {
+      try {
+        const { id } = propertyIdParamsSchema.parse(request.params);
+        return reply.send(await getPropertyQuality(sql, id));
       } catch (error) {
         return handleRouteError(reply, error);
       }
