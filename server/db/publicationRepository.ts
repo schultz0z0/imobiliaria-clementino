@@ -235,6 +235,14 @@ export const recordSuccessfulRelease = async (
       throw new Error('Failed to record successful site release');
     }
     await recordReleaseMediaReferences(transaction, Number(release.id), input.mediaIds);
+    await transaction`
+      UPDATE properties
+      SET published_revision_id = ${input.revisionId},
+          status = CASE WHEN status = 'inactive' THEN status ELSE 'published' END,
+          inactivated_at = CASE WHEN status = 'inactive' THEN inactivated_at ELSE NULL END,
+          updated_at = clock_timestamp()
+      WHERE id = ${job.property_id}
+    `;
     const completed = await finishPublicationJob(transaction, input.jobId, 'succeeded', null);
     return { id: Number(release.id), releasePath: input.releasePath, job: completed };
   });
