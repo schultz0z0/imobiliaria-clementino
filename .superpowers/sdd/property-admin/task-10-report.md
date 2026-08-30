@@ -35,6 +35,32 @@ Initial editor run was RED because autosave/provider/step modules did not exist.
 - `npm run admin:build`: PASS;
 - `npm run server:build`: PASS.
 
+## Review fixes
+
+Independent review identified autosave, navigation, optional-field clearing,
+field-error accessibility, media concurrency/preview, CEP transport failures,
+and retry target-size gaps. The implementation was hardened accordingly:
+
+- draft PATCH validation now accepts natural partial editing states while the
+  publishable schema remains strict;
+- failed autosave patches remain merged with subsequent edits until an explicit
+  retry, and step/conclude navigation blocks when flushing fails;
+- optional values normalize to `null`, coordinate pairs clear atomically, and
+  location inputs are registered with their full form paths and server errors;
+- media mutations are serialized, photo metadata/thumbnail DTOs are loaded and
+  refreshed, and the editor renders real thumbnails with dimensions and alt;
+- CEP lookup transport failures show a manual-entry fallback; retry controls
+  meet the 44px touch target.
+
+## Review-fix verification
+
+- focused editor suite: 22/22 PASS;
+- complete repository suite: 141/141 PASS;
+- `npm run lint`: PASS;
+- `npm run admin:build`: PASS;
+- `npm run server:build`: PASS;
+- `git diff --check`: PASS.
+
 Generated `dist-admin`/`dist-server` artifacts were removed after verification. Existing untracked review packages and the unrelated modified Task 1 report were preserved and not staged.
 
 ## Deferred by plan

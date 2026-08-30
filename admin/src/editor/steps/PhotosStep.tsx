@@ -41,7 +41,7 @@ export const PhotosStep = () => {
     <p aria-live="polite" className="field-hint">{mediaBusy ? 'Processando fotosâ€¦' : `${ids.length} foto(s) adicionada(s).`}</p>
     <ol className="photo-list">
       {ids.map((id, index) => <li key={id} draggable onDragStart={() => { dragged.current = id; }} onDragOver={(event) => event.preventDefault()} onDrop={() => void drop(id)}>
-        <div className="photo-placeholder" aria-hidden="true">{index + 1}</div>
+        {photos[id]?.thumbnailUrl ? <img className="photo-thumbnail" src={photos[id].thumbnailUrl} width={photos[id].width} height={photos[id].height} alt={photos[id].altText || `Foto ${index + 1} do imóvel`} loading="lazy" /> : <div className="photo-placeholder" aria-hidden="true">{index + 1}</div>}
         <div className="photo-fields"><strong>{cover === id ? 'Foto de capa' : `Foto ${index + 1}`}</strong><label>Texto alternativo<input defaultValue={photos[id]?.altText ?? altMap[id] ?? ''} minLength={5} maxLength={180} onBlur={(event) => { if (event.currentTarget.value.trim().length >= 5) void editPhotoAlt(id, event.currentTarget.value); }} /></label></div>
         <div className="photo-actions">
           <button type="button" disabled={index === 0 || mediaBusy} aria-label={`Mover foto ${index + 1} para cima`} onClick={() => void move(id, -1)}><ArrowUp /></button>

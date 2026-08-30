@@ -87,6 +87,7 @@ export type PropertyAdminApi = {
 export type MediaPhotoDto = {
   id: string; mimeType: string; byteSize: number; width: number; height: number;
   checksumSha256: string; altText: string; position: number;
+  thumbnailUrl: string;
 };
 
 export type CepLookupResponse =
@@ -103,6 +104,7 @@ export type PropertyEditorApi = {
   reorderPhotos: (id: string, revision: number, orderedPhotoIds: string[], coverPhotoId: string, signal?: AbortSignal) => Promise<{ property: PropertyAdminDto }>;
   editPhoto: (id: string, photoId: string, revision: number, altText: string, signal?: AbortSignal) => Promise<{ photo: MediaPhotoDto; property: PropertyAdminDto }>;
   deletePhoto: (id: string, photoId: string, revision: number, signal?: AbortSignal) => Promise<{ property: PropertyAdminDto; deletion: { state: string; retainedForPublication: boolean } }>;
+  listPhotos: (id: string, signal?: AbortSignal) => Promise<{ photos: MediaPhotoDto[] }>;
 };
 
 export type AuthApi = {
@@ -280,6 +282,10 @@ export class AdminApiClient implements AuthApi, PropertyAdminApi, PropertyEditor
     return this.request(`/properties/${encodeURIComponent(id)}/photos/${encodeURIComponent(photoId)}`, {
       method: 'DELETE', headers: { 'if-match': String(revision) }, signal,
     });
+  }
+
+  listPhotos(id: string, signal?: AbortSignal): Promise<{ photos: MediaPhotoDto[] }> {
+    return this.request(`/properties/${encodeURIComponent(id)}/photos`, { signal });
   }
 }
 

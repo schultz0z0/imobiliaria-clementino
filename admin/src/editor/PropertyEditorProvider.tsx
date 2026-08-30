@@ -67,6 +67,7 @@ export const PropertyEditorProvider = ({
   const revisionRef = useRef(1);
   const creatingRef = useRef<Promise<void>>();
   const pendingCreateRef = useRef<WizardValues>({});
+  const mediaQueueRef = useRef<Promise<void>>(Promise.resolve());
   const suppressWatch = useRef(false);
   const propertyRef = useRef<PropertyAdminDto>();
 
@@ -110,6 +111,12 @@ export const PropertyEditorProvider = ({
       form.reset(mergeWizardValues(EMPTY_WIZARD_VALUES, loaded.draft as WizardValues));
       queueMicrotask(() => { suppressWatch.current = false; });
       setLoadError(undefined);
+      if (api.listPhotos) {
+        void api.listPhotos(initialPropertyId, abort.signal).then(({ photos: loadedPhotos }) => {
+          if (abort.signal.aborted) return;
+          setPhotos(Object.fromEntries(loadedPhotos.map((photo) => [photo.id, photo])));
+        }).catch(() => { /* metadata is optional; editor remains usable with placeholders */ });
+      }
     }).catch((error) => {
       if (!abort.signal.aborted) setLoadError(error instanceof Error ? error.message : 'NÃ£o foi possÃ­vel carregar o imÃ³vel.');
     }).finally(() => { if (!abort.signal.aborted) setLoading(false); });
@@ -166,27 +173,45 @@ export const PropertyEditorProvider = ({
 
   useEffect(() => () => controller.dispose(), [controller]);
 
-  const runMediaMutation = useCallback(async (action: (id: string, revision: number) => Promise<{ property: PropertyAdminDto; photo?: MediaPhotoDto }>) => {
-    if (!idRef.current) { setMediaError('Preencha um campo para criar o rascunho antes de adicionar fotos.'); return; }
-    await controller.flush();
-    setMediaBusy(true); setMediaError(undefined);
-    try {
-      const result = await action(idRef.current, revisionRef.current);
-      acceptProperty(result.property); controller.setRevision(result.property.revisionNumber);
-      suppressWatch.current = true;
-      form.setValue('media', mergeWizardValues({ media: form.getValues('media') }, { media: result.property.draft.media as WizardValues['media'] }).media, { shouldDirty: false });
-      queueMicrotask(() => { suppressWatch.current = false; });
-      if (result.photo) setPhotos((current) => ({ ...current, [result.photo!.id]: result.photo! }));
-    } catch (error) {
-      setServerIssues(form, error);
-      setMediaError(error instanceof Error ? error.message : 'NÃ£o foi possÃ­vel alterar as fotos.');
-    } finally { setMediaBusy(false); }
-  }, [acceptProperty, controller, form]);
+  const runMediaMutation = useCallback((action: (id: string, revision: number) => Promise<{ property: PropertyAdminDto; photo?: MediaPhotoDto }>) => {
+    const task = mediaQueueRef.current.then(async () => {
+      if (!idRef.current) throw new Error('Preencha um campo para criar o rascunho antes de adicionar fotos.');
+      await controller.flush();
+      const propertyId = idRef.current;
+      setMediaBusy(true); setMediaError(undefined);
+      try {
+        const result = await action(propertyId, revisionRef.current);
+        acceptProperty(result.property); controller.setRevision(result.property.revisionNumber);
+        suppressWatch.current = true;
+        form.setValue('media', mergeWizardValues({ media: form.getValues('media') }, { media: result.property.draft.media as WizardValues['media'] }).media, { shouldDirty: false });
+        queueMicrotask(() => { suppressWatch.current = false; });
+        if (result.photo) setPhotos((current) => ({ ...current, [result.photo!.id]: result.photo! }));
+        else if (api.listPhotos) {
+          const listed = await api.listPhotos(propertyId);
+          setPhotos(Object.fromEntries(listed.photos.map((photo) => [photo.id, photo])));
+        }
+      } catch (error) {
+        setServerIssues(form, error);
+        setMediaError(error instanceof Error ? error.message : 'NÃ£o foi possÃ­vel alterar as fotos.');
+        throw error;
+      } finally { setMediaBusy(false); }
+    });
+    mediaQueueRef.current = task.catch(() => undefined);
+    return task;
+  }, [acceptProperty, api, controller, form]);
 
   const context = useMemo<EditorContextValue>(() => ({
     form, api, property, propertyId: property?.id ?? initialPropertyId, publicId: property?.publicId,
     revision: property?.revisionNumber ?? revisionRef.current, loading, loadError, autosave,
-    retrySave: () => idRef.current ? controller.retry() : Promise.resolve(createFromIntent({})), flushSave: () => controller.flush(), photos, mediaBusy, mediaError,
+    retrySave: () => idRef.current ? controller.retry() : Promise.resolve(createFromIntent({})),
+    flushSave: async () => {
+      await controller.flush();
+      const current = controller.getState();
+      if (current.status === 'error' || current.status === 'conflict') {
+        throw current.error ?? new Error('Não foi possível salvar o rascunho.');
+      }
+    },
+    photos, mediaBusy, mediaError,
     uploadPhotos: async (files) => {
       for (const file of files) {
         await runMediaMutation((id, revision) => api.uploadPhoto(id, revision, file, file.name.replace(/\.[^.]+$/, '').slice(0, 175) || 'Foto do imÃ³vel'));

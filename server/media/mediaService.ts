@@ -41,9 +41,10 @@ export type MediaPhotoDto = {
   checksumSha256: string;
   altText: string;
   position: number;
+  thumbnailUrl: string;
 };
 
-const toPhotoDto = (row: MediaRow): MediaPhotoDto => ({
+const toPhotoDto = (row: MediaRow, publicId?: string): MediaPhotoDto => ({
   id: row.id,
   mimeType: row.mime_type,
   byteSize: Number(row.byte_size),
@@ -52,7 +53,19 @@ const toPhotoDto = (row: MediaRow): MediaPhotoDto => ({
   checksumSha256: row.checksum_sha256,
   altText: row.alt_text,
   position: row.position,
+  thumbnailUrl: publicId ? `/api/admin/properties/${row.property_id}/photos/${row.id}/thumbnail` : '',
 });
+
+export const listPropertyPhotos = async (sql: SqlExecutor, propertyId: string): Promise<MediaPhotoDto[]> => {
+  const rows = await sql<(MediaRow & { public_id: string })[]>`
+    SELECT m.id, m.property_id, m.mime_type, m.byte_size, m.width, m.height,
+      m.checksum_sha256, m.alt_text, m.position, m.removed_at, p.public_id
+    FROM property_media m JOIN properties p ON p.id = m.property_id
+    WHERE m.property_id = ${propertyId} AND m.removed_at IS NULL
+    ORDER BY m.position, m.id
+  `;
+  return rows.map((row) => toPhotoDto(row, row.public_id));
+};
 
 const stale = () =>
   new PropertyServiceError(API_ERROR_CODES.STALE_REVISION, 409, 'The draft revision is stale');
@@ -292,7 +305,7 @@ export const createUploadedPhoto = async (input: {
         checksumSha256: input.processed.checksumSha256,
       });
       return {
-        photo: toPhotoDto(inserted[0]!),
+        photo: toPhotoDto(inserted[0]!, publicId),
         property: await getPropertyDetail(transaction, input.propertyId),
       };
     });
@@ -423,7 +436,7 @@ export const editPropertyPhoto = async (input: {
       revisionNumber: input.expectedRevision + 1,
     });
     return {
-      photo: toPhotoDto(rows[0]),
+      photo: toPhotoDto(rows[0], property.public_id),
       property: await getPropertyDetail(transaction, input.propertyId),
     };
   });

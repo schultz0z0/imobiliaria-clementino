@@ -481,6 +481,31 @@ test('rejects unknown and prototype-pollution fields without creating revisions'
   assert.equal(revisions[0]?.count, '1');
 });
 
+test('persists incomplete draft fields while publication remains strict', async () => {
+  const session = await authenticate();
+  const created = await createDraft(session);
+  const partial = await saveDraft(session, created.id, 1, {
+    editorial: { title: '', description: '' },
+    classification: { operations: [] },
+    privateAddress: { postalCode: '2' },
+    seo: { title: '' },
+    facts: { position: null },
+  });
+  assert.equal(partial.statusCode, 200, partial.body);
+  assert.equal(partial.json().property.draft.editorial.title, '');
+  assert.deepEqual(partial.json().property.draft.classification.operations, []);
+  assert.equal(partial.json().property.draft.seo.title, '');
+  assert.equal('position' in (partial.json().property.draft.facts ?? {}), false);
+  const rejected = await app.inject({
+    method: 'POST',
+    url: `/api/admin/properties/${created.id}/publish`,
+    headers: authHeaders(session, true),
+    payload: {},
+  });
+  assert.equal(rejected.statusCode, 400);
+  assert.ok(rejected.json().error.issues.some((issue: { path: string[] }) => issue.path.join('.') === 'editorial.title'));
+});
+
 test('lists sanitized summaries with bounded pagination, server sorting, private search, and canonical filters', async () => {
   const session = await authenticate();
   const target = await createDraft(session);

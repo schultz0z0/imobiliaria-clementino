@@ -76,3 +76,18 @@ test('does not let a newer patch bypass a failed save or discard the failed fiel
   assert.deepEqual(received[1], { editorial: { title: 'Apartamento no Leblon' }, facts: { bedrooms: 3 } });
   controller.dispose();
 });
+
+test('keeps the failure state while new edits are queued and reports unsaved work', async () => {
+  const controller = createAutosaveController({
+    delayMs: 1,
+    initialRevision: 1,
+    save: async () => { throw new Error('offline'); },
+  });
+  controller.queue({ editorial: { title: 'Titulo inicial' } });
+  await controller.flush();
+  assert.equal(controller.getState().status, 'error');
+  controller.queue({ editorial: { description: 'Descricao em andamento' } });
+  assert.equal(controller.getState().status, 'error');
+  assert.equal(controller.hasUnsavedChanges(), true);
+  controller.dispose();
+});

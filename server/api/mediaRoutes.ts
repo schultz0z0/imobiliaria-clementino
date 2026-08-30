@@ -1,4 +1,4 @@
-import { createWriteStream } from 'node:fs';
+import { createReadStream, createWriteStream } from 'node:fs';
 import path from 'node:path';
 import { pipeline } from 'node:stream/promises';
 import { Transform } from 'node:stream';
@@ -11,12 +11,13 @@ import { z } from 'zod';
 import { API_ERROR_CODES, type ApiErrorCode } from '../../shared/apiContract.ts';
 import { createAdminGuard } from '../auth/routes.ts';
 import type { Sql } from '../db/client.ts';
-import { PropertyServiceError, toFieldIssues } from '../domain/propertyService.ts';
+import { getPropertyDetail, PropertyServiceError, toFieldIssues } from '../domain/propertyService.ts';
 import {
   createUploadedPhoto,
   deletePropertyPhoto,
   editPropertyPhoto,
   orderPropertyPhotos,
+  listPropertyPhotos,
 } from '../media/mediaService.ts';
 import {
   ImageValidationError,
@@ -189,6 +190,30 @@ export const registerMediaRoutes = async (
   });
   const storage = new MediaStorage(mediaRoot);
   const mutationGuard = createAdminGuard(sql, { csrf: true, typedErrors: true });
+  const readGuard = createAdminGuard(sql, { typedErrors: true });
+
+  app.get('/api/admin/properties/:id/photos', { preHandler: readGuard }, async (request, reply) => {
+    try {
+      const { id } = propertyParamsSchema.parse(request.params);
+      await getPropertyDetail(sql, id);
+      return reply.send({ photos: await listPropertyPhotos(sql, id) });
+    } catch (error) { return handleRouteError(reply, error); }
+  });
+
+  app.get('/api/admin/properties/:id/photos/:photoId/thumbnail', { preHandler: readGuard }, async (request, reply) => {
+    try {
+      const { id, photoId } = photoParamsSchema.parse(request.params);
+      const rows = await sql<{ public_id: string; checksum_sha256: string }[]>`
+        SELECT p.public_id, m.checksum_sha256 FROM property_media m JOIN properties p ON p.id = m.property_id
+        WHERE m.property_id = ${id} AND m.id = ${photoId} AND m.removed_at IS NULL
+      `;
+      const row = rows[0];
+      if (!row) throw new PropertyServiceError(API_ERROR_CODES.NOT_FOUND, 404, 'Property photo not found');
+      const filePath = storage.publicDerivativePath(row.public_id, row.checksum_sha256, 'thumb');
+      reply.type('image/webp').header('cache-control', 'private, max-age=300');
+      return reply.send(createReadStream(filePath));
+    } catch (error) { return handleRouteError(reply, error); }
+  });
 
   app.post(
     '/api/admin/properties/:id/photos',

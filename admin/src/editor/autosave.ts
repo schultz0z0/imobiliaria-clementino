@@ -82,7 +82,14 @@ export const createAutosaveController = ({
   return {
     queue(patch) {
       pending = mergeWizardValues(pending ?? {}, patch);
-      update({ status: 'pending', revision: state.revision });
+      // Preserve a failed/conflicted state until the user explicitly retries;
+      // new edits are merged into the retry payload and must remain visible as
+      // unsaved work instead of looking successfully queued.
+      if (state.status === 'error' || state.status === 'conflict') {
+        update({ ...state });
+      } else {
+        update({ status: 'pending', revision: state.revision });
+      }
       if (!inFlight) schedule();
     },
     flush,

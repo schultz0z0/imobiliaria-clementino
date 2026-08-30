@@ -5,7 +5,7 @@ import { usePropertyEditor } from '../PropertyEditorProvider.tsx';
 import type { WizardValues } from '../types.ts';
 
 export const LocationStep = () => {
-  const { watch, setValue } = useFormContext<WizardValues>();
+  const { watch, setValue, register, formState: { errors } } = useFormContext<WizardValues>();
   const { api, publicId } = usePropertyEditor();
   const [lookupError, setLookupError] = useState<string>();
   const [previewError, setPreviewError] = useState<string>();
@@ -20,18 +20,27 @@ export const LocationStep = () => {
   const change = (next: LocationEditorValue) => {
     const privateKeys = ['postalCode','state','city','district','street','number','complement','latitude','longitude'] as const;
     for (const key of privateKeys) {
+      if (key === 'latitude' || key === 'longitude') continue;
       if (next[key] !== privateAddress[key]) setValue(`privateAddress.${key}`, next[key], { shouldDirty: true, shouldValidate: true });
     }
+    if (next.latitude !== privateAddress.latitude || next.longitude !== privateAddress.longitude) {
+      setValue('privateAddress.latitude', next.latitude, { shouldDirty: true, shouldValidate: true });
+      setValue('privateAddress.longitude', next.longitude, { shouldDirty: true, shouldValidate: true });
+    }
     if (next.publicLatitude !== publicLocation?.latitude || next.publicLongitude !== publicLocation?.longitude) {
-      setValue('publicLocation.latitude', next.publicLatitude, { shouldDirty: true });
-      setValue('publicLocation.longitude', next.publicLongitude, { shouldDirty: true });
+      setValue('publicLocation.latitude', next.publicLatitude, { shouldDirty: true, shouldValidate: true });
+      setValue('publicLocation.longitude', next.publicLongitude, { shouldDirty: true, shouldValidate: true });
     }
   };
   const lookup = async (cep: string) => {
-    const result = await api.lookupCep(cep);
-    if (!result.ok) { setLookupError(result.error.message); return; }
-    setLookupError(undefined);
-    for (const [key, fieldValue] of Object.entries(result.address)) setValue(`privateAddress.${key}` as never, fieldValue as never, { shouldDirty: true, shouldValidate: true });
+    try {
+      const result = await api.lookupCep(cep);
+      if (!result.ok) { setLookupError(result.error.message); return; }
+      setLookupError(undefined);
+      for (const [key, fieldValue] of Object.entries(result.address)) setValue(`privateAddress.${key}` as never, fieldValue as never, { shouldDirty: true, shouldValidate: true });
+    } catch (error) {
+      setLookupError(error instanceof Error ? error.message : 'Não foi possível consultar o CEP. Preencha o endereço manualmente.');
+    }
   };
   const confirm = async () => {
     if (!publicId) { setPreviewError('Aguarde o primeiro salvamento do rascunho e tente novamente.'); return; }
@@ -47,8 +56,17 @@ export const LocationStep = () => {
       setPreviewError(undefined);
     } catch (error) { setPreviewError(error instanceof Error ? error.message : 'NÃ£o foi possÃ­vel gerar a localizaÃ§Ã£o aproximada.'); }
   };
+  const fieldRegistration = (key: keyof LocationEditorValue) => {
+    const path = ['publicLatitude', 'publicLongitude'].includes(key) ? `publicLocation.${key.replace('public', '').toLowerCase()}` : `privateAddress.${key}`;
+    return register(path as never) as never;
+  };
+  const fieldErrors = Object.fromEntries(Object.keys(value).map((key) => {
+    const section = ['publicLatitude', 'publicLongitude'].includes(key) ? errors.publicLocation : errors.privateAddress;
+    const field = key.startsWith('public') ? key.replace('public', '').toLowerCase() : key;
+    return [key, (section as Record<string, { message?: string }> | undefined)?.[field]?.message];
+  })) as Partial<Record<keyof LocationEditorValue, string>>;
   return <div className="wizard-step-stack">
-    <LocationEditor value={value} onChange={change} onLookupCep={lookup} onConfirm={confirm} lookupError={lookupError} publicPreview={publicLocation?.label ? { label: publicLocation.label, latitude: publicLocation.latitude, longitude: publicLocation.longitude } : undefined} />
+    <LocationEditor value={value} onChange={change} onLookupCep={lookup} onConfirm={confirm} lookupError={lookupError} fieldRegistration={fieldRegistration} fieldErrors={fieldErrors} publicPreview={publicLocation?.label ? { label: publicLocation.label, latitude: publicLocation.latitude, longitude: publicLocation.longitude } : undefined} />
     {previewError ? <p className="form-alert" role="alert">{previewError}</p> : null}
     <aside className="privacy-note"><strong>Privacidade por padrÃ£o</strong><p>O nÃºmero, complemento e coordenadas exatas ficam somente no painel. O site usa bairro, cidade, UF e um marcador deslocado.</p></aside>
   </div>;

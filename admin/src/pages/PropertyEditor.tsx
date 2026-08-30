@@ -1,7 +1,7 @@
 import { ArrowLeft, ArrowRight, Check, CircleAlert, Cloud, CloudOff, LoaderCircle } from 'lucide-react';
 import React, { useMemo, useState } from 'react';
 import { useFormContext } from 'react-hook-form';
-import { Link, useParams, useSearchParams } from 'react-router-dom';
+import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { PropertyEditorProvider, usePropertyEditor } from '../editor/PropertyEditorProvider.tsx';
 import { ClassificationStep } from '../editor/steps/ClassificationStep.tsx';
 import { EditorialPricingStep } from '../editor/steps/EditorialPricingStep.tsx';
@@ -28,8 +28,9 @@ const SaveIndicator = () => {
 };
 
 const EditorContents = () => {
-  const { formState, getValues, setError, setFocus, clearErrors } = useFormContext<WizardValues>();
+  const { formState, getValues, setError, setFocus } = useFormContext<WizardValues>();
   const { loading, loadError, flushSave, property } = usePropertyEditor();
+  const navigate = useNavigate();
   const [search, setSearch] = useSearchParams();
   const requested = Number(search.get('etapa') ?? 1);
   const step = Number.isInteger(requested) && requested >= 1 && requested <= 7 ? requested : 1;
@@ -37,7 +38,6 @@ const EditorContents = () => {
   const Step = STEPS[step - 1]!.component;
   const go = async (next: number) => {
     if (next > step) {
-      clearErrors();
       const result = validateWizardStep(step, getValues());
       if (!result.success) {
         const first = result.issues[0];
@@ -49,10 +49,31 @@ const EditorContents = () => {
         return;
       }
     }
-    await flushSave();
+    try {
+      await flushSave();
+    } catch (error) {
+      setStepMessage(error instanceof Error ? error.message : 'Não foi possível salvar o rascunho. Tente novamente.');
+      return;
+    }
     setStepMessage(undefined);
     setSearch({ etapa: String(next) });
     document.querySelector<HTMLElement>('#wizard-step-title')?.focus();
+  };
+  const conclude = async () => {
+    const result = validateWizardStep(7, getValues());
+    if (!result.success) {
+      for (const issue of result.issues) setError(issue.path.join('.') as never, { type: 'local', message: issue.message });
+      const first = result.issues[0];
+      if (first) setFocus(first.path.join('.') as never);
+      setStepMessage('Revise os campos destacados antes de concluir o rascunho.');
+      return;
+    }
+    try {
+      await flushSave();
+      navigate('/imoveis');
+    } catch (error) {
+      setStepMessage(error instanceof Error ? error.message : 'Não foi possível salvar o rascunho. Tente novamente.');
+    }
   };
   if (loading) return <div className="panel-state" role="status"><LoaderCircle className="spin" />Carregando imÃ³velâ€¦</div>;
   if (loadError) return <div className="panel-state panel-state-error" role="alert"><CircleAlert /><h2>NÃ£o foi possÃ­vel abrir o imÃ³vel</h2><p>{loadError}</p><Link to="/imoveis" className="button button-secondary">Voltar</Link></div>;
@@ -63,7 +84,7 @@ const EditorContents = () => {
       {stepMessage ? <p className="form-alert" role="alert">{stepMessage}</p> : null}
       {Object.keys(formState.errors).length ? <p className="field-hint">Os campos com erro precisam ser revisados.</p> : null}
       <Step />
-      <footer className="wizard-actions"><button type="button" className="button button-secondary" disabled={step === 1} onClick={() => void go(step - 1)}><ArrowLeft />Anterior</button>{step < 7 ? <button type="button" className="button button-primary" onClick={() => void go(step + 1)}>Continuar<ArrowRight /></button> : <Link to="/imoveis" className="button button-primary">Concluir rascunho<Check /></Link>}</footer>
+      <footer className="wizard-actions"><button type="button" className="button button-secondary" disabled={step === 1} onClick={() => void go(step - 1)}><ArrowLeft />Anterior</button>{step < 7 ? <button type="button" className="button button-primary" onClick={() => void go(step + 1)}>Continuar<ArrowRight /></button> : <button type="button" className="button button-primary" onClick={() => void conclude()}>Concluir rascunho<Check /></button>}</footer>
     </div>
   </section>;
 };

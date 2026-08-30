@@ -20,34 +20,111 @@ import {
 } from '../db/publicationRepository.ts';
 import type { PropertyStatus } from '../db/propertyRepository.ts';
 
+/**
+ * Drafts are intentionally more permissive than publishable payloads. The
+ * editor persists each natural intermediate state (empty title while typing,
+ * partially entered CEP, no operation selected yet) and publication is the
+ * only place that applies the strict canonical schema.
+ */
+const draftText = (maximum: number) => z.string().trim().max(maximum);
+const draftMoney = z.number().finite().nonnegative();
+const draftOperation = z.enum(['sale', 'rent', 'seasonal', 'auction']);
+const draftType = propertyDraftSchema.shape.classification.shape.type;
+const draftSubtype = propertyDraftSchema.shape.classification.shape.subtype;
+const draftPosition = propertyDraftSchema.shape.facts.shape.position;
+
+const adminPropertyDraftSections = {
+  classification: z.strictObject({
+    operations: z.array(draftOperation).optional(),
+    type: draftType.optional(),
+    subtype: draftSubtype.optional(),
+  }),
+  privateAddress: z.strictObject({
+    postalCode: draftText(8).optional(),
+    state: draftText(2).optional(),
+    city: draftText(100).optional(),
+    district: draftText(100).optional(),
+    street: draftText(160).optional(),
+    number: draftText(30).optional(),
+    complement: draftText(100).optional(),
+    latitude: z.number().finite().min(-90).max(90).optional(),
+    longitude: z.number().finite().min(-180).max(180).optional(),
+  }),
+  publicLocation: z.strictObject({
+    label: draftText(160).optional(),
+    latitude: z.number().finite().min(-90).max(90).optional(),
+    longitude: z.number().finite().min(-180).max(180).optional(),
+    precision: z.literal('approximate').optional(),
+  }),
+  facts: z.strictObject({
+    totalArea: z.number().finite().positive().optional(),
+    usableArea: z.number().finite().positive().optional(),
+    isNew: z.boolean().optional(),
+    ageYears: z.number().int().nonnegative().optional(),
+    bedrooms: z.number().int().nonnegative().optional(),
+    bathrooms: z.number().int().nonnegative().optional(),
+    suites: z.number().int().nonnegative().optional(),
+    parkingSpaces: z.number().int().nonnegative().optional(),
+    floors: z.number().int().positive().optional(),
+    position: draftPosition.optional(),
+  }),
+  features: z.strictObject({
+    acceptsFgts: z.boolean().optional(),
+    acceptsExchange: z.boolean().optional(),
+    common: z.array(z.string().min(1)).optional(),
+    private: z.array(z.string().min(1)).optional(),
+  }),
+  editorial: z.strictObject({
+    title: draftText(120).optional(),
+    description: draftText(5_000).optional(),
+    reference: draftText(50).optional(),
+    featured: z.boolean().optional(),
+  }),
+  pricing: z.strictObject({
+    sale: draftMoney.optional(), rent: draftMoney.optional(),
+    seasonal: draftMoney.optional(), auction: draftMoney.optional(),
+    condominium: draftMoney.optional(), iptu: draftMoney.optional(),
+  }),
+  media: z.strictObject({
+    orderedPhotoIds: z.array(draftText(200)).optional(),
+    coverPhotoId: draftText(200).optional(),
+    altTextByPhotoId: z.record(z.string().uuid(), draftText(180)).optional(),
+  }),
+  seo: z.strictObject({
+    title: draftText(120).optional(),
+    description: draftText(320).optional(),
+    imagePhotoId: draftText(200).optional(),
+  }),
+} as const;
+
 const partialSection = <T extends z.ZodRawShape>(schema: z.ZodObject<T>) =>
-  schema.partial().optional();
+  schema.optional();
 
 const nullablePatchField = <T extends z.ZodType>(schema: T) =>
   z.union([schema, z.null()]).optional();
 
 export const adminPropertyDraftSchema = z
   .strictObject({
-    classification: partialSection(propertyDraftSchema.shape.classification),
-    privateAddress: partialSection(propertyDraftSchema.shape.privateAddress),
-    publicLocation: partialSection(propertyDraftSchema.shape.publicLocation),
-    facts: partialSection(propertyDraftSchema.shape.facts),
-    features: partialSection(propertyDraftSchema.shape.features),
-    editorial: partialSection(propertyDraftSchema.shape.editorial),
-    pricing: partialSection(propertyDraftSchema.shape.pricing),
-    media: partialSection(propertyDraftSchema.shape.media),
-    seo: partialSection(propertyDraftSchema.shape.seo),
+    classification: partialSection(adminPropertyDraftSections.classification),
+    privateAddress: partialSection(adminPropertyDraftSections.privateAddress),
+    publicLocation: partialSection(adminPropertyDraftSections.publicLocation),
+    facts: partialSection(adminPropertyDraftSections.facts),
+    features: partialSection(adminPropertyDraftSections.features),
+    editorial: partialSection(adminPropertyDraftSections.editorial),
+    pricing: partialSection(adminPropertyDraftSections.pricing),
+    media: partialSection(adminPropertyDraftSections.media),
+    seo: partialSection(adminPropertyDraftSections.seo),
   })
   .superRefine(rejectImovelwebReferences);
 
 export type AdminPropertyDraft = z.infer<typeof adminPropertyDraftSchema>;
 
-const privateAddressPatchSchema = propertyDraftSchema.shape.privateAddress
+const privateAddressPatchSchema = adminPropertyDraftSections.privateAddress
   .partial()
   .extend({
-    complement: nullablePatchField(propertyDraftSchema.shape.privateAddress.shape.complement),
-    latitude: nullablePatchField(propertyDraftSchema.shape.privateAddress.shape.latitude),
-    longitude: nullablePatchField(propertyDraftSchema.shape.privateAddress.shape.longitude),
+    complement: nullablePatchField(adminPropertyDraftSections.privateAddress.shape.complement),
+    latitude: nullablePatchField(adminPropertyDraftSections.privateAddress.shape.latitude),
+    longitude: nullablePatchField(adminPropertyDraftSections.privateAddress.shape.longitude),
   })
   .superRefine((value, context) => {
     if ((value.latitude === null) !== (value.longitude === null)) {
@@ -59,11 +136,11 @@ const privateAddressPatchSchema = propertyDraftSchema.shape.privateAddress
     }
   });
 
-const publicLocationPatchSchema = propertyDraftSchema.shape.publicLocation
+const publicLocationPatchSchema = adminPropertyDraftSections.publicLocation
   .partial()
   .extend({
-    latitude: nullablePatchField(propertyDraftSchema.shape.publicLocation.shape.latitude),
-    longitude: nullablePatchField(propertyDraftSchema.shape.publicLocation.shape.longitude),
+    latitude: nullablePatchField(adminPropertyDraftSections.publicLocation.shape.latitude),
+    longitude: nullablePatchField(adminPropertyDraftSections.publicLocation.shape.longitude),
   })
   .superRefine((value, context) => {
     if ((value.latitude === null) !== (value.longitude === null)) {
@@ -75,41 +152,48 @@ const publicLocationPatchSchema = propertyDraftSchema.shape.publicLocation
     }
   });
 
-const factsPatchSchema = propertyDraftSchema.shape.facts.partial().extend({
-  ageYears: nullablePatchField(propertyDraftSchema.shape.facts.shape.ageYears),
-  totalArea: nullablePatchField(propertyDraftSchema.shape.facts.shape.totalArea),
-  usableArea: nullablePatchField(propertyDraftSchema.shape.facts.shape.usableArea),
-  floors: nullablePatchField(propertyDraftSchema.shape.facts.shape.floors),
-  position: nullablePatchField(propertyDraftSchema.shape.facts.shape.position),
+const factsPatchSchema = adminPropertyDraftSections.facts.partial().extend({
+  ageYears: nullablePatchField(adminPropertyDraftSections.facts.shape.ageYears),
+  totalArea: nullablePatchField(adminPropertyDraftSections.facts.shape.totalArea),
+  usableArea: nullablePatchField(adminPropertyDraftSections.facts.shape.usableArea),
+  floors: nullablePatchField(adminPropertyDraftSections.facts.shape.floors),
+  position: nullablePatchField(adminPropertyDraftSections.facts.shape.position),
 });
 
-const pricingPatchSchema = propertyDraftSchema.shape.pricing.partial().extend({
-  sale: nullablePatchField(propertyDraftSchema.shape.pricing.shape.sale),
-  rent: nullablePatchField(propertyDraftSchema.shape.pricing.shape.rent),
-  seasonal: nullablePatchField(propertyDraftSchema.shape.pricing.shape.seasonal),
-  auction: nullablePatchField(propertyDraftSchema.shape.pricing.shape.auction),
-  condominium: nullablePatchField(propertyDraftSchema.shape.pricing.shape.condominium),
-  iptu: nullablePatchField(propertyDraftSchema.shape.pricing.shape.iptu),
+const pricingPatchSchema = adminPropertyDraftSections.pricing.partial().extend({
+  sale: nullablePatchField(adminPropertyDraftSections.pricing.shape.sale),
+  rent: nullablePatchField(adminPropertyDraftSections.pricing.shape.rent),
+  seasonal: nullablePatchField(adminPropertyDraftSections.pricing.shape.seasonal),
+  auction: nullablePatchField(adminPropertyDraftSections.pricing.shape.auction),
+  condominium: nullablePatchField(adminPropertyDraftSections.pricing.shape.condominium),
+  iptu: nullablePatchField(adminPropertyDraftSections.pricing.shape.iptu),
 });
 
-const mediaPatchSchema = propertyDraftSchema.shape.media.partial().extend({
-  coverPhotoId: nullablePatchField(propertyDraftSchema.shape.media.shape.coverPhotoId),
+const mediaPatchSchema = adminPropertyDraftSections.media.partial().extend({
+  coverPhotoId: nullablePatchField(adminPropertyDraftSections.media.shape.coverPhotoId),
 });
 
-const seoPatchSchema = propertyDraftSchema.shape.seo.partial().extend({
-  title: nullablePatchField(propertyDraftSchema.shape.seo.shape.title),
-  description: nullablePatchField(propertyDraftSchema.shape.seo.shape.description),
-  imagePhotoId: nullablePatchField(propertyDraftSchema.shape.seo.shape.imagePhotoId),
+const editorialPatchSchema = adminPropertyDraftSections.editorial.partial().extend({
+  title: nullablePatchField(adminPropertyDraftSections.editorial.shape.title),
+  description: nullablePatchField(adminPropertyDraftSections.editorial.shape.description),
+  reference: nullablePatchField(adminPropertyDraftSections.editorial.shape.reference),
+  featured: adminPropertyDraftSections.editorial.shape.featured,
+});
+
+const seoPatchSchema = adminPropertyDraftSections.seo.partial().extend({
+  title: nullablePatchField(adminPropertyDraftSections.seo.shape.title),
+  description: nullablePatchField(adminPropertyDraftSections.seo.shape.description),
+  imagePhotoId: nullablePatchField(adminPropertyDraftSections.seo.shape.imagePhotoId),
 });
 
 export const adminPropertyDraftPatchSchema = z
   .strictObject({
-    classification: partialSection(propertyDraftSchema.shape.classification),
+    classification: partialSection(adminPropertyDraftSections.classification),
     privateAddress: privateAddressPatchSchema.optional(),
     publicLocation: publicLocationPatchSchema.optional(),
     facts: factsPatchSchema.optional(),
-    features: partialSection(propertyDraftSchema.shape.features),
-    editorial: partialSection(propertyDraftSchema.shape.editorial),
+    features: partialSection(adminPropertyDraftSections.features),
+    editorial: editorialPatchSchema.optional(),
     pricing: pricingPatchSchema.optional(),
     media: mediaPatchSchema.optional(),
     seo: seoPatchSchema.optional(),
