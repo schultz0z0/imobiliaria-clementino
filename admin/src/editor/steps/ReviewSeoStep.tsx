@@ -21,13 +21,30 @@ const qualityChecks = (values: WizardValues) => {
   return { checks, score: checks.reduce((sum, check) => sum + (check.passed ? check.points : 0), 0), recommendations: checks.filter((check) => !check.passed).map((check) => check.recommendation) };
 };
 
+const publicationIssueMessage = (path: PropertyKey[]): string => {
+  const [section, field] = path;
+  if (section === 'privateAddress') return 'Complete CEP, UF, cidade, bairro e logradouro.';
+  if (section === 'publicLocation') return 'Confirme a localização pública aproximada.';
+  if (section === 'classification') return 'Selecione a finalidade, o tipo e o subtipo do imóvel.';
+  if (section === 'editorial' && field === 'title') return 'Informe um título com pelo menos 10 caracteres.';
+  if (section === 'editorial' && field === 'description') return 'Escreva uma descrição com pelo menos 80 caracteres.';
+  if (section === 'editorial' && field === 'reference') return 'Informe a referência comercial do imóvel.';
+  if (section === 'pricing') return 'Informe o preço de cada finalidade selecionada.';
+  if (section === 'media') return 'Revise a foto de capa e a ordem da galeria.';
+  if (section === 'facts') return 'Revise os dados principais do imóvel.';
+  return 'Revise os dados desta etapa antes de publicar.';
+};
+
 export const ReviewSeoStep = () => {
   const { register, watch } = useFormContext<WizardValues>();
   const values = watch();
   const result = propertyDraftSchema.safeParse(values);
+  const publicationPending = result.success
+    ? []
+    : [...new Set(result.error.issues.map((issue) => publicationIssueMessage(issue.path)))];
   const photos = values.media?.orderedPhotoIds ?? [];
   const quality = qualityChecks(values);
-  const optionalText = { setValueAs: (value: unknown) => String(value ?? '').trim() || null };
+  const optionalText = { setValueAs: (value: unknown) => String(value ?? '').trim() || undefined };
   return <div className="wizard-step-stack">
     <fieldset className="wizard-fieldset"><legend>SEO</legend>
       <p className="field-hint">Os metadados são gerados automaticamente. Preencha apenas se quiser substituir o texto sugerido.</p>
@@ -37,7 +54,7 @@ export const ReviewSeoStep = () => {
     </fieldset>
     <section className="review-summary" aria-labelledby="review-title"><h2 id="review-title">Revisão do cadastro</h2>
       <dl><div><dt>Título</dt><dd>{values.editorial?.title || 'Não informado'}</dd></div><div><dt>Localização pública</dt><dd>{values.publicLocation?.label || 'Não confirmada'}</dd></div><div><dt>Fotos</dt><dd>{photos.length}</dd></div></dl>
-      {result.success ? <p className="form-notice">Cadastro completo para a revisão de publicação.</p> : <div className="form-alert" role="status"><strong>{result.error.issues.length} pendência(s)</strong><ul>{result.error.issues.slice(0, 8).map((issue, index) => <li key={`${issue.path.join('.')}-${index}`}>{issue.message}</li>)}</ul></div>}
+      {result.success ? <p className="form-notice">Cadastro completo para a revisão de publicação.</p> : <div className="form-alert" role="status"><strong>Pendências para publicação — não impedem salvar o rascunho</strong><ul>{publicationPending.slice(0, 8).map((message) => <li key={message}>{message}</li>)}</ul></div>}
       <p className="field-hint">Salvar o rascunho não publica o imóvel. A prévia e os controles de publicação ficam na próxima etapa do projeto.</p>
     </section>
     <PropertyReview

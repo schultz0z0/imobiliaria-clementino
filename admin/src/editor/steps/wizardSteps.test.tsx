@@ -85,3 +85,17 @@ test('review step exposes editable SEO overrides without publishing', async () =
   Object.assign(globalThis, { document: view.previous.document, window: view.previous.window, IS_REACT_ACT_ENVIRONMENT: view.previous.act });
 });
 
+test('review explains publication pending items in Portuguese without blocking draft language', async () => {
+  const values = base();
+  values.privateAddress = undefined;
+  values.publicLocation = undefined;
+  values.editorial!.description = 'teste';
+  const view = await renderStep(ReviewSeoStep, values);
+  const text = view.container.textContent ?? '';
+  assert.match(text, /Pendências para publicação/i);
+  assert.match(text, /não impedem salvar o rascunho/i);
+  assert.doesNotMatch(text, /Invalid input|expected object|received undefined/i);
+  await act(async () => view.root.unmount());
+  Object.assign(globalThis, { document: view.previous.document, window: view.previous.window, IS_REACT_ACT_ENVIRONMENT: view.previous.act });
+});
+

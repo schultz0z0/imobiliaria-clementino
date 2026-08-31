@@ -9,7 +9,7 @@ export type WizardValidation = { success: true; issues: [] } | { success: false;
 
 const pass: WizardValidation = { success: true, issues: [] };
 const optionalDraftText = (maximum: number) => z.preprocess(
-  (value) => typeof value === 'string' && value.trim() === '' ? undefined : value,
+  (value) => value === null || (typeof value === 'string' && value.trim() === '') ? undefined : value,
   z.string().trim().max(maximum).optional(),
 );
 const draftEditorialSchema = z.strictObject({
@@ -24,7 +24,11 @@ const draftStepSchemas = {
   editorial: draftEditorialSchema,
   pricing: propertyDraftSchema.shape.pricing.partial(),
   media: propertyDraftSchema.shape.media.partial(),
-  seo: propertyDraftSchema.shape.seo.partial(),
+  seo: z.strictObject({
+    title: optionalDraftText(120),
+    description: optionalDraftText(320),
+    imagePhotoId: optionalDraftText(200),
+  }),
 };
 const draftWizardSchema = z.strictObject({
   classification: propertyDraftSchema.shape.classification.partial().optional(),

@@ -40,3 +40,17 @@ test('facts coherence remains enforced when related values are provided', () => 
   assert.equal(result.success, false);
   if (!result.success) assert.deepEqual(result.issues[0]?.path, ['facts', 'suites']);
 });
+
+test('concluding a draft accepts empty optional SEO controls represented as null', () => {
+  const values = {
+    classification: { operations: ['sale'], type: 'apartment', subtype: 'standard' },
+    facts: { isNew: false, bedrooms: 2, bathrooms: 1, suites: 2, parkingSpaces: 1 },
+    features: { acceptsFgts: false, acceptsExchange: false, common: [], private: [] },
+    editorial: { title: 'Apartamento em bairro', description: 'teste', reference: 'CLI-1', featured: false },
+    pricing: { sale: 250 },
+    media: { orderedPhotoIds: [] },
+    seo: { title: null, description: null, imagePhotoId: null },
+  } as unknown as WizardValues;
+
+  assert.equal(validateWizardStep(7, values).success, true);
+});
