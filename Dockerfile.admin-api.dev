@@ -5,4 +5,4 @@ COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
 EXPOSE 3000
-CMD ["npm", "run", "server:dev"]
+CMD ["sh", "-c", "npm run db:migrate && npm run server:dev"]

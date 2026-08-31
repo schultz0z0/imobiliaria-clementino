@@ -16,13 +16,31 @@ services:
       - .:/app
       - node_modules:/app/node_modules
 
+  admin:
+    build:
+      context: .
+      dockerfile: Dockerfile.admin.dev
+    init: true
+    ports:
+      - "4175:4175"
+    environment:
+      ADMIN_API_PROXY_TARGET: http://admin-api:3000
+      CHOKIDAR_USEPOLLING: "true"
+      CHOKIDAR_INTERVAL: "500"
+    depends_on:
+      admin-api:
+        condition: service_healthy
+    volumes:
+      - .:/app
+      - admin_frontend_node_modules:/app/node_modules
+
   admin-api:
     build:
       context: .
       dockerfile: Dockerfile.admin-api.dev
     init: true
     ports:
-      - "4175:3000"
+      - "4176:3000"
     env_file:
       - ${DEV_ENV_FILE:-.env.development.example}
     environment:
@@ -56,7 +74,7 @@ services:
       MEDIA_ROOT: /data/media
       PUBLIC_RELEASE_ROOT: /data/releases
     depends_on:
-      postgres:
+      admin-api:
         condition: service_healthy
     volumes:
       - .:/app
@@ -86,6 +104,7 @@ services:
 
 volumes:
   node_modules:
+  admin_frontend_node_modules:
   admin_node_modules:
   publisher_node_modules:
   dev_postgres_data:

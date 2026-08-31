@@ -40,6 +40,8 @@ services:
       context: .
       dockerfile: Dockerfile.admin.prod
     restart: unless-stopped
+    depends_on:
+      - admin-api
     expose: ["80"]
     labels:
       - "traefik.enable=true"

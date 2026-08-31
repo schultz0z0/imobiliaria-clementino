@@ -92,11 +92,22 @@ test('nginx revalidates prerendered HTML while keeping fingerprinted assets immu
 
 test('development compose keeps admin, publisher and postgres persistent and private', () => {
   const compose = readFileSync(new URL('../compose.dev.yaml', import.meta.url), 'utf8');
-  for (const service of ['website:', 'admin-api:', 'publisher:', 'postgres:']) assert.match(compose, new RegExp(`\\n  ${service}`));
-  for (const volume of ['dev_postgres_data:', 'dev_media_private:', 'dev_media_public:', 'dev_releases:', 'admin_node_modules:', 'publisher_node_modules:']) assert.match(compose, new RegExp(`\\n  ${volume}`));
-  assert.match(compose, /"4175:3000"/);
+  for (const service of ['website:', 'admin:', 'admin-api:', 'publisher:', 'postgres:']) assert.match(compose, new RegExp(`\\n  ${service}`));
+  for (const volume of ['dev_postgres_data:', 'dev_media_private:', 'dev_media_public:', 'dev_releases:', 'admin_frontend_node_modules:', 'admin_node_modules:', 'publisher_node_modules:']) assert.match(compose, new RegExp(`\\n  ${volume}`));
+  assert.match(compose, /"4175:4175"/);
+  assert.match(compose, /"4176:3000"/);
   assert.match(compose, /"4174:4174"/);
   assert.doesNotMatch(compose, /postgres:[\s\S]*?ports:/);
   assert.match(compose, /healthcheck:/g);
   assert.match(readFileSync(new URL('../.env.development.example', import.meta.url), 'utf8'), /ADMIN_SESSION_SECRET/);
+});
+
+test('admin frontend proxies API requests through the same origin in development and production', () => {
+  const vite = readFileSync(new URL('../admin/vite.config.ts', import.meta.url), 'utf8');
+  const nginx = readFileSync(new URL('../nginx.admin.conf', import.meta.url), 'utf8');
+  const dockerfile = readFileSync(new URL('../Dockerfile.admin.dev', import.meta.url), 'utf8');
+
+  assert.match(vite, /proxy:[\s\S]*['"]\/api['"]:[\s\S]*ADMIN_API_PROXY_TARGET/);
+  assert.match(nginx, /location \/api\/ \{[\s\S]*proxy_pass http:\/\/admin-api:3000;/);
+  assert.match(dockerfile, /admin:dev/);
 });
