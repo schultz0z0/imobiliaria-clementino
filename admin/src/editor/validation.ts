@@ -18,7 +18,7 @@ export const validateWizardStep = (step: number, values: WizardValues): WizardVa
     if (!parsed.success) return parsed;
     const classification = values.classification!;
     if (!PROPERTY_SUBTYPES_BY_TYPE[classification.type as PropertyType].includes(classification.subtype as PropertySubtype)) {
-      return { success: false, issues: [{ path: ['classification', 'subtype'], message: 'O subtipo nÃ£o Ã© compatÃ­vel com o tipo do imÃ³vel.' }] };
+      return { success: false, issues: [{ path: ['classification', 'subtype'], message: 'O subtipo não é compatível com o tipo do imóvel.' }] };
     }
     return pass;
   }
@@ -30,9 +30,9 @@ export const validateWizardStep = (step: number, values: WizardValues): WizardVa
   if (step === 4) {
     const facts = parseSection('facts', values.facts);
     if (!facts.success) return facts;
-    if (values.facts?.isNew && values.facts.ageYears !== undefined) return { success: false, issues: [{ path: ['facts','ageYears'], message: 'Um imÃ³vel novo nÃ£o pode ter idade informada.' }] };
-    if ((values.facts?.suites ?? 0) > (values.facts?.bedrooms ?? 0)) return { success: false, issues: [{ path: ['facts','suites'], message: 'O nÃºmero de suÃ­tes nÃ£o pode exceder o nÃºmero de quartos.' }] };
-    if (values.facts?.usableArea !== undefined && values.facts.totalArea !== undefined && values.facts.usableArea > values.facts.totalArea) return { success: false, issues: [{ path: ['facts','usableArea'], message: 'A Ã¡rea Ãºtil nÃ£o pode exceder a Ã¡rea total.' }] };
+    if (values.facts?.isNew && values.facts.ageYears !== undefined) return { success: false, issues: [{ path: ['facts','ageYears'], message: 'Um imóvel novo não pode ter idade informada.' }] };
+    if ((values.facts?.suites ?? 0) > (values.facts?.bedrooms ?? 0)) return { success: false, issues: [{ path: ['facts','suites'], message: 'O número de suítes não pode exceder o número de quartos.' }] };
+    if (values.facts?.usableArea !== undefined && values.facts.totalArea !== undefined && values.facts.usableArea > values.facts.totalArea) return { success: false, issues: [{ path: ['facts','usableArea'], message: 'A área útil não pode exceder a área total.' }] };
     return pass;
   }
   if (step === 5) return parseSection('features', values.features);
@@ -42,7 +42,7 @@ export const validateWizardStep = (step: number, values: WizardValues): WizardVa
     const pricing = parseSection('pricing', values.pricing);
     if (!pricing.success) return pricing;
     const missing = (values.classification?.operations ?? []).find((operation) => values.pricing?.[operation] === undefined);
-    return missing ? { success: false, issues: [{ path: ['pricing', missing], message: 'Informe o preÃ§o da operaÃ§Ã£o selecionada.' }] } : pass;
+    return missing ? { success: false, issues: [{ path: ['pricing', missing], message: 'Informe o preço da operação selecionada.' }] } : pass;
   }
   return fromZod('', propertyDraftSchema.safeParse(values));
 };

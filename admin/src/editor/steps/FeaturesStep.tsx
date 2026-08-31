@@ -17,10 +17,10 @@ export const FeaturesStep = () => {
       <label className="check-card"><input type="checkbox" {...register('features.acceptsFgts')} />Aceita FGTS</label>
       <label className="check-card"><input type="checkbox" {...register('features.acceptsExchange')} />Aceita permuta</label>
     </div></fieldset>
-    <fieldset className="wizard-fieldset"><legend>Ãreas comuns</legend><div className="feature-grid">
+    <fieldset className="wizard-fieldset"><legend>Áreas comuns</legend><div className="feature-grid">
       {COMMON_FEATURES.map(({ id, label }) => <button type="button" className="feature-button" data-feature-kind="common" aria-pressed={common.includes(id)} key={id} onClick={() => toggle('common', id)}>{label}</button>)}
     </div></fieldset>
-    <fieldset className="wizard-fieldset"><legend>Ãrea privativa</legend><div className="feature-grid">
+    <fieldset className="wizard-fieldset"><legend>Área privativa</legend><div className="feature-grid">
       {PRIVATE_FEATURES.map(({ id, label }) => <button type="button" className="feature-button" data-feature-kind="private" aria-pressed={privateFeatures.includes(id)} key={id} onClick={() => toggle('private', id)}>{label}</button>)}
     </div></fieldset>
   </div>;

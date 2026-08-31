@@ -84,7 +84,7 @@ export const PropertyEditorProvider = ({
       initialRevision: 1,
       save: async (patch, revision, signal) => {
         const id = idRef.current;
-        if (!id) throw new Error('O rascunho ainda nÃ£o foi criado.');
+        if (!id) throw new Error('O rascunho ainda não foi criado.');
         try {
           const result = await api.patchProperty(id, revision, patch, signal);
           acceptProperty(result.property);
@@ -118,7 +118,7 @@ export const PropertyEditorProvider = ({
         }).catch(() => { /* metadata is optional; editor remains usable with placeholders */ });
       }
     }).catch((error) => {
-      if (!abort.signal.aborted) setLoadError(error instanceof Error ? error.message : 'NÃ£o foi possÃ­vel carregar o imÃ³vel.');
+      if (!abort.signal.aborted) setLoadError(error instanceof Error ? error.message : 'Não foi possível carregar o imóvel.');
     }).finally(() => { if (!abort.signal.aborted) setLoading(false); });
     return () => abort.abort();
   }, [acceptProperty, api, controller, form, initialPropertyId, mode]);
@@ -192,7 +192,7 @@ export const PropertyEditorProvider = ({
         }
       } catch (error) {
         setServerIssues(form, error);
-        setMediaError(error instanceof Error ? error.message : 'NÃ£o foi possÃ­vel alterar as fotos.');
+        setMediaError(error instanceof Error ? error.message : 'Não foi possível alterar as fotos.');
         throw error;
       } finally { setMediaBusy(false); }
     });
@@ -214,7 +214,7 @@ export const PropertyEditorProvider = ({
     photos, mediaBusy, mediaError,
     uploadPhotos: async (files) => {
       for (const file of files) {
-        await runMediaMutation((id, revision) => api.uploadPhoto(id, revision, file, file.name.replace(/\.[^.]+$/, '').slice(0, 175) || 'Foto do imÃ³vel'));
+        await runMediaMutation((id, revision) => api.uploadPhoto(id, revision, file, file.name.replace(/\.[^.]+$/, '').slice(0, 175) || 'Foto do imóvel'));
       }
     },
     reorderPhotos: (ids, cover) => runMediaMutation((id, revision) => api.reorderPhotos(id, revision, ids, cover)),

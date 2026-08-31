@@ -39,11 +39,11 @@ test('editor client uses detail, create, revisioned deep patch, CEP, privacy and
 
 test('editor client retains server field issues for exact form mapping', async () => {
   const previousFetch = globalThis.fetch;
-  globalThis.fetch = async () => Response.json({ error: { code: 'VALIDATION_FAILED', message: 'Revise', issues: [{ path: ['editorial', 'title'], message: 'TÃ­tulo curto' }] } }, { status: 400 });
+  globalThis.fetch = async () => Response.json({ error: { code: 'VALIDATION_FAILED', message: 'Revise', issues: [{ path: ['editorial', 'title'], message: 'Título curto' }] } }, { status: 400 });
   await assert.rejects(new AdminApiClient().patchProperty('one', 1, { editorial: { title: 'curto' } }), (error) => {
     assert.ok(error instanceof ApiError);
     assert.equal(error.message, 'Revise');
-    assert.deepEqual(error.issues, [{ path: ['editorial', 'title'], message: 'TÃ­tulo curto' }]);
+    assert.deepEqual(error.issues, [{ path: ['editorial', 'title'], message: 'Título curto' }]);
     return true;
   });
   globalThis.fetch = previousFetch;

@@ -29,6 +29,27 @@ test('normalizes CEP and gives a non-sensitive manual fallback for timeout and i
   assert.equal(JSON.stringify(invalid).includes('01310100'), false);
 });
 
+test('uses ViaCEP by default so a valid CEP works without environment configuration', async () => {
+  let requestedUrl = '';
+  const lookup = createCepLookup({
+    fetch: async (url) => {
+      requestedUrl = url;
+      return new Response(JSON.stringify({
+        cep: '21240-240', logradouro: 'Rua Exemplo', complemento: '', bairro: 'Pavuna', localidade: 'Rio de Janeiro', uf: 'RJ',
+      }));
+    },
+  });
+
+  assert.deepEqual(await lookup('21240240'), {
+    ok: true,
+    address: {
+      postalCode: '21240-240', street: 'Rua Exemplo', complement: undefined,
+      district: 'Pavuna', city: 'Rio de Janeiro', state: 'RJ',
+    },
+  });
+  assert.equal(requestedUrl, 'https://viacep.com.br/ws/21240240/json/');
+});
+
 test('maps validated Portuguese provider fields without persisting them', async () => {
   const lookup = createCepLookup({
     endpointTemplate: 'https://cep.example/{cep}',

@@ -32,13 +32,13 @@ export const PhotosStep = () => {
     await reorderPhotos(next, cover ?? next[0]!);
   };
   return <section className="wizard-step-stack" aria-labelledby="photos-title">
-    <div><h2 id="photos-title">Fotos do imÃ³vel</h2><p className="field-hint">Envie HEIC, TIFF, JPG, PNG ou WebP, atÃ© 20 MB cada. Recomendamos pelo menos 10 fotos.</p></div>
+    <div><h2 id="photos-title">Fotos do imóvel</h2><p className="field-hint">Envie HEIC, TIFF, JPG, PNG ou WebP, até 20 MB cada. Recomendamos pelo menos 10 fotos.</p></div>
     <label className="photo-dropzone" onDragOver={(event) => event.preventDefault()} onDrop={(event) => { event.preventDefault(); void choose(event.dataTransfer.files); }}>
       <ImagePlus aria-hidden="true" /><strong>Adicionar fotos</strong><span>Selecione ou arraste os arquivos</span>
       <input type="file" multiple accept=".heic,.heif,.tif,.tiff,.jpg,.jpeg,.png,.webp" onChange={(event) => event.currentTarget.files && void choose(event.currentTarget.files)} />
     </label>
     {validationError || mediaError ? <p className="form-alert" role="alert">{validationError ?? mediaError}</p> : null}
-    <p aria-live="polite" className="field-hint">{mediaBusy ? 'Processando fotosâ€¦' : `${ids.length} foto(s) adicionada(s).`}</p>
+    <p aria-live="polite" className="field-hint">{mediaBusy ? 'Processando fotos…' : `${ids.length} foto(s) adicionada(s).`}</p>
     <ol className="photo-list">
       {ids.map((id, index) => <li key={id} draggable onDragStart={() => { dragged.current = id; }} onDragOver={(event) => event.preventDefault()} onDrop={() => void drop(id)}>
         {photos[id]?.thumbnailUrl ? <img className="photo-thumbnail" src={photos[id].thumbnailUrl} width={photos[id].width} height={photos[id].height} alt={photos[id].altText || `Foto ${index + 1} do imóvel`} loading="lazy" /> : <div className="photo-placeholder" aria-hidden="true">{index + 1}</div>}

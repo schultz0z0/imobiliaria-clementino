@@ -46,7 +46,7 @@ export const LocationStep = () => {
     if (!publicId) { setPreviewError('Aguarde o primeiro salvamento do rascunho e tente novamente.'); return; }
     const required = privateAddress as Required<Pick<LocationEditorValue, 'postalCode'|'state'|'city'|'district'|'street'|'number'>> & LocationEditorValue;
     if (!required.postalCode || !required.state || !required.city || !required.district || !required.street || !required.number) {
-      setPreviewError('Preencha CEP, UF, cidade, bairro, rua e nÃºmero.'); return;
+      setPreviewError('Preencha CEP, UF, cidade, bairro, rua e número.'); return;
     }
     try {
       const manualCoordinates = value.publicLatitude !== undefined && value.publicLongitude !== undefined
@@ -54,7 +54,7 @@ export const LocationStep = () => {
       const result = await api.previewLocation({ publicId, privateAddress: required, manualCoordinates });
       for (const [key, fieldValue] of Object.entries(result.publicLocation)) setValue(`publicLocation.${key}` as never, fieldValue as never, { shouldDirty: true, shouldValidate: true });
       setPreviewError(undefined);
-    } catch (error) { setPreviewError(error instanceof Error ? error.message : 'NÃ£o foi possÃ­vel gerar a localizaÃ§Ã£o aproximada.'); }
+    } catch (error) { setPreviewError(error instanceof Error ? error.message : 'Não foi possível gerar a localização aproximada.'); }
   };
   const fieldRegistration = (key: keyof LocationEditorValue) => {
     const path = ['publicLatitude', 'publicLongitude'].includes(key) ? `publicLocation.${key.replace('public', '').toLowerCase()}` : `privateAddress.${key}`;
@@ -68,6 +68,6 @@ export const LocationStep = () => {
   return <div className="wizard-step-stack">
     <LocationEditor value={value} onChange={change} onLookupCep={lookup} onConfirm={confirm} lookupError={lookupError} fieldRegistration={fieldRegistration} fieldErrors={fieldErrors} publicPreview={publicLocation?.label ? { label: publicLocation.label, latitude: publicLocation.latitude, longitude: publicLocation.longitude } : undefined} />
     {previewError ? <p className="form-alert" role="alert">{previewError}</p> : null}
-    <aside className="privacy-note"><strong>Privacidade por padrÃ£o</strong><p>O nÃºmero, complemento e coordenadas exatas ficam somente no painel. O site usa bairro, cidade, UF e um marcador deslocado.</p></aside>
+    <aside className="privacy-note"><strong>Privacidade por padrão</strong><p>O número, complemento e coordenadas exatas ficam somente no painel. O site usa bairro, cidade, UF e um marcador deslocado.</p></aside>
   </div>;
 };

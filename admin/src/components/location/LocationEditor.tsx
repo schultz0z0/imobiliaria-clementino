@@ -21,6 +21,7 @@ const fields: Array<{ key: Exclude<keyof LocationEditorValue, 'postalCode'>; lab
 
 export const LocationEditor = ({ value, onChange, onConfirm, onLookupCep, lookupError, publicPreview, fieldRegistration, fieldErrors }: Props) => {
   const [loading, setLoading] = useState(false); const id = useId();
+  const lookupMessage = lookupError && lookupError.includes('Preencha manualmente') ? lookupError : lookupError ? `${lookupError} Preencha manualmente.` : undefined;
   const update = (key: keyof LocationEditorValue, next: string) => {
     const numeric = key.toLowerCase().includes('latitude') || key.toLowerCase().includes('longitude');
     onChange({ ...value, [key]: numeric && next !== '' ? Number(next) : next || undefined });
@@ -33,10 +34,10 @@ export const LocationEditor = ({ value, onChange, onConfirm, onLookupCep, lookup
   return <section aria-labelledby={`${id}-title`} className="location-editor">
     <h2 id={`${id}-title`}>Localização</h2><p>O endereço exato é privado. A publicação exibe somente bairro, cidade, UF e marcador aproximado.</p>
     <div className="location-cep-row">{renderInput('postalCode', 'CEP', 'text', `${id}-cep`)}<button className="button button-secondary" type="button" disabled={loading} onClick={lookup}>{loading ? 'Consultando CEP…' : 'Consultar CEP'}</button></div>
-    {lookupError ? <p className="form-alert" role="alert">{lookupError} Preencha manualmente.</p> : null}
+    {lookupMessage ? <p className="form-alert" role="alert">{lookupMessage}</p> : null}
     <div className="location-fields">{fields.map(({ key, label, type }) => <React.Fragment key={key}>{renderInput(key, label, type)}</React.Fragment>)}</div>
     <input type="hidden" name="latitude" aria-hidden="true" tabIndex={-1} /><input type="hidden" name="publicLatitude" aria-hidden="true" tabIndex={-1} />
     {publicPreview ? <div className="location-map-preview" role="img" aria-label={`Mapa aproximado de ${publicPreview.label}`}><span className="map-marker" aria-hidden="true" /><output aria-live="polite"><strong>{publicPreview.label}</strong>{publicPreview.latitude !== undefined ? <small>Marcador aproximado: {publicPreview.latitude}, {publicPreview.longitude}</small> : null}</output></div> : <div className="location-map-preview map-empty"><span>Confirme os dados para gerar o marcador público aproximado.</span></div>}
-    <button className="button button-primary" type="button" onClick={onConfirm}>Confirmar localização aproximada <span className="sr-only">Confirmar localizaÃ§Ã£o aproximada</span></button>
+    <button className="button button-primary" type="button" onClick={onConfirm}>Confirmar localização aproximada <span className="sr-only">Confirmar localização aproximada</span></button>
   </section>;
 };

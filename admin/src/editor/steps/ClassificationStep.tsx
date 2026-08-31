@@ -7,7 +7,7 @@ import type { WizardValues } from '../types.ts';
 
 const OPERATIONS: Array<{ id: PropertyOperation; label: string }> = [
   { id: 'sale', label: 'Venda' }, { id: 'rent', label: 'Aluguel' },
-  { id: 'seasonal', label: 'Temporada' }, { id: 'auction', label: 'LeilÃ£o' },
+  { id: 'seasonal', label: 'Temporada' }, { id: 'auction', label: 'Leilão' },
 ];
 
 export const ClassificationStep = () => {
@@ -29,13 +29,13 @@ export const ClassificationStep = () => {
   };
   return (
     <fieldset className="wizard-fieldset">
-      <legend>O que vocÃª vai anunciar?</legend>
-      <p className="field-hint">Selecione uma ou mais operaÃ§Ãµes. Os valores sÃ£o informados separadamente na etapa 6.</p>
-      <div className="choice-grid" aria-label="OperaÃ§Ãµes">
+      <legend>O que você vai anunciar?</legend>
+      <p className="field-hint">Selecione uma ou mais operações. Os valores são informados separadamente na etapa 6.</p>
+      <div className="choice-grid" aria-label="Operações">
         {OPERATIONS.map(({ id, label }) => <button key={id} type="button" data-operation={id} className="choice-button" aria-pressed={operations.includes(id)} onClick={() => toggleOperation(id)}>{label}</button>)}
       </div>
-      {errors.classification?.operations ? <p role="alert" className="field-error">Selecione pelo menos uma operaÃ§Ã£o.</p> : null}
-      <label className="field-group">Tipo do imÃ³vel
+      {errors.classification?.operations ? <p role="alert" className="field-error">Selecione pelo menos uma operação.</p> : null}
+      <label className="field-group">Tipo do imóvel
         <select {...register('classification.type')}>
           {PROPERTY_TYPES.map(({ id, label }) => <option key={id} value={id}>{label}</option>)}
         </select>

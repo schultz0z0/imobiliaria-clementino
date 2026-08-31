@@ -16,7 +16,7 @@ const property = (media: PropertyAdminDto['draft']['media'] = { orderedPhotoIds:
     publicLocation: { label: 'Leblon, Rio de Janeiro - RJ', latitude: -22.982, longitude: -43.222, precision: 'approximate' },
     facts: { isNew: false, bedrooms: 2, bathrooms: 2, suites: 1, parkingSpaces: 1 },
     features: { acceptsFgts: false, acceptsExchange: false, common: [], private: [] },
-    editorial: { title: 'Apartamento no Leblon', description: 'Apartamento bem localizado, com ambientes iluminados e uma descriÃ§Ã£o completa para o cadastro editorial.', reference: 'CI-1', featured: false },
+    editorial: { title: 'Apartamento no Leblon', description: 'Apartamento bem localizado, com ambientes iluminados e uma descrição completa para o cadastro editorial.', reference: 'CI-1', featured: false },
     pricing: { sale: 900000 }, media, seo: {},
   }, published: null, createdAt: '', updatedAt: '', inactivatedAt: null,
 });
@@ -38,8 +38,8 @@ test('location step keeps exact fields private and confirms the approximate mark
   const view = await renderIntegrated(LocationStep, api);
   assert.ok(view.container.querySelector('input[name="latitude"]'));
   assert.ok(view.container.querySelector('input[name="publicLatitude"]'));
-  assert.match(view.container.textContent ?? '', /Privacidade por padrÃ£o/);
-  const confirm = Array.from(view.container.querySelectorAll('button')).find((button) => /Confirmar localizaÃ§Ã£o/.test(button.textContent ?? ''))!;
+  assert.match(view.container.textContent ?? '', /Privacidade por padrão/);
+  const confirm = Array.from(view.container.querySelectorAll('button')).find((button) => /Confirmar localização/.test(button.textContent ?? ''))!;
   await act(async () => { confirm.click(); await Promise.resolve(); });
   assert.equal(previews, 1);
   await act(async () => view.root.unmount());

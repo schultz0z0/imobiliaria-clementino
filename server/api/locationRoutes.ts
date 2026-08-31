@@ -14,6 +14,7 @@ import type { Sql } from '../db/client.ts';
 
 const DEFAULT_CEP_TIMEOUT_MS = 3_000;
 const DEFAULT_CEP_MAX_RESPONSE_BYTES = 16 * 1024;
+const DEFAULT_CEP_ENDPOINT_TEMPLATE = 'https://viacep.com.br/ws/{cep}/json/';
 const CEP_FALLBACK = {
   code: 'CEP_UNAVAILABLE' as const,
   message: 'Não foi possível consultar o CEP. Preencha manualmente.',
@@ -106,7 +107,7 @@ const readBoundedText = async (response: Response, maximumBytes: number): Promis
 };
 
 export const createCepLookup = (options: CepLookupOptions = {}) => {
-  const endpointTemplate = options.endpointTemplate ?? process.env.CEP_LOOKUP_URL_TEMPLATE;
+  const endpointTemplate = options.endpointTemplate ?? process.env.CEP_LOOKUP_URL_TEMPLATE ?? DEFAULT_CEP_ENDPOINT_TEMPLATE;
   const timeoutMs = options.timeoutMs ?? DEFAULT_CEP_TIMEOUT_MS;
   const maxResponseBytes = options.maxResponseBytes ?? DEFAULT_CEP_MAX_RESPONSE_BYTES;
   const fetchImplementation = options.fetch ?? globalThis.fetch;

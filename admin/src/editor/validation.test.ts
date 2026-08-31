@@ -13,7 +13,7 @@ test('classification rejects no operation and a subtype incompatible with the se
 test('editorial validation preserves multiple operations and requires each independent price', () => {
   const values: WizardValues = {
     classification: { operations: ['sale', 'rent'], type: 'apartment', subtype: 'standard' },
-    editorial: { title: 'Apartamento no Leblon', description: 'Uma descriÃ§Ã£o completa e bem escrita com detalhes suficientes sobre todos os ambientes do imÃ³vel.', reference: 'REF-1', featured: false },
+    editorial: { title: 'Apartamento no Leblon', description: 'Uma descrição completa e bem escrita com detalhes suficientes sobre todos os ambientes do imóvel.', reference: 'REF-1', featured: false },
     pricing: { sale: 900000 },
   };
   const result = validateWizardStep(6, values);

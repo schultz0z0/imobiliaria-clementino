@@ -37,6 +37,7 @@ test('keeps CEP fields editable, exposes loading/manual fallback, and never save
   const cep = container.querySelector('input[name="postalCode"]') as HTMLInputElement;
   assert.equal(cep.labels?.[0]?.textContent, 'CEP');
   assert.match(container.textContent ?? '', /Preencha manualmente/);
+  assert.equal((container.textContent ?? '').match(/Preencha manualmente/g)?.length, 1);
   await act(async () => {
     const setValue = Object.getOwnPropertyDescriptor(dom.window.HTMLInputElement.prototype, 'value')?.set;
     setValue?.call(cep, '01310-100');

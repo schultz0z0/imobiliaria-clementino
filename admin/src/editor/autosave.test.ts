@@ -17,11 +17,11 @@ test('debounces patches and reports saving then saved with the returned revision
     onStateChange: (state) => states.push(state.status),
   });
 
-  controller.queue({ editorial: { title: 'Primeiro tÃ­tulo' } });
-  controller.queue({ editorial: { title: 'TÃ­tulo final do imÃ³vel' } });
+  controller.queue({ editorial: { title: 'Primeiro título' } });
+  controller.queue({ editorial: { title: 'Título final do imóvel' } });
   await controller.flush();
 
-  assert.deepEqual(patches, [{ patch: { editorial: { title: 'TÃ­tulo final do imÃ³vel' } }, revision: 3 }]);
+  assert.deepEqual(patches, [{ patch: { editorial: { title: 'Título final do imóvel' } }, revision: 3 }]);
   assert.deepEqual(states.slice(-2), ['saving', 'saved']);
   assert.equal(controller.getState().revision, 4);
   controller.dispose();

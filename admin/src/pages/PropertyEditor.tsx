@@ -14,15 +14,15 @@ import type { WizardValues } from '../editor/types.ts';
 import { validateWizardStep } from '../editor/validation.ts';
 
 const STEPS = [
-  { title: 'ClassificaÃ§Ã£o', component: ClassificationStep }, { title: 'LocalizaÃ§Ã£o', component: LocationStep },
+  { title: 'Classificação', component: ClassificationStep }, { title: 'Localização', component: LocationStep },
   { title: 'Fotos', component: PhotosStep }, { title: 'Dados principais', component: FactsStep },
-  { title: 'CaracterÃ­sticas', component: FeaturesStep }, { title: 'DescriÃ§Ã£o e valores', component: EditorialPricingStep },
-  { title: 'SEO e revisÃ£o', component: ReviewSeoStep },
+  { title: 'Características', component: FeaturesStep }, { title: 'Descrição e valores', component: EditorialPricingStep },
+  { title: 'SEO e revisão', component: ReviewSeoStep },
 ] as const;
 
 const SaveIndicator = () => {
   const { autosave, retrySave } = usePropertyEditor();
-  const labels = { idle: 'Rascunho local', pending: 'AlteraÃ§Ãµes pendentes', saving: 'Salvandoâ€¦', saved: 'Rascunho salvo', error: 'Falha ao salvar', conflict: 'Conflito de ediÃ§Ã£o' };
+  const labels = { idle: 'Rascunho local', pending: 'Alterações pendentes', saving: 'Salvando…', saved: 'Rascunho salvo', error: 'Falha ao salvar', conflict: 'Conflito de edição' };
   const Icon = autosave.status === 'saving' ? LoaderCircle : autosave.status === 'saved' ? Check : autosave.status === 'error' || autosave.status === 'conflict' ? CloudOff : Cloud;
   return <div className={`save-indicator save-${autosave.status}`} role="status" aria-live="polite"><Icon className={autosave.status === 'saving' ? 'spin' : ''} aria-hidden="true" /><span>{labels[autosave.status]}</span>{autosave.status === 'error' || autosave.status === 'conflict' ? <button type="button" onClick={() => void retrySave()}>Tentar novamente</button> : null}</div>;
 };
@@ -75,10 +75,10 @@ const EditorContents = () => {
       setStepMessage(error instanceof Error ? error.message : 'Não foi possível salvar o rascunho. Tente novamente.');
     }
   };
-  if (loading) return <div className="panel-state" role="status"><LoaderCircle className="spin" />Carregando imÃ³velâ€¦</div>;
-  if (loadError) return <div className="panel-state panel-state-error" role="alert"><CircleAlert /><h2>NÃ£o foi possÃ­vel abrir o imÃ³vel</h2><p>{loadError}</p><Link to="/imoveis" className="button button-secondary">Voltar</Link></div>;
+  if (loading) return <div className="panel-state" role="status"><LoaderCircle className="spin" />Carregando imóvel…</div>;
+  if (loadError) return <div className="panel-state panel-state-error" role="alert"><CircleAlert /><h2>Não foi possível abrir o imóvel</h2><p>{loadError}</p><Link to="/imoveis" className="button button-secondary">Voltar</Link></div>;
   return <section className="property-editor" aria-labelledby="wizard-step-title">
-    <header className="editor-heading"><div><p className="eyebrow">{property ? `Rascunho ${property.publicId}` : 'Novo imÃ³vel'}</p><h1>Cadastro de imÃ³vel</h1></div><SaveIndicator /></header>
+    <header className="editor-heading"><div><p className="eyebrow">{property ? `Rascunho ${property.publicId}` : 'Novo imóvel'}</p><h1>Cadastro de imóvel</h1></div><SaveIndicator /></header>
     <nav className="wizard-progress" aria-label="Etapas do cadastro"><ol>{STEPS.map(({ title }, index) => <li key={title} aria-current={step === index + 1 ? 'step' : undefined}><button type="button" onClick={() => void go(index + 1)}><span>{index + 1}</span><small>{title}</small></button></li>)}</ol></nav>
     <div className="editor-card"><div className="step-heading"><span>Etapa {step} de 7</span><h2 id="wizard-step-title" tabIndex={-1}>{STEPS[step - 1]!.title}</h2></div>
       {stepMessage ? <p className="form-alert" role="alert">{stepMessage}</p> : null}
