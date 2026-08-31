@@ -68,6 +68,28 @@ test('atomically promotes staged originals with restrictive best-effort permissi
   }
 });
 
+test('falls back to an exclusive copy when staging and media volumes are different devices', async () => {
+  const root = await temporaryDirectory();
+  let linkAttempted = false;
+  const exdevLink = async (): Promise<void> => {
+    linkAttempted = true;
+    const error = Object.assign(new Error('cross-device link not permitted'), { code: 'EXDEV' });
+    throw error;
+  };
+  const storage = new MediaStorage(root, exdevLink);
+  const propertyId = '33333333-3333-4333-8333-333333333333';
+  const mediaId = '44444444-4444-4444-8444-444444444444';
+  const staging = await storage.createStagingArea();
+  const stagedOriginal = path.join(staging.directory, 'upload');
+  await writeFile(stagedOriginal, 'cross-device bytes');
+
+  const finalPath = storage.privateOriginalPath(propertyId, mediaId);
+  assert.deepEqual(await storage.promoteFile(stagedOriginal, finalPath, 0o600), { created: true });
+  assert.equal(linkAttempted, true);
+  assert.equal(await readFile(finalPath, 'utf8'), 'cross-device bytes');
+  await assert.rejects(access(stagedOriginal));
+});
+
 test('never overwrites an existing deterministic derivative and reports reuse', async () => {
   const root = await temporaryDirectory();
   const storage = new MediaStorage(root);

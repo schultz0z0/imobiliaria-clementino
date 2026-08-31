@@ -1,8 +1,10 @@
 import { randomUUID } from 'node:crypto';
-import { chmod, link, mkdir, rm, rmdir, unlink } from 'node:fs/promises';
+import { constants as fsConstants } from 'node:fs';
+import { chmod, copyFile, link, mkdir, rm, rmdir, unlink } from 'node:fs/promises';
 import path from 'node:path';
 
 export type MediaDerivative = 'cover' | 'gallery' | 'thumb';
+type LinkFile = (sourcePath: string, destinationPath: string) => Promise<void>;
 
 const uuidPattern = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const publicIdPattern = /^[a-zA-Z0-9_-]{1,200}$/;
@@ -22,7 +24,7 @@ const bestEffortChmod = async (targetPath: string, mode: number): Promise<void> 
 export class MediaStorage {
   readonly root: string;
 
-  constructor(root: string) {
+  constructor(root: string, private readonly linkFile: LinkFile = link) {
     this.root = path.resolve(root);
   }
 
@@ -115,12 +117,28 @@ export class MediaStorage {
     try {
       // `link` is an exclusive filesystem create: unlike rename it never
       // replaces an immutable hash-addressed public asset under contention.
-      await link(source, destination);
+      await this.linkFile(source, destination);
     } catch (error) {
-      if ((error as NodeJS.ErrnoException).code === 'EEXIST') {
+      const code = (error as NodeJS.ErrnoException).code;
+      if (code === 'EEXIST') {
         return { created: false };
       }
-      throw error;
+      if (code !== 'EXDEV') {
+        throw error;
+      }
+
+      // Docker and VPS deployments may mount staging, private and public media
+      // on different filesystems. Hard links cannot cross that boundary, so
+      // retain exclusive-create semantics with a copy fallback.
+      try {
+        await copyFile(source, destination, fsConstants.COPYFILE_EXCL);
+      } catch (copyError) {
+        if ((copyError as NodeJS.ErrnoException).code === 'EEXIST') {
+          return { created: false };
+        }
+        await unlink(destination).catch(() => undefined);
+        throw copyError;
+      }
     }
     await bestEffortChmod(destination, mode);
     await unlink(source);
