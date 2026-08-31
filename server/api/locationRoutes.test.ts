@@ -50,6 +50,18 @@ test('uses ViaCEP by default so a valid CEP works without environment configurat
   assert.equal(requestedUrl, 'https://viacep.com.br/ws/21240240/json/');
 });
 
+test('accepts the additional fields returned by the real ViaCEP payload', async () => {
+  const lookup = createCepLookup({
+    endpointTemplate: 'https://viacep.example/{cep}',
+    fetch: async () => new Response(JSON.stringify({
+      cep: '21240-240', logradouro: 'Rua Gelabert Simas', complemento: '', bairro: 'Jardim América',
+      localidade: 'Rio de Janeiro', uf: 'RJ', estado: 'Rio de Janeiro', regiao: 'Sudeste', ibge: '3304557', ddd: '21',
+    })),
+  });
+
+  assert.equal((await lookup('21240240')).ok, true);
+});
+
 test('maps validated Portuguese provider fields without persisting them', async () => {
   const lookup = createCepLookup({
     endpointTemplate: 'https://cep.example/{cep}',

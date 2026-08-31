@@ -20,7 +20,9 @@ const CEP_FALLBACK = {
   message: 'Não foi possível consultar o CEP. Preencha manualmente.',
 };
 
-const providerResponseSchema = z.strictObject({
+// ViaCEP adds metadata fields (IBGE, estado, região, DDD, etc.); validate only
+// the address fields we need and ignore those provider-specific extras.
+const providerResponseSchema = z.object({
   cep: z.string().trim().min(1),
   logradouro: z.string().trim().min(2),
   complemento: z.string(),
