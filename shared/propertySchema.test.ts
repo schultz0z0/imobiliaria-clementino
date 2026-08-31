@@ -87,6 +87,22 @@ test('accepts every operation, canonical field, approved feature and SEO overrid
   assert.equal(parsed.seo.imagePhotoId, 'photo-front');
 });
 
+test('accepts a private address without a number or complement', () => {
+  const property = validProperty();
+  delete property.privateAddress.number;
+  delete property.privateAddress.complement;
+  assert.doesNotThrow(() => propertyDraftSchema.parse(property));
+});
+
+test('normalizes blank optional address details as not informed', () => {
+  const property = validProperty();
+  property.privateAddress.number = '   ';
+  property.privateAddress.complement = '';
+  const parsed = propertyDraftSchema.parse(property);
+  assert.equal(parsed.privateAddress.number, undefined);
+  assert.equal(parsed.privateAddress.complement, undefined);
+});
+
 test('accepts each approved property type, subtype and position', () => {
   for (const type of ['apartment', 'house', 'commercial', 'rural', 'land'] as const) {
     const property = validProperty();

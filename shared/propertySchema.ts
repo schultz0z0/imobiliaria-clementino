@@ -34,6 +34,10 @@ const privateFeatureSchema = z.enum(PRIVATE_FEATURE_IDS);
 const positionSchema = z.enum(['front', 'back', 'side', 'middle']);
 
 const conciseText = (minimum: number, maximum: number) => z.string().trim().min(minimum).max(maximum);
+const optionalConciseText = (maximum: number) => z.preprocess(
+  (value) => typeof value === 'string' && value.trim() === '' ? undefined : value,
+  conciseText(1, maximum).optional(),
+);
 const optionalMoney = z.number().finite().nonnegative().optional();
 
 const classificationSchema = z.strictObject({
@@ -48,8 +52,8 @@ const privateAddressSchema = z.strictObject({
   city: conciseText(2, 100),
   district: conciseText(2, 100),
   street: conciseText(2, 160),
-  number: conciseText(1, 30),
-  complement: conciseText(1, 100).optional(),
+  number: optionalConciseText(30),
+  complement: optionalConciseText(100),
   latitude: z.number().finite().min(-90).max(90).optional(),
   longitude: z.number().finite().min(-180).max(180).optional(),
 });

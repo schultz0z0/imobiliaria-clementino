@@ -96,7 +96,7 @@ export type CepLookupResponse =
   | { ok: false; error: { code: string; message: string } };
 
 export type GeocodeLocationInput = {
-  postalCode: string; state: string; city: string; district: string; street: string; number: string; complement?: string;
+  postalCode: string; state: string; city: string; district: string; street: string; number?: string; complement?: string;
 };
 export type GeocodeLocationResponse =
   | { ok: true; location: { latitude: number; longitude: number; label: string } }

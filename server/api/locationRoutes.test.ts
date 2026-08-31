@@ -47,6 +47,22 @@ test('geocodes a private address through Nominatim and caches normalized address
   assert.equal(requestedUserAgent, 'Imobiliaria Clementino test/1.0');
 });
 
+test('geocodes a street address without requiring a number', async () => {
+  let requestedUrl = '';
+  const geocoder = createNominatimGeocoder({
+    endpoint: 'https://nominatim.example/search',
+    fetch: async (url) => {
+      requestedUrl = url;
+      return new Response(JSON.stringify([{ lat: '-22.8431', lon: '-43.3694' }]));
+    },
+  });
+
+  const result = await geocoder({ ...geocodeAddress, number: undefined });
+  assert.equal(result.ok, true);
+  assert.doesNotMatch(requestedUrl, /undefined/);
+  assert.match(requestedUrl, /Rua\+Professor\+Pires\+Salgado/);
+});
+
 test('returns a safe manual fallback for Nominatim timeout, invalid data, and oversized responses', async () => {
   const timeoutGeocoder = createNominatimGeocoder({
     endpoint: 'https://nominatim.example/search',

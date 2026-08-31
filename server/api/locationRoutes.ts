@@ -43,7 +43,7 @@ const privateAddressSchema = z.strictObject({
   city: z.string().trim().min(2).max(100),
   district: z.string().trim().min(2).max(100),
   street: z.string().trim().min(2).max(160),
-  number: z.string().trim().min(1).max(30),
+  number: z.string().trim().min(1).max(30).optional(),
   complement: z.string().trim().min(1).max(100).optional(),
   latitude: z.number().finite().min(-90).max(90).optional(),
   longitude: z.number().finite().min(-180).max(180).optional(),
@@ -65,7 +65,7 @@ const geocodeAddressSchema = z.strictObject({
   city: z.string().trim().min(2).max(100),
   district: z.string().trim().min(2).max(100),
   street: z.string().trim().min(2).max(160),
-  number: z.string().trim().min(1).max(30),
+  number: z.string().trim().min(1).max(30).optional(),
   complement: z.string().trim().min(1).max(100).optional(),
 });
 
@@ -198,7 +198,7 @@ const normalizeGeocodeAddress = (input: GeocodeLocationInput): string => [
   input.street,
   input.number,
   input.complement ?? '',
-].map(normalizeAddressPart).join('|');
+].map((value) => normalizeAddressPart(value ?? '')).join('|');
 
 export const createNominatimGeocoder = (options: NominatimGeocoderOptions = {}) => {
   const endpoint = options.endpoint ?? process.env.NOMINATIM_ENDPOINT ?? DEFAULT_NOMINATIM_ENDPOINT;
@@ -228,7 +228,7 @@ export const createNominatimGeocoder = (options: NominatimGeocoderOptions = {}) 
     requestUrl.searchParams.set('format', 'jsonv2');
     requestUrl.searchParams.set('limit', '1');
     requestUrl.searchParams.set('q', [
-      `${address.street}, ${address.number}`,
+      address.number ? `${address.street}, ${address.number}` : address.street,
       address.district,
       address.city,
       address.state,

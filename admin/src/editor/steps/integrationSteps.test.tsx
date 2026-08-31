@@ -36,35 +36,34 @@ test('location step keeps exact fields private and confirms the approximate mark
   const loaded = property();
   const api = { getProperty: async () => ({ property: loaded }), previewLocation: async () => { previews += 1; return { publicLocation: loaded.draft.publicLocation! }; } } as unknown as PropertyEditorApi;
   const view = await renderIntegrated(LocationStep, api);
-  assert.ok(view.container.querySelector('input[name="latitude"]'));
-  assert.ok(view.container.querySelector('input[name="publicLatitude"]'));
+  assert.equal(view.container.querySelector('input[name="latitude"]'), null);
+  assert.equal(view.container.querySelector('input[name="publicLatitude"]'), null);
   assert.match(view.container.textContent ?? '', /Privacidade por padrão/);
-  const confirm = Array.from(view.container.querySelectorAll('button')).find((button) => /Confirmar localização/.test(button.textContent ?? ''))!;
+  const confirm = Array.from(view.container.querySelectorAll('button')).find((button) => /Salvar localização/.test(button.textContent ?? ''))!;
   await act(async () => { confirm.click(); await Promise.resolve(); });
   assert.equal(previews, 1);
   await act(async () => view.root.unmount());
   Object.assign(globalThis, { document: view.previous.document, window: view.previous.window, IS_REACT_ACT_ENVIRONMENT: view.previous.act });
 });
 
-test('location step geocodes a complete CEP address and keeps number requirement explicit', async () => {
+test('location step confirms an address without requiring a number or map coordinates', async () => {
   const loaded = property();
-  loaded.draft.privateAddress = { postalCode: '22440-030', state: 'RJ', city: 'Rio de Janeiro', district: 'Leblon', street: 'Rua Dias Ferreira', number: '10' };
-  let geocodes = 0;
+  loaded.draft.privateAddress = { postalCode: '22440-030', state: 'RJ', city: 'Rio de Janeiro', district: 'Leblon', street: 'Rua Dias Ferreira' };
+  let previews = 0;
   const api = {
     getProperty: async () => ({ property: loaded }),
-    geocodeLocation: async () => { geocodes += 1; return { ok: true as const, location: { latitude: -22.984, longitude: -43.224, label: 'Rua Dias Ferreira, Leblon' } }; },
+    previewLocation: async () => { previews += 1; return { publicLocation: { label: 'Leblon, Rio de Janeiro - RJ', precision: 'approximate' as const } }; },
   } as unknown as PropertyEditorApi;
   const view = await renderIntegrated(LocationStep, api);
-  await act(async () => { await new Promise((resolve) => setTimeout(resolve, 30)); });
-  assert.ok(geocodes >= 1);
-  assert.match(view.container.textContent ?? '', /Endereço localizado/);
-  const exactLatitude = view.container.querySelector('input[name="privateAddress.latitude"]') as HTMLInputElement;
-  assert.equal(exactLatitude?.value, '-22.984');
+  const confirm = Array.from(view.container.querySelectorAll('button')).find((button) => /Salvar localização/.test(button.textContent ?? ''))!;
+  await act(async () => { confirm.click(); await Promise.resolve(); });
+  assert.equal(previews, 1);
+  assert.doesNotMatch(view.container.textContent ?? '', /mapa|coordenadas/i);
   await act(async () => view.root.unmount());
   Object.assign(globalThis, { document: view.previous.document, window: view.previous.window, IS_REACT_ACT_ENVIRONMENT: view.previous.act });
 });
 
-test('location step re-geocodes when an existing property address changes', async () => {
+test('location step does not geocode automatically when an existing property address changes', async () => {
   const loaded = property();
   let geocodes = 0;
   const api = {
@@ -79,7 +78,7 @@ test('location step re-geocodes when an existing property address changes', asyn
     street.dispatchEvent(new view.dom.window.Event('change', { bubbles: true }));
     await new Promise((resolve) => setTimeout(resolve, 30));
   });
-  assert.ok(geocodes >= 1);
+  assert.equal(geocodes, 0);
   await act(async () => view.root.unmount());
   Object.assign(globalThis, { document: view.previous.document, window: view.previous.window, IS_REACT_ACT_ENVIRONMENT: view.previous.act });
 });

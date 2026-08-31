@@ -25,7 +25,7 @@ export type PrivateLocation = {
   city: string;
   district: string;
   street: string;
-  number: string;
+  number?: string;
   complement?: string;
   latitude?: number;
   longitude?: number;

@@ -47,7 +47,7 @@ export const assessPropertyQuality = (draft: unknown): PropertyQuality => {
   add('cover', 'Foto de capa definida', 5, Boolean(media?.coverPhotoId), 'Defina a melhor foto como capa do anúncio.');
   add('pricing', 'Preço da operação informado', 15, Boolean(pricing && value.classification?.operations?.every((operation) => pricing[operation] !== undefined)), 'Informe o preço de cada finalidade selecionada.');
   add('condominium-iptu', 'Condomínio e IPTU revisados', 10, pricing?.condominium !== undefined && pricing?.iptu !== undefined, 'Preencha condomínio e IPTU ou confirme que não se aplicam.');
-  add('address', 'Endereço privado completo', 10, Boolean(address?.postalCode && address.state && address.city && address.district && address.street && address.number), 'Complete CEP, UF, cidade, bairro, logradouro e número no painel.');
+  add('address', 'Endereço privado completo', 10, Boolean(address?.postalCode && address.state && address.city && address.district && address.street), 'Complete CEP, UF, cidade, bairro e logradouro no painel.');
   add('location', 'Localização pública aproximada confirmada', 5, Boolean(value.publicLocation?.label && value.publicLocation?.precision === 'approximate'), 'Confirme o marcador aproximado para proteger o endereço exato.');
   add('seo', 'SEO personalizado', 5, Boolean(seo?.title || seo?.description), 'Revise o título e a descrição SEO para melhorar a apresentação nos buscadores.');
 
