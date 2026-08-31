@@ -30,3 +30,15 @@ Recriar containers não deve remover volumes `postgres_data`, `media_data` ou
 `published_releases`. PostgreSQL não deve ser exposto publicamente; restrinja
 SSH, HTTP/HTTPS e o acesso interno entre serviços por rede Docker.
 
+## Mapa e CEP sem Google
+
+O preenchimento do endereço usa o ViaCEP e a localização no mapa usa o
+Nominatim/OpenStreetMap. Não há chave de API nem cobrança por requisição.
+O servidor faz a consulta autenticada, identifica a aplicação pelo
+`NOMINATIM_USER_AGENT`, limita a uma requisição por segundo e reaproveita
+resultados em cache. O painel exibe a atribuição `© OpenStreetMap contributors`.
+
+O Nominatim público é um serviço comunitário sem SLA. Se o volume crescer,
+troque `NOMINATIM_ENDPOINT` por um provedor OSM compatível ou por uma instância
+própria na VPS; não remova o cache nem a atribuição.
+

@@ -19,6 +19,12 @@ const CEP_FALLBACK = {
   code: 'CEP_UNAVAILABLE' as const,
   message: 'Não foi possível consultar o CEP. Preencha manualmente.',
 };
+const DEFAULT_NOMINATIM_ENDPOINT = 'https://nominatim.openstreetmap.org/search';
+const DEFAULT_NOMINATIM_USER_AGENT = 'Imobiliaria Clementino/1.0 (+https://clementinoimoveis.com.br)';
+const GEOCODE_FALLBACK = {
+  code: 'GEOCODE_UNAVAILABLE' as const,
+  message: 'Não foi possível localizar o endereço automaticamente. Ajuste o marcador manualmente.',
+};
 
 // ViaCEP adds metadata fields (IBGE, estado, região, DDD, etc.); validate only
 // the address fields we need and ignore those provider-specific extras.
@@ -53,6 +59,21 @@ const previewBodySchema = z.strictObject({
     .optional(),
 });
 const cepParamsSchema = z.strictObject({ cep: z.string().trim().min(1).max(32) });
+const geocodeAddressSchema = z.strictObject({
+  postalCode: z.string().trim().regex(/^\d{5}-?\d{3}$/),
+  state: z.string().trim().regex(/^[A-Za-z]{2}$/),
+  city: z.string().trim().min(2).max(100),
+  district: z.string().trim().min(2).max(100),
+  street: z.string().trim().min(2).max(160),
+  number: z.string().trim().min(1).max(30),
+  complement: z.string().trim().min(1).max(100).optional(),
+});
+
+const nominatimResponseSchema = z.array(z.object({
+  lat: z.string(),
+  lon: z.string(),
+  display_name: z.string().optional(),
+}));
 
 type FetchImplementation = (input: string, init?: RequestInit) => Promise<Response>;
 
@@ -70,6 +91,20 @@ export type CepLookupOptions = {
   endpointTemplate?: string;
   timeoutMs?: number;
   maxResponseBytes?: number;
+  fetch?: FetchImplementation;
+};
+
+export type GeocodeLocationInput = z.infer<typeof geocodeAddressSchema>;
+export type GeocodeLocationResult =
+  | { ok: true; location: { latitude: number; longitude: number; label: string } }
+  | { ok: false; error: typeof GEOCODE_FALLBACK };
+
+export type NominatimGeocoderOptions = {
+  endpoint?: string;
+  userAgent?: string;
+  timeoutMs?: number;
+  maxResponseBytes?: number;
+  minIntervalMs?: number;
   fetch?: FetchImplementation;
 };
 
@@ -148,7 +183,97 @@ export const createCepLookup = (options: CepLookupOptions = {}) => {
   };
 };
 
-export type LocationRouteOptions = CepLookupOptions & {
+const normalizeAddressPart = (value: string): string => value
+  .normalize('NFD')
+  .replace(/\p{Diacritic}/gu, '')
+  .toLocaleLowerCase('pt-BR')
+  .replace(/[^a-z0-9]+/g, ' ')
+  .trim();
+
+const normalizeGeocodeAddress = (input: GeocodeLocationInput): string => [
+  input.postalCode,
+  input.state,
+  input.city,
+  input.district,
+  input.street,
+  input.number,
+  input.complement ?? '',
+].map(normalizeAddressPart).join('|');
+
+export const createNominatimGeocoder = (options: NominatimGeocoderOptions = {}) => {
+  const endpoint = options.endpoint ?? process.env.NOMINATIM_ENDPOINT ?? DEFAULT_NOMINATIM_ENDPOINT;
+  const userAgent = options.userAgent?.trim() || process.env.NOMINATIM_USER_AGENT?.trim() || DEFAULT_NOMINATIM_USER_AGENT;
+  const timeoutMs = options.timeoutMs ?? DEFAULT_CEP_TIMEOUT_MS;
+  const maxResponseBytes = options.maxResponseBytes ?? DEFAULT_CEP_MAX_RESPONSE_BYTES;
+  const minIntervalMs = Math.max(0, options.minIntervalMs ?? 1_000);
+  const fetchImplementation = options.fetch ?? globalThis.fetch;
+  const cache = new Map<string, GeocodeLocationResult>();
+  let nextRequestAt = 0;
+  let requestQueue = Promise.resolve();
+
+  return async (input: GeocodeLocationInput): Promise<GeocodeLocationResult> => {
+    const parsedInput = geocodeAddressSchema.safeParse(input);
+    if (!parsedInput.success || !fetchImplementation) return { ok: false, error: GEOCODE_FALLBACK };
+    const address = parsedInput.data;
+    const cacheKey = normalizeGeocodeAddress(address);
+    const cached = cache.get(cacheKey);
+    if (cached) return cached;
+
+    let requestUrl: URL;
+    try {
+      requestUrl = new URL(endpoint);
+    } catch {
+      return { ok: false, error: GEOCODE_FALLBACK };
+    }
+    requestUrl.searchParams.set('format', 'jsonv2');
+    requestUrl.searchParams.set('limit', '1');
+    requestUrl.searchParams.set('q', [
+      `${address.street}, ${address.number}`,
+      address.district,
+      address.city,
+      address.state,
+      address.postalCode,
+      'Brasil',
+    ].join(', '));
+
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    try {
+      const requestTask = requestQueue.then(async () => {
+        const waitMs = Math.max(0, nextRequestAt - Date.now());
+        if (waitMs > 0) await new Promise((resolve) => setTimeout(resolve, waitMs));
+        nextRequestAt = Date.now() + minIntervalMs;
+        return fetchImplementation(requestUrl.toString(), {
+          signal: controller.signal,
+          headers: { accept: 'application/json', 'user-agent': userAgent },
+        });
+      });
+      requestQueue = requestTask.then(() => undefined, () => undefined);
+      const response = await requestTask;
+      if (!response.ok) return { ok: false, error: GEOCODE_FALLBACK };
+      const parsed = nominatimResponseSchema.safeParse(JSON.parse(await readBoundedText(response, maxResponseBytes)));
+      const first = parsed.success ? parsed.data[0] : undefined;
+      if (!first) return { ok: false, error: GEOCODE_FALLBACK };
+      const latitude = Number(first.lat);
+      const longitude = Number(first.lon);
+      if (!Number.isFinite(latitude) || !Number.isFinite(longitude) || latitude < -90 || latitude > 90 || longitude < -180 || longitude > 180) {
+        return { ok: false, error: GEOCODE_FALLBACK };
+      }
+      const result: GeocodeLocationResult = {
+        ok: true,
+        location: { latitude, longitude, label: first.display_name?.trim() || `${address.street}, ${address.city} - ${address.state}` },
+      };
+      cache.set(cacheKey, result);
+      return result;
+    } catch {
+      return { ok: false, error: GEOCODE_FALLBACK };
+    } finally {
+      clearTimeout(timer);
+    }
+  };
+};
+
+export type LocationRouteOptions = CepLookupOptions & NominatimGeocoderOptions & {
   environment?: string;
   privacySecret?: string;
   rateLimit?: { requests: number; windowMs: number; maxEntries?: number };
@@ -163,6 +288,7 @@ export const registerLocationRoutes = (
   options: LocationRouteOptions = {},
 ): void => {
   const lookupCep = createCepLookup(options);
+  const geocodeLocation = createNominatimGeocoder(options);
   const privacySecret = resolveLocationPrivacySecret({
     environment: options.environment,
     secret: options.privacySecret,
@@ -190,6 +316,15 @@ export const registerLocationRoutes = (
       return sendError(reply, 400, API_ERROR_CODES.VALIDATION_FAILED, 'Request validation failed');
     }
     return reply.send(await lookupCep(params.data.cep));
+  });
+
+  app.post('/api/admin/location/geocode', { preHandler: mutationGuard }, async (request, reply) => {
+    if (!enforceRateLimit(reply, request.ip)) return reply;
+    const body = geocodeAddressSchema.safeParse(request.body);
+    if (!body.success) {
+      return sendError(reply, 400, API_ERROR_CODES.VALIDATION_FAILED, 'Request validation failed');
+    }
+    return reply.send(await geocodeLocation(body.data));
   });
 
   app.post('/api/admin/location/preview', { preHandler: mutationGuard }, async (request, reply) => {

@@ -104,3 +104,24 @@ test('property queries and lifecycle requests use the typed admin endpoints with
   globalThis.document = previousDocument;
   globalThis.fetch = previousFetch;
 });
+
+test('geocodeLocation sends the private address to the authenticated geocoding endpoint', async () => {
+  const previousFetch = globalThis.fetch;
+  let request: Request | undefined;
+  globalThis.fetch = async (input, init) => {
+    request = new Request(new URL(String(input), 'https://admin.clementinoimoveis.com.br/'), init);
+    return Response.json({ ok: true, location: { latitude: -22.9, longitude: -43.2, label: 'Rua Exemplo' } });
+  };
+
+  const result = await new AdminApiClient().geocodeLocation({
+    postalCode: '21240-240', state: 'RJ', city: 'Rio de Janeiro', district: 'Pavuna', street: 'Rua Exemplo', number: '100',
+  });
+
+  assert.deepEqual(result, { ok: true, location: { latitude: -22.9, longitude: -43.2, label: 'Rua Exemplo' } });
+  assert.equal(request?.method, 'POST');
+  assert.match(request?.url ?? '', /\/api\/admin\/location\/geocode$/);
+  assert.deepEqual(JSON.parse(await request!.text()), {
+    postalCode: '21240-240', state: 'RJ', city: 'Rio de Janeiro', district: 'Pavuna', street: 'Rua Exemplo', number: '100',
+  });
+  globalThis.fetch = previousFetch;
+});

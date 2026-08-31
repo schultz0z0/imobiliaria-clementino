@@ -1,4 +1,6 @@
-import React, { useId, useState, type ChangeEvent } from 'react';
+import React, { useEffect, useId, useRef, useState, type ChangeEvent } from 'react';
+
+export const OPENSTREETMAP_TILE_URL = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
 
 export type LocationEditorValue = {
   postalCode: string; state: string; city: string; district: string; street: string; number: string;
@@ -9,6 +11,7 @@ type Props = {
   value: LocationEditorValue; onChange: (value: LocationEditorValue) => void; onConfirm: () => void;
   onLookupCep: (cep: string) => Promise<void>; lookupError?: string;
   publicPreview?: { label: string; latitude?: number; longitude?: number };
+  onPublicLocationChange?: (latitude: number, longitude: number) => void;
   fieldRegistration?: (key: keyof LocationEditorValue) => Registration;
   fieldErrors?: Partial<Record<keyof LocationEditorValue, string>>;
 };
@@ -19,7 +22,37 @@ const fields: Array<{ key: Exclude<keyof LocationEditorValue, 'postalCode'>; lab
   { key: 'publicLatitude', label: 'Latitude pública (aproximada)', type: 'number' }, { key: 'publicLongitude', label: 'Longitude pública (aproximada)', type: 'number' },
 ];
 
-export const LocationEditor = ({ value, onChange, onConfirm, onLookupCep, lookupError, publicPreview, fieldRegistration, fieldErrors }: Props) => {
+type LocationMapProps = { label: string; latitude?: number; longitude?: number; onMarkerDrag?: (latitude: number, longitude: number) => void };
+const LocationMap = ({ label, latitude, longitude, onMarkerDrag }: LocationMapProps) => {
+  const mapElement = useRef<HTMLDivElement>(null);
+  const mapInstance = useRef<{ remove: () => void } | null>(null);
+  const markerInstance = useRef<{ setLatLng: (coords: [number, number]) => void } | null>(null);
+  const hasCoordinates = Number.isFinite(latitude) && Number.isFinite(longitude);
+  useEffect(() => {
+    if (!hasCoordinates || typeof window === 'undefined' || !mapElement.current) return;
+    let disposed = false;
+    import('leaflet').then(({ default: L }) => {
+      if (disposed || !mapElement.current || !Number.isFinite(latitude) || !Number.isFinite(longitude)) return;
+      const map = L.map(mapElement.current, { scrollWheelZoom: false, attributionControl: true }).setView([latitude!, longitude!], 16);
+      L.tileLayer(OPENSTREETMAP_TILE_URL, { attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
+      const marker = L.marker([latitude!, longitude!], { draggable: Boolean(onMarkerDrag), title: 'Marcador aproximado' }).addTo(map);
+      if (onMarkerDrag) marker.on('dragend', () => { const point = marker.getLatLng(); onMarkerDrag(point.lat, point.lng); });
+      mapInstance.current = map;
+      markerInstance.current = marker;
+    }).catch(() => undefined);
+    return () => { disposed = true; markerInstance.current = null; mapInstance.current?.remove(); mapInstance.current = null; };
+  }, [hasCoordinates, latitude, longitude, onMarkerDrag]);
+  useEffect(() => { if (markerInstance.current && hasCoordinates) markerInstance.current.setLatLng([latitude!, longitude!]); }, [hasCoordinates, latitude, longitude]);
+  if (!hasCoordinates) return <div className="location-map-preview map-empty" data-testid="location-map-fallback" role="status"><span>Confirme os dados ou informe as coordenadas públicas manualmente.</span></div>;
+  return <div className="location-map-shell">
+    <div ref={mapElement} className="location-map-preview location-map" data-testid="location-map" role="img" aria-label={`Mapa aproximado de ${label}`}>
+      <span className="map-attribution-visible">© OpenStreetMap contributors</span>
+      <output aria-live="polite"><strong>{label}</strong><small>Arraste o marcador para ajustar a localização aproximada.</small></output>
+    </div>
+  </div>;
+};
+
+export const LocationEditor = ({ value, onChange, onConfirm, onLookupCep, lookupError, publicPreview, onPublicLocationChange, fieldRegistration, fieldErrors }: Props) => {
   const [loading, setLoading] = useState(false); const id = useId();
   const lookupMessage = lookupError && lookupError.includes('Preencha manualmente') ? lookupError : lookupError ? `${lookupError} Preencha manualmente.` : undefined;
   const update = (key: keyof LocationEditorValue, next: string) => {
@@ -37,7 +70,7 @@ export const LocationEditor = ({ value, onChange, onConfirm, onLookupCep, lookup
     {lookupMessage ? <p className="form-alert" role="alert">{lookupMessage}</p> : null}
     <div className="location-fields">{fields.map(({ key, label, type }) => <React.Fragment key={key}>{renderInput(key, label, type)}</React.Fragment>)}</div>
     <input type="hidden" name="latitude" aria-hidden="true" tabIndex={-1} /><input type="hidden" name="publicLatitude" aria-hidden="true" tabIndex={-1} />
-    {publicPreview ? <div className="location-map-preview" role="img" aria-label={`Mapa aproximado de ${publicPreview.label}`}><span className="map-marker" aria-hidden="true" /><output aria-live="polite"><strong>{publicPreview.label}</strong>{publicPreview.latitude !== undefined ? <small>Marcador aproximado: {publicPreview.latitude}, {publicPreview.longitude}</small> : null}</output></div> : <div className="location-map-preview map-empty"><span>Confirme os dados para gerar o marcador público aproximado.</span></div>}
+    <LocationMap label={publicPreview?.label ?? 'Localização do imóvel'} latitude={publicPreview?.latitude} longitude={publicPreview?.longitude} onMarkerDrag={onPublicLocationChange} />
     <button className="button button-primary" type="button" onClick={onConfirm}>Confirmar localização aproximada <span className="sr-only">Confirmar localização aproximada</span></button>
   </section>;
 };

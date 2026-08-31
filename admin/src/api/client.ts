@@ -95,11 +95,20 @@ export type CepLookupResponse =
   | { ok: true; address: NonNullable<AdminPropertyDraftDto['privateAddress']> }
   | { ok: false; error: { code: string; message: string } };
 
+export type GeocodeLocationInput = {
+  postalCode: string; state: string; city: string; district: string; street: string; number: string; complement?: string;
+};
+export type GeocodeLocationResponse =
+  | { ok: true; location: { latitude: number; longitude: number; label: string } }
+  | { ok: false; error: { code: string; message: string } };
+
+
 export type PropertyEditorApi = {
   createProperty: (draft?: AdminPropertyDraftDto, signal?: AbortSignal) => Promise<{ property: PropertyAdminDto }>;
   getProperty: (id: string, signal?: AbortSignal) => Promise<{ property: PropertyAdminDto }>;
   patchProperty: (id: string, revision: number, patch: AdminPropertyDraftDto, signal?: AbortSignal) => Promise<{ property: PropertyAdminDto }>;
   lookupCep: (cep: string, signal?: AbortSignal) => Promise<CepLookupResponse>;
+  geocodeLocation: (input: GeocodeLocationInput, signal?: AbortSignal) => Promise<GeocodeLocationResponse>;
   previewLocation: (input: { publicId: string; privateAddress: NonNullable<AdminPropertyDraftDto['privateAddress']>; manualCoordinates?: { latitude: number; longitude: number } }, signal?: AbortSignal) => Promise<{ publicLocation: NonNullable<AdminPropertyDraftDto['publicLocation']> }>;
   uploadPhoto: (id: string, revision: number, file: File, altText: string, signal?: AbortSignal) => Promise<{ photo: MediaPhotoDto; property: PropertyAdminDto }>;
   reorderPhotos: (id: string, revision: number, orderedPhotoIds: string[], coverPhotoId: string, signal?: AbortSignal) => Promise<{ property: PropertyAdminDto }>;
@@ -252,6 +261,10 @@ export class AdminApiClient implements AuthApi, PropertyAdminApi, PropertyEditor
 
   lookupCep(cep: string, signal?: AbortSignal): Promise<CepLookupResponse> {
     return this.request(`/location/cep/${encodeURIComponent(cep)}`, { signal });
+  }
+
+  geocodeLocation(input: GeocodeLocationInput, signal?: AbortSignal): Promise<GeocodeLocationResponse> {
+    return this.request('/location/geocode', { method: 'POST', body: JSON.stringify(input), signal });
   }
 
   previewLocation(input: Parameters<PropertyEditorApi['previewLocation']>[0], signal?: AbortSignal): ReturnType<PropertyEditorApi['previewLocation']> {

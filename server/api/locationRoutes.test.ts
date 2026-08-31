@@ -1,7 +1,97 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 
-import { createCepLookup } from './locationRoutes.ts';
+import { createCepLookup, createNominatimGeocoder, type GeocodeLocationInput } from './locationRoutes.ts';
+
+const geocodeAddress: GeocodeLocationInput = {
+  postalCode: '21240-240',
+  state: 'RJ',
+  city: 'Rio de Janeiro',
+  district: 'Jardim América',
+  street: 'Rua Professor Pires Salgado',
+  number: '100',
+};
+
+test('geocodes a private address through Nominatim and caches normalized addresses', async () => {
+  let requests = 0;
+  let requestedUrl = '';
+  let requestedUserAgent = '';
+  const geocoder = createNominatimGeocoder({
+    endpoint: 'https://nominatim.example/search',
+    userAgent: 'Imobiliaria Clementino test/1.0',
+    fetch: async (url, init) => {
+      requests += 1;
+      requestedUrl = url;
+      requestedUserAgent = new Headers(init?.headers).get('user-agent') ?? '';
+      return new Response(JSON.stringify([{ lat: '-22.8431', lon: '-43.3694', display_name: 'Rua Professor Pires Salgado, Rio de Janeiro' }]));
+    },
+  });
+
+  const first = await geocoder(geocodeAddress);
+  const second = await geocoder({
+    ...geocodeAddress,
+    district: '  JARDIM AMERICA ',
+    street: 'Rua Professor Pires Salgado',
+  });
+
+  assert.deepEqual(first, {
+    ok: true,
+    location: { latitude: -22.8431, longitude: -43.3694, label: 'Rua Professor Pires Salgado, Rio de Janeiro' },
+  });
+  assert.deepEqual(second, first);
+  assert.equal(requests, 1);
+  assert.match(requestedUrl, /^https:\/\/nominatim\.example\/search\?/);
+  assert.match(requestedUrl, /format=jsonv2/);
+  assert.match(requestedUrl, /limit=1/);
+  assert.match(requestedUrl, /q=/);
+  assert.equal(requestedUserAgent, 'Imobiliaria Clementino test/1.0');
+});
+
+test('returns a safe manual fallback for Nominatim timeout, invalid data, and oversized responses', async () => {
+  const timeoutGeocoder = createNominatimGeocoder({
+    endpoint: 'https://nominatim.example/search',
+    timeoutMs: 1,
+    fetch: async (_url, init) => await new Promise<Response>((_resolve, reject) => {
+      init?.signal?.addEventListener('abort', () => reject(new Error('aborted')));
+    }),
+  });
+  assert.deepEqual(await timeoutGeocoder(geocodeAddress), {
+    ok: false,
+    error: { code: 'GEOCODE_UNAVAILABLE', message: 'Não foi possível localizar o endereço automaticamente. Ajuste o marcador manualmente.' },
+  });
+
+  const invalidGeocoder = createNominatimGeocoder({
+    endpoint: 'https://nominatim.example/search',
+    fetch: async () => new Response(JSON.stringify([{ lat: 'invalid', lon: '-43.2' }])),
+  });
+  assert.equal((await invalidGeocoder(geocodeAddress)).ok, false);
+
+  const oversizedGeocoder = createNominatimGeocoder({
+    endpoint: 'https://nominatim.example/search',
+    maxResponseBytes: 32,
+    fetch: async () => new Response(JSON.stringify([{ lat: '-22.8', lon: '-43.3', display_name: 'x'.repeat(128) }])),
+  });
+  assert.equal((await oversizedGeocoder(geocodeAddress)).ok, false);
+});
+
+test('paces distinct Nominatim requests and falls back to the default user agent when configured blank', async () => {
+  let requests = 0;
+  const geocoder = createNominatimGeocoder({
+    endpoint: 'https://nominatim.example/search',
+    userAgent: '   ',
+    minIntervalMs: 20,
+    fetch: async (_url, init) => {
+      requests += 1;
+      assert.equal(new Headers(init?.headers).get('user-agent'), 'Imobiliaria Clementino/1.0 (+https://clementinoimoveis.com.br)');
+      return new Response(JSON.stringify([{ lat: '-22.8', lon: '-43.3', display_name: 'Rua Exemplo' }]));
+    },
+  });
+  const startedAt = Date.now();
+  assert.equal((await geocoder(geocodeAddress)).ok, true);
+  assert.equal((await geocoder({ ...geocodeAddress, number: '101' })).ok, true);
+  assert.equal(requests, 2);
+  assert.ok(Date.now() - startedAt >= 15);
+});
 
 test('normalizes CEP and gives a non-sensitive manual fallback for timeout and invalid provider data', async () => {
   const timeoutLookup = createCepLookup({

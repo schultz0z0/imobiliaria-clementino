@@ -46,6 +46,44 @@ test('location step keeps exact fields private and confirms the approximate mark
   Object.assign(globalThis, { document: view.previous.document, window: view.previous.window, IS_REACT_ACT_ENVIRONMENT: view.previous.act });
 });
 
+test('location step geocodes a complete CEP address and keeps number requirement explicit', async () => {
+  const loaded = property();
+  loaded.draft.privateAddress = { postalCode: '22440-030', state: 'RJ', city: 'Rio de Janeiro', district: 'Leblon', street: 'Rua Dias Ferreira', number: '10' };
+  let geocodes = 0;
+  const api = {
+    getProperty: async () => ({ property: loaded }),
+    geocodeLocation: async () => { geocodes += 1; return { ok: true as const, location: { latitude: -22.984, longitude: -43.224, label: 'Rua Dias Ferreira, Leblon' } }; },
+  } as unknown as PropertyEditorApi;
+  const view = await renderIntegrated(LocationStep, api);
+  await act(async () => { await new Promise((resolve) => setTimeout(resolve, 30)); });
+  assert.ok(geocodes >= 1);
+  assert.match(view.container.textContent ?? '', /Endereço localizado/);
+  const exactLatitude = view.container.querySelector('input[name="privateAddress.latitude"]') as HTMLInputElement;
+  assert.equal(exactLatitude?.value, '-22.984');
+  await act(async () => view.root.unmount());
+  Object.assign(globalThis, { document: view.previous.document, window: view.previous.window, IS_REACT_ACT_ENVIRONMENT: view.previous.act });
+});
+
+test('location step re-geocodes when an existing property address changes', async () => {
+  const loaded = property();
+  let geocodes = 0;
+  const api = {
+    getProperty: async () => ({ property: loaded }),
+    geocodeLocation: async () => { geocodes += 1; return { ok: true as const, location: { latitude: -22.985, longitude: -43.225, label: 'Novo endereço' } }; },
+  } as unknown as PropertyEditorApi;
+  const view = await renderIntegrated(LocationStep, api);
+  const street = view.container.querySelector('input[name="privateAddress.street"]') as HTMLInputElement;
+  const setter = Object.getOwnPropertyDescriptor(view.dom.window.HTMLInputElement.prototype, 'value')?.set;
+  await act(async () => {
+    setter?.call(street, 'Rua Nova');
+    street.dispatchEvent(new view.dom.window.Event('change', { bubbles: true }));
+    await new Promise((resolve) => setTimeout(resolve, 30));
+  });
+  assert.ok(geocodes >= 1);
+  await act(async () => view.root.unmount());
+  Object.assign(globalThis, { document: view.previous.document, window: view.previous.window, IS_REACT_ACT_ENVIRONMENT: view.previous.act });
+});
+
 test('photos step exposes approved upload formats and accessible order, cover, alt and removal controls', async () => {
   let reordered: string[] | undefined;
   const loaded = property({ orderedPhotoIds: ['aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa','bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb'], coverPhotoId: 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa', altTextByPhotoId: { 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa': 'Sala principal', 'bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb': 'Quarto principal' } });
@@ -63,4 +101,3 @@ test('photos step exposes approved upload formats and accessible order, cover, a
   await act(async () => view.root.unmount());
   Object.assign(globalThis, { document: view.previous.document, window: view.previous.window, IS_REACT_ACT_ENVIRONMENT: view.previous.act });
 });
-
