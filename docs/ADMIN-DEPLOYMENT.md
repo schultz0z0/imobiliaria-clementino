@@ -42,3 +42,16 @@ O Nominatim público é um serviço comunitário sem SLA. Se o volume crescer,
 troque `NOMINATIM_ENDPOINT` por um provedor OSM compatível ou por uma instância
 própria na VPS; não remova o cache nem a atribuição.
 
+## Catálogo público e desempenho
+
+O site público lê exclusivamente os imóveis com status `published` no
+PostgreSQL. O endpoint de catálogo mantém cache curto de 15 segundos e a
+página de detalhe consulta o imóvel publicado diretamente pelo slug; falhas
+não são preenchidas com dados de demonstração. A imagem de produção usa a
+release ativa e, quando não há HTML específico, entrega apenas o shell SPA,
+evitando expor páginas pré-renderizadas de mockups.
+
+O compose de desenvolvimento no Docker Desktop segue os mesmos endpoints,
+volumes persistentes e regras de publicação do compose da VPS Linux. Assim,
+uma validação local de listagem, detalhe e publicação representa o fluxo de
+produção sem transformar os dados locais em fonte oficial.

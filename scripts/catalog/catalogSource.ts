@@ -9,6 +9,7 @@ export type CanonicalPublishedProperty = WebsiteProperty;
 
 export interface CatalogSource {
   loadPublishedProperties(): Promise<CanonicalPublishedProperty[]>;
+  loadPublishedPropertyBySlug?(slug: string): Promise<CanonicalPublishedProperty | null>;
 }
 
 /** A deterministic adapter useful for parity tests and local tooling. */

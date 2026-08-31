@@ -1,37 +1,42 @@
 import { useEffect, useState } from 'react';
-import { getAllProperties } from '../catalog/propertyCatalog';
 import type { WebsiteProperty } from '../types/property.ts';
 
-const bundledProperties = getAllProperties();
-
 export const mergePropertyCatalog = (
-  bundled: WebsiteProperty[],
+  _bundled: WebsiteProperty[],
   runtime: WebsiteProperty[],
-): WebsiteProperty[] => {
-  const runtimeIds = new Set(runtime.map((property) => property.id));
-  const runtimeSlugs = new Set(runtime.map((property) => property.slug));
-  return [
-    ...runtime,
-    ...bundled.filter((property) => !runtimeIds.has(property.id) && !runtimeSlugs.has(property.slug)),
-  ];
+): WebsiteProperty[] => runtime;
+
+let catalogPromise: Promise<WebsiteProperty[]> | undefined;
+
+export const loadPublishedCatalog = (): Promise<WebsiteProperty[]> => {
+  catalogPromise ??= fetch('/api/public/catalog', { cache: 'default' })
+    .then(async (response) => {
+      if (!response.ok) throw new Error('catalog unavailable');
+      const result = await response.json() as { properties?: WebsiteProperty[] };
+      return Array.isArray(result.properties) ? result.properties : [];
+    })
+    .catch((error) => {
+      catalogPromise = undefined;
+      throw error;
+    });
+  return catalogPromise;
+};
+
+export const resetPublishedCatalogCache = (): void => {
+  catalogPromise = undefined;
 };
 
 export const usePropertyCatalog = () => {
-  const [properties, setProperties] = useState<WebsiteProperty[]>(bundledProperties);
+  const [properties, setProperties] = useState<WebsiteProperty[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
   useEffect(() => {
-    const controller = new AbortController();
-    fetch('/api/public/catalog', { signal: controller.signal, cache: 'no-store' })
-      .then(async (response) => {
-        if (!response.ok) throw new Error('catalog unavailable');
-        return response.json() as Promise<{ properties?: WebsiteProperty[] }>;
-      })
-      .then((result) => {
-        if (Array.isArray(result.properties)) setProperties(mergePropertyCatalog(bundledProperties, result.properties));
-      })
-      .catch(() => undefined)
-      .finally(() => { if (!controller.signal.aborted) setLoading(false); });
-    return () => controller.abort();
+    let active = true;
+    loadPublishedCatalog()
+      .then((result) => { if (active) setProperties(result); })
+      .catch((reason: unknown) => { if (active) setError(reason instanceof Error ? reason : new Error('catalog unavailable')); })
+      .finally(() => { if (active) setLoading(false); });
+    return () => { active = false; };
   }, []);
-  return { properties, loading };
+  return { properties, loading, error };
 };

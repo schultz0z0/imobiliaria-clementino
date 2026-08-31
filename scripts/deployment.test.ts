@@ -77,13 +77,14 @@ test('production compose passes the optional GA4 measurement id only at build ti
   assert.doesNotMatch(compose, /environment:[\s\S]*VITE_GA_MEASUREMENT_ID/);
 });
 
-test('nginx revalidates prerendered HTML while keeping fingerprinted assets immutable', () => {
+test('nginx serves active releases and only the bundled SPA shell as fallback', () => {
   const nginx = readFileSync(new URL('../nginx.conf', import.meta.url), 'utf8');
 
   assert.match(
     nginx,
     /location \/ \{[\s\S]*add_header Cache-Control "no-cache";[\s\S]*root \/data\/published\/current;[\s\S]*try_files \$uri\.html \$uri \$uri\/ @bundled_app;[\s\S]*\}/,
   );
+  assert.match(nginx, /location @bundled_app \{[\s\S]*try_files \/index\.html =404;/);
   assert.match(
     nginx,
     /location \/assets\/ \{[\s\S]*add_header Cache-Control "public, immutable";[\s\S]*\}/,

@@ -73,10 +73,26 @@ export const getCuratedPropertiesById = (ids: readonly string[]): WebsitePropert
     return property;
   });
 
+export const getFeaturedPublishedProperties = (
+  source: readonly WebsiteProperty[],
+  curatedIds: readonly string[] = [],
+  limit = 6,
+): WebsiteProperty[] => {
+  const byId = new Map(source.map((property) => [property.id, property]));
+  const curated = curatedIds.flatMap((id) => {
+    const property = byId.get(id);
+    return property ? [property] : [];
+  });
+  const selected = new Set(curated.map((property) => property.id));
+  return [...curated, ...source.filter((property) => !selected.has(property.id))]
+    .slice(0, Math.max(0, limit));
+};
+
 export const getRelatedProperties = (
   current: WebsiteProperty,
   limit = 3,
-): WebsiteProperty[] => properties
+  source: readonly WebsiteProperty[] = properties,
+): WebsiteProperty[] => source
   .filter((candidate) => candidate.id !== current.id)
   .map((candidate) => ({
     candidate,
@@ -95,9 +111,16 @@ export const getRelatedProperties = (
   .map(({ candidate }) => candidate);
 
 export const getTopNeighborhoods = (limit = 4): NeighborhoodSummary[] => {
+  return getTopNeighborhoodsFromProperties(properties, limit);
+};
+
+export const getTopNeighborhoodsFromProperties = (
+  source: readonly WebsiteProperty[],
+  limit = 4,
+): NeighborhoodSummary[] => {
   const summaries = new Map<string, NeighborhoodSummary>();
 
-  for (const property of properties) {
+  for (const property of source) {
     const name = property.district || property.city;
     if (!name) continue;
 

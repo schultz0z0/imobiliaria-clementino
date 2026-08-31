@@ -166,4 +166,25 @@ export const createDatabaseCatalogSource = (
     }
     return allRows.map((row) => toWebsiteProperty(row, byProperty.get(row.id) ?? [], options));
   },
+  async loadPublishedPropertyBySlug(slug: string): Promise<CanonicalPublishedProperty | null> {
+    const rows = options.overlay && options.overlay.slug === slug
+      ? [options.overlay]
+      : await sql<PublishedRow[]>`
+          SELECT p.id, p.public_id, p.commercial_reference, p.slug, revision.payload
+          FROM properties AS p
+          JOIN property_revisions AS revision ON revision.id = p.published_revision_id
+          WHERE p.status = 'published' AND p.slug = ${slug}
+          LIMIT 1
+        `;
+    const row = rows[0];
+    if (!row) return null;
+    const mediaRows = await sql<MediaRow[]>`
+      SELECT property_id, id, checksum_sha256, alt_text, position,
+        cover_storage_key, gallery_storage_key
+      FROM property_media
+      WHERE removed_at IS NULL AND property_id = ${row.id}
+      ORDER BY property_id, position, id
+    `;
+    return toWebsiteProperty(row, mediaRows, options);
+  },
 });

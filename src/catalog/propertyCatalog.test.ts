@@ -5,9 +5,11 @@ import {
   filterProperties,
   getAllProperties,
   getCuratedPropertiesById,
+  getFeaturedPublishedProperties,
   getFeaturedProperties,
   getPropertyBySlug,
   getRelatedProperties,
+  getTopNeighborhoodsFromProperties,
 } from './propertyCatalog';
 
 test('exposes exactly 53 properties with unique ids and slugs', () => {
@@ -69,6 +71,12 @@ test('resolves the three-property Clementino selection in editorial order', () =
   assert.ok(catalogIds.has('3017305761'));
   assert.ok(catalogIds.has('3017305821'));
   assert.ok(catalogIds.has('3017305797'));
+});
+
+test('derives featured cards and neighborhoods from the provided published source', () => {
+  const source = [getAllProperties()[0]!];
+  assert.deepEqual(getFeaturedPublishedProperties(source, featuredPropertyIds), source);
+  assert.equal(getTopNeighborhoodsFromProperties(source, 4)[0]?.count, 1);
 });
 
 test('rejects a curated id that is absent from the catalog', () => {

@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import { CalendarDays, CheckCircle2, MapPin, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { getPropertyBySlug, getRelatedProperties } from '../catalog/propertyCatalog';
+import { getRelatedProperties } from '../catalog/propertyCatalog';
 import { WhatsAppCta } from '../components/contact/WhatsAppCta';
 import { Breadcrumbs } from '../components/navigation/Breadcrumbs';
 import { PropertyCard } from '../components/properties/PropertyCard';
@@ -14,13 +14,14 @@ import { buildPropertyInquiry, buildVisitInquiry } from '../contact/whatsapp';
 import { getPageMetadata } from '../config/pageMetadata';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { usePropertyCatalog } from '../hooks/usePropertyCatalog';
+import { usePublishedProperty } from '../hooks/usePublishedProperty';
 
 export const PropertyDetails = () => {
   const { slug = '' } = useParams();
   const detailsView = usePropertyDetailsView();
-  const { properties: runtimeCatalog, loading: catalogLoading } = usePropertyCatalog();
-  const runtimeProperty = runtimeCatalog.find((candidate) => candidate.slug === slug);
-  const property = detailsView?.property ?? runtimeProperty ?? getPropertyBySlug(slug);
+  const { properties: runtimeCatalog } = usePropertyCatalog();
+  const { property: publishedProperty, loading: propertyLoading, error: propertyError } = usePublishedProperty(slug, !detailsView?.preview);
+  const property = detailsView?.property ?? publishedProperty;
   const propertyMetadata = property ? getPageMetadata('property', property) : getPageMetadata('notFound');
   usePageMeta(detailsView?.preview ? { ...propertyMetadata, robots: 'noindex, nofollow' } : propertyMetadata);
   const [modalOpen, setModalOpen] = useState(false);
@@ -30,8 +31,12 @@ export const PropertyDetails = () => {
     window.scrollTo(0, 0);
   }, [slug]);
 
-  if (!property && catalogLoading) {
+  if (!detailsView?.preview && !property && propertyLoading) {
     return <div className="relative z-10 flex min-h-screen items-center justify-center pt-24 text-white" role="status">Carregando imóvel…</div>;
+  }
+
+  if (!property && propertyError) {
+    return <div className="relative z-10 flex min-h-screen items-center justify-center px-6 pt-24 text-center"><div><p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#d7b661]">CatÃ¡logo Clementino</p><h1 className="mt-4 text-4xl font-semibold text-white">NÃ£o foi possÃ­vel carregar o imÃ³vel.</h1><p className="mt-4 text-white/50">Tente novamente em alguns instantes.</p><Link to="/imoveis" className="mt-8 inline-flex min-h-12 items-center rounded-[var(--radius-control)] bg-[#d7b661] px-6 font-semibold text-[#18181b]">Voltar aos imÃ³veis</Link></div></div>;
   }
 
   if (!property) {
@@ -39,7 +44,7 @@ export const PropertyDetails = () => {
   }
 
   const whatsappUrl = buildPropertyInquiry(property, window.location.origin);
-  const related = detailsView?.related ?? getRelatedProperties(property, 3);
+  const related = detailsView?.related ?? getRelatedProperties(property, 3, runtimeCatalog);
 
   const submitVisit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();

@@ -30,7 +30,7 @@ export const getResultRevealDelay = (index: number, reduceMotion: boolean | null
 export const Properties = () => {
   usePageMeta(getPageMetadata('properties'));
   const reduceMotion = useReducedMotion();
-  const { properties } = usePropertyCatalog();
+  const { properties, loading, error } = usePropertyCatalog();
   const [searchParams, setSearchParams] = useSearchParams();
   const latestSearchParams = useRef(searchParams);
   if (latestSearchParams.current.toString() !== searchParams.toString()) {
@@ -95,7 +95,11 @@ export const Properties = () => {
           {serializePropertySearchParams(state).size > 0 && <button type="button" onClick={clear} className="text-sm font-semibold text-[#d7b661] hover:text-white">Limpar filtros</button>}
           </div>
 
-          {results.length > 0 ? (
+          {loading ? (
+            <div className="mt-8 rounded-[var(--radius-surface)] border border-white/10 bg-white/[0.025] px-6 py-20 text-center" role="status"><p className="text-lg font-semibold text-white">Carregando imóveis publicados…</p><p className="mt-2 text-sm text-white/45">Buscando o catálogo atualizado.</p></div>
+          ) : error ? (
+            <div className="mt-8 rounded-[var(--radius-surface)] border border-[#d7b661]/30 bg-[#d7b661]/[0.055] px-6 py-20 text-center"><h2 className="text-2xl font-semibold text-white">Não foi possível carregar os imóveis.</h2><p className="mt-3 text-white/50">Tente atualizar a página em alguns instantes.</p></div>
+          ) : results.length > 0 ? (
             <>
               <div className="mt-8 grid gap-7 md:grid-cols-2 xl:grid-cols-3">{visibleResults.map((property, index) => (
                 <motion.div

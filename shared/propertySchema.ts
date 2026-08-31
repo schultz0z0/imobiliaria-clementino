@@ -404,7 +404,10 @@ const applyPrivateLocationRefinements = (
     property.publicLocation.latitude !== undefined &&
     property.publicLocation.longitude !== undefined;
   const coordinateDistance = hasBothCoordinatePairs
-    ? haversineDistanceMeters(property.privateAddress, property.publicLocation)
+    ? haversineDistanceMeters(
+      { latitude: property.privateAddress.latitude!, longitude: property.privateAddress.longitude! },
+      { latitude: property.publicLocation.latitude!, longitude: property.publicLocation.longitude! },
+    )
     : undefined;
   if (
     coordinateDistance !== undefined &&

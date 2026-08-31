@@ -5,6 +5,7 @@ import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { getAllProperties } from '../catalog/propertyCatalog';
+import { PropertyDetailsView } from '../components/properties/PropertyDetailsView';
 import { PropertyDetails } from './PropertyDetails';
 
 const propertyDetailsSource = readFileSync(new URL('./PropertyDetails.tsx', import.meta.url), 'utf8');
@@ -29,7 +30,10 @@ const renderProperty = (id: string): string => {
       createElement(
         Routes,
         null,
-        createElement(Route, { path: '/imoveis/:slug', element: createElement(PropertyDetails) }),
+        createElement(Route, {
+          path: '/imoveis/:slug',
+          element: createElement(PropertyDetailsView, { property }, createElement(PropertyDetails)),
+        }),
       ),
     ),
   );
