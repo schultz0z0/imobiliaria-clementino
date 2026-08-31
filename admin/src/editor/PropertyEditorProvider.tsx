@@ -125,7 +125,7 @@ export const PropertyEditorProvider = ({
 
   const createFromIntent = useCallback((patch: WizardValues) => {
     pendingCreateRef.current = mergeWizardValues(pendingCreateRef.current, patch);
-    if (creatingRef.current) return;
+    if (creatingRef.current) return creatingRef.current;
     const defaults = form.getValues();
     const initialPatch = mergeWizardValues({
       classification: { type: defaults.classification?.type, subtype: defaults.classification?.subtype },
@@ -135,7 +135,7 @@ export const PropertyEditorProvider = ({
     }, pendingCreateRef.current);
     pendingCreateRef.current = {};
     setAutosave({ status: 'saving', revision: 1 });
-    creatingRef.current = api.createProperty(initialPatch).then(({ property: created }) => {
+    const creation = api.createProperty(initialPatch).then(({ property: created }) => {
       acceptProperty(created);
       controller.setRevision(created.revisionNumber);
       setAutosave({ status: 'saved', revision: created.revisionNumber, savedAt: new Date() });
@@ -147,7 +147,12 @@ export const PropertyEditorProvider = ({
       setServerIssues(form, error);
       setAutosave({ status: 'error', revision: 1, error: error instanceof Error ? error : new Error('Falha ao criar o rascunho.') });
       pendingCreateRef.current = mergeWizardValues(initialPatch, pendingCreateRef.current);
-    }).finally(() => { creatingRef.current = undefined; });
+      throw error;
+    }).finally(() => {
+      if (creatingRef.current === creation) creatingRef.current = undefined;
+    });
+    creatingRef.current = creation;
+    return creation;
   }, [acceptProperty, api, controller, form, navigate]);
 
   useEffect(() => {
@@ -155,7 +160,7 @@ export const PropertyEditorProvider = ({
       if (suppressWatch.current || !info.name) return;
       const patch = patchForPath(values as WizardValues, info.name);
       if (!Object.keys(patch).length) return;
-      if (!idRef.current) createFromIntent(patch);
+      if (!idRef.current) void createFromIntent(patch).catch(() => undefined);
       else controller.queue(patch);
     });
     return () => subscription.unsubscribe();
@@ -173,10 +178,26 @@ export const PropertyEditorProvider = ({
 
   useEffect(() => () => controller.dispose(), [controller]);
 
+  const flushPersisted = useCallback(async () => {
+    if (!idRef.current) {
+      await (creatingRef.current ?? createFromIntent({}));
+    }
+    if (!idRef.current) throw new Error('Não foi possível criar o rascunho.');
+    await controller.flush();
+    let current = controller.getState();
+    if (current.status === 'error') {
+      await controller.retry();
+      current = controller.getState();
+    }
+    if (current.status === 'error' || current.status === 'conflict') {
+      throw current.error ?? new Error('Não foi possível salvar o rascunho.');
+    }
+  }, [controller, createFromIntent]);
+
   const runMediaMutation = useCallback((action: (id: string, revision: number) => Promise<{ property: PropertyAdminDto; photo?: MediaPhotoDto }>) => {
     const task = mediaQueueRef.current.then(async () => {
       if (!idRef.current) throw new Error('Preencha um campo para criar o rascunho antes de adicionar fotos.');
-      await controller.flush();
+      await flushPersisted();
       const propertyId = idRef.current;
       setMediaBusy(true); setMediaError(undefined);
       try {
@@ -198,19 +219,13 @@ export const PropertyEditorProvider = ({
     });
     mediaQueueRef.current = task.catch(() => undefined);
     return task;
-  }, [acceptProperty, api, controller, form]);
+  }, [acceptProperty, api, controller, flushPersisted, form]);
 
   const context = useMemo<EditorContextValue>(() => ({
     form, api, property, propertyId: property?.id ?? initialPropertyId, publicId: property?.publicId,
     revision: property?.revisionNumber ?? revisionRef.current, loading, loadError, autosave,
     retrySave: () => idRef.current ? controller.retry() : Promise.resolve(createFromIntent({})),
-    flushSave: async () => {
-      await controller.flush();
-      const current = controller.getState();
-      if (current.status === 'error' || current.status === 'conflict') {
-        throw current.error ?? new Error('Não foi possível salvar o rascunho.');
-      }
-    },
+    flushSave: flushPersisted,
     photos, mediaBusy, mediaError,
     uploadPhotos: async (files) => {
       for (const file of files) {
@@ -220,7 +235,7 @@ export const PropertyEditorProvider = ({
     reorderPhotos: (ids, cover) => runMediaMutation((id, revision) => api.reorderPhotos(id, revision, ids, cover)),
     editPhotoAlt: (photoId, alt) => runMediaMutation((id, revision) => api.editPhoto(id, photoId, revision, alt)),
     removePhoto: (photoId) => runMediaMutation((id, revision) => api.deletePhoto(id, photoId, revision)),
-  }), [api, autosave, controller, createFromIntent, form, initialPropertyId, loadError, loading, mediaBusy, mediaError, photos, property, runMediaMutation]);
+  }), [api, autosave, controller, createFromIntent, flushPersisted, form, initialPropertyId, loadError, loading, mediaBusy, mediaError, photos, property, runMediaMutation]);
 
   return <EditorContext.Provider value={context}><FormProvider {...form}>{children}</FormProvider></EditorContext.Provider>;
 };

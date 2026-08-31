@@ -1,11 +1,13 @@
 import { AlertCircle, Building2, ChevronLeft, ChevronRight, Plus, RefreshCw } from 'lucide-react';
 import React, { useEffect, useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { adminApi, type AdminPropertySummaryDto, type PropertyAdminApi, type PropertyListQuery } from '../api/client.ts';
+import { adminApi, ApiError, type AdminPropertySummaryDto, type PropertyAdminApi, type PropertyListQuery } from '../api/client.ts';
 import { AdminPropertyCard, type PropertyAction } from '../components/properties/AdminPropertyCard.tsx';
 import { AdminPropertyFilters, type PropertySort } from '../components/properties/AdminPropertyFilters.tsx';
+import { publicationIssueMessage } from '../editor/publicationIssues.ts';
 
 const PAGE_SIZE = 20;
+const publicOrigin = (import.meta as ImportMeta & { env?: Record<string, string> }).env?.VITE_PUBLIC_SITE_URL ?? 'https://clementinoimoveis.com.br';
 const statuses = new Set(['draft', 'published', 'inactive']);
 const operations = new Set(['sale', 'rent', 'seasonal', 'auction']);
 const types = new Set(['apartment', 'house', 'commercial', 'rural', 'land']);
@@ -51,7 +53,7 @@ export const PropertyList = ({ api = adminApi }: { api?: PropertyAdminApi }) => 
   const [state, setState] = useState<'loading' | 'ready' | 'error'>('loading');
   const [refreshVersion, setRefreshVersion] = useState(0);
   const [busy, setBusy] = useState<{ id: string; action: PropertyAction } | null>(null);
-  const [notice, setNotice] = useState<{ tone: 'success' | 'error'; text: string } | null>(null);
+  const [notice, setNotice] = useState<{ tone: 'success' | 'error'; text: string; issues?: string[]; editPropertyId?: string } | null>(null);
 
   useEffect(() => {
     let active = true;
@@ -73,9 +75,22 @@ export const PropertyList = ({ api = adminApi }: { api?: PropertyAdminApi }) => 
   const runAction = async (action: PropertyAction, property: AdminPropertySummaryDto) => {
     if (action === 'publish' && !window.confirm(`Solicitar a publicação de “${property.title}”?`)) return;
     if (action === 'inactivate' && !window.confirm('Inativar este imóvel e solicitar sua retirada do site público?')) return;
+    const previewWindow = action === 'preview' ? window.open('about:blank', '_blank') : null;
+    if (previewWindow) previewWindow.opener = null;
     setBusy({ id: property.id, action }); setNotice(null);
     try {
-      if (action === 'publish') {
+      if (action === 'preview') {
+        const preview = await api.createPropertyPreview(property.id);
+        if (!previewWindow) throw new Error('preview popup blocked');
+        previewWindow.location.href = `${publicOrigin}${preview.previewPath}`;
+        setNotice({ tone: 'success', text: 'Prévia segura aberta em uma nova aba. O link expira em 30 minutos.' });
+      } else if (action === 'publish') {
+        const validation = await api.validateProperty(property.id);
+        if (!validation.publishable) {
+          const issues = [...new Set(validation.issues.map((issue) => publicationIssueMessage(issue.path)))];
+          setNotice({ tone: 'error', text: 'Complete estas pendências antes de publicar:', issues, editPropertyId: property.id });
+          return;
+        }
         await api.publishProperty(property.id);
         setNotice({ tone: 'success', text: 'Publicação solicitada. O imóvel entrará no site somente após a validação da fila.' });
       } else if (action === 'duplicate') {
@@ -89,8 +104,18 @@ export const PropertyList = ({ api = adminApi }: { api?: PropertyAdminApi }) => 
         setNotice({ tone: 'success', text: 'Imóvel reativado.' });
       }
       setRefreshVersion((version) => version + 1);
-    } catch {
-      setNotice({ tone: 'error', text: 'Não foi possível concluir a ação. Atualize os dados e tente novamente.' });
+    } catch (error) {
+      previewWindow?.close();
+      if (action === 'publish' && error instanceof ApiError && error.issues.length > 0) {
+        setNotice({
+          tone: 'error',
+          text: 'Complete estas pendências antes de publicar:',
+          issues: [...new Set(error.issues.map((issue) => publicationIssueMessage(issue.path)))],
+          editPropertyId: property.id,
+        });
+      } else {
+        setNotice({ tone: 'error', text: 'Não foi possível concluir a ação. Atualize os dados e tente novamente.' });
+      }
     } finally { setBusy(null); }
   };
 
@@ -98,7 +123,7 @@ export const PropertyList = ({ api = adminApi }: { api?: PropertyAdminApi }) => 
     <section className="page-stack" aria-labelledby="property-list-title">
       <div className="page-heading page-heading-actions"><div><p className="eyebrow">Catálogo</p><h1 id="property-list-title">Imóveis</h1><p>Gerencie rascunhos, publicações e imóveis inativos.</p></div><Link className="button button-primary" to="/imoveis/novo"><Plus aria-hidden="true" />Cadastrar imóvel</Link></div>
       <AdminPropertyFilters key={searchKey} initialValues={query} sort={query.sort} onSort={(sort) => updateQuery({ ...query, sort, page: 1 })} onApply={applyFilters} onClear={() => updateQuery({ page: 1, limit: PAGE_SIZE, sort: query.sort })} />
-      {notice ? <p className={notice.tone === 'error' ? 'form-alert list-notice' : 'form-notice list-notice'} role={notice.tone === 'error' ? 'alert' : 'status'}>{notice.text}</p> : null}
+      {notice ? <div className={notice.tone === 'error' ? 'form-alert list-notice' : 'form-notice list-notice'} role={notice.tone === 'error' ? 'alert' : 'status'}><p>{notice.text}</p>{notice.issues?.length ? <ul>{notice.issues.map((issue) => <li key={issue}>{issue}</li>)}</ul> : null}{notice.editPropertyId ? <Link to={`/imoveis/${notice.editPropertyId}/editar`}>Editar imóvel</Link> : null}</div> : null}
       {state === 'loading' ? <div className="panel-state" role="status"><RefreshCw className="spin" aria-hidden="true" /><p>Carregando imóveis…</p></div> : null}
       {state === 'error' ? <div className="panel-state panel-state-error" role="alert"><AlertCircle aria-hidden="true" /><h2>Não foi possível carregar os imóveis</h2><p>Verifique sua conexão e tente novamente.</p><button className="button button-secondary" type="button" onClick={() => setRefreshVersion((version) => version + 1)}><RefreshCw aria-hidden="true" />Tentar novamente</button></div> : null}
       {state === 'ready' && items.length === 0 ? <div className="empty-state"><Building2 aria-hidden="true" /><h2>Nenhum imóvel encontrado</h2><p>Ajuste os filtros ou cadastre um novo imóvel.</p></div> : null}

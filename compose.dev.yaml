@@ -12,6 +12,7 @@ services:
       CHOKIDAR_USEPOLLING: "true"
       CHOKIDAR_INTERVAL: "500"
       DISABLE_HMR: "false"
+      PUBLIC_API_PROXY_TARGET: http://admin-api:3000
     volumes:
       - .:/app
       - node_modules:/app/node_modules
@@ -25,6 +26,7 @@ services:
       - "4175:4175"
     environment:
       ADMIN_API_PROXY_TARGET: http://admin-api:3000
+      VITE_PUBLIC_SITE_URL: http://localhost:4174
       CHOKIDAR_USEPOLLING: "true"
       CHOKIDAR_INTERVAL: "500"
     depends_on:
@@ -72,7 +74,7 @@ services:
       NODE_ENV: development
       DATABASE_URL: postgresql://clementino_dev:clementino_dev@postgres:5432/clementino_dev
       MEDIA_ROOT: /data/media
-      PUBLIC_RELEASE_ROOT: /data/releases
+      PUBLISHED_ROOT: /data/releases
     depends_on:
       admin-api:
         condition: service_healthy
@@ -83,7 +85,7 @@ services:
       - dev_media_public:/data/media/public
       - dev_releases:/data/releases
     healthcheck:
-      test: ["CMD-SHELL", "node -e \"process.exit(0)\""]
+      test: ["CMD-SHELL", "kill -0 1"]
       interval: 30s
       timeout: 5s
       retries: 3

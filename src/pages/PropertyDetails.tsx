@@ -9,14 +9,20 @@ import { PropertyCard } from '../components/properties/PropertyCard';
 import { PropertyFacts } from '../components/properties/PropertyFacts';
 import { PropertyGallery } from '../components/properties/PropertyGallery';
 import { PropertyMap } from '../components/properties/PropertyMap';
+import { usePropertyDetailsView } from '../components/properties/PropertyDetailsView';
 import { buildPropertyInquiry, buildVisitInquiry } from '../contact/whatsapp';
 import { getPageMetadata } from '../config/pageMetadata';
 import { usePageMeta } from '../hooks/usePageMeta';
+import { usePropertyCatalog } from '../hooks/usePropertyCatalog';
 
 export const PropertyDetails = () => {
   const { slug = '' } = useParams();
-  const property = getPropertyBySlug(slug);
-  usePageMeta(property ? getPageMetadata('property', property) : getPageMetadata('notFound'));
+  const detailsView = usePropertyDetailsView();
+  const { properties: runtimeCatalog, loading: catalogLoading } = usePropertyCatalog();
+  const runtimeProperty = runtimeCatalog.find((candidate) => candidate.slug === slug);
+  const property = detailsView?.property ?? runtimeProperty ?? getPropertyBySlug(slug);
+  const propertyMetadata = property ? getPageMetadata('property', property) : getPageMetadata('notFound');
+  usePageMeta(detailsView?.preview ? { ...propertyMetadata, robots: 'noindex, nofollow' } : propertyMetadata);
   const [modalOpen, setModalOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
@@ -24,12 +30,16 @@ export const PropertyDetails = () => {
     window.scrollTo(0, 0);
   }, [slug]);
 
+  if (!property && catalogLoading) {
+    return <div className="relative z-10 flex min-h-screen items-center justify-center pt-24 text-white" role="status">Carregando imóvel…</div>;
+  }
+
   if (!property) {
     return <div className="relative z-10 flex min-h-screen items-center justify-center px-6 pt-24 text-center"><div><p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#d7b661]">Catálogo Clementino</p><h1 className="mt-4 text-4xl font-semibold text-white">Imóvel não encontrado.</h1><p className="mt-4 text-white/50">O endereço pode ter mudado ou o imóvel não está mais no catálogo.</p><Link to="/imoveis" className="mt-8 inline-flex min-h-12 items-center rounded-[var(--radius-control)] bg-[#d7b661] px-6 font-semibold text-[#18181b]">Voltar aos imóveis</Link></div></div>;
   }
 
   const whatsappUrl = buildPropertyInquiry(property, window.location.origin);
-  const related = getRelatedProperties(property, 3);
+  const related = detailsView?.related ?? getRelatedProperties(property, 3);
 
   const submitVisit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -42,6 +52,7 @@ export const PropertyDetails = () => {
   return (
     <div className="relative z-10 pb-[calc(8rem+env(safe-area-inset-bottom))] pt-28 lg:pb-24 lg:pt-32">
       <div className="container mx-auto px-6">
+        {detailsView?.preview ? <div className="mb-6 rounded-[var(--radius-control)] border border-[#d7b661]/45 bg-[#d7b661]/10 px-5 py-4 text-sm text-[#f1d985]" role="status"><strong>Prévia do rascunho.</strong> Esta página não está publicada e o link expira em 30 minutos.</div> : null}
         <Breadcrumbs items={[{ label: 'Início', path: '/' }, { label: 'Imóveis', path: '/imoveis' }, { label: `Ref. ${property.reference}` }]} />
 
         <PropertyGallery images={property.images} title={property.title} />

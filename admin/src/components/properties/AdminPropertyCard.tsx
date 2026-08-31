@@ -2,7 +2,7 @@ import { Building2, Copy, Eye, FilePenLine, Power, Rocket, RotateCcw } from 'luc
 import React from 'react';
 import type { AdminPropertySummaryDto, PropertyOperation } from '../../api/client.ts';
 
-export type PropertyAction = 'publish' | 'inactivate' | 'reactivate' | 'duplicate';
+export type PropertyAction = 'preview' | 'publish' | 'inactivate' | 'reactivate' | 'duplicate';
 
 type Props = {
   property: AdminPropertySummaryDto;
@@ -39,7 +39,7 @@ export const AdminPropertyCard = ({ property, busyAction, onAction }: Props) => 
         </dl>
       </div>
       <div className="property-actions" aria-label={`Ações de ${title}`}>
-        {property.status === 'published' ? <a className="action-link" href={`${publicOrigin}/imoveis/${property.slug}`} target="_blank" rel="noreferrer"><Eye aria-hidden="true" />Visualizar</a> : <span className="action-disabled" aria-disabled="true" title="Disponível somente para imóveis publicados"><Eye aria-hidden="true" />Visualização indisponível</span>}
+        {property.status === 'published' ? <a className="action-link" href={`${publicOrigin}/imoveis/${property.slug}`} target="_blank" rel="noreferrer"><Eye aria-hidden="true" />Visualizar</a> : property.status === 'draft' ? <button type="button" onClick={() => onAction('preview', property)} disabled={Boolean(busyAction)}><Eye aria-hidden="true" />{busyAction === 'preview' ? 'Gerando…' : 'Visualizar prévia'}</button> : <span className="action-disabled" aria-disabled="true"><Eye aria-hidden="true" />Visualização indisponível</span>}
         <a className="action-link" href={`/imoveis/${property.id}/editar`}><FilePenLine aria-hidden="true" />Editar</a>
         {property.status !== 'inactive' ? <button type="button" onClick={() => onAction('publish', property)} disabled={Boolean(busyAction)}><Rocket aria-hidden="true" />{busyAction === 'publish' ? 'Solicitando…' : 'Publicar'}</button> : null}
         {property.status !== 'inactive' ? <button type="button" onClick={() => onAction('inactivate', property)} disabled={Boolean(busyAction)}><Power aria-hidden="true" />{busyAction === 'inactivate' ? 'Inativando…' : 'Inativar'}</button> : <button type="button" onClick={() => onAction('reactivate', property)} disabled={Boolean(busyAction)}><RotateCcw aria-hidden="true" />{busyAction === 'reactivate' ? 'Reativando…' : 'Reativar'}</button>}

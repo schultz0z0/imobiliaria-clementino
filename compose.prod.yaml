@@ -9,6 +9,8 @@ services:
       args:
         VITE_GA_MEASUREMENT_ID: ${VITE_GA_MEASUREMENT_ID:-}
     restart: unless-stopped
+    volumes:
+      - published_releases:/data/published:ro
     expose:
       - "80"
     healthcheck:
@@ -63,12 +65,28 @@ services:
       DATABASE_URL: ${DATABASE_URL:?DATABASE_URL is required}
       MEDIA_ROOT: /data/media
       PUBLISHED_ROOT: /data/published
+      PUBLIC_SITE_ORIGIN: https://${DOMAIN}
+      PREVIEW_TOKEN_SECRET: ${PREVIEW_TOKEN_SECRET:?PREVIEW_TOKEN_SECRET is required}
     volumes:
       - media_data:/data/media
       - published_releases:/data/published
     depends_on:
       postgres:
         condition: service_healthy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.imobiliaria-preview-api.rule=Host(`${DOMAIN}`) && PathPrefix(`/api/property-previews`)"
+      - "traefik.http.routers.imobiliaria-preview-api.entrypoints=websecure"
+      - "traefik.http.routers.imobiliaria-preview-api.tls=true"
+      - "traefik.http.routers.imobiliaria-preview-api.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.imobiliaria-preview-api.priority=100"
+      - "traefik.http.services.imobiliaria-preview-api.loadbalancer.server.port=3000"
+      - "traefik.http.routers.imobiliaria-public-catalog.rule=Host(`${DOMAIN}`) && PathPrefix(`/api/public`)"
+      - "traefik.http.routers.imobiliaria-public-catalog.entrypoints=websecure"
+      - "traefik.http.routers.imobiliaria-public-catalog.tls=true"
+      - "traefik.http.routers.imobiliaria-public-catalog.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.imobiliaria-public-catalog.priority=100"
+      - "traefik.http.routers.imobiliaria-public-catalog.service=imobiliaria-preview-api"
 
   publisher:
     build:
@@ -82,12 +100,18 @@ services:
       DATABASE_URL: ${DATABASE_URL:?DATABASE_URL is required}
       MEDIA_ROOT: /data/media
       PUBLISHED_ROOT: /data/published
+      PUBLIC_SITE_ORIGIN: https://${DOMAIN}
     volumes:
       - media_data:/data/media
       - published_releases:/data/published
     depends_on:
       postgres:
         condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "kill -0 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
 
   postgres:
     image: postgres:16-alpine

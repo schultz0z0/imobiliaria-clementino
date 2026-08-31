@@ -11,6 +11,8 @@ import {
 import { registerPropertyRoutes } from './propertyRoutes.ts';
 import { registerLocationRoutes, type LocationRouteOptions } from './locationRoutes.ts';
 import { registerPublicationRoutes } from './publicationRoutes.ts';
+import { registerPreviewRoutes } from './previewRoutes.ts';
+import { registerPublicCatalogRoutes } from './publicCatalogRoutes.ts';
 
 export type CreateServerOptions = {
   sql?: Sql;
@@ -18,6 +20,8 @@ export type CreateServerOptions = {
   auth?: AuthOptions;
   mediaRoot?: string;
   mediaMaxImageBytes?: number;
+  previewTokenSecret?: string;
+  previewTtlSeconds?: number;
   logger?: FastifyServerOptions['logger'];
   location?: LocationRouteOptions;
 };
@@ -27,6 +31,13 @@ export const createServer = (options: CreateServerOptions = {}) => {
   const ownsSql = options.sql === undefined;
   const sql = options.sql ?? getPostgresClient();
   const environment = options.environment ?? process.env.NODE_ENV ?? 'development';
+  const mediaRoot = options.mediaRoot ?? process.env.MEDIA_ROOT ?? '/data/media';
+  const previewTokenSecret = options.previewTokenSecret
+    ?? process.env.PREVIEW_TOKEN_SECRET
+    ?? (environment === 'production' ? '' : 'clementino-local-preview-secret-change-in-production');
+  if (previewTokenSecret.length < 32) {
+    throw new Error('PREVIEW_TOKEN_SECRET deve ter pelo menos 32 caracteres.');
+  }
 
   app.register(fastifyCookie);
   app.register(fastifyHelmet);
@@ -34,6 +45,12 @@ export const createServer = (options: CreateServerOptions = {}) => {
   registerAuthRoutes(app, sql, environment, options.auth);
   app.register(async (propertyApp) => registerPropertyRoutes(propertyApp, sql));
   app.register(async (publicationApp) => registerPublicationRoutes(publicationApp, sql));
+  app.register(async (previewApp) => registerPreviewRoutes(previewApp, sql, {
+    secret: previewTokenSecret,
+    mediaRoot,
+    ttlSeconds: options.previewTtlSeconds,
+  }));
+  app.register(async (publicCatalogApp) => registerPublicCatalogRoutes(publicCatalogApp, sql, { mediaRoot }));
   app.register(async (locationApp) =>
     registerLocationRoutes(locationApp, sql, { ...options.location, environment }),
   );
@@ -42,7 +59,7 @@ export const createServer = (options: CreateServerOptions = {}) => {
     await registerMediaRoutes(
       mediaApp,
       sql,
-      options.mediaRoot ?? process.env.MEDIA_ROOT ?? '/data/media',
+      mediaRoot,
       options.mediaMaxImageBytes,
     );
   });

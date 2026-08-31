@@ -103,15 +103,20 @@ export const enqueuePublicationJob = async (
 
 export const claimNextPublicationJob = async (
   sql: SqlExecutor,
+  staleAfterMs = 10 * 60_000,
 ): Promise<PublicationJobRecord | null> =>
   withTransaction(sql, async (transaction) => {
+    if (!Number.isSafeInteger(staleAfterMs) || staleAfterMs < 1_000) {
+      throw new Error('Publication job lease must be at least one second');
+    }
     await transaction`SELECT pg_advisory_xact_lock(hashtext('site_publication'))`;
     const rows = await transaction<PublicationJobRow[]>`
       WITH candidate AS (
         SELECT id
         FROM publication_jobs
         WHERE status = 'queued'
-        ORDER BY queued_at, id
+          OR (status = 'running' AND started_at < clock_timestamp() - (${staleAfterMs}::bigint * interval '1 millisecond'))
+        ORDER BY CASE WHEN status = 'running' THEN 0 ELSE 1 END, queued_at, id
         FOR UPDATE SKIP LOCKED
         LIMIT 1
       )

@@ -82,7 +82,7 @@ test('nginx revalidates prerendered HTML while keeping fingerprinted assets immu
 
   assert.match(
     nginx,
-    /location \/ \{[\s\S]*add_header Cache-Control "no-cache";[\s\S]*try_files \$uri\.html \$uri \$uri\/ \/index\.html;[\s\S]*\}/,
+    /location \/ \{[\s\S]*add_header Cache-Control "no-cache";[\s\S]*root \/data\/published\/current;[\s\S]*try_files \$uri\.html \$uri \$uri\/ @bundled_app;[\s\S]*\}/,
   );
   assert.match(
     nginx,
@@ -100,6 +100,16 @@ test('development compose keeps admin, publisher and postgres persistent and pri
   assert.doesNotMatch(compose, /postgres:[\s\S]*?ports:/);
   assert.match(compose, /healthcheck:/g);
   assert.match(readFileSync(new URL('../.env.development.example', import.meta.url), 'utf8'), /ADMIN_SESSION_SECRET/);
+  assert.match(compose, /PUBLISHED_ROOT: \/data\/releases/);
+  assert.match(compose, /publisher:[\s\S]*?healthcheck:[\s\S]*?kill -0 1/);
+});
+
+test('production exposes only signed preview reads on the public host', () => {
+  const compose = readFileSync(new URL('../compose.prod.yaml', import.meta.url), 'utf8');
+  assert.match(compose, /PREVIEW_TOKEN_SECRET: \$\{PREVIEW_TOKEN_SECRET:\?PREVIEW_TOKEN_SECRET is required\}/);
+  assert.match(compose, /PathPrefix\(`\/api\/property-previews`\)/);
+  assert.match(compose, /PathPrefix\(`\/api\/public`\)/);
+  assert.match(compose, /imobiliaria-preview-api\.priority=100/);
 });
 
 test('admin frontend proxies API requests through the same origin in development and production', () => {

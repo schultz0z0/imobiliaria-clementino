@@ -38,8 +38,8 @@ test('inactive property offers reactivation instead of publication controls', ()
   assert.doesNotMatch(html, />Inativar</);
 });
 
-test('draft property cannot open a non-existent public page', () => {
+test('draft property offers a protected preview instead of a non-existent public page', () => {
   const html = renderToStaticMarkup(<AdminPropertyCard property={{ ...base, status: 'draft' }} onAction={() => undefined} />);
-  assert.match(html, /Visualização indisponível/);
+  assert.match(html, /Visualizar pr/);
   assert.doesNotMatch(html, /target="_blank"/);
 });

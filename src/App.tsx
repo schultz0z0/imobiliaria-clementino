@@ -13,6 +13,7 @@ import { AnalyticsBridge } from './analytics/AnalyticsBridge';
 
 const Properties = lazy(() => import('./pages/Properties').then((module) => ({ default: module.Properties })));
 const PropertyDetails = lazy(() => import('./pages/PropertyDetails').then((module) => ({ default: module.PropertyDetails })));
+const PropertyPreview = lazy(() => import('./pages/PropertyPreview').then((module) => ({ default: module.PropertyPreview })));
 const About = lazy(() => import('./pages/About').then((module) => ({ default: module.About })));
 const Services = lazy(() => import('./pages/Services').then((module) => ({ default: module.Services })));
 const Contact = lazy(() => import('./pages/Contact').then((module) => ({ default: module.Contact })));
@@ -42,6 +43,7 @@ export default function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/imoveis" element={<Properties />} />
+                <Route path="/imoveis/preview/:token" element={<PropertyPreview />} />
                 <Route path="/imoveis/:slug" element={<PropertyDetails />} />
                 <Route path="/sobre" element={<About />} />
                 <Route path="/servicos" element={<Services />} />

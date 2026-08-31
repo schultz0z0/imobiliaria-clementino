@@ -37,6 +37,7 @@ const detail = (summary: AdminPropertySummaryDto): PropertyAdminDto => ({
 });
 
 const response = (items: AdminPropertySummaryDto[]): PropertyListResponse => ({ items, pagination: { page: 1, limit: 20, total: items.length, pages: items.length ? 1 : 0 } });
+const createPropertyPreview = async () => ({ token: 'token', expiresAt: '2026-08-31T12:30:00Z', previewPath: '/imoveis/preview/token' });
 
 const LocationProbe = () => {
   const location = useLocation();
@@ -65,6 +66,8 @@ test('list sends search and approved filters and sorts the returned properties',
   const api: PropertyAdminApi = {
     listProperties: async (query) => { calls.push(query); return response(items); },
     getLatestPublication: async () => ({ publication: null }),
+    createPropertyPreview,
+    validateProperty: async () => ({ publishable: true, issues: [] }),
     publishProperty: async () => ({ job: { id: 7, status: 'queued' } }),
     inactivateProperty: async (id) => ({ property: detail(items.find((item) => item.id === id)!), job: null }),
     reactivateProperty: async (id) => ({ property: detail(items.find((item) => item.id === id)!), job: null }),
@@ -103,6 +106,8 @@ test('list exposes view/edit and safe lifecycle actions without hover-only contr
   const api: PropertyAdminApi = {
     listProperties: async () => response([current]),
     getLatestPublication: async () => ({ publication: null }),
+    createPropertyPreview,
+    validateProperty: async () => ({ publishable: true, issues: [] }),
     publishProperty: async (id) => { calls.push(`publish:${id}`); return { job: { id: 9, status: 'queued' } }; },
     inactivateProperty: async (id) => { calls.push(`inactivate:${id}`); current = { ...source, status: 'inactive' }; return { property: detail(current), job: null }; },
     reactivateProperty: async (id) => { calls.push(`reactivate:${id}`); current = source; return { property: detail(source), job: null }; },
@@ -134,6 +139,8 @@ test('list has loading, empty, error and retry states', async () => {
   const api: PropertyAdminApi = {
     listProperties: async () => { calls += 1; if (calls === 1) throw new Error('secret'); return response([]); },
     getLatestPublication: async () => ({ publication: null }),
+    createPropertyPreview,
+    validateProperty: async () => ({ publishable: true, issues: [] }),
     publishProperty: async () => ({ job: { id: 1, status: 'queued' } }),
     inactivateProperty: async () => { throw new Error(); }, reactivateProperty: async () => { throw new Error(); }, duplicateProperty: async () => { throw new Error(); },
   };
@@ -151,7 +158,7 @@ test('URL initializes every filter, sort and page while fetching only the curren
   const item = property('55555555-5555-4555-8555-555555555555', 'Ipanema', '2026-08-29T12:00:00Z', 1_800_000);
   const api: PropertyAdminApi = {
     listProperties: async (query) => { calls.push(query); return { items: [item], pagination: { page: query.page ?? 1, limit: 20, total: 21, pages: 2 } }; },
-    getLatestPublication: async () => ({ publication: null }), publishProperty: async () => ({ job: { id: 1, status: 'queued' } }), inactivateProperty: async () => ({ property: detail(item), job: null }), reactivateProperty: async () => ({ property: detail(item), job: null }), duplicateProperty: async () => ({ property: detail(item) }),
+    getLatestPublication: async () => ({ publication: null }), createPropertyPreview, validateProperty: async () => ({ publishable: true, issues: [] }), publishProperty: async () => ({ job: { id: 1, status: 'queued' } }), inactivateProperty: async () => ({ property: detail(item), job: null }), reactivateProperty: async () => ({ property: detail(item), job: null }), duplicateProperty: async () => ({ property: detail(item) }),
   };
   const entry = '/imoveis?search=Ipanema&status=published&operation=sale&type=apartment&state=RJ&city=Rio+de+Janeiro&district=Ipanema&sort=title-desc&page=2';
   const { container, root, previous } = await renderList(api, entry, '/imoveis?status=draft&sort=price-asc&page=1');
@@ -171,7 +178,7 @@ test('successful mutations refetch the current versioned query instead of patchi
   const source = property('66666666-6666-4666-8666-666666666666', 'Botafogo', '2026-08-29T12:00:00Z', 1_100_000);
   let listCalls = 0;
   const api: PropertyAdminApi = {
-    listProperties: async () => { listCalls += 1; return response([source]); }, getLatestPublication: async () => ({ publication: null }),
+    listProperties: async () => { listCalls += 1; return response([source]); }, getLatestPublication: async () => ({ publication: null }), createPropertyPreview, validateProperty: async () => ({ publishable: true, issues: [] }),
     publishProperty: async () => ({ job: { id: 2, status: 'queued' } }), inactivateProperty: async () => ({ property: detail({ ...source, status: 'inactive' }), job: null }), reactivateProperty: async () => ({ property: detail(source), job: null }), duplicateProperty: async () => ({ property: detail({ ...source, id: '77777777-7777-4777-8777-777777777777', status: 'draft' }) }),
   };
   const { container, root, previous } = await renderList(api);
@@ -196,6 +203,8 @@ test('a slower obsolete request cannot replace the newest filtered page', async 
       return calls === 1 ? oldResponse : response(query.status === 'draft' ? [newItem] : [oldItem]);
     },
     getLatestPublication: async () => ({ publication: null }),
+    createPropertyPreview,
+    validateProperty: async () => ({ publishable: true, issues: [] }),
     publishProperty: async () => ({ job: { id: 3, status: 'queued' } }),
     inactivateProperty: async () => ({ property: detail(oldItem), job: null }),
     reactivateProperty: async () => ({ property: detail(oldItem), job: null }),
@@ -224,6 +233,8 @@ test('a completed mutation refreshes the filters that are current at completion 
   const api: PropertyAdminApi = {
     listProperties: async (query) => { calls.push(query); return response([source]); },
     getLatestPublication: async () => ({ publication: null }),
+    createPropertyPreview,
+    validateProperty: async () => ({ publishable: true, issues: [] }),
     publishProperty: async () => publishing,
     inactivateProperty: async () => ({ property: detail(source), job: null }),
     reactivateProperty: async () => ({ property: detail(source), job: null }),
@@ -244,5 +255,61 @@ test('a completed mutation refreshes the filters that are current at completion 
   assert.equal(calls.at(-1)?.status, 'draft');
   assert.equal(calls.at(-1)?.sort, 'updated-desc');
   window.confirm = oldConfirm;
+  await act(async () => root.unmount()); Object.assign(globalThis, previous);
+});
+
+test('publish validation shows canonical issues in Portuguese before queuing a job', async () => {
+  const source = property('bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb', 'Rascunho incompleto', '2026-08-31T12:00:00Z', 0, 'draft');
+  let publishCalls = 0;
+  const api: PropertyAdminApi = {
+    listProperties: async () => response([source]),
+    getLatestPublication: async () => ({ publication: null }),
+    createPropertyPreview,
+    validateProperty: async () => ({
+      publishable: false,
+      issues: [
+        { path: ['privateAddress', 'postalCode'], message: 'Invalid input' },
+        { path: ['editorial', 'description'], message: 'Too small' },
+      ],
+    }),
+    publishProperty: async () => { publishCalls += 1; return { job: { id: 5, status: 'queued' } }; },
+    inactivateProperty: async () => ({ property: detail(source), job: null }),
+    reactivateProperty: async () => ({ property: detail(source), job: null }),
+    duplicateProperty: async () => ({ property: detail(source) }),
+  };
+  const { container, root, previous } = await renderList(api);
+  const oldConfirm = window.confirm;
+  window.confirm = () => true;
+  const publish = Array.from(container.querySelectorAll<HTMLButtonElement>('button')).find((button) => /^Publicar$/.test(button.textContent ?? ''))!;
+  await act(async () => { publish.click(); await Promise.resolve(); await Promise.resolve(); });
+  assert.equal(publishCalls, 0);
+  assert.match(container.textContent ?? '', /Complete CEP, UF, cidade, bairro e logradouro/);
+  assert.match(container.textContent ?? '', /descrição com pelo menos 80 caracteres/);
+  assert.ok(container.querySelector(`a[href="/imoveis/${source.id}/editar"]`));
+  window.confirm = oldConfirm;
+  await act(async () => root.unmount()); Object.assign(globalThis, previous);
+});
+
+test('draft preview opens the signed public-site path in a pre-created tab', async () => {
+  const source = property('cccccccc-cccc-4ccc-8ccc-cccccccccccc', 'Rascunho para prévia', '2026-08-31T13:00:00Z', 0, 'draft');
+  const api: PropertyAdminApi = {
+    listProperties: async () => response([source]),
+    getLatestPublication: async () => ({ publication: null }),
+    createPropertyPreview: async () => ({ token: 'signed', expiresAt: '2026-08-31T13:30:00Z', previewPath: '/imoveis/preview/signed' }),
+    validateProperty: async () => ({ publishable: true, issues: [] }),
+    publishProperty: async () => ({ job: { id: 6, status: 'queued' } }),
+    inactivateProperty: async () => ({ property: detail(source), job: null }),
+    reactivateProperty: async () => ({ property: detail(source), job: null }),
+    duplicateProperty: async () => ({ property: detail(source) }),
+  };
+  const { container, root, previous } = await renderList(api);
+  const oldOpen = window.open;
+  const popup = { location: { href: '' }, opener: window, close: () => undefined } as unknown as Window;
+  window.open = () => popup;
+  const preview = Array.from(container.querySelectorAll<HTMLButtonElement>('button')).find((button) => /Visualizar prévia/.test(button.textContent ?? ''))!;
+  await act(async () => { preview.click(); await Promise.resolve(); await Promise.resolve(); });
+  assert.equal(popup.location.href, 'https://clementinoimoveis.com.br/imoveis/preview/signed');
+  assert.match(container.textContent ?? '', /Prévia segura aberta/);
+  window.open = oldOpen;
   await act(async () => root.unmount()); Object.assign(globalThis, previous);
 });

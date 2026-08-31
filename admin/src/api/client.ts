@@ -78,6 +78,8 @@ export type PropertyLifecycleResponse = { property: PropertyAdminDto; job: Publi
 export type PropertyAdminApi = {
   listProperties: (query?: PropertyListQuery) => Promise<PropertyListResponse>;
   getLatestPublication: () => Promise<{ publication: PublicationJobSummary | null }>;
+  validateProperty: (id: string) => Promise<{ publishable: boolean; issues: ApiFieldIssue[] }>;
+  createPropertyPreview: (id: string) => Promise<{ token: string; expiresAt: string; previewPath: string }>;
   publishProperty: (id: string) => Promise<{ job: PublicationMutationJob }>;
   inactivateProperty: (id: string) => Promise<PropertyLifecycleResponse>;
   reactivateProperty: (id: string) => Promise<PropertyLifecycleResponse>;
@@ -227,6 +229,14 @@ export class AdminApiClient implements AuthApi, PropertyAdminApi, PropertyEditor
 
   getLatestPublication(): Promise<{ publication: PublicationJobSummary | null }> {
     return this.request('/publications/latest');
+  }
+
+  validateProperty(id: string): Promise<{ publishable: boolean; issues: ApiFieldIssue[] }> {
+    return this.request(`/properties/${encodeURIComponent(id)}/validation`);
+  }
+
+  createPropertyPreview(id: string): Promise<{ token: string; expiresAt: string; previewPath: string }> {
+    return this.request(`/properties/${encodeURIComponent(id)}/preview-token`, { method: 'POST', body: '{}' });
   }
 
   publishProperty(id: string): Promise<{ job: PublicationMutationJob }> {

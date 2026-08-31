@@ -393,6 +393,7 @@ test('uses finite, strictly scoped cookies and enables Secure only in production
   const productionApp = createServer({
     sql,
     environment: 'production',
+    previewTokenSecret: 'auth-integration-preview-secret-2026-safe',
     location: { privacySecret: 'auth-cookie-test-location-secret-2026' },
   });
   const production = await login(productionApp, 'administrador', initialPassword);

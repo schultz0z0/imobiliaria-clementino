@@ -4,7 +4,7 @@ import { publishablePropertySchema, type PublishableProperty } from '../../share
 import type { SqlExecutor } from '../db/client.ts';
 import type { CatalogSource, CanonicalPublishedProperty } from '../../scripts/catalog/catalogSource.ts';
 
-type PublishedRow = {
+export type PublishedRow = {
   id: string;
   public_id: string;
   commercial_reference: string;
@@ -25,6 +25,9 @@ type MediaRow = {
 export type DatabaseCatalogSourceOptions = {
   /** Public URL prefix where the publisher writes derived media. */
   mediaPathPrefix?: string;
+  /** Immutable snapshot being published. It is overlaid on the current catalog
+   * so the release always contains the revision that triggered the job. */
+  overlay?: PublishedRow;
 };
 
 const brl = new Intl.NumberFormat('pt-BR', {
@@ -131,14 +134,23 @@ export const createDatabaseCatalogSource = (
   options: DatabaseCatalogSourceOptions = {},
 ): CatalogSource => ({
   async loadPublishedProperties(): Promise<CanonicalPublishedProperty[]> {
-    const rows = await sql<PublishedRow[]>`
-      SELECT p.id, p.public_id, p.commercial_reference, p.slug, revision.payload
-      FROM properties AS p
-      JOIN property_revisions AS revision ON revision.id = p.published_revision_id
-      WHERE p.status = 'published'
-      ORDER BY p.public_id
-    `;
-    if (rows.length === 0) return [];
+    const rows = options.overlay
+      ? await sql<PublishedRow[]>`
+          SELECT p.id, p.public_id, p.commercial_reference, p.slug, revision.payload
+          FROM properties AS p
+          JOIN property_revisions AS revision ON revision.id = p.published_revision_id
+          WHERE p.status = 'published' AND p.id <> ${options.overlay.id}
+          ORDER BY p.public_id
+        `
+      : await sql<PublishedRow[]>`
+          SELECT p.id, p.public_id, p.commercial_reference, p.slug, revision.payload
+          FROM properties AS p
+          JOIN property_revisions AS revision ON revision.id = p.published_revision_id
+          WHERE p.status = 'published'
+          ORDER BY p.public_id
+        `;
+    const allRows = options.overlay ? [...rows, options.overlay].sort((a, b) => a.public_id.localeCompare(b.public_id)) : rows;
+    if (allRows.length === 0) return [];
     const mediaRows = await sql<MediaRow[]>`
       SELECT property_id, id, checksum_sha256, alt_text, position,
         cover_storage_key, gallery_storage_key
@@ -152,6 +164,6 @@ export const createDatabaseCatalogSource = (
       current.push(media);
       byProperty.set(media.property_id, current);
     }
-    return rows.map((row) => toWebsiteProperty(row, byProperty.get(row.id) ?? [], options));
+    return allRows.map((row) => toWebsiteProperty(row, byProperty.get(row.id) ?? [], options));
   },
 });

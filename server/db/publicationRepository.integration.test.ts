@@ -180,6 +180,17 @@ test('claims queued jobs atomically under concurrent workers', async () => {
   assert.equal(await claimNextPublicationJob(sql), null);
 });
 
+test('reclaims a running job whose worker lease expired after a crash', async () => {
+  const queued = await createQueuedProperty('claim-stale-running');
+  const first = await claimNextPublicationJob(sql);
+  assert.equal(first?.id, queued.job.id);
+  await sql`UPDATE publication_jobs SET started_at = clock_timestamp() - interval '20 minutes' WHERE id = ${queued.job.id}`;
+  const recovered = await claimNextPublicationJob(sql, 10 * 60_000);
+  assert.equal(recovered?.id, queued.job.id);
+  assert.equal(recovered?.status, 'running');
+  assert.equal(recovered?.attempts, 2);
+});
+
 test('waits for the explicit site publication advisory lock before claiming', async () => {
   const { job } = await createQueuedProperty('advisory-lock');
   const blocker = await sql.reserve();
