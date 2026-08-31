@@ -36,7 +36,7 @@ export const PropertyDetails = () => {
   }
 
   if (!property && propertyError) {
-    return <div className="relative z-10 flex min-h-screen items-center justify-center px-6 pt-24 text-center"><div><p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#d7b661]">CatÃ¡logo Clementino</p><h1 className="mt-4 text-4xl font-semibold text-white">NÃ£o foi possÃ­vel carregar o imÃ³vel.</h1><p className="mt-4 text-white/50">Tente novamente em alguns instantes.</p><Link to="/imoveis" className="mt-8 inline-flex min-h-12 items-center rounded-[var(--radius-control)] bg-[#d7b661] px-6 font-semibold text-[#18181b]">Voltar aos imÃ³veis</Link></div></div>;
+    return <div className="relative z-10 flex min-h-screen items-center justify-center px-6 pt-24 text-center"><div><p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#d7b661]">Catálogo Clementino</p><h1 className="mt-4 text-4xl font-semibold text-white">Não foi possível carregar o imóvel.</h1><p className="mt-4 text-white/50">Tente novamente em alguns instantes.</p><Link to="/imoveis" className="mt-8 inline-flex min-h-12 items-center rounded-[var(--radius-control)] bg-[#d7b661] px-6 font-semibold text-[#18181b]">Voltar aos imóveis</Link></div></div>;
   }
 
   if (!property) {
