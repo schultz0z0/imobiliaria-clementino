@@ -176,7 +176,13 @@ export const PropertyEditorProvider = ({
     return () => window.removeEventListener('beforeunload', warn);
   }, [autosave.status, controller]);
 
-  useEffect(() => () => controller.dispose(), [controller]);
+  useEffect(() => {
+    // React StrictMode mounts, cleans up and mounts effects once in
+    // development. Re-activate the stable controller on the second mount so
+    // that the cleanup probe does not permanently disable autosave.
+    controller.resume();
+    return () => controller.dispose();
+  }, [controller]);
 
   const flushPersisted = useCallback(async () => {
     if (!idRef.current) {

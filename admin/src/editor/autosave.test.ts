@@ -91,3 +91,18 @@ test('keeps the failure state while new edits are queued and reports unsaved wor
   assert.equal(controller.hasUnsavedChanges(), true);
   controller.dispose();
 });
+
+test('can resume after a development cleanup probe', async () => {
+  let saves = 0;
+  const controller = createAutosaveController({
+    delayMs: 1,
+    initialRevision: 1,
+    save: async () => { saves += 1; return { revisionNumber: 2 }; },
+  });
+  controller.dispose();
+  controller.resume();
+  controller.queue({ editorial: { title: 'Imóvel de teste' } });
+  await controller.flush();
+  assert.equal(saves, 1);
+  controller.dispose();
+});

@@ -22,6 +22,8 @@ export type AutosaveController = {
   flush: () => Promise<void>;
   retry: () => Promise<void>;
   setRevision: (revision: number) => void;
+  /** Re-activate a controller after React StrictMode's development cleanup. */
+  resume: () => void;
   getState: () => AutosaveState;
   hasUnsavedChanges: () => boolean;
   dispose: () => void;
@@ -101,6 +103,7 @@ export const createAutosaveController = ({
       await flush();
     },
     setRevision(revision) { state = { ...state, revision }; },
+    resume() { disposed = false; },
     getState: () => state,
     hasUnsavedChanges: () => Boolean(pending || failed || inFlight),
     dispose() {

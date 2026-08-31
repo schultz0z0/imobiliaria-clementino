@@ -41,7 +41,8 @@ const adminPropertyDraftSections = {
     subtype: draftSubtype.optional(),
   }),
   privateAddress: z.strictObject({
-    postalCode: draftText(8).optional(),
+    // Accept both the raw eight-digit CEP and the usual 5-3 formatted value.
+    postalCode: draftText(9).optional(),
     state: draftText(2).optional(),
     city: draftText(100).optional(),
     district: draftText(100).optional(),
