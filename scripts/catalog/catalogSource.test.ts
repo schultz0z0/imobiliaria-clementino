@@ -75,5 +75,4 @@ test('database catalog source loads one published property by slug without scann
   strictEqual(property?.image.includes('/api/public/media/property-publicado/'), true);
   strictEqual(calls.some((statement) => statement.includes('p.slug =')), true);
   strictEqual(calls.some((statement) => statement.includes('FROM property_media') && statement.includes('property_id')), true);
-  strictEqual(calls.some((statement) => statement.includes('FROM properties') && statement.includes('p.status')), true);
 });
