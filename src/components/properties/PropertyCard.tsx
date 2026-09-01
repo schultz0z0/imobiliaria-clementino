@@ -14,6 +14,12 @@ type PropertyCardFact = {
   label: string;
 };
 
+export const PROPERTY_CARD_SURFACE_CLASS_NAME =
+  'group flex h-full flex-col overflow-hidden rounded-[var(--radius-surface)] border border-white/10 bg-[#202023]/80 shadow-xl shadow-black/10 transition-[border-color,background-color,box-shadow] duration-300 hover:border-[#d7b661]/45 hover:bg-[#242427] hover:shadow-2xl hover:shadow-black/25 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d7b661]';
+
+export const PROPERTY_CARD_MEDIA_CLASS_NAME =
+  'relative isolate aspect-[5/4] overflow-hidden bg-white/5';
+
 export const getPropertyCardPresentation = (property: WebsiteProperty) => {
   const facts: PropertyCardFact[] = [];
   if (property.beds > 0) facts.push({ kind: 'beds', value: property.beds, label: formatCountLabel(property.beds, 'quarto', 'quartos') });
@@ -43,21 +49,21 @@ export const PropertyCard = ({ property, priority = false }: PropertyCardProps) 
       to={`/imoveis/${property.slug}`}
       data-analytics-event="property_open"
       data-analytics-label={property.reference}
-      className="group flex h-full flex-col overflow-hidden rounded-[var(--radius-surface)] border border-white/10 bg-[#202023]/80 shadow-xl shadow-black/10 transition duration-500 hover:-translate-y-1.5 hover:border-[#d7b661]/45 hover:bg-[#242427] hover:shadow-2xl hover:shadow-black/25 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d7b661]"
+      className={PROPERTY_CARD_SURFACE_CLASS_NAME}
     >
-      <div className="relative aspect-[5/4] overflow-hidden bg-white/5">
+      <div className={PROPERTY_CARD_MEDIA_CLASS_NAME}>
         <img
           src={property.image}
           alt={property.title}
           loading={priority ? 'eager' : 'lazy'}
-          className={`h-full w-full object-cover transition duration-700 group-hover:scale-[1.035] ${presentation.secondaryImage ? 'group-hover:opacity-0' : ''}`}
+          className={`h-full w-full transform-gpu object-cover transition-[transform,opacity] duration-700 will-change-[transform,opacity] group-hover:scale-[1.035] ${presentation.secondaryImage ? 'group-hover:opacity-0' : ''}`}
         />
         {presentation.secondaryImage && (
           <img
             src={presentation.secondaryImage}
             alt=""
             loading="lazy"
-            className="absolute inset-0 h-full w-full scale-[1.035] object-cover opacity-0 transition duration-700 group-hover:scale-100 group-hover:opacity-100"
+            className="absolute inset-0 h-full w-full scale-[1.035] transform-gpu object-cover opacity-0 transition-[transform,opacity] duration-700 will-change-[transform,opacity] group-hover:scale-100 group-hover:opacity-100"
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-[#18181b]/95 via-transparent to-black/20" />
