@@ -19,8 +19,8 @@ export const HeroSearch = () => {
       <div className="absolute inset-0 overflow-hidden">
         <motion.div initial={{ scale: 1.02 }} animate={{ scale: 1.06 }} transition={{ duration: 18, repeat: Infinity, repeatType: 'reverse', ease: 'linear' }} className="h-full w-full">
           <picture className="block h-full w-full">
-            <source media="(max-width: 639px)" srcSet="/images/brand/hero-clementino-mobile.webp" />
-            <img src="/images/brand/hero-clementino-desktop-v2.webp" alt="" fetchPriority="high" className="h-full w-full object-cover" />
+            <source media="(max-width: 639px)" srcSet="/images/brand/hero-clementino-mobile.webp?v=20260901" />
+            <img src="/images/brand/hero-clementino-desktop-v2.webp?v=20260901" alt="" fetchPriority="high" className="h-full w-full object-cover" />
           </picture>
         </motion.div>
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(17,17,19,.58)_0%,rgba(17,17,19,.7)_48%,rgba(17,17,19,.28)_100%)] sm:hidden" />

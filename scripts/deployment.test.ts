@@ -96,6 +96,13 @@ test('nginx serves active releases and only the bundled SPA shell as fallback', 
   );
 });
 
+test('nginx never serves the application HTML for missing static images', () => {
+  const nginx = readFileSync(new URL('../nginx.conf', import.meta.url), 'utf8');
+
+  assert.match(nginx, /location \/images\/ \{[\s\S]*?try_files \$uri @bundled_images;[\s\S]*?\}/);
+  assert.match(nginx, /location @bundled_images \{[\s\S]*?try_files \$uri =404;[\s\S]*?\}/);
+});
+
 test('development compose keeps admin, publisher and postgres persistent and private', () => {
   const compose = readFileSync(new URL('../compose.dev.yaml', import.meta.url), 'utf8');
   for (const service of ['website:', 'admin:', 'admin-api:', 'publisher:', 'postgres:']) assert.match(compose, new RegExp(`\\n  ${service}`));
