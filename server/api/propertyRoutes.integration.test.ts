@@ -283,7 +283,7 @@ test('uses null only to clear optional draft fields and clears coordinate pairs 
   assert.equal((await saveDraft(session, created.id, 1, complete)).statusCode, 200);
 
   const cleared = await saveDraft(session, created.id, 2, {
-    privateAddress: { complement: null, latitude: null, longitude: null },
+    privateAddress: { number: null, complement: null, latitude: null, longitude: null },
     publicLocation: { latitude: null, longitude: null },
     facts: { isNew: true, ageYears: null },
     pricing: { sale: null, condominium: null, iptu: null },
@@ -292,6 +292,7 @@ test('uses null only to clear optional draft fields and clears coordinate pairs 
   });
   assert.equal(cleared.statusCode, 200, cleared.body);
   const draft = cleared.json().property.draft;
+  assert.equal('number' in draft.privateAddress, false);
   assert.equal('complement' in draft.privateAddress, false);
   assert.equal('latitude' in draft.privateAddress, false);
   assert.equal('longitude' in draft.privateAddress, false);

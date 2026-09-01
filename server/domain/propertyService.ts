@@ -124,6 +124,7 @@ export type AdminPropertyDraft = z.infer<typeof adminPropertyDraftSchema>;
 const privateAddressPatchSchema = adminPropertyDraftSections.privateAddress
   .partial()
   .extend({
+    number: nullablePatchField(adminPropertyDraftSections.privateAddress.shape.number),
     complement: nullablePatchField(adminPropertyDraftSections.privateAddress.shape.complement),
     latitude: nullablePatchField(adminPropertyDraftSections.privateAddress.shape.latitude),
     longitude: nullablePatchField(adminPropertyDraftSections.privateAddress.shape.longitude),
