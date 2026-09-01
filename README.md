@@ -156,3 +156,20 @@ O build estático é gerado em `dist/` por `npm run build`. O `Dockerfile` inclu
 O painel seguro fica em `admin.clementinoimoveis.com.br` em produção. Consulte
 [docs/ADMIN-DEPLOYMENT.md](docs/ADMIN-DEPLOYMENT.md) para atualização, backup,
 persistência e rollback, e o checklist de [cutover](docs/audits/property-admin-cutover.md).
+## Migração integral do ambiente local para a VPS
+
+O estado validado no Docker Desktop pode ser exportado sem recadastrar os imóveis:
+
+```powershell
+npm run state:migration:prepare
+```
+
+O comando cria fora do repositório um pacote com `database.dump`, mídias privadas e
+públicas, release ativa, manifesto, SHA-256 e marcador `COMPLETE`. Nenhum `.env` ou
+segredo é incluído. Valide-o antes do envio:
+
+```powershell
+npm run state:migration:verify -- --bundle "D:\Projetos SaaS\Imobiliaria Clementino-migration-AAAAMMDD-HHMMSS"
+```
+
+As instruções de restauração segura estão em `docs/ADMIN-DEPLOYMENT.md`.

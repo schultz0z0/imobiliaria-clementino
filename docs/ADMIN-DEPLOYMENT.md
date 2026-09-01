@@ -18,6 +18,29 @@
 7. Verifique `curl -fsS https://admin.clementinoimoveis.com.br/health` e faça login.
 8. Gere uma publicação; somente após validação o link `current` é trocado atomically.
 
+## Migração integral dos dados locais validados
+
+Para levar à VPS exatamente o banco, as fotos processadas e a release do ambiente
+local, gere o pacote com `npm run state:migration:prepare`, envie a pasta resultante
+para a VPS e, dentro de `/opt/imobiliaria-clementino`, execute:
+
+```sh
+chmod +x scripts/operations/restoreProductionMigration.sh
+./scripts/operations/restoreProductionMigration.sh \
+  --bundle /opt/clementino-state-migration \
+  --confirm-production
+```
+
+O comando valida os SHA-256, exige o marcador `COMPLETE`, interrompe somente os
+serviços que escrevem dados, cria um backup de rollback fora do repositório, restaura
+PostgreSQL/mídias/releases nos volumes existentes e recria a publicação pública. Ele
+jamais executa `down -v` nem remove os volumes nomeados.
+
+Ao final será solicitada uma senha administrativa nova com no mínimo 12 caracteres.
+O usuário padrão é `admin` e pode ser alterado definindo `ADMIN_USERNAME`. A senha
+não é gravada no pacote nem no Git. Todas as sessões importadas são revogadas e o
+primeiro acesso solicita a troca da senha.
+
 ## Rollback
 
 Mantenha a release anterior em `/data/published/releases`. Em falha, reative o

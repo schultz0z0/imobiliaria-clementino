@@ -20,6 +20,8 @@
     "publisher:run": "tsx server/publisher/index.ts",
     "backup:run": "tsx scripts/operations/backup.ts",
     "restore:verify": "tsx scripts/operations/verifyBackup.ts",
+    "state:migration:prepare": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/operations/prepareProductionMigration.ps1",
+    "state:migration:verify": "tsx scripts/operations/stateMigration.ts",
     "migrate:legacy": "tsx scripts/migration/importLegacyCatalog.ts",
     "test:e2e": "playwright test",
     "test:public-performance": "playwright test -c playwright.public.config.ts",

@@ -23,6 +23,8 @@ test('exposes admin, server, and operations toolchain scripts without removing p
     'publisher:run',
     'backup:run',
     'restore:verify',
+    'state:migration:prepare',
+    'state:migration:verify',
     'dev',
     'build',
     'test',
@@ -139,4 +141,48 @@ test('admin frontend proxies API requests through the same origin in development
   assert.match(vite, /proxy:[\s\S]*['"]\/api['"]:[\s\S]*ADMIN_API_PROXY_TARGET/);
   assert.match(nginx, /location \/api\/ \{[\s\S]*proxy_pass http:\/\/admin-api:3000;/);
   assert.match(dockerfile, /admin:dev/);
+});
+
+test('local migration preparation exports the complete Docker-backed state outside Git', () => {
+  const script = readFileSync(new URL('./operations/prepareProductionMigration.ps1', import.meta.url), 'utf8');
+  const readme = readFileSync(new URL('../README.md', import.meta.url), 'utf8');
+  const gitignore = readFileSync(new URL('../.gitignore', import.meta.url), 'utf8');
+
+  assert.match(script, /pg_dump/);
+  assert.match(script, /--format=custom/);
+  assert.match(script, /--no-owner/);
+  assert.match(script, /--no-acl/);
+  assert.match(script, /pg_isready/);
+  assert.match(script, /dev_media_private/);
+  assert.match(script, /dev_media_public/);
+  assert.match(script, /dev_releases/);
+  for (const file of ['database.dump', 'media.tar.gz', 'release.tar.gz', 'manifest.json', 'SHA256SUMS', 'COMPLETE']) {
+    assert.match(script, new RegExp(file.replaceAll('.', '\\.')));
+  }
+  assert.match(script, /repository root/i);
+  assert.match(readme, /state:migration:prepare/);
+  assert.match(gitignore, /migration-bundles/);
+});
+
+test('production migration restore is guarded, backed up and preserves named volumes', () => {
+  const script = readFileSync(new URL('./operations/restoreProductionMigration.sh', import.meta.url), 'utf8');
+  const deployment = readFileSync(new URL('../docs/ADMIN-DEPLOYMENT.md', import.meta.url), 'utf8');
+
+  assert.match(script, /--confirm-production/);
+  assert.match(script, /COMPLETE/);
+  assert.match(script, /sha256sum -c SHA256SUMS/);
+  assert.match(script, /pg_dump/);
+  assert.match(script, /pg_restore/);
+  assert.match(script, /--clean/);
+  assert.match(script, /--if-exists/);
+  assert.match(script, /--no-owner/);
+  assert.match(script, /media\.tar\.gz/);
+  assert.match(script, /release\.tar\.gz/);
+  assert.match(script, /UPDATE admin_sessions SET revoked_at/);
+  assert.match(script, /53/);
+  assert.match(script, /52/);
+  assert.doesNotMatch(script, /down\s+-v/);
+  assert.doesNotMatch(script, /docker volume rm/);
+  assert.match(deployment, /restoreProductionMigration\.sh/);
+  assert.match(deployment, /senha.*12/i);
 });
