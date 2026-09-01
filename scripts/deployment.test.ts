@@ -108,7 +108,10 @@ test('development compose keeps admin, publisher and postgres persistent and pri
 
 test('production exposes only signed preview reads on the public host', () => {
   const compose = readFileSync(new URL('../compose.prod.yaml', import.meta.url), 'utf8');
+  const productionEnvExample = readFileSync(new URL('../.env.production.example', import.meta.url), 'utf8');
   assert.match(compose, /PREVIEW_TOKEN_SECRET: \$\{PREVIEW_TOKEN_SECRET:\?PREVIEW_TOKEN_SECRET is required\}/);
+  assert.match(compose, /LOCATION_PRIVACY_SECRET: \$\{LOCATION_PRIVACY_SECRET:\?LOCATION_PRIVACY_SECRET is required\}/);
+  assert.match(productionEnvExample, /^LOCATION_PRIVACY_SECRET=.+$/m);
   assert.match(compose, /PathPrefix\(`\/api\/property-previews`\)/);
   assert.match(compose, /PathPrefix\(`\/api\/public`\)/);
   assert.match(compose, /imobiliaria-preview-api\.priority=100/);

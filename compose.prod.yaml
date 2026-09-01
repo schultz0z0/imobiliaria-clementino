@@ -67,6 +67,7 @@ services:
       PUBLISHED_ROOT: /data/published
       PUBLIC_SITE_ORIGIN: https://${DOMAIN}
       PREVIEW_TOKEN_SECRET: ${PREVIEW_TOKEN_SECRET:?PREVIEW_TOKEN_SECRET is required}
+      LOCATION_PRIVACY_SECRET: ${LOCATION_PRIVACY_SECRET:?LOCATION_PRIVACY_SECRET is required}
     volumes:
       - media_data:/data/media
       - published_releases:/data/published
