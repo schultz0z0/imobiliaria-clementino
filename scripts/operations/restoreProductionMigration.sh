@@ -1,6 +1,83 @@
 #!/usr/bin/env sh
 set -eu
 
+TERMINAL_ECHO_DISABLED=false
+MUTATION_STARTED=false
+BACKUP_READY=false
+APPLICATION_STOPPED=false
+RUNNING_APPLICATION_SERVICES=""
+
+clear_volume() {
+  volume="$1"
+  docker run --rm -v "$volume:/target" postgres:16-alpine sh -ceu \
+    '[ "$PWD" = "/" ]; find /target -mindepth 1 -maxdepth 1 -exec rm -rf -- {} +'
+}
+
+extract_archive() {
+  archive_directory="$1"
+  archive_name="$2"
+  volume="$3"
+  docker run --rm -v "$volume:/target" -v "$archive_directory:/bundle:ro" \
+    postgres:16-alpine tar -xzf "/bundle/$archive_name" -C /target
+}
+
+restore_database_dump() {
+  dump="$1"
+  docker cp "$dump" "$POSTGRES_CONTAINER:/tmp/state-migration-restore.dump" || return 1
+  $COMPOSE exec -T postgres sh -ceu \
+    'pg_restore -U "$POSTGRES_USER" -d "$POSTGRES_DB" --clean --if-exists --no-owner --no-acl --exit-on-error /tmp/state-migration-restore.dump' || return 1
+  $COMPOSE exec -T postgres rm -f /tmp/state-migration-restore.dump || return 1
+}
+
+restart_previous_services() {
+  if [ -n "$RUNNING_APPLICATION_SERVICES" ]; then
+    # Intentional word splitting: this is a space-delimited list of known Compose services.
+    $COMPOSE up -d $RUNNING_APPLICATION_SERVICES >/dev/null || return 1
+  fi
+  APPLICATION_STOPPED=false
+}
+
+rollback_on_failure() {
+  echo "Migration failed after production mutation; restoring rollback backup." >&2
+  if (cd "$BACKUP_DIRECTORY" && sha256sum -c SHA256SUMS) &&
+    restore_database_dump "$BACKUP_DIRECTORY/database.dump" &&
+    clear_volume "$MEDIA_VOLUME" &&
+    extract_archive "$BACKUP_DIRECTORY" media.tar.gz "$MEDIA_VOLUME" &&
+    clear_volume "$RELEASE_VOLUME" &&
+    extract_archive "$BACKUP_DIRECTORY" release.tar.gz "$RELEASE_VOLUME" &&
+    restart_previous_services; then
+    echo "Automatic rollback completed from $BACKUP_DIRECTORY" >&2
+    return 0
+  fi
+  return 1
+}
+
+on_exit() {
+  code="$1"
+  trap - EXIT
+  if [ "$TERMINAL_ECHO_DISABLED" = "true" ]; then
+    stty echo 2>/dev/null || true
+    printf '\n' >&2
+  fi
+  unset ADMIN_PASSWORD 2>/dev/null || true
+  if [ "$code" -ne 0 ]; then
+    set +e
+    if [ "$MUTATION_STARTED" = "true" ] && [ "$BACKUP_READY" = "true" ]; then
+      rollback_on_failure
+      rollback_code="$?"
+      if [ "$rollback_code" -ne 0 ]; then
+        echo "Automatic rollback failed. Use the verified backup at $BACKUP_DIRECTORY." >&2
+      fi
+    elif [ "$APPLICATION_STOPPED" = "true" ]; then
+      restart_previous_services
+    fi
+  fi
+  exit "$code"
+}
+
+trap 'on_exit $?' EXIT
+trap 'exit 130' HUP INT TERM
+
 usage() {
   echo "Usage: $0 --bundle /absolute/path/to/bundle --confirm-production" >&2
   exit 2
@@ -25,6 +102,27 @@ BUNDLE=$(cd "$BUNDLE" 2>/dev/null && pwd) || { echo "Bundle directory not found.
 [ -f .env.production ] || { echo ".env.production is missing in the repository root." >&2; exit 2; }
 
 (cd "$BUNDLE" && sha256sum -c SHA256SUMS)
+
+validate_archive_entries() {
+  archive_name="$1"
+  archive_kind="$2"
+  docker run --rm -v "$BUNDLE:/bundle:ro" postgres:16-alpine sh -ceu '
+    archive="$1"
+    kind="$2"
+    tar -tzf "$archive" | while IFS= read -r entry; do
+      case "$entry" in /*|../*|*/../*|*/..) exit 20 ;; esac
+      case "$kind:$entry" in
+        media:private|media:private/|media:private/*|media:public|media:public/) ;;
+        media:public/*) ;;
+        release:.|release:./|release:./*) ;;
+        *) exit 21 ;;
+      esac
+    done
+  ' sh "/bundle/$archive_name" "$archive_kind"
+}
+
+validate_archive_entries media.tar.gz media
+validate_archive_entries release.tar.gz release
 
 manifest_count() {
   key="$1"
@@ -68,33 +166,44 @@ mkdir -p "$BACKUP_DIRECTORY"
 chmod 700 "$BACKUP_DIRECTORY"
 
 echo "Stopping application writers and creating rollback backup at $BACKUP_DIRECTORY"
+ACTIVE_SERVICES=$($COMPOSE ps --status running --services)
+for service in admin publisher admin-api website; do
+  if printf '%s\n' "$ACTIVE_SERVICES" | grep -qx "$service"; then
+    RUNNING_APPLICATION_SERVICES="$RUNNING_APPLICATION_SERVICES $service"
+  fi
+done
 $COMPOSE stop admin publisher admin-api website >/dev/null
+APPLICATION_STOPPED=true
 $COMPOSE exec -T postgres sh -ceu 'pg_dump -U "$POSTGRES_USER" -d "$POSTGRES_DB" --format=custom --no-owner --no-acl --file=/tmp/pre-state-migration.dump'
 docker cp "$POSTGRES_CONTAINER:/tmp/pre-state-migration.dump" "$BACKUP_DIRECTORY/database.dump"
 $COMPOSE exec -T postgres rm -f /tmp/pre-state-migration.dump
 docker run --rm -v "$MEDIA_VOLUME:/source:ro" -v "$BACKUP_DIRECTORY:/backup" postgres:16-alpine tar -czf /backup/media.tar.gz -C /source .
 docker run --rm -v "$RELEASE_VOLUME:/source:ro" -v "$BACKUP_DIRECTORY:/backup" postgres:16-alpine tar -czf /backup/release.tar.gz -C /source .
 (cd "$BACKUP_DIRECTORY" && sha256sum database.dump media.tar.gz release.tar.gz > SHA256SUMS)
+(cd "$BACKUP_DIRECTORY" && sha256sum -c SHA256SUMS)
+BACKUP_READY=true
 
 echo "Restoring PostgreSQL state"
-docker cp "$BUNDLE/database.dump" "$POSTGRES_CONTAINER:/tmp/incoming-state.dump"
-$COMPOSE exec -T postgres sh -ceu 'pg_restore -U "$POSTGRES_USER" -d "$POSTGRES_DB" --clean --if-exists --no-owner --no-acl --exit-on-error /tmp/incoming-state.dump'
-$COMPOSE exec -T postgres rm -f /tmp/incoming-state.dump
+MUTATION_STARTED=true
+restore_database_dump "$BUNDLE/database.dump"
 
 echo "Restoring media and published releases into the existing named volumes"
-docker run --rm -v "$MEDIA_VOLUME:/target" postgres:16-alpine sh -ceu '[ "$PWD" = "/" ]; find /target -mindepth 1 -maxdepth 1 -exec rm -rf -- {} +'
-docker run --rm -v "$MEDIA_VOLUME:/target" -v "$BUNDLE:/bundle:ro" postgres:16-alpine tar -xzf /bundle/media.tar.gz -C /target
-docker run --rm -v "$RELEASE_VOLUME:/target" postgres:16-alpine sh -ceu '[ "$PWD" = "/" ]; find /target -mindepth 1 -maxdepth 1 -exec rm -rf -- {} +'
-docker run --rm -v "$RELEASE_VOLUME:/target" -v "$BUNDLE:/bundle:ro" postgres:16-alpine tar -xzf /bundle/release.tar.gz -C /target
+clear_volume "$MEDIA_VOLUME"
+extract_archive "$BUNDLE" media.tar.gz "$MEDIA_VOLUME"
+clear_volume "$RELEASE_VOLUME"
+extract_archive "$BUNDLE" release.tar.gz "$RELEASE_VOLUME"
 
 $COMPOSE exec -T postgres sh -ceu 'psql -v ON_ERROR_STOP=1 -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "UPDATE admin_sessions SET revoked_at = COALESCE(revoked_at, clock_timestamp()) WHERE revoked_at IS NULL;"'
 
 ADMIN_USERNAME=${ADMIN_USERNAME:-admin}
 if [ -z "${ADMIN_PASSWORD:-}" ]; then
+  [ -t 0 ] || { echo "ADMIN_PASSWORD is required when no interactive terminal is available." >&2; exit 2; }
   printf 'New production administrator password (minimum 12 characters): ' >&2
+  TERMINAL_ECHO_DISABLED=true
   stty -echo
   IFS= read -r ADMIN_PASSWORD
   stty echo
+  TERMINAL_ECHO_DISABLED=false
   printf '\n' >&2
 fi
 [ "${#ADMIN_PASSWORD}" -ge 12 ] || { unset ADMIN_PASSWORD; echo "Administrator password must contain at least 12 characters." >&2; exit 2; }
@@ -164,8 +273,10 @@ while [ "$attempt" -lt 90 ]; do
 done
 [ "${JOB_STATUS:-}" = "succeeded" ] || { echo "Release rebuild timed out." >&2; exit 1; }
 
-docker run --rm -v "$RELEASE_VOLUME:/target:ro" postgres:16-alpine sh -ceu 'test -e /target/current/manifest.json'
+docker run --rm -v "$RELEASE_VOLUME:/target:ro" postgres:16-alpine sh -ceu 'test -e /target/current/release-manifest.json'
 $COMPOSE up -d admin-api admin website publisher
+APPLICATION_STOPPED=false
+MUTATION_STARTED=false
 $COMPOSE ps -a
 
 echo "Production state migration completed successfully."

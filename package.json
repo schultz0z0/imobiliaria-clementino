@@ -22,6 +22,7 @@
     "restore:verify": "tsx scripts/operations/verifyBackup.ts",
     "state:migration:prepare": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/operations/prepareProductionMigration.ps1",
     "state:migration:verify": "tsx scripts/operations/stateMigration.ts",
+    "state:migration:dry-run": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/operations/validateProductionMigration.ps1",
     "migrate:legacy": "tsx scripts/migration/importLegacyCatalog.ts",
     "test:e2e": "playwright test",
     "test:public-performance": "playwright test -c playwright.public.config.ts",

@@ -1,8 +1,7 @@
 # Website Imobiliária Clementino
 
-Website público e autônomo da Imobiliária Clementino, feito com React, TypeScript e Vite.
-
-Este diretório contém somente o frontend público. Não há painel administrativo, API própria, banco de dados, autenticação, gateway, workers ou integração com Supabase.
+Plataforma da Imobiliária Clementino com site público em React/TypeScript/Vite,
+painel administrativo, API, publisher e PostgreSQL persistente.
 
 ## Desenvolvimento local com Node.js
 
@@ -165,11 +164,16 @@ npm run state:migration:prepare
 ```
 
 O comando cria fora do repositório um pacote com `database.dump`, mídias privadas e
-públicas, release ativa, manifesto, SHA-256 e marcador `COMPLETE`. Nenhum `.env` ou
-segredo é incluído. Valide-o antes do envio:
+públicas, release ativa, manifesto, SHA-256 e marcador `COMPLETE`. O pacote é
+**sensível**: embora não contenha `.env` nem senha em texto puro, contém hashes de
+autenticação, dados cadastrais e fotos privadas. Transfira somente por SFTP/SCP,
+mantenha acesso restrito e apague a cópia de transporte após validar a VPS.
+
+Valide hashes e faça uma restauração real em volumes Docker descartáveis antes do envio:
 
 ```powershell
 npm run state:migration:verify -- --bundle "D:\Projetos SaaS\Imobiliaria Clementino-migration-AAAAMMDD-HHMMSS"
+npm run state:migration:dry-run -- -BundleDirectory "D:\Projetos SaaS\Imobiliaria Clementino-migration-AAAAMMDD-HHMMSS"
 ```
 
 As instruções de restauração segura estão em `docs/ADMIN-DEPLOYMENT.md`.

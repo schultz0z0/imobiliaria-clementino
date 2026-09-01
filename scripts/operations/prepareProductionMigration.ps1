@@ -30,6 +30,7 @@ $composeArguments = @('compose', '-f', (Join-Path $repositoryRoot 'compose.dev.y
 $postgresWasRunning = $false
 $postgresContainer = $null
 $containerDump = '/tmp/clementino-production-state.dump'
+$runningWriters = @()
 
 function Invoke-Docker {
   param([Parameter(ValueFromRemainingArguments = $true)][string[]]$Arguments)
@@ -59,6 +60,11 @@ function Get-Artifact {
 try {
   Invoke-Docker info *> $null
   New-Item -ItemType Directory -Path $partialPath | Out-Null
+  if ($env:OS -eq 'Windows_NT') {
+    $currentIdentity = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
+    & icacls $partialPath '/inheritance:r' '/grant:r' "${currentIdentity}:(OI)(CI)F" *> $null
+    if ($LASTEXITCODE -ne 0) { throw 'Could not restrict the migration bundle ACL.' }
+  }
 
   $postgresContainer = Invoke-DockerText @composeArguments 'ps' '-a' '-q' 'postgres'
   if ($postgresContainer) {
@@ -79,6 +85,16 @@ try {
     Start-Sleep -Seconds 2
   }
   if (-not $ready) { throw 'The local PostgreSQL container did not become ready within 60 seconds.' }
+
+  foreach ($writer in @('admin-api', 'publisher')) {
+    $writerContainer = Invoke-DockerText @composeArguments 'ps' '-a' '-q' $writer
+    if ($writerContainer -and (Invoke-DockerText 'inspect' '--format' '{{.State.Running}}' $writerContainer) -eq 'true') {
+      $runningWriters += $writer
+    }
+  }
+  if ($runningWriters.Count -gt 0) {
+    Invoke-Docker @composeArguments 'stop' @runningWriters
+  }
 
   $countsText = Invoke-DockerText @composeArguments 'exec' '-T' 'postgres' 'psql' '-U' 'clementino_dev' '-d' 'clementino_dev' '-At' '-F' '|' '-c' @'
 SELECT
@@ -160,6 +176,9 @@ finally {
   }
   if (-not $postgresWasRunning -and $postgresContainer) {
     & docker @composeArguments 'stop' 'postgres' *> $null
+  }
+  if ($runningWriters.Count -gt 0) {
+    & docker @composeArguments 'up' '-d' @runningWriters *> $null
   }
   if ($partialPath -and (Test-Path -LiteralPath $partialPath)) {
     $resolvedPartial = [System.IO.Path]::GetFullPath($partialPath)

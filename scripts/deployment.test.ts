@@ -25,6 +25,7 @@ test('exposes admin, server, and operations toolchain scripts without removing p
     'restore:verify',
     'state:migration:prepare',
     'state:migration:verify',
+    'state:migration:dry-run',
     'dev',
     'build',
     'test',
@@ -160,7 +161,12 @@ test('local migration preparation exports the complete Docker-backed state outsi
     assert.match(script, new RegExp(file.replaceAll('.', '\\.')));
   }
   assert.match(script, /repository root/i);
+  assert.ok(
+    script.indexOf("'stop' @runningWriters") < script.indexOf('$countsText ='),
+    'writer services must stop before the database and file snapshot begins',
+  );
   assert.match(readme, /state:migration:prepare/);
+  assert.match(readme, /sensível/i);
   assert.match(gitignore, /migration-bundles/);
 });
 
@@ -179,10 +185,25 @@ test('production migration restore is guarded, backed up and preserves named vol
   assert.match(script, /media\.tar\.gz/);
   assert.match(script, /release\.tar\.gz/);
   assert.match(script, /UPDATE admin_sessions SET revoked_at/);
+  assert.match(script, /rollback_on_failure/);
+  assert.match(script, /trap .*EXIT/);
+  assert.match(script, /sha256sum -c SHA256SUMS/);
   assert.match(script, /53/);
   assert.match(script, /52/);
   assert.doesNotMatch(script, /down\s+-v/);
   assert.doesNotMatch(script, /docker volume rm/);
   assert.match(deployment, /restoreProductionMigration\.sh/);
   assert.match(deployment, /senha.*12/i);
+  assert.match(deployment, /rollback automático/i);
+});
+
+test('disposable migration dry run restores database, media and releases without production volumes', () => {
+  const script = readFileSync(new URL('./operations/validateProductionMigration.ps1', import.meta.url), 'utf8');
+  assert.match(script, /pg_restore/);
+  assert.match(script, /NewGuid/);
+  assert.match(script, /Invoke-Docker 'volume' 'create'/);
+  assert.match(script, /privateMediaFiles/);
+  assert.match(script, /publicMediaFiles/);
+  assert.match(script, /current\/release-manifest\.json/);
+  assert.match(script, /docker 'volume' 'rm'/);
 });

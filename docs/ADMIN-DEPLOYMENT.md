@@ -36,6 +36,10 @@ serviços que escrevem dados, cria um backup de rollback fora do repositório, r
 PostgreSQL/mídias/releases nos volumes existentes e recria a publicação pública. Ele
 jamais executa `down -v` nem remove os volumes nomeados.
 
+Se qualquer etapa falhar depois do backup, o rollback automático restaura banco,
+mídias e release anteriores e reinicia os serviços que estavam ativos. O caminho do
+backup é exibido para auditoria e recuperação manual adicional.
+
 Ao final será solicitada uma senha administrativa nova com no mínimo 12 caracteres.
 O usuário padrão é `admin` e pode ser alterado definindo `ADMIN_USERNAME`. A senha
 não é gravada no pacote nem no Git. Todas as sessões importadas são revogadas e o
