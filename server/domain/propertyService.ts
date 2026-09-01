@@ -245,6 +245,8 @@ export type AdminPropertySummaryDto = {
   };
   firstPrice: number | null;
   updatedAt: Date;
+  featured: boolean;
+  featuredAt: Date | null;
 };
 
 type PropertyAdminRow = {

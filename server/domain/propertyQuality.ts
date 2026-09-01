@@ -17,7 +17,10 @@ export type PropertyQuality = {
   blockingIssues: ApiFieldIssue[];
 };
 
-const issue = (path: Array<string | number>, message: string): ApiFieldIssue => ({ path, message });
+const issue = (path: readonly PropertyKey[], message: string): ApiFieldIssue => ({
+  path: path.map((segment) => (typeof segment === 'symbol' ? segment.description ?? 'field' : segment)),
+  message,
+});
 
 /**
  * Produces a deterministic editorial quality score. Recommendations improve
