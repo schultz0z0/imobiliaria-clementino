@@ -21,6 +21,12 @@ extract_archive() {
     postgres:16-alpine tar -xzf "/bundle/$archive_name" -C /target
 }
 
+normalize_volume_owner() {
+  volume="$1"
+  docker run --rm -v "$volume:/target" postgres:16-alpine \
+    chown -R 1000:1000 /target
+}
+
 restore_database_dump() {
   dump="$1"
   docker cp "$dump" "$POSTGRES_CONTAINER:/tmp/state-migration-restore.dump" || return 1
@@ -43,8 +49,10 @@ rollback_on_failure() {
     restore_database_dump "$BACKUP_DIRECTORY/database.dump" &&
     clear_volume "$MEDIA_VOLUME" &&
     extract_archive "$BACKUP_DIRECTORY" media.tar.gz "$MEDIA_VOLUME" &&
+    normalize_volume_owner "$MEDIA_VOLUME" &&
     clear_volume "$RELEASE_VOLUME" &&
     extract_archive "$BACKUP_DIRECTORY" release.tar.gz "$RELEASE_VOLUME" &&
+    normalize_volume_owner "$RELEASE_VOLUME" &&
     restart_previous_services; then
     echo "Automatic rollback completed from $BACKUP_DIRECTORY" >&2
     return 0
@@ -194,8 +202,10 @@ restore_database_dump "$BUNDLE/database.dump"
 echo "Restoring media and published releases into the existing named volumes"
 clear_volume "$MEDIA_VOLUME"
 extract_archive "$BUNDLE" media.tar.gz "$MEDIA_VOLUME"
+normalize_volume_owner "$MEDIA_VOLUME"
 clear_volume "$RELEASE_VOLUME"
 extract_archive "$BUNDLE" release.tar.gz "$RELEASE_VOLUME"
+normalize_volume_owner "$RELEASE_VOLUME"
 
 $COMPOSE exec -T postgres sh -ceu 'psql -v ON_ERROR_STOP=1 -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "UPDATE admin_sessions SET revoked_at = COALESCE(revoked_at, clock_timestamp()) WHERE revoked_at IS NULL;"'
 

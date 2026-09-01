@@ -185,6 +185,7 @@ test('production migration restore is guarded, backed up and preserves named vol
   assert.match(script, /--no-owner/);
   assert.match(script, /media\.tar\.gz/);
   assert.match(script, /release\.tar\.gz/);
+  assert.match(script, /chown -R 1000:1000/);
   assert.match(script, /UPDATE admin_sessions SET revoked_at/);
   assert.match(script, /rollback_on_failure/);
   assert.match(script, /trap .*EXIT/);
