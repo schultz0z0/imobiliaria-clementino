@@ -31,6 +31,13 @@ test('about uses the institutional portrait with the approved focal crop', () =>
   assert.match(markup, /object-\[center_35%\]/);
 });
 
+test('about derives its catalog count from published runtime data', () => {
+  const source = pageSources[0]!;
+  assert.doesNotMatch(source, /getAllProperties\(\)/);
+  assert.match(source, /usePropertyCatalog/);
+  assert.match(source, /imóveis publicados/);
+});
+
 test('long interior page titles use a mobile-first type scale', () => {
   for (const source of pageSources) {
     assert.match(source, /text-\[2\.5rem\][^"']*leading-\[1\.08\][^"']*sm:text-5xl[^"']*md:text-7xl/);

@@ -71,8 +71,8 @@ services:
       - media_data:/data/media
       - published_releases:/data/published
     depends_on:
-      postgres:
-        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.imobiliaria-preview-api.rule=Host(`${DOMAIN}`) && PathPrefix(`/api/property-previews`)"
@@ -105,13 +105,27 @@ services:
       - media_data:/data/media
       - published_releases:/data/published
     depends_on:
-      postgres:
-        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
     healthcheck:
       test: ["CMD-SHELL", "kill -0 1"]
       interval: 30s
       timeout: 5s
       retries: 3
+
+  migrate:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: api
+    restart: "no"
+    command: ["node", "dist-server/db/migrate.js"]
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: ${DATABASE_URL:?DATABASE_URL is required}
+    depends_on:
+      postgres:
+        condition: service_healthy
 
   postgres:
     image: postgres:16-alpine

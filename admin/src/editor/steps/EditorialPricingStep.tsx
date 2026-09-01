@@ -2,12 +2,15 @@ import React from 'react';
 import { useFormContext } from 'react-hook-form';
 import type { PropertyOperation } from '../../api/client.ts';
 import type { WizardValues } from '../types.ts';
+import { usePropertyEditor } from '../PropertyEditorProvider.tsx';
 
 const operationLabels: Record<PropertyOperation, string> = { sale: 'Venda', rent: 'Aluguel', seasonal: 'Temporada', auction: 'Leilão' };
 const moneyOptions = { setValueAs: (value: string) => value === '' ? undefined : Number(value) };
 
 export const EditorialPricingStep = () => {
   const { register, watch, setValue, formState: { errors } } = useFormContext<WizardValues>();
+  const { property } = usePropertyEditor();
+  const canFeature = property?.status === 'published';
   const operations = watch('classification.operations') ?? [];
   const description = watch('editorial.description') ?? '';
   const buildTitle = () => {
@@ -24,7 +27,8 @@ export const EditorialPricingStep = () => {
       {errors.editorial?.title ? <p className="field-error" role="alert">Revise o título (10 a 120 caracteres).</p> : null}
       <label className="field-group">Descrição completa<textarea rows={10} maxLength={5000} {...register('editorial.description')} /></label>
       <p className={description.trim().length >= 80 ? 'quality-ok' : 'field-hint'} aria-live="polite">{description.trim().length}/80 caracteres mínimos. Descreva ambientes, estado, localização e diferenciais em português claro.</p>
-      <div className="form-grid two-columns"><label className="field-group">Referência comercial<input maxLength={50} {...register('editorial.reference')} /></label><label className="check-card"><input type="checkbox" {...register('editorial.featured')} />Destacar na página inicial</label></div>
+      <div className="form-grid two-columns"><label className="field-group">Referência comercial<input maxLength={50} {...register('editorial.reference')} /></label><label className="check-card"><input type="checkbox" disabled={!canFeature} aria-describedby="featured-help" {...register('editorial.featured')} />Destacar na página inicial</label></div>
+      {!canFeature ? <p id="featured-help" className="field-hint">Publique o imóvel para poder destacá-lo na página inicial.</p> : null}
     </fieldset>
     <fieldset className="wizard-fieldset"><legend>Valores</legend>
       <div className="form-grid two-columns">
@@ -35,4 +39,3 @@ export const EditorialPricingStep = () => {
     </fieldset>
   </div>;
 };
-

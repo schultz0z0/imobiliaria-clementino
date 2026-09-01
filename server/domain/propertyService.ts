@@ -175,12 +175,9 @@ const mediaPatchSchema = adminPropertyDraftSections.media.partial().extend({
   coverPhotoId: nullablePatchField(adminPropertyDraftSections.media.shape.coverPhotoId),
 });
 
-const editorialPatchSchema = adminPropertyDraftSections.editorial.partial().extend({
-  title: nullablePatchField(adminPropertyDraftSections.editorial.shape.title),
-  description: nullablePatchField(adminPropertyDraftSections.editorial.shape.description),
-  reference: nullablePatchField(adminPropertyDraftSections.editorial.shape.reference),
-  featured: adminPropertyDraftSections.editorial.shape.featured,
-});
+// These fields are required for publication. Drafts may omit them while being
+// filled out, but an explicit null must not silently remove an existing value.
+const editorialPatchSchema = adminPropertyDraftSections.editorial.partial();
 
 const seoPatchSchema = adminPropertyDraftSections.seo.partial().extend({
   title: nullablePatchField(adminPropertyDraftSections.seo.shape.title),
@@ -218,6 +215,8 @@ export type PropertyAdminDto = {
   createdAt: Date;
   updatedAt: Date;
   inactivatedAt: Date | null;
+  featured: boolean;
+  featuredAt: Date | null;
 };
 
 export type PropertyListFilters = {
@@ -262,6 +261,7 @@ type PropertyAdminRow = {
   created_at: Date;
   updated_at: Date;
   inactivated_at: Date | null;
+  featured_at: Date | null;
 };
 
 type PropertySummaryRow = {
@@ -277,15 +277,18 @@ type PropertySummaryRow = {
   operations: unknown;
   first_price: string | number | null;
   updated_at: Date;
+  featured_at: Date | null;
 };
 
 type LockedPropertyRow = {
   id: string;
+  slug: string;
   status: PropertyStatus;
   draft_revision_id: string;
   published_revision_id: string | null;
   revision_number: string;
   payload: AdminPropertyDraft;
+  featured_at: Date | null;
 };
 
 const propertyColumns = `
@@ -302,6 +305,7 @@ const propertyColumns = `
   properties.created_at,
   properties.updated_at,
   properties.inactivated_at
+  ,properties.featured_at
 `;
 
 const toPropertyAdminDto = (row: PropertyAdminRow): PropertyAdminDto => ({
@@ -314,12 +318,20 @@ const toPropertyAdminDto = (row: PropertyAdminRow): PropertyAdminDto => ({
   draftRevisionId: Number(row.draft_revision_id),
   publishedRevisionId:
     row.published_revision_id === null ? null : Number(row.published_revision_id),
-  draft: adminPropertyDraftSchema.parse(row.draft_payload),
+  draft: {
+    ...adminPropertyDraftSchema.parse(row.draft_payload),
+    editorial: {
+      ...adminPropertyDraftSchema.parse(row.draft_payload).editorial,
+      featured: row.featured_at !== null,
+    },
+  },
   published:
     row.published_payload === null ? null : propertyDraftSchema.parse(row.published_payload),
   createdAt: row.created_at,
   updatedAt: row.updated_at,
   inactivatedAt: row.inactivated_at,
+  featured: row.featured_at !== null,
+  featuredAt: row.featured_at,
 });
 
 const propertySummaryColumns = `
@@ -341,6 +353,7 @@ const propertySummaryColumns = `
     ELSE NULL
   END AS first_price,
   properties.updated_at
+  ,properties.featured_at
 `;
 
 const propertyFirstPriceExpression = `
@@ -369,6 +382,8 @@ const toPropertySummaryDto = (row: PropertySummaryRow): AdminPropertySummaryDto 
     classification: { operations },
     firstPrice: row.first_price === null ? null : Number(row.first_price),
     updatedAt: row.updated_at,
+    featured: row.featured_at !== null,
+    featuredAt: row.featured_at,
   };
 };
 
@@ -405,21 +420,24 @@ const activeJobError = () =>
     'A publication job is already active',
   );
 
+export const normalizeTitleToSlug = (title: string): string => title
+  .normalize('NFD')
+  .replace(/\p{Diacritic}/gu, '')
+  .toLowerCase()
+  .replace(/[^a-z0-9]+/g, '-')
+  .replace(/^-|-$/g, '') || 'imovel';
+
+const titleKey = (title: string): string => normalizeTitleToSlug(title);
+
 const generateIdentity = (title = 'novo-imovel') => {
   const publicId = `property_${randomUUID()}`;
   const suffix = randomBytes(4).toString('hex').toUpperCase();
   const commercialReference = `CLI-${suffix}`;
-  const normalizedTitle = title
-    .normalize('NFD')
-    .replace(/\p{Diacritic}/gu, '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '')
-    .slice(0, 80);
+  const normalizedTitle = normalizeTitleToSlug(title);
   return {
     publicId,
     commercialReference,
-    slug: `${normalizedTitle || 'imovel'}-${suffix.toLowerCase()}`,
+    slug: title === 'novo-imovel' ? `${normalizedTitle}-${suffix.toLowerCase()}` : normalizedTitle,
   };
 };
 
@@ -472,9 +490,16 @@ const insertProperty = async (
   actorId: string,
   auditAction: 'property.created' | 'property.duplicated',
 ): Promise<PropertyAdminDto> => {
+  const key = titleKey(draft.editorial?.title ?? '');
+  const duplicateTitle = await sql<{ id: string }[]>`
+    SELECT id FROM properties WHERE title_key = ${key} LIMIT 1
+  `;
+  if (duplicateTitle[0]) {
+    throw new PropertyServiceError(API_ERROR_CODES.CONFLICT, 409, 'Title is already in use');
+  }
   const properties = await sql<{ id: string }[]>`
-    INSERT INTO properties (public_id, commercial_reference, slug)
-    VALUES (${identity.publicId}, ${identity.commercialReference}, ${identity.slug})
+    INSERT INTO properties (public_id, commercial_reference, slug, title_key)
+    VALUES (${identity.publicId}, ${identity.commercialReference}, ${identity.slug}, ${key})
     RETURNING id
   `;
   const property = properties[0];
@@ -530,11 +555,17 @@ export const createPropertyDraft = async (
       ...initialDraft.editorial,
       reference: identity.commercialReference,
     };
+    const initialTitle = initialDraft.editorial.title?.trim() ?? '';
+    const isGeneratedTitle = /^Novo imóvel CLI-/i.test(initialTitle);
+    const titledIdentity = initialTitle && !isGeneratedTitle
+      ? { ...identity, slug: normalizeTitleToSlug(initialTitle) }
+      : identity;
     try {
       return await withTransaction(sql, (transaction) =>
-        insertProperty(transaction, identity, initialDraft, actorId, 'property.created'),
+        insertProperty(transaction, titledIdentity, initialDraft, actorId, 'property.created'),
       );
     } catch (error) {
+      if (error instanceof PropertyServiceError) throw error;
       if (!isPostgresError(error, '23505') || attempt === 2) {
         throw error;
       }
@@ -640,6 +671,7 @@ export const listProperties = async (
           ) ILIKE '%' || ${search} || '%'
         )
       ORDER BY
+        properties.featured_at DESC NULLS LAST,
         CASE WHEN ${filters.sort} = 'updated-desc' THEN properties.updated_at END DESC NULLS LAST,
         CASE WHEN ${filters.sort} = 'updated-asc' THEN properties.updated_at END ASC NULLS LAST,
         CASE WHEN ${filters.sort} = 'title-asc' THEN lower(draft_revision.payload #>> '{editorial,title}') END ASC NULLS LAST,
@@ -670,11 +702,13 @@ const lockProperty = async (
   const rows = await sql<LockedPropertyRow[]>`
     SELECT
       properties.id,
+      properties.slug,
       properties.status,
       properties.draft_revision_id,
       properties.published_revision_id,
       draft_revision.revision_number,
-      draft_revision.payload
+      draft_revision.payload,
+      properties.featured_at
     FROM properties
     JOIN property_revisions AS draft_revision
       ON draft_revision.id = properties.draft_revision_id
@@ -685,6 +719,54 @@ const lockProperty = async (
     throw notFound();
   }
   return rows[0];
+};
+
+const applyFeaturedState = async (
+  sql: SqlExecutor,
+  propertyId: string,
+  status: PropertyStatus,
+  shouldFeature: boolean,
+  actorId: string,
+): Promise<void> => {
+  if (shouldFeature && status !== 'published') {
+    throw invalidState('Only published properties can be highlighted');
+  }
+  if (!shouldFeature) {
+    await sql`
+      UPDATE properties
+      SET featured_at = NULL, updated_at = clock_timestamp()
+      WHERE id = ${propertyId}
+    `;
+  } else {
+    const featured = await sql<{ id: string }[]>`
+      SELECT id
+      FROM properties
+      WHERE featured_at IS NOT NULL AND status = 'published'
+      ORDER BY featured_at ASC, id ASC
+      FOR UPDATE
+    `;
+    const alreadyFeatured = featured.some(({ id }) => id === propertyId);
+    if (!alreadyFeatured && featured.length >= 3) {
+      await sql`
+        UPDATE properties
+        SET featured_at = NULL, updated_at = clock_timestamp()
+        WHERE id = ${featured[0]!.id}
+      `;
+    }
+    await sql`
+      UPDATE properties
+      SET featured_at = clock_timestamp(), updated_at = clock_timestamp()
+      WHERE id = ${propertyId}
+    `;
+  }
+  await sql`
+    INSERT INTO audit_events (actor_id, property_id, action, metadata)
+    VALUES (
+      ${actorId}, ${propertyId},
+      ${shouldFeature ? 'property.featured' : 'property.unfeatured'},
+      '{}'::jsonb
+    )
+  `;
 };
 
 export const savePropertyDraft = async (
@@ -707,6 +789,29 @@ export const savePropertyDraft = async (
       }
       const current = adminPropertyDraftSchema.parse(property.payload);
       const nextDraft = deepMergeDraft(current, patch);
+      const nextTitle = nextDraft.editorial?.title?.trim() ?? '';
+      const nextTitleKey = titleKey(nextTitle);
+      const duplicateTitle = await transaction<{ id: string }[]>`
+        SELECT id FROM properties
+        WHERE title_key = ${nextTitleKey} AND id <> ${propertyId}
+        LIMIT 1
+        FOR UPDATE
+      `;
+      if (duplicateTitle[0]) {
+        throw new PropertyServiceError(API_ERROR_CODES.CONFLICT, 409, 'Title is already in use');
+      }
+      const requestedFeatured = patch.editorial?.featured;
+      const featured = property.status === 'published'
+        ? requestedFeatured ?? property.featured_at !== null
+        : false;
+      if (property.status !== 'published' && requestedFeatured === true) {
+        throw invalidState('Only published properties can be highlighted');
+      }
+      nextDraft.editorial = { ...nextDraft.editorial, featured };
+      if (property.status === 'published' && (requestedFeatured !== undefined || property.featured_at !== null)) {
+        await applyFeaturedState(transaction, propertyId, property.status, featured, actorId);
+      }
+      const nextSlug = normalizeTitleToSlug(nextTitle);
       const revisionNumber = expectedRevision + 1;
       const revisions = await transaction<{ id: string }[]>`
         INSERT INTO property_revisions (property_id, revision_number, payload, created_by)
@@ -727,6 +832,8 @@ export const savePropertyDraft = async (
         SET
           draft_revision_id = ${revision.id},
           commercial_reference = ${nextDraft.editorial?.reference ?? null},
+          slug = ${nextSlug},
+          title_key = ${nextTitleKey},
           updated_at = clock_timestamp()
         WHERE id = ${propertyId}
       `;
@@ -837,6 +944,17 @@ export const requestPropertyPublish = async (
   }
 };
 
+export const featureProperty = async (
+  sql: Sql,
+  propertyId: string,
+  actorId: string,
+  featured: boolean,
+): Promise<PropertyAdminDto> => withTransaction(sql, async (transaction) => {
+  const property = await lockProperty(transaction, propertyId);
+  await applyFeaturedState(transaction, propertyId, property.status, featured, actorId);
+  return getPropertyDetail(transaction, propertyId);
+});
+
 type LifecycleResult = { property: PropertyAdminDto; job: PublicationJobRecord | null };
 
 const cancelQueuedPublicationForInactivation = async (
@@ -885,6 +1003,7 @@ export const inactivatePropertyDraft = async (
         UPDATE properties
         SET
           status = 'inactive',
+          featured_at = NULL,
           inactivated_at = clock_timestamp(),
           updated_at = clock_timestamp()
         WHERE id = ${propertyId}

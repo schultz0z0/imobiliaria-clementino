@@ -1,20 +1,21 @@
 import { ArrowRight, BadgeCheck, Building2, CalendarDays, Ear, Eye, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { getAllProperties } from '../catalog/propertyCatalog';
 import { WhatsAppCta } from '../components/contact/WhatsAppCta';
 import { Breadcrumbs } from '../components/navigation/Breadcrumbs';
 import { brandAssets } from '../config/brandAssets';
 import { getPageMetadata } from '../config/pageMetadata';
 import { buildWhatsAppUrl } from '../contact/whatsapp';
 import { usePageMeta } from '../hooks/usePageMeta';
+import { usePropertyCatalog } from '../hooks/usePropertyCatalog';
 
 export const About = () => {
   usePageMeta(getPageMetadata('about'));
+  const { properties } = usePropertyCatalog();
   const whatsappUrl = buildWhatsAppUrl('Olá! Quero conhecer melhor o trabalho da Imobiliária Clementino.');
   const trustStats = [
     [CalendarDays, 'Desde 2010', 'Atuação imobiliária no Rio de Janeiro'],
     [BadgeCheck, 'CRECI-RJ 22953', 'Registro profissional informado'],
-    [Building2, `${getAllProperties().length} imóveis`, 'Catálogo real disponível no site'],
+    [Building2, `${properties.length} imóveis publicados`, 'Catálogo real disponível no site'],
   ] as const;
   const principles = [
     [Ear, 'Escuta antes da indicação', 'O atendimento começa entendendo o momento, a necessidade e os limites de cada cliente.'],

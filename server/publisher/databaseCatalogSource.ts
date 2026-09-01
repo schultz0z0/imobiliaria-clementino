@@ -10,6 +10,7 @@ export type PublishedRow = {
   commercial_reference: string;
   slug: string;
   payload: unknown;
+  featured_at?: Date | null;
 };
 
 type MediaRow = {
@@ -125,6 +126,7 @@ const toWebsiteProperty = (
       { category: 'Áreas privativas', items: privateFeatures },
     ].filter((group) => group.items.length > 0),
     features: [...commonFeatures, ...privateFeatures].map((feature) => feature.label),
+    featured: row.featured_at !== null && row.featured_at !== undefined,
   };
   return property;
 };
@@ -136,20 +138,24 @@ export const createDatabaseCatalogSource = (
   async loadPublishedProperties(): Promise<CanonicalPublishedProperty[]> {
     const rows = options.overlay
       ? await sql<PublishedRow[]>`
-          SELECT p.id, p.public_id, p.commercial_reference, p.slug, revision.payload
+          SELECT p.id, p.public_id, p.commercial_reference, p.slug, p.featured_at, revision.payload
           FROM properties AS p
           JOIN property_revisions AS revision ON revision.id = p.published_revision_id
           WHERE p.status = 'published' AND p.id <> ${options.overlay.id}
-          ORDER BY p.public_id
+          ORDER BY p.featured_at DESC NULLS LAST, p.public_id
         `
       : await sql<PublishedRow[]>`
-          SELECT p.id, p.public_id, p.commercial_reference, p.slug, revision.payload
+          SELECT p.id, p.public_id, p.commercial_reference, p.slug, p.featured_at, revision.payload
           FROM properties AS p
           JOIN property_revisions AS revision ON revision.id = p.published_revision_id
           WHERE p.status = 'published'
-          ORDER BY p.public_id
+          ORDER BY p.featured_at DESC NULLS LAST, p.public_id
         `;
-    const allRows = options.overlay ? [...rows, options.overlay].sort((a, b) => a.public_id.localeCompare(b.public_id)) : rows;
+    const allRows = options.overlay
+      ? [...rows, options.overlay].sort((a, b) =>
+        ((b.featured_at?.getTime() ?? 0) - (a.featured_at?.getTime() ?? 0))
+        || a.public_id.localeCompare(b.public_id))
+      : rows;
     if (allRows.length === 0) return [];
     const mediaRows = await sql<MediaRow[]>`
       SELECT property_id, id, checksum_sha256, alt_text, position,
@@ -170,7 +176,7 @@ export const createDatabaseCatalogSource = (
     const rows = options.overlay && options.overlay.slug === slug
       ? [options.overlay]
       : await sql<PublishedRow[]>`
-          SELECT p.id, p.public_id, p.commercial_reference, p.slug, revision.payload
+          SELECT p.id, p.public_id, p.commercial_reference, p.slug, p.featured_at, revision.payload
           FROM properties AS p
           JOIN property_revisions AS revision ON revision.id = p.published_revision_id
           WHERE p.status = 'published' AND p.slug = ${slug}

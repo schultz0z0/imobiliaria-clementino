@@ -21,7 +21,7 @@ const base: AdminPropertySummaryDto = {
 
 test('property card keeps every management action visible and labelled', () => {
   const html = renderToStaticMarkup(<AdminPropertyCard property={base} onAction={() => undefined} />);
-  for (const label of ['Visualizar', 'Editar', 'Publicar', 'Inativar', 'Duplicar']) assert.match(html, new RegExp(label));
+  for (const label of ['Visualizar', 'Editar', 'Publicar', 'Inativar', 'Destacar no site']) assert.match(html, new RegExp(label));
   assert.match(html, /Casa no Leblon/);
   assert.match(html, /REF-10/);
   assert.match(html, /CLI-10/);

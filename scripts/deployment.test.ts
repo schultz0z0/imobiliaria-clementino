@@ -114,6 +114,17 @@ test('production exposes only signed preview reads on the public host', () => {
   assert.match(compose, /imobiliaria-preview-api\.priority=100/);
 });
 
+test('production runs database migrations before API and publisher services', () => {
+  const compose = readFileSync(new URL('../compose.prod.yaml', import.meta.url), 'utf8');
+  const dockerfile = readFileSync(new URL('../Dockerfile', import.meta.url), 'utf8');
+  assert.match(compose, /\n  migrate:/);
+  assert.match(compose, /command: \["node", "dist-server\/db\/migrate\.js"\]/);
+  assert.match(compose, /admin-api:[\s\S]*depends_on:[\s\S]*migrate:[\s\S]*service_completed_successfully/);
+  assert.match(compose, /publisher:[\s\S]*depends_on:[\s\S]*migrate:[\s\S]*service_completed_successfully/);
+  assert.match(dockerfile, /server\/db\/migrate\.ts[\s\S]*dist-server\/db\/migrate\.js/);
+  assert.match(dockerfile, /COPY --from=api-builder \/app\/server\/migrations \.\/dist-server\/migrations/);
+});
+
 test('admin frontend proxies API requests through the same origin in development and production', () => {
   const vite = readFileSync(new URL('../admin/vite.config.ts', import.meta.url), 'utf8');
   const nginx = readFileSync(new URL('../nginx.admin.conf', import.meta.url), 'utf8');

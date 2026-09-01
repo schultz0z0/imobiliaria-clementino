@@ -38,8 +38,8 @@ const validProperty = (reference = 'CLI-0001'): PropertyDraft =>
     },
     publicLocation: {
       label: 'Bela Vista, Sao Paulo - SP',
-      latitude: -23.56,
-      longitude: -46.64,
+      latitude: -23.5545,
+      longitude: -46.63,
       precision: 'approximate',
     },
     facts: {

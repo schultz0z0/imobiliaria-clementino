@@ -136,6 +136,8 @@ svg { width: 20px; height: 20px; flex: 0 0 auto; }
 .status-published { color: #17613a; background: #eaf7ee; }
 .status-draft { color: #785000; background: #fff4d9; }
 .status-inactive { color: #5b616a; background: #eceef1; }
+.status-featured { color: #7a5200; background: #fff0c2; margin-left: 6px; gap: 4px; }
+.status-featured svg { width: 13px; height: 13px; }
 .publication-queued { color: #785000; background: #fff4d9; }
 .publication-running { color: var(--admin-info); background: var(--admin-info-soft); }
 .publication-succeeded { color: #17613a; background: #eaf7ee; }

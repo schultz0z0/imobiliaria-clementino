@@ -248,11 +248,11 @@ test('deep-merges strict partial autosaves and requires an optimistic revision',
   assert.equal(missingRevision.statusCode, 400);
   assert.equal(missingRevision.json().error.code, API_ERROR_CODES.VALIDATION_FAILED);
 
-  const saved = await saveDraft(session, created.id, 1, { editorial: { featured: true } });
+  const saved = await saveDraft(session, created.id, 1, { editorial: { description: 'Rascunho parcial sem destaque.' } });
   assert.equal(saved.statusCode, 200, saved.body);
   assert.equal(saved.json().property.revisionNumber, 2);
   assert.equal(saved.json().property.draft.editorial.title, initialTitle);
-  assert.equal(saved.json().property.draft.editorial.featured, true);
+  assert.equal(saved.json().property.draft.editorial.featured, false);
 });
 
 test('uses null only to clear optional draft fields and clears coordinate pairs atomically', async () => {
@@ -384,12 +384,32 @@ test('synchronizes editorial references with unique commercial references', asyn
   assert.equal(renamed.json().property.draft.editorial.reference, 'CLI-CUSTOM-REF');
 
   const second = await createDraft(session);
-  assert.equal((await saveDraft(session, second.id, 1, validProperty(second.commercialReference))).statusCode, 200);
+  assert.equal((await saveDraft(session, second.id, 1, validProperty(second.commercialReference, {
+    editorial: { ...validProperty(second.commercialReference).editorial, title: 'Apartamento ensolarado em Botafogo' },
+  }))).statusCode, 200);
   const conflict = await saveDraft(session, second.id, 2, {
     editorial: { reference: 'CLI-CUSTOM-REF' },
   });
   assert.equal(conflict.statusCode, 409, conflict.body);
   assert.equal(conflict.json().error.code, API_ERROR_CODES.CONFLICT);
+});
+
+test('derives the slug from the current title on every save', async () => {
+  const session = await authenticate();
+  const created = await createDraft(session);
+  assert.match(created.slug, /^novo-imovel-[a-f0-9]{8}$/);
+
+  const titled = await saveDraft(session, created.id, 1, {
+    editorial: { title: 'Apartamento amplo no Jardim América' },
+  });
+  assert.equal(titled.statusCode, 200, titled.body);
+  assert.equal(titled.json().property.slug, 'apartamento-amplo-no-jardim-america');
+
+  const renamed = await saveDraft(session, created.id, 2, {
+    editorial: { title: 'Título alterado posteriormente' },
+  });
+  assert.equal(renamed.statusCode, 200, renamed.body);
+  assert.equal(renamed.json().property.slug, 'titulo-alterado-posteriormente');
 });
 
 test('rejects stale concurrent autosaves so exactly one succeeds', async () => {
@@ -431,7 +451,7 @@ test('rolls back a failed draft save without exposing the database failure', asy
     EXECUTE FUNCTION fail_property_draft_audit();
   `);
   try {
-    const failed = await saveDraft(session, created.id, 1, { editorial: { featured: true } });
+    const failed = await saveDraft(session, created.id, 1, { editorial: { description: 'Rascunho que falhara no audit.' } });
     assert.equal(failed.statusCode, 500);
     assert.equal(failed.json().error.code, API_ERROR_CODES.CONFLICT);
     assert.equal(failed.body.includes('injected audit failure'), false);
@@ -681,6 +701,92 @@ test('duplicates canonical content as a distinct media-free draft without public
   ]);
 });
 
+test('rotates at most three published highlights in FIFO order and rejects drafts', async () => {
+  const session = await authenticate();
+  const properties: Array<{ id: string; reference: string }> = [];
+  for (let index = 0; index < 4; index += 1) {
+    const draft = await createDraft(session);
+    const reference = `HIGHLIGHT-${index}`;
+    const title = `Imóvel destaque ${index}`;
+    assert.equal(
+      (await saveDraft(session, draft.id, 1, validProperty(reference, {
+        editorial: {
+          ...validProperty(reference).editorial,
+          title,
+          reference,
+        },
+      }))).statusCode,
+      200,
+    );
+    await publishDraft(sql, draft.id);
+    properties.push({ id: draft.id, reference });
+  }
+
+  const draftOnly = await createDraft(session);
+  const draftFeature = await app.inject({
+    method: 'POST',
+    url: `/api/admin/properties/${draftOnly.id}/feature`,
+    headers: authHeaders(session, true),
+    payload: {},
+  });
+  assert.equal(draftFeature.statusCode, 409);
+  assert.equal(draftFeature.json().error.code, API_ERROR_CODES.INVALID_STATE);
+
+  for (const property of properties) {
+    const response = await app.inject({
+      method: 'POST',
+      url: `/api/admin/properties/${property.id}/feature`,
+      headers: authHeaders(session, true),
+      payload: {},
+    });
+    assert.equal(response.statusCode, 200, response.body);
+    assert.equal(response.json().property.featured, true);
+  }
+
+  const featured = await sql<{ commercial_reference: string }[]>`
+    SELECT commercial_reference
+    FROM properties
+    WHERE featured_at IS NOT NULL
+    ORDER BY featured_at ASC, id ASC
+  `;
+  assert.deepEqual(featured.map(({ commercial_reference }) => commercial_reference), [
+    'HIGHLIGHT-1', 'HIGHLIGHT-2', 'HIGHLIGHT-3',
+  ]);
+
+  const unfeatured = await app.inject({
+    method: 'DELETE',
+    url: `/api/admin/properties/${properties[2]!.id}/feature`,
+    headers: authHeaders(session, true),
+  });
+  assert.equal(unfeatured.statusCode, 200, unfeatured.body);
+  assert.equal(unfeatured.json().property.featured, false);
+});
+
+test('derives an exact title slug, updates it on title changes, and rejects duplicate titles', async () => {
+  const session = await authenticate();
+  const first = await createDraft(session);
+  const firstTitle = 'Casa linear em Jardim América';
+  const firstSave = await saveDraft(session, first.id, 1, validProperty(first.commercialReference, {
+    editorial: { ...validProperty(first.commercialReference).editorial, title: firstTitle },
+  }));
+  assert.equal(firstSave.statusCode, 200, firstSave.body);
+  assert.equal(firstSave.json().property.slug, 'casa-linear-em-jardim-america');
+
+  const changedTitle = 'Apartamento amplo em Copacabana';
+  const changed = await saveDraft(session, first.id, 2, {
+    editorial: { title: changedTitle },
+  });
+  assert.equal(changed.statusCode, 200, changed.body);
+  assert.equal(changed.json().property.slug, 'apartamento-amplo-em-copacabana');
+
+  const second = await createDraft(session);
+  const duplicate = await saveDraft(session, second.id, 1, validProperty(second.commercialReference, {
+    editorial: { ...validProperty(second.commercialReference).editorial, title: changedTitle },
+  }));
+  assert.equal(duplicate.statusCode, 409, duplicate.body);
+  assert.equal(duplicate.json().error.code, API_ERROR_CODES.CONFLICT);
+});
+
 test('validates publish requests, queues one global job, and does not move publication state', async () => {
   const session = await authenticate();
   const incomplete = await createDraft(session);
@@ -721,7 +827,9 @@ test('validates publish requests, queues one global job, and does not move publi
 
   const other = await createDraft(session);
   assert.equal(
-    (await saveDraft(session, other.id, 1, validProperty(other.commercialReference))).statusCode,
+    (await saveDraft(session, other.id, 1, validProperty(other.commercialReference, {
+      editorial: { ...validProperty(other.commercialReference).editorial, title: 'Apartamento amplo em Ipanema' },
+    }))).statusCode,
     200,
   );
   const conflict = await app.inject({
@@ -912,7 +1020,7 @@ test('returns typed not-found responses, audits mutations, and exposes no DELETE
   assert.equal(missing.json().error.code, API_ERROR_CODES.NOT_FOUND);
 
   const created = await createDraft(session);
-  await saveDraft(session, created.id, 1, { editorial: { featured: true } });
+  await saveDraft(session, created.id, 1, { editorial: { description: 'Descrição parcial do rascunho.' } });
   const deleted = await app.inject({
     method: 'DELETE',
     url: `/api/admin/properties/${created.id}`,

@@ -40,4 +40,6 @@ export interface WebsiteProperty {
     }>;
   }>;
   features: string[];
+  /** Editorial flag used only to build the Home selection. */
+  featured?: boolean;
 }

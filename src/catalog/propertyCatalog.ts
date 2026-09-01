@@ -78,6 +78,10 @@ export const getFeaturedPublishedProperties = (
   curatedIds: readonly string[] = [],
   limit = 6,
 ): WebsiteProperty[] => {
+  const highlighted = source.filter((property) => property.featured === true);
+  if (highlighted.length > 0) {
+    return highlighted.slice(0, Math.min(3, Math.max(0, limit)));
+  }
   const byId = new Map(source.map((property) => [property.id, property]));
   const curated = curatedIds.flatMap((id) => {
     const property = byId.get(id);

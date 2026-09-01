@@ -10,6 +10,7 @@ import {
   adminPropertyDraftPatchSchema,
   createPropertyDraft,
   duplicateProperty,
+  featureProperty,
   getPropertyDetail,
   getPropertyQuality,
   inactivatePropertyDraft,
@@ -208,6 +209,35 @@ export const registerPropertyRoutes = (app: FastifyInstance, sql: Sql): void => 
         emptyBodySchema.parse(request.body ?? {});
         const job = await requestPropertyPublish(sql, id, request.adminSession!.adminUserId);
         return reply.code(202).send({ job });
+      } catch (error) {
+        return handleRouteError(reply, error);
+      }
+    },
+  );
+
+  app.post(
+    '/api/admin/properties/:id/feature',
+    { preHandler: mutationGuard },
+    async (request, reply) => {
+      try {
+        const { id } = propertyIdParamsSchema.parse(request.params);
+        emptyBodySchema.parse(request.body ?? {});
+        const property = await featureProperty(sql, id, request.adminSession!.adminUserId, true);
+        return reply.send({ property });
+      } catch (error) {
+        return handleRouteError(reply, error);
+      }
+    },
+  );
+
+  app.delete(
+    '/api/admin/properties/:id/feature',
+    { preHandler: mutationGuard },
+    async (request, reply) => {
+      try {
+        const { id } = propertyIdParamsSchema.parse(request.params);
+        const property = await featureProperty(sql, id, request.adminSession!.adminUserId, false);
+        return reply.send({ property });
       } catch (error) {
         return handleRouteError(reply, error);
       }

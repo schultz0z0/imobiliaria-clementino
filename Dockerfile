@@ -21,6 +21,7 @@ COPY server ./server
 COPY scripts ./scripts
 RUN npm run server:build
 RUN npm run publisher:build
+RUN npx esbuild server/db/migrate.ts --bundle --platform=node --target=node22 --format=esm --outfile=dist-server/db/migrate.js
 RUN node server/media/codecSmoke.mjs
 
 FROM node:22-bookworm-slim AS api
@@ -31,6 +32,7 @@ RUN apt-get update \
 COPY package.json package-lock.json ./
 RUN npm ci --omit=dev
 COPY --from=api-builder /app/dist-server ./dist-server
+COPY --from=api-builder /app/server/migrations ./dist-server/migrations
 COPY --from=builder /app/dist ./site-dist
 COPY --from=builder /app/src/data/properties.generated.json ./site-catalog.json
 RUN mkdir -p /data/media/private /data/media/public \

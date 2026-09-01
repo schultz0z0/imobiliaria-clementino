@@ -8,7 +8,6 @@ import { NeedsNavigation } from '../components/home/NeedsNavigation';
 import { NeighborhoodHighlights } from '../components/home/NeighborhoodHighlights';
 import { TrustStrip } from '../components/home/TrustStrip';
 import { brandAssets } from '../config/brandAssets';
-import { featuredPropertyIds } from '../config/editorial';
 import { getPageMetadata } from '../config/pageMetadata';
 import { usePageMeta } from '../hooks/usePageMeta';
 import { usePropertyCatalog } from '../hooks/usePropertyCatalog';
@@ -16,7 +15,7 @@ import { usePropertyCatalog } from '../hooks/usePropertyCatalog';
 export const Home = () => {
   usePageMeta(getPageMetadata('home'));
   const { properties } = usePropertyCatalog();
-  const featured = getFeaturedPublishedProperties(properties, featuredPropertyIds);
+  const featured = getFeaturedPublishedProperties(properties, [], 3);
   const neighborhoods = getTopNeighborhoodsFromProperties(properties, 4);
 
   return (

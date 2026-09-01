@@ -50,12 +50,27 @@ npm run lint
 npm run build
 ```
 
+Para medir o site publicado no ambiente já iniciado (evita abrir um segundo Vite e
+consumir memória no Windows), use:
+
+```powershell
+$env:E2E_BASE_URL = 'http://127.0.0.1:4174'
+npm run test:public-performance
+npm run performance:site
+```
+
+O teste de navegador cobre a aparição da listagem, a transição interna para
+`/imoveis` e a abertura do detalhe. O benchmark HTTP registra mediana, p95 e
+limites de catálogo, páginas e API. Em produção, a mesma suíte pode apontar
+`E2E_BASE_URL` para o domínio da VPS.
+
 ## Catálogo de imóveis
 
-- `content/imoveis/`: fonte estática dos 53 imóveis.
+- `content/imoveis/`: fonte histórica dos imóveis usados na preparação do catálogo.
 - `content/catalog-overrides.json`: ajustes editoriais do catálogo.
-- `src/data/properties.generated.json`: catálogo gerado consumido pelo React.
+- `src/data/properties.generated.json`: catálogo legado usado apenas por testes e ferramentas de geração.
 - `public/imoveis/`: imagens otimizadas usadas pelo website.
+- Em produção, o site consome exclusivamente os imóveis com status `published` no PostgreSQL (atualmente CLEM-0003 a CLEM-0054).
 - [`docs/CATALOGO_IMOVEIS.md`](./docs/CATALOGO_IMOVEIS.md): contrato de identidade que liga content, catálogo, referências e imagens.
 
 Para validar o catálogo:
@@ -72,7 +87,7 @@ npm run catalog:generate
 
 ## Produção na VPS
 
-O build estático é gerado pelo `Dockerfile` multi-stage e servido pelo Nginx. O `compose.prod.yaml` contém somente o site; o Traefik permanece em seu Compose próprio e descobre o container pelas labels do Docker.
+O `compose.prod.yaml` sobe o site público, o painel administrativo, a API, o publisher e o PostgreSQL no mesmo ambiente privado da VPS. O build do site e da API é feito pelo `Dockerfile` multi-stage; o Traefik permanece em seu Compose próprio e descobre os containers pelas labels do Docker.
 
 ### Pré-requisitos
 
@@ -95,6 +110,8 @@ cp .env.production.example .env.production
 docker compose --env-file .env.production -f compose.prod.yaml up -d --build
 ```
 
+O serviço `migrate` executa as migrações do PostgreSQL antes da API e do publisher. Ele é um job de execução única; se falhar, os serviços dependentes não iniciam. O volume `postgres_data` mantém os dados entre atualizações e o volume `media_data` mantém as fotos dos imóveis.
+
 O arquivo `.env.production` não deve ser commitado. O valor padrão do domínio já é `clementinoimoveis.com.br`.
 
 O container do site não publica portas diretamente no host. O Traefik usa as labels para enviar o tráfego HTTPS à porta interna 80 do Nginx. O endereço `www.clementinoimoveis.com.br` é redirecionado permanentemente para `https://clementinoimoveis.com.br`.
@@ -104,10 +121,11 @@ O container do site não publica portas diretamente no host. O Traefik usa as la
 ```bash
 docker compose --env-file .env.production -f compose.prod.yaml ps
 docker compose --env-file .env.production -f compose.prod.yaml logs -f website
+docker compose --env-file .env.production -f compose.prod.yaml logs migrate
 docker compose --env-file .env.production -f compose.prod.yaml exec website wget -qO- http://127.0.0.1/ > /dev/null
 ```
 
-O serviço usa `restart: unless-stopped` e possui healthcheck HTTP próprio.
+Os serviços públicos, API, painel e publisher usam `restart: unless-stopped` e possuem healthchecks. O `migrate` deve aparecer como `Exited (0)` após concluir com sucesso.
 
 ### Atualização
 

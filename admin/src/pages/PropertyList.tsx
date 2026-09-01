@@ -75,6 +75,7 @@ export const PropertyList = ({ api = adminApi }: { api?: PropertyAdminApi }) => 
   const runAction = async (action: PropertyAction, property: AdminPropertySummaryDto) => {
     if (action === 'publish' && !window.confirm(`Solicitar a publicação de “${property.title}”?`)) return;
     if (action === 'inactivate' && !window.confirm('Inativar este imóvel e solicitar sua retirada do site público?')) return;
+    if (action === 'feature' && !window.confirm(`Destacar \"${property.title}\" na pagina inicial?`)) return;
     const previewWindow = action === 'preview' ? window.open('about:blank', '_blank') : null;
     if (previewWindow) previewWindow.opener = null;
     setBusy({ id: property.id, action }); setNotice(null);
@@ -93,9 +94,14 @@ export const PropertyList = ({ api = adminApi }: { api?: PropertyAdminApi }) => 
         }
         await api.publishProperty(property.id);
         setNotice({ tone: 'success', text: 'Publicação solicitada. O imóvel entrará no site somente após a validação da fila.' });
-      } else if (action === 'duplicate') {
-        await api.duplicateProperty(property.id);
-        setNotice({ tone: 'success', text: 'Cópia criada como rascunho.' });
+      } else if (action === 'feature') {
+        if (!api.featureProperty) throw new Error('Acao de destaque indisponivel');
+        await api.featureProperty(property.id);
+        setNotice({ tone: 'success', text: 'Imóvel destacado na página inicial.' });
+      } else if (action === 'unfeature') {
+        if (!api.unfeatureProperty) throw new Error('Acao de destaque indisponivel');
+        await api.unfeatureProperty(property.id);
+        setNotice({ tone: 'success', text: 'Destaque removido da pagina inicial.' });
       } else if (action === 'inactivate') {
         await api.inactivateProperty(property.id);
         setNotice({ tone: 'success', text: 'Imóvel inativado. A retirada do site será processada com segurança.' });

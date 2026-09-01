@@ -22,6 +22,8 @@
     "restore:verify": "tsx scripts/operations/verifyBackup.ts",
     "migrate:legacy": "tsx scripts/migration/importLegacyCatalog.ts",
     "test:e2e": "playwright test",
+    "test:public-performance": "playwright test -c playwright.public.config.ts",
+    "performance:site": "tsx scripts/performance/publicSitePerformance.ts",
     "preview": "vite preview --host 0.0.0.0 --port 4174",
     "clean": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
     "lint": "tsc --noEmit",

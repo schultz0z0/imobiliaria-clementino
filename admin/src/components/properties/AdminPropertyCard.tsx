@@ -1,8 +1,8 @@
-import { Building2, Copy, Eye, FilePenLine, Power, Rocket, RotateCcw } from 'lucide-react';
+import { Building2, Eye, FilePenLine, Power, Rocket, RotateCcw, Star } from 'lucide-react';
 import React from 'react';
 import type { AdminPropertySummaryDto, PropertyOperation } from '../../api/client.ts';
 
-export type PropertyAction = 'preview' | 'publish' | 'inactivate' | 'reactivate' | 'duplicate';
+export type PropertyAction = 'preview' | 'publish' | 'inactivate' | 'reactivate' | 'feature' | 'unfeature';
 
 type Props = {
   property: AdminPropertySummaryDto;
@@ -27,7 +27,7 @@ export const AdminPropertyCard = ({ property, busyAction, onAction }: Props) => 
       <div className="property-cover-placeholder" aria-hidden="true"><Building2 /></div>
       <div className="property-card-main">
         <div className="property-card-heading">
-          <div><span className={`status-badge status-${property.status}`}>{statusLabel[property.status]}</span><h3 id={`property-${property.id}`} data-property-title>{title}</h3></div>
+          <div><span className={`status-badge status-${property.status}`}>{statusLabel[property.status]}</span>{property.featured ? <span className="status-badge status-featured"><Star aria-hidden="true" /> Destaque</span> : null}<h3 id={`property-${property.id}`} data-property-title>{title}</h3></div>
           <strong className="property-price">{price(property)}</strong>
         </div>
         <dl className="property-meta">
@@ -43,7 +43,7 @@ export const AdminPropertyCard = ({ property, busyAction, onAction }: Props) => 
         <a className="action-link" href={`/imoveis/${property.id}/editar`}><FilePenLine aria-hidden="true" />Editar</a>
         {property.status !== 'inactive' ? <button type="button" onClick={() => onAction('publish', property)} disabled={Boolean(busyAction)}><Rocket aria-hidden="true" />{busyAction === 'publish' ? 'Solicitando…' : 'Publicar'}</button> : null}
         {property.status !== 'inactive' ? <button type="button" onClick={() => onAction('inactivate', property)} disabled={Boolean(busyAction)}><Power aria-hidden="true" />{busyAction === 'inactivate' ? 'Inativando…' : 'Inativar'}</button> : <button type="button" onClick={() => onAction('reactivate', property)} disabled={Boolean(busyAction)}><RotateCcw aria-hidden="true" />{busyAction === 'reactivate' ? 'Reativando…' : 'Reativar'}</button>}
-        <button type="button" onClick={() => onAction('duplicate', property)} disabled={Boolean(busyAction)}><Copy aria-hidden="true" />{busyAction === 'duplicate' ? 'Duplicando…' : 'Duplicar'}</button>
+        {property.status === 'published' ? <button type="button" onClick={() => onAction(property.featured ? 'unfeature' : 'feature', property)} disabled={Boolean(busyAction)}><Star aria-hidden="true" />{busyAction === (property.featured ? 'unfeature' : 'feature') ? (property.featured ? 'Removendo…' : 'Destacando…') : (property.featured ? 'Remover destaque' : 'Destacar no site')}</button> : <span className="action-disabled" aria-disabled="true"><Star aria-hidden="true" />Disponível após publicar</span>}
       </div>
     </article>
   );

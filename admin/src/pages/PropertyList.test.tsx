@@ -111,7 +111,9 @@ test('list exposes view/edit and safe lifecycle actions without hover-only contr
     publishProperty: async (id) => { calls.push(`publish:${id}`); return { job: { id: 9, status: 'queued' } }; },
     inactivateProperty: async (id) => { calls.push(`inactivate:${id}`); current = { ...source, status: 'inactive' }; return { property: detail(current), job: null }; },
     reactivateProperty: async (id) => { calls.push(`reactivate:${id}`); current = source; return { property: detail(source), job: null }; },
-    duplicateProperty: async (id) => { calls.push(`duplicate:${id}`); return { property: detail({ ...source, id: '44444444-4444-4444-8444-444444444444', status: 'draft' }) }; },
+    duplicateProperty: async () => ({ property: detail(source) }),
+    featureProperty: async (id) => { calls.push(`feature:${id}`); return { property: detail({ ...source, featured: true }) }; },
+    unfeatureProperty: async (id) => { calls.push(`unfeature:${id}`); return { property: detail({ ...source, featured: false }) }; },
   };
   const { container, root, previous } = await renderList(api);
   const oldConfirm = window.confirm;
@@ -124,11 +126,11 @@ test('list exposes view/edit and safe lifecycle actions without hover-only contr
   };
   await click(/^Publicar$/);
   assert.match(container.textContent ?? '', /Publicação solicitada/);
-  await click(/^Duplicar$/);
+  await click(/^Destacar no site$/);
   const originalCard = container.querySelector(`[aria-labelledby="property-${source.id}"]`)!;
   const inactivate = Array.from(originalCard.querySelectorAll<HTMLButtonElement>('button')).find((button) => /^Inativar$/.test(button.textContent ?? ''))!;
   await act(async () => { inactivate.click(); await Promise.resolve(); await Promise.resolve(); });
-  assert.deepEqual(calls, [`publish:${source.id}`, `duplicate:${source.id}`, `inactivate:${source.id}`]);
+  assert.deepEqual(calls, [`publish:${source.id}`, `feature:${source.id}`, `inactivate:${source.id}`]);
   assert.ok(Array.from(container.querySelectorAll('button')).some((button) => /Reativar/.test(button.textContent ?? '')));
   window.confirm = oldConfirm;
   await act(async () => root.unmount()); Object.assign(globalThis, previous);

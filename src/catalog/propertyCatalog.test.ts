@@ -79,6 +79,17 @@ test('derives featured cards and neighborhoods from the provided published sourc
   assert.equal(getTopNeighborhoodsFromProperties(source, 4)[0]?.count, 1);
 });
 
+test('uses the latest published highlights and never exposes more than three', () => {
+  const source = getAllProperties().slice(0, 5).map((property, index) => ({
+    ...property,
+    featured: index < 4,
+  }));
+  const selected = getFeaturedPublishedProperties(source, [], 3);
+  assert.equal(selected.length, 3);
+  assert.ok(selected.every((property) => property.featured));
+  assert.deepEqual(selected.map((property) => property.id), source.slice(0, 3).map((property) => property.id));
+});
+
 test('rejects a curated id that is absent from the catalog', () => {
   assert.throws(
     () => getCuratedPropertiesById(['9999999999']),

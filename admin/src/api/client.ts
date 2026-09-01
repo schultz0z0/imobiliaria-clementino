@@ -32,6 +32,8 @@ export type PropertyAdminDto = {
   createdAt: string;
   updatedAt: string;
   inactivatedAt: string | null;
+  featured?: boolean;
+  featuredAt?: string | null;
 };
 
 export type AdminPropertySummaryDto = {
@@ -45,6 +47,8 @@ export type AdminPropertySummaryDto = {
   classification: { operations: PropertyOperation[] };
   firstPrice: number | null;
   updatedAt: string;
+  featured?: boolean;
+  featuredAt?: string | null;
 };
 
 export type PropertyListQuery = {
@@ -84,6 +88,8 @@ export type PropertyAdminApi = {
   inactivateProperty: (id: string) => Promise<PropertyLifecycleResponse>;
   reactivateProperty: (id: string) => Promise<PropertyLifecycleResponse>;
   duplicateProperty: (id: string) => Promise<{ property: PropertyAdminDto }>;
+  featureProperty?: (id: string) => Promise<{ property: PropertyAdminDto }>;
+  unfeatureProperty?: (id: string) => Promise<{ property: PropertyAdminDto }>;
   getPropertyQuality?: (id: string) => Promise<{ score: number; checks: Array<{ id: string; label: string; points: number; passed: boolean; recommendation?: string }>; recommendations: string[]; publishable: boolean; blockingIssues: ApiFieldIssue[] }>;
 };
 
@@ -253,6 +259,14 @@ export class AdminApiClient implements AuthApi, PropertyAdminApi, PropertyEditor
 
   duplicateProperty(id: string): Promise<{ property: PropertyAdminDto }> {
     return this.request(`/properties/${encodeURIComponent(id)}/duplicate`, { method: 'POST', body: '{}' });
+  }
+
+  featureProperty(id: string): Promise<{ property: PropertyAdminDto }> {
+    return this.request(`/properties/${encodeURIComponent(id)}/feature`, { method: 'POST', body: '{}' });
+  }
+
+  unfeatureProperty(id: string): Promise<{ property: PropertyAdminDto }> {
+    return this.request(`/properties/${encodeURIComponent(id)}/feature`, { method: 'DELETE' });
   }
 
   createProperty(draft: AdminPropertyDraftDto = {}, signal?: AbortSignal): Promise<{ property: PropertyAdminDto }> {
