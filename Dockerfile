@@ -21,7 +21,7 @@ COPY server ./server
 COPY scripts ./scripts
 RUN npm run server:build
 RUN npm run publisher:build
-RUN npx esbuild server/db/migrate.ts --bundle --platform=node --target=node22 --format=esm --outfile=dist-server/db/migrate.js
+RUN npx esbuild server/db/migrate.ts --bundle --packages=external --platform=node --target=node22 --format=esm --outfile=dist-server/db/migrate.js
 RUN node server/media/codecSmoke.mjs
 
 FROM node:22-bookworm-slim AS api

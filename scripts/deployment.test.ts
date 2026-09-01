@@ -117,11 +117,14 @@ test('production exposes only signed preview reads on the public host', () => {
 test('production runs database migrations before API and publisher services', () => {
   const compose = readFileSync(new URL('../compose.prod.yaml', import.meta.url), 'utf8');
   const dockerfile = readFileSync(new URL('../Dockerfile', import.meta.url), 'utf8');
+  assert.match(packageJson.scripts['server:build']!, /--packages=external/);
+  assert.match(packageJson.scripts['publisher:build']!, /--packages=external/);
   assert.match(compose, /\n  migrate:/);
   assert.match(compose, /command: \["node", "dist-server\/db\/migrate\.js"\]/);
   assert.match(compose, /admin-api:[\s\S]*depends_on:[\s\S]*migrate:[\s\S]*service_completed_successfully/);
   assert.match(compose, /publisher:[\s\S]*depends_on:[\s\S]*migrate:[\s\S]*service_completed_successfully/);
   assert.match(dockerfile, /server\/db\/migrate\.ts[\s\S]*dist-server\/db\/migrate\.js/);
+  assert.match(dockerfile, /server\/db\/migrate\.ts[\s\S]*--packages=external/);
   assert.match(dockerfile, /COPY --from=api-builder \/app\/server\/migrations \.\/dist-server\/migrations/);
 });
 
