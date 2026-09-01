@@ -38,7 +38,7 @@ Expected: PASS.
 
 **Files:**
 - Modify: `server/publisher/databaseCatalogSource.ts`
-- Modify: `server/publisher/databaseCatalogSource.latest.test.ts`
+- Modify: `scripts/catalog/catalogSource.test.ts`
 - Modify: `server/preview/propertyPreview.ts`
 - Modify: `server/preview/propertyPreview.test.ts`
 
@@ -48,7 +48,7 @@ Assert that publisher and preview both produce the canonical address with a numb
 
 **Step 2: Run the targeted tests**
 
-Run: `npx tsx --test server/publisher/databaseCatalogSource.latest.test.ts server/preview/propertyPreview.test.ts`
+Run: `npx tsx --test scripts/catalog/catalogSource.test.ts server/preview/propertyPreview.test.ts`
 Expected: FAIL with the old district-only labels.
 
 **Step 3: Reuse the formatter in both adapters**
@@ -57,7 +57,7 @@ Set `location` and `address` from `formatPublicPropertyAddress(draft.privateAddr
 
 **Step 4: Run the targeted tests**
 
-Run: `npx tsx --test server/domain/publicPropertyAddress.test.ts server/publisher/databaseCatalogSource.latest.test.ts server/preview/propertyPreview.test.ts`
+Run: `npx tsx --test server/domain/publicPropertyAddress.test.ts scripts/catalog/catalogSource.test.ts server/preview/propertyPreview.test.ts`
 Expected: PASS.
 
 ### Task 3: Google Maps contract and full verification

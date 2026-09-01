@@ -3,6 +3,7 @@ import { COMMON_FEATURES, PRIVATE_FEATURES, PROPERTY_SUBTYPES, PROPERTY_TYPES } 
 import { publishablePropertySchema, type PublishableProperty } from '../../shared/propertySchema.ts';
 import type { SqlExecutor } from '../db/client.ts';
 import type { CatalogSource, CanonicalPublishedProperty } from '../../scripts/catalog/catalogSource.ts';
+import { formatPublicPropertyAddress } from '../domain/publicPropertyAddress.ts';
 
 export type PublishedRow = {
   id: string;
@@ -86,8 +87,10 @@ const toWebsiteProperty = (
       : `${publicPrefix}/${row.public_id}/${photo.checksum_sha256}-gallery.webp`;
   const cover = draft.media.coverPhotoId ? byId.get(draft.media.coverPhotoId) : undefined;
   const images = orderedIds.map((id) => byId.get(id)).filter((photo): photo is MediaRow => Boolean(photo)).map(photoUrl);
-  const [district = '', cityState = ''] = draft.publicLocation.label.split(', ');
-  const [city = '', state = ''] = cityState.split(' - ');
+  const district = draft.privateAddress.district.trim();
+  const city = draft.privateAddress.city.trim();
+  const state = draft.privateAddress.state.trim().toUpperCase();
+  const publicAddress = formatPublicPropertyAddress(draft.privateAddress);
   const commonFeatures = draft.features.common.map((id) => ({ label: featureLabel(id, 'common') }));
   const privateFeatures = draft.features.private.map((id) => ({ label: featureLabel(id, 'private') }));
 
@@ -98,8 +101,8 @@ const toWebsiteProperty = (
     image: cover ? photoUrl(cover) : images[0] ?? '',
     images,
     title: draft.editorial.title,
-    location: draft.publicLocation.label,
-    address: draft.publicLocation.label,
+    location: publicAddress,
+    address: publicAddress,
     city,
     district,
     state: state.toUpperCase(),

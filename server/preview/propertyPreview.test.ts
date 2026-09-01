@@ -3,7 +3,7 @@ import test from 'node:test';
 
 import { toPreviewWebsiteProperty } from './propertyPreview.ts';
 
-test('preview DTO uses only approximate public location and signed media URLs', () => {
+test('preview DTO uses the canonical public address and signed media URLs', () => {
   const result = toPreviewWebsiteProperty({
     id: '33333333-3333-4333-8333-333333333333',
     publicId: 'CLI-0001',
@@ -28,12 +28,13 @@ test('preview DTO uses only approximate public location and signed media URLs', 
     media: [{ id: '44444444-4444-4444-8444-444444444444', altText: 'Sala', position: 0, checksumSha256: 'a'.repeat(64) }],
   }, (photoId) => `/api/property-previews/token/media/${photoId}`);
 
-  assert.equal(result.location, 'Jardim América, Rio de Janeiro - RJ');
+  assert.equal(result.location, 'Rua Professor Pires Salgado, 413 - Jardim América, Rio de Janeiro - RJ');
+  assert.equal(result.address, result.location);
   assert.equal(result.latitude, -22.84);
   assert.equal(result.longitude, -43.32);
   assert.deepEqual(result.images, ['/api/property-previews/token/media/44444444-4444-4444-8444-444444444444']);
   const serialized = JSON.stringify(result);
-  assert.doesNotMatch(serialized, /Professor Pires Salgado|21240-220|Apto 403|413|-22\.839|-43\.321/);
+  assert.doesNotMatch(serialized, /21240-220|Apto 403|-22\.839|-43\.321/);
 });
 
 test('incomplete drafts still produce a renderable preview with safe fallbacks', () => {

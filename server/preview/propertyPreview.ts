@@ -1,6 +1,7 @@
 import type { WebsiteProperty } from '../../src/types/property.ts';
 import { COMMON_FEATURES, PRIVATE_FEATURES, PROPERTY_SUBTYPES, PROPERTY_TYPES } from '../../shared/featureCatalog.ts';
 import type { AdminPropertyDraft } from '../domain/propertyService.ts';
+import { formatPublicPropertyAddress } from '../domain/publicPropertyAddress.ts';
 
 export type PreviewPropertySource = {
   id: string;
@@ -36,12 +37,13 @@ const featureLabel = (scope: 'common' | 'private', id: string): string => {
 const finiteNumber = (value: unknown): number => typeof value === 'number' && Number.isFinite(value) ? value : 0;
 const formatArea = (value: number): string => `${value}m²`;
 
-const approximateLocation = (draft: AdminPropertyDraft): { label: string; district: string; city: string; state: string } => {
+const publicAddressLocation = (draft: AdminPropertyDraft): { label: string; district: string; city: string; state: string } => {
   const district = draft.privateAddress?.district?.trim() ?? '';
   const city = draft.privateAddress?.city?.trim() ?? '';
   const state = draft.privateAddress?.state?.trim().toUpperCase() ?? '';
-  const fallback = [district, [city, state].filter(Boolean).join(' - ')].filter(Boolean).join(', ');
-  const label = draft.publicLocation?.label?.trim() || fallback || 'Localização aproximada não informada';
+  const label = formatPublicPropertyAddress(draft.privateAddress)
+    || draft.publicLocation?.label?.trim()
+    || 'Localização não informada';
   return { label, district, city, state };
 };
 
@@ -71,7 +73,7 @@ export const toPreviewWebsiteProperty = (
     images.splice(allIds.indexOf(coverId), 1);
     images.unshift(mediaUrl(coverId));
   }
-  const location = approximateLocation(draft);
+  const location = publicAddressLocation(draft);
   const commonFeatures = (draft.features?.common ?? []).map((id) => ({ label: featureLabel('common', id) }));
   const privateFeatures = (draft.features?.private ?? []).map((id) => ({ label: featureLabel('private', id) }));
   const totalArea = finiteNumber(draft.facts?.totalArea);
