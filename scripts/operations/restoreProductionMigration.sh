@@ -141,11 +141,11 @@ EXPECTED_MEDIA_RECORDS=$(manifest_count mediaRecords)
 EXPECTED_PRIVATE_FILES=$(manifest_count privateMediaFiles)
 EXPECTED_PUBLIC_FILES=$(manifest_count publicMediaFiles)
 
-[ "$EXPECTED_PROPERTIES" = "53" ] || { echo "Unexpected property count in bundle: $EXPECTED_PROPERTIES" >&2; exit 2; }
-[ "$EXPECTED_PUBLISHED" = "52" ] || { echo "Unexpected published count in bundle: $EXPECTED_PUBLISHED" >&2; exit 2; }
+[ "$EXPECTED_PROPERTIES" = "52" ] || { echo "Unexpected property count in bundle: $EXPECTED_PROPERTIES" >&2; exit 2; }
+[ "$EXPECTED_PUBLISHED" = "51" ] || { echo "Unexpected published count in bundle: $EXPECTED_PUBLISHED" >&2; exit 2; }
 [ "$EXPECTED_INACTIVE" = "1" ] || { echo "Unexpected inactive count in bundle: $EXPECTED_INACTIVE" >&2; exit 2; }
 [ "$EXPECTED_ADMINS" = "1" ] || { echo "Unexpected administrator count in bundle: $EXPECTED_ADMINS" >&2; exit 2; }
-[ "$EXPECTED_MEDIA_RECORDS" = "1466" ] || { echo "Unexpected media record count in bundle: $EXPECTED_MEDIA_RECORDS" >&2; exit 2; }
+[ "$EXPECTED_MEDIA_RECORDS" = "1434" ] || { echo "Unexpected media record count in bundle: $EXPECTED_MEDIA_RECORDS" >&2; exit 2; }
 
 COMPOSE="docker compose --env-file .env.production -f compose.prod.yaml"
 $COMPOSE config >/dev/null

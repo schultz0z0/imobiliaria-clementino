@@ -189,8 +189,8 @@ test('production migration restore is guarded, backed up and preserves named vol
   assert.match(script, /rollback_on_failure/);
   assert.match(script, /trap .*EXIT/);
   assert.match(script, /sha256sum -c SHA256SUMS/);
-  assert.match(script, /53/);
   assert.match(script, /52/);
+  assert.match(script, /51/);
   assert.doesNotMatch(script, /down\s+-v/);
   assert.doesNotMatch(script, /docker volume rm/);
   assert.match(deployment, /restoreProductionMigration\.sh/);
