@@ -177,6 +177,7 @@ test('production migration restore is guarded, backed up and preserves named vol
   assert.match(script, /--confirm-production/);
   assert.match(script, /COMPLETE/);
   assert.match(script, /sha256sum -c SHA256SUMS/);
+  assert.match(script, /Unsafe symlink target/);
   assert.match(script, /pg_dump/);
   assert.match(script, /pg_restore/);
   assert.match(script, /--clean/);

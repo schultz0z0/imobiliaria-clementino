@@ -109,6 +109,10 @@ validate_archive_entries() {
   docker run --rm -v "$BUNDLE:/bundle:ro" postgres:16-alpine sh -ceu '
     archive="$1"
     kind="$2"
+    if tar -tvzf "$archive" | grep -E -- " -> (/|.*\.\.)"; then
+      echo "Unsafe symlink target in $archive" >&2
+      exit 22
+    fi
     tar -tzf "$archive" | while IFS= read -r entry; do
       case "$entry" in /*|../*|*/../*|*/..) exit 20 ;; esac
       case "$kind:$entry" in
