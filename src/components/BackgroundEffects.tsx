@@ -10,7 +10,7 @@ export const BackgroundEffects = () => (
         scale: [1, 1.1, 0.9, 1]
       }}
       transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-      className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] md:w-[800px] md:h-[800px] bg-[#d7b661] rounded-full blur-[120px] opacity-10" 
+      className="absolute top-[-10%] right-[-5%] w-[350px] h-[350px] md:w-[800px] md:h-[800px] bg-[#d7b661] rounded-full blur-[60px] md:blur-[120px] opacity-10 transform-gpu will-change-transform" 
     />
     <motion.div 
       animate={{ 
@@ -19,7 +19,7 @@ export const BackgroundEffects = () => (
         scale: [1, 0.9, 1.1, 1]
       }}
       transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-      className="absolute top-[20%] left-[-10%] w-[500px] h-[500px] md:w-[600px] md:h-[600px] bg-[#ffffff] rounded-full blur-[120px] opacity-5" 
+      className="absolute top-[20%] left-[-10%] w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-[#ffffff] rounded-full blur-[60px] md:blur-[120px] opacity-5 transform-gpu will-change-transform" 
     />
   </div>
 );

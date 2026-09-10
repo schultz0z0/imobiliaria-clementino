@@ -90,6 +90,8 @@ services:
       - "traefik.http.routers.imobiliaria-public-catalog.tls.certresolver=letsencrypt"
       - "traefik.http.routers.imobiliaria-public-catalog.priority=100"
       - "traefik.http.routers.imobiliaria-public-catalog.service=imobiliaria-preview-api"
+      - "traefik.http.middlewares.imobiliaria-compress.compress=true"
+      - "traefik.http.routers.imobiliaria-public-catalog.middlewares=imobiliaria-compress"
 
   publisher:
     build:

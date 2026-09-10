@@ -26,7 +26,28 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div id="app-shell-loading" style="min-height: 100vh; background-color: #18181b; display: flex; flex-direction: column;">
+        <header style="height: 72px; border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: space-between; padding: 0 24px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 32px; height: 32px; border-radius: 8px; background: rgba(215,182,97,0.2); border: 1px solid rgba(215,182,97,0.4);"></div>
+            <span style="color: #ffffff; font-weight: 600; font-family: system-ui, -apple-system, sans-serif; font-size: 15px; letter-spacing: 0.05em;">CLEMENTINO</span>
+          </div>
+          <div style="width: 24px; height: 16px; display: flex; flex-direction: column; justify-content: space-between;">
+            <span style="height: 2px; background: rgba(255,255,255,0.4); border-radius: 2px;"></span>
+            <span style="height: 2px; background: rgba(255,255,255,0.4); border-radius: 2px;"></span>
+            <span style="height: 2px; background: rgba(255,255,255,0.4); border-radius: 2px;"></span>
+          </div>
+        </header>
+        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 48px 24px; text-align: center;">
+          <div style="width: 40px; height: 40px; border: 2.5px solid rgba(255,255,255,0.08); border-top-color: #d7b661; border-radius: 50%; animation: clementino-spin 0.8s linear infinite; margin-bottom: 20px;"></div>
+          <p style="color: rgba(255,255,255,0.55); font-family: system-ui, -apple-system, sans-serif; font-size: 13.5px; margin: 0; letter-spacing: 0.03em;">Carregando Imobiliária Clementino…</p>
+        </div>
+        <style>
+          @keyframes clementino-spin { to { transform: rotate(360deg); } }
+        </style>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
