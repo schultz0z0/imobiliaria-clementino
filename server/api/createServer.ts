@@ -1,4 +1,3 @@
-import fastifyCompress from '@fastify/compress';
 import fastifyCookie from '@fastify/cookie';
 import fastifyHelmet from '@fastify/helmet';
 import Fastify, { type FastifyServerOptions } from 'fastify';
@@ -40,10 +39,6 @@ export const createServer = (options: CreateServerOptions = {}) => {
     throw new Error('PREVIEW_TOKEN_SECRET deve ter pelo menos 32 caracteres.');
   }
 
-  app.register(fastifyCompress, {
-    threshold: 1024,
-    encodings: ['gzip', 'deflate'],
-  });
   app.register(fastifyCookie);
   app.register(fastifyHelmet);
   app.get('/health', async () => ({ status: 'ok' }));
