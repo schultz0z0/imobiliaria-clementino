@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -29,6 +29,14 @@ const RouteFallback = () => (
 );
 
 export default function App() {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      import('./pages/Properties');
+      import('./pages/PropertyDetails');
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <BrowserRouter>
       <CookieConsentProvider>

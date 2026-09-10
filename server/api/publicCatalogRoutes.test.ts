@@ -153,3 +153,20 @@ test('public catalog falls back to stale cache when database fails after initial
   await app.close();
 });
 
+test('public catalog compresses response when accept-encoding includes gzip', async () => {
+  const app = await buildApp({
+    loadPublishedProperties: async () => [publishedProperty],
+  });
+
+  const response = await app.inject({
+    method: 'GET',
+    url: '/api/public/catalog',
+    headers: { 'accept-encoding': 'gzip, deflate' },
+  });
+
+  assert.equal(response.statusCode, 200);
+  assert.equal(response.headers['content-encoding'], 'gzip');
+  assert.equal(response.headers['content-type'], 'application/json; charset=utf-8');
+  await app.close();
+});
+

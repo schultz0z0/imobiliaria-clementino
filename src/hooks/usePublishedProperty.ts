@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { getPropertyBySlug } from '../catalog/propertyCatalog.ts';
 import type { WebsiteProperty } from '../types/property.ts';
 
 const propertyPromises = new Map<string, Promise<WebsiteProperty | null>>();
@@ -46,8 +47,9 @@ export const resetPublishedPropertyCache = (): void => {
 };
 
 export const usePublishedProperty = (slug: string, enabled = true) => {
-  const [property, setProperty] = useState<WebsiteProperty | null>(null);
-  const [loading, setLoading] = useState(enabled);
+  const initial = slug ? (getPropertyBySlug(slug) ?? null) : null;
+  const [property, setProperty] = useState<WebsiteProperty | null>(initial);
+  const [loading, setLoading] = useState(() => enabled && !initial);
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
@@ -56,14 +58,27 @@ export const usePublishedProperty = (slug: string, enabled = true) => {
       return;
     }
     let active = true;
-    setProperty(null);
+    const fallback = slug ? (getPropertyBySlug(slug) ?? null) : null;
+    setProperty((current) => current ?? fallback);
+    if (!fallback) {
+      setLoading(true);
+    }
     setError(null);
-    setLoading(true);
     loadPublishedProperty(slug)
-      .then((result) => { if (active) setProperty(result); })
-      .catch((reason: unknown) => { if (active) setError(reason instanceof Error ? reason : new Error('property unavailable')); })
-      .finally(() => { if (active) setLoading(false); });
-    return () => { active = false; };
+      .then((result) => {
+        if (active) setProperty(result);
+      })
+      .catch((reason: unknown) => {
+        if (active && !fallback) {
+          setError(reason instanceof Error ? reason : new Error('property unavailable'));
+        }
+      })
+      .finally(() => {
+        if (active) setLoading(false);
+      });
+    return () => {
+      active = false;
+    };
   }, [enabled, slug]);
 
   return { property, loading, error };

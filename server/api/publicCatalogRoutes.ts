@@ -1,5 +1,6 @@
 import { createReadStream } from 'node:fs';
 import { stat } from 'node:fs/promises';
+import { gzipSync } from 'node:zlib';
 
 import type { FastifyInstance } from 'fastify';
 import { z } from 'zod';
@@ -83,9 +84,16 @@ export const registerPublicCatalogRoutes = (
     return promise;
   };
 
-  app.get('/api/public/catalog', async (_request, reply) => {
+  app.get('/api/public/catalog', async (request, reply) => {
     const properties = await loadWithCache('catalog', () => source.loadPublishedProperties());
     reply.header('Cache-Control', CACHE_HEADER);
+    const acceptEncoding = (request.headers['accept-encoding'] as string) || '';
+    if (acceptEncoding.includes('gzip')) {
+      const gzipped = gzipSync(Buffer.from(JSON.stringify({ properties })));
+      reply.header('Content-Encoding', 'gzip');
+      reply.header('Content-Type', 'application/json; charset=utf-8');
+      return reply.send(gzipped);
+    }
     return reply.send({ properties });
   });
 
@@ -102,6 +110,13 @@ export const registerPublicCatalogRoutes = (
       return reply.code(404).send({ error: { code: 'NOT_FOUND', message: 'Imóvel não encontrado.' } });
     }
     reply.header('Cache-Control', CACHE_HEADER);
+    const acceptEncoding = (request.headers['accept-encoding'] as string) || '';
+    if (acceptEncoding.includes('gzip')) {
+      const gzipped = gzipSync(Buffer.from(JSON.stringify({ property })));
+      reply.header('Content-Encoding', 'gzip');
+      reply.header('Content-Type', 'application/json; charset=utf-8');
+      return reply.send(gzipped);
+    }
     return reply.send({ property });
   });
 

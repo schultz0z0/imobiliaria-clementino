@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { getAllProperties } from '../catalog/propertyCatalog.ts';
 import type { WebsiteProperty } from '../types/property.ts';
 
 export const mergePropertyCatalog = (
@@ -86,21 +87,25 @@ export const resetPublishedCatalogCache = (): void => {
 };
 
 export const usePropertyCatalog = () => {
-  const [properties, setProperties] = useState<WebsiteProperty[]>(() => getCachedCatalog());
-  const [loading, setLoading] = useState(() => properties.length === 0);
+  const [properties, setProperties] = useState<WebsiteProperty[]>(() => {
+    const cached = getCachedCatalog();
+    if (cached.length > 0) return cached;
+    return getAllProperties();
+  });
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
     let active = true;
     loadPublishedCatalog()
       .then((result) => {
-        if (active) {
+        if (active && Array.isArray(result) && result.length > 0) {
           setProperties(result);
           setError(null);
         }
       })
       .catch((reason: unknown) => {
-        if (active) {
+        if (active && properties.length === 0) {
           setError(reason instanceof Error ? reason : new Error('catalog unavailable'));
         }
       })
@@ -110,7 +115,7 @@ export const usePropertyCatalog = () => {
     return () => {
       active = false;
     };
-  }, []);
+  }, [properties.length]);
 
   return { properties, loading, error };
 };

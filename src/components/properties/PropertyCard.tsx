@@ -56,14 +56,16 @@ export const PropertyCard = ({ property, priority = false }: PropertyCardProps) 
           src={property.image}
           alt={property.title}
           loading={priority ? 'eager' : 'lazy'}
-          className={`h-full w-full transform-gpu object-cover transition-[transform,opacity] duration-700 will-change-[transform,opacity] group-hover:scale-[1.035] ${presentation.secondaryImage ? 'group-hover:opacity-0' : ''}`}
+          decoding="async"
+          className={`h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.035] ${presentation.secondaryImage ? 'group-hover:opacity-0' : ''}`}
         />
         {presentation.secondaryImage && (
           <img
             src={presentation.secondaryImage}
             alt=""
             loading="lazy"
-            className="absolute inset-0 h-full w-full scale-[1.035] transform-gpu object-cover opacity-0 transition-[transform,opacity] duration-700 will-change-[transform,opacity] group-hover:scale-100 group-hover:opacity-100"
+            decoding="async"
+            className="absolute inset-0 h-full w-full scale-[1.035] object-cover opacity-0 transition-[transform,opacity] duration-500 group-hover:scale-100 group-hover:opacity-100"
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-[#18181b]/95 via-transparent to-black/20" />

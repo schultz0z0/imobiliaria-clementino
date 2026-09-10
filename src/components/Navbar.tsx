@@ -13,6 +13,10 @@ const navLinks = [
   { path: '/contato', label: 'Contato' },
 ];
 
+const preloadProperties = () => {
+  import('../pages/Properties');
+};
+
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -49,7 +53,14 @@ export const Navbar = () => {
 
         <div className="hidden items-center gap-7 md:flex">
           {navLinks.map((link) => (
-            <NavLink key={link.path} to={link.path} end={link.end} className={({ isActive }) => `relative py-2 text-sm font-medium transition-colors ${isActive ? 'text-[#d7b661]' : 'text-white/70 hover:text-white'}`}>
+            <NavLink
+              key={link.path}
+              to={link.path}
+              end={link.end}
+              onMouseEnter={link.path === '/imoveis' ? preloadProperties : undefined}
+              onTouchStart={link.path === '/imoveis' ? preloadProperties : undefined}
+              className={({ isActive }) => `relative py-2 text-sm font-medium transition-colors ${isActive ? 'text-[#d7b661]' : 'text-white/70 hover:text-white'}`}
+            >
               {({ isActive }) => <>{link.label}{isActive && <span className="absolute inset-x-1 -bottom-0.5 h-px bg-[#d7b661]" />}</>}
             </NavLink>
           ))}
@@ -69,7 +80,13 @@ export const Navbar = () => {
           <motion.div id="mobile-navigation" initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="absolute inset-x-4 top-full mt-2 overflow-hidden rounded-[var(--radius-surface)] border border-white/10 bg-[#18181b]/98 p-3 shadow-2xl backdrop-blur-xl md:hidden">
             <div className="flex flex-col">
               {navLinks.map((link) => (
-                <NavLink key={link.path} to={link.path} end={link.end} className={({ isActive }) => `rounded-[var(--radius-control)] px-4 py-3 text-base ${isActive ? 'bg-[#d7b661]/10 font-semibold text-[#d7b661]' : 'text-white/70'}`}>
+                <NavLink
+                  key={link.path}
+                  to={link.path}
+                  end={link.end}
+                  onTouchStart={link.path === '/imoveis' ? preloadProperties : undefined}
+                  className={({ isActive }) => `rounded-[var(--radius-control)] px-4 py-3 text-base ${isActive ? 'bg-[#d7b661]/10 font-semibold text-[#d7b661]' : 'text-white/70'}`}
+                >
                   {link.label}
                 </NavLink>
               ))}

@@ -37,7 +37,7 @@ export const Properties = () => {
     latestSearchParams.current = searchParams;
   }
   const state = parsePropertySearchParams(searchParams);
-  const results = searchProperties(properties, state);
+  const results = useMemo(() => searchProperties(properties, state), [properties, state]);
   const searchSignature = serializePropertySearchParams(state).toString();
   const [visibleCount, setVisibleCount] = useState(PROPERTY_PAGE_SIZE);
   const resultsSectionRef = useRef<HTMLElement>(null);
@@ -104,10 +104,10 @@ export const Properties = () => {
               <div className="mt-8 grid gap-7 md:grid-cols-2 xl:grid-cols-3">{visibleResults.map((property, index) => (
                 <motion.div
                   key={property.id}
-                  initial={reduceMotion ? false : { opacity: 0, y: 18 }}
+                  initial={reduceMotion || index < 3 ? false : { opacity: 0, y: 18 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.08 }}
-                  transition={{ duration: 0.48, delay: getResultRevealDelay(index, reduceMotion), ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ duration: 0.35, delay: index < 3 ? 0 : getResultRevealDelay(index, reduceMotion), ease: [0.22, 1, 0.36, 1] }}
                 >
                   <PropertyCard property={property} priority={index < 3} />
                 </motion.div>
