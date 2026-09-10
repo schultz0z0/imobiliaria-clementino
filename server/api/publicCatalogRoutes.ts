@@ -39,6 +39,7 @@ export const registerPublicCatalogRoutes = (
   const storage = new MediaStorage(options.mediaRoot);
   const cache = new Map<string, CacheEntry<unknown>>();
   const pending = new Map<string, Promise<unknown>>();
+  const staleValues = new Map<string, unknown>();
   const now = () => Date.now();
 
   const readCache = <T>(key: string): T | undefined => {
@@ -51,6 +52,7 @@ export const registerPublicCatalogRoutes = (
 
   const writeCache = <T>(key: string, value: T): T => {
     cache.set(key, { expiresAt: now() + CACHE_TTL_MS, value });
+    staleValues.set(key, value);
     return value;
   };
 
@@ -66,6 +68,13 @@ export const registerPublicCatalogRoutes = (
           writeCache(key, value);
         }
         return value;
+      })
+      .catch((error: unknown) => {
+        const stale = staleValues.get(key) as T | undefined;
+        if (stale !== undefined) {
+          return stale;
+        }
+        throw error;
       })
       .finally(() => {
         pending.delete(key);

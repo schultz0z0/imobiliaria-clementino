@@ -36,3 +36,52 @@ test('shares one catalog request between consumers', async () => {
     resetPublishedCatalogCache();
   }
 });
+
+test('retries transient 502 failures and succeeds', async () => {
+  resetPublishedCatalogCache();
+  const previousFetch = globalThis.fetch;
+  let calls = 0;
+  globalThis.fetch = (async () => {
+    calls += 1;
+    if (calls === 1) {
+      return new Response('Bad Gateway', { status: 502 });
+    }
+    return new Response(JSON.stringify({ properties: [item('retried', 'retried', 'Recuperado')] }), { status: 200 });
+  }) as typeof fetch;
+
+  try {
+    const catalog = await loadPublishedCatalog();
+    assert.equal(calls, 2);
+    assert.equal(catalog[0]?.title, 'Recuperado');
+  } finally {
+    globalThis.fetch = previousFetch;
+    resetPublishedCatalogCache();
+  }
+});
+
+test('falls back to cached catalog if network fails completely', async () => {
+  resetPublishedCatalogCache();
+  const storage = new Map<string, string>();
+  (globalThis as unknown as { window: unknown }).window = {
+    localStorage: {
+      getItem: (key: string) => storage.get(key) ?? null,
+      setItem: (key: string, value: string) => { storage.set(key, value); },
+      removeItem: (key: string) => { storage.delete(key); },
+    },
+  };
+  storage.set('clementino:published-catalog:v1', JSON.stringify([item('cached-id', 'cached-slug', 'Do Cache')]));
+
+  const previousFetch = globalThis.fetch;
+  globalThis.fetch = (async () => new Response('Bad Gateway', { status: 502 })) as typeof fetch;
+
+  try {
+    const catalog = await loadPublishedCatalog();
+    assert.equal(catalog.length, 1);
+    assert.equal(catalog[0]?.title, 'Do Cache');
+  } finally {
+    globalThis.fetch = previousFetch;
+    delete (globalThis as unknown as { window?: unknown }).window;
+    resetPublishedCatalogCache();
+  }
+});
+

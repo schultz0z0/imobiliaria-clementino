@@ -130,3 +130,26 @@ test('public property route returns 404 for an unknown slug', async () => {
   assert.equal(slugLoads, 1);
   await app.close();
 });
+
+test('public catalog falls back to stale cache when database fails after initial success', async () => {
+  let shouldFail = false;
+  const app = await buildApp({
+    loadPublishedProperties: async () => {
+      if (shouldFail) throw new Error('database temporary glitch');
+      return [publishedProperty];
+    },
+  });
+
+  const first = await app.inject({ method: 'GET', url: '/api/public/catalog' });
+  assert.equal(first.statusCode, 200);
+  assert.equal(first.json().properties.length, 1);
+
+  // Now database fails
+  shouldFail = true;
+  const second = await app.inject({ method: 'GET', url: '/api/public/catalog' });
+  assert.equal(second.statusCode, 200);
+  assert.equal(second.json().properties[0].slug, 'imovel-publicado');
+
+  await app.close();
+});
+
