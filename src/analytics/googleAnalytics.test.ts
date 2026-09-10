@@ -83,3 +83,25 @@ test('remains inert when no real measurement id has been configured', async () =
   assert.equal(environment.scripts.length, 0);
   assert.equal(controller.track('page_view', { page_path: '/' }), false);
 });
+
+test('recognizes Google Ads AW measurement ids', async () => {
+  const analytics = await loadAnalytics();
+  assert.equal(analytics.isValidGoogleAdsId('AW-123456789'), true);
+  assert.equal(analytics.isValidGoogleAdsId('AW-987654'), true);
+  assert.equal(analytics.isValidGoogleAdsId('G-ABC123XYZ'), false);
+  assert.equal(analytics.isValidGoogleAdsId(undefined), false);
+});
+
+test('configures Google Ads tag when advertising consent is granted', async () => {
+  const analytics = await loadAnalytics();
+  const environment = createEnvironment();
+  const controller = analytics.createGoogleAnalyticsController('G-ABC123XYZ', environment, {
+    adsId: 'AW-123456789',
+  });
+
+  controller.updateConsent(createConsent({ analytics: true, advertising: true }).categories);
+
+  assert.ok(environment.analyticsWindow.dataLayer?.some((command) => command[0] === 'config' && command[1] === 'G-ABC123XYZ'));
+  assert.ok(environment.analyticsWindow.dataLayer?.some((command) => command[0] === 'config' && command[1] === 'AW-123456789'));
+});
+

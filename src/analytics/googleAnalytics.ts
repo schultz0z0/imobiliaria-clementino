@@ -32,6 +32,11 @@ export const isValidGaMeasurementId = (measurementId: string | undefined): measu
   && /^G-(?!X+$)[A-Z0-9]{6,}$/i.test(measurementId.trim())
 );
 
+export const isValidGoogleAdsId = (adsId: string | undefined): adsId is string => (
+  typeof adsId === 'string'
+  && /^AW-[0-9]{6,}$/i.test(adsId.trim())
+);
+
 export const getDefaultConsentCommand = () => ({
   ad_storage: 'denied' as ConsentState,
   ad_user_data: 'denied' as ConsentState,
@@ -51,14 +56,26 @@ export const getConsentUpdate = (categories: ConsentCategories) => ({
   security_storage: 'granted' as ConsentState,
 });
 
+export interface GoogleAnalyticsControllerOptions {
+  adsId?: string;
+}
+
 export const createGoogleAnalyticsController = (
   measurementId: string | undefined,
   environment: AnalyticsEnvironment,
+  options?: GoogleAnalyticsControllerOptions,
 ) => {
-  const normalizedId = measurementId?.trim();
+  const normalizedGaId = measurementId?.trim();
+  const normalizedAdsId = options?.adsId?.trim();
+  const primaryId = isValidGaMeasurementId(normalizedGaId)
+    ? normalizedGaId
+    : (isValidGoogleAdsId(normalizedAdsId) ? normalizedAdsId : undefined);
+
   let analyticsAllowed = false;
+  let advertisingAllowed = false;
   let defaultsConfigured = false;
   let tagConfigured = false;
+  let adsConfigured = false;
 
   const ensureGtag = () => {
     const target = environment.analyticsWindow;
@@ -72,30 +89,46 @@ export const createGoogleAnalyticsController = (
   };
 
   const loadTag = () => {
-    if (!isValidGaMeasurementId(normalizedId) || tagConfigured) return false;
+    if (!primaryId || tagConfigured) return false;
     const gtag = ensureGtag();
     if (!environment.analyticsDocument.getElementById(tagId)) {
       const script = environment.analyticsDocument.createElement('script');
       script.id = tagId;
       script.async = true;
-      script.src = `https://www.googletagmanager.com/gtag/js?id=${normalizedId}`;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${primaryId}`;
       environment.analyticsDocument.head.append(script);
     }
     gtag('js', new Date());
-    gtag('config', normalizedId, { send_page_view: false });
+    if (isValidGaMeasurementId(normalizedGaId)) {
+      gtag('config', normalizedGaId, { send_page_view: false });
+    }
     tagConfigured = true;
+    return true;
+  };
+
+  const configureAds = () => {
+    if (!isValidGoogleAdsId(normalizedAdsId) || adsConfigured || !advertisingAllowed) return false;
+    const gtag = ensureGtag();
+    gtag('config', normalizedAdsId);
+    adsConfigured = true;
     return true;
   };
 
   return {
     updateConsent(categories: ConsentCategories) {
       const gtag = ensureGtag();
-      analyticsAllowed = categories.analytics && isValidGaMeasurementId(normalizedId);
+      analyticsAllowed = Boolean(categories.analytics && isValidGaMeasurementId(normalizedGaId));
+      advertisingAllowed = Boolean(categories.advertising && isValidGoogleAdsId(normalizedAdsId));
       gtag('consent', 'update', getConsentUpdate(categories));
-      if (analyticsAllowed) loadTag();
+      if (analyticsAllowed || advertisingAllowed) {
+        loadTag();
+        if (advertisingAllowed) {
+          configureAds();
+        }
+      }
     },
     track(eventName: string, parameters: Record<string, string | number | boolean> = {}) {
-      if (!analyticsAllowed || !isValidGaMeasurementId(normalizedId)) return false;
+      if ((!analyticsAllowed && !advertisingAllowed) || !primaryId) return false;
       ensureGtag()('event', eventName, parameters);
       return true;
     },

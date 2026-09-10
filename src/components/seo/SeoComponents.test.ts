@@ -74,3 +74,29 @@ test('updates canonical, robots, Open Graph and Twitter metadata during SPA navi
   Object.assign(globalThis, { document: previousDocument, window: previousWindow });
   dom.window.close();
 });
+
+test('publishes WebSite structured data with SearchAction for sitelinks search box', async () => {
+  const { getWebsiteStructuredData } = await import('../../config/structuredData');
+  const website = getWebsiteStructuredData();
+
+  assert.equal(website['@type'], 'WebSite');
+  assert.equal(website.url, siteConfig.url);
+  assert.equal(website.potentialAction['@type'], 'SearchAction');
+  assert.match(website.potentialAction.target.urlTemplate, /imoveis\?busca=/);
+});
+
+test('publishes PropertyStructuredData with Offer, price and dimensions', async () => {
+  const { getPropertyStructuredData } = await import('../../config/structuredData');
+  const { getAllProperties } = await import('../../catalog/propertyCatalog');
+  const property = getAllProperties()[0];
+  const data = getPropertyStructuredData(property);
+
+  assert.match(data['@type'], /Apartment|SingleFamilyResidence|Accommodation/);
+  assert.equal(data.name, property.title);
+  assert.ok(data.offers.length > 0);
+  assert.equal(data.offers[0]['@type'], 'Offer');
+  assert.equal(data.offers[0].priceCurrency, 'BRL');
+  assert.equal(data.offers[0].availability, 'https://schema.org/InStock');
+  assert.equal(data.address.addressCountry, 'BR');
+});
+

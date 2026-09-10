@@ -1,183 +1,575 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://clementinoimoveis.com.br/</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/sobre</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/servicos</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/contato</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/aviso-de-privacidade</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/politica-de-cookies</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/apartamento-em-engenho-do-porto-condominio-varsovia-proximo-ao-centro-de-caxias-3017305760</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305760/capa.webp</image:loc>
+      <image:title>Apartamento em Engenho do Porto — Condomínio Varsóvia, próximo ao Centro de Caxias</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/cobertura-duplex-em-jardim-america-residencial-america-life-e-terraco-3017305761</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305761/capa.webp</image:loc>
+      <image:title>Cobertura duplex em Jardim América — Residencial América Life e terraço</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/casa-em-vigario-geral-rua-sao-bartolomeu-fundos-e-terraco-3017305764</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305764/capa.webp</image:loc>
+      <image:title>Casa em Vigário Geral — Rua São Bartolomeu, fundos e terraço</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/apartamento-em-copacabana-rua-inhanga-reformado-e-proximo-ao-metro-3017305767</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305767/capa.webp</image:loc>
+      <image:title>Apartamento em Copacabana — Rua Inhangá, reformado e próximo ao metrô</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/casa-em-jardim-america-rua-general-oscilio-maia-varanda-e-terraco-3017305771</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305771/capa.webp</image:loc>
+      <image:title>Casa em Jardim América — Rua General Oscílio Maia, varanda e terraço</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/apartamento-em-copacabana-rua-barata-ribeiro-andar-alto-e-vaga-3017305773</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305773/capa.webp</image:loc>
+      <image:title>Apartamento em Copacabana — Rua Barata Ribeiro, andar alto e vaga</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/terreno-em-bangu-rua-pedro-pomar-proximo-a-avenida-brasil-3017305776</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305776/capa.webp</image:loc>
+      <image:title>Terreno em Bangu — Rua Pedro Pomar, próximo à Avenida Brasil</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/apartamento-em-laranjeiras-rua-coelho-neto-e-vaga-3017305781</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305781/capa.webp</image:loc>
+      <image:title>Apartamento em Laranjeiras — Rua Coelho Neto e vaga</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/casa-em-vigario-geral-rua-sao-bartolomeu-independente-e-com-terraco-3017305787</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305787/capa.webp</image:loc>
+      <image:title>Casa em Vigário Geral — Rua São Bartolomeu, independente e com terraço</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/studio-em-arpoador-canto-rio-vista-para-o-mar-e-varanda-3017305790</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305790/capa.webp</image:loc>
+      <image:title>Studio em Arpoador — Canto Rio, vista para o mar e varanda</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/sobrado-em-jardim-america-rua-professor-costa-ribeiro-fundos-e-terraco-3017305792</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305792/capa.webp</image:loc>
+      <image:title>Sobrado em Jardim América — Rua Professor Costa Ribeiro, fundos e terraço</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/apartamento-em-vigario-geral-condominio-padre-anchieta-e-area-de-lazer-3017305793</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305793/capa.webp</image:loc>
+      <image:title>Apartamento em Vigário Geral — Condomínio Padre Anchieta e área de lazer</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/apartamento-em-duque-de-caxias-condominio-dr-roberto-da-silveira-3017305794</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305794/capa.webp</image:loc>
+      <image:title>Apartamento em Duque de Caxias — Condomínio Dr. Roberto da Silveira</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/apartamento-em-jardim-america-rua-alvaro-de-magalhaes-terreo-e-com-quintal-3017305795</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305795/capa.webp</image:loc>
+      <image:title>Apartamento em Jardim América — Rua Álvaro de Magalhães, térreo e com quintal</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/apartamento-em-botafogo-rua-assuncao-reformado-e-com-vaga-3017305797</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305797/capa.webp</image:loc>
+      <image:title>Apartamento em Botafogo — Rua Assunção, reformado e com vaga</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/sala-comercial-em-barra-da-tijuca-shopping-midtown-duplex-e-com-vaga-3017305798</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305798/capa.webp</image:loc>
+      <image:title>Sala comercial em Barra da Tijuca — Shopping Midtown, duplex e com vaga</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/quitinetes-em-vigario-geral-rua-otranto-proximas-a-praca-2-3017305799</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305799/capa.webp</image:loc>
+      <image:title>Quitinetes em Vigário Geral — Rua Otranto, próximas à Praça 2</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/apartamento-em-jardim-america-rua-mozart-sem-condominio-3017305801</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305801/capa.webp</image:loc>
+      <image:title>Apartamento em Jardim América — Rua Mozart, sem condomínio</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/galpao-em-vigario-geral-rua-granada-proximo-a-praca-2-3017305802</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305802/capa.webp</image:loc>
+      <image:title>Galpão em Vigário Geral — Rua Granada, próximo à Praça 2</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/apartamento-em-botafogo-rua-voluntarios-da-patria-e-vista-para-o-cristo-3017305805</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305805/capa.webp</image:loc>
+      <image:title>Apartamento em Botafogo — Rua Voluntários da Pátria e vista para o Cristo</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/apartamento-em-jardim-america-rua-joao-de-paula-fonseca-terreo-e-com-quintal-3017305807</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305807/capa.webp</image:loc>
+      <image:title>Apartamento em Jardim América — Rua João de Paula Fonseca, térreo e com quintal</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/cobertura-em-copacabana-avenida-atlantica-vista-para-o-mar-no-posto-4-3017305809</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305809/capa.webp</image:loc>
+      <image:title>Cobertura em Copacabana — Avenida Atlântica, vista para o mar no Posto 4</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/casa-em-condominio-em-vila-progresso-condominio-uba-independencia-3017305811</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305811/capa.webp</image:loc>
+      <image:title>Casa em condomínio em Vila Progresso — Condomínio Ubá Independência</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/apartamento-em-copacabana-bairro-peixoto-garden-com-piscina-3017305813</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305813/capa.webp</image:loc>
+      <image:title>Apartamento em Copacabana — Bairro Peixoto, garden com piscina</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/galpao-em-vigario-geral-rua-correia-dias-e-estrutura-industrial-3017305816</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305816/capa.webp</image:loc>
+      <image:title>Galpão em Vigário Geral — Rua Correia Dias e estrutura industrial</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/casa-duplex-em-vigario-geral-rua-sao-bartolomeu-e-area-gourmet-3017305820</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305820/capa.webp</image:loc>
+      <image:title>Casa duplex em Vigário Geral — Rua São Bartolomeu e área gourmet</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/casa-duplex-em-jardim-america-rua-antonio-de-albuquerque-e-amplo-quintal-3017305821</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3017305821/capa.webp</image:loc>
+      <image:title>Casa duplex em Jardim América — Rua Antônio de Albuquerque e amplo quintal</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/galpao-em-jardim-america-rua-joao-de-paula-fonseca-junto-a-rodovia-presidente-dutra-3018026849</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3018026849/capa.webp</image:loc>
+      <image:title>Galpão em Jardim América — Rua João de Paula Fonseca, junto à Rodovia Presidente Dutra</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/casa-duplex-em-jardim-america-rua-conselheiro-meirelles-suite-e-terraco-3018249672</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3018249672/capa.webp</image:loc>
+      <image:title>Casa duplex em Jardim América — Rua Conselheiro Meirelles, suíte e terraço</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/apartamento-em-jardim-america-rua-arinos-de-frente-e-sem-condominio-3018326088</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3018326088/capa.webp</image:loc>
+      <image:title>Apartamento em Jardim América — Rua Arinos, de frente e sem condomínio</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/apartamento-em-jardim-america-rua-arinos-terreo-e-com-quintal-3018326089</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3018326089/capa.webp</image:loc>
+      <image:title>Apartamento em Jardim América — Rua Arinos, térreo e com quintal</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/apartamento-em-jardim-america-rua-professor-pires-salgado-terreo-e-de-fundos-3018774505</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3018774505/capa.webp</image:loc>
+      <image:title>Apartamento em Jardim América — Rua Professor Pires Salgado, térreo e de fundos</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/casa-em-jardim-america-rua-gelabert-simas-quintal-e-anexo-3018791156</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3018791156/capa.webp</image:loc>
+      <image:title>Casa em Jardim América — Rua Gelabert Simas, quintal e anexo</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/apartamento-em-jardim-america-residencial-america-life-quarto-andar-3021262193</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3021262193/capa.webp</image:loc>
+      <image:title>Apartamento em Jardim América — Residencial América Life, quarto andar</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/casa-em-jardim-america-rua-gelabert-simas-dois-pavimentos-e-amplo-quintal-3022035905</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3022035905/capa.webp</image:loc>
+      <image:title>Casa em Jardim América — Rua Gelabert Simas, dois pavimentos e amplo quintal</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/apartamento-em-jardim-america-residencial-america-life-primeiro-andar-3023325766</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3023325766/capa.webp</image:loc>
+      <image:title>Apartamento em Jardim América — Residencial América Life, primeiro andar</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/apartamento-em-del-castilho-rua-lagoa-redonda-de-frente-e-proximo-ao-metro-3024230857</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3024230857/capa.webp</image:loc>
+      <image:title>Apartamento em Del Castilho — Rua Lagoa Redonda, de frente e próximo ao metrô</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/casa-em-jardim-america-rua-jorge-lacerda-entrada-independente-e-quintal-3025642323</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3025642323/capa.webp</image:loc>
+      <image:title>Casa em Jardim América — Rua Jorge Lacerda, entrada independente e quintal</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/apartamento-em-vila-da-penha-condominio-solar-da-vila-junto-ao-largo-do-bicao-3028206195</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3028206195/capa.webp</image:loc>
+      <image:title>Apartamento em Vila da Penha — Condomínio Solar da Vila, junto ao Largo do Bicão</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/apartamento-em-jardim-america-rua-professor-franca-amaral-de-frente-e-com-anexo-3031428631</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3031428631/capa.webp</image:loc>
+      <image:title>Apartamento em Jardim América — Rua Professor França Amaral, de frente e com anexo</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/apartamento-em-jardim-america-rua-robert-schumann-e-acesso-ao-terraco-3032201782</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3032201782/capa.webp</image:loc>
+      <image:title>Apartamento em Jardim América — Rua Robert Schumann e acesso ao terraço</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/apartamento-em-jardim-america-rua-plinio-barreto-sobrado-de-fundos-3035177398</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3035177398/capa.webp</image:loc>
+      <image:title>Apartamento em Jardim América — Rua Plínio Barreto, sobrado de fundos</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/loja-em-jardim-america-esquina-das-ruas-alvaro-de-magalhaes-e-rodolfo-chambeland-3035185637</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3035185637/capa.webp</image:loc>
+      <image:title>Loja em Jardim América — Esquina das ruas Álvaro de Magalhães e Rodolfo Chambeland</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/galpao-em-jardim-america-rua-jornalista-geraldo-rocha-acesso-para-carga-e-descarga-3037727090</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3037727090/capa.webp</image:loc>
+      <image:title>Galpão em Jardim América — Rua Jornalista Geraldo Rocha, acesso para carga e descarga</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/casa-em-jardim-america-rua-mozart-piscina-e-terraco-3037729115</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3037729115/capa.webp</image:loc>
+      <image:title>Casa em Jardim América — Rua Mozart, piscina e terraço</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/casa-em-condominio-em-praia-seca-area-de-lazer-e-lagoa-privativa-3038426799</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3038426799/capa.webp</image:loc>
+      <image:title>Casa em condomínio em Praia Seca — Área de lazer e lagoa privativa</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/casa-em-jardim-america-vila-esperanca-terrea-e-com-quintal-3041796743</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3041796743/capa.webp</image:loc>
+      <image:title>Casa em Jardim América — Vila Esperança, térrea e com quintal</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/apartamento-em-jardim-america-rua-marechal-jose-pessoa-terreo-e-com-varanda-3041798044</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3041798044/capa.webp</image:loc>
+      <image:title>Apartamento em Jardim América — Rua Marechal José Pessoa, térreo e com varanda</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/casa-em-jardim-america-rua-marechal-jose-pessoa-quintal-e-vaga-3041818174</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3041818174/capa.webp</image:loc>
+      <image:title>Casa em Jardim América — Rua Marechal José Pessoa, quintal e vaga</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/casa-em-coelho-neto-rua-ouseley-piscina-e-garagem-3041920674</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3041920674/capa.webp</image:loc>
+      <image:title>Casa em Coelho Neto — Rua Ouseley, piscina e garagem</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/casa-duplex-em-coelho-neto-rua-parnaiba-suites-e-garagem-3042851381</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3042851381/capa.webp</image:loc>
+      <image:title>Casa duplex em Coelho Neto — Rua Parnaíba, suítes e garagem</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/apartamento-em-parque-columbia-rua-ruanda-terreo-e-de-frente-3043564937</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3043564937/capa.webp</image:loc>
+      <image:title>Apartamento em Parque Columbia — Rua Ruanda, térreo e de frente</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://clementinoimoveis.com.br/imoveis/casa-em-jardim-america-vila-esperanca-terrea-e-com-entrada-independente-3043565436</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://clementinoimoveis.com.br/imoveis/3043565436/capa.webp</image:loc>
+      <image:title>Casa em Jardim América — Vila Esperança, térrea e com entrada independente</image:title>
+    </image:image>
   </url>
 </urlset>

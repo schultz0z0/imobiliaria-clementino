@@ -3,11 +3,15 @@ node_modules/
 .worktrees/
 build/
 dist/
+dist-admin/
+dist-server/
 coverage/
 .DS_Store
 *.log
 migration-bundles/
 *.state-migration.tar.gz
+content/Leads/
+*.xlsx
 .env*
 !.env.example
 !.env*.example

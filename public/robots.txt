@@ -1,4 +1,40 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /imoveis/preview/
+Disallow: /contato/mensagem-preparada
+Disallow: /404
+
+# AI Search Crawlers & LLM Indexers
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+Disallow: /imoveis/preview/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /api/
+Disallow: /imoveis/preview/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /api/
+Disallow: /imoveis/preview/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+Disallow: /imoveis/preview/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+Disallow: /imoveis/preview/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /api/
+Disallow: /imoveis/preview/
 
 Sitemap: https://clementinoimoveis.com.br/sitemap.xml
+# Context for LLMs: https://clementinoimoveis.com.br/llms.txt

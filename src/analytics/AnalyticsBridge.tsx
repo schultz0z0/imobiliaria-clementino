@@ -17,6 +17,7 @@ export const AnalyticsBridge = () => {
   const controller = useMemo(() => createGoogleAnalyticsController(
     import.meta.env.VITE_GA_MEASUREMENT_ID,
     browserEnvironment(),
+    { adsId: import.meta.env.VITE_GOOGLE_ADS_ID },
   ), []);
   const categories = consent?.categories ?? disabledCategories;
 
@@ -42,6 +43,13 @@ export const AnalyticsBridge = () => {
         page_path: window.location.pathname,
         ...(taggedElement?.dataset.analyticsLabel ? { item_label: taggedElement.dataset.analyticsLabel } : {}),
       });
+      if (eventName === 'whatsapp_click' || eventName === 'schedule_visit_request') {
+        controller.track('generate_lead', {
+          page_path: window.location.pathname,
+          lead_type: eventName,
+          ...(taggedElement?.dataset.analyticsLabel ? { item_label: taggedElement.dataset.analyticsLabel } : {}),
+        });
+      }
     };
 
     const click = (event: MouseEvent) => trackInteraction(event.target);

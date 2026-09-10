@@ -24,11 +24,33 @@ const publishWithClient = (sql: ReturnType<typeof createPostgresClient>) =>
         const escapeXml = (value: string) => value
           .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
           .replaceAll('"', '&quot;').replaceAll("'", '&apos;');
-        const urls = ['/', '/imoveis', ...catalog.map((entry) => `/imoveis/${entry.slug}`)]
-          .map((path) => `  <url><loc>${escapeXml(`${origin.replace(/\/$/, '')}${path}`)}</loc></url>`).join('\n');
-        writeFileSync(`${releasePath}/sitemap.xml`, `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`, 'utf8');
+        const staticRoutes = [
+          '/',
+          '/imoveis',
+          '/sobre',
+          '/servicos',
+          '/contato',
+          '/aviso-de-privacidade',
+          '/politica-de-cookies',
+        ];
+        const currentDate = new Date().toISOString().split('T')[0];
+        const urls = [
+          ...staticRoutes.map((path) => {
+            const priority = path === '/' ? '1.0' : (path === '/imoveis' ? '0.9' : '0.6');
+            const changefreq = path === '/' || path === '/imoveis' ? 'daily' : 'monthly';
+            return `  <url>\n    <loc>${escapeXml(`${origin.replace(/\/$/, '')}${path}`)}</loc>\n    <lastmod>${currentDate}</lastmod>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>`;
+          }),
+          ...catalog.map((entry) => {
+            const loc = `${origin.replace(/\/$/, '')}/imoveis/${entry.slug}`;
+            const imageTag = entry.image
+              ? `\n    <image:image>\n      <image:loc>${escapeXml(entry.image.startsWith('http') ? entry.image : `${origin.replace(/\/$/, '')}${entry.image}`)}</image:loc>\n      <image:title>${escapeXml(entry.title)}</image:title>\n    </image:image>`
+              : '';
+            return `  <url>\n    <loc>${escapeXml(loc)}</loc>\n    <lastmod>${currentDate}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>${imageTag}\n  </url>`;
+          }),
+        ].join('\n');
+        writeFileSync(`${releasePath}/sitemap.xml`, `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${urls}\n</urlset>\n`, 'utf8');
         writeFileSync(`${releasePath}/catalog.json`, `${JSON.stringify(catalog)}\n`, 'utf8');
-        return { propertyCount: catalog.length, routeCount: catalog.length + 2 };
+        return { propertyCount: catalog.length, routeCount: catalog.length + staticRoutes.length };
       },
     });
 

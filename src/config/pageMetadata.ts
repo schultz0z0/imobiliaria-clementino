@@ -10,6 +10,7 @@ export interface PageMetadata {
   imageAlt: string;
   openGraphType: 'website';
   robots: 'index, follow' | 'noindex, nofollow';
+  property?: WebsiteProperty;
 }
 
 export type PublicPage = 'home' | 'properties' | 'property' | 'about' | 'services' | 'contact' | 'privacy' | 'cookies' | 'contactPrepared' | 'notFound';
@@ -110,13 +111,16 @@ export const getPageMetadata = (
   property?: WebsiteProperty,
 ): PageMetadata => {
   if (page === 'property' && property) {
-    return completeMetadata({
-      title: truncateAtWord(`${property.type} · ${property.propertyType} em ${property.district} | ${property.reference}`, 75),
-      description: buildPropertyDescription(property),
-      path: `/imoveis/${property.slug}`,
-      image: property.image,
-      imageAlt: `Foto principal de ${property.title} em ${property.district}`,
-    });
+    return {
+      ...completeMetadata({
+        title: truncateAtWord(`${property.type} · ${property.propertyType} em ${property.district} | ${property.reference}`, 75),
+        description: buildPropertyDescription(property),
+        path: `/imoveis/${property.slug}`,
+        image: property.image,
+        imageAlt: `Foto principal de ${property.title} em ${property.district}`,
+      }),
+      property,
+    };
   }
 
   return page === 'property'
