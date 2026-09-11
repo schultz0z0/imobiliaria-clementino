@@ -128,6 +128,8 @@ export const PRIVATE_FEATURES = immutableCatalog([
   { id: 'suites', label: 'Suítes' },
   { id: 'telephone', label: 'Telefone' },
   { id: 'tv', label: 'TV' },
+  { id: 'backyard', label: 'Quintal' },
+  { id: 'garage', label: 'Garagem' },
 ] as const);
 
 export type CommonFeatureId = (typeof COMMON_FEATURES)[number]['id'];

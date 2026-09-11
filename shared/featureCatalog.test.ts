@@ -79,6 +79,8 @@ const expectedPrivateFeatures = [
   ['suites', 'Suítes'],
   ['telephone', 'Telefone'],
   ['tv', 'TV'],
+  ['backyard', 'Quintal'],
+  ['garage', 'Garagem'],
 ] as const;
 
 const pairs = (catalog: ReadonlyArray<{ id: string; label: string }>) =>

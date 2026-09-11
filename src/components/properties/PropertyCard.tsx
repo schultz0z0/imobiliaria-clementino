@@ -27,7 +27,11 @@ export const getPropertyCardPresentation = (property: WebsiteProperty) => {
   if (property.areaValue > 0) facts.push({ kind: 'area', value: property.area, label: property.area });
   if (property.parkingSpaces > 0) facts.push({ kind: 'parking', value: property.parkingSpaces, label: formatCountLabel(property.parkingSpaces, 'vaga', 'vagas') });
 
+  const fallbackLocation = [property.district, property.city].filter(Boolean).join(', ');
+  const location = property.location?.trim() || fallbackLocation;
+
   return {
+    location,
     operation: property.type === 'Ambos' ? 'Venda e aluguel' : property.type,
     secondaryImage: property.images.length > 1 ? property.images[1] : undefined,
     photoCount: property.images.length,
@@ -86,9 +90,9 @@ export const PropertyCard = ({ property, priority = false }: PropertyCardProps) 
           <h3 className="line-clamp-2 text-lg font-semibold leading-snug text-white transition group-hover:text-[#f0d98b]">{property.title}</h3>
           <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-white/35 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#d7b661]" aria-hidden="true" />
         </div>
-        <p className="flex items-start gap-2 text-sm text-white/55">
+        <p className="flex items-start gap-2 text-sm text-white/55" title={presentation.location}>
           <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#d7b661]" aria-hidden="true" />
-          <span>{property.district}, {property.city}</span>
+          <span className="line-clamp-1">{presentation.location}</span>
         </p>
         <div className="mt-5 grid grid-cols-2 gap-x-4 gap-y-3 border-t border-white/10 pt-5 text-xs text-white/60 sm:flex sm:flex-wrap">
           {presentation.facts.map((fact) => {

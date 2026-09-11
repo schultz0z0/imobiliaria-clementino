@@ -144,6 +144,9 @@ const featureIdByLabel = (label: string, scope: 'common' | 'private'): string | 
     'permite animais': 'pets-allowed',
     'sala de jantar': 'dining-room',
     suites: 'suites',
+    quintal: 'backyard',
+    garagem: 'garage',
+    'vaga de garagem': 'garage',
   };
   if (aliases[clean]) return aliases[clean];
   return catalog.find((entry) => normalize(entry.label) === clean)?.id;

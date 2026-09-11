@@ -13,11 +13,20 @@ test('builds the visual card model without hiding essential information behind h
 
   const presentation = getPropertyCardPresentation(property);
 
+  assert.equal(presentation.location, property.location);
   assert.equal(presentation.operation, property.type);
   assert.equal(presentation.secondaryImage, property.images[1]);
   assert.equal(presentation.photoCount, property.images.length);
   assert.ok(presentation.facts.some(({ kind, value }) => kind === 'parking' && value === property.parkingSpaces));
   assert.ok(presentation.facts.some(({ kind }) => kind === 'area'));
+});
+
+test('falls back to district and city when property location is missing', () => {
+  const property = { ...getAllProperties()[0], location: '' };
+  assert.equal(
+    getPropertyCardPresentation(property).location,
+    `${property.district}, ${property.city}`,
+  );
 });
 
 test('omits a secondary hover image when the catalog only has one photo', () => {
