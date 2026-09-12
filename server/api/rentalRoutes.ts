@@ -4,6 +4,7 @@ import { z } from 'zod';
 import { API_ERROR_CODES, type ApiErrorCode, type ApiFieldIssue } from '../../shared/apiContract.ts';
 import {
   CONTRACT_STATUSES,
+  DOCUMENT_CATEGORIES,
   createRentalContractSchema,
 } from '../../shared/rentalSchema.ts';
 import { createAdminGuard } from '../auth/routes.ts';
@@ -19,8 +20,25 @@ import {
   RentalContractServiceError,
   terminateRentalContract,
 } from '../domain/rentalContractService.ts';
+import {
+  createContractDocument,
+  deleteDocument,
+  listDocumentsByContract,
+  RentalDocumentServiceError,
+} from '../domain/rentalDocumentService.ts';
 
 const contractIdParamsSchema = z.strictObject({ id: z.string().uuid() });
+const documentIdParamsSchema = z.strictObject({ id: z.string().uuid() });
+
+const createDocumentBodySchema = z.strictObject({
+  category: z.enum(DOCUMENT_CATEGORIES),
+  filename: z.string().trim().min(1).max(255),
+  storageKey: z.string().trim().min(1).max(500),
+  mimeType: z.string().trim().min(1).max(120),
+  byteSize: z.number().int().nonnegative(),
+  description: z.string().trim().max(500).optional(),
+  checksumSha256: z.string().trim().max(64).optional(),
+});
 
 const listContractsQuerySchema = z.strictObject({
   status: z.enum(CONTRACT_STATUSES).optional(),
@@ -64,6 +82,9 @@ const toFieldIssues = (error: z.ZodError): ApiFieldIssue[] =>
 
 const handleRouteError = (reply: FastifyReply, error: unknown) => {
   if (error instanceof RentalContractServiceError) {
+    return sendApiError(reply, error.statusCode, error.code, error.message, error.issues);
+  }
+  if (error instanceof RentalDocumentServiceError) {
     return sendApiError(reply, error.statusCode, error.code, error.message, error.issues);
   }
   if (error instanceof PaymentRecordServiceError) {
@@ -162,4 +183,43 @@ export const registerRentalRoutes = (app: FastifyInstance, sql: Sql): void => {
       }
     },
   );
+
+  app.get('/api/admin/rentals/contracts/:id/documents', { preHandler: readGuard }, async (request, reply) => {
+    try {
+      const { id } = contractIdParamsSchema.parse(request.params);
+      const documents = await listDocumentsByContract(sql, id);
+      return reply.send({ documents });
+    } catch (error) {
+      return handleRouteError(reply, error);
+    }
+  });
+
+  app.post(
+    '/api/admin/rentals/contracts/:id/documents',
+    { preHandler: mutationGuard },
+    async (request, reply) => {
+      try {
+        const { id } = contractIdParamsSchema.parse(request.params);
+        const body = createDocumentBodySchema.parse(request.body);
+        const document = await createContractDocument(
+          sql,
+          { contractId: id, ...body },
+          request.adminSession?.adminUserId,
+        );
+        return reply.code(201).send({ document });
+      } catch (error) {
+        return handleRouteError(reply, error);
+      }
+    },
+  );
+
+  app.delete('/api/admin/rentals/documents/:id', { preHandler: mutationGuard }, async (request, reply) => {
+    try {
+      const { id } = documentIdParamsSchema.parse(request.params);
+      await deleteDocument(sql, id, request.adminSession?.adminUserId);
+      return reply.code(204).send();
+    } catch (error) {
+      return handleRouteError(reply, error);
+    }
+  });
 };
