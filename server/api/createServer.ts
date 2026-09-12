@@ -16,6 +16,7 @@ import { registerPublicCatalogRoutes } from './publicCatalogRoutes.ts';
 import { registerPeopleRoutes } from './peopleRoutes.ts';
 import { registerRentalRoutes } from './rentalRoutes.ts';
 import { registerPaymentRoutes } from './paymentRoutes.ts';
+import { registerReportRoutes } from './reportRoutes.ts';
 
 export type CreateServerOptions = {
   sql?: Sql;
@@ -57,6 +58,7 @@ export const createServer = (options: CreateServerOptions = {}) => {
   app.register(async (peopleApp) => registerPeopleRoutes(peopleApp, sql));
   app.register(async (rentalApp) => registerRentalRoutes(rentalApp, sql));
   app.register(async (paymentApp) => registerPaymentRoutes(paymentApp, sql));
+  app.register(async (reportApp) => registerReportRoutes(reportApp, sql));
   app.register(async (locationApp) =>
     registerLocationRoutes(locationApp, sql, { ...options.location, environment }),
   );

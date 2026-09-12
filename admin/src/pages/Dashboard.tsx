@@ -6,6 +6,7 @@ import {
   Clock,
   Clock3,
   DollarSign,
+  Download,
   FilePenLine,
   FileText,
   Plus,
@@ -24,6 +25,7 @@ import {
   type PropertyStatus,
   type PublicationJobSummary,
   type RentalAdminApi,
+  type ReportAdminApi,
 } from '../api/client.ts';
 import type {
   PaymentCategory,
@@ -33,6 +35,7 @@ import type {
 import { DueBadge, computeDueStatus } from '../components/rentals/DueBadge.tsx';
 import { PaymentModal } from '../components/rentals/PaymentModal.tsx';
 import { ForwardingModal } from '../components/rentals/ForwardingModal.tsx';
+import { ReportExportModal } from '../components/rentals/ReportExportModal.tsx';
 
 type DashboardData = {
   totals: Record<PropertyStatus, number>;
@@ -90,7 +93,7 @@ const formatCurrency = (val: number | null | undefined) => {
 };
 
 export interface DashboardProps {
-  api?: PropertyAdminApi & Partial<RentalAdminApi> & Partial<PaymentAdminApi>;
+  api?: PropertyAdminApi & Partial<RentalAdminApi> & Partial<PaymentAdminApi> & Partial<ReportAdminApi>;
   referenceDate?: Date;
 }
 
@@ -105,6 +108,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
   // Modals state
   const [paymentModalOpen, setPaymentModalOpen] = useState(false);
   const [forwardingModalOpen, setForwardingModalOpen] = useState(false);
+  const [reportModalOpen, setReportModalOpen] = useState(false);
   const [selectedPayment, setSelectedPayment] = useState<PaymentRecordDto | null>(null);
 
   const load = useCallback(async () => {
@@ -302,14 +306,25 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 <p className="eyebrow">Gestão de Locações</p>
                 <h2 id="rental-hub-title">Hub de Locações &amp; Vencimentos</h2>
               </div>
-              <Link
-                className="button button-secondary"
-                to="/contratos"
-                style={{ minHeight: '38px', padding: '6px 14px', fontSize: '13px' }}
-              >
-                <FileText aria-hidden="true" style={{ width: '15px', height: '15px' }} />
-                <span>Ver contratos</span>
-              </Link>
+              <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                <button
+                  type="button"
+                  className="button button-secondary"
+                  onClick={() => setReportModalOpen(true)}
+                  style={{ minHeight: '38px', padding: '6px 14px', fontSize: '13px' }}
+                >
+                  <Download aria-hidden="true" style={{ width: '15px', height: '15px' }} />
+                  <span>Exportar Relatório</span>
+                </button>
+                <Link
+                  className="button button-secondary"
+                  to="/contratos"
+                  style={{ minHeight: '38px', padding: '6px 14px', fontSize: '13px' }}
+                >
+                  <FileText aria-hidden="true" style={{ width: '15px', height: '15px' }} />
+                  <span>Ver contratos</span>
+                </Link>
+              </div>
             </div>
 
             {/* Semaphore counters */}
@@ -574,6 +589,13 @@ export const Dashboard: React.FC<DashboardProps> = ({
             contractNumber={
               selectedPayment ? contractMap.get(selectedPayment.contractId)?.contractNumber : undefined
             }
+          />
+
+          {/* Report Export Modal */}
+          <ReportExportModal
+            isOpen={reportModalOpen}
+            onClose={() => setReportModalOpen(false)}
+            api={api}
           />
         </>
       )}

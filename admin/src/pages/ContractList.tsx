@@ -2,6 +2,7 @@ import {
   AlertCircle,
   ChevronLeft,
   ChevronRight,
+  Download,
   Eye,
   FileText,
   Plus,
@@ -10,8 +11,9 @@ import {
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 
-import { adminApi, ApiError, type RentalAdminApi } from '../api/client.ts';
+import { adminApi, ApiError, type RentalAdminApi, type ReportAdminApi } from '../api/client.ts';
 import type { ContractStatus, RentalContractDto } from '../../../shared/rentalSchema.ts';
+import { ReportExportModal } from '../components/rentals/ReportExportModal.tsx';
 
 const PAGE_SIZE = 20;
 
@@ -43,7 +45,7 @@ const formatDate = (val: string | null | undefined) => {
   }
 };
 
-export const ContractList = ({ api = adminApi }: { api?: RentalAdminApi }) => {
+export const ContractList = ({ api = adminApi }: { api?: RentalAdminApi & Partial<ReportAdminApi> }) => {
   const [params, setParams] = useSearchParams();
   const statusParam = (params.get('status') as ContractStatus) || undefined;
   const pageParam = Math.max(1, parseInt(params.get('page') ?? '1', 10) || 1);
@@ -52,6 +54,7 @@ export const ContractList = ({ api = adminApi }: { api?: RentalAdminApi }) => {
   const [pagination, setPagination] = useState({ page: pageParam, total: 0, limit: PAGE_SIZE });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [reportModalOpen, setReportModalOpen] = useState(false);
 
   const fetchContracts = useCallback(async (status: ContractStatus | undefined, page: number) => {
     setLoading(true);
@@ -106,10 +109,21 @@ export const ContractList = ({ api = adminApi }: { api?: RentalAdminApi }) => {
           <h1>Contratos de Locação</h1>
           <p>Gerencie contratos de locação, valores mensais, partes envolvidas e datas de reajuste.</p>
         </div>
-        <Link to="/contratos/novo" className="button button-primary">
-          <Plus aria-hidden="true" />
-          <span>Novo contrato</span>
-        </Link>
+        <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+          <button
+            type="button"
+            className="button button-secondary"
+            onClick={() => setReportModalOpen(true)}
+            style={{ minHeight: '38px', padding: '6px 14px', fontSize: '13px' }}
+          >
+            <Download aria-hidden="true" style={{ width: '15px', height: '15px' }} />
+            <span>Exportar Relatório</span>
+          </button>
+          <Link to="/contratos/novo" className="button button-primary">
+            <Plus aria-hidden="true" />
+            <span>Novo contrato</span>
+          </Link>
+        </div>
       </div>
 
       {/* Filter Tabs */}
@@ -305,6 +319,12 @@ export const ContractList = ({ api = adminApi }: { api?: RentalAdminApi }) => {
           ) : null}
         </div>
       )}
+
+      <ReportExportModal
+        isOpen={reportModalOpen}
+        onClose={() => setReportModalOpen(false)}
+        api={api}
+      />
     </div>
   );
 };

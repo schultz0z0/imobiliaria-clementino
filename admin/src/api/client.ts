@@ -217,6 +217,20 @@ export interface PaymentAdminApi {
   ) => Promise<{ payment: PaymentRecordDto & { derivedStatus?: DerivedPaymentStatus } }>;
 }
 
+export interface FinancialSummaryDto {
+  totalExpected: number;
+  totalCollected: number;
+  totalForwarded: number;
+  totalPendingForwarding: number;
+  totalOverdue: number;
+  activeContractsCount: number;
+}
+
+export interface ReportAdminApi {
+  getFinancialSummary: (query?: { fromMonth?: string; toMonth?: string }) => Promise<{ summary: FinancialSummaryDto }>;
+  getExportCsvUrl: (query?: { fromMonth?: string; toMonth?: string }) => string;
+}
+
 export class ApiError extends Error {
   constructor(
     public readonly status: number,
@@ -257,7 +271,7 @@ const getErrorDetails = (value: unknown): { code?: string; message?: string; iss
   };
 };
 
-export class AdminApiClient implements AuthApi, PropertyAdminApi, PropertyEditorApi, PeopleAdminApi, RentalAdminApi, PaymentAdminApi {
+export class AdminApiClient implements AuthApi, PropertyAdminApi, PropertyEditorApi, PeopleAdminApi, RentalAdminApi, PaymentAdminApi, ReportAdminApi {
   private readonly unauthorizedHandlers = new Set<() => void>();
 
   constructor(private readonly baseUrl = '/api/admin') {}
@@ -505,6 +519,25 @@ export class AdminApiClient implements AuthApi, PropertyAdminApi, PropertyEditor
       method: 'POST',
       body: JSON.stringify(input),
     });
+  }
+
+  // Reports
+  getFinancialSummary(query: { fromMonth?: string; toMonth?: string } = {}) {
+    const search = new URLSearchParams();
+    for (const [key, value] of Object.entries(query)) {
+      if (value !== undefined && value !== '') search.set(key, String(value));
+    }
+    const suffix = search.size ? `?${search.toString()}` : '';
+    return this.request<{ summary: FinancialSummaryDto }>(`/reports/financial/summary${suffix}`);
+  }
+
+  getExportCsvUrl(query: { fromMonth?: string; toMonth?: string } = {}) {
+    const search = new URLSearchParams();
+    for (const [key, value] of Object.entries(query)) {
+      if (value !== undefined && value !== '') search.set(key, String(value));
+    }
+    const suffix = search.size ? `?${search.toString()}` : '';
+    return `${this.baseUrl}/reports/financial/export-csv${suffix}`;
   }
 }
 
