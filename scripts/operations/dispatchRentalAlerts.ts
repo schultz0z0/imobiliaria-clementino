@@ -10,6 +10,8 @@ const run = async () => {
   const recipientEmail =
     process.env.ALERT_RECIPIENT_EMAIL || 'locacoes@imobiliariaclementino.com.br';
 
+  const senderEmail = process.env.ALERT_SENDER_EMAIL;
+
   if (!resendApiKey) {
     console.warn(
       '[dispatchRentalAlerts] AVISO: RESEND_API_KEY não informada. Executando em modo de registro sem envio HTTP externo.',
@@ -20,6 +22,7 @@ const run = async () => {
     const result = await dispatchAlerts(sql, {
       resendApiKey,
       recipientEmail,
+      senderEmail,
       asOfDate: new Date(),
     });
 

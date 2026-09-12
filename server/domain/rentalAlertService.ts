@@ -33,6 +33,7 @@ export interface OperationalAlertsResult {
 export interface DispatchAlertsOptions {
   resendApiKey?: string;
   recipientEmail?: string;
+  senderEmail?: string;
   asOfDate?: Date;
 }
 
@@ -449,7 +450,10 @@ export const dispatchAlerts = async (
         Authorization: `Bearer ${options.resendApiKey}`,
       },
       body: JSON.stringify({
-        from: 'Imobiliária Clementino <locacoes@imobiliariaclementino.com.br>',
+        from:
+          options.senderEmail ||
+          process.env.ALERT_SENDER_EMAIL ||
+          'Imobiliária Clementino <locacoes@imobiliariaclementino.com.br>',
         to: options.recipientEmail ?? 'locacoes@imobiliariaclementino.com.br',
         subject: emailSubject,
         html: emailHtml,
