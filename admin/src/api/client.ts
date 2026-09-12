@@ -19,7 +19,7 @@ const CSRF_COOKIE_NAME = 'clementino_admin_csrf';
 export type SessionState = { authenticated: boolean; mustChangePassword: boolean };
 export type AuthResult = { mustChangePassword: boolean };
 
-export type PropertyStatus = 'draft' | 'published' | 'inactive';
+export type PropertyStatus = 'draft' | 'published' | 'inactive' | 'rented';
 export type PropertyOperation = 'sale' | 'rent' | 'seasonal' | 'auction';
 export type PropertyType = 'apartment' | 'house' | 'commercial' | 'rural' | 'land';
 

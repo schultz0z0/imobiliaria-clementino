@@ -1,4 +1,4 @@
-import { Building2, Eye, FilePenLine, Power, Rocket, RotateCcw, Star } from 'lucide-react';
+import { Building2, Eye, FilePenLine, KeyRound, Power, Rocket, RotateCcw, Star } from 'lucide-react';
 import React from 'react';
 import type { AdminPropertySummaryDto, PropertyOperation } from '../../api/client.ts';
 
@@ -10,7 +10,7 @@ type Props = {
   onAction: (action: PropertyAction, property: AdminPropertySummaryDto) => void;
 };
 
-const statusLabel = { draft: 'Rascunho', published: 'Publicado', inactive: 'Inativo' } as const;
+const statusLabel = { draft: 'Rascunho', published: 'Publicado', inactive: 'Inativo', rented: 'Alugado' } as const;
 const operationLabel: Record<PropertyOperation, string> = { sale: 'Venda', rent: 'Aluguel', seasonal: 'Temporada', auction: 'Leilão' };
 const price = (property: AdminPropertySummaryDto) => {
   return property.firstPrice === null ? 'Valor não informado' : new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 }).format(property.firstPrice);
@@ -41,7 +41,8 @@ export const AdminPropertyCard = ({ property, busyAction, onAction }: Props) => 
       <div className="property-actions" aria-label={`Ações de ${title}`}>
         {property.status === 'published' ? <a className="action-link" href={`${publicOrigin}/imoveis/${property.slug}`} target="_blank" rel="noreferrer"><Eye aria-hidden="true" />Visualizar</a> : property.status === 'draft' ? <button type="button" onClick={() => onAction('preview', property)} disabled={Boolean(busyAction)}><Eye aria-hidden="true" />{busyAction === 'preview' ? 'Gerando…' : 'Visualizar prévia'}</button> : <span className="action-disabled" aria-disabled="true"><Eye aria-hidden="true" />Visualização indisponível</span>}
         <a className="action-link" href={`/imoveis/${property.id}/editar`}><FilePenLine aria-hidden="true" />Editar</a>
-        {property.status !== 'inactive' ? <button type="button" onClick={() => onAction('publish', property)} disabled={Boolean(busyAction)}><Rocket aria-hidden="true" />{busyAction === 'publish' ? 'Solicitando…' : 'Publicar'}</button> : null}
+        {property.status !== 'rented' ? <a className="action-link" href={`/contratos/novo?propertyId=${property.id}`}><KeyRound aria-hidden="true" />Alugar</a> : null}
+        {property.status !== 'inactive' && property.status !== 'rented' ? <button type="button" onClick={() => onAction('publish', property)} disabled={Boolean(busyAction)}><Rocket aria-hidden="true" />{busyAction === 'publish' ? 'Solicitando…' : 'Publicar'}</button> : null}
         {property.status !== 'inactive' ? <button type="button" onClick={() => onAction('inactivate', property)} disabled={Boolean(busyAction)}><Power aria-hidden="true" />{busyAction === 'inactivate' ? 'Inativando…' : 'Inativar'}</button> : <button type="button" onClick={() => onAction('reactivate', property)} disabled={Boolean(busyAction)}><RotateCcw aria-hidden="true" />{busyAction === 'reactivate' ? 'Reativando…' : 'Reativar'}</button>}
         {property.status === 'published' ? <button type="button" onClick={() => onAction(property.featured ? 'unfeature' : 'feature', property)} disabled={Boolean(busyAction)}><Star aria-hidden="true" />{busyAction === (property.featured ? 'unfeature' : 'feature') ? (property.featured ? 'Removendo…' : 'Destacando…') : (property.featured ? 'Remover destaque' : 'Destacar no site')}</button> : <span className="action-disabled" aria-disabled="true"><Star aria-hidden="true" />Disponível após publicar</span>}
       </div>
