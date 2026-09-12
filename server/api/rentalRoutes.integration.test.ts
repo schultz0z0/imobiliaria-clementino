@@ -505,7 +505,133 @@ test('payments: generates monthly charges and executes 2-step tenant payment -> 
     headers: authHeaders(session),
   });
   assert.equal(listPaymentsRes.statusCode, 200);
-  assert.equal(listPaymentsRes.json().items.length, 1);
-  assert.equal(listPaymentsRes.json().items[0].id, rentPayment.id);
-  assert.equal(listPaymentsRes.json().items[0].derivedStatus, 'forwarded');
+  assert.equal(listPaymentsRes.json().items.length, 12); // All 12 tenure months auto-generated
+  const forwardedInList = listPaymentsRes.json().items.find((p: any) => p.id === rentPayment.id);
+  assert.ok(forwardedInList);
+  assert.equal(forwardedInList.derivedStatus, 'forwarded');
 });
+
+const multipartDocBody = (
+  boundary: string,
+  file: Buffer,
+  options: { filename?: string; mime?: string; category?: string; description?: string } = {},
+): Buffer => {
+  const chunks: Buffer[] = [];
+  if (options.category !== undefined) {
+    chunks.push(
+      Buffer.from(
+        `--${boundary}\r\nContent-Disposition: form-data; name="category"\r\n\r\n${options.category}\r\n`,
+      ),
+    );
+  }
+  if (options.description !== undefined) {
+    chunks.push(
+      Buffer.from(
+        `--${boundary}\r\nContent-Disposition: form-data; name="description"\r\n\r\n${options.description}\r\n`,
+      ),
+    );
+  }
+  chunks.push(
+    Buffer.from(
+      `--${boundary}\r\nContent-Disposition: form-data; name="file"; filename="${options.filename ?? 'documento.pdf'}"\r\nContent-Type: ${options.mime ?? 'application/pdf'}\r\n\r\n`,
+    ),
+    file,
+    Buffer.from(`\r\n--${boundary}--\r\n`),
+  );
+  return Buffer.concat(chunks);
+};
+
+test('contract documents: uploads real file via multipart, downloads, and deletes', async () => {
+  const session = await authenticate();
+  const propertyId = await createTestProperty('CLI-DOC-001');
+
+  const landlordRes = await app.inject({
+    method: 'POST',
+    url: '/api/admin/people',
+    headers: authHeaders(session, true),
+    payload: { fullName: 'Locador Doc Test' },
+  });
+  const tenantRes = await app.inject({
+    method: 'POST',
+    url: '/api/admin/people',
+    headers: authHeaders(session, true),
+    payload: { fullName: 'Locatario Doc Test' },
+  });
+
+  const contractRes = await app.inject({
+    method: 'POST',
+    url: '/api/admin/rentals/contracts',
+    headers: authHeaders(session, true),
+    payload: {
+      contractNumber: 'CTR-DOC-001',
+      propertyId,
+      landlordId: landlordRes.json().person.id,
+      tenantId: tenantRes.json().person.id,
+      startDate: '2026-09-01',
+      endDate: '2027-08-31',
+      rentAmount: 3200,
+      rentDueDay: 10,
+    },
+  });
+  const contractId = contractRes.json().contract.id;
+
+  // 1. Upload a PDF document
+  const boundary = `clementino-doc-${Date.now()}`;
+  const pdfBuffer = Buffer.from('%PDF-1.4 Mock Contract Content For Clementino Imóveis');
+  const uploadRes = await app.inject({
+    method: 'POST',
+    url: `/api/admin/rentals/contracts/${contractId}/documents/upload`,
+    headers: {
+      ...authHeaders(session, true),
+      'content-type': `multipart/form-data; boundary=${boundary}`,
+    },
+    payload: multipartDocBody(boundary, pdfBuffer, {
+      filename: 'contrato_assinado.pdf',
+      mime: 'application/pdf',
+      category: 'contract_pdf',
+      description: 'Contrato com firma reconhecida',
+    }),
+  });
+  assert.equal(uploadRes.statusCode, 201, uploadRes.body);
+  const doc = uploadRes.json().document;
+  assert.ok(doc.id);
+  assert.equal(doc.category, 'contract_pdf');
+  assert.equal(doc.filename, 'contrato_assinado.pdf');
+  assert.equal(doc.byteSize, pdfBuffer.length);
+
+  // 2. Download the uploaded document
+  const downloadRes = await app.inject({
+    method: 'GET',
+    url: `/api/admin/rentals/documents/${doc.id}/download`,
+    headers: authHeaders(session),
+  });
+  assert.equal(downloadRes.statusCode, 200);
+  assert.equal(downloadRes.headers['content-type'], 'application/pdf');
+  assert.deepEqual(downloadRes.rawPayload, pdfBuffer);
+
+  // 3. Test generate-all payments endpoint on the contract
+  const generateAllRes = await app.inject({
+    method: 'POST',
+    url: `/api/admin/rentals/contracts/${contractId}/payments/generate-all`,
+    headers: authHeaders(session, true),
+  });
+  assert.equal(generateAllRes.statusCode, 200, generateAllRes.body);
+  assert.equal(generateAllRes.json().payments.length, 12);
+
+  // 4. Delete the document
+  const deleteRes = await app.inject({
+    method: 'DELETE',
+    url: `/api/admin/rentals/documents/${doc.id}`,
+    headers: authHeaders(session, true),
+  });
+  assert.equal(deleteRes.statusCode, 204);
+
+  // 5. Download after delete should return 404
+  const downloadAfterDelete = await app.inject({
+    method: 'GET',
+    url: `/api/admin/rentals/documents/${doc.id}/download`,
+    headers: authHeaders(session),
+  });
+  assert.equal(downloadAfterDelete.statusCode, 404);
+});
+

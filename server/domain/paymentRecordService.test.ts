@@ -45,7 +45,11 @@ test('paymentRecordService manages the 2-step payment flow with receipts and sta
       iptuDueDay: 15,
     });
 
-    // 1. Generate monthly payments for September 2026
+    // Contract creation should have auto-generated 12 months of charges (rent, condominium, iptu)
+    const initialList = await listPayments(sql, { contractId: contract.id, limit: 100 });
+    assert.equal(initialList.items.length, 36); // 12 months * 3 charges
+
+    // 1. Generate monthly payments for September 2026 (idempotent, returns existing)
     const generated = await generateMonthlyPaymentsForContract(sql, contract.id, '2026-09-01');
     assert.ok(generated.length >= 3); // rent, condominium, iptu
     const rentRecord = generated.find((p) => p.category === 'rent');

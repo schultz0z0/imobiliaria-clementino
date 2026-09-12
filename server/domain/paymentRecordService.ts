@@ -124,8 +124,30 @@ export const createPaymentRecord = async (
   return toPaymentRecordDto(created);
 };
 
+export const calculateContractBillingMonths = (startDateStr: string, endDateStr: string): string[] => {
+  const startClean = formatDate(startDateStr);
+  const endClean = formatDate(endDateStr);
+  const [startYear, startMonth] = startClean.slice(0, 7).split('-').map(Number);
+  const [endYear, endMonth] = endClean.slice(0, 7).split('-').map(Number);
+  if (!startYear || !startMonth || !endYear || !endMonth) return [];
+
+  const months: string[] = [];
+  let curYear = startYear;
+  let curMonth = startMonth;
+
+  while (curYear < endYear || (curYear === endYear && curMonth <= endMonth)) {
+    months.push(`${curYear}-${String(curMonth).padStart(2, '0')}-01`);
+    curMonth++;
+    if (curMonth > 12) {
+      curMonth = 1;
+      curYear++;
+    }
+  }
+  return months;
+};
+
 export const generateMonthlyPaymentsForContract = async (
-  sql: Sql,
+  sql: SqlExecutor,
   contractId: string,
   referenceMonth: string, // YYYY-MM-DD (e.g. 2026-09-01)
   actorId?: string,
@@ -206,6 +228,27 @@ export const generateMonthlyPaymentsForContract = async (
   });
 
   return createdRecords;
+};
+
+export const generateAllPaymentsForContract = async (
+  sql: SqlExecutor,
+  contractId: string,
+  actorId?: string,
+): Promise<(PaymentRecordDto & { derivedStatus: DerivedPaymentStatus })[]> => {
+  const contract = await getRentalContractById(sql, contractId);
+  if (!contract) {
+    throw new PaymentRecordServiceError(API_ERROR_CODES.NOT_FOUND, 404, 'Contrato não encontrado');
+  }
+
+  const months = calculateContractBillingMonths(contract.startDate, contract.endDate);
+  const allRecords: (PaymentRecordDto & { derivedStatus: DerivedPaymentStatus })[] = [];
+
+  for (const refMonth of months) {
+    const monthRecords = await generateMonthlyPaymentsForContract(sql, contractId, refMonth, actorId);
+    allRecords.push(...monthRecords);
+  }
+
+  return allRecords;
 };
 
 export const recordTenantPayment = async (

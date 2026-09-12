@@ -189,6 +189,16 @@ export interface RentalAdminApi {
       description?: string;
     },
   ) => Promise<{ document: ContractDocumentDto }>;
+  uploadContractDocument: (
+    contractId: string,
+    file: File,
+    options?: { category: DocumentCategory; description?: string },
+    signal?: AbortSignal,
+  ) => Promise<{ document: ContractDocumentDto }>;
+  generateAllContractPayments: (
+    contractId: string,
+    signal?: AbortSignal,
+  ) => Promise<{ payments: (PaymentRecordDto & { derivedStatus?: DerivedPaymentStatus })[] }>;
   deleteContractDocument: (id: string) => Promise<void>;
 }
 
@@ -483,6 +493,32 @@ export class AdminApiClient implements AuthApi, PropertyAdminApi, PropertyEditor
     return this.request<{ document: ContractDocumentDto }>(`/rentals/contracts/${encodeURIComponent(contractId)}/documents`, {
       method: 'POST',
       body: JSON.stringify(input),
+    });
+  }
+
+  uploadContractDocument(
+    contractId: string,
+    file: File,
+    options: { category: DocumentCategory; description?: string } = { category: 'other' },
+    signal?: AbortSignal,
+  ): Promise<{ document: ContractDocumentDto }> {
+    const body = new FormData();
+    body.append('file', file);
+    body.append('category', options.category);
+    if (options.description) {
+      body.append('description', options.description);
+    }
+    return this.request(`/rentals/contracts/${encodeURIComponent(contractId)}/documents/upload`, {
+      method: 'POST',
+      body,
+      signal,
+    });
+  }
+
+  generateAllContractPayments(contractId: string, signal?: AbortSignal): Promise<{ payments: (PaymentRecordDto & { derivedStatus?: DerivedPaymentStatus })[] }> {
+    return this.request(`/rentals/contracts/${encodeURIComponent(contractId)}/payments/generate-all`, {
+      method: 'POST',
+      signal,
     });
   }
 

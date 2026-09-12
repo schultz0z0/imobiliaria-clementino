@@ -56,7 +56,9 @@ test('rentalReportService generates financial summary and exports Brazilian form
       rentDueDay: 10,
     });
 
-    // 3. Create payments
+    // 3. Clear auto-generated payments to set up exact test cases:
+    await sql`DELETE FROM payment_records WHERE contract_id = ${contract.id}`;
+
     // P1: August payment, overdue (due in the past, unpaid)
     await sql`
       INSERT INTO payment_records (

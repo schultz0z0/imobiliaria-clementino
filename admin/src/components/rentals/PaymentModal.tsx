@@ -24,7 +24,7 @@ export interface PaymentModalProps {
   onClose: () => void;
   onSuccess: (payment: PaymentRecordDto) => void;
   api?: Pick<PaymentAdminApi, 'recordPayment'> &
-    Partial<Pick<RentalAdminApi, 'createContractDocument'>>;
+    Partial<Pick<RentalAdminApi, 'createContractDocument' | 'uploadContractDocument'>>;
   contractNumber?: string;
 }
 
@@ -76,19 +76,31 @@ export const PaymentModal: React.FC<PaymentModalProps> = ({
       let paidReceiptId: string | undefined = undefined;
       const client = api ?? adminApi;
 
-      if (selectedFile && client.createContractDocument && payment.contractId) {
-        try {
-          const docRes = await client.createContractDocument(payment.contractId, {
-            category: 'payment_receipt',
-            filename: selectedFile.name,
-            storageKey: `receipts/${payment.contractId}/${selectedFile.name}`,
-            mimeType: selectedFile.type || 'application/octet-stream',
-            byteSize: selectedFile.size,
-            description: `Comprovante de pagamento - ${payment.referenceMonth}`,
-          });
-          paidReceiptId = docRes.document.id;
-        } catch {
-          // If document upload fails, continue with payment registration
+      if (selectedFile && payment.contractId) {
+        if ('uploadContractDocument' in client && typeof client.uploadContractDocument === 'function') {
+          try {
+            const docRes = await client.uploadContractDocument(payment.contractId, selectedFile, {
+              category: 'payment_receipt',
+              description: `Comprovante de pagamento - ${payment.referenceMonth}`,
+            });
+            paidReceiptId = docRes.document.id;
+          } catch {
+            // If document upload fails, continue with payment registration
+          }
+        } else if ('createContractDocument' in client && typeof client.createContractDocument === 'function') {
+          try {
+            const docRes = await client.createContractDocument(payment.contractId, {
+              category: 'payment_receipt',
+              filename: selectedFile.name,
+              storageKey: `receipts/${payment.contractId}/${selectedFile.name}`,
+              mimeType: selectedFile.type || 'application/octet-stream',
+              byteSize: selectedFile.size,
+              description: `Comprovante de pagamento - ${payment.referenceMonth}`,
+            });
+            paidReceiptId = docRes.document.id;
+          } catch {
+            // If document upload fails, continue with payment registration
+          }
         }
       }
 

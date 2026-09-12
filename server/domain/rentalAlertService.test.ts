@@ -89,7 +89,9 @@ test('rentalAlertService detects operational alerts and deduplicates email dispa
       rentDueDay: 10,
     });
 
-    // 3. Create payments on contract 1:
+    // 3. Clear auto-generated payments to set up exact test cases on contract 1:
+    await sql`DELETE FROM payment_records WHERE contract_id IN (${contract1.id}, ${contractExpiring.id}, ${contractAdjustment.id})`;
+
     // A: Overdue payment (due 2026-09-10, unpaid on 2026-09-15)
     await sql`
       INSERT INTO payment_records (

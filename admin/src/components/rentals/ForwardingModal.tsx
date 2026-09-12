@@ -24,7 +24,7 @@ export interface ForwardingModalProps {
   onClose: () => void;
   onSuccess: (payment: PaymentRecordDto) => void;
   api?: Pick<PaymentAdminApi, 'recordForwarding'> &
-    Partial<Pick<RentalAdminApi, 'createContractDocument'>>;
+    Partial<Pick<RentalAdminApi, 'createContractDocument' | 'uploadContractDocument'>>;
   contractNumber?: string;
 }
 
@@ -76,19 +76,31 @@ export const ForwardingModal: React.FC<ForwardingModalProps> = ({
       let forwardedReceiptId: string | undefined = undefined;
       const client = api ?? adminApi;
 
-      if (selectedFile && client.createContractDocument && payment.contractId) {
-        try {
-          const docRes = await client.createContractDocument(payment.contractId, {
-            category: 'forwarding_receipt',
-            filename: selectedFile.name,
-            storageKey: `receipts/${payment.contractId}/${selectedFile.name}`,
-            mimeType: selectedFile.type || 'application/octet-stream',
-            byteSize: selectedFile.size,
-            description: `Comprovante de repasse - ${payment.referenceMonth}`,
-          });
-          forwardedReceiptId = docRes.document.id;
-        } catch {
-          // If document upload fails, continue with forwarding registration
+      if (selectedFile && payment.contractId) {
+        if ('uploadContractDocument' in client && typeof client.uploadContractDocument === 'function') {
+          try {
+            const docRes = await client.uploadContractDocument(payment.contractId, selectedFile, {
+              category: 'forwarding_receipt',
+              description: `Comprovante de repasse - ${payment.referenceMonth}`,
+            });
+            forwardedReceiptId = docRes.document.id;
+          } catch {
+            // If document upload fails, continue with forwarding registration
+          }
+        } else if ('createContractDocument' in client && typeof client.createContractDocument === 'function') {
+          try {
+            const docRes = await client.createContractDocument(payment.contractId, {
+              category: 'forwarding_receipt',
+              filename: selectedFile.name,
+              storageKey: `receipts/${payment.contractId}/${selectedFile.name}`,
+              mimeType: selectedFile.type || 'application/octet-stream',
+              byteSize: selectedFile.size,
+              description: `Comprovante de repasse - ${payment.referenceMonth}`,
+            });
+            forwardedReceiptId = docRes.document.id;
+          } catch {
+            // If document upload fails, continue with forwarding registration
+          }
         }
       }
 

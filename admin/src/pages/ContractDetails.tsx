@@ -4,21 +4,25 @@ import {
   ArrowLeft,
   Building2,
   Calendar,
+  Check,
   CheckCircle2,
   Clock,
   DollarSign,
   Download,
   FileCheck,
   FileText,
+  Filter,
   Mail,
   MessageCircle,
   Phone,
+  Plus,
   Power,
   RefreshCw,
+  Upload,
   User,
   Users,
 } from 'lucide-react';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import {
@@ -39,6 +43,9 @@ import type {
   PersonDto,
   RentalContractDto,
 } from '../../../shared/rentalSchema.ts';
+import { DocumentUploadModal } from '../components/rentals/DocumentUploadModal.tsx';
+import { PaymentModal } from '../components/rentals/PaymentModal.tsx';
+import { ForwardingModal } from '../components/rentals/ForwardingModal.tsx';
 
 interface ContractDetailsProps {
   api?: RentalAdminApi &
@@ -115,6 +122,14 @@ export const ContractDetails = ({ api = adminApi }: ContractDetailsProps) => {
   const [error, setError] = useState<string | null>(null);
   const [notice, setNotice] = useState<{ tone: 'success' | 'error'; text: string } | null>(null);
 
+  const [uploadModalOpen, setUploadModalOpen] = useState(false);
+  const [selectedPayment, setSelectedPayment] = useState<PaymentRecordDto | null>(null);
+  const [paymentModalOpen, setPaymentModalOpen] = useState(false);
+  const [forwardingModalOpen, setForwardingModalOpen] = useState(false);
+  const [generatingPayments, setGeneratingPayments] = useState(false);
+  type PaymentFilter = 'all' | 'pending' | 'paid' | 'forwarded' | 'overdue';
+  const [paymentFilter, setPaymentFilter] = useState<PaymentFilter>('all');
+
   const loadAll = useCallback(async () => {
     if (!id) return;
     setLoading(true);
@@ -182,6 +197,67 @@ export const ContractDetails = ({ api = adminApi }: ContractDetailsProps) => {
       setTerminating(false);
     }
   };
+
+  const handleGenerateAllPayments = async () => {
+    if (!contract) return;
+    setGeneratingPayments(true);
+    setNotice(null);
+    try {
+      if (api.generateAllContractPayments) {
+        const res = await api.generateAllContractPayments(contract.id);
+        setPayments(res.payments);
+        setNotice({
+          tone: 'success',
+          text: `Cobranças sincronizadas com sucesso! Total de ${res.payments.length} cobranças para a vigência do contrato.`,
+        });
+      } else {
+        await loadAll();
+      }
+    } catch (err) {
+      setNotice({
+        tone: 'error',
+        text: err instanceof ApiError ? err.message : 'Falha ao sincronizar cobranças do contrato.',
+      });
+    } finally {
+      setGeneratingPayments(false);
+    }
+  };
+
+  const todayStr = useMemo(() => new Date().toISOString().slice(0, 10), []);
+
+  const counts = useMemo(() => {
+    let pending = 0;
+    let paid = 0;
+    let forwarded = 0;
+    let overdue = 0;
+
+    for (const p of payments) {
+      if (p.forwardedAt) {
+        forwarded++;
+      }
+      if (p.paidAt) {
+        if (!p.forwardedAt) paid++;
+      } else {
+        pending++;
+        if (p.dueDate < todayStr) {
+          overdue++;
+        }
+      }
+    }
+
+    return { total: payments.length, pending, paid, forwarded, overdue };
+  }, [payments, todayStr]);
+
+  const filteredPayments = useMemo(() => {
+    return payments.filter((p) => {
+      if (paymentFilter === 'all') return true;
+      if (paymentFilter === 'forwarded') return Boolean(p.forwardedAt);
+      if (paymentFilter === 'paid') return Boolean(p.paidAt && !p.forwardedAt);
+      if (paymentFilter === 'pending') return !p.paidAt;
+      if (paymentFilter === 'overdue') return !p.paidAt && p.dueDate < todayStr;
+      return true;
+    });
+  }, [payments, paymentFilter, todayStr]);
 
   if (loading) {
     return (
@@ -514,17 +590,35 @@ export const ContractDetails = ({ api = adminApi }: ContractDetailsProps) => {
 
       {/* Documents Section */}
       <section className="content-card" style={{ padding: '24px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', flexWrap: 'wrap', gap: '8px' }}>
           <h2 style={{ margin: 0, fontSize: '20px', display: 'flex', alignItems: 'center', gap: '8px' }}>
             <FileText aria-hidden="true" />
-            <span>Documentos Anexados ({documents.length})</span>
+            <span>Documentos e Anexos ({documents.length})</span>
           </h2>
+          <button
+            type="button"
+            className="button button-primary"
+            onClick={() => setUploadModalOpen(true)}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '13px' }}
+          >
+            <Plus style={{ width: '16px', height: '16px' }} aria-hidden="true" />
+            <span>Anexar Documento / PDF</span>
+          </button>
         </div>
 
         {documents.length === 0 ? (
-          <div className="empty-state" style={{ padding: '24px 0' }}>
-            <FileText aria-hidden="true" />
-            <p style={{ margin: 0 }}>Nenhum documento anexado a este contrato ainda.</p>
+          <div className="empty-state" style={{ padding: '24px 0', textAlign: 'center' }}>
+            <FileText aria-hidden="true" style={{ width: '32px', height: '32px', opacity: 0.5, margin: '0 auto 8px' }} />
+            <p style={{ margin: '0 0 12px' }}>Nenhum documento anexado a este contrato ainda.</p>
+            <button
+              type="button"
+              className="button button-secondary"
+              onClick={() => setUploadModalOpen(true)}
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', margin: '0 auto' }}
+            >
+              <Upload style={{ width: '15px', height: '15px' }} aria-hidden="true" />
+              <span>Anexar contrato assinado, vistoria ou aditivo</span>
+            </button>
           </div>
         ) : (
           <div style={{ display: 'grid', gap: '12px' }}>
@@ -538,10 +632,12 @@ export const ContractDetails = ({ api = adminApi }: ContractDetailsProps) => {
                   padding: '12px 16px',
                   background: 'var(--admin-surface-muted)',
                   borderRadius: 'var(--admin-radius-sm)',
+                  flexWrap: 'wrap',
+                  gap: '8px',
                 }}
               >
                 <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
                     <span className="status-badge" style={{ fontSize: '11px' }}>
                       {documentCategoryLabel[doc.category] || doc.category}
                     </span>
@@ -559,7 +655,7 @@ export const ContractDetails = ({ api = adminApi }: ContractDetailsProps) => {
                     target="_blank"
                     rel="noreferrer"
                     className="button button-secondary"
-                    style={{ padding: '6px 12px', fontSize: '12px' }}
+                    style={{ padding: '6px 12px', fontSize: '12px', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
                   >
                     <Download style={{ width: '14px', height: '14px' }} aria-hidden="true" />
                     <span>Download</span>
@@ -573,52 +669,317 @@ export const ContractDetails = ({ api = adminApi }: ContractDetailsProps) => {
 
       {/* Payments History / Timeline */}
       <section className="content-card" style={{ padding: '24px' }}>
-        <h2 style={{ margin: '0 0 16px', fontSize: '20px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <Clock aria-hidden="true" />
-          <span>Histórico de Pagamentos e Repasses ({payments.length})</span>
-        </h2>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', flexWrap: 'wrap', gap: '8px' }}>
+          <div>
+            <h2 style={{ margin: 0, fontSize: '20px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <Clock aria-hidden="true" />
+              <span>Lançamentos Financeiros da Vigência ({payments.length})</span>
+            </h2>
+            <p style={{ margin: '4px 0 0', fontSize: '13px', color: 'var(--admin-text-muted)' }}>
+              Cobranças de aluguel e encargos. Registre pagamentos antecipadamente ou no vencimento e dê baixa nos repasses ao proprietário.
+            </p>
+          </div>
+          <button
+            type="button"
+            className="button button-secondary"
+            disabled={generatingPayments}
+            onClick={handleGenerateAllPayments}
+            title="Gera cobranças para todos os meses do contrato caso ainda não existam"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '13px' }}
+          >
+            <RefreshCw className={generatingPayments ? 'spin' : ''} style={{ width: '15px', height: '15px' }} aria-hidden="true" />
+            <span>{generatingPayments ? 'Sincronizando...' : 'Gerar / Sincronizar Cobranças da Vigência'}</span>
+          </button>
+        </div>
+
+        {/* Filter chips */}
+        <div
+          style={{
+            display: 'flex',
+            gap: '8px',
+            marginBottom: '16px',
+            flexWrap: 'wrap',
+          }}
+        >
+          <button
+            type="button"
+            className={`button ${paymentFilter === 'all' ? 'button-primary' : 'button-secondary'}`}
+            style={{ padding: '6px 12px', fontSize: '12px', borderRadius: '20px' }}
+            onClick={() => setPaymentFilter('all')}
+          >
+            Todos ({counts.total})
+          </button>
+          <button
+            type="button"
+            className={`button ${paymentFilter === 'pending' ? 'button-primary' : 'button-secondary'}`}
+            style={{ padding: '6px 12px', fontSize: '12px', borderRadius: '20px' }}
+            onClick={() => setPaymentFilter('pending')}
+          >
+            Aguardando Pagamento ({counts.pending})
+          </button>
+          <button
+            type="button"
+            className={`button ${paymentFilter === 'paid' ? 'button-primary' : 'button-secondary'}`}
+            style={{ padding: '6px 12px', fontSize: '12px', borderRadius: '20px' }}
+            onClick={() => setPaymentFilter('paid')}
+          >
+            Pagos / Aguardando Repasse ({counts.paid})
+          </button>
+          <button
+            type="button"
+            className={`button ${paymentFilter === 'forwarded' ? 'button-primary' : 'button-secondary'}`}
+            style={{ padding: '6px 12px', fontSize: '12px', borderRadius: '20px' }}
+            onClick={() => setPaymentFilter('forwarded')}
+          >
+            Repassados ao Locador ({counts.forwarded})
+          </button>
+          {counts.overdue > 0 && (
+            <button
+              type="button"
+              className={`button ${paymentFilter === 'overdue' ? 'button-primary' : 'button-secondary'}`}
+              style={{
+                padding: '6px 12px',
+                fontSize: '12px',
+                borderRadius: '20px',
+                color: paymentFilter === 'overdue' ? undefined : 'var(--admin-danger)',
+                borderColor: 'var(--admin-danger)',
+              }}
+              onClick={() => setPaymentFilter('overdue')}
+            >
+              Vencidos ({counts.overdue})
+            </button>
+          )}
+        </div>
 
         {payments.length === 0 ? (
-          <div className="empty-state" style={{ padding: '24px 0' }}>
-            <Clock aria-hidden="true" />
-            <p style={{ margin: 0 }}>Nenhum lançamento financeiro gerado para este contrato ainda.</p>
+          <div className="empty-state" style={{ padding: '24px 0', textAlign: 'center' }}>
+            <Clock aria-hidden="true" style={{ width: '32px', height: '32px', opacity: 0.5, margin: '0 auto 8px' }} />
+            <p style={{ margin: '0 0 12px' }}>Nenhum lançamento financeiro gerado para este contrato ainda.</p>
+            <button
+              type="button"
+              className="button button-primary"
+              disabled={generatingPayments}
+              onClick={handleGenerateAllPayments}
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', margin: '0 auto' }}
+            >
+              <RefreshCw className={generatingPayments ? 'spin' : ''} style={{ width: '15px', height: '15px' }} aria-hidden="true" />
+              <span>Gerar cobranças de toda a vigência</span>
+            </button>
+          </div>
+        ) : filteredPayments.length === 0 ? (
+          <div className="empty-state" style={{ padding: '20px 0', textAlign: 'center' }}>
+            <p style={{ margin: 0, color: 'var(--admin-text-muted)' }}>Nenhum lançamento com este filtro.</p>
           </div>
         ) : (
           <div style={{ display: 'grid', gap: '10px' }}>
-            {payments.map((pmt) => (
-              <div
-                key={pmt.id}
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  padding: '12px 16px',
-                  border: '1px solid var(--admin-border)',
-                  borderRadius: 'var(--admin-radius-sm)',
-                }}
-              >
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <strong>Mês {pmt.referenceMonth}</strong>
-                    <span className="status-badge" style={{ fontSize: '11px' }}>
-                      {paymentCategoryLabel[pmt.category] || pmt.category}
-                    </span>
+            {filteredPayments.map((pmt) => {
+              const isOverdue = !pmt.paidAt && pmt.dueDate < todayStr;
+              return (
+                <div
+                  key={pmt.id}
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    padding: '14px 16px',
+                    border: '1px solid var(--admin-border)',
+                    borderRadius: 'var(--admin-radius-sm)',
+                    backgroundColor: pmt.paidAt ? 'var(--admin-surface)' : 'var(--admin-surface-muted)',
+                    flexWrap: 'wrap',
+                    gap: '12px',
+                  }}
+                >
+                  <div style={{ minWidth: '220px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                      <strong>Mês {pmt.referenceMonth}</strong>
+                      <span className="status-badge" style={{ fontSize: '11px' }}>
+                        {paymentCategoryLabel[pmt.category] || pmt.category}
+                      </span>
+                      {pmt.forwardedAt ? (
+                        <span className="status-badge status-published" style={{ fontSize: '11px' }}>
+                          Repassado
+                        </span>
+                      ) : pmt.paidAt ? (
+                        <span
+                          className="status-badge"
+                          style={{ fontSize: '11px', background: '#dbeafe', color: '#1e40af' }}
+                        >
+                          Pago pelo Inquilino
+                        </span>
+                      ) : isOverdue ? (
+                        <span className="status-badge status-inactive" style={{ fontSize: '11px' }}>
+                          Vencido
+                        </span>
+                      ) : (
+                        <span className="status-badge status-draft" style={{ fontSize: '11px' }}>
+                          Aguardando Pagamento
+                        </span>
+                      )}
+                    </div>
+                    <div
+                      style={{
+                        fontSize: '12px',
+                        color: 'var(--admin-text-muted)',
+                        marginTop: '4px',
+                        display: 'flex',
+                        gap: '12px',
+                        flexWrap: 'wrap',
+                      }}
+                    >
+                      <span>
+                        Vencimento: <strong>{formatDate(pmt.dueDate)}</strong>
+                      </span>
+                      {pmt.paidAt ? <span>Pago em: {formatDate(pmt.paidAt)}</span> : null}
+                      {pmt.forwardedAt ? <span>Repassado em: {formatDate(pmt.forwardedAt)}</span> : null}
+                    </div>
+                    {(pmt.paidReceiptId || pmt.forwardedReceiptId) && (
+                      <div style={{ marginTop: '6px', display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                        {pmt.paidReceiptId && (
+                          <a
+                            href={`/api/admin/rentals/documents/${pmt.paidReceiptId}/download`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-link"
+                            style={{
+                              fontSize: '12px',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '4px',
+                            }}
+                          >
+                            <Download style={{ width: '12px', height: '12px' }} aria-hidden="true" />
+                            Comprovante Pagamento
+                          </a>
+                        )}
+                        {pmt.forwardedReceiptId && (
+                          <a
+                            href={`/api/admin/rentals/documents/${pmt.forwardedReceiptId}/download`}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-link"
+                            style={{
+                              fontSize: '12px',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '4px',
+                            }}
+                          >
+                            <Download style={{ width: '12px', height: '12px' }} aria-hidden="true" />
+                            Comprovante Repasse
+                          </a>
+                        )}
+                      </div>
+                    )}
                   </div>
-                  <div style={{ fontSize: '12px', color: 'var(--admin-text-muted)', marginTop: '4px' }}>
-                    Vencimento: {formatDate(pmt.dueDate)}
-                    {pmt.paidAt ? ` · Pago em ${formatDate(pmt.paidAt)}` : ' · Aguardando pagamento'}
-                    {pmt.forwardedAt ? ` · Repassado em ${formatDate(pmt.forwardedAt)}` : ''}
-                  </div>
-                </div>
 
-                <div style={{ textAlign: 'right' }}>
-                  <strong style={{ fontSize: '15px' }}>{formatCurrency(pmt.amount)}</strong>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+                    <div style={{ textAlign: 'right' }}>
+                      <strong style={{ fontSize: '16px' }}>{formatCurrency(pmt.amount)}</strong>
+                    </div>
+                    <div>
+                      {!pmt.paidAt ? (
+                        <button
+                          type="button"
+                          className="button button-primary"
+                          style={{ padding: '6px 12px', fontSize: '13px' }}
+                          onClick={() => {
+                            setSelectedPayment(pmt);
+                            setPaymentModalOpen(true);
+                          }}
+                        >
+                          Dar baixa em boleto
+                        </button>
+                      ) : !pmt.forwardedAt ? (
+                        <button
+                          type="button"
+                          className="button button-secondary"
+                          style={{
+                            padding: '6px 12px',
+                            fontSize: '13px',
+                            borderColor: 'var(--admin-primary)',
+                            color: 'var(--admin-primary)',
+                          }}
+                          onClick={() => {
+                            setSelectedPayment(pmt);
+                            setForwardingModalOpen(true);
+                          }}
+                        >
+                          Dar baixa em repasse
+                        </button>
+                      ) : (
+                        <span
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '4px',
+                            fontSize: '12px',
+                            color: 'var(--admin-success, #16a34a)',
+                            fontWeight: 600,
+                          }}
+                        >
+                          <CheckCircle2 style={{ width: '16px', height: '16px' }} aria-hidden="true" />
+                          Concluído
+                        </span>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         )}
       </section>
+
+      {/* Modals */}
+      <DocumentUploadModal
+        isOpen={uploadModalOpen}
+        contractId={contract.id}
+        contractNumber={contract.contractNumber}
+        onClose={() => setUploadModalOpen(false)}
+        onSuccess={(doc) => {
+          setDocuments((prev) => [doc, ...prev]);
+          setNotice({ tone: 'success', text: `Documento "${doc.filename}" anexado com sucesso!` });
+        }}
+        api={api}
+      />
+
+      <PaymentModal
+        isOpen={paymentModalOpen}
+        payment={selectedPayment}
+        contractNumber={contract.contractNumber}
+        onClose={() => {
+          setPaymentModalOpen(false);
+          setSelectedPayment(null);
+        }}
+        onSuccess={(updatedPmt) => {
+          setPayments((prev) => prev.map((p) => (p.id === updatedPmt.id ? updatedPmt : p)));
+          setNotice({
+            tone: 'success',
+            text: `Pagamento de ${paymentCategoryLabel[updatedPmt.category] || updatedPmt.category} (Mês ${updatedPmt.referenceMonth}) registrado com sucesso!`,
+          });
+          loadAll();
+        }}
+        api={api}
+      />
+
+      <ForwardingModal
+        isOpen={forwardingModalOpen}
+        payment={selectedPayment}
+        contractNumber={contract.contractNumber}
+        onClose={() => {
+          setForwardingModalOpen(false);
+          setSelectedPayment(null);
+        }}
+        onSuccess={(updatedPmt) => {
+          setPayments((prev) => prev.map((p) => (p.id === updatedPmt.id ? updatedPmt : p)));
+          setNotice({
+            tone: 'success',
+            text: `Repasse de ${paymentCategoryLabel[updatedPmt.category] || updatedPmt.category} (Mês ${updatedPmt.referenceMonth}) registrado com sucesso!`,
+          });
+          loadAll();
+        }}
+        api={api}
+      />
     </div>
   );
 };

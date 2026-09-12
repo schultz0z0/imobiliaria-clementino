@@ -478,3 +478,92 @@ test('ContractDetails displays 360 overview including landlord, tenant, document
   await act(async () => root.unmount());
   cleanup();
 });
+
+test('ContractDetails supports full-tenure payment generation and opening modals', async () => {
+  const { cleanup } = setupDom(
+    `https://admin.clementinoimoveis.com.br/contratos/${sampleContract.id}`,
+  );
+  let generateAllCalled = false;
+
+  const mockApi = {
+    getContract: async () => ({ contract: sampleContract }),
+    getPerson: async (id: string) => {
+      if (id === sampleLandlord.id) return { person: sampleLandlord };
+      if (id === sampleTenant.id) return { person: sampleTenant };
+      throw new Error('Not found');
+    },
+    getProperty: async () => ({ property: sampleProperty as any }),
+    listContractDocuments: async () => ({ documents: [sampleDocument] }),
+    listPayments: async () => ({ items: [samplePayment], pagination: { total: 1, page: 1, limit: 20 } }),
+    generateAllContractPayments: async () => {
+      generateAllCalled = true;
+      return {
+        payments: [
+          samplePayment,
+          {
+            ...samplePayment,
+            id: 'pmt-2',
+            referenceMonth: '2026-03',
+            dueDate: '2026-03-10',
+            paidAt: null,
+          },
+        ],
+      };
+    },
+  };
+
+  const { createRoot } = await import('react-dom/client');
+  const container = document.querySelector('#root')!;
+  const root = createRoot(container);
+
+  await act(async () => {
+    root.render(
+      <MemoryRouter initialEntries={[`/contratos/${sampleContract.id}`]}>
+        <Routes>
+          <Route
+            path="/contratos/:id"
+            element={<ContractDetails api={mockApi as any} />}
+          />
+        </Routes>
+      </MemoryRouter>,
+    );
+    await Promise.resolve();
+    await Promise.resolve();
+  });
+
+  // Verify button "Gerar / Sincronizar Cobranças da Vigência"
+  const syncBtn = Array.from(container.querySelectorAll<HTMLButtonElement>('button')).find(
+    (b) => b.textContent?.includes('Sincronizar Cobranças'),
+  );
+  assert.ok(syncBtn, 'Sync payments button should exist');
+
+  await act(async () => {
+    syncBtn!.click();
+    await Promise.resolve();
+    await Promise.resolve();
+  });
+
+  assert.equal(generateAllCalled, true, 'generateAllContractPayments should be invoked');
+  assert.match(container.textContent ?? '', /2026-03/, 'New payments should appear');
+
+  // Verify "Dar baixa em repasse" button is present on the paid payment (samplePayment)
+  const repasseBtn = Array.from(container.querySelectorAll<HTMLButtonElement>('button')).find(
+    (b) => b.textContent?.includes('Dar baixa em repasse'),
+  );
+  assert.ok(repasseBtn, 'Dar baixa em repasse button should be present on paid payment');
+
+  // Verify "Dar baixa em boleto" button is present on the unpaid payment (pmt-2)
+  const baixaBtn = Array.from(container.querySelectorAll<HTMLButtonElement>('button')).find(
+    (b) => b.textContent?.includes('Dar baixa em boleto'),
+  );
+  assert.ok(baixaBtn, 'Dar baixa em boleto button should be present on unpaid payment');
+
+  // Verify "Anexar Documento / PDF" button
+  const attachBtn = Array.from(container.querySelectorAll<HTMLButtonElement>('button')).find(
+    (b) => b.textContent?.includes('Anexar Documento'),
+  );
+  assert.ok(attachBtn, 'Anexar Documento button should be present');
+
+  await act(async () => root.unmount());
+  cleanup();
+});

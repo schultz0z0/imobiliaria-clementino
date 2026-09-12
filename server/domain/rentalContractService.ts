@@ -6,6 +6,7 @@ import {
   type RentalContractDto,
 } from '../../shared/rentalSchema.ts';
 import { type Sql, type SqlExecutor, withTransaction } from '../db/client.ts';
+import { generateAllPaymentsForContract } from './paymentRecordService.ts';
 
 export class RentalContractServiceError extends Error {
   constructor(
@@ -48,6 +49,28 @@ type RentalContractRow = {
   updated_at: Date;
 };
 
+const formatDate = (val: unknown): string => {
+  if (!val) return '';
+  if (val instanceof Date) {
+    const y = val.getUTCFullYear();
+    const m = String(val.getUTCMonth() + 1).padStart(2, '0');
+    const d = String(val.getUTCDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+  }
+  const str = String(val);
+  if (/^\d{4}-\d{2}-\d{2}/.test(str)) {
+    return str.slice(0, 10);
+  }
+  const d = new Date(str);
+  if (!isNaN(d.getTime())) {
+    const y = d.getUTCFullYear();
+    const m = String(d.getUTCMonth() + 1).padStart(2, '0');
+    const day = String(d.getUTCDate()).padStart(2, '0');
+    return `${y}-${m}-${day}`;
+  }
+  return str.slice(0, 10);
+};
+
 const toRentalContractDto = (row: RentalContractRow): RentalContractDto => ({
   id: row.id,
   contractNumber: row.contract_number,
@@ -55,9 +78,9 @@ const toRentalContractDto = (row: RentalContractRow): RentalContractDto => ({
   landlordId: row.landlord_id,
   tenantId: row.tenant_id,
   status: row.status,
-  startDate: String(row.start_date).slice(0, 10),
-  endDate: String(row.end_date).slice(0, 10),
-  adjustmentDate: row.adjustment_date ? String(row.adjustment_date).slice(0, 10) : undefined,
+  startDate: formatDate(row.start_date),
+  endDate: formatDate(row.end_date),
+  adjustmentDate: row.adjustment_date ? formatDate(row.adjustment_date) : undefined,
   adjustmentIndex: row.adjustment_index ?? undefined,
   adjustmentPercentage: row.adjustment_percentage !== null ? Number(row.adjustment_percentage) : undefined,
   rentAmount: Number(row.rent_amount),
@@ -156,7 +179,10 @@ export const createRentalContract = async (
         WHERE id = ${parsed.propertyId}
       `;
 
-      // 5. Audit event
+      // 5. Generate all payments for entire contract tenure
+      await generateAllPaymentsForContract(transaction, created.id, actorId);
+
+      // 6. Audit event
       if (actorId) {
         await transaction`
           INSERT INTO audit_events (actor_id, property_id, action, metadata)

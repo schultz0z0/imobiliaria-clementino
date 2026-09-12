@@ -56,7 +56,7 @@ export const createServer = (options: CreateServerOptions = {}) => {
   }));
   app.register(async (publicCatalogApp) => registerPublicCatalogRoutes(publicCatalogApp, sql, { mediaRoot }));
   app.register(async (peopleApp) => registerPeopleRoutes(peopleApp, sql));
-  app.register(async (rentalApp) => registerRentalRoutes(rentalApp, sql));
+  app.register(async (rentalApp) => registerRentalRoutes(rentalApp, sql, { mediaRoot }));
   app.register(async (paymentApp) => registerPaymentRoutes(paymentApp, sql));
   app.register(async (reportApp) => registerReportRoutes(reportApp, sql));
   app.register(async (locationApp) =>
