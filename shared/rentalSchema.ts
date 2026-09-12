@@ -77,16 +77,14 @@ const cpfSchema = z.preprocess(
   (value) => (value === '' || value === null ? undefined : value),
   z
     .string()
-    .transform((val) => {
+    .transform((val, ctx) => {
       const formatted = validateAndFormatCpf(val);
       if (!formatted) {
-        throw new z.ZodError([
-          {
-            code: z.ZodIssueCode.custom,
-            message: 'CPF inválido',
-            path: [],
-          },
-        ]);
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: 'CPF inválido',
+        });
+        return z.NEVER;
       }
       return formatted;
     })

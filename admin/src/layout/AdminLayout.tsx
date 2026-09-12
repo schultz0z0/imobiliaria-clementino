@@ -1,4 +1,4 @@
-import { Building2, LayoutDashboard, LogOut, Menu, Plus, X } from 'lucide-react';
+import { Building2, FileText, LayoutDashboard, LogOut, Menu, Plus, Users, X } from 'lucide-react';
 import React, { useState, type ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '../auth/AuthProvider.tsx';
@@ -17,6 +17,8 @@ export const AdminLayout = ({ children }: { children: ReactNode }) => {
         <nav id="admin-navigation" className={open ? 'admin-nav is-open' : 'admin-nav'} aria-label="Navegação principal">
           <NavLink to="/" end onClick={() => setOpen(false)}><LayoutDashboard aria-hidden="true" />Visão geral</NavLink>
           <NavLink to="/imoveis" onClick={() => setOpen(false)}><Building2 aria-hidden="true" />Imóveis</NavLink>
+          <NavLink to="/contratos" onClick={() => setOpen(false)}><FileText aria-hidden="true" />Contratos</NavLink>
+          <NavLink to="/pessoas" onClick={() => setOpen(false)}><Users aria-hidden="true" />Pessoas</NavLink>
           <NavLink className="nav-create" to="/imoveis/novo" onClick={() => setOpen(false)}><Plus aria-hidden="true" />Novo imóvel</NavLink>
           <button className="nav-logout" type="button" onClick={() => void logout()}><LogOut aria-hidden="true" />Sair</button>
         </nav>
