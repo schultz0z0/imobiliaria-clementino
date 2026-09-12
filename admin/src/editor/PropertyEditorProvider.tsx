@@ -35,6 +35,8 @@ export const usePropertyEditor = () => {
   return value;
 };
 
+export const usePropertyEditorOptional = () => useContext(EditorContext);
+
 const setServerIssues = (form: UseFormReturn<WizardValues>, error: unknown) => {
   if (!(error instanceof ApiError)) return;
   for (const issue of error.issues) {

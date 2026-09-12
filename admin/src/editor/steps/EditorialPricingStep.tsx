@@ -2,15 +2,15 @@ import React from 'react';
 import { useFormContext } from 'react-hook-form';
 import type { PropertyOperation } from '../../api/client.ts';
 import type { WizardValues } from '../types.ts';
-import { usePropertyEditor } from '../PropertyEditorProvider.tsx';
+import { usePropertyEditorOptional } from '../PropertyEditorProvider.tsx';
 
 const operationLabels: Record<PropertyOperation, string> = { sale: 'Venda', rent: 'Aluguel', seasonal: 'Temporada', auction: 'Leilão' };
 const moneyOptions = { setValueAs: (value: string) => value === '' ? undefined : Number(value) };
 
 export const EditorialPricingStep = () => {
   const { register, watch, setValue, formState: { errors } } = useFormContext<WizardValues>();
-  const { property } = usePropertyEditor();
-  const canFeature = property?.status === 'published';
+  const editor = usePropertyEditorOptional();
+  const canFeature = editor?.property?.status === 'published';
   const operations = watch('classification.operations') ?? [];
   const description = watch('editorial.description') ?? '';
   const buildTitle = () => {

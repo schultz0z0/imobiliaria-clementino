@@ -82,27 +82,45 @@ const lockProperty = async (
   propertyId: string,
   expectedRevision: number,
 ): Promise<LockedProperty> => {
-  const rows = await sql<LockedProperty[]>`
+  const propertyRows = await sql<{
+    id: string;
+    public_id: string;
+    draft_revision_id: string;
+    published_revision_id: string | null;
+  }[]>`
     SELECT
       properties.id,
       properties.public_id,
       properties.draft_revision_id,
-      properties.published_revision_id,
-      property_revisions.revision_number,
-      property_revisions.payload
+      properties.published_revision_id
     FROM properties
-    JOIN property_revisions ON property_revisions.id = properties.draft_revision_id
     WHERE properties.id = ${propertyId}
-    FOR UPDATE OF properties
+    FOR UPDATE
   `;
-  const property = rows[0];
+  const property = propertyRows[0];
   if (!property) {
     throw notFound('Property not found');
   }
-  if (Number(property.revision_number) !== expectedRevision) {
+  const revisionRows = await sql<{
+    revision_number: string;
+    payload: AdminPropertyDraft;
+  }[]>`
+    SELECT revision_number, payload
+    FROM property_revisions
+    WHERE id = ${property.draft_revision_id}
+  `;
+  const revision = revisionRows[0];
+  if (!revision) {
+    throw notFound('Property revision not found');
+  }
+  if (Number(revision.revision_number) !== expectedRevision) {
     throw stale();
   }
-  return property;
+  return {
+    ...property,
+    revision_number: revision.revision_number,
+    payload: revision.payload,
+  };
 };
 
 const activePhotos = async (sql: SqlExecutor, propertyId: string): Promise<MediaRow[]> =>
