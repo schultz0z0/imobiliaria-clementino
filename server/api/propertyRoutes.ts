@@ -30,7 +30,7 @@ const listQuerySchema = z.strictObject({
   page: z.coerce.number().int().min(1).default(1),
   limit: z.coerce.number().int().min(1).max(100).default(20),
   search: z.string().trim().min(1).max(200).optional(),
-  status: z.enum(['draft', 'published', 'inactive']).optional(),
+  status: z.enum(['draft', 'published', 'inactive', 'rented']).optional(),
   operation: z.enum(['sale', 'rent', 'seasonal', 'auction']).optional(),
   type: propertyDraftSchema.shape.classification.shape.type.optional(),
   state: z.string().trim().length(2).optional(),

@@ -8,7 +8,7 @@ import { publicationIssueMessage } from '../editor/publicationIssues.ts';
 
 const PAGE_SIZE = 20;
 const publicOrigin = (import.meta as ImportMeta & { env?: Record<string, string> }).env?.VITE_PUBLIC_SITE_URL ?? 'https://clementinoimoveis.com.br';
-const statuses = new Set(['draft', 'published', 'inactive']);
+const statuses = new Set(['draft', 'published', 'inactive', 'rented']);
 const operations = new Set(['sale', 'rent', 'seasonal', 'auction']);
 const types = new Set(['apartment', 'house', 'commercial', 'rural', 'land']);
 const sorts = new Set<PropertySort>(['updated-desc', 'updated-asc', 'title-asc', 'title-desc', 'price-asc', 'price-desc']);

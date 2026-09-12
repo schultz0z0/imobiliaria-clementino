@@ -1094,3 +1094,14 @@ test('protects CEP and public-location preview routes with admin auth, CSRF, and
     assert.equal(serialized.includes(privateToken), false, privateToken);
   }
 });
+
+test('accepts status=rented filter in property listing query', async () => {
+  const session = await authenticate();
+  const res = await app.inject({
+    method: 'GET',
+    url: '/api/admin/properties?page=1&limit=1&status=rented',
+    headers: authHeaders(session),
+  });
+  assert.equal(res.statusCode, 200, res.body);
+  assert.equal(res.json().pagination.page, 1);
+});

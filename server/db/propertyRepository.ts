@@ -1,7 +1,7 @@
 import { propertyDraftSchema, type PropertyDraft } from '../../shared/propertySchema.ts';
 import { type SqlExecutor, withTransaction } from './client.ts';
 
-export type PropertyStatus = 'draft' | 'published' | 'inactive';
+export type PropertyStatus = 'draft' | 'published' | 'inactive' | 'rented';
 
 export type PropertyRecord = {
   id: string;
