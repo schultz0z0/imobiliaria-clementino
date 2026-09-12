@@ -125,3 +125,84 @@ test('geocodeLocation sends the private address to the authenticated geocoding e
   });
   globalThis.fetch = previousFetch;
 });
+
+test('AdminApiClient handles people, rental contracts, and payments endpoints with CSRF', async () => {
+  const dom = new JSDOM('', { url: 'https://admin.clementinoimoveis.com.br/' });
+  const previousDocument = globalThis.document;
+  const previousFetch = globalThis.fetch;
+  globalThis.document = dom.window.document;
+  document.cookie = 'clementino_admin_csrf=client-rental-csrf; Path=/; SameSite=Strict';
+
+  const requests: Request[] = [];
+  globalThis.fetch = async (input, init) => {
+    const req = new Request(new URL(String(input), dom.window.location.href), init);
+    requests.push(req);
+    if (req.method === 'DELETE') return new Response(null, { status: 204 });
+    return Response.json({ ok: true, data: [] });
+  };
+
+  const client = new AdminApiClient();
+
+  // People methods
+  await client.listPeople({ search: 'Silva', page: 1, limit: 10 });
+  await client.createPerson({ fullName: 'Silva Locador' });
+  await client.getPerson('11111111-1111-1111-1111-111111111111');
+  await client.updatePerson('11111111-1111-1111-1111-111111111111', { phone: '123' });
+  await client.deletePerson('11111111-1111-1111-1111-111111111111');
+
+  // Contract methods
+  await client.listContracts({ status: 'active' });
+  await client.createContract({
+    contractNumber: 'CTR-01',
+    propertyId: '11111111-1111-1111-1111-111111111111',
+    landlordId: '22222222-2222-2222-2222-222222222222',
+    tenantId: '33333333-3333-3333-3333-333333333333',
+    startDate: '2026-09-01',
+    endDate: '2027-08-31',
+    rentAmount: 2000,
+    rentDueDay: 10,
+  });
+  await client.getContract('22222222-2222-2222-2222-222222222222');
+  await client.terminateContract('22222222-2222-2222-2222-222222222222', 'published');
+
+  // Document methods
+  await client.listContractDocuments('22222222-2222-2222-2222-222222222222');
+  await client.createContractDocument('22222222-2222-2222-2222-222222222222', {
+    category: 'contract_pdf',
+    filename: 'test.pdf',
+    storageKey: 'doc/1.pdf',
+    mimeType: 'application/pdf',
+    byteSize: 1000,
+  });
+  await client.deleteContractDocument('33333333-3333-3333-3333-333333333333');
+
+  // Payment methods
+  await client.listPayments({ referenceMonth: '2026-09-01' });
+  await client.generateContractPayments('22222222-2222-2222-2222-222222222222', '2026-09-01');
+  await client.recordPayment('44444444-4444-4444-4444-444444444444', { paidAt: '2026-09-09T00:00:00Z' });
+  await client.recordForwarding('44444444-4444-4444-4444-444444444444', { forwardedAt: '2026-09-10T00:00:00Z' });
+
+  // Assert paths and CSRF headers
+  assert.match(requests[0]!.url, /\/api\/admin\/people\?search=Silva&page=1&limit=10$/);
+  assert.equal(requests[1]!.method, 'POST');
+  assert.equal(requests[1]!.headers.get('x-csrf-token'), 'client-rental-csrf');
+  assert.match(requests[2]!.url, /\/api\/admin\/people\/11111111-1111-1111-1111-111111111111$/);
+  assert.equal(requests[3]!.method, 'PATCH');
+  assert.equal(requests[4]!.method, 'DELETE');
+
+  assert.match(requests[5]!.url, /\/api\/admin\/rentals\/contracts\?status=active$/);
+  assert.equal(requests[6]!.method, 'POST');
+  assert.match(requests[8]!.url, /\/api\/admin\/rentals\/contracts\/22222222-2222-2222-2222-222222222222\/terminate$/);
+
+  assert.match(requests[9]!.url, /\/api\/admin\/rentals\/contracts\/22222222-2222-2222-2222-222222222222\/documents$/);
+  assert.equal(requests[10]!.method, 'POST');
+  assert.match(requests[11]!.url, /\/api\/admin\/rentals\/documents\/33333333-3333-3333-3333-333333333333$/);
+
+  assert.match(requests[12]!.url, /\/api\/admin\/payments\?referenceMonth=2026-09-01$/);
+  assert.match(requests[13]!.url, /\/api\/admin\/rentals\/contracts\/22222222-2222-2222-2222-222222222222\/payments\/generate$/);
+  assert.match(requests[14]!.url, /\/api\/admin\/payments\/44444444-4444-4444-4444-444444444444\/pay$/);
+  assert.match(requests[15]!.url, /\/api\/admin\/payments\/44444444-4444-4444-4444-444444444444\/forward$/);
+
+  globalThis.document = previousDocument;
+  globalThis.fetch = previousFetch;
+});

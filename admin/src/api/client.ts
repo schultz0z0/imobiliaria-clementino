@@ -1,5 +1,18 @@
 import type { ApiFieldIssue } from '../../../shared/apiContract.ts';
 import type { PropertyDraft } from '../../../shared/propertySchema.ts';
+import type {
+  ContractDocumentDto,
+  ContractStatus,
+  CreatePersonInput,
+  CreateRentalContractInput,
+  DocumentCategory,
+  PaymentCategory,
+  PaymentRecordDto,
+  PersonDto,
+  RegisterForwardingInput,
+  RegisterPaymentInput,
+  RentalContractDto,
+} from '../../../shared/rentalSchema.ts';
 
 const CSRF_COOKIE_NAME = 'clementino_admin_csrf';
 
@@ -133,6 +146,77 @@ export type AuthApi = {
   onUnauthorized?: (handler: () => void) => () => void;
 };
 
+export type DerivedPaymentStatus = 'pending' | 'paid' | 'forwarded' | 'overdue';
+
+export interface PeopleAdminApi {
+  listPeople: (query?: { search?: string; page?: number; limit?: number }) => Promise<{
+    items: PersonDto[];
+    pagination: { total: number; page: number; limit: number };
+  }>;
+  createPerson: (input: CreatePersonInput) => Promise<{ person: PersonDto }>;
+  getPerson: (id: string) => Promise<{ person: PersonDto }>;
+  updatePerson: (id: string, input: Partial<CreatePersonInput>) => Promise<{ person: PersonDto }>;
+  deletePerson: (id: string) => Promise<void>;
+}
+
+export interface RentalAdminApi {
+  listContracts: (query?: {
+    status?: ContractStatus;
+    propertyId?: string;
+    landlordId?: string;
+    tenantId?: string;
+    page?: number;
+    limit?: number;
+  }) => Promise<{
+    items: RentalContractDto[];
+    pagination: { total: number; page: number; limit: number };
+  }>;
+  createContract: (input: CreateRentalContractInput) => Promise<{ contract: RentalContractDto }>;
+  getContract: (id: string) => Promise<{ contract: RentalContractDto }>;
+  terminateContract: (
+    id: string,
+    returnPropertyToStatus?: 'draft' | 'published' | 'inactive',
+  ) => Promise<{ contract: RentalContractDto }>;
+  listContractDocuments: (contractId: string) => Promise<{ documents: ContractDocumentDto[] }>;
+  createContractDocument: (
+    contractId: string,
+    input: {
+      category: DocumentCategory;
+      filename: string;
+      storageKey: string;
+      mimeType: string;
+      byteSize: number;
+      description?: string;
+    },
+  ) => Promise<{ document: ContractDocumentDto }>;
+  deleteContractDocument: (id: string) => Promise<void>;
+}
+
+export interface PaymentAdminApi {
+  listPayments: (query?: {
+    contractId?: string;
+    category?: PaymentCategory;
+    referenceMonth?: string;
+    page?: number;
+    limit?: number;
+  }) => Promise<{
+    items: (PaymentRecordDto & { derivedStatus?: DerivedPaymentStatus })[];
+    pagination: { total: number; page: number; limit: number };
+  }>;
+  generateContractPayments: (
+    contractId: string,
+    referenceMonth: string,
+  ) => Promise<{ payments: (PaymentRecordDto & { derivedStatus?: DerivedPaymentStatus })[] }>;
+  recordPayment: (
+    paymentId: string,
+    input: RegisterPaymentInput,
+  ) => Promise<{ payment: PaymentRecordDto & { derivedStatus?: DerivedPaymentStatus } }>;
+  recordForwarding: (
+    paymentId: string,
+    input: RegisterForwardingInput,
+  ) => Promise<{ payment: PaymentRecordDto & { derivedStatus?: DerivedPaymentStatus } }>;
+}
+
 export class ApiError extends Error {
   constructor(
     public readonly status: number,
@@ -173,7 +257,7 @@ const getErrorDetails = (value: unknown): { code?: string; message?: string; iss
   };
 };
 
-export class AdminApiClient implements AuthApi, PropertyAdminApi, PropertyEditorApi {
+export class AdminApiClient implements AuthApi, PropertyAdminApi, PropertyEditorApi, PeopleAdminApi, RentalAdminApi, PaymentAdminApi {
   private readonly unauthorizedHandlers = new Set<() => void>();
 
   constructor(private readonly baseUrl = '/api/admin') {}
@@ -324,6 +408,103 @@ export class AdminApiClient implements AuthApi, PropertyAdminApi, PropertyEditor
 
   listPhotos(id: string, signal?: AbortSignal): Promise<{ photos: MediaPhotoDto[] }> {
     return this.request(`/properties/${encodeURIComponent(id)}/photos`, { signal });
+  }
+
+  // People
+  listPeople(query: { search?: string; page?: number; limit?: number } = {}) {
+    const search = new URLSearchParams();
+    for (const [key, value] of Object.entries(query)) {
+      if (value !== undefined && value !== '') search.set(key, String(value));
+    }
+    const suffix = search.size ? `?${search.toString()}` : '';
+    return this.request<{ items: PersonDto[]; pagination: { total: number; page: number; limit: number } }>(`/people${suffix}`);
+  }
+
+  createPerson(input: CreatePersonInput) {
+    return this.request<{ person: PersonDto }>('/people', { method: 'POST', body: JSON.stringify(input) });
+  }
+
+  getPerson(id: string) {
+    return this.request<{ person: PersonDto }>(`/people/${encodeURIComponent(id)}`);
+  }
+
+  updatePerson(id: string, input: Partial<CreatePersonInput>) {
+    return this.request<{ person: PersonDto }>(`/people/${encodeURIComponent(id)}`, { method: 'PATCH', body: JSON.stringify(input) });
+  }
+
+  deletePerson(id: string) {
+    return this.request<void>(`/people/${encodeURIComponent(id)}`, { method: 'DELETE' });
+  }
+
+  // Rentals
+  listContracts(query: { status?: ContractStatus; propertyId?: string; landlordId?: string; tenantId?: string; page?: number; limit?: number } = {}) {
+    const search = new URLSearchParams();
+    for (const [key, value] of Object.entries(query)) {
+      if (value !== undefined && value !== '') search.set(key, String(value));
+    }
+    const suffix = search.size ? `?${search.toString()}` : '';
+    return this.request<{ items: RentalContractDto[]; pagination: { total: number; page: number; limit: number } }>(`/rentals/contracts${suffix}`);
+  }
+
+  createContract(input: CreateRentalContractInput) {
+    return this.request<{ contract: RentalContractDto }>('/rentals/contracts', { method: 'POST', body: JSON.stringify(input) });
+  }
+
+  getContract(id: string) {
+    return this.request<{ contract: RentalContractDto }>(`/rentals/contracts/${encodeURIComponent(id)}`);
+  }
+
+  terminateContract(id: string, returnPropertyToStatus: 'draft' | 'published' | 'inactive' = 'published') {
+    return this.request<{ contract: RentalContractDto }>(`/rentals/contracts/${encodeURIComponent(id)}/terminate`, {
+      method: 'POST',
+      body: JSON.stringify({ returnPropertyToStatus }),
+    });
+  }
+
+  listContractDocuments(contractId: string) {
+    return this.request<{ documents: ContractDocumentDto[] }>(`/rentals/contracts/${encodeURIComponent(contractId)}/documents`);
+  }
+
+  createContractDocument(contractId: string, input: { category: DocumentCategory; filename: string; storageKey: string; mimeType: string; byteSize: number; description?: string }) {
+    return this.request<{ document: ContractDocumentDto }>(`/rentals/contracts/${encodeURIComponent(contractId)}/documents`, {
+      method: 'POST',
+      body: JSON.stringify(input),
+    });
+  }
+
+  deleteContractDocument(id: string) {
+    return this.request<void>(`/rentals/documents/${encodeURIComponent(id)}`, { method: 'DELETE' });
+  }
+
+  // Payments
+  listPayments(query: { contractId?: string; category?: PaymentCategory; referenceMonth?: string; page?: number; limit?: number } = {}) {
+    const search = new URLSearchParams();
+    for (const [key, value] of Object.entries(query)) {
+      if (value !== undefined && value !== '') search.set(key, String(value));
+    }
+    const suffix = search.size ? `?${search.toString()}` : '';
+    return this.request<{ items: (PaymentRecordDto & { derivedStatus?: DerivedPaymentStatus })[]; pagination: { total: number; page: number; limit: number } }>(`/payments${suffix}`);
+  }
+
+  generateContractPayments(contractId: string, referenceMonth: string) {
+    return this.request<{ payments: (PaymentRecordDto & { derivedStatus?: DerivedPaymentStatus })[] }>(`/rentals/contracts/${encodeURIComponent(contractId)}/payments/generate`, {
+      method: 'POST',
+      body: JSON.stringify({ referenceMonth }),
+    });
+  }
+
+  recordPayment(paymentId: string, input: RegisterPaymentInput) {
+    return this.request<{ payment: PaymentRecordDto & { derivedStatus?: DerivedPaymentStatus } }>(`/payments/${encodeURIComponent(paymentId)}/pay`, {
+      method: 'POST',
+      body: JSON.stringify(input),
+    });
+  }
+
+  recordForwarding(paymentId: string, input: RegisterForwardingInput) {
+    return this.request<{ payment: PaymentRecordDto & { derivedStatus?: DerivedPaymentStatus } }>(`/payments/${encodeURIComponent(paymentId)}/forward`, {
+      method: 'POST',
+      body: JSON.stringify(input),
+    });
   }
 }
 
