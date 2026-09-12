@@ -358,6 +358,7 @@ test('remediates duplicate media when legacy 004 and 005 are already recorded', 
       '007_media_duplicate_remediation.sql',
       '008_publication_latest_index.sql',
       '009_property_featured_at.sql',
+      '010_rental_management_hub.sql',
     ]);
     const rows = await sql<{ id: string; removed_at: Date | null; position: number }[]>`
       SELECT id, removed_at, position FROM property_media WHERE property_id = ${property[0]!.id} ORDER BY id
@@ -479,7 +480,11 @@ test('upgrades a populated 007 database with the latest-publication index idempo
     `;
 
     const upgraded = await migrate(sql, sourceDirectory);
-    assert.deepEqual(upgraded.applied, ['008_publication_latest_index.sql', '009_property_featured_at.sql']);
+    assert.deepEqual(upgraded.applied, [
+      '008_publication_latest_index.sql',
+      '009_property_featured_at.sql',
+      '010_rental_management_hub.sql',
+    ]);
     const indexes = await sql<{ indexdef: string }[]>`
       SELECT indexdef FROM pg_indexes
       WHERE schemaname = 'public' AND indexname = 'publication_jobs_latest_idx'
@@ -493,6 +498,7 @@ test('upgrades a populated 007 database with the latest-publication index idempo
     assert.equal(rerun.applied.length, 0);
     assert.ok(rerun.skipped.includes('008_publication_latest_index.sql'));
     assert.ok(rerun.skipped.includes('009_property_featured_at.sql'));
+    assert.ok(rerun.skipped.includes('010_rental_management_hub.sql'));
   } finally {
     await rm(legacyDirectory, { recursive: true, force: true });
   }
