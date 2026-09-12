@@ -13,6 +13,9 @@ import { registerLocationRoutes, type LocationRouteOptions } from './locationRou
 import { registerPublicationRoutes } from './publicationRoutes.ts';
 import { registerPreviewRoutes } from './previewRoutes.ts';
 import { registerPublicCatalogRoutes } from './publicCatalogRoutes.ts';
+import { registerPeopleRoutes } from './peopleRoutes.ts';
+import { registerRentalRoutes } from './rentalRoutes.ts';
+import { registerPaymentRoutes } from './paymentRoutes.ts';
 
 export type CreateServerOptions = {
   sql?: Sql;
@@ -51,6 +54,9 @@ export const createServer = (options: CreateServerOptions = {}) => {
     ttlSeconds: options.previewTtlSeconds,
   }));
   app.register(async (publicCatalogApp) => registerPublicCatalogRoutes(publicCatalogApp, sql, { mediaRoot }));
+  app.register(async (peopleApp) => registerPeopleRoutes(peopleApp, sql));
+  app.register(async (rentalApp) => registerRentalRoutes(rentalApp, sql));
+  app.register(async (paymentApp) => registerPaymentRoutes(paymentApp, sql));
   app.register(async (locationApp) =>
     registerLocationRoutes(locationApp, sql, { ...options.location, environment }),
   );
