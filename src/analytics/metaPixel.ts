@@ -44,7 +44,6 @@ export const createMetaPixelController = (pixelId: string, environment: { window
     // fbevents.js otherwise wraps pushState/replaceState and emits automatic
     // PageViews in addition to our router events. Verified in Meta's SDK.
     target.fbq.disablePushState = true;
-    command('consent', 'revoke');
     command('set', 'autoConfig', false, id);
     command('init', id);
     command('consent', 'grant');
@@ -88,10 +87,16 @@ export const createMetaPixelController = (pixelId: string, environment: { window
         // If the SDK download has not finished, discard unsent events rather
         // than flushing them after consent was withdrawn.
         const queue = environment.window.fbq?.queue;
-        if (queue) queue.splice(0, queue.length, ...queue.filter((entry) => !String(entry[0]).startsWith('track')));
-        if (state.initialized) command('consent', 'revoke');
+        if (queue && !environment.window.fbq?.callMethod) {
+          queue.splice(0, queue.length, ['consent', 'revoke'], ...queue.filter((entry) => !String(entry[0]).startsWith('track') && entry[0] !== 'consent'));
+        } else if (state.initialized) command('consent', 'revoke');
         state.pageKey = undefined; state.viewKey = undefined; state.path = undefined; state.property = undefined;
-      } else if (state.initialized) command('consent', 'grant');
+      } else if (state.initialized) {
+        const query = environment.window.fbq;
+        if (query?.queue && !query.callMethod) {
+          query.queue.splice(0, query.queue.length, ['consent', 'grant'], ...query.queue.filter((entry) => entry[0] !== 'consent'));
+        } else command('consent', 'grant');
+      }
     },
     pageView,
     viewProperty(property: WebsiteProperty, path: string, visit: string): boolean {

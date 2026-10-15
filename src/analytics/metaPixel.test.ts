@@ -45,6 +45,32 @@ test('initializes the supplied pixel once across remounts and tracks one page vi
   assert.deepEqual(commands().find((c) => c[0] === 'set'), ['set', 'autoConfig', false, id]);
 });
 
+test('an already authorized initial SDK queue never suspends before processing init', () => {
+  const { controller, commands } = setup();
+  controller.setConsent(true);
+  controller.pageView('/', 'first');
+  let initialized = false;
+  // The real Meta SDK pauses its initial queue as soon as it processes revoke;
+  // a grant behind that command cannot resume a queue that is already paused.
+  for (const entry of commands()) {
+    if (entry[0] === 'consent' && entry[1] === 'revoke') break;
+    if (entry[0] === 'init') initialized = true;
+  }
+  assert.equal(initialized, true, 'the granted initial visit must actually initialize the real SDK');
+});
+
+test('consent changes during SDK download retain only the latest consent state', () => {
+  const { controller, commands } = setup();
+  controller.setConsent(true);
+  controller.pageView('/', 'first');
+  controller.setConsent(false);
+  assert.deepEqual(commands().filter((c) => c[0] === 'consent'), [['consent', 'revoke']]);
+  controller.setConsent(true);
+  controller.pageView('/contato', 'second');
+  assert.deepEqual(commands().filter((c) => c[0] === 'consent'), [['consent', 'grant']]);
+  assert.equal(commands().filter((c) => c[2] === 'PageView').length, 1);
+});
+
 test('new dynamically published properties receive PageView and ViewContent without a static catalog dependency', () => {
   const { controller, commands } = setup();
   const property = { ...getAllProperties()[0]!, id: 'new-from-admin', slug: 'new-from-admin', reference: 'CLEM-NEW' };
@@ -83,7 +109,7 @@ test('revocation discards pending events when the SDK has not finished loading',
   controller.setConsent(false);
   loadSdk();
   assert.equal(commands().filter((c) => String(c[0]).startsWith('track')).length, 0);
-  assert.deepEqual(commands().at(-1), ['consent', 'revoke']);
+  assert.deepEqual(commands().filter((c) => c[0] === 'consent'), [['consent', 'revoke']]);
 });
 
 test('property contact and visit CTA events carry the current listing and never a previous route', () => {
