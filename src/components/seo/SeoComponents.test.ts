@@ -51,7 +51,7 @@ test('renders visual breadcrumbs and matching BreadcrumbList structured data', a
 });
 
 test('updates canonical, robots, Open Graph and Twitter metadata during SPA navigation', async () => {
-  const dom = new JSDOM('<!doctype html><html><head></head><body></body></html>', { url: 'http://127.0.0.1:4175/' });
+  const dom = new JSDOM('<!doctype html><html><head><script id="clementino-property-structured-data" type="application/ld+json">{"url":"old-property"}</script><script id="clementino-property-breadcrumbs" type="application/ld+json">{}</script></head><body><script id="clementino-property-structured-data" type="application/ld+json">{"url":"current-property"}</script></body></html>', { url: 'http://127.0.0.1:4175/' });
   const previousDocument = globalThis.document;
   const previousWindow = globalThis.window;
   Object.assign(globalThis, { document: dom.window.document, window: dom.window });
@@ -69,6 +69,8 @@ test('updates canonical, robots, Open Graph and Twitter metadata during SPA navi
   assert.equal(document.querySelector('meta[name="robots"]')?.getAttribute('content'), 'index, follow');
   assert.equal(document.querySelector('meta[property="og:title"]')?.getAttribute('content'), metadata.title);
   assert.equal(document.querySelector('meta[name="twitter:card"]')?.getAttribute('content'), 'summary_large_image');
+  assert.equal(document.head.querySelectorAll('#clementino-property-structured-data, #clementino-property-breadcrumbs').length, 0, 'server-rendered listing data must not outlive SPA navigation');
+  assert.match(document.body.querySelector('#clementino-property-structured-data')?.textContent ?? '', /current-property/);
 
   cleanup();
   Object.assign(globalThis, { document: previousDocument, window: previousWindow });

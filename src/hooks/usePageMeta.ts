@@ -23,6 +23,11 @@ const ensureCanonical = (): HTMLLinkElement => {
 
 export const usePageMeta = (metadata: PageMetadata): void => {
   useEffect(() => {
+    // Initial HTML supplies listing schemas for crawlers without JavaScript.
+    // After React mounts, the active route owns its schemas in the body.
+    // Keep the previous server-rendered listing out of later SPA pages.
+    document.head.querySelectorAll('#clementino-property-structured-data, #clementino-property-breadcrumbs')
+      .forEach((script) => script.remove());
     document.title = metadata.title;
     ensureMeta('meta[name="description"]', { name: 'description' }).content = metadata.description;
     ensureMeta('meta[name="robots"]', { name: 'robots' }).content = metadata.robots;
