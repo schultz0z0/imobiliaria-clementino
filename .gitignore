@@ -6,6 +6,8 @@ dist/
 dist-admin/
 dist-server/
 coverage/
+test-results/
+playwright-report/
 .DS_Store
 *.log
 migration-bundles/

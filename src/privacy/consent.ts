@@ -1,4 +1,5 @@
-export const CONSENT_VERSION = 1;
+// Meta advertising is now available; renew choices made under the previous disclosure.
+export const CONSENT_VERSION = 2;
 export const CONSENT_STORAGE_KEY = 'clementino.cookie-consent';
 
 export type OptionalConsentCategory = 'functionality' | 'analytics' | 'advertising';

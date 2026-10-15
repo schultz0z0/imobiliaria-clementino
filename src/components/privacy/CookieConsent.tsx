@@ -69,7 +69,7 @@ const categories = [
   {
     key: 'advertising',
     title: 'Cookies de publicidade',
-    description: 'Poderão apoiar campanhas e conversões no Google Ads e Meta. Atualmente nenhum rastreador publicitário está ativo.',
+    description: 'Permitem ao Meta Pixel medir visitas, imóveis consultados e ações de contato para campanhas e remarketing. O Google Ads depende de configuração. Os valores dos formulários não são incluídos nos eventos.',
   },
 ] as const;
 

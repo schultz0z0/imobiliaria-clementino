@@ -86,6 +86,7 @@ const toWebsiteProperty = (
       ? photo.gallery_storage_key
       : `${publicPrefix}/${row.public_id}/${photo.checksum_sha256}-gallery.webp`;
   const cover = draft.media.coverPhotoId ? byId.get(draft.media.coverPhotoId) : undefined;
+  const socialPhoto = draft.seo.imagePhotoId ? byId.get(draft.seo.imagePhotoId) : undefined;
   const images = orderedIds.map((id) => byId.get(id)).filter((photo): photo is MediaRow => Boolean(photo)).map(photoUrl);
   const district = draft.privateAddress.district.trim();
   const city = draft.privateAddress.city.trim();
@@ -130,6 +131,11 @@ const toWebsiteProperty = (
     ].filter((group) => group.items.length > 0),
     features: [...commonFeatures, ...privateFeatures].map((feature) => feature.label),
     featured: row.featured_at !== null && row.featured_at !== undefined,
+    seo: {
+      ...(draft.seo.title ? { title: draft.seo.title } : {}),
+      ...(draft.seo.description ? { description: draft.seo.description } : {}),
+      ...(socialPhoto ? { image: photoUrl(socialPhoto) } : {}),
+    },
   };
   return property;
 };

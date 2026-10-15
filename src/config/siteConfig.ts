@@ -17,7 +17,7 @@ export const siteConfig = {
       postalCode: '21240-010',
       country: 'BR',
     },
-    lastUpdated: '23 de agosto de 2026',
+    lastUpdated: '15 de outubro de 2026',
   },
   whatsapp: {
     e164: '5521964023524',

@@ -7,6 +7,7 @@ import { siteConfig } from '../config/siteConfig';
 import { getPageMetadata } from '../config/pageMetadata';
 import { buildGeneralInquiry, buildWhatsAppUrl } from '../contact/whatsapp';
 import { usePageMeta } from '../hooks/usePageMeta';
+import { notifyPreparedRequest } from '../analytics/MetaPixelProvider';
 
 const fieldClass = 'min-h-12 w-full rounded-[var(--radius-control)] border border-white/10 bg-white/[0.04] px-4 text-white outline-none transition placeholder:text-white/30 focus:border-[#d7b661]';
 
@@ -20,6 +21,7 @@ export const Contact = () => {
     const data = new FormData(event.currentTarget);
     const url = buildGeneralInquiry({ name: String(data.get('name') ?? ''), phone: String(data.get('phone') ?? ''), email: String(data.get('email') ?? ''), subject: String(data.get('subject') ?? ''), message: String(data.get('message') ?? '') });
     window.open(url, '_blank', 'noopener,noreferrer');
+    notifyPreparedRequest('ContactRequest');
     navigate('/contato/mensagem-preparada');
   };
 

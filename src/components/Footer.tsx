@@ -1,4 +1,4 @@
-import { BadgeCheck, Building2, MessageCircle } from 'lucide-react';
+import { BadgeCheck, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { siteConfig } from '../config/siteConfig';
 import { buildWhatsAppUrl } from '../contact/whatsapp';
@@ -21,9 +21,8 @@ export const Footer = () => {
       <div className="container mx-auto px-6 py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Link to="/" className="mb-6 flex items-center gap-3">
-              <Building2 className="h-8 w-8 text-[#d7b661]" aria-hidden="true" />
-              <div><span className="block text-xl font-semibold leading-none text-white">Clementino</span><span className="mt-1 block text-[9px] uppercase tracking-[0.28em] text-[#d7b661]">Imobiliária</span></div>
+            <Link to="/" className="mb-6 flex w-fit items-center" aria-label="Clementino Imóveis — página inicial">
+              <img src="/images/brand/clementino-logo.webp" alt="Clementino Imóveis" width="800" height="205" className="h-auto w-[224px] max-w-full" loading="lazy" />
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-white/55">Atuação imobiliária no Rio de Janeiro desde 2010, com atendimento direto e conhecimento local.</p>
           </div>

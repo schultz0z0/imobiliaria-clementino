@@ -113,10 +113,10 @@ export const getPageMetadata = (
   if (page === 'property' && property) {
     return {
       ...completeMetadata({
-        title: truncateAtWord(`${property.type} · ${property.propertyType} em ${property.district} | ${property.reference}`, 75),
-        description: buildPropertyDescription(property),
+        title: property.seo?.title || truncateAtWord(`${property.type} · ${property.propertyType} em ${property.district} | ${property.reference}`, 75),
+        description: property.seo?.description || buildPropertyDescription(property),
         path: `/imoveis/${property.slug}`,
-        image: property.image,
+        image: property.seo?.image || property.image,
         imageAlt: `Foto principal de ${property.title} em ${property.district}`,
       }),
       property,

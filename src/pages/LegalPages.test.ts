@@ -25,8 +25,9 @@ test('cookie policy renders current and planned technologies without claiming tr
   assert.match(markup, /<h1[^>]*>Política de Cookies<\/h1>/);
   assert.match(markup, /Google Maps/);
   assert.match(markup, /Google Analytics/);
-  assert.match(markup, /Google Ads e Meta Pixel/);
-  assert.match(markup, /Não instalado/);
+  assert.match(markup, /Google Ads/);
+  assert.match(markup, /Meta Pixel/);
+  assert.match(markup, /Condicionado ao consentimento/);
   assert.match(markup, /Preferências de cookies/);
   assert.match(markup, /Claudionor Clementino Imóveis Ltda/);
   assert.match(markup, /Imobiliária Clementino Ltda/);

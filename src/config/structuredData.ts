@@ -8,6 +8,7 @@ export interface BusinessStructuredData {
   '@id': string;
   name: string;
   legalName: string;
+  logo: string;
   url: string;
   telephone: string;
   email: string;
@@ -101,6 +102,7 @@ export const getBusinessStructuredData = (): BusinessStructuredData => ({
   '@id': `${siteConfig.url}/#real-estate-agent`,
   name: siteConfig.legal.tradeName,
   legalName: siteConfig.legal.legalName,
+  logo: toAbsoluteSiteUrl('/images/brand/clementino-logo.webp'),
   url: siteConfig.url,
   telephone: `+${siteConfig.whatsapp.e164}`,
   email: siteConfig.legal.email,
@@ -192,7 +194,7 @@ export const getPropertyStructuredData = (property: WebsiteProperty): PropertySt
     address: {
       '@type': 'PostalAddress',
       streetAddress: property.address || property.location || siteConfig.legal.addressParts.streetAddress,
-      addressLocality: property.district || siteConfig.legal.addressParts.district,
+      addressLocality: property.city || siteConfig.legal.addressParts.city,
       addressRegion: property.state || siteConfig.legal.addressParts.state,
       addressCountry: 'BR',
     },

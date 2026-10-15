@@ -1,40 +1,74 @@
 User-agent: *
 Allow: /
+Allow: /api/public/media/
 Disallow: /api/
 Disallow: /imoveis/preview/
 Disallow: /contato/mensagem-preparada
 Disallow: /404
 
-# AI Search Crawlers & LLM Indexers
-User-agent: GPTBot
+User-agent: OAI-SearchBot
 Allow: /
+Allow: /api/public/media/
 Disallow: /api/
 Disallow: /imoveis/preview/
+Disallow: /contato/mensagem-preparada
+Disallow: /404
+
+User-agent: GPTBot
+Allow: /
+Allow: /api/public/media/
+Disallow: /api/
+Disallow: /imoveis/preview/
+Disallow: /contato/mensagem-preparada
+Disallow: /404
 
 User-agent: ChatGPT-User
 Allow: /
+Allow: /api/public/media/
 Disallow: /api/
 Disallow: /imoveis/preview/
+Disallow: /contato/mensagem-preparada
+Disallow: /404
 
 User-agent: ClaudeBot
 Allow: /
+Allow: /api/public/media/
 Disallow: /api/
 Disallow: /imoveis/preview/
+Disallow: /contato/mensagem-preparada
+Disallow: /404
+
+User-agent: Claude-SearchBot
+Allow: /
+Allow: /api/public/media/
+Disallow: /api/
+Disallow: /imoveis/preview/
+Disallow: /contato/mensagem-preparada
+Disallow: /404
 
 User-agent: PerplexityBot
 Allow: /
+Allow: /api/public/media/
 Disallow: /api/
 Disallow: /imoveis/preview/
+Disallow: /contato/mensagem-preparada
+Disallow: /404
 
 User-agent: Google-Extended
 Allow: /
+Allow: /api/public/media/
 Disallow: /api/
 Disallow: /imoveis/preview/
+Disallow: /contato/mensagem-preparada
+Disallow: /404
 
 User-agent: Applebot-Extended
 Allow: /
+Allow: /api/public/media/
 Disallow: /api/
 Disallow: /imoveis/preview/
+Disallow: /contato/mensagem-preparada
+Disallow: /404
 
 Sitemap: https://clementinoimoveis.com.br/sitemap.xml
 # Context for LLMs: https://clementinoimoveis.com.br/llms.txt

@@ -51,6 +51,7 @@ export const usePublishedProperty = (slug: string, enabled = true) => {
   const [property, setProperty] = useState<WebsiteProperty | null>(initial);
   const [loading, setLoading] = useState(() => enabled && !initial);
   const [error, setError] = useState<Error | null>(null);
+  const [resolvedSlug, setResolvedSlug] = useState('');
 
   useEffect(() => {
     if (!enabled) {
@@ -66,7 +67,10 @@ export const usePublishedProperty = (slug: string, enabled = true) => {
     setError(null);
     loadPublishedProperty(slug)
       .then((result) => {
-        if (active) setProperty(result);
+        if (active) {
+          setProperty(result);
+          setResolvedSlug(slug);
+        }
       })
       .catch((reason: unknown) => {
         if (active && !fallback) {
@@ -81,5 +85,5 @@ export const usePublishedProperty = (slug: string, enabled = true) => {
     };
   }, [enabled, slug]);
 
-  return { property, loading, error };
+  return { property, loading, error, resolved: enabled && resolvedSlug === slug };
 };

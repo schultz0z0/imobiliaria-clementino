@@ -1,11 +1,11 @@
-import { Building2, Eye, EyeOff, KeyRound, LoaderCircle, LockKeyhole } from 'lucide-react';
+import { Eye, EyeOff, KeyRound, LoaderCircle, LockKeyhole } from 'lucide-react';
 import React, { useState, type FormEvent } from 'react';
 import { ApiError } from '../api/client.ts';
 import { useAuth } from '../auth/AuthProvider.tsx';
 
 const Brand = () => (
   <div className="auth-brand" aria-label="Clementino Imóveis">
-    <span className="brand-mark" aria-hidden="true"><Building2 /></span>
+    <img src="/images/brand/clementino-icon.webp" width="40" height="40" alt="" className="brand-icon" />
     <span><strong>Clementino</strong><small>Imóveis</small></span>
   </div>
 );

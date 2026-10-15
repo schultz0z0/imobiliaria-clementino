@@ -34,6 +34,7 @@ test('cookie policy distinguishes active technology from future integrations', (
   assert.match(technologies, /clementino\.cookie-consent/);
   assert.match(technologies, /Google Maps/);
   assert.match(technologies, /Google Analytics/);
-  assert.match(technologies, /Google Ads e Meta Pixel/);
-  assert.match(technologies, /Não instalado/);
+  assert.match(technologies, /Google Ads/);
+  assert.equal(cookieTechnologies.find(({ name }) => name === 'Meta Pixel')?.status, 'Condicionado ao consentimento');
+  assert.doesNotMatch(policy, /publicidade continua preparada apenas para uso futuro/);
 });

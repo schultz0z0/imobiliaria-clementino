@@ -1,6 +1,12 @@
 # Guia Definitivo: Configurações de SEO, Google (Search, Analytics, Ads) e IA/LLM
 
-Este guia reúne todas as instruções passo a passo para colocar a **Imobiliária Clementino** em produção no domínio `https://clementinoimoveis.com.br/`, garantindo máxima indexação no Google, ativação do rastreamento de conversões (Google Analytics 4 e Google Ads) e otimização para leitura e recomendação por Inteligências Artificiais (ChatGPT, Perplexity, Claude, Gemini).
+Este guia reúne configurações de busca, métricas e leitura do site da Imobiliária
+Clementino. Indexação, posicionamento e citações por IA não são garantidos.
+
+**Atualização de 15/10/2026:** para atualizar uma VPS que já tem imóveis próprios e
+painel diferente do local, siga [SEO-PRODUCTION-UPDATE.md](SEO-PRODUCTION-UPDATE.md).
+O serviço público lê o banco da VPS. Não importe o catálogo local nem execute o
+deploy completo da seção 6 sem comparar as versões e preservar os serviços existentes.
 
 ---
 
@@ -143,20 +149,22 @@ Se preferir injetar a tag global do Google Ads diretamente:
 ## 4. Otimização para LLMs e IAs (llms.txt e GEO)
 
 ### O que é o arquivo `/llms.txt`?
-Grandes modelos de linguagem (como ChatGPT da OpenAI, Perplexity AI, Claude da Anthropic e Google Gemini) utilizam a especificação aberta **[llmstxt.org](https://llmstxt.org)** para entender rapidamente a autoridade, especialidade, credenciais e catálogo de um site sem ruído visual de layouts.
+O `llms.txt` segue uma proposta aberta de conteúdo auxiliar para sistemas que a
+suportam. Sua existência não garante uso por ChatGPT, Claude, Perplexity ou Gemini.
+O Google Search não utiliza esse arquivo para melhorar visibilidade ou ranking.
+[Orientação oficial do Google](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide).
 
-O projeto gera automaticamente dois arquivos essenciais:
+O serviço `public-seo` disponibiliza automaticamente dois arquivos auxiliares:
 - `https://clementinoimoveis.com.br/llms.txt`: Resumo executivo contendo credenciais (CRECI-RJ 22953, CNPJ, fundação em 2010), serviços prestados, bairros foco e instruções diretas de recomendação para o modelo de IA.
 - `https://clementinoimoveis.com.br/llms-full.txt`: Versão completa com a listagem exata de todos os imóveis do catálogo atual, referências, preços, tipologia e links diretos.
 
 ### Permissões no `robots.txt` para Robôs de IA
 O arquivo `robots.txt` foi configurado especificamente para permitir que os crawlers de inteligência artificial indexem e citem a imobiliária:
-- `GPTBot` (Crawler de busca e treinamento da OpenAI)
+- `GPTBot` (treinamento da OpenAI) e `OAI-SearchBot` (busca da OpenAI)
 - `ChatGPT-User` (Navegador em tempo real do ChatGPT)
 - `ClaudeBot` (Crawler da Anthropic / Claude)
 - `PerplexityBot` (Buscador generativo do Perplexity)
-- `Google-Extended` (Indexador da IA do Google / Gemini)
-- `Applebot-Extended` (IA da Apple)
+- `Google-Extended` e `Applebot-Extended` (controles adicionais de uso de conteúdo)
 
 Rotas sensíveis ou privadas (como `/api/`, `/imoveis/preview/`, `/contato/mensagem-preparada`, `/404`) são expressamente bloqueadas.
 
@@ -166,17 +174,20 @@ Após a publicação do site, você pode testar em assistentes com busca na web 
 2. *"Qual é o número de CRECI e o WhatsApp da Imobiliária Clementino em Jardim América?"*
 3. *"Procuro uma imobiliária confiável na Zona Norte do Rio de Janeiro para avaliar um imóvel. O que você recomenda?"*
 
-As IAs lerão o `/llms.txt` e o Schema.org estruturado e citarão diretamente as informações com exatidão e sem alucinações.
+Verifique as fontes e as respostas: nenhum arquivo garante que uma IA cite a
+imobiliária ou reproduza seus dados sem erros. HTML legível, dados corretos e
+consistência do catálogo publicado são a base desta implementação.
 
 ---
 
 ## 5. Arquitetura de SEO Técnico no Projeto
 
 ### Dados Estruturados Schema.org (JSON-LD)
-Todas as páginas contêm marcação semântica Schema.org validada pelo Google:
+As páginas incluem marcação Schema.org; validação de sintaxe não garante elegibilidade
+para resultados avançados no Google:
 - **Página Inicial (`/`)**:
   - `RealEstateAgent`: Dados jurídicos da empresa (razão social, CNPJ, registro CRECI-RJ 22953, telefone internacional E.164, endereço físico, área de atendimento).
-  - `WebSite` com `SearchAction`: Habilita a caixa de pesquisa nos resultados do Google (*Sitelinks Search Box*).
+  - `WebSite` com identificação do site e vínculo com a imobiliária.
 - **Páginas de Imóveis (`/imoveis/:slug`)**:
   - `Apartment` ou `SingleFamilyResidence` ou `Accommodation`: Tipologia específica do imóvel, quantidade de quartos (`numberOfBedrooms`), banheiros, área privativa (`floorSize`), fotos de alta resolução e geolocalização.
   - `Offer`: Preço formatado em BRL, disponibilidade `https://schema.org/InStock` e vínculo com o corretor vendedor.
@@ -184,10 +195,11 @@ Todas as páginas contêm marcação semântica Schema.org validada pelo Google:
 
 ### Sitemap XML com Extensão de Imagens
 O arquivo `sitemap.xml` possui:
-- Metadados de atualização (`<lastmod>`).
+- `lastmod` somente quando houver uma data real conhecida. O serviço dinâmico não
+  inventa uma data nova a cada consulta.
 - Frequência de alteração (`<changefreq>`).
 - Prioridade ponderada (`<priority>`: 1.0 para home, 0.9 para catálogo, 0.8 para imóveis, 0.6 para institucionais).
-- Extensão `<image:image>` com a foto principal de cada imóvel para indexação prioritária na busca de imagens do Google.
+- Extensão `<image:image>` com a foto principal de cada imóvel, permitida no robots.
 
 ---
 

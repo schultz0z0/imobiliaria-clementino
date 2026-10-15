@@ -42,4 +42,6 @@ export interface WebsiteProperty {
   features: string[];
   /** Editorial flag used only to build the Home selection. */
   featured?: boolean;
+  /** Optional metadata explicitly provided in the published admin revision. */
+  seo?: { title?: string; description?: string; image?: string };
 }

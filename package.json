@@ -37,6 +37,7 @@
     "catalog:images": "tsx scripts/catalog/generateImages.ts",
     "seo:generate": "tsx scripts/seo/generateSeo.ts --public",
     "seo:prerender": "tsx scripts/seo/generateSeo.ts --dist",
+    "seo:server:build": "esbuild server/seo/index.ts --bundle --packages=external --platform=node --target=node22 --format=esm --outfile=dist-server/seo/index.js",
     "predev": "npm run catalog:verify && npm run catalog:images && npm run seo:generate",
     "prebuild": "npm run catalog:verify && npm run catalog:images && npm run seo:generate"
   },

@@ -46,3 +46,12 @@ test('technical final states are explicitly excluded from indexing', () => {
   assert.equal(getPageMetadata('contactPrepared').robots, 'noindex, nofollow');
   assert.equal(getPageMetadata('notFound').robots, 'noindex, nofollow');
 });
+
+test('uses optional SEO overrides from the published revision while retaining its canonical', () => {
+  const property = { ...getAllProperties()[0]!, seo: { title: 'Título personalizado do corretor', description: 'Descrição personalizada do corretor', image: '/api/public/media/seo-photo.webp' } };
+  const metadata = getPageMetadata('property', property);
+  assert.equal(metadata.title, property.seo.title);
+  assert.equal(metadata.description, property.seo.description);
+  assert.equal(metadata.image, 'https://clementinoimoveis.com.br' + property.seo.image);
+  assert.equal(metadata.canonical, 'https://clementinoimoveis.com.br/imoveis/' + property.slug);
+});

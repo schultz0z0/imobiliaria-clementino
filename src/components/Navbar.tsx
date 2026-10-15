@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'motion/react';
-import { Building2, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { buildWhatsAppUrl } from '../contact/whatsapp';
@@ -44,11 +44,7 @@ export const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between px-5 md:px-6">
         <Link to="/" className="flex items-center gap-3" aria-label="Imobiliária Clementino — página inicial">
-          <Building2 className="h-8 w-8 text-[#d7b661]" aria-hidden="true" />
-          <div className="flex flex-col">
-            <span className="text-xl font-semibold leading-none tracking-tight text-white">Clementino</span>
-            <span className="mt-1 text-[9px] uppercase tracking-[0.28em] text-[#d7b661]">Imobiliária</span>
-          </div>
+          <img src="/images/brand/clementino-logo.webp" alt="Clementino Imóveis" width="800" height="205" className="h-auto w-[176px] md:w-[204px]" fetchPriority="high" />
         </Link>
 
         <div className="hidden items-center gap-7 md:flex">

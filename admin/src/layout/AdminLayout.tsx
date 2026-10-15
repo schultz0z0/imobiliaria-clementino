@@ -12,7 +12,7 @@ export const AdminLayout = ({ children }: { children: ReactNode }) => {
     <div className="admin-shell">
       <a className="skip-link" href="#conteudo-principal">Ir para o conteúdo</a>
       <header className="admin-header">
-        <a className="admin-brand" href="/" aria-label="Clementino Imóveis — início do painel"><span className="brand-mark" aria-hidden="true"><Building2 /></span><span><strong>Clementino</strong><small>Administração</small></span></a>
+        <a className="admin-brand" href="/" aria-label="Clementino Imóveis — início do painel"><img src="/images/brand/clementino-icon.webp" width="40" height="40" alt="" className="brand-icon" /><span><strong>Clementino</strong><small>Administração</small></span></a>
         <button className="icon-button menu-button" type="button" aria-label={open ? 'Fechar menu' : 'Abrir menu'} aria-expanded={open} aria-controls="admin-navigation" onClick={() => setOpen((current) => !current)}>{open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}</button>
         <nav id="admin-navigation" className={open ? 'admin-nav is-open' : 'admin-nav'} aria-label="Navegação principal">
           <NavLink to="/" end onClick={() => setOpen(false)}><LayoutDashboard aria-hidden="true" />Visão geral</NavLink>

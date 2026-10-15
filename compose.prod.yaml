@@ -1,18 +1,24 @@
 name: ${COMPOSE_PROJECT_NAME:-imobiliaria-clementino}
 
+x-public-build-args: &public-build-args
+  VITE_GA_MEASUREMENT_ID: ${VITE_GA_MEASUREMENT_ID:-}
+  VITE_GOOGLE_ADS_ID: ${VITE_GOOGLE_ADS_ID:-}
+  VITE_META_PIXEL_ID: ${VITE_META_PIXEL_ID-1324132266370583}
+  VITE_GOOGLE_SITE_VERIFICATION: ${VITE_GOOGLE_SITE_VERIFICATION:-}
+
 services:
   website:
     image: imobiliaria-clementino:latest
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        VITE_GA_MEASUREMENT_ID: ${VITE_GA_MEASUREMENT_ID:-}
-        VITE_GOOGLE_ADS_ID: ${VITE_GOOGLE_ADS_ID:-}
-        VITE_GOOGLE_SITE_VERIFICATION: ${VITE_GOOGLE_SITE_VERIFICATION:-}
+      args: *public-build-args
     restart: unless-stopped
     volumes:
       - published_releases:/data/published:ro
+    depends_on:
+      public-seo:
+        condition: service_healthy
     expose:
       - "80"
     healthcheck:
@@ -55,11 +61,35 @@ services:
       - "traefik.http.routers.imobiliaria-admin.tls.certresolver=letsencrypt"
       - "traefik.http.services.imobiliaria-admin.loadbalancer.server.port=80"
 
+  # A read-only renderer can be deployed independently of the admin version.
+  public-seo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: api
+      args: *public-build-args
+    restart: unless-stopped
+    command: ["node", "dist-server/seo/index.js"]
+    expose: ["3000"]
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: ${DATABASE_URL:?DATABASE_URL is required}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/api/public/seo/document?path=/').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+
   admin-api:
     build:
       context: .
       dockerfile: Dockerfile
       target: api
+      args: *public-build-args
     restart: unless-stopped
     expose: ["3000"]
     environment:
@@ -98,6 +128,7 @@ services:
       context: .
       dockerfile: Dockerfile
       target: api
+      args: *public-build-args
     restart: unless-stopped
     command: ["node", "dist-server/publisher/index.js"]
     environment:
@@ -123,6 +154,7 @@ services:
       context: .
       dockerfile: Dockerfile
       target: api
+      args: *public-build-args
     restart: "no"
     command: ["node", "dist-server/db/migrate.js"]
     environment:

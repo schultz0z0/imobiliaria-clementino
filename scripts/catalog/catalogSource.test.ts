@@ -47,7 +47,7 @@ test('database catalog source loads one published property by slug without scann
           facts: { bedrooms: 2, suites: 0, bathrooms: 1, parkingSpaces: 1, usableArea: 70, totalArea: 70, isNew: false },
           editorial: { title: 'Imóvel publicado', description: 'Descrição pública com informações suficientes para apresentar este imóvel com clareza aos visitantes interessados.', reference: 'REF-1000', featured: false },
           features: { common: [], private: [], acceptsFgts: false, acceptsExchange: false },
-          seo: {},
+          seo: { title: 'Título SEO publicado', description: 'Descrição SEO publicada', imagePhotoId: 'photo-1' },
         },
       }];
     }
@@ -75,6 +75,9 @@ test('database catalog source loads one published property by slug without scann
   strictEqual(property?.location, 'Rua Teste, 88 - Tijuca, Rio de Janeiro - RJ');
   strictEqual(property?.address, property?.location);
   strictEqual(property?.image.includes('/api/public/media/CLI-1000/'), true);
+  deepStrictEqual(property?.seo, {
+    title: 'Título SEO publicado', description: 'Descrição SEO publicada', image: property?.image,
+  });
   strictEqual(calls.some((statement) => statement.includes('p.slug =')), true);
   strictEqual(calls.some((statement) => statement.includes('FROM property_media') && statement.includes('property_id')), true);
 });

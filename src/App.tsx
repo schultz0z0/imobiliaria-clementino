@@ -10,6 +10,7 @@ import { CookieConsent } from './components/privacy/CookieConsent';
 import { MobileWhatsAppCta } from './components/contact/MobileWhatsAppCta';
 import { BusinessStructuredData } from './components/seo/BusinessStructuredData';
 import { AnalyticsBridge } from './analytics/AnalyticsBridge';
+import { MetaPixelProvider } from './analytics/MetaPixelProvider';
 
 const Properties = lazy(() => import('./pages/Properties').then((module) => ({ default: module.Properties })));
 const PropertyDetails = lazy(() => import('./pages/PropertyDetails').then((module) => ({ default: module.PropertyDetails })));
@@ -40,6 +41,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <CookieConsentProvider>
+        <MetaPixelProvider>
         <BusinessStructuredData />
         <AnalyticsBridge />
         <ScrollToTop />
@@ -67,6 +69,7 @@ export default function App() {
         </div>
         <MobileWhatsAppCta />
         <CookieConsent />
+        </MetaPixelProvider>
       </CookieConsentProvider>
     </BrowserRouter>
   );

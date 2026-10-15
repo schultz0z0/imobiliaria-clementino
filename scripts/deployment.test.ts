@@ -80,27 +80,36 @@ test('production compose passes the optional GA4 measurement id only at build ti
   assert.doesNotMatch(compose, /environment:[\s\S]*VITE_GA_MEASUREMENT_ID/);
 });
 
-test('nginx serves active releases and only the bundled SPA shell as fallback', () => {
+test('nginx sends HTML and discovery documents to the read-only live catalog renderer', () => {
   const nginx = readFileSync(new URL('../nginx.conf', import.meta.url), 'utf8');
 
+  assert.match(nginx, /set \$public_api http:\/\/public-seo:3000;/);
+  assert.match(nginx, /proxy_pass \$public_api\/api\/public\/seo\/document\?path=\$uri;/);
+  for (const file of ['sitemap.xml', 'robots.txt', 'llms.txt', 'llms-full.txt']) {
+    assert.ok(nginx.includes(`location = /${file} { proxy_pass $public_api/api/public/seo/${file}; }`));
+  }
+  assert.doesNotMatch(nginx, /try_files.*index\.html/);
   assert.match(
     nginx,
-    /location \/ \{[\s\S]*add_header Cache-Control "no-cache";[\s\S]*root \/data\/published\/current;[\s\S]*try_files \$uri\.html \$uri @bundled_app;[\s\S]*\}/,
-  );
-  assert.doesNotMatch(nginx, /try_files \$uri \$uri\//);
-  assert.match(nginx, /location @bundled_app \{[\s\S]*try_files \/index\.html =404;/);
-  assert.match(nginx, /location @bundled_sitemap \{[\s\S]*return 404;/);
-  assert.match(
-    nginx,
-    /location \/assets\/ \{[\s\S]*add_header Cache-Control "public, immutable";[\s\S]*\}/,
+    /location \/assets\/ \{[\s\S]*add_header Cache-Control "public, immutable" always;[\s\S]*\}/,
   );
 });
 
 test('nginx never serves the application HTML for missing static images', () => {
   const nginx = readFileSync(new URL('../nginx.conf', import.meta.url), 'utf8');
 
-  assert.match(nginx, /location \/images\/ \{[\s\S]*?try_files \$uri @bundled_images;[\s\S]*?\}/);
-  assert.match(nginx, /location @bundled_images \{[\s\S]*?try_files \$uri =404;[\s\S]*?\}/);
+  assert.match(nginx, /location \/images\/ \{[\s\S]*?try_files \$uri @published_images;[\s\S]*?\}/);
+  assert.match(nginx, /location @published_images \{[\s\S]*?try_files \$uri =404;[\s\S]*?\}/);
+});
+
+test('public SEO deployment can run independently without admin migrations or media writes', () => {
+  const compose = readFileSync(new URL('../compose.prod.yaml', import.meta.url), 'utf8');
+  const service = compose.split('\n  public-seo:')[1]!.split('\n  admin-api:')[0]!;
+  assert.match(service, /dist-server\/seo\/index\.js/);
+  assert.doesNotMatch(service, /migrate:|volumes:/);
+  const server = readFileSync(new URL('../server/seo/index.ts', import.meta.url), 'utf8');
+  assert.match(server, /default_transaction_read_only: 'on'/);
+  assert.doesNotMatch(server, /import .*['"][^'"]*(?:auth\/routes|propertyRoutes|migrate|seed)/i);
 });
 
 test('development compose keeps admin, publisher and postgres persistent and private', () => {
