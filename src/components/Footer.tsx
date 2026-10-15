@@ -22,7 +22,7 @@ export const Footer = () => {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <Link to="/" className="mb-6 flex w-fit items-center" aria-label="Clementino Imóveis — página inicial">
-              <img src="/images/brand/clementino-logo.webp" alt="Clementino Imóveis" width="800" height="205" className="h-auto w-[224px] max-w-full" loading="lazy" />
+              <img src="/images/brand/clementino-logo.webp?v=20261015" alt="Clementino Imóveis" width="800" height="205" className="h-auto w-[224px] max-w-full" loading="lazy" />
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-white/55">Atuação imobiliária no Rio de Janeiro desde 2010, com atendimento direto e conhecimento local.</p>
           </div>

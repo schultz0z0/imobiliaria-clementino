@@ -20,13 +20,13 @@ const renderPage = (Page: typeof Home | typeof About) => renderToStaticMarkup(cr
 test('home uses the institutional portrait in its company preview', () => {
   const markup = renderPage(Home);
 
-  assert.match(markup, /src="\/images\/brand\/institutional-portrait-clementino\.webp"/);
+  assert.match(markup, /src="\/images\/brand\/institutional-portrait-clementino\.webp\?v=20261015"/);
 });
 
 test('about uses the institutional portrait with the approved focal crop', () => {
   const markup = renderPage(About);
 
-  assert.match(markup, /src="\/images\/brand\/institutional-portrait-clementino\.webp"/);
+  assert.match(markup, /src="\/images\/brand\/institutional-portrait-clementino\.webp\?v=20261015"/);
   assert.match(markup, /alt="Retrato institucional da Imobiliária Clementino"/);
   assert.match(markup, /object-\[center_35%\]/);
 });

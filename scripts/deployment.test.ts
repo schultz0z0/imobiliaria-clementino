@@ -72,6 +72,8 @@ test('declares the required admin and server dependencies in their runtime categ
 test('production builder uses a Node version supported by the locked toolchain', () => {
   const dockerfile = readFileSync(new URL('../Dockerfile', import.meta.url), 'utf8');
   assert.match(dockerfile, /^FROM node:22-alpine AS builder$/m);
+  assert.match(dockerfile, /find \/app\/dist -type d -exec chmod 755/);
+  assert.match(dockerfile, /find \/app\/dist -type f -exec chmod 644/);
 });
 
 test('production compose passes the optional GA4 measurement id only at build time', () => {
@@ -91,7 +93,7 @@ test('nginx sends HTML and discovery documents to the read-only live catalog ren
   assert.doesNotMatch(nginx, /try_files.*index\.html/);
   assert.match(
     nginx,
-    /location \/assets\/ \{[\s\S]*add_header Cache-Control "public, immutable" always;[\s\S]*\}/,
+    /location \/assets\/ \{[\s\S]*add_header Cache-Control "public, immutable";[\s\S]*\}/,
   );
 });
 

@@ -260,7 +260,7 @@ export const renderPublishedDocument = (
     ? `<section><h2>Imóveis disponíveis</h2><ul>${properties.map((property) => `<li><a href="/imoveis/${escapeHtml(property.slug)}">${escapeHtml(property.title)}</a> — ${escapeHtml(property.price)}</li>`).join('')}</ul></section>`
     : '';
   const content = `<div id="root"><div style="background:#18181b;color:#fff;min-height:100vh;padding:24px;font-family:system-ui;line-height:1.6">
-    <header><a href="/"><img src="/images/brand/clementino-logo.webp" alt="Clementino Imóveis" width="220" height="57" /></a><nav aria-label="Navegação principal">${navigation}</nav></header>
+    <header><a href="/"><img src="/images/brand/clementino-logo.webp?v=20261015" alt="Clementino Imóveis" width="220" height="57" /></a><nav aria-label="Navegação principal">${navigation}</nav></header>
     <main>${metadata.property ? propertySummary(metadata.property) : `<h1>${escapeHtml(metadata.title.split('|')[0]!.trim())}</h1><p>${escapeHtml(metadata.description)}</p>`}${listing}</main>
     <footer><p>Imobiliária Clementino · CRECI-RJ 22953</p><a href="/contato">Entre em contato</a></footer>
   </div></div>`;

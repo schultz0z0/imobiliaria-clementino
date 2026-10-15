@@ -102,7 +102,7 @@ export const getBusinessStructuredData = (): BusinessStructuredData => ({
   '@id': `${siteConfig.url}/#real-estate-agent`,
   name: siteConfig.legal.tradeName,
   legalName: siteConfig.legal.legalName,
-  logo: toAbsoluteSiteUrl('/images/brand/clementino-logo.webp'),
+  logo: toAbsoluteSiteUrl('/images/brand/clementino-logo.webp?v=20261015'),
   url: siteConfig.url,
   telephone: `+${siteConfig.whatsapp.e164}`,
   email: siteConfig.legal.email,

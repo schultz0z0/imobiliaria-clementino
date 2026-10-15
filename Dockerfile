@@ -13,7 +13,9 @@ ARG VITE_META_PIXEL_ID="1324132266370583"
 ENV VITE_META_PIXEL_ID=${VITE_META_PIXEL_ID}
 ARG VITE_GOOGLE_SITE_VERIFICATION=""
 ENV VITE_GOOGLE_SITE_VERIFICATION=${VITE_GOOGLE_SITE_VERIFICATION}
-RUN npm run build
+RUN npm run build \
+  && find /app/dist -type d -exec chmod 755 {} + \
+  && find /app/dist -type f -exec chmod 644 {} +
 
 FROM node:22-bookworm-slim AS api-builder
 WORKDIR /app

@@ -44,7 +44,7 @@ export const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between px-5 md:px-6">
         <Link to="/" className="flex items-center gap-3" aria-label="Imobiliária Clementino — página inicial">
-          <img src="/images/brand/clementino-logo.webp" alt="Clementino Imóveis" width="800" height="205" className="h-auto w-[176px] md:w-[204px]" fetchPriority="high" />
+          <img src="/images/brand/clementino-logo.webp?v=20261015" alt="Clementino Imóveis" width="800" height="205" className="h-auto w-[176px] md:w-[204px]" fetchPriority="high" />
         </Link>
 
         <div className="hidden items-center gap-7 md:flex">
