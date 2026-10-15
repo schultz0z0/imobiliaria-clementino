@@ -7,6 +7,7 @@ import {
 } from '../config/structuredData';
 import { getBreadcrumbStructuredData } from '../components/navigation/Breadcrumbs';
 import type { WebsiteProperty } from '../types/property';
+import { publicStartupScreen, withPublicStartup } from './publicStartup';
 
 const seoStart = "<!-- seo:start -->";
 const seoEnd = "<!-- seo:end -->";
@@ -247,8 +248,8 @@ const propertySummary = (property: WebsiteProperty): string => {
   </article>`;
 };
 
-/** Visible initial content for people and crawlers; createRoot replaces it when
- * the interactive application starts. The same HTML is sent to every user agent. */
+/** Readable initial content for people and crawlers; a bounded startup screen
+ * prevents a flash before createRoot commits the interactive application. */
 export const renderPublishedDocument = (
   template: string,
   metadata: PageMetadata,
@@ -259,12 +260,12 @@ export const renderPublishedDocument = (
   const listing = (metadata.path === '/' || metadata.path === '/imoveis')
     ? `<section><h2>Imóveis disponíveis</h2><ul>${properties.map((property) => `<li><a href="/imoveis/${escapeHtml(property.slug)}">${escapeHtml(property.title)}</a> — ${escapeHtml(property.price)}</li>`).join('')}</ul></section>`
     : '';
-  const content = `<div id="root"><div style="background:#18181b;color:#fff;min-height:100vh;padding:24px;font-family:system-ui;line-height:1.6">
+  const content = `${publicStartupScreen}<div id="root"><div style="background:#18181b;color:#fff;min-height:100vh;padding:24px;font-family:system-ui;line-height:1.6">
     <header><a href="/"><img src="/images/brand/clementino-logo.webp?v=20261015" alt="Clementino Imóveis" width="220" height="57" /></a><nav aria-label="Navegação principal">${navigation}</nav></header>
     <main>${metadata.property ? propertySummary(metadata.property) : `<h1>${escapeHtml(metadata.title.split('|')[0]!.trim())}</h1><p>${escapeHtml(metadata.description)}</p>`}${listing}</main>
     <footer><p>Imobiliária Clementino · CRECI-RJ 22953</p><a href="/contato">Entre em contato</a></footer>
   </div></div>`;
-  const html = buildSeoDocument(template, metadata);
+  const html = withPublicStartup(buildSeoDocument(template, metadata));
   const markers = /<!-- content:start -->[\s\S]*?<!-- content:end -->/;
   if (!markers.test(html)) throw new Error('Public content markers were not found in the HTML template.');
   return html.replace(markers, `<!-- content:start -->${content}<!-- content:end -->`);
