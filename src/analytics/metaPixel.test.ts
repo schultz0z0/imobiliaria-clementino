@@ -176,3 +176,34 @@ test('invalid pixel ids remain inert and errors from a blocked SDK never break n
   controller.setConsent(true);
   assert.doesNotThrow(() => controller.pageView('/', 'visit'));
 });
+
+test('all CTA events carry source and destination property context, respecting consent and navigation', () => {
+  const { controller, commands } = setup();
+  const current = { ...getAllProperties()[0]!, id: 'current-property', reference: 'CURRENT' };
+  const cta = { kind: 'whatsapp' as const, cta_id: 'whatsapp', cta_location: 'property_sidebar', cta_position: 1 };
+  assert.equal(controller.trackCta(cta), false);
+  controller.setConsent(true);
+  controller.viewProperty(current, '/imoveis/' + current.slug, 'first');
+  controller.trackCta(cta);
+  assert.equal(commands().filter(c => c[2] === 'Contact').length, 1);
+  assert.equal(commands().filter(c => c[2] === 'CtaClick').length, 1);
+  assert.deepEqual(commands().find(c => c[2] === 'Contact')?.[3], { content_ids: ['current-property'], content_type: 'product', content_name: 'CURRENT', cta_type: 'whatsapp', cta_id: 'whatsapp', cta_location: 'property_sidebar', cta_position: 1, page_path: '/imoveis/' + current.slug });
+  controller.trackCta({ kind: 'property_open', cta_id: 'open_property', cta_location: 'related_properties', cta_position: 2, target_path: '/imoveis/next-admin', property: { id: 'next-admin', reference: 'NEXT' } });
+  assert.deepEqual((commands().filter(c => c[2] === 'CtaClick').at(-1)?.[3] as { content_ids: string[] }).content_ids, ['next-admin']);
+  controller.trackCta({ kind: 'property_open', cta_id: 'open_property', cta_location: 'related_properties', cta_position: 3, target_path: '/imoveis/missing-card-data' });
+  assert.equal((commands().filter(c => c[2] === 'CtaClick').at(-1)?.[3] as { content_ids?: string[] }).content_ids, undefined, 'never inherit the current listing when the destination metadata is missing');
+  controller.beginRoute('/imoveis/loading-new', 'second');
+  assert.equal(controller.trackCta(cta), false);
+  controller.setConsent(false);
+  assert.equal(controller.trackCta(cta), false);
+});
+
+test('Search is explicit, carries only source metadata, and never pretends to be a lead', () => {
+  const { controller, commands } = setup();
+  controller.setConsent(true);
+  controller.pageView('/', 'first');
+  controller.search({ kind: 'search', cta_id: 'property_search', cta_location: 'home_hero', cta_position: 1 });
+  assert.equal(commands().filter(c => c[2] === 'Search').length, 1);
+  assert.equal(commands().find(c => c[2] === 'Search')?.[0], 'trackSingle');
+  assert.doesNotMatch(JSON.stringify(commands()), /search_string|Lead|Schedule/);
+});

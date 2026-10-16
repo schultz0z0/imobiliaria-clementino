@@ -78,6 +78,7 @@ export const PropertyFilters = ({ state, cities, districts, propertyTypes, resul
       >
         <div
           id="property-filter-drawer"
+          data-meta-location="catalog_filters"
           role="dialog"
           aria-modal="true"
           aria-label="Filtros de imóveis"
@@ -107,8 +108,8 @@ export const PropertyFilters = ({ state, cities, districts, propertyTypes, resul
 
   return (
     <>
-      <div className="hidden gap-3 lg:grid lg:grid-cols-4 xl:grid-cols-[repeat(7,minmax(0,1fr))_auto]">{controls}<div className="flex items-end"><button type="button" onClick={onClear} className="min-h-12 w-full whitespace-nowrap rounded-[var(--radius-control)] border border-white/10 px-4 text-sm font-medium text-white/60 transition hover:border-[#d7b661]/35 hover:text-white">Limpar</button></div></div>
-      <div className="flex items-center justify-between lg:hidden"><div><p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#d7b661]">Busca avançada</p><p className="mt-1 text-sm text-white/50">{resultCount} {resultCount === 1 ? 'resultado' : 'resultados'}</p></div><button ref={filterTriggerRef} type="button" onClick={() => setOpen(true)} aria-expanded={open} aria-controls="property-filter-drawer" className="inline-flex min-h-11 items-center gap-2 rounded-[var(--radius-control)] border border-[#d7b661]/25 bg-[#d7b661]/5 px-5 text-sm font-semibold text-white transition hover:border-[#d7b661]/55"><SlidersHorizontal className="h-4 w-4 text-[#d7b661]" aria-hidden="true" />Filtros</button></div>
+      <div data-meta-location="catalog_filters" className="hidden gap-3 lg:grid lg:grid-cols-4 xl:grid-cols-[repeat(7,minmax(0,1fr))_auto]">{controls}<div className="flex items-end"><button type="button" onClick={onClear} className="min-h-12 w-full whitespace-nowrap rounded-[var(--radius-control)] border border-white/10 px-4 text-sm font-medium text-white/60 transition hover:border-[#d7b661]/35 hover:text-white">Limpar</button></div></div>
+      <div data-meta-location="catalog_filters" className="flex items-center justify-between lg:hidden"><div><p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#d7b661]">Busca avançada</p><p className="mt-1 text-sm text-white/50">{resultCount} {resultCount === 1 ? 'resultado' : 'resultados'}</p></div><button ref={filterTriggerRef} type="button" onClick={() => setOpen(true)} aria-expanded={open} aria-controls="property-filter-drawer" className="inline-flex min-h-11 items-center gap-2 rounded-[var(--radius-control)] border border-[#d7b661]/25 bg-[#d7b661]/5 px-5 text-sm font-semibold text-white transition hover:border-[#d7b661]/55"><SlidersHorizontal className="h-4 w-4 text-[#d7b661]" aria-hidden="true" />Filtros</button></div>
       {mobileDrawer}
     </>
   );

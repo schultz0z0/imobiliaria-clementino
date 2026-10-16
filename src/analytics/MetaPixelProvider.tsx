@@ -4,6 +4,7 @@ import { marketingConfig } from '../config/marketingConfig';
 import { useCookieConsent } from '../privacy/CookieConsentContext';
 import type { WebsiteProperty } from '../types/property';
 import { createMetaPixelController, isPropertyTrackingPath, isPublicTrackingPath, normalizeTrackingPath, type MetaPixelWindow } from './metaPixel';
+import { getMetaCta } from './metaCtas';
 
 type Controller = ReturnType<typeof createMetaPixelController>;
 type TrackingContext = { controller: Controller; synchronize: () => void; allowed: boolean; path: string; visit: string };
@@ -35,12 +36,17 @@ export const MetaPixelProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const click = (event: MouseEvent) => {
       if (!(event.target instanceof Element)) return;
-      const whatsapp = event.target.closest('a[href^="https://wa.me/"]');
-      const visitForm = event.target.closest('button[data-meta-cta="visit"]');
-      if (!whatsapp && !visitForm) return;
+      const cta = getMetaCta(event.target, window.location.origin);
+      if (!cta) return;
       synchronize();
-      if (whatsapp) controller.contact();
-      else controller.openVisitForm();
+      controller.trackCta(cta);
+    };
+    const submit = (event: SubmitEvent) => {
+      if (!(event.target instanceof HTMLFormElement) || !event.target.matches('form[data-meta-search]')) return;
+      const cta = getMetaCta(event.target, window.location.origin);
+      if (!cta || !event.target.checkValidity()) return;
+      synchronize();
+      controller.search(cta);
     };
     const request = (event: Event) => {
       const name: unknown = (event as CustomEvent).detail;
@@ -48,10 +54,13 @@ export const MetaPixelProvider = ({ children }: { children: ReactNode }) => {
       synchronize();
       controller.requestPrepared(name);
     };
-    document.addEventListener('click', click);
+    // Capture runs before React handlers navigate, remove modals or replace a CTA.
+    document.addEventListener('click', click, true);
+    document.addEventListener('submit', submit, true);
     window.addEventListener(preparedRequestEvent, request);
     return () => {
-      document.removeEventListener('click', click);
+      document.removeEventListener('click', click, true);
+      document.removeEventListener('submit', submit, true);
       window.removeEventListener(preparedRequestEvent, request);
     };
   }, [controller, synchronize]);

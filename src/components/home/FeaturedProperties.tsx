@@ -5,7 +5,7 @@ import { PropertyCard } from '../properties/PropertyCard';
 import { SectionHeading } from '../SectionHeading';
 
 export const FeaturedProperties = ({ properties }: { properties: WebsiteProperty[] }) => (
-  <section className="relative z-10 py-24 md:py-32">
+  <section data-meta-location="featured_properties" className="relative z-10 py-24 md:py-32">
     <div className="container mx-auto px-6">
       <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
         <SectionHeading eyebrow="Curadoria" title="Seleção Clementino" description="Três oportunidades em Copacabana, Jardim América e Vila da Penha, reunidas pela equipe Clementino." />

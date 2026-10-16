@@ -53,6 +53,8 @@ export const PropertyCard = ({ property, priority = false }: PropertyCardProps) 
       to={`/imoveis/${property.slug}`}
       data-analytics-event="property_open"
       data-analytics-label={property.reference}
+      data-meta-property-id={property.id}
+      data-meta-property-reference={property.reference}
       className={PROPERTY_CARD_SURFACE_CLASS_NAME}
     >
       <div className={PROPERTY_CARD_MEDIA_CLASS_NAME}>

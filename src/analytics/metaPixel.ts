@@ -1,4 +1,5 @@
 import type { WebsiteProperty } from '../types/property';
+import type { MetaCta } from './metaCtas';
 
 type MetaQuery = ((...args: unknown[]) => void) & {
   queue?: unknown[][];
@@ -78,6 +79,18 @@ export const createMetaPixelController = (pixelId: string, environment: { window
     ...(state.property ? { content_ids: [state.property.id], content_type: 'product', content_name: state.property.reference } : {}),
     cta_type: cta,
   });
+  const ctaParameters = (cta: MetaCta) => {
+    // Even when card data is missing, never attribute a destination click to
+    // the listing whose page contains that card.
+    const property = cta.kind === 'property_open' ? cta.property : state.property;
+    return {
+      ...(property ? { content_ids: [property.id], content_type: 'product', ...(property.reference ? { content_name: property.reference } : {}) } : {}),
+      cta_type: cta.kind,
+      cta_id: cta.cta_id, cta_location: cta.cta_location, cta_position: cta.cta_position,
+      page_path: state.path,
+      ...(cta.target_path ? { target_path: cta.target_path } : {}),
+    };
+  };
   return {
     beginRoute,
     setConsent(allowed: boolean) {
@@ -114,6 +127,18 @@ export const createMetaPixelController = (pixelId: string, environment: { window
     },
     contact(): boolean {
       return state.allowed && Boolean(state.path) && initialize() && command('trackSingle', id, 'Contact', actionParameters('whatsapp'));
+    },
+    trackCta(cta: MetaCta): boolean {
+      if (!state.allowed || !state.path || !initialize()) return false;
+      const parameters = ctaParameters(cta);
+      // Contact and CtaClick are separate funnel stages, never two Contacts.
+      if (['whatsapp', 'phone', 'email'].includes(cta.kind)) command('trackSingle', id, 'Contact', parameters);
+      if (cta.kind === 'visit') command('trackSingleCustom', id, 'VisitFormOpen', { ...parameters, cta_type: 'visit_form' });
+      if (cta.kind === 'map') command('trackSingle', id, 'FindLocation', parameters);
+      return command('trackSingleCustom', id, 'CtaClick', parameters);
+    },
+    search(cta: MetaCta): boolean {
+      return cta.kind === 'search' && state.allowed && Boolean(state.path) && initialize() && command('trackSingle', id, 'Search', ctaParameters(cta));
     },
     openVisitForm(): boolean {
       return state.allowed && Boolean(state.path) && initialize() && command('trackSingleCustom', id, 'VisitFormOpen', actionParameters('visit_form'));

@@ -5,7 +5,7 @@ import { acceptAllConsent, CONSENT_STORAGE_KEY } from '../../src/privacy/consent
 
 const sample = (JSON.parse(readFileSync('src/data/properties.generated.json', 'utf8')) as WebsiteProperty[])[0]!;
 const property = { ...sample, id: 'pixel-new-admin-property', slug: 'pixel-new-admin-property', reference: 'PIX-2026' };
-const secondProperty = { ...property, id: 'pixel-second-property', slug: 'pixel-second-property', reference: 'PIX-2027' };
+const secondProperty = { ...property, id: 'pixel-second-property', slug: 'pixel-second-property', reference: 'AP 123/2026' };
 type TestWindow = Window & { __metaCalls?: unknown[][] };
 const events = (page: Page) => page.evaluate(() => ((window as TestWindow).__metaCalls ?? []).filter((c) => String(c[0]).startsWith('track')));
 const eventsNamed = async (page: Page, name: string) => (await events(page)).filter((c) => c[2] === name);
@@ -56,7 +56,7 @@ test('new admin properties and their CTAs are measured once across SPA navigatio
   expect((await eventsNamed(page, 'ViewContent'))[0][3]).toMatchObject({ content_ids: [property.id], content_name: property.reference });
   expect((await eventsNamed(page, 'PageView')).length).toBe(3);
   await page.getByRole('link', { name: 'Falar sobre este imóvel', exact: true }).click();
-  expect((await eventsNamed(page, 'Contact'))[0][3]).toEqual({ content_ids: [property.id], content_type: 'product', content_name: property.reference, cta_type: 'whatsapp' });
+  expect((await eventsNamed(page, 'Contact'))[0][3]).toMatchObject({ content_ids: [property.id], content_type: 'product', content_name: property.reference, cta_type: 'whatsapp', cta_location: 'property_sidebar' });
   await page.getByRole('button', { name: 'Agendar visita', exact: true }).click();
   expect((await eventsNamed(page, 'VisitFormOpen')).length).toBe(1);
   await page.getByRole('button', { name: 'Preparar mensagem no WhatsApp', exact: true }).click();
@@ -141,4 +141,58 @@ test('the mobile property bar measures WhatsApp and visit CTAs with the listing 
   expect((await eventsNamed(page, 'Contact'))[0][3]).toMatchObject({ content_ids: [property.id], cta_type: 'whatsapp' });
   await page.getByRole('button', { name: 'Agendar', exact: true }).click();
   expect((await eventsNamed(page, 'VisitFormOpen'))[0][3]).toMatchObject({ content_ids: [property.id], cta_type: 'visit_form' });
+});
+
+for (const path of ['/', '/imoveis', '/servicos', '/sobre', '/contato', '/aviso-de-privacidade', '/politica-de-cookies']) {
+  test(`every public page measures its header and footer contact CTA with the source ${path}`, async ({ page }) => {
+    await page.addInitScript(({ key, consent }) => localStorage.setItem(key, JSON.stringify(consent)), { key: CONSENT_STORAGE_KEY, consent: acceptAllConsent() });
+    await page.goto(path);
+    await expect.poll(() => eventsNamed(page, 'PageView').then(x => x.length)).toBe(1);
+    await page.locator('[data-meta-location="navbar"] a[href^="https://wa.me/"]').first().click();
+    await page.locator('footer a[href^="https://wa.me/"]').click();
+    const contacts = await eventsNamed(page, 'Contact');
+    expect(contacts).toHaveLength(2);
+    expect(contacts.map(c => c[3])).toMatchObject([{ page_path: path, cta_location: 'navbar', cta_type: 'whatsapp' }, { page_path: path, cta_location: 'footer', cta_type: 'whatsapp' }]);
+    expect(await eventsNamed(page, 'CtaClick')).toHaveLength(2);
+    await page.locator('footer').getByRole('button', { name: 'Preferências de cookies', exact: true }).click();
+    expect(await eventsNamed(page, 'CtaClick')).toHaveLength(2);
+    await page.getByRole('button', { name: 'Fechar preferências', exact: true }).click();
+    expect(await eventsNamed(page, 'CtaClick')).toHaveLength(2);
+  });
+}
+
+test('searches by keyboard and button send Search once, without collecting the query', async ({ page }) => {
+  await page.addInitScript(({ key, consent }) => localStorage.setItem(key, JSON.stringify(consent)), { key: CONSENT_STORAGE_KEY, consent: acceptAllConsent() });
+  await page.goto('/');
+  await expect.poll(() => eventsNamed(page, 'PageView').then(x => x.length)).toBe(1);
+  const query = page.getByPlaceholder('Busque por bairro, cidade ou referência');
+  await query.fill('privado@example.test');
+  expect(await eventsNamed(page, 'CtaClick')).toHaveLength(0);
+  await query.press('Enter');
+  await expect(page).toHaveURL(/\/imoveis\?q=/);
+  expect(await eventsNamed(page, 'Search')).toHaveLength(1);
+  expect((await eventsNamed(page, 'Search'))[0][3]).toMatchObject({ page_path: '/', cta_location: 'home_hero', cta_id: 'property_search' });
+  const search = page.locator('[data-meta-location="catalog_hero"] form');
+  await search.locator('input').fill('outro-privado@example.test');
+  await search.getByRole('button', { name: /Buscar/ }).click();
+  expect(await eventsNamed(page, 'Search')).toHaveLength(2);
+  expect(JSON.stringify(await events(page))).not.toMatch(/privado@example|search_string|\?q=/);
+});
+
+test('new listing cards use the destination id and gallery clicks use the resolved current id', async ({ page }) => {
+  await page.addInitScript(({ key, consent }) => localStorage.setItem(key, JSON.stringify(consent)), { key: CONSENT_STORAGE_KEY, consent: acceptAllConsent() });
+  await page.goto('/imoveis');
+  const card = page.locator(`a[data-meta-property-id="${property.id}"]`).first();
+  await card.click();
+  await expect.poll(() => eventsNamed(page, 'ViewContent').then(x => x.length)).toBe(1);
+  expect((await eventsNamed(page, 'CtaClick'))[0][3]).toMatchObject({ cta_type: 'property_open', content_ids: [property.id], target_path: '/imoveis/' + property.slug, page_path: '/imoveis' });
+  await page.getByRole('button', { name: 'Próxima foto', exact: true }).click();
+  expect((await eventsNamed(page, 'CtaClick')).at(-1)?.[3]).toMatchObject({ cta_location: 'property_gallery', content_ids: [property.id] });
+  const related = page.locator(`[data-meta-location="related_properties"] a[data-meta-property-id="${secondProperty.id}"]`);
+  await related.click();
+  await expect.poll(() => eventsNamed(page, 'ViewContent').then(x => x.length)).toBe(2);
+  const click = (await eventsNamed(page, 'CtaClick')).at(-1)![3];
+  expect(click).toMatchObject({ content_ids: [secondProperty.id], cta_location: 'related_properties', page_path: '/imoveis/' + property.slug, target_path: '/imoveis/' + secondProperty.slug });
+  await page.getByRole('link', { name: 'Falar sobre este imóvel', exact: true }).click();
+  expect((await eventsNamed(page, 'Contact')).at(-1)?.[3]).toMatchObject({ content_ids: [secondProperty.id], cta_location: 'property_sidebar', page_path: '/imoveis/' + secondProperty.slug });
 });

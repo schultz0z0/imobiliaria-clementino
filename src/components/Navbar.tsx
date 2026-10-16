@@ -35,7 +35,7 @@ export const Navbar = () => {
   }, [location.pathname, location.search]);
 
   return (
-    <motion.nav
+    <motion.nav data-meta-location="navbar"
       initial={{ y: -80 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.45, ease: 'easeOut' }}

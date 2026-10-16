@@ -45,7 +45,7 @@ export const CookiePolicy = () => {
     >
       <div className="flex flex-col gap-5 rounded-[var(--radius-surface)] border border-[#d7b661]/25 bg-[#d7b661]/[0.055] p-6 md:flex-row md:items-center md:justify-between">
         <div><p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#d7b661]">Responsável por esta política</p><p className="mt-2 font-semibold text-white">{siteConfig.legal.legalName}</p><p className="mt-1 text-sm leading-6 text-white/50">Nome fantasia: {siteConfig.legal.tradeName} · CNPJ {siteConfig.legal.cnpj}</p><p className="mt-4 text-sm leading-6 text-white/50">Revise ou retire suas autorizações opcionais quando quiser.</p></div>
-        <button type="button" onClick={openPreferences} className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-[var(--radius-control)] bg-[#d7b661] px-6 text-sm font-semibold text-[#18181b] transition hover:bg-[#c4a350]"><Settings2 className="h-4 w-4" aria-hidden="true" /> Preferências de cookies</button>
+        <button data-meta-ignore type="button" onClick={openPreferences} className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-[var(--radius-control)] bg-[#d7b661] px-6 text-sm font-semibold text-[#18181b] transition hover:bg-[#c4a350]"><Settings2 className="h-4 w-4" aria-hidden="true" /> Preferências de cookies</button>
       </div>
     </LegalPageLayout>
   );

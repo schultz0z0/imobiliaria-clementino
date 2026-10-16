@@ -15,7 +15,7 @@ export const HeroSearch = () => {
   const submit = () => navigate(query.trim() ? `/imoveis?q=${encodeURIComponent(query.trim())}` : '/imoveis');
 
   return (
-    <section className="relative z-20 flex min-h-[760px] items-center pt-24 md:min-h-[820px]">
+    <section data-meta-location="home_hero" className="relative z-20 flex min-h-[760px] items-center pt-24 md:min-h-[820px]">
       <div className="absolute inset-0 overflow-hidden">
         <motion.div initial={{ scale: 1.02 }} animate={{ scale: 1.06 }} transition={{ duration: 18, repeat: Infinity, repeatType: 'reverse', ease: 'linear' }} className="h-full w-full">
           <picture className="block h-full w-full">
@@ -35,7 +35,7 @@ export const HeroSearch = () => {
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-white/68 md:text-xl">Encontre imóveis reais para comprar ou alugar e fale diretamente com a equipe Clementino.</p>
 
           <div className="relative mt-10 max-w-3xl">
-            <form onSubmit={(event) => { event.preventDefault(); submit(); }} className="flex flex-col gap-2 rounded-[var(--radius-control)] border border-white/15 bg-[#18181b]/80 p-2 shadow-2xl backdrop-blur-xl sm:flex-row">
+            <form data-meta-search data-meta-id="property_search" onSubmit={(event) => { event.preventDefault(); submit(); }} className="flex flex-col gap-2 rounded-[var(--radius-control)] border border-white/15 bg-[#18181b]/80 p-2 shadow-2xl backdrop-blur-xl sm:flex-row">
               <label className="flex min-h-14 flex-1 items-center gap-3 px-4" aria-label="Buscar imóveis">
                 <Search className="h-5 w-5 shrink-0 text-[#d7b661]" aria-hidden="true" />
                 <input value={query} onChange={(event) => setQuery(event.target.value)} onFocus={() => setFocused(true)} onBlur={() => setTimeout(() => setFocused(false), 160)} placeholder="Busque por bairro, cidade ou referência" className="w-full bg-transparent text-white outline-none placeholder:text-white/40" />

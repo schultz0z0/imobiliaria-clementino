@@ -15,7 +15,7 @@ export const PropertyMap = ({ location, eyebrow = 'Localização', title = 'Conh
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedLocation}`;
 
   return (
-    <section className="mt-20 border-t border-white/10 pt-16">
+    <section data-meta-location="property_map" className="mt-20 border-t border-white/10 pt-16">
       <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#d7b661]">{eyebrow}</p>
       <h2 className="mt-3 text-3xl font-semibold text-white">{title}</h2>
 

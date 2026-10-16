@@ -16,7 +16,7 @@ const secondaryButton = 'inline-flex min-h-11 items-center justify-center rounde
 const primaryButton = 'inline-flex min-h-11 items-center justify-center rounded-[var(--radius-control)] bg-[#d7b661] px-5 text-sm font-semibold text-[#18181b] transition hover:bg-[#c4a350]';
 
 export const CookieBanner = ({ hidden = false, onAcceptAll, onRejectNonEssential, onOpenPreferences }: CookieBannerProps) => (
-  <section
+  <section data-meta-ignore
     hidden={hidden}
     aria-label="Aviso de cookies"
     className="fixed inset-x-3 bottom-3 z-[80] mx-auto max-w-6xl rounded-[var(--radius-surface)] border border-[#d7b661]/25 bg-[#18181b]/[0.98] p-5 shadow-[0_24px_80px_rgba(0,0,0,0.55)] backdrop-blur-xl md:inset-x-6 md:bottom-6 md:p-6"
@@ -132,7 +132,7 @@ export const CookiePreferencesDialog = ({
 
   return (
     <div className="fixed inset-0 z-[90] flex items-end justify-center bg-black/75 p-0 backdrop-blur-sm sm:items-center sm:p-5" onMouseDown={(event) => { if (event.currentTarget === event.target) onClose(); }}>
-      <div ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="cookie-preferences-title" onKeyDown={trapFocus} className="flex max-h-[92dvh] w-full max-w-2xl flex-col overflow-hidden rounded-t-2xl border border-white/10 bg-[#202023] shadow-2xl sm:rounded-[var(--radius-surface)]">
+      <div data-meta-ignore ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="cookie-preferences-title" onKeyDown={trapFocus} className="flex max-h-[92dvh] w-full max-w-2xl flex-col overflow-hidden rounded-t-2xl border border-white/10 bg-[#202023] shadow-2xl sm:rounded-[var(--radius-surface)]">
         <header className="flex items-start justify-between gap-5 border-b border-white/10 px-5 py-5 sm:px-7">
           <div className="flex items-center gap-3">
             <SlidersHorizontal className="h-5 w-5 text-[#d7b661]" aria-hidden="true" />

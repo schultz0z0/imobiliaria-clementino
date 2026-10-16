@@ -14,7 +14,7 @@ export const PropertyGallery = ({ images, title }: { images: string[]; title: st
   const thumbnails = safeImages.slice(start, start + 6);
 
   return (
-    <div>
+    <div data-meta-location="property_gallery">
       <div className="group relative overflow-hidden rounded-[var(--radius-surface)] border border-white/10 bg-white/5">
         <img key={safeImages[index]} src={safeImages[index]} alt={`${title} — foto ${index + 1}`} className="aspect-[16/10] w-full object-cover" onError={(event) => { if (event.currentTarget.src !== new URL(safeImages[0], window.location.origin).toString()) event.currentTarget.src = safeImages[0]; }} />
         <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />

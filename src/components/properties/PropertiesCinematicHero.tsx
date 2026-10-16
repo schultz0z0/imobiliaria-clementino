@@ -75,7 +75,7 @@ export const PropertiesCinematicHero = ({
   };
 
   return (
-    <section className="relative isolate min-h-[720px] overflow-hidden border-b border-white/10 bg-[#111113] md:min-h-[650px] md:h-[62svh] md:max-h-[760px]">
+    <section data-meta-location="catalog_hero" className="relative isolate min-h-[720px] overflow-hidden border-b border-white/10 bg-[#111113] md:min-h-[650px] md:h-[62svh] md:max-h-[760px]">
       <motion.div
         aria-hidden="true"
         className="absolute inset-0"
@@ -148,7 +148,7 @@ export const PropertiesCinematicHero = ({
             ))}
           </div>
 
-          <form onSubmit={submit} data-analytics-event="property_search" className="grid gap-2 md:grid-cols-[minmax(0,1.65fr)_minmax(220px,.75fr)_auto]">
+          <form data-meta-search data-meta-id="property_search" onSubmit={submit} data-analytics-event="property_search" className="grid gap-2 md:grid-cols-[minmax(0,1.65fr)_minmax(220px,.75fr)_auto]">
             <label className="flex min-h-14 items-center gap-3 rounded-[16px] border border-white/10 bg-[#222225]/95 px-4 transition focus-within:border-[#d7b661]/75">
               <MapPin className="h-5 w-5 shrink-0 text-[#d7b661]" aria-hidden="true" />
               <span className="sr-only">Bairro, cidade ou referência</span>

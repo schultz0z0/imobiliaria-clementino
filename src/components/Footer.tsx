@@ -17,7 +17,7 @@ export const Footer = () => {
   const whatsappUrl = buildWhatsAppUrl('Olá! Quero falar com a equipe da Imobiliária Clementino.');
 
   return (
-    <footer className="relative z-10 mt-auto border-t border-white/10 bg-[#141416]">
+    <footer data-meta-location="footer" className="relative z-10 mt-auto border-t border-white/10 bg-[#141416]">
       <div className="container mx-auto px-6 py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
@@ -47,7 +47,7 @@ export const Footer = () => {
             <p>© 2026 Imobiliária Clementino. Todos os direitos reservados.</p>
             <Link to="/aviso-de-privacidade" className="transition-colors hover:text-[#d7b661]">Aviso de Privacidade</Link>
             <Link to="/politica-de-cookies" className="transition-colors hover:text-[#d7b661]">Política de Cookies</Link>
-            <button type="button" onClick={openPreferences} className="w-fit text-left transition-colors hover:text-[#d7b661]">Preferências de cookies</button>
+            <button data-meta-ignore type="button" onClick={openPreferences} className="w-fit text-left transition-colors hover:text-[#d7b661]">Preferências de cookies</button>
           </div>
           <p>{siteConfig.creci}</p>
         </div>

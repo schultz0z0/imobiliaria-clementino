@@ -58,7 +58,7 @@ export const privacyNoticeSections: LegalSection[] = [
     paragraphs: [
       'Ao escolher falar pelo WhatsApp, você será direcionado a um serviço da Meta. O envio só ocorre quando você confirma a mensagem no aplicativo ou site do WhatsApp. A partir desse momento, a plataforma também tratará dados segundo seus próprios termos.',
       'O Google Maps incorporado permanece bloqueado até a autorização da categoria de funcionalidade. O link externo para abrir o endereço no Google Maps somente é acionado quando você decide clicar nele.',
-      'Com autorização para publicidade, o Meta Pixel mede visitas, visualizações de imóveis e ações de contato para avaliar campanhas e formar públicos de anúncios. A Meta pode receber identificadores de cookies, endereço IP, informações do navegador, URL da página e referência do imóvel. Os valores digitados nos formulários não são incluídos nos eventos; a correspondência avançada automática está desativada.',
+      'Com autorização para publicidade, o Meta Pixel mede visitas, visualizações de imóveis, buscas, abertura do mapa e cliques nos botões e links para avaliar campanhas e formar públicos de anúncios. Os eventos identificam a página, a posição do botão e a referência do imóvel quando aplicável. A Meta pode receber identificadores de cookies, endereço IP, informações do navegador e URL da página. Os parâmetros dos eventos não incluem os valores digitados nos formulários, os termos pesquisados ou as mensagens preparadas no WhatsApp; a correspondência avançada automática está desativada.',
     ],
   },
   {
@@ -144,7 +144,7 @@ export const cookiePolicySections: LegalSection[] = [
     title: '2. Categorias adotadas',
     paragraphs: [
       'Estritamente necessários mantêm funções essenciais e o registro das preferências. Funcionalidade libera recursos externos opcionais, como o mapa. Análise e desempenho poderá medir o uso do site. Publicidade poderá apoiar campanhas, conversões e remarketing.',
-      'As categorias de funcionalidade, análise e publicidade começam desligadas. O Google Analytics depende de um Measurement ID válido e da autorização para análise. O Meta Pixel depende da autorização para publicidade e registra visitas, imóveis consultados e ações de contato, sem incluir os valores digitados nos formulários. A correspondência avançada automática permanece desativada.',
+      'As categorias de funcionalidade, análise e publicidade começam desligadas. O Google Analytics depende de um Measurement ID válido e da autorização para análise. O Meta Pixel depende da autorização para publicidade e registra visitas, imóveis consultados, buscas, abertura do mapa e cliques nos botões e links. Os parâmetros dos eventos não incluem valores dos formulários, termos pesquisados ou mensagens de WhatsApp. A correspondência avançada automática permanece desativada.',
     ],
   },
   {
@@ -215,7 +215,7 @@ export const cookieTechnologies: CookieTechnology[] = [
     name: 'Meta Pixel',
     category: 'Publicidade',
     provider: 'Meta',
-    purpose: 'Medir visitas, imóveis consultados e ações de contato para campanhas e remarketing. Pode usar cookies como _fbp e _fbc; não recebe os valores dos formulários nos eventos configurados.',
+    purpose: 'Medir visitas, imóveis consultados, buscas, abertura do mapa e cliques nos botões e links para campanhas e remarketing. Pode usar cookies como _fbp e _fbc; os parâmetros configurados não incluem valores dos formulários, termos pesquisados ou mensagens de WhatsApp.',
     duration: 'Definida pela Meta após o carregamento autorizado; novos eventos são interrompidos quando a publicidade é desativada.',
     status: 'Condicionado ao consentimento',
   },

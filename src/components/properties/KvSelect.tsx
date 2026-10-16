@@ -36,6 +36,7 @@ export const KvSelect = ({
   const reduceMotion = useReducedMotion();
   const selectedIndex = Math.max(0, options.findIndex((option) => option.value === value));
   const selectedLabel = options[selectedIndex]?.label ?? options[0]?.label ?? label;
+  const trackingName = ({ Finalidade: 'purpose', Cidade: 'city', Bairro: 'district', Tipo: 'property_type', 'Faixa de preço': 'price_range', Quartos: 'beds', 'Ordenar por': 'sort', 'Tipo de imóvel': 'property_type' } as Record<string, string>)[label] ?? 'select';
 
   useEffect(() => {
     const closeFromOutside = (event: PointerEvent) => {
@@ -82,6 +83,7 @@ export const KvSelect = ({
     <div ref={rootRef} className="relative min-w-0">
       <button
         ref={triggerRef}
+        data-meta-id={`filter_${trackingName}`}
         type="button"
         aria-label={label}
         aria-haspopup="listbox"
@@ -114,6 +116,7 @@ export const KvSelect = ({
                 ref={(node) => { optionRefs.current[index] = node; }}
                 type="button"
                 role="option"
+                data-meta-id={`filter_option_${trackingName}`}
                 aria-selected={selected}
                 onClick={() => choose(option.value)}
                 onKeyDown={(event) => handleOptionKeyDown(event, index)}
